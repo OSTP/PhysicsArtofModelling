@@ -1,0 +1,230 @@
+%Copyright 2017 R.D. Martin
+%This book is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+%
+%This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
+
+
+\documentclass[11pt]{report}
+\usepackage{paralist}
+\usepackage{calc}
+\usepackage{subfig}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage[font={small,it}]{caption}
+\usepackage[pdftex]{graphicx} 
+\usepackage{fancyhdr,lastpage}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{comment}
+\usepackage{ifthen}
+\usepackage{color}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[explicit]{titlesec}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+
+%\lstset{language=Python,showstringspaces=false,commentstyle=} 
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\lstset{ %
+  belowskip=-3em,
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  otherkeywords={*,...},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{black}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{red},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Choose what to show%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "example" environment, choose to show in notes or not
+\newboolean{showexamples}
+\setboolean{showexamples}{true}
+
+% "detailedderivation" environment
+\newboolean{showdetailedderivations}
+\setboolean{showdetailedderivations}{true}
+
+% "hideable section" environment (e.g. problems section)
+\newboolean{showhiddensections}
+\setboolean{showhiddensections}{false}
+
+% "solution" environment (for solutions to problems at end of chapter)
+\newboolean{showproblemsolutions}
+\setboolean{showproblemsolutions}{false}
+
+
+%%%spacing around titles
+%\titlespacing*{\chapter}
+%{0pt}{0ex}{0ex}
+\titlespacing{\section}
+{0pt}{0ex}{0ex}
+\titlespacing{\subsection}
+{0pt}{0ex}{0ex}
+\titlespacing{\subsubsection}
+{0pt}{0ex}{0ex}
+
+
+\newlength\chapnumb
+\setlength\chapnumb{4cm}
+
+\titleformat{\chapter}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \fontsize{120}{110}\selectfont\thechapter}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \mbox{}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+
+
+
+\newcommand{\die}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\lagd}{\mathcal{L}}
+
+\setlength{\parindent}{0pt}
+\parskip = \baselineskip
+
+\newenvironment{capfig}[3]{\begin{figure}[h!]\center\includegraphics[width=#1]{#2}\caption{#3}\end{figure}}{}
+
+
+
+%%% Environments for hiding
+\newcounter{example}[chapter]
+\def\theexample{\thechapter-\arabic{example}}
+
+\ifthenelse{\boolean{showexamples}}{%
+  \newenvironment{example}[3]
+  {\refstepcounter{example} \vspace{2ex}\hrule\vspace*{1ex}\noindent EXAMPLE \theexample: #2\\ #3 \\ \small\itshape}
+  {\vspace{1ex}\hrule\vspace{2ex}}
+}
+{%
+  \newenvironment{example}[3]
+  {\refstepcounter{example} \vspace{2ex}\hrule\vspace*{1ex}\noindent EXAMPLE \theexample: #2\\ #3 \vspace*{\dimexpr#1} \small\itshape\begingroup\color{white}}
+  {\endgroup\vspace{1ex}\hrule\vspace{2ex}}
+  %\excludecomment{example}
+}
+
+
+\ifthenelse{\boolean{showhiddensections}}{%
+  \newenvironment{hideablesection}
+  {}
+  {}
+}
+{%
+  \newenvironment{hideablesection}
+  {\begingroup\color{white}}
+  {\endgroup}
+}
+
+
+\ifthenelse{\boolean{showproblemsolutions}}{%
+  \newenvironment{solution}
+  {}
+  {}
+}
+{%
+  \newenvironment{solution}
+  {\begingroup\color{white}}
+  {\endgroup}
+}
+
+
+\ifthenelse{\boolean{showdetailedderivations}}{%
+  \newenvironment{detailedderivation}
+  {}
+  {}
+}
+{%
+  \newenvironment{detailedderivation}
+  {\begingroup\color{white}}
+  {\endgroup}
+}
+
+
+\newcounter{problem}[chapter]
+\def\theproblem{\thechapter-\arabic{problem}}
+
+\newenvironment{problem}[1]
+  {\refstepcounter{problem}\textbf{Problem \theproblem: #1}\\}
+  {\vspace{2ex}\\}
+
+
+\def\secondpage{\clearpage\null\vfill
+%\pagestyle{empty}
+\begin{minipage}[b]{0.9\textwidth}
+\footnotesize\raggedright
+\setlength{\parskip}{0.5\baselineskip}
+Copyright \copyright \the\year\ R.D. Martin\par
+This book is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
+\end{minipage}
+\vspace*{2\baselineskip}
+\cleardoublepage
+\rfoot{\thepage}}
+
+\makeatletter
+\g@addto@macro{\maketitle}{\secondpage}
+\makeatother
+          
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=.0in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\begin{document}
+\title{Physics: The Art of Modelling}
+\author{Ryan D. Martin}
+\pagenumbering{roman}
+\maketitle
+\tableofcontents
+\pagenumbering{arabic}
+\include{Chapter1_Introduction}
+
+
+
+\end{document}
