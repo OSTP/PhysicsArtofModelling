@@ -64,7 +64,7 @@ When we compare two numbers, for example a prediction from a model and a measure
 \end{checkpointMC}
 
 \subsection{Base dimensions and their SI units}
-In order to facilitate communication of scientific information, the International System of units (SI for the french version Syst\`eme International d'unit\'es) was developed. This allows us to use a well-defined convention for which units to use when expressing quantities. For example, the SI unit for the dimension of length is the meter and the SI unit for the dimension of time is the second.
+In order to facilitate communication of scientific information, the International System of units (SI for the french, Syst\`eme International d'unit\'es) was developed. This allows us to use a well-defined convention for which units to use when expressing quantities. For example, the SI unit for the dimension of length is the meter and the SI unit for the dimension of time is the second.
 
 In order to simplify the SI unit system, a fundamental (base) set of dimensions was chosen and the SI units were defined for those dimensions. Any other dimension can always be re-expressed in terms of the base dimensions shown in table \ref{tab:chap2:SIunits} and thus in terms of the corresponding base SI units.
 
@@ -86,7 +86,7 @@ Dimensionless [0]& unitless [] \\ \hline
 \caption{\label{tab:chap2:SIunits} Base dimensions and their SI units with abbreviations.}
 \end{table}
 
-From the base dimensions, one can obtain ``derived'' dimensions such as ``speed'' which is a measure of how fast an object is moving. The dimension of speed is $\frac{L}{T}$ (length over time) and the corresponding SI unit is m/s\footnote{Note that we can also write meters per second as m$\cdot$s$^{-1}$, but we often use a divide by sign if the power of the unit in the denominator is 1.} (meters per second) and corresponds to a measure of how much distance an object can cover per unit time (the faster the object, the larger the distance covered per unit time). Table \ref{tab:chap2:DerivedSIunits} shows a few derived dimensions and their corresponding SI units.
+From the base dimensions, one can obtain ``derived'' dimensions such as ``speed'' which is a measure of how fast an object is moving. The dimension of speed is $\frac{L}{T}$ (length over time) and the corresponding SI unit is m/s (meters per second)\footnote{Note that we can also write meters per second as m$\cdot$s$^{-1}$, but we often use a divide by sign if the power of the unit in the denominator is 1.} and corresponds to a measure of how much distance an object can cover per unit time (the faster the object, the larger the distance covered per unit time). Table \ref{tab:chap2:DerivedSIunits} shows a few derived dimensions and their corresponding SI units.
 
 \begin{table}[!h]
 \centering
@@ -112,12 +112,12 @@ We call ``dimensional analysis'' the process of working out the dimensions of a 
 \begin{enumerate}
 \item You can only add or subtract two quantities if they have the same dimension: $[X+Y]=[X]=[Y]$
 \item The dimension of the product is the product of the dimensions: $[XY]=[X]\cdot[Y]$
-\item The dimension of the ratio is the ratio of the dimensions:$[X/Y]=[X/Y]$
+\item The dimension of the ratio is the ratio of the dimensions:$[X/Y]=[X]/[Y]$
 \end{enumerate}
 
 The next two examples show how to apply dimensional analysis to obtain the unit or dimension of a derived quantity. 
 
-\begin{example}{Given that acceleration has SI units of ms$^{-2}$ and that force has dimensions of mass multiplied by acceleration, what are the dimensions and SI units of force, expressed in terms of the base dimensions and units?}
+\begin{example}{Acceleration has SI units of ms$^{-2}$ and force has dimensions of mass multiplied by acceleration. What are the dimensions and SI units of force, expressed in terms of the base dimensions and units?}
 We can start by expressing the dimension of acceleration, since we know from its SI units that it must have dimension of length over time squared.
 \begin{align*}
 [acceleration] = \frac{L}{T^2}
@@ -152,9 +152,9 @@ The dimension of force multiplied by speed divided by electric charge
 where, in the last line, we combined the powers of the same dimensions. By inspection, this is the same dimension as voltage.
 \end{example}
 
-When you derive a model to describe a situation, your model will typically provide a value for a quantity that you are interested in modelling. You should always use dimensional analysis to ensure that the dimension of the quantity your model predicts has the correct dimension. For example, suppose that you model the speed, $v$, that an object has after falling from a height of \SI{100}{\meter} on the surface of the planet Mars. Presumably, $v$ will depend on the mass and radius of the planet. You can be guaranteed that your model for $v$ is incorrect if the dimension of $v$ is not speed. Dimensional analysis should always be used to check that your model is not incorrect (note that getting the correct dimension is not a guarantee of the model being correct, only that it is ``not definitely wrong''). Similarly, you should also use order of magnitude estimates to evaluate whether your model gives a reasonable prediction.
+When you build a model to describe a situation, your model will typically provide a value for a quantity that you are interested in modelling. You should always use dimensional analysis to ensure that the dimension of the quantity your model predicts has the correct dimension. For example, suppose that you model the speed, $v$, that an object has after falling from a height of \SI{100}{\meter} on the surface of the planet Mars. Presumably, $v$ will depend on the mass and radius of the planet. You can be guaranteed that your model for $v$ is incorrect if the dimension of $v$ is not speed. Dimensional analysis should always be used to check that your model is not incorrect (note that getting the correct dimension is not a guarantee of the model being correct, only that it is ``not definitely wrong''). Similarly, you should also use order of magnitude estimates to evaluate whether your model gives a reasonable prediction.
 
-\begin{checkpointMC}{In Chlo\"e's theory of falling objects from Chapter \label{chap:1_Introduction}, the time, $t$, for an object to fall a distance, $x$, was given by $t=k\sqrt{x}$. What must the SI units of Chlo\"e's constant, $k$, be?}
+\begin{checkpointMC}{In Chlo\"e's theory of falling objects from Chapter \ref{chap:1_Introduction}, the time, $t$, for an object to fall a distance, $x$, was given by $t=k\sqrt{x}$. What must the SI units of Chlo\"e's constant, $k$, be?}
 \item \si{T.L^{\frac{1}{2}}}
 \item \si{T.L^{-\frac{1}{2}}}
 \item \si{s.m^{\frac{1}{2}}}
@@ -164,7 +164,7 @@ When you derive a model to describe a situation, your model will typically provi
 \section{Making measurements}
 Having introduced some tools for the modelling aspect of physics, we now address the other side of physics, namely performing experiments. Since the goal of developing theories and models is to describe the real world, we need to understand how to make meaningful measurements that test our theories and models.
 
-Suppose that we wish to test Chlo\"e's theory of falling objects from Chapter \autoref{chap:1_Introduction}:
+Suppose that we wish to test Chlo\"e's theory of falling objects from Chapter \ref{chap:1_Introduction}:
 \begin{align*}
 t=k\sqrt{x}
 \end{align*}
@@ -204,7 +204,7 @@ When looking at Table \ref{tab:chap2:kmes}, it is clear that each drop height ga
 \caption{\label{tab:chap2:kmes_3m} Repeated measurements of the drop time, $t$, for a bowling ball to fall a distance $x=\SI{3}{m}$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
 \end{table}
 
-This simple example highlights the critical aspect of making any measurement: it is impossible to make a measurement with infinite accuracy. The values in Table \ref{tab:chap2:kmes_3m} show that if we repeat the exact same experiment, we are likely to measure different values for a single quantity. In this case, for a fixed drop height, $x=\SI{3}{m}$, we obtained a spread in values of the drop time, $t$, between roughly \SI{0.6}{s} and \SI{1.0}{s}. Does this mean that it is hopeless to do science, since we can never repeat measurements? Thankfully, no! It does however require that we deal with the inherent imprecision of measurements in a formal manner.
+This simple example highlights the critical aspect of making any measurement: it is impossible to make a measurement with infinite precision. The values in Table \ref{tab:chap2:kmes_3m} show that if we repeat the exact same experiment, we are likely to measure different values for a single quantity. In this case, for a fixed drop height, $x=\SI{3}{m}$, we obtained a spread in values of the drop time, $t$, between roughly \SI{0.6}{s} and \SI{1.0}{s}. Does this mean that it is hopeless to do science, since we can never repeat measurements? Thankfully, no! It does however require that we deal with the inherent imprecision of measurements in a formal manner.
 
 \subsection{Measurement uncertainties}
 The values in Table \ref{tab:chap2:kmes_3m} show that for a fixed experimental setup (a drop height of \SI{3}{m}), we are likely to measure a spread in the values of a quantity (the time to drop). We can quantify this ``uncertainty'' in the value of the measured time but quoting the measured value of $t$ by providing a ``central value'' and an ``uncertainty'':
@@ -224,9 +224,10 @@ If we have $N$ measurements of some quantity $t$, $\{t_1, t_2, t_3, \dots t_N\}$
 \sigma_t^2 &=\frac{1}{N-1}\sum_{i=1}^{i=N}(t_i-\bar t)^2 = \frac{(t_1-\bar t)^2+(t_2-\bar t)^2+(t_3-\bar t)^2+\dots+(t_N-\bar t)^2}{N-1} \\
 \sigma_t &=\sqrt{\sigma_t^2}
 \end{align}
-Note that the mean is just the arithmetic average of the values, and that the standard deviation, $\sigma_t$, requires one to first calculate the mean, then the variance ($\sigma^2_t$, the square of the standard deviation). You should also note that for the variance, we divide by $N-1$ instead of $N$. The standard deviation and variance are quantities that come from statistics and and are good measure of how spread out the values of $t$ are.
+The mean is just the arithmetic average of the values, and the standard deviation, $\sigma_t$, requires one to first calculate the mean, then the variance ($\sigma^2_t$, the square of the standard deviation). You should also note that for the variance, we divide by $N-1$ instead of $N$. The standard deviation and variance are quantities that come from statistics and are a good measure of how spread out the values of $t$ are about their mean.
 
 \begin{example}{Calculate the mean and standard deviation of the values for $k$ from Table \ref{tab:chap2:kmes_3m}.}
+\label{ex:chap2:stdcalc}
 In order to calculate the standard deviation, we first need to calculate the mean of the $N=5$ values of $k$: $\{0.58, 0.44, 0.37, 0.42, 0.38 \}$. The mean is given by:
 \begin{align*}
 \bar k = \frac{0.58 + 0.44 + 0.37 + 0.42 + 0.38}{5}=\SI{0.44}{s.m^{-\frac{1}{2}}}
@@ -257,15 +258,15 @@ Counted quantity & Counted value and square root of the value \\ \hline
 \caption{\label{tab:chap2:uncertainties} Different types of measurements and how to assign central values uncertainties.}
 \end{table}
 \Lwcapfig[11]{0.4\textwidth}{figures/Chapter2/ruler.png}{\label{fig:chap2:ruler}The length of the grey rectangle would be quoted as $L=\SI{2.8\pm0.5}{cm}$ using the rule of ``half the smallest division''.}
-For example, we would quote the length of the grey object in Figure \ref{fig:chap2:ruler} to be $L=\SI{2.8\pm0.5}{cm}$ based on the rules in Table \ref{tab:chap2:uncertainties}, since\SI{2.8}{cm} is the closet value on the ruler that matches the length of the object and \SI{0.5}{mm} is half of the smallest division on the ruler. Using half of the smallest division of the ruler means that our uncertainty range covers one full division. Note that it is usually better to reproduce a measurement to evaluate the uncertainty instead of using half of the smallest division. 
+For example, we would quote the length of the grey object in Figure \ref{fig:chap2:ruler} to be $L=\SI{2.8\pm0.5}{cm}$ based on the rules in Table \ref{tab:chap2:uncertainties}, since \SI{2.8}{cm} is the closet value on the ruler that matches the length of the object and \SI{0.5}{mm} is half of the smallest division on the ruler. Using half of the smallest division of the ruler means that our uncertainty range covers one full division. Note that it is usually better to reproduce a measurement to evaluate the uncertainty instead of using half of the smallest division, although half of the smallest division should be the lower limit on the uncertainty. That is, by repeating the measurements and obtaining the standard deviation, you should see if the uncertainty is \textit{larger} than half of the of the smallest division, not smaller.
 
 
 The \textbf{relative uncertainty} in a measured value is given by dividing the uncertainty by the central value, and expressing the result in percent. For example, the relative uncertainty in $t=\SI{0.76\pm 0.15}{s}$ is given by $\frac{0.15}{0.76}=20\%$. The relative uncertainty gives an idea of how precisely a value was determined. Typically, a value above 10\% means that it was not a very precise measurement, and we would generally consider a value smaller than 1\% to correspond to quite a precise measurement. 
 
 \subsubsection{Random and systematic sources of error/uncertainty}
-It is important to note that there are two possible sources of uncertainty in a measurement. The first is called ``statistical'' or ``random'' and occurs because it is impossible to exactly reproduce a measurement. For example, every time you lay down a ruler to measure something, you might shift it slightly one way or the other which will affect your measurement. The important property of random sources of uncertainty is that if you reproduced the measurement many times, these will tend to cancel out and the mean can usually be determined to arbitrary accuracy with enough measurements. 
+It is important to note that there are two possible sources of uncertainty in a measurement. The first is called ``statistical'' or ``random'' and occurs because it is impossible to exactly reproduce a measurement. For example, every time you lay down a ruler to measure something, you might shift it slightly one way or the other which will affect your measurement. The important property of random sources of uncertainty is that if you reproduce the measurement many times, these will tend to cancel out and the mean can usually be determined to high precision with enough measurements. 
 
-The other source of uncertainty is called ``systematic''. Systematic uncertainties are much more difficult to detect and to estimate. One example would be trying to measure something with a scaled that was not properly tarred (where the 0 weight was not set). You may end up with very small random errors when measuring the weights of object (very repeatable measurements), but you would have a hard time noticing that all of your weights were offset by a certain amount unless you had access to a second scale. Some common examples of systematic uncertainties are: incorrectly calibrated equipment, parallax error when measuring distance, reaction times when measuring time, effects of temperature on materials, etc.
+The other source of uncertainty is called ``systematic''. Systematic uncertainties are much more difficult to detect and to estimate. One example would be trying to measure something with a scale that was not properly tarred (where the 0 weight was not set). You may end up with very small random errors when measuring the weights of object (very repeatable measurements), but you would have a hard time noticing that all of your weights were offset by a certain amount unless you had access to a second scale. Some common examples of systematic uncertainties are: incorrectly calibrated equipment, parallax error when measuring distance, reaction times when measuring time, effects of temperature on materials, etc.
 
 \subsubsection{Propagating uncertainties}
 Going back to the data in Table \ref{tab:chap2:kmes_3m}, we found that for a known drop height of $x=\SI{3}{m}$, we measured different values of the drop time, which we found to be $t=\SI{0.76 \pm 0.15}{s}$ (using the mean and standard deviation). We also calculated a value of $k$ corresponding to each value of $t$, and found $k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$. Suppose that we did not have access to the individual values of $t$, but only to the value of $t=\SI{0.76 \pm 0.15}{s}$ with uncertainty. How do we calculate a value for $k$ with uncertainty? In order to answer this question, we need to know how to ``propagate'' the uncertainties in a measured value to the uncertainty in a valued derived from the measurements. We now look at different methods for propagating uncertainties.
@@ -303,7 +304,7 @@ The derivative method lets us propagate the uncertainty in a general way, so lon
 \bar F &= F(\bar x, \bar y) \nonumber \\
 \sigma_F &= \sqrt{\left(\die{F}{x}\sigma_x \right)^2 + \left(\die{F}{y}\sigma_y \right)^2 }
 \end{align}
-That is, the central value of the function $F$ is found by evaluating the function at the central values of $x$ and $y$. The uncertainty in $F$, $\sigma_F$ is found by taking the quadrature sum of the partial derivatives of $F$ evaluated at the central values of $x$ and $y$ multiplied by the uncertainties in the corresponding variables that $F$ depends on. The uncertainty will contain one term in the sum per variable that $F$ depends on. At the end of the chapter, we will show you how to calculate this easily with a computer, so do not worry about getting comfortable with partial derivatives (yet!). Note that the partial derivative, $\die{F}{x}$ is simply the derivative of $F(x,y)$ relative to $x$ evaluated as if $y$ were a constant. Also, when we say ``add in quadrature'', we mean square the quantities, add them, and then take the square root (same as you would calculate the hypotenuse of a right-angle triangle).
+That is, the central value of the function $F$ is found by evaluating the function at the central values of $x$ and $y$. The uncertainty in $F$, $\sigma_F$ is found by taking the quadrature sum of the partial derivatives of $F$ evaluated at the central values of $x$ and $y$ multiplied by the uncertainties in the corresponding variables that $F$ depends on. The uncertainty will contain one term in the sum per variable that $F$ depends on. At the end of the chapter, we will show you how to calculate this easily with a computer, so do not worry about getting comfortable with partial derivatives (yet!). Note that the partial derivative, $\die{F}{x}$ is simply the derivative of $F(x,y)$ relative to $x$ evaluated as if $y$ were a constant. Also, when we say ``add in quadrature'', we mean square the quantities, add them, and then take the square root (same as you would do to calculate the hypotenuse of a right-angle triangle).
 
 \begin{example}{Use the derivative method to evaluate $k=\frac{t}{\sqrt{x}}$ for $x=\SI{3.00 \pm 0.01}{m}$ and $t=\SI{0.76\pm0.15}{s}$.}
 \label{ex:Chap2:derivprop}
@@ -357,45 +358,46 @@ $z=f(x)$ (a function of 1 variable) &$\sigma_z=\left|\frac{df}{dx}\sigma_x \righ
 
 
 \subsection{Reporting measured values}
-Now that you know how to attribute an uncertainty to a measured quantity and then propagate that uncertainty to a derived quantity, you are ready to present your measurement to the world. In order to conduct ``good science'', your measurements should be reproducible, clearly presented, and precisely described. Here are general rules to follow when quoting a number:
+Now that you know how to attribute an uncertainty to a measured quantity and then propagate that uncertainty to a derived quantity, you are ready to present your measurement to the world. In order to conduct ``good science'', your measurements should be reproducible, clearly presented, and precisely described. Here are general rules to follow when reporting a measured number:
 \begin{enumerate}
-\item Show the units, preferably SI units (use derived SI units, such as newtons, when appropriate)
+\item Indicate the units, preferably SI units (use derived SI units, such as newtons, when appropriate)
 \item Include a sentence describing how the uncertainty was determined (if it is a direct measurement, how did you choose the uncertainty? If it is a derived quantity, how did you propagate the uncertainty?)
 \item Show no more than 2 ``significant digits''\footnote{Significant digits are those excluding leading and trailing zeroes.} in the uncertainty and format the central value to the same decimal as the uncertainty. 
 \item Use scientific notation when appropriate (usually numbers bigger than 1000 or smaller than 0.01).
-\item Factor out the power 10 from the central value and uncertainty (e.g. \SI{10,123\pm 310}{m} would be \SI{10.12\pm 0.31e3}{m}
+\item Factor out the power 10 from the central value and uncertainty (e.g. \SI{10123\pm 310}{m} would be \SI{10.12\pm 0.31e3}{m} or \SI{101.2\pm 3.1e2}{m} 
 \end{enumerate}
 
-\begin{checkpointMC}{How many significant digits are in the number 01043.120?}
-\item 8
-\item 7
-\item 6 %correct
-\item 5
+\begin{checkpointMC}{Someone has measured the average height of tables in the laboratory to be \SI{1.0535}{m} with a standard deviation of \SI{0.0525}{m}. What is the best way to present this measurement?}
+\item \SI{1.0535\pm 0.0525}{m}
+\item \SI{1.054\pm 0.053}{m}
+\item \SI{105.4\pm 5.3e-2}{m}
+\item \SI{105.35\pm 5.25}{cm}
 \end{checkpointMC}
 
 \subsection{Comparing model and measurement - discussing a result}
-In order to make science advance, we make measurements and compare them to a theory or model prediction. We thus a need a precise and consistent way to compare measurements with each other and with predictions. Suppose that we have measured a value for Chlo\"e's constant $k= \SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$. Of course, Chlo\"e's theory does not predict a value for $k$, only that fall time is proportional to the square root of the distance fallen. Isaac Newton's Universal Theory of Gravity does predict a value for $k$ of \SI{0.45}{s.m^{-\frac{1}{2}}} with negligible uncertainty. In this case, since the model (theoretical) value easily falls within the range given by our uncertainty, we would say that our measurement is consistent (or compatible) with the theoretical prediction. 
+In order to make science advance, we make measurements and compare them to a theory or model prediction. We thus need a precise and consistent way to compare measurements with each other and with predictions. Suppose that we have measured a value for Chlo\"e's constant $k= \SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$. Of course, Chlo\"e's theory does not predict a value for $k$, only that fall time is proportional to the square root of the distance fallen. Isaac Newton's Universal Theory of Gravity does predict a value for $k$ of \SI{0.45}{s.m^{-\frac{1}{2}}} with negligible uncertainty. In this case, since the model (theoretical) value easily falls within the range given by our uncertainty, we would say that our measurement is consistent (or compatible) with the theoretical prediction. 
 
 Suppose that instead, we had measured $k=\SI{0.55 \pm 0.08}{s.m^{-\frac{1}{2}}}$ so that the lowest value compatible with our measurement, $k=\SI{0.55}{s.m^{-\frac{1}{2}}}-\SI{0.08}{s.m^{-\frac{1}{2}}}=\SI{0.47}{s.m^{-\frac{1}{2}}}$ is not compatible with Newton's prediction. Would we conclude that our measurement invalidates Newton's theory? The answer is: it depends... And what ``it depends on'' should always be discussed any time that you present a measurement (even it it happened that your measurement is compatible with a prediction - maybe that was a fluke). Below, we list a few common points that should be addressed when presenting a measurement and that will guide you into deciding whether your measurement is consistent with a prediction:
 \begin{itemize}
 \item How was the uncertainty determined and/or propagated?
 \item Are there systematic effects that were not taken into account when determining the uncertainty? (e.g. reaction time, parallax, something difficult to reproduce).
 \item Are the relative uncertainties reasonable?
-\item What assumptions were made in calculating your value? 
+\item What assumptions were made in calculating your measured value?
+\item What assumptions were made in determining the model prediction? 
 \end{itemize}
 In the above, our value of $k= \SI{0.55 \pm 0.08}{s.m^{-\frac{1}{2}}}$ is the result of propagating the uncertainty in $t$ which was found by using the standard deviation of the values of $t$. It is thus conceivable that the true value of $t$, and therefore of $k$, is outside the range that we quote. Since our value of $k$ is still quite close to the theoretical value, we would not claim to have invalidated Newton's theory with this measurement. Our uncertainty in $k$ is $\sigma_k=\SI{0.08}{s.m^{-\frac{1}{2}}}$, and the difference between our measured and the theoretical value is only $1.25\sigma_k$, so very close to the value of the uncertainty. 
 
-In a similar way, we would discuss whether two different measurements, each with an uncertainty, are compatible. If the ranges given by uncertainties in two values overlap, then they are clearly consistent and compatible. If on the other side, if the ranges do not overlap, they could be inconsistent, or the discrepancy might instead be the result of how the uncertainties were determined and the measurements could still be considered consistent. 
+In a similar way, we would discuss whether two different measurements, each with an uncertainty, are compatible. If the ranges given by uncertainties in two values overlap, then they are clearly consistent and compatible. If on the other hand, the ranges do not overlap, they could be inconsistent, or the discrepancy might instead be the result of how the uncertainties were determined and the measurements could still be considered consistent. 
 
 
 \section{Using computers to facilitate data analysis}
 In this textbook, we will encourage you to use computers to facilitate making calculations and displaying data. We will make use of a popular programming language called Python, as well as several ``modules'' from Python that facilitate working with numbers and data. Do not worry if you do not have any programming experience; we assume that you have none and hope that by the end of this book, you will have some capability to decrease your workload by using computers.
 
 \subsection{Python: a quick intro to programming}
-In Python, as in other programming language, the equal sign is called the assignment operator. Its role is assign the value on right to the variable on the left. The following code does the following:
+In Python, as in other programming language, the equal sign is called the \textbf{assignment operator}. Its role is assign the value on its right to the variable on tits left. The following code does the following:
 \begin{itemize}
-\item assigns the value of \code{2} to the variable \code{a}
-\item assigns the values of \code{2*a} to the variable \code{b}
+\item \textit{assigns} the value of \code{2} to the variable \code{a}
+\item \textit{assigns} the values of \code{2*a} to the variable \code{b}
 \item prints out the value of the variable \code{b}
 \end{itemize}
 
@@ -408,11 +410,12 @@ print(b)
 \begin{poutput}
 4
 \end{poutput}
-Note that any text that follows a pound sign (\#) is intended as a comment and will be ignored by Python. Inserting comments in your code is very important for being able to understand your computer program in the future or if you are sharing your code.
+Note that any text that follows a pound sign (\#) is intended as a comment and will be ignored by Python. Inserting comments in your code is very important for being able to understand your computer program in the future or if you are sharing your code with someone who would like to understand it.
 
-In Python, if you want to have access to ``function'', which are more complex series of operations, then typically need to load the module that defines those operations. For example, if you want to be able to take the square root of a number, then you need to load the appropriately named math module, as in the following example:
+
+In Python, if you want to have access to ``functions'', which are more complex series of operations, then you typically need to load the \textit{module} that defines those operations. For example, if you want to be able to take the square root of a number, then you need to load (import) the ``math module'', as in the following example:
 \begin{python}[caption=Using functions from modules] 
-#First, we load the math module
+#First, we load (import) the math module
 import math as m
 a = 9
 b = m.sqrt(a)
@@ -456,9 +459,9 @@ print("t = ",t)
 \begin{poutput}
 t = 0.76 +/- 0.15
 \end{poutput}
-
+thus, we do not need to tediously calculate the mean and standard deviation, as we did in Example \ref{ex:chap2:stdcalc}.
 \subsection{Using QExpy for plotting}
-Recall Table \ref{tab:chap2:kmes}, where we measured the time for an object to drop from different heights. One of the easiest way to look at the data is to visualize them on a graph. In this case, we measured the time, $t$, that it took to drop different heights, $x$. Chlo\"e's Theory stated that the time, $t$, is proportional to the square root of the distance fallen, $x$, and we introduced a constant of proportionality $k$:
+Recall Table \ref{tab:chap2:kmes}, where we measured the time for an object to drop from different heights. One of the easiest ways to look at the data is to visualize them on a graph. In this case, we measured the time, $t$, that it took to drop different heights, $x$. Chlo\"e's Theory stated that the time, $t$, is proportional to the square root of the distance fallen, $x$, and we introduced a constant of proportionality $k$:
 \begin{align*}
 t = k \sqrt{x}
 \end{align*}
@@ -474,10 +477,10 @@ sqx = [1. , 1.41, 1.73, 2., 2.24]
 #and then, the corresponding times:
 t = [ 0.33,  0.74,  0.67,  1.07,  1.1 ]
 
-#Let us attribute an uncertainty of 0.15 to the measured values of t:
+#Let us attribute an uncertainty of 0.15 to each measured values of t:
 terr = 0.15
 
-#We now make the plot, first, we create the plot object
+#We now make the plot. First, we create the plot object with the data.
 fig = q.MakePlot( xdata = sqx, xname = "sqrt(distance)", xunits = "sqrt(m)",
                   ydata = t, yerr = terr, yname = "time", yunits ="s",
                   data_name = "Data1")
@@ -503,7 +506,8 @@ chi2/ndof = 2.04/2
 ---------------End fit results----------------
 (* \capfig{0.75\textwidth}{figures/Chapter2/tvssqx.png}{\label{fig:chap2:tvssqx} QExpy plot of $t$ versus $\sqrt{x}$.} *)
 \end{poutput}
-The plot in Figure \ref{fig:chap2:tvssqx} shows that the data points do indeed appear to fall on a straight line. We've also asked QExpy to show us the line of best fit to the data, represented by the line with the shadowed area. When we asked for the line of best fit, QExpy not only drew the line, but also gave us the values for the slope and the intercept of the line. The shaded area around the line corresponds to line that one would obtain using different possible values of the slope and offset within their uncertainties. The output also provides a line that tells us that \code{chi2/ndof = 2.04/2}; although you do not need to understand the details, this is a measure of how well the data are described by the line of best fit. Generally, the fit is assumed to be ``good'' if this ratio is close to 1 (the ratio is called ``the chi-squared $\chi^2$ per degree of freedom'').  The ``correlation matrix'' tells us how the best fit value of the slope is linked to the best fit value of the intercept. 
+The plot in Figure \ref{fig:chap2:tvssqx} shows that the data points do indeed appear to fall near a straight line. We've also asked QExpy to show us the line of best fit to the data, represented by the line with the shaded area. When we asked for the line of best fit, QExpy not only drew the line, but also gave us the values for the slope and the intercept of the line. The shaded area around the line corresponds to other possible lines that one would obtain using different values of the slope and offset within their uncertainties. The output also provides a line that tells us that \code{chi2/ndof = 2.04/2}; although you do not need to understand the details, this is a measure of how well the data are described by the line of best fit. Generally, the fit is assumed to be ``good'' if this ratio is close to 1 (the ratio is called ``the reduced chi-squared'').  The ``correlation matrix'' tells us how the best fit value of the slope is linked to the best fit value of the intercept, which you do not need to worry about here.
+
 
 Since we expect the slope of the data to be $k$, this provides us a method to determine $k$ from the data as \SI{0.61\pm 0.13}{s.m^{-\frac{1}{2}}}. When we used Table \ref{tab:chap2:kmes_3m} to determine $k$ using repeated measurements at a drop height of 3.0\,m, we obtained $k=\SI{0.44\pm 0.09}{s.m^{-\frac{1}{2}}}$, which is consistent with what we get from the slope of the best fit line. Finally, we expect the intercept to be equal to zero. The best fit line from QExpy has an intercept of \SI{-0.24\pm 0.22}{s}, which is slightly below, but consistent, with zero. From these data, we would conclude that our measurements are consistent with Chlo\"e's Theory.
 
@@ -515,7 +519,9 @@ Since we expect the slope of the data to be $k$, this provides us a method to de
 \item A physical quantity should always be reported with units, preferably SI units
 \item When you build a model to predict a physical quantity, you should always ask if the prediction makes sense (Does it have a reasonable order of magnitude? Does it have the right dimensions?)
 \item Any quantity that you measure will have an uncertainty.
+\item Almost any quantity that you determine from a model or theory will also have an uncertainty.
 \item The best way to determine an uncertainty is to repeat the measurement and use the mean and standard deviation of the measurements as the central value and uncertainty.
+\item You have to pay special attention to systematic uncertainties, which are difficult to determine. You should always think of ways that your measured values could be wrong, even after repeated measurements.
 \item Relative uncertainties tell you whether your measurement is precise.
 \item When propagating uncertainties, use a computer \#becauseits2015
 \item If you expect two measured quantities to be linearly related (one is proportional to the other), plot them to find out! Use a computer to do so!

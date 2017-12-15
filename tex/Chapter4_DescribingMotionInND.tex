@@ -1,0 +1,749 @@
+%Copyright 2017 R.D. Martin
+%This book is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+%
+%This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
+\chapter{Describing motion in multiple dimensions}
+\label{chap:4_KinematicsND}
+In this chapter, we will learn how to extend our description of an object's motion to two and three dimensions. We will also consider the specific case of an  object moving along the circumference of a circle. 
+
+\vspace{1cm}
+\begin{learningObjectives}
+\item Describe motion in a 2D plane.
+\item Describe motion in 3D space.
+\item Describe motion along the circumference of a circle.
+\item Know how to use polar and spherical coordinates.
+\item Know how to use vectors.
+\end{learningObjectives}
+
+\section{Motion in two dimensions}
+\subsection{2D Coordinate systems}
+\rwcapfig[14]{0.35\textwidth}{figures/Chapter4/xyp.png}{\label{fig:chap4:xyp}Example of Cartesian coordinate system and a point $P$ with coordinates $(x_p,y_p)$.}
+In an analogous manner to describing motion in one dimension, to describe motion in two dimensions, we first need to define a coordinate system. In two dimensions, we will use two axes, $x$ and $y$, whose origin and direction we must define. Figure \ref{fig:chap4:xyp} shows an example of such a coordinate system. Although it is not necessary to do so, we chose $x$ and $y$ axes that are perpendicular and that have a common origin. One is free to choose any two directions as axes (as long as they are not parallel) and the origins of the two axes need not coincide. However, the choice that we have made in Figure \ref{fig:chap4:xyp} greatly simplifies the description of the motion of an object.
+
+In two dimension, to fully describe the position of an object, we must specify both its position along the $x$ axis and its position along the $y$ axis. For example, point $P$ in Figure \ref{fig:chap4:xyp} has two \textbf{coordinates}, $x_p$ and $y_p$ that define its position. The $x$ coordinate is found by drawing a line through $P$ that is parallel to the $y$ axis and is given by the intersection of that line with the $x$ axis. The $y$ coordinate is found by drawing a line through point $P$ that is parallel to the $x$ axis and is given by the intersection of that line with the $y$ axis.
+
+
+\begin{checkpointMC}{Figure \ref{fig:chap4:xyslant} shows a coordinate system that is not orthogonal (where the $x$ and $y$ axes are not perpendicular). Which value on the figure correctly indicates the $y$ coordinate of point $P$?
+\capfig{0.35\textwidth}{figures/Chapter4/xyslant.png}{\label{fig:chap4:xyslant}A non-orthogonal coordinate system (the $x$ and $y$ axes are not perpendicular).}}
+\item $y_1$ %correct
+\item $y_2$
+\item $y_3$
+\end{checkpointMC}
+\lwcapfig[7]{0.3\textwidth}{figures/Chapter4/polarp.png}{\label{fig:chap4:polarp}Example of a polar coordinate system and a point $P$ with coordinates $(r,\theta)$.}
+The most common choice of coordinate system in two dimensions is a ``Cartesian'' coordinate system, where the $x$ and $y$ axes are perpendicular and share a common origin, as shown in Figure \ref{fig:chap4:xyp}. When applicable, by convention, we usually choose the $y$ axis to correspond to the vertical direction.
+
+Another common choice is a ``polar'' coordinate system where the position of an object is specified by a distance to the origin, $r$, and an angle, $\theta$, as shown in Figure \ref{fig:chap4:polarp}. Often, a polar coordinate system is defined along side a Cartesian system, so that $r$ is the distance to the origin and $\theta$ is the angle with respect to the $x$ axis.
+
+One can easily convert between Cartesian and polar coordinates:
+\begin{align*}
+x&=r\cos(\theta)\\
+y&=r\sin(\theta)\\
+r&=\sqrt(x^2+y^2)\\
+\tan(\theta) &= \frac{y}{x}
+\end{align*}
+Polar coordinates are often used to describe the motion of an object moving around a circle, as this means that only one of the coordinates ($\theta$) changes with time (if the origin of the coordinate system is chosen to coincide with the centre of the circle).
+\subsection{Position and displacement vectors}
+\rwcapfig[11]{0.35\textwidth}{figures/Chapter4/xydvec.png}{\label{fig:chap4:xydvec}Example of a displacement vector, $\vec d$, from point $P_1$ to point $P_2$.}
+When we describe the motion of an object in two dimensions, we must specify two coordinates that can change with time. In Cartesian coordinates, this means that we must specify two functions, $x(t)$ and $y(t)$, to fully describe the motion of an object. When an object moves from one position to another, we need a way to describe that \textit{displacement}. To do this, we use \textbf{vectors}, which can be represented as arrows.
+
+Figure \ref{fig:chap4:xydvec} shows an example of a displacement vector, $\vec d$, to represent the motion from $P_1$ to $P_2$. A vector has two important features:
+\begin{enumerate}
+\item a direction (represented by the direction of the arrow)
+\item a magnitude (represented by the length of the arrow)
+\end{enumerate}
+We specify that a variable is a vector by drawing a little arrow on top of the variable. An important feature is that a vector is not fixed anywhere in space. In Figure \ref{fig:chap4:xydvec}, we drew the vector between points $P_1$ and $P_2$ for illustration. The vector $\vec d$ only represents a change in position in a certain direction and of a certain distance and is not tied to the specific points $P_1$ and $P_2$. One could have the \textit{same} displacement vector, $\vec d$, between two other points, $P_3$ and $P_4$, if the displacement is in the same direction and over the same distance. 
+
+All we need to specify a vector in two dimension are two \textbf{components}. In Cartesian coordinates, we can specify the length of the vector projected onto the $x$ and $y$ axes ($\Delta x$ and $\Delta y$ in Figure \ref{fig:chap4:xydvec}), its $x$ and $y$ components. In polar coordinates, we could specify the total magnitude of the vector (its length, $r$) and the angle that it makes with the $x$ axis, $\theta$.
+
+Several, equivalent, notations can be used for specifying a vector in Cartesian coordinates is:
+\begin{align*}
+\vec d &= \begin{pmatrix}
+           d_x \\
+           d_y \\
+         \end{pmatrix}\\
+         &= d_x\hat x +d_y \hat y\\
+         &=d_x\hat i +d_y \hat j
+\end{align*}
+where $d_x$ and $d_y$ are the $x$ and $y$ components of the vector $\vec d$, respectively. In Figure \ref{fig:chap4:xydvec}, we have $d_x=\Delta x$ and $d_y=\Delta y$. $\hat x$ and $\hat y$ are called ``unit vectors'' for the $x$ and $y$ axes, respectively. $\hat i$ and $\hat j$ are equivalent to $\hat x$ and $\hat y$.  Unit vectors are vectors that have a length of 1, and are usually denoted with a hat\footnote{It's actually called a ``caret'' not a hat!} (\^{}) instead of an arrow. The $\hat x$ and $\hat y$ are special unit vectors as they are parallel to the $x$ and $y$ axes, respectively. In vector notation, they are written:
+\begin{align*}
+\hat x &= \begin{pmatrix}
+           1\\
+           0 \\
+         \end{pmatrix}\\
+\hat y &= \begin{pmatrix}
+           0\\
+           1 \\
+         \end{pmatrix}\\       
+\end{align*}
+Any vector can be made to have a unit length, if you divide its components by its magnitude. For example, given a vector with components $(d_x,d_y)$, the corresponding unit vector is:
+\begin{align*}
+\hat d &= \frac{\vec d}{||\vec d||}\\
+       &= \frac{\vec d}{\sqrt{d_x^2+d_y^2}}\\
+       &= \frac{d_x}{\sqrt{d_x^2+d_y^2}}\hat x+\frac{d_y}{\sqrt{d_x^2+d_y^2}}\hat y
+\end{align*}
+where $||\vec d||$ is the magnitude of $\vec d$ and is given by Pythagoras' theorem. If it is clear that $\vec d$ is a vector, then one can also denote its magnitude by $d$ (without the arrow), although this notation should only be used if it is clear that you are referring to the magnitude of a vector, and not some other variable.
+
+Note that in the first line above, we implied that we \textbf{can divide a vector by a number}. Dividing (or multiplying) a vector by a number means individually dividing (or multiplying) the components of the vector by that number and gives a new vector. If you multiply a vector by (-1), then you get a new vector of the same magnitude but that points in the opposite direction. When working with vectors, we use the term ``scalar'' to refer to a quantity that is not a vector (i.e. a regular number is called a scalar). Thus, we have just examined how we can multiply a vector by a scalar to obtain a vector \footnote{Note that this is \textbf{not} called a scalar product.}. Also note that multiplying a vector by a scalar ultimately multiplies the length of the vector by that scalar. Thus, multiplying a vector by 2 makes it twice as long and in the same direction.
+
+Referring to Figure \ref{fig:chap4:xydvec}, we have introduced the displacement vector, $\vec d$, from the point $P_1$ to the point $P_2$. We can also define ``position vectors'' corresponding to the points $P_1$ and $P_2$. The position vector for a point is the displacement vector corresponding to going from the origin to that point (and can be drawn as an arrow that goes from the origin to the point). The components of the position vector for a point are the same as the coordinates of that point. Often, the letter $r$ is used for position vectors. For $P_1$ and $P_2$, the position vectors, $\vec r_1$ and $\vec r_2$, respectively, are given by:
+\begin{align*}
+\vec r_1&=\begin{pmatrix}
+           x_1 \\
+           y_1 \\
+         \end{pmatrix}\\
+\vec r_2&=\begin{pmatrix}
+           x_2 \\
+           y_2 \\
+         \end{pmatrix}\\
+\end{align*}
+\rwcapfig[10]{0.35\textwidth}{figures/Chapter4/vecadd.png}{\label{fig:chap4:vecadd}Example of adding the displacement vector $\vec d$ to the position vector $\vec r_1$ to obtain the position vector $\vec r_2=\vec r_1+\vec d$.}
+The displacement vector, $\vec d$, from $P_1$ to $P_2$, has the following components:
+\begin{align*}
+\vec{d}&=\begin{pmatrix}
+           x_2-x_1 \\
+           y_2-y_1 \\
+         \end{pmatrix}\\
+\end{align*}
+This suggests that \textbf{we can define addition (and subtraction) of two vectors}:
+\begin{align*}
+\vec{d}&=\begin{pmatrix}
+           x_2-x_1 \\
+           y_2-y_1 \\
+         \end{pmatrix}=\begin{pmatrix}
+           x_2 \\
+           y_2 \\
+         \end{pmatrix}-\begin{pmatrix}
+           x_1 \\
+           y_1 \\
+         \end{pmatrix}\\
+         \vec d&=\vec r_2-\vec r_1\\
+         \therefore \vec r_2&=\vec r_1+\vec d
+\end{align*}
+where adding (or subtracting) two vectors means to add (or subtract) each component to obtain the corresponding components of the new vector. In the last line, we re-arranged the equation to show that the position vector $\vec r_2$ is the sum of $\vec r_1$ and $\vec d$. This highlights a geometrical aspect of vector addition, shown in Figure \ref{fig:chap4:vecadd}. When you want to add vectors, simply draw the two vectors ``head to tail'' to get the sum vector (from the tail of the first vector to the head of the last vector).
+
+\begin{example}{Given two vectors, $\vec a=2\hat x+3\hat y$, and $\vec b=5\hat x-2\hat y$, calculate the vector $\vec c= 2\vec a- 3\vec b$.}
+This can easily be solved algebraically:
+\begin{align*}
+\vec c &= 2\vec a- 3\vec b\\
+&=2 (2\hat x+3\hat y) - 3 (5\hat x-2\hat y) \\
+&=(4\hat x+6\hat y)-(15\hat x-6\hat y) \\
+&=(4-15)\hat x + (6+6) \hat y\\
+&= -9 \hat x + 12 \hat y
+\end{align*}
+\end{example}
+
+\begin{checkpointMC}{What is the magnitude (the length) of the vector $5\hat x-2\hat y$?}
+\item 3.0
+\item 5.4% correct
+\item 7.0
+\item 10.0
+\end{checkpointMC}
+
+\subsection{Using vectors to describe motion in two dimensions}
+We now have all of the required elements to describe motion in two dimensions. We can specify the location of an object with its coordinates, and we can quantify any displacement by a vector. First consider the case of an object moving at a constant velocity in a particular direction. Suppose that in a period of time $\Delta t$, the object goes from position $P_1$ to position $P_2$, with position vectors $\vec r_1$ and $\vec r_2$, respectively. We can describe the object at any time, $t$, using its position vector, $\vec r(t)$, which is a function of time:
+\begin{align*}
+\vec r(t=t_0)&=\vec r_1\\
+\vec r(t=t_0+\Delta t)&=\vec r_2
+\end{align*}
+More generally, we can describe the $x$ and $y$ components of the position vector with independent functions, $x(t)$, and $y(t)$, respectively:
+\begin{align*}
+\vec r(t) = \begin{pmatrix}
+           x(t) \\
+           y(t) \\
+         \end{pmatrix}= x(t) \hat x + y(t) \hat y
+\end{align*}
+We can define a displacement vector, $\Delta\vec r=\vec r_2-\vec r_1$, and by analogy to the one dimensional case, we can define an \textbf{average} velocity vector, $\vec v$ as:
+\begin{align}
+\vec v = \frac{\Delta \vec r}{\Delta t}
+\end{align}
+The average velocity vector will have the same direction as $\Delta \vec r$, since it the displacement vector divided by a scalar ($\Delta t$). The velocity vector thus points in the same direction as the displacement. The magnitude of the velocity vector, which we call ``speed'', will be proportional to the length of the displacement vector. If the object moves a large distance in a small amount of time, it will thus have a large velocity vector. This definition of the velocity vector thus has the correct intuitive properties (points in the direction of motion, is larger for faster objects).
+
+For example, if the object when from point $P_1(x_1,y_1)$ to point $P_2(x_2,y_2)$ in an amount of time $\Delta t$, the average velocity vector is given by:
+\begin{align*}
+\vec v &= \frac{\Delta \vec r}{\Delta t}\\
+&=\frac{1}{\Delta t}\begin{pmatrix}
+           x_2-x_1 \\
+           y_2-y_1 \\
+         \end{pmatrix}\\
+ &=\frac{1}{\Delta t}\begin{pmatrix}
+           \Delta x \\
+           \Delta y \\
+         \end{pmatrix}\\     
+ &=\begin{pmatrix}
+           \frac{\Delta x}{\Delta t} \\
+           \frac{\Delta y}{\Delta t}\\
+         \end{pmatrix}\\       
+ &=\begin{pmatrix}
+           v_x \\
+           v_y \\
+         \end{pmatrix}\\    
+\therefore \vec v &= v_x\hat x+v_y\hat y                     
+\end{align*}
+That is, the $x$ and $y$ components of the average velocity vector can be found by separately determining the average velocity in each direction. For example, $v_x=\frac{\Delta x}{\Delta t}$ corresponds to the average velocity in the $x$ direction, and can be considered independent from the velocity in the $y$ direction, $v_y$. The magnitude of the average velocity vector (i.e. the average speed), is given by:
+\begin{align*}
+||\vec v||&=\sqrt{v_x^2+_y^2}=\frac{1}{\Delta t}\sqrt{\Delta x^2+\Delta y^2}=\frac{\Delta r}{\Delta t}
+\end{align*}
+where $\Delta r$ is the magnitude of the displacement vector. Thus, the average speed is given by the distance covered divided by the time taken to cover that distance, in analogy to the one dimensional case.
+
+\begin{checkpointMC}{A llama runs in a field from a position $(x_1,y_1)=(\SI{2}{m},\SI{5}{m})$ to a position $(x_2,y_2)=(\SI{6}{m},\SI{8}{m})$ in a time $\Delta t=\SI{0.5}{s}$, as measured by Marcel, a llama farmer standing at the origin of the Cartesian coordinate system. What is the average speed of the llama?}
+\item \SI{1}{m/s}
+\item \SI{5}{m/s}
+\item \SI{10}{m/s}%correct
+\item \SI{15}{m/s}
+\end{checkpointMC}
+
+If the velocity of the object is not constant, then we define the \textbf{instantaneous velocity vector} by taking the limit $\Delta t\to 0$:
+\begin{align}
+\vec v(t) &= \lim_{\Delta t \to 0}\frac{\Delta \vec r}{\Delta t}=\frac{d\vec r}{dt}
+\end{align}
+which gives us the time derivative of the position vector (in one dimension, it was the time derivative of position). Writing the components of the position vector as functions $x(t)$ and $y(t)$, the instantaneous velocity becomes:
+\begin{align}
+\label{eqn:chap4:vvecdef}
+\Aboxed{\vec v(t) &=\frac{d}{dt}\vec r(t) }\\
+&=\frac{d}{dt} \begin{pmatrix}
+           x(t) \\
+           y(t) \\
+         \end{pmatrix}\nonumber\\ 
+&=\begin{pmatrix}
+           \frac{dx}{dt}  \\
+          \frac{dy}{dt}  \\
+         \end{pmatrix}\nonumber\\ 
+ &=\begin{pmatrix}
+           v_x(t) \\
+           v_y(t) \\
+         \end{pmatrix}\nonumber\\   
+\therefore \vec v(t) &= v_x(t)\hat x+v_y(t)\hat y  \nonumber     
+\end{align}
+where, again, we find that the components of the velocity vector are simply the velocities in the $x$ and $y$ direction. This means that we can treat motion in two dimensions as having two independent components: a motion along $x$ and a separate motion along $y$.
+
+Similarly the acceleration vector is given by:
+\begin{align}
+\label{eqn:chap4:avecdef}
+\Aboxed{\vec a(t) &= \frac{d}{dt}\vec v(t)} \\
+&=\begin{pmatrix}
+           \frac{dv_x}{dt}  \\
+          \frac{dv_y}{dt}  \\
+         \end{pmatrix}\nonumber\\
+&=\begin{pmatrix}
+           a_x(t) \\
+           a_y(t) \\
+         \end{pmatrix}\nonumber\\
+\therefore \vec a(t) &= a_x(t)\hat x+a_y(t)\hat y      \nonumber        
+\end{align}
+
+For example, if an object, at time $t=0$ had a position vector $\vec r_0=(x_0,y_0)$, a velocity vector $\vec v_0=v_{0x}\hat x + v_{0y}\hat y$, and has a constant acceleration vector, $\vec a = a_x\hat x+a_y\hat y$, then the velocity vector as a function of time, $\vec v(t)$, is given by:
+\begin{align*}
+\vec v(t) = \vec v_0 + \vec a t
+\end{align*}
+Or in vector notation:
+\begin{align*}
+\begin{pmatrix}
+           v_x(t) \\
+           v_y(t) \\
+         \end{pmatrix} = \begin{pmatrix}
+           v_{0x} \\
+           v_{0y} \\
+         \end{pmatrix} + \begin{pmatrix}
+           a_xt \\
+           a_yt \\
+         \end{pmatrix}
+\end{align*}
+which really can be considered as two independent equations for the components of the velocity vector:
+\begin{align*}
+v_x(t)&=v_{0x}+a_xt \\
+v_y(t)&=v_{0y}+a_yt \\
+\end{align*}
+where you will recognize the first equation from chapter \ref{chap:3_Kinematics1D}. The position vector is given by:
+\begin{align*}
+\vec r(t) = \vec r_0 + \vec v_0 t + \frac{1}{2} \vec at^2
+\end{align*}
+with components:
+\begin{align*}
+x(t) &= x_0+v_{0x}t+\frac{1}{2}a_xt^2\\
+y(t) &= y_0+v_{0y}t+\frac{1}{2}a_yt^2\\
+\end{align*}
+which again shows that two dimensional motion can be considered as separate and independent motions in each direction.
+
+\begin{example}{An object starts at the origin of a coordinate system at time $t=\SI{0}{s}$, with an initial velocity vector $\vec v_0=(\SI{10}{m/s})\hat x+(\SI{15}{m/s})\hat y$. The acceleration in the $x$ direction is \SI{0}{m/s^2} and the acceleration in the $y$ direction is \SI{-10}{m/s^2}.
+\begin{enumerate}[label=(\alph*)]
+\item Write an equation for the position vector as a function of time.
+\item Determine the position of the object at $t=\SI{10}{s}$.
+\item Plot the trajectory of the object for the first \SI{5}{s} of motion.
+\end{enumerate}
+\ }
+\label{ex:chap4:parabola}
+\textbf{a)}We can consider the motion in the $x$ and $y$ direction separately. In the $x$ direction, the acceleration is 0, and the position is thus given by:
+\begin{align*}
+x(t)&=x_0+v_{0x}t\\
+&=(\SI{0}{m})+(\SI{10}{m/s})t\\
+&=(\SI{10}{m/s})t
+\end{align*}
+In the $y$ direction, we have a constant acceleration, so the position is given by:
+\begin{align*}
+y(t) &= y_0+v_{0y}t+\frac{1}{2}a_yt^2\\
+&=(\SI{0}{m})+(\SI{15}{m/s})t+\frac{1}{2}(\SI{-10}{m/s^2})t^2\\
+&=(\SI{15}{m/s})t-\frac{1}{2}(\SI{10}{m/s^2})t^2\\
+\end{align*}
+The position vector as a function of time can thus be written as:
+\begin{align*}
+\vec r(t) &= \begin{pmatrix}
+           x(t) \\
+           y(t) \\
+          \end{pmatrix}\\
+          &= \begin{pmatrix}
+           (\SI{10}{m/s})t \\
+           (\SI{15}{m/s})t-\frac{1}{2}(\SI{10}{m/s^2})t^2 \\
+         \end{pmatrix}
+\end{align*}
+\textbf{b)} Using $t=\SI{10}{s}$ in the above equation gives:
+\begin{align*}
+\vec r(t=\SI{10}{s})&= \begin{pmatrix}
+           (\SI{10}{m/s})(\SI{10}{s}) \\
+           (\SI{15}{m/s})(\SI{10}{s})-\frac{1}{2}(\SI{10}{m/s^2})(\SI{10}{s})^2 \\
+         \end{pmatrix}\\
+         &= \begin{pmatrix}
+           (\SI{100}{m}) \\
+           (\SI{-350}{m})\\
+         \end{pmatrix}
+\end{align*}
+\textbf{c)} We can plot the trajectory using python:
+
+\begin{python}[caption=Trajectory in xy plane]
+#import modules that we need
+import numpy as np #for arrays of numbers
+import pylab as pl #for plotting
+
+#define functions for the x and y positions:
+def x(t):
+    return 10*t
+
+def y(t):
+    return 15*t-0.5*10*t**2
+
+#define 10 values of t from 0 to 5 s:
+tvals = np.linspace(0,5,10)
+
+#calculate x and y at those 10 values of t using the functions
+#we defined above:
+xvals = x(tvals)
+yvals = y(tvals)
+
+#plot the result:
+pl.plot(xvals,yvals, marker='o')
+pl.xlabel("x [m]",fontsize=14)
+pl.ylabel("y [m]",fontsize=14)
+pl.title("Trajectory in the xy plane",fontsize=14)
+pl.grid()
+pl.show()
+\end{python}
+\begin{poutput}
+(*\capfig{0.5\textwidth}{figures/Chapter4/parabola.png}{\label{fig:chap4:parabola}Parabolic trajectory of an object with no acceleration in the $x$ direction and a negative acceleration in the $y$ direction.}*)
+\end{poutput}
+As you can see, the trajectory is a parabola, and corresponds to what you would get when throwing an object with an initial velocity with upwards (positive $y$) and horizontal (positive $x$) components. If you look at only the $y$ axis, you will see that the object first goes up, then turns around and goes back down. This is exactly what happens when you throw a ball upwards, independently of whether the object is moving in the $x$ direction. In the $x$ direction, the object just moves with a constant velocity. The points on the graph are drawn for constant time intervals (the time between each point, $\Delta t$ is constant). If you look at the distance between points projected onto the $x$ axis, you will see that they are all equidistant and that along $x$, the motion corresponds to that of an object with constant velocity. 
+\end{example}
+
+\begin{checkpointMC}{In example \ref{ex:chap4:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:chap4:parabola}?}
+\item $\vec v=(\SI{10}{m/s})\hat x+(\SI{15}{m/s})\hat y$
+\item $\vec v=(\SI{15}{m/s})\hat y$
+\item $\vec v=(\SI{10}{m/s})\hat x$ %correct
+\item none of the above
+\end{checkpointMC}
+
+\subsection{Accelerated motion when the velocity vector changes direction}
+\label{sec:chap4:accvconst}
+One key difference with one dimensional motion is that, in two dimensions, it is possible to have a non-zero acceleration even when the speed is constant. Recall, the acceleration \textbf{vector} is defined as the time derivative of the velocity \textbf{vector} (equation \ref{eqn:chap4:avecdef}). This means that if the velocity vector changes with time, then the acceleration vector is non-zero. In addition, recall that a vector has two key properties: a length and a direction. The length of the velocity vector is called the speed. If the length of the velocity vector (speed) is constant, it is still possible that the \textbf{direction} of the velocity vector changes with time, and thus, that there is an acceleration. In this case, the acceleration would not result in a change of speed, but rather in a change of the direction of motion. This is exactly what happens when an object goes around in a circle with a constant speed. 
+\rwcapfig[14]{0.35\textwidth}{figures/Chapter4/deltav.png}{\label{fig:chap4:deltav} Illustration of how the direction of the velocity vector can change when speed is constant.}
+Figure \ref{fig:chap4:deltav} shows an illustration of the velocity vector, $\vec v$, at two different times, $\vec v_1$ and $\vec v_2$, as well as the vector difference, $\Delta \vec v=\vec v_2 - \vec v_1$, between the two. In this case, the length of the velocity vector did not change with time ($||\vec v_1||=||\vec v_2||$). The acceleration vector is given by:
+\begin{align*}
+\vec a = \lim_{\Delta t\to 0}\frac{\Delta \vec v}{\Delta t}
+\end{align*}
+and will thus have a direction parallel to $\Delta v$, and a magnitude that is proportional to $\Delta v$. Thus, even if the velocity vector does not change amplitude (speed is constant), the acceleration vector can be non-zero if the velocity vector changes \textit{direction}.
+
+Let us write the velocity vector, $\vec v$, in terms of its magnitude, $v$, and a unit vector, $\hat v$, in the direction of $\vec v$:
+\begin{align*}
+\vec v &=v_x\hat x+v_y\hat y= v \hat v\\
+v&=||\vec v||=\sqrt{v_x^2+v_y^2}\\
+\hat v &= \frac{v_x}{v}\hat x+\frac{v_y}{v}\hat y\\
+\end{align*}
+In the most general case, both the magnitude of the velocity and its direction can change with time. That is, all velocity components are functions of time:
+\begin{align*}
+\vec v(t)&=v(t)\hat v(t)\\
+&=v_x(t)\hat x+v_y(t)\hat y
+\end{align*}
+When we take the derivative of $\vec v(t)$, we thus have to take the derivative of a product of functions of time, $v(t)\hat v(t)$, using the formulas in Table \ref{tab:appA:combders}. The acceleration vector is thus given by:
+\begin{align}
+\label{eqn:chap4:avecdef2}
+\vec a &= \frac{d}{dt}\vec v(t)= \frac{d}{dt}v(t)\hat v(t)\nonumber\\
+\Aboxed{\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}}
+\end{align}
+and has two terms. The first term, $\frac{dv}{dt}\hat v(t)$, is zero if the speed is constant ($\frac{dv}{dt}=0$). The second term, $v(t)\frac{d\hat v}{dt}$, is zero if the direction of the velocity vector is constant ($\frac{d\hat v}{dt}=0$). In general though, the acceleration vector has two terms corresponding to the change in speed, and to the change in the direction of the velocity, respectively.
+
+In general, the specific functional form of the acceleration vector will depend on the path being taken by the object. If we consider the case where speed is constant, then we have:
+\begin{align*}
+v(t) &= v \\
+\frac{dv}{dt}&=0\\
+v_x^2(t)+v_y^2(t) &=v^2 \\
+\therefore v_y(t)&=\sqrt{v^2-v_x(t)^2}
+\end{align*}
+\rwcapfig[8]{0.35\textwidth}{figures/Chapter4/aperpv.png}{\label{fig:chap4:aperpv} Illustration that the acceleration vector is perpendicular to the velocity vector if speed is constant.}
+In other words, if the magnitude of the velocity is constant, then the $x$ and $y$ components are no longer independent (if the $x$ component gets larger, then the $y$ component must get smaller so that the total magnitude remains unchanged). If the speed is constant, then the acceleration vector is given by:
+\begin{align}
+\label{eqn:chap4:vecaconstv}
+\vec a&=\frac{dv}{dt}\hat v(t)+v\frac{d\hat v}{dt}\nonumber\\
+&=0 + v\frac{d}{dt}\hat v(t)\nonumber\\
+&=v\frac{d}{dt}\left(\frac{v_x(t)}{v}\hat x+\frac{v_y(t)}{v}\hat y   )\right)\nonumber\\
+&=\frac{dv_x}{dt}\hat x + \frac{d}{dt}\sqrt{v^2-v_x(t)^2}\hat y\nonumber\\
+&=\frac{dv_x}{dt}\hat x + \frac{1}{2\sqrt{v^2-v_x(t)^2}}(-2v_x(t))\frac{dv_x}{dt}\hat y\nonumber\\
+&=\frac{dv_x}{dt}\hat x - \frac{v_x(t)}{\sqrt{v^2-v_x(t)^2}}\frac{dv_x}{dt}\hat y\nonumber\\
+&=\frac{dv_x}{dt}\hat x - \frac{v_x(t)}{v_y(t)}\frac{dv_x}{dt}\hat y\nonumber\\
+\Aboxed{\vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)}
+\end{align}
+The resulting acceleration vector is illustrated in Figure \ref{fig:chap4:aperpv} along with the velocity vector. Rather, a vector parallel to the acceleration vector is illustrated, as the factor of $\frac{dv_x}{dt}$ was omitted (as you recall, multiplying by a scalar only changes the length, not the direction). The velocity vector has components $v_x$ and $v_y$, which allows us to calculate the angle, $\theta$ that it makes with the $x$ axis:
+\begin{align*}
+\tan(\theta)=\frac{v_y}{v_x}
+\end{align*}
+Similarly, the vector that is parallel to the acceleration has components of $1$ and $-\frac{v_x}{v_y}$, allowing us to determine the angle, $\phi$, that it makes with the $x$ axis:
+\begin{align*}
+\tan(\phi)=\frac{v_x}{v_y}
+\end{align*}
+Note that $\tan(\theta)$ is the inverse of $\tan(\phi)$, or in other words, $\tan(\theta)=\cot(\phi)$, meaning that $\theta$ and $\phi$ are complementary and thus must sum to $\frac{\pi}{2}$ (\SI{90}{\degree}). This means that \textbf{the acceleration vector is perpendicular to the velocity vector if the speed is constant and the direction of the velocity changes}. 
+
+In other words, when we write the acceleration vector, we can identify two components:
+\begin{align*}
+\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}\\
+&=\vec a_{\parallel}(t) + \vec a_{\bot}(t)\\
+\therefore \vec a_{\parallel}(t)&=\frac{dv}{dt}\hat v(t)\\
+\therefore \vec a_{\bot}(t)&=v\frac{d\hat v}{dt}=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)
+\end{align*}
+where $\vec a_{\parallel}(t)$ is the component of the acceleration that is parallel to the velocity vector, and is responsible for changing its magnitude, and $\vec a_{\bot}(t)$, which is perpendicular to the velocity vector and is only responsible for changing the direction of the motion.
+
+\begin{checkpointMC}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
+\item it has a magnitude of zero.
+\item it is perpendicular to the velocity vector.
+\item it is parallel to the velocity vector.
+\item it is in a direction other than parallel or perpendicular to the velocity vector.
+\end{checkpointMC}
+
+\subsection{Relative motion}
+In the previous chapter, we examined how to convert the description of motion from one reference frame to another. Effectively, we found that we only needed to add the velocity of one frame with respect to the other in order to convert between reference frames. We saw that if the speeds are small compared to the speed of light, the addition of the velocity was trivial, but that it was a little more complicated when the frames of reference or the objects are moving with speeds close to the speed of light. We will start by assuming that speeds are small and that we can use Galilean relativity here. 
+
+Recall the one dimensional situation where we described the position of an object, $A$, using an axis $x$ as $x^A(t)$. Suppose that the reference frame, $x$, is moving with a constant speed, $v'^B$, relative to a second reference frame, $x'$. We found that the position of the object is described in the $x'$ reference frame as:
+\begin{align*}
+x'^A(t)=v'^Bt+x^A(t)
+\end{align*}
+if the origins of the two systems coincided at $t=0$. The equation above simply states that the distance of the object to the $x'$ origin is the sum of the distance from the $x'$ origin to the $x$ origin \textbf{and} the distance from the $x$ origin to the object.
+
+In two dimensions, we proceed in exactly the same way, but use vectors instead:
+\begin{align*}
+\vec r'^A(t) = \vec v'^Bt+\vec r^A(t)
+\end{align*}
+where $r^A(t)$ is the position of the object as described in the $xy$ reference frame, $\vec v'^B$, is the velocity vector describing the motion of the origin of the $xy$ coordinate system relative to an $x'y'$ coordinate system. $\vec r'^A(t)$ is the position of the object in the $x'y'$ coordinate system. We have assumed that the origins of the two coordinate systems coincided at $t=0$ and that the axes of the coordinate systems are parallel ($x$ parallel to $x'$ and $y$ parallel to $y'$).
+
+Note that the velocity of the object in the $x'y'$ system is found by adding the velocity of $xy$ relative to $x'y'$ and the velocity of the object in the $xy$ frame ($\vec v^A(t)$):
+\begin{align*}
+\frac{d}{dt}\vec r'^A(t) &=\frac{d}{dt}(\vec v'^Bt+\vec r^A(t))\\
+&=\vec v'^B+\vec v^A(t)
+\end{align*}
+
+As an example, consider the situation depicted in Figure \ref{fig:chap4:2drel}. Brice is on a boat off the shore of Nice, with a coordinate system $xy$, and is describing the position of a boat carrying Alice. He describes Alice's position as $\vec r^A(t)$ in the $xy$ coordinate system. Igor is on the shore and also wishes to describe Alice's position using the work done by Brice. Igor sees Brice's boat move with a velocity $\vec v'^B$ as measured in his $x'y'$ coordinate system. In order to find the vector pointing to Alice's position $\vec r'^A(t)$, he adds the vector from his origin to Brice's origin ($\vec v'^B t$) and the vector from Brice's origin to Alice $\vec r^A(t)$.
+
+\capfig{0.7\textwidth}{figures/Chapter4/2drel.png}{\label{fig:chap4:2drel} Example of converting from one reference frame to another in two dimensions using vector addition.}
+
+Writing this out by coordinate, we have:
+\begin{align*}
+x'^A(t)&=v'^B_xt+x^A(t)\\
+y'^A(t)&=v'^B_yt+y^A(t)
+\end{align*}
+and for the velocities:
+\begin{align*}
+v_x'^A(t)&=v'^B_x+v_x^A(t)\\
+v_y'^A(t)&=v'^B_y+v_y^A(t)
+\end{align*}
+It turns out that extending this to Special Relativity is ``trivial'', if one specifically chooses the $x$ and $x'$ directions to be in the same direction as $v'^B$. In this case, only the $x$ coordinates are affected by the Lorentz transformation:
+\begin{align*}
+x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)\\
+t'&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)\\
+y'^A(t)&=v'^B_yt+y^A(t)
+\end{align*}
+where of course, one also has to transform the time ``coordinate''.
+
+\begin{checkpointMC}{You are on a boat and crossing a North-flowing river, from the East bank to the West bank. You point your boat in the West direction and cross the river. \chloe is watching your boat cross the river from the shore, in which direction does she measure your velocity vector to be?}
+\item in the North direction
+\item in the West direction
+\item a combination of North and West directions
+\end{checkpointMC}
+
+
+\section{Motion in three dimensions}
+The big challenge was to expand our description of motion from one dimension to two. Adding a third dimension ends up being trivial now that we know how to use vectors. In three dimensions, we describe the position of a point using three coordinates.
+
+\subsection{3D Coordinate systems}
+In a Cartesian coordinate system, we use the variables, $x$, $y$, and $z$, and simply add a third axis, $z$, that is perpendicular to both $x$ and $y$. Two additional coordinate systems are common in three dimensions, namely ``cylindrical'' and ``spherical coordinates''. All three systems are illustrated in Figure \ref{fig:chap4:3dcoords} superimposed onto the Cartesian system.
+\capfig{0.85\textwidth}{figures/Chapter4/3dcoords.png}{\label{fig:chap4:3dcoords} Cartesian (left), cylindrical (centre) and spherical (right) coordinate systems used in three dimensions. The $y$ and $z$ axes are in the plane of the page, whereas the $x$ axis comes out of the page.}
+
+By convention, we use the $z$ axis to be the vertical direction in three dimensions. In cylindrical coordinates, we keep the same Cartesian coordinate $z$ to indicate the height above the $xy$ plane. However, we use the \textit{azimuthal angle}, $\phi$, and the radius, $\rho$, to describe the position of the projection of a point onto the $xy$ plane. $\phi$ is the angle that the projected point makes with the $x$ axis and $\rho$ is the distance of that projected point to the origin. Thus, cylindrical coordinates are very similar to the polar coordinate system introduced in two dimensions, except with the addition of the $z$ coordinate. Cylindrical coordinates are useful for describing situations with azimuthal symmetry, such as motion along a cylinder. The cylindrical coordinates are related to the Cartesian coordinates by:
+\begin{align*}
+\rho &= \sqrt{x^2+y^2}\\
+\tan(\phi) &= \frac{y}{x}\\
+z&=z
+\end{align*}
+In spherical coordinates, a point $P$ is described by the radius, $r$, the distance from the point to the origin, the \textit{polar angle} $\theta$ between the position vector $\vec r$ and the z-axis, and the \textit{azimuthal angle}, $\phi$, defined in the same way as in cylindrical coordinates. Spherical coordinates are useful for describing situations that have spherical symmetry, such as a person walking on the surface of the Earth. The spherical coordinates are related to the Cartesian coordinates by:
+\begin{align*}
+r &= \sqrt{x^2+y^2+z^2}\\
+\tan(\theta) &= \frac{z}{r}=\frac{z}{\sqrt{x^2+y^2+z^2}}\\
+\tan(\phi) &= \frac{y}{x}\\
+\end{align*}
+\subsection{Describing motion in three dimensions}
+Using Cartesian coordinates, it is straightforward to extend our description of motion from two dimensions to three.  The position of an object is now described by three independent functions, $x(t)$, $y(t)$, $z(t)$, that make up the three components of a position vector $\vec r(t)$:
+\begin{align*}
+\vec r(t) &= \begin{pmatrix}
+           x(t) \\
+           y(t) \\
+           z(t)  \\
+         \end{pmatrix}\\
+\therefore \vec r(t)  &= x(t) \hat x + y(t) \hat y + z(t) \hat z
+\end{align*}
+Note that sometimes, people use $\hat i$, $\hat j$, and $\hat k$ to denote the unit vectors in the $x$, $y$, and $z$ directions. The unit vectors, in three dimensions, are given by:
+\begin{align*}
+\hat x &= \begin{pmatrix}
+           1\\
+           0 \\
+           0\\
+         \end{pmatrix}\\
+\hat y &= \begin{pmatrix}
+           0\\
+           1 \\
+           0\\
+         \end{pmatrix}\\ 
+\hat z &= \begin{pmatrix}
+           0\\
+           0 \\
+           1\\
+         \end{pmatrix}\\ 
+\end{align*}
+The velocity vector now has three components and is defined analogously to the 2D case:
+\begin{align*}
+\vec v(t) &=\frac{d\vec r}{dt}
+ =\begin{pmatrix}
+           \frac{dx}{dt}  \\
+          \frac{dy}{dt}  \\
+          \frac{dz}{dt}  \\
+         \end{pmatrix}
+ =\begin{pmatrix}
+           v_x(t) \\
+           v_y(t) \\
+           v_z(t) \\
+         \end{pmatrix}\\   
+\therefore \vec v(t) &= v_x(t)\hat x+v_y(t)\hat y+v_z(t)\hat z  \nonumber 
+\end{align*}
+and the acceleration is defined in a similar way:
+\begin{align*}
+\vec a(t)  &=\frac{d\vec v}{dt}
+ =\begin{pmatrix}
+           \frac{dv_x}{dt}  \\
+          \frac{dv_y}{dt}  \\
+          \frac{dv_z}{dt}  \\
+         \end{pmatrix}
+ =\begin{pmatrix}
+           a_x(t) \\
+           a_y(t) \\
+           a_z(t) \\
+         \end{pmatrix}\\   
+\therefore \vec a(t) &= a_x(t)\hat x+a_y(t)\hat y+a_z(t)\hat z  \nonumber 
+\end{align*}
+
+In particular, if an object has a constant acceleration, $\vec a=a_x\hat x+a_y\hat y+a_z\hat z$, and started at $t=0$ with a position $\vec r_0$ and velocity $\vec v_0$, then its velocity vector is given by:
+\begin{align*}
+\vec v(t)  &= \vec v_0+\vec at=\begin{pmatrix}
+           v_{0x}+ a_xt \\
+           v_{0y}+ a_yt \\
+           v_{0z}+ a_zt \\
+         \end{pmatrix}\\
+\end{align*}
+and the position vector is given by:
+\begin{align*}
+\vec r(t)= \vec r_0+\vec v_0 t+\frac{1}{2}\vec a t^2=\begin{pmatrix}
+           x_0+v_{0x}t+\frac{1}{2} a_xt^2 \\
+           y_0+v_{0y}t+\frac{1}{2} a_yt^2 \\
+           z_0+v_{0z}t+\frac{1}{2} a_zt^2 \\
+         \end{pmatrix}\\
+\end{align*}
+
+\section{Circular motion}
+We often consider the motion of an object around a circle of fixed radius, $R$. In principle, this is motion in two dimensions, as a circle is necessarily in a two dimensional plane. However, since the object is constrained to move along the circumference of the circle, it can be thought of (and treated as) motion along a one dimensional axis that is curved. 
+\rwcapfig[14]{0.35\textwidth}{figures/Chapter4/circle.png}{\label{fig:chap4:circle} Describing the motion of an object around a circle of radius $R$.}
+
+Figure \ref{fig:chap4:circle} shows how we can describe motion on a circle. We could use $x(t)$ and $y(t)$ to describe the position on the circle, however, $x(t)$ and $y(t)$ are no longer independent, as $x^2(t)(t)+y^2=R^2$ for motion on the circle. Instead, we could think of an axis that is bent around the circle (as shown by the curved arrow, the $d$ axis). The $d$ axis is such that $d=0$ where the circle intersects the $x$ axis, and the value of $d$ increases as we move counter-clockwise along the circle. Instead of using $d$, we can also use the angle, $\theta$, between the position of the object on the circle and the $x$ axis. 
+
+If we express the angle $\theta$ in radians, then it easy to convert between $d$ and $\theta$. Recall, an angle in radians is defined as the length of an arc subtended by that angle divided by the radius of the circle. We thus have:
+\begin{align}
+\label{eqn:chap4:raddef}
+\Aboxed{\theta=\frac{d}{R}}
+\end{align}
+In particular, if the object has gone around the whole circle, then $d=2\pi R$ (the circumference of a circle), and the corresponding angle is, $\theta=\frac{2\pi R}{r}=2\pi$, namely \SI{360}{\degree}. 
+
+By using the angle, $\theta$, instead of $x$ and $y$, we are effectively using polar coordinates, with a fixed radius. As we already saw, the $x$ and $y$ positions are related to $\theta$ by:
+\begin{align*}
+x(t) &= R\cos(\theta(t))\\
+y(t) &= R\sin(\theta(t))\\
+\end{align*}
+where $R$ is a constant. For an object moving along the circle, we can write its position vector, $\vec r(t)$, as:
+\begin{align*}
+\vec r(t)&= \begin{pmatrix}
+           x(t) \\
+           y(t) \\
+         \end{pmatrix}
+         =R \begin{pmatrix}
+           \cos(\theta(t)) \\
+           \sin(\theta(t)) \\
+         \end{pmatrix}
+\end{align*}
+\lwcapfig[8]{0.35\textwidth}{figures/Chapter4/vcircle.png}{\label{fig:chap4:vcircle} The position vector, $\vec r(t)$ is always perpendicular to the velocity vector, $\vec v(t)$, for motion on a circle.}
+and the velocity vector is thus given by:
+\begin{align*}
+\vec v(t) &=\frac{d}{dt}\vec r(t) 
+=\frac{d}{dt} R \begin{pmatrix}
+           \cos(\theta(t)) \\
+           \sin(\theta(t)) \\
+         \end{pmatrix} \\
+&= R \begin{pmatrix}
+           \frac{d}{dt}\cos(\theta(t)) \\
+           \frac{d}{dt}\sin(\theta(t)) \\
+         \end{pmatrix} \\
+ &= R \begin{pmatrix}
+           -\sin(\theta(t))\frac{d\theta}{dt} \\
+           \cos(\theta(t))\frac{d\theta}{dt} \\
+         \end{pmatrix}     
+\end{align*}         
+where we used the Chain Rule to calculate the time derivatives of the trigonometric functions (since $\theta(t)$ is function of time). The magnitude of the velocity vector is given by:
+\begin{align*}
+||\vec v|| &=\sqrt{ v_x^2+v_y^2}\\
+&=\sqrt{ \left(-R\sin(\theta(t))\frac{d\theta}{dt}\right)^2+\left(R\cos(\theta(t))\frac{d\theta}{dt}\right)^2}\\
+&=\sqrt{ R^2\left( \frac{d\theta}{dt}\right)^2[\sin^2(\theta(t))+\cos^2(\theta(t)]}\\
+&=R\left |\frac{d\theta}{dt}\right|
+\end{align*}
+
+The position and velocity vectors are illustrated in Figure \ref{fig:chap4:vcircle} for an angle $\theta$ in the first quadrant ($\theta<\frac{\pi}{2}$). In this case, you can note that the $x$ component of the velocity is negative (in the equation above, and in the Figure). From the equation above, you can also see that $\frac{|v_x|}{|v_y|}=\tan(\theta)$, which is illustrated in Figure \ref{fig:chap4:vcircle}, showing that \textbf{the velocity vector is tangent to the circle} and perpendicular to the position vector.
+
+However, we can simplify our description of motion along the circle by using either $d(t)$ or $\theta(t)$ instead of the vectors for position and velocity. If we use $d(t)$ to represent position along the circumference ($d=0$ where the circle intersects the $x$ axis), then the velocity along the $d$ axis is:
+\begin{align*}
+v_d(t)&=\frac{d}{dt}d(t)\\
+&=\frac{d}{dt}R\theta(t)\\
+&=R\frac{d\theta}{dt}
+\end{align*}
+where we used the fact that $\theta=\frac{d}{R}$ to convert from $d$ to $\theta$. The velocity along the $d$ axis is thus precisely equal to the magnitude of the velocity vector (derived above), which makes sense since the velocity vector is tangent to the circle (and thus in the $d$ direction).
+
+If the object has a \textbf{constant velocity} along the circle and started at a position along the circumference $d=d_0$, then its position can be described as:
+\begin{align*}
+d(t)=d_0+v_dt
+\end{align*}
+or, in terms of $\theta$:
+\begin{align*}
+\theta(t)&=\frac{d(t)}{R}=frac{d_0}{R}+\frac{v_d}{R}t\\
+&=\theta_0 + \frac{d\theta}{dt}t\\
+&=\theta_0 + \omega t\\
+\Aboxed{\therefore \omega &= \frac{d\theta}{dt}}
+\end{align*}
+where we introduced $\theta_0$ as the angle corresponding to $d_0$, and we introduced $\omega=\frac{d\theta}{dt}$, which is analogous to velocity, but for an angle. $\omega$ is called the \textbf{angular velocity} and is a measure of the rate of change of the angle $\theta$. The relation between the ``linear'' velocity $v_d$ and $\omega$ is:
+\begin{align*}
+\Aboxed{v_d=R\omega }
+\end{align*}
+
+Similarly, if the object is accelerating, we can define an \textbf{angular acceleration}, $\alpha(t)$:
+\begin{align*}
+\alpha(t)=\frac{d\omega}{dt}
+\end{align*}
+which can directly be related to the acceleration in the $d$ direction, $a_d(t)$:
+\begin{align*}
+a_d(t) &= \frac{d}{dt}v_d\\
+&=\frac{d}{dt}\omega R=R\frac{d\omega}{dt}\\
+\Aboxed{a_d(t)&=R\alpha }
+\end{align*}
+Thus, the linear quantities (those along the $d$ axis) can be related to the angular quantities by multiplying the angular quantities by $R$:
+\begin{align}
+d&=R\theta\\
+v_d&=R\omega\\
+a_d&=R\alpha
+\end{align}
+If the object started at $t=0$ with a position $d=d_0$ ($\theta=\theta_0$), and an initial linear velocity $v_{0d}$ (angular velocity $\omega_0$), and has a \textbf{constant linear acceleration} around the circle, $a_d$ (angular acceleration, $\alpha$), then the position of the object can be described as:
+\begin{align*}
+d(t) &= d_0+v_{d0}t+\frac{1}{2}a_d t^2\\
+\theta(t) &= \theta_0+\omega_0t+\frac{1}{2}\alpha t^2
+\end{align*}
+which corresponds to an object that is going around the circle faster and faster.
+
+As you recall from section \ref{sec:chap4:accvconst}, we can compute the acceleration \textbf{vector} and identify components that are parallel and perpendicular to the velocity vector:
+\begin{align*}
+\vec a&=\vec a_{\parallel}(t) + \vec a_{\bot}(t)\\
+&=\frac{dv}{dt}\hat v(t)+v\frac{d\hat v}{dt}\\
+\end{align*}
+The first term, $\vec a_{\parallel}(t)=\frac{dv}{dt}\hat v(t)$, is parallel to the velocity vector $\hat v$, and has a magnitude given by:
+\begin{align*}
+||\vec a_{\parallel}(t)||&=\frac{dv}{dt}=\ddt v(t)=\ddt R\omega=R\alpha
+\end{align*}
+That is, the component of the acceleration vector that is parallel to the velocity is precisely the acceleration in the $d$ direction (the linear acceleration). This component of the acceleration is responsible for increasing (or decreasing) the speed of the object. 
+
+As we saw earlier, the perpendicular component of the acceleration, $\vec a_{\bot}(t)$, is responsible for changing the direction of the velocity vector (as the object continuously changes direction when going in a circle). When the motion is around a circle, this component of the acceleration vector is called ``centripetal'' acceleration (i.e. acceleration pointing towards the centre of the circle, as we will see). We can calculate the centripetal acceleration in terms of our angular variables, noting that the unit vector in the direction of the velocity is $\hat v=-\sin(\theta)\hat x+\cos(\theta)\hat y$:
+\begin{align}
+\vec a_{\bot}(t)&=v\frac{d\hat v}{dt}\nonumber\\
+&=(\omega R)\ddt \left[-\sin(\theta)\hat x+\cos(\theta)\hat y\right]\nonumber\\
+&=\omega R \left[-\ddt\sin(\theta)\hat x+\ddt\cos(\theta)\hat y\right]\nonumber\\
+&=\omega R \left[-\cos(\theta)\frac{d\theta}{dt}\hat x-\sin(\theta)\frac{d\theta}{dt}\hat y\right]\nonumber\\
+&=\omega R [-\cos(\theta)\omega\hat x-\sin(\theta)\omega\hat y]\nonumber\\
+\Aboxed{\vec a_{\bot}(t)&=\omega^2 R[-\cos(\theta)\hat x-\sin(\theta)\hat y]}
+\end{align}
+where you can easily verify that the vector $[-\cos(\theta)\hat x-\sin(\theta)\hat y]$ has unit length and points towards the centre of the circle (when the tail is placed on a point on the circle at angle $\theta$). The centripetal acceleration thus points towards the centre of the circle and has magnitude:
+\begin{align}
+a_c(t) = ||\vec a_{\bot}(t)||=\omega^2(t) R = \frac{v^2(t)}{R}
+\end{align}
+where in the last equal sign, we wrote the centripetal acceleration in terms of the speed around the circle.
+
+If an object goes around a circle, it will always have a centripetal acceleration (since its velocity vector must change direction). In addition, if the object's speed is changing, it will also have a linear acceleration, which points in the same direction as the velocity vector (it changes the velocity vector's length but not its direction).
+
+\begin{checkpointMC}{A vicu\~na is going clockwise around a circle that is centred at the origin of an $xy$ coordinate system that is in the plane of the circle. The vicu\~na runs faster and faster around the circle. In which direction does its acceleration vector point just as the vicu\~na is at the point where the circle intersects the positive $y$ axis?}
+\item In the negative $y$ direction
+\item In the positive $y$ direction
+\item A combination of the positive $y$ and positive $x$ directions
+\item A combination of the negative $y$ and positive $x$ directions %correct
+\item A combination of the negative $y$ and negative $x$ directions
+\end{checkpointMC}
+
+\subsection{Period and frequency}
+When an object is moving around in a circle, it will typically complete more than one revolution. If the object is going around the circle with a constant speed, then we can define the \textbf{period and frequency} of the motion. 
+
+The period, $T$, is defined to be the time that it takes to complete one revolution around the circle. If the object has constant angular speed $\omega$, we can find the time, $T$, that it takes to complete one full revolution, from $\theta=0$ to $\theta=2\pi$:
+\begin{align}
+\omega&=\frac{\Delta \theta}{T}=\frac{2\pi}{T}\nonumber\\
+\Aboxed{\therefore T&=\frac{2\pi}{\omega}}
+\end{align}
+We would obtain the same result using the linear quantities; in one revolution, the object covers a distance of $2\pi R$ at a speed of $v$:
+\begin{align*}
+v&=\frac{2\pi R}{T}\\
+T&=\frac{2\pi R}{v}=\frac{2\pi R}{\omega R}=\frac{2\pi}{\omega}
+\end{align*}
+Think of the period as the time that it takes to complete one revolution.
+
+The frequency, $f$, is defined to be the inverse of the period:
+\begin{align*}
+f&=\frac{1}{T}=\frac{\omega}{2\pi}
+\end{align*}
+and has SI units of $\si{Hz}=\si{s^{-1}}$.Think of frequency as the number of revolutions completed per second. Thus, if the frequency is $f=\SI{1}{Hz}$, then the object goes around the circle once per second. 
+\rwcapfig[16]{0.35\textwidth}{figures/Chapter4/twocircles.png}{\label{fig:chap4:twocircles} For a given angular velocity, the linear velocity will be larger on a larger circle ($v=\omega R$).}Another common unit for frequency is the $\si{rpm}$, or ``rotations per minute''. Given the frequency, we can of course obtain the angular velocity:
+\begin{align*}
+\omega = 2\pi f
+\end{align*}
+which is sometimes called the ``angular frequency'' instead of the angular velocity. The angular velocity can really be thought of as a frequency, as it represents the ``amount of angle'' per second that an object covers when going around a circle. The angular velocity does not tell us anything about the actual speed of the object, which depends on the radius $v=\omega R$. This is illustrated in Figure \ref{fig:chap4:twocircles}, where two objects can be travelling around two circles of radius $R_1$ and $R_2$ with the same angular velocity $\omega$. If they have the same angular velocity, then it will take them the same amount of time to complete a revolution. However, the outer object has to cover a much larger distance (the circumference is larger), and thus has to move with a larger linear speed.
+
+\begin{checkpointMC}{A motor is rotating at \SI{3000}{rpm}, what is the corresponding frequency in \si{Hz}?}
+\item \SI{5}{Hz}
+\item \SI{50}{Hz}%correct
+\item \SI{500}{Hz}
+\end{checkpointMC}
+
+
+\newpage
+\section{Summary}
+\vspace{2cm}
+\begin{chapterSummary}
+\item Something interesting
+\end{chapterSummary}
