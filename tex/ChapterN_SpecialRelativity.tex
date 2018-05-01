@@ -1,0 +1,99 @@
+
+\chapter{The theory of special relativity}
+\label{chap:N_SpecialRelativity}
+ \vspace{1cm}
+\begin{learningObjectives}
+\item something interesting
+\end{learningObjectives}
+
+\subsection{Lorentz transformations}
+In the previous section, we found that the position of an object, $x^A$, in one inertial reference frame can be converted to a position, $x'^A$, in a different inertial reference frame using the equation:
+\begin{align*}
+x'^A=v'^Bt+x^A
+\end{align*}
+where $v'^B$ is the velocity of the $x$ frame of reference as measured in the $x'$ frame of reference. We found this by arguing that we could sum the distance from the $x'$ origin to the $x$ origin and the distance from the $x$ origin to the object's position, $x^A$, in the $x$ reference frame. We call this transformation, from $x$ to $x'$, a ``Galilean transformation''. In this section, we briefly introduce the more general way to transform descriptions between reference frames, mostly for completeness.
+
+Although most of our common experience is well described by this transformation, Albert Einstein found that it is no longer accurate if the speeds involved in the situation are close to the speed of light. Einstein's Theory of Special Relativity gives the following transformation instead:
+\begin{align}
+\label{eqn:chap3:LorentzTr}
+x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)\\
+t'&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)
+\end{align}
+where $c$ is the speed of light (\SI{3e8}{m/s}). The first thing to note is that this a considerably more complicated expression. The most bizarre aspect is that the two reference frames have different measures of time ($t$ and $t'$). The above transformation, from $x,t$ to $x',t'$, is called a ``Lorentz transformation''. The fact that we have to include time in the transformation is an aspect related to the fact that Einstein's Theory of Special Relativity tells us that we must consider Space-Time as a single entity (rather than thinking of space and time as separate things).
+
+Let us examine a few aspects of the Lorentz transformation. First, if the velocity, $v'^B$, between reference frames is small when compared to the speed of light, $v'^B<<c$, we have:
+\begin{align*}
+\left(\frac{v'^B}{c}\right)^2&<<1\\
+\therefore \frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}} &\sim 1 \\
+\end{align*}
+In this case, we recover the original Galilean transformation:
+\begin{align*}
+x'^A&=\lim_{v_B<<c}\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)=v'^Bt+x^A\\
+t'&=\lim_{v_B<<c}\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)=t
+\end{align*}
+So \textit{a priori}, this aspect of Einstein's Theory of Special Relativity is difficult to test, as we only expect it to deviate from common experience when $v_B$ is comparable to the speed of light. However, in particle accelerators, subatomic particles are regularly accelerated to speeds close to the speed of light, and their position has to be described using Special Relativity. 
+
+Suppose that a space ship is carrying Chlo\"e and moving with a speed of $v'^B=0.7c=\SI{2.1}{m/s}$. Suppose that Chlo\"e fires an arrow in the same direction as the space ship's motion, and that she measures the speed of the arrow to be $v^A=0.4c=\SI{0.9e8}{m/s}$. Suppose that the space ship goes by Marcel, who is stationary on Earth, right at the moment that Chlo\"e fires the arrow. Let us define the $x$ axis on the ship so that it is positive in the direction of motion with its origin where  Chlo\"e fired the arrow. Let us define $t=t'=0$ to be the moment when the origin of the space ship x-axis is aligned with the origin of Marcel's $x'$ axis on Earth. The $x'$ axis is also set up to be positive in the direction of the space ship's motion and has the origin such that at $t'=0$
+
+Using Galilean Relativity, the speed of the arrow as measured by Marcel would be found by adding the two velocities, $v'^A=v^A+v'^B=1.1c=\SI{3.3e8}{m/s}$. Using Special Relativity, the situation is a little more difficult. The position as measured in Marcel's reference frame is given by:
+\begin{align*}
+x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)
+\end{align*}
+To obtain the arrow's velocity in Marcel's frame, we need the time derivative of $x'^A$ with respect to $t'$, the time measured in Marcel's frame:
+\begin{align*}
+v'^A=\frac{d}{dt'}x'^A
+\end{align*}
+However, $x'^A$ is written in terms of $t$, not $t'$. However, equation \ref{eqn:chap3:LorentzTr}, tells us how $t$ depends on $t'$; we thus need to treat $t$ as a function of $t'$ and use the Chain Rule:
+\begin{align*}
+v'^A&=\frac{d}{dt'}x'^A(t)\\
+&=\frac{d}{dt}x'^A(t)\left(\frac{dt}{dt'}\right)\\
+&=\frac{d}{dt}\left(\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}} (v'^Bt+x^A)  \right)\left(\frac{dt}{dt'}\right)\\
+&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\frac{d}{dt}\left( (v'^Bt+x^A)  \right)\left(\frac{dt}{dt'}\right)\\
+&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+\frac{d}{dt}x^A \right)\left(\frac{dt}{dt'}\right)\\
+&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+v^A \right)\left(\frac{dt}{dt'}\right)\\
+\end{align*}
+We can differentiate equation \ref{eqn:chap3:LorentzTr} to get $\frac{dt'}{dt}$:
+\begin{align*}
+\frac{dt'}{dt}&=\frac{d}{dt'}\left(\frac{1}{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}\left(t+\frac{v'^Bx^A}{c^2} \right)\right)\\
+&=\frac{1}{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}\left(1+\frac{v'^Bv^A}{c^2} \right)
+\end{align*}
+where we identified $v^A=\frac{dx^A}{dt}$. We can take the inverse to get $\frac{dt}{dt'}$:
+\begin{align*}
+\frac{dt}{dt'}&=\frac{1}{\frac{dt'}{dt}}\\
+&=\frac{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}{1+\frac{v'^Bv^A}{c^2}}
+\end{align*}
+Combining everything, we get the velocity of the arrow as measured in Earth's reference frame by Marcel:
+\begin{align}
+\label{eqn:chap3:LorentzV}
+v'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+v^A \right)\left(\frac{dt}{dt'}\right)\nonumber\\
+\Aboxed{v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}}
+\end{align}
+The above equation tells us how to convert the velocity of the arrow as measured in the space ship ($v^A$) into the velocity as measured on Earth, $v'^A$, when the space ship moves with velocity $v'^B$ as measured on Earth. When $v^A$ and $v'^B$ are small compared to $c$, then this equation reduces to the Galilean version ($v'^A=v'^B+v^A$). However, when the velocities are large this is no longer the case. For the above example, with $v^A=0.4c$, $v'^B=0.7c$, we get:
+\begin{align*}
+v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}\\
+&=\frac{(0.7c)+(0.4c)}{1+\frac{(0.7c)(0.4c)}{c^2}}\\
+&=\frac{1.1}{1+0.28}c\\
+&=0.86c=\SI{2.57e8}{m/s}
+\end{align*}
+which is well short of the $1.1c$ that you would expect from Galilean relativity. Suppose instead that $v^A=c$, that is, Chlo\"e fires the arrow at the speed of light (she sees the arrow move away at the speed of light). Marcel will measure the speed of the arrow to be:
+\begin{align*}
+v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}\\
+&=\frac{v'^B+(1.0c)}{1+\frac{v'^B(1.0c)}{c^2}}\\
+&=\frac{v'^B+c}{1+\frac{v'^B}{c}}\\
+&=c \frac{v'^B+c}{c+v'^B}\\
+&=c
+\end{align*}
+regardless of the speed of the space ship! This is a truly strange result from Einstein's theory. If Chlo\"e fires an arrow at the speed of light, Marcel will also measure the arrow moving at the speed of light, regardless of whether or not the space ship is moving. Indeed, all observers in inertial frames of references would agree that the arrow is moving at the same speed, $c$. Although we showed this result as a consequence of the Lorentz transformation, Einstein developed his Theory of Special Relativity by postulating that the speed of light is the same in all inertial reference frames. The Lorentz transformation is then just a consequence of this postulate. This postulate has several strange consequence that have been \textit{experimentally} verified:
+\begin{itemize}
+\item Moving objects contract. That is, fast moving objects become shorter.
+\item Moving clocks slow down. That is, people moving very fast age slower.
+\item People in different inertial reference frames cannot agree on the order in which events took place. 
+\end{itemize}
+We will explore this in more detail when we take a closer look at Einstein's Special Theory of Relativity.
+
+\newpage
+\section{Summary}
+\vspace{2cm}
+\begin{chapterSummary}
+\item Something interesting
+\end{chapterSummary}

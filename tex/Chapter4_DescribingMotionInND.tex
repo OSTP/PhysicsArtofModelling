@@ -32,7 +32,7 @@ In two dimension, to fully describe the position of an object, we must specify b
 \lwcapfig[7]{0.3\textwidth}{figures/Chapter4/polarp.png}{\label{fig:chap4:polarp}Example of a polar coordinate system and a point $P$ with coordinates $(r,\theta)$.}
 The most common choice of coordinate system in two dimensions is a ``Cartesian'' coordinate system, where the $x$ and $y$ axes are perpendicular and share a common origin, as shown in Figure \ref{fig:chap4:xyp}. When applicable, by convention, we usually choose the $y$ axis to correspond to the vertical direction.
 
-Another common choice is a ``polar'' coordinate system where the position of an object is specified by a distance to the origin, $r$, and an angle, $\theta$, as shown in Figure \ref{fig:chap4:polarp}. Often, a polar coordinate system is defined along side a Cartesian system, so that $r$ is the distance to the origin and $\theta$ is the angle with respect to the $x$ axis.
+Another common choice is a ``polar'' coordinate system where the position of an object is specified by a distance to the origin, $r$, and an angle, $\theta$, as shown in Figure \ref{fig:chap4:polarp}. Often, a polar coordinate system is defined alongside a Cartesian system, so that $r$ is the distance to the origin and $\theta$ is the angle with respect to the $x$ axis.
 
 One can easily convert between Cartesian and polar coordinates:
 \begin{align*}
@@ -55,7 +55,7 @@ We specify that a variable is a vector by drawing a little arrow on top of the v
 
 All we need to specify a vector in two dimension are two \textbf{components}. In Cartesian coordinates, we can specify the length of the vector projected onto the $x$ and $y$ axes ($\Delta x$ and $\Delta y$ in Figure \ref{fig:chap4:xydvec}), its $x$ and $y$ components. In polar coordinates, we could specify the total magnitude of the vector (its length, $r$) and the angle that it makes with the $x$ axis, $\theta$.
 
-Several, equivalent, notations can be used for specifying a vector in Cartesian coordinates is:
+Several, equivalent, notations can be used for specifying a vector in Cartesian coordinates:
 \begin{align*}
 \vec d &= \begin{pmatrix}
            d_x \\
@@ -365,12 +365,12 @@ Let us write the velocity vector, $\vec v$, in terms of its magnitude, $v$, and 
 v&=||\vec v||=\sqrt{v_x^2+v_y^2}\\
 \hat v &= \frac{v_x}{v}\hat x+\frac{v_y}{v}\hat y\\
 \end{align*}
-In the most general case, both the magnitude of the velocity and its direction can change with time. That is, all velocity components are functions of time:
+In the most general case, both the magnitude of the velocity and its direction can change with time. That is, both the direction and the magnitude of the velocity vector are functions of time:
 \begin{align*}
 \vec v(t)&=v(t)\hat v(t)\\
 &=v_x(t)\hat x+v_y(t)\hat y
 \end{align*}
-When we take the derivative of $\vec v(t)$, we thus have to take the derivative of a product of functions of time, $v(t)\hat v(t)$, using the formulas in Table \ref{tab:appA:combders}. The acceleration vector is thus given by:
+When we take the derivative of $\vec v(t)$, we have to take the derivative of a product of functions of time, $v(t)\hat v(t)$. Using the rules for taking the derivative of a product, the acceleration vector is given by:
 \begin{align}
 \label{eqn:chap4:avecdef2}
 \vec a &= \frac{d}{dt}\vec v(t)= \frac{d}{dt}v(t)\hat v(t)\nonumber\\
@@ -415,7 +415,7 @@ In other words, when we write the acceleration vector, we can identify two compo
 \therefore \vec a_{\parallel}(t)&=\frac{dv}{dt}\hat v(t)\\
 \therefore \vec a_{\bot}(t)&=v\frac{d\hat v}{dt}=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)
 \end{align*}
-where $\vec a_{\parallel}(t)$ is the component of the acceleration that is parallel to the velocity vector, and is responsible for changing its magnitude, and $\vec a_{\bot}(t)$, which is perpendicular to the velocity vector and is only responsible for changing the direction of the motion.
+where $\vec a_{\parallel}(t)$ is the component of the acceleration that is parallel to the velocity vector, and is responsible for changing its magnitude, and $\vec a_{\bot}(t)$, is the component that is perpendicular to the velocity vector and is responsible for changing the direction of the motion.
 
 \begin{checkpointMC}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
 \item it has a magnitude of zero.
@@ -425,7 +425,7 @@ where $\vec a_{\parallel}(t)$ is the component of the acceleration that is paral
 \end{checkpointMC}
 
 \subsection{Relative motion}
-In the previous chapter, we examined how to convert the description of motion from one reference frame to another. Effectively, we found that we only needed to add the velocity of one frame with respect to the other in order to convert between reference frames. We saw that if the speeds are small compared to the speed of light, the addition of the velocity was trivial, but that it was a little more complicated when the frames of reference or the objects are moving with speeds close to the speed of light. We will start by assuming that speeds are small and that we can use Galilean relativity here. 
+In the previous chapter, we examined how to convert the description of motion from one reference frame to another. Effectively, we found that we only needed to add the velocity of one frame with respect to the other in order to convert between reference frames.
 
 Recall the one dimensional situation where we described the position of an object, $A$, using an axis $x$ as $x^A(t)$. Suppose that the reference frame, $x$, is moving with a constant speed, $v'^B$, relative to a second reference frame, $x'$. We found that the position of the object is described in the $x'$ reference frame as:
 \begin{align*}
@@ -459,13 +459,7 @@ and for the velocities:
 v_x'^A(t)&=v'^B_x+v_x^A(t)\\
 v_y'^A(t)&=v'^B_y+v_y^A(t)
 \end{align*}
-It turns out that extending this to Special Relativity is ``trivial'', if one specifically chooses the $x$ and $x'$ directions to be in the same direction as $v'^B$. In this case, only the $x$ coordinates are affected by the Lorentz transformation:
-\begin{align*}
-x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)\\
-t'&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)\\
-y'^A(t)&=v'^B_yt+y^A(t)
-\end{align*}
-where of course, one also has to transform the time ``coordinate''.
+
 
 \begin{checkpointMC}{You are on a boat and crossing a North-flowing river, from the East bank to the West bank. You point your boat in the West direction and cross the river. \chloe is watching your boat cross the river from the shore, in which direction does she measure your velocity vector to be?}
 \item in the North direction
@@ -573,14 +567,14 @@ and the position vector is given by:
 We often consider the motion of an object around a circle of fixed radius, $R$. In principle, this is motion in two dimensions, as a circle is necessarily in a two dimensional plane. However, since the object is constrained to move along the circumference of the circle, it can be thought of (and treated as) motion along a one dimensional axis that is curved. 
 \rwcapfig[14]{0.35\textwidth}{figures/Chapter4/circle.png}{\label{fig:chap4:circle} Describing the motion of an object around a circle of radius $R$.}
 
-Figure \ref{fig:chap4:circle} shows how we can describe motion on a circle. We could use $x(t)$ and $y(t)$ to describe the position on the circle, however, $x(t)$ and $y(t)$ are no longer independent, as $x^2(t)(t)+y^2=R^2$ for motion on the circle. Instead, we could think of an axis that is bent around the circle (as shown by the curved arrow, the $d$ axis). The $d$ axis is such that $d=0$ where the circle intersects the $x$ axis, and the value of $d$ increases as we move counter-clockwise along the circle. Instead of using $d$, we can also use the angle, $\theta$, between the position of the object on the circle and the $x$ axis. 
+Figure \ref{fig:chap4:circle} shows how we can describe motion on a circle. We could use $x(t)$ and $y(t)$ to describe the position on the circle, however, $x(t)$ and $y(t)$ are no longer independent, as $x^2(t))+y^2(t)=R^2$ for motion on the circle. Instead, we could think of an axis that is bent around the circle (as shown by the curved arrow, the $d$ axis). The $d$ axis is such that $d=0$ where the circle intersects the $x$ axis, and the value of $d$ increases as we move counter-clockwise along the circle. Instead of using $d$, we can also use the angle, $\theta$, between the position of the object on the circle and the $x$ axis. 
 
 If we express the angle $\theta$ in radians, then it easy to convert between $d$ and $\theta$. Recall, an angle in radians is defined as the length of an arc subtended by that angle divided by the radius of the circle. We thus have:
 \begin{align}
 \label{eqn:chap4:raddef}
 \Aboxed{\theta=\frac{d}{R}}
 \end{align}
-In particular, if the object has gone around the whole circle, then $d=2\pi R$ (the circumference of a circle), and the corresponding angle is, $\theta=\frac{2\pi R}{r}=2\pi$, namely \SI{360}{\degree}. 
+In particular, if the object has gone around the whole circle, then $d=2\pi R$ (the circumference of a circle), and the corresponding angle is, $\theta=\frac{2\pi R}{R}=2\pi$, namely \SI{360}{\degree}. 
 
 By using the angle, $\theta$, instead of $x$ and $y$, we are effectively using polar coordinates, with a fixed radius. As we already saw, the $x$ and $y$ positions are related to $\theta$ by:
 \begin{align*}
@@ -721,14 +715,13 @@ We would obtain the same result using the linear quantities; in one revolution, 
 v&=\frac{2\pi R}{T}\\
 T&=\frac{2\pi R}{v}=\frac{2\pi R}{\omega R}=\frac{2\pi}{\omega}
 \end{align*}
-Think of the period as the time that it takes to complete one revolution.
 
 The frequency, $f$, is defined to be the inverse of the period:
 \begin{align*}
 f&=\frac{1}{T}=\frac{\omega}{2\pi}
 \end{align*}
-and has SI units of $\si{Hz}=\si{s^{-1}}$.Think of frequency as the number of revolutions completed per second. Thus, if the frequency is $f=\SI{1}{Hz}$, then the object goes around the circle once per second. 
-\rwcapfig[16]{0.35\textwidth}{figures/Chapter4/twocircles.png}{\label{fig:chap4:twocircles} For a given angular velocity, the linear velocity will be larger on a larger circle ($v=\omega R$).}Another common unit for frequency is the $\si{rpm}$, or ``rotations per minute''. Given the frequency, we can of course obtain the angular velocity:
+and has SI units of $\si{Hz}=\si{s^{-1}}$. Think of frequency as the number of revolutions completed per second. Thus, if the frequency is $f=\SI{1}{Hz}$, then the object goes around the circle once per second. 
+\rwcapfig[16]{0.35\textwidth}{figures/Chapter4/twocircles.png}{\label{fig:chap4:twocircles} For a given angular velocity, the linear velocity will be larger on a larger circle ($v=\omega R$).} Given the frequency, we can of course obtain the angular velocity:
 \begin{align*}
 \omega = 2\pi f
 \end{align*}
