@@ -94,16 +94,16 @@ A special category of vectors is ``unit vectors'', which are simply vectors that
 
 A specific type of unit vectors are those units vectors that are parallel to the axes of the coordinate system. Those vectors are denoted $\hat x$, $\hat y$, $\hat z$ (and sometimes $\hat i$, $\hat j$, $\hat k$ or $\hat e_x$, $\hat e_y$, $\hat e_z$) for the $x$, $y$, and $z$ axes, respectively. 
 
-\subsection{Notations for vectors}
+\subsection{Notations and representation of vectors}
 There are multiple notations for describing a vector using its components. The following, are all equivalent ways to write down the vector $\vec d$ in terms of its components $d_x$ and $d_y$:
 \begin{align*}
-\vec d &= (d_x,d_y)\\
+\vec d &= (d_x,d_y)\quad&\text{row vector}\\
        &=\begin{pmatrix}
            d_x \\
            d_y \\
-         \end{pmatrix}\\
-         &= d_x\hat x +d_y \hat y\\
-         &=d_x\hat i +d_y \hat j 
+         \end{pmatrix}\quad&\text{column vector}\\
+         &= d_x\hat x +d_y \hat y\quad&\text{using }\hat x,\;\hat y\\
+         &=d_x\hat i +d_y \hat j \quad&\text{using }\hat i,\;\hat j
 \end{align*}
 For example, the unit vector $\hat y$ can be written down as (0,1,0) in three dimensions. 
 
@@ -113,6 +113,11 @@ For example, the unit vector $\hat y$ can be written down as (0,1,0) in three di
 \item 7.0
 \item 10.0
 \end{checkpointMC}
+
+Illustrating a vector graphically in two dimensions is straightforward, but difficult in three dimensions. To help remedy this, a notation is introduced in order to draw vectors that point in or out of the page (perpendicular to the plane of the page). The notation comes from imagining that the vector is an arrow. If the vector is coming out of the page (at you!), then you would see the head of the arrow, which we represent as a circle with a dot (the dot is the point of the arrow, the circle is the base of the conically shaped arrowhead). If instead, the vector points into the page, then you would see the back of the arrow, which we represent as a cross (the cross being the feathers in the tail of the arrow). This is illustrated in Figure \ref{fig:appB:vector3d}.
+
+\capfig{0.25\textwidth}{figures/AppendixB/vector3d.png}{\label{fig:appB:vector3d}Geometric representation of three vectors. The vector $\vec a$ lies in the plane of the page, the vector $\vec b$ is pointing out of the page, and the vector $\vec c$ is pointing into the page.}
+
 
 \section{Vector algebra}
 In this section, we describe the various algebraic operations that can be performed using vectors. 
@@ -320,4 +325,33 @@ Intuitively, it makes sense that only the horizontal component of the force woul
 \vec F \cdot \vec d = Fd\cos\theta = F_{\parallel}d
 \end{align*}
 where we introduced $F_{\parallel} = F\cos\theta$ as the component of $\vec F$ that is parallel to $\vec d$ (see Figure \ref{fig:appB:work_scalarprod}). The scalar product thus ``picks out'' the component of $\vec F$ that is parallel to $\vec d$, which is exactly what we need to in order to calculate work. 
+
+\subsection{Using vectors to describe rotational motion}
+Often, we need to describe rotational motion in physics. If an object is rotating, one must specify:
+\begin{enumerate}
+\item The axis about which the object is rotating
+\item The direction around that axis in which the object is rotating (e.g. clockwise or counter-clockwise)
+\item How fast the object is rotating
+\end{enumerate}
+We can also use a vector to describe this type of rotational motion. We choose the direction of the vector to be co-linear with the axis of rotation and the magnitude of the vector to represent the speed with which the object is rotating. We are thus left with two choices for the direction of the vector (it is co-linear with the axis of rotation, but the specific choice of direction has not been made). We choose the direction of the vector by using our right hand in such a way that the vector points in the direction of your thumb when curling your fingers corresponds to the rotational direction, as illustrated in Figure TODO: Figure for rotational right hand rule.
+
+
 \subsection{Torque and vector products}
+We will introduce the concept of a torque in order to describe how a force can cause an object to rotate. Consider the disk illustrated in Figure \ref{fig:appB:torque_vectorprod} that is free to rotate about an axis that goes through its centre and that is perpendicular to the plane of the page. A force $\vec F$ is applied at the edge of the disk, as a position that is displaced from the axis of rotation by the vector $\vec r$. The torque, $\vec \tau$, of the force about the centre of the disk is defined to be:
+\begin{align*}
+\vec\tau=\vec r\times \vec F
+\end{align*}
+and represents how much the force $\vec F$ will contribute to making the disk rotate about its axis. If the force vector were parallel to the vector $\vec r$, the disk would not rotate; if you pull outwards on a disk, it will not rotate about its centre. However, if the force is perpendicular to the vector $\vec r$ (i.e. tangent to the circumference of the disk), then it will maximally cause the disk to rotate. The magnitude of the torque (cross-product) is given by:
+\begin{align*}
+\tau =rF\sin\theta=F_{\perp}r=Fr_\perp
+\end{align*}
+where $\theta$ is the angle between vectors when placed tail to tail, as in the right side of Figure \ref{fig:appB:torque_vectorprod}. In the last two equalities, we have defined $F_\perp=F\sin\theta$ or $r_\perp=r\sin\theta$ to refer to the part of the vector $\vec F$ that is perpendicular to the vector $\vec r$ or the part of the vector $\vec r$ that is perpendicular to the vector $\vec F$. That is, the vector product ``picks out'' the part of a vector that is perpendicular to the other, which is exactly the property that we need for the physical quantity of torque.
+
+\capfig{0.3\textwidth}{figures/AppendixB/torque_vectorprod.png}{\label{fig:appB:torque_vectorprod}A force, $\vec F$, is exerted in the plane of a disk at a position given by the vector $\vec r$ relative to the centre of the disk.}
+
+\begin{checkpointMC}{Referring to Figure \ref{fig:appB:torque_vectorprod}, in which direction does the torque vector point?}
+\item to the right
+\item to the left
+\item out of the page %correct
+\item into the page
+\end{checkpointMC}
