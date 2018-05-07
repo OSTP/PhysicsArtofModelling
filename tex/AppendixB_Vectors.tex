@@ -234,5 +234,90 @@ The unit vectors that define a coordinate system have the following properties r
 \end{align*}
 For these properties to be correct, it should be noted that the direction of the $z$ axis in three dimensions is specified by the choice of $x$ and $y$ axes. That is, one can freely choose the direction of the $x$ and $y$ axes, which then define a plane to which the $z$ axis will be perpendicular. The direction of the $z$ axis must be chosen so that $\vec x \times \vec y = \vec z$ (this guarantees that the coordinate system is ``right handed''). 
 
+\section{Example uses of vectors in physics}
+This section gives a quick overview of some applications of vectors in physics.
+\subsection{Kinematics and vector equations}
+Kinematics is the description of the position and motion of an object (TODO: Chapter reference). The laws of physics are the principles that ultimately allow us to determine how the position of an object changes with time. For example, Newton's Laws are a mathematical framework that introduce the concepts of force and mass in order to model and determine how an object will move through space.
+
+We often use a \textbf{position vector}, $\vec r(t)$, to describe the position of an object as a function of time. Because the object can move, that vector is a function of time. A position vector is a special vector in the sense that it should be considered to be fixed in space; the position vector for an object points from the origin of a coordinate system to the location of the object. 
+
+The three components of the position vector in Cartesian coordinates, are the $x$, $y$, and $z$ coordinates of the object:
+\begin{align*}
+\vec r(t) = \begin{pmatrix}
+           x(t) \\
+           y(t) \\
+           z(t) \\
+         \end{pmatrix}
+\end{align*}  
+where the three coordinates of the object are functions of time in general if the object is moving relative to the origin of the coordinate system. Suppose that the object was initially at position $\vec r_1=(x_1, y_1, z_1)$ at some time $t=t_1$, and that later, at time $t=t_2$, the object was at as second position, $\vec r_2=(x_1, y_1, z_1)$. We can define the \textbf{displacement vector}, $\vec  d$:
+\begin{align*}
+ \vec d = \vec r_2 - \vec r_1 =\begin{pmatrix}
+           x_2-x_1 \\
+           y_2-y_1 \\
+           z_2-z_1 \\
+         \end{pmatrix} = \begin{pmatrix}
+           \Delta x \\
+           \Delta y \\
+           \Delta z \\
+         \end{pmatrix}
+\end{align*}
+where the components of the displacement vector, $\Delta x$, $\Delta y$, and $\Delta z$ correspond to the displacements along the $x$, $y$, and $z$ axes, respectively. This is illustrated for the two dimensional case in Figure \ref{fig:appB:xydvec}.
+
+\capfig{0.3\textwidth}{figures/AppendixB/xydvec.png}{\label{fig:appB:xydvec}Illustration of a displacement vector, $\vec d = \vec r_2 -\vec r_1$, for an object that was located at position $\vec r_1$ at time $t_1$ and at position $\vec r_2$ at time $t_2$.}
 
 
+ The velocity vector of the object, $\vec v=(v_x, v_y, v_z)$, is defined to be the displacement vector, $\vec d$, divided by the amount of time that elapsed, $\Delta t=t_2-t_1$:
+\begin{align*}
+\vec v = \frac{\vec d}{\Delta t}=\begin{pmatrix}
+           \frac{\Delta x}{\Delta t} \\
+           \frac{\Delta y}{\Delta t} \\
+           \frac{\Delta z}{\Delta t} \\
+         \end{pmatrix}
+\end{align*}
+where we used the property that dividing a vector by a scalar ($\Delta t$) is defined as dividing each component by the scalar. If we write the components of the velocity vector out explicitly, we have:
+\begin{align*}
+\begin{pmatrix}
+           v_x \\
+           v_y \\
+           v_z \\
+         \end{pmatrix} = \begin{pmatrix}
+           \frac{\Delta x}{\Delta t} \\
+           \frac{\Delta y}{\Delta t} \\
+           \frac{\Delta z}{\Delta t}
+         \end{pmatrix}
+\end{align*}
+That is, we can think of each row in this ``vector equation'' as an independent equation. That is, when we write the vector equation:
+\begin{align*}
+\vec v = \frac{\vec d}{\Delta t}
+\end{align*}
+we are really just using a shorthand notation for writing the three independent equations:
+\begin{align*}
+v_x &= \frac{\Delta x}{\Delta t} \\
+v_y &= \frac{\Delta y}{\Delta t} \\
+v_z &= \frac{\Delta z}{\Delta t} \\
+\end{align*}
+Whenever we write an equation using vectors, we are really writing out multiple equations all at once, one for each component. Newton's Second Law:
+\begin{align*}
+\vec F = m \vec a
+\end{align*}
+thus corresponds to the three (scalar) equations:
+\begin{align*}
+F_x &= ma_x\\
+F_y &= ma_y\\
+F_z &= ma_z\\
+\end{align*}
+\subsection{Work and scalar products}
+As we will see, work is a scalar quantity that allows us to determine the change in the speed (squared) of an object that results from a force exerted over a particular displacement. Both force and the displacement are vector quantities (a force has a magnitude and is exerted in a particular direction). The work, $W$, done by a force, $\vec F$, over a displacements, $\vec d$, is defined as:
+\begin{align*}
+W = \vec F \cdot \vec d
+\end{align*}
+The work energy theorem (TODO: chapter reference) tells us that this work is related to the change in speed squared of the object as it moves along the displacement vector $d$. If the work is zero, the object has the same speed at the beginning and end of the displacement. If the work is positive, the object is moving faster at the end of the displacement (and slower if the work is negative). A one dimensional example is shown in Figure \ref{fig:appB:work_scalarprod}, which shows a force $\vec F$ being applied to a block as it slides along the ground over a distance $d$ (represented by the displacement vector $\vec d$).  
+
+\capfig{0.3\textwidth}{figures/AppendixB/work_scalarprod.png}{\label{fig:appB:work_scalarprod}Example of a force $\vec F$ being applied on an object as it moves along the displacement vector $\vec d$.}
+
+Intuitively, it makes sense that only the horizontal component of the force would contribute to changing the speed of the object as it moves along the horizontal trajectory defined by the vector $\vec d$. The vertical component of the force does not contribute to changing the speed of the object. The scalar product is given by:
+\begin{align*}
+\vec F \cdot \vec d = Fd\cos\theta = F_{\parallel}d
+\end{align*}
+where we introduced $F_{\parallel} = F\cos\theta$ as the component of $\vec F$ that is parallel to $\vec d$ (see Figure \ref{fig:appB:work_scalarprod}). The scalar product thus ``picks out'' the component of $\vec F$ that is parallel to $\vec d$, which is exactly what we need to in order to calculate work. 
+\subsection{Torque and vector products}
