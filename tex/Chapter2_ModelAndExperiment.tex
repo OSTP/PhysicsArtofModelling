@@ -268,6 +268,24 @@ It is important to note that there are two possible sources of uncertainty in a 
 
 The other source of uncertainty is called ``systematic''. Systematic uncertainties are much more difficult to detect and to estimate. One example would be trying to measure something with a scale that was not properly tarred (where the 0 weight was not set). You may end up with very small random errors when measuring the weights of object (very repeatable measurements), but you would have a hard time noticing that all of your weights were offset by a certain amount unless you had access to a second scale. Some common examples of systematic uncertainties are: incorrectly calibrated equipment, parallax error when measuring distance, reaction times when measuring time, effects of temperature on materials, etc.
 
+In this section, we want to further emphasize the difference between ''error'' and ''mistake''. ''Uncertainty'' or ''error'' in a measurement comes from an unavoidable source that affects experimental results. A ''mistake'' also affects experimental results, but is preventable. If a ''mistake'' occurs in physics, the experiment is generally re-done and the previous data is discarded. The broad term ''human error'' may refer to a variety of errors or mistakes, so it is best to avoid this term in experimental physics (especially in your lab reports)!
+?The following table refers to examples of error that may be confused with ''human error'' that could be more accurately explained:
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{p{3in}p{3in}} 
+\textbf{Situation} &\textbf{Source of Error} \\
+\hline
+\hline
+While taking measurements, your line of sight was not completely parallel to the measuring device. & This is parallax error - a type of random error.\\ \hline
+You incorrectly performed calculations. & Mistake! Redo the calculations.\\ \hline
+A draft of wind in the lab slightly altered the direction of your ball rolling down an incline. & This is an environmental error - a type of random error (in this situation).\\ \hline
+Your hand slipped while holding the ruler - the object was measured to be twice its original size! & Mistake! Redo this experiment and discard the data.\\ \hline
+When timing an experiment, you don?t hit the ''STOP'' button exactly when the experiment stops. & Reaction time error - a type of random error.\\ \hline
+\end{tabular}
+\caption{\label{tab:chap2:uncertainties} Different situations in the lab and type of error.}
+\end{table}
+
 \subsubsection{Propagating uncertainties}
 Going back to the data in Table \ref{tab:chap2:kmes_3m}, we found that for a known drop height of $x=\SI{3}{m}$, we measured different values of the drop time, which we found to be $t=\SI{0.76 \pm 0.15}{s}$ (using the mean and standard deviation). We also calculated a value of $k$ corresponding to each value of $t$, and found $k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$. Suppose that we did not have access to the individual values of $t$, but only to the value of $t=\SI{0.76 \pm 0.15}{s}$ with uncertainty. How do we calculate a value for $k$ with uncertainty? In order to answer this question, we need to know how to ``propagate'' the uncertainties in a measured value to the uncertainty in a valued derived from the measurements. We briefly present different methods for propagating uncertainties, before advocating for the use of computers to do the calculations for you.
 
