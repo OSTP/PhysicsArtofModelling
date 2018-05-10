@@ -277,7 +277,9 @@ In the previous example, our language was not quite as precise as it should be w
 With this vocabulary, the speed of the ball in Figure \ref{fig:chap3:1dxvvst_aconst} decreases between $t=\SI{0}{s}$ and $t=\SI{1.02}{s}$, and increases thereafter. On the other hand, the velocity continuously decreases (it is always becoming more and more negative). Velocity is thus the more general term since it tells us both the speed and the direction of the motion. 
 
 \section{Using calculus to describe motion}
-Most objects do not have a constant velocity or acceleration. We thus need to extend our description of the position and velocity of an object to a more general case. This can be done in much the same way as we introduced accelerated motion; namely by pretending that during a very small interval in time, $\Delta t$, the velocity and acceleration are constant, and then considering the motion as the sum over many small intervals. In the limit that $\Delta t$ tends to zero, this will be an accurate description. 
+Objects do not necessarily have a constant velocity or acceleration. We thus need to extend our description of the position and velocity of an object to a more general case. This can be done in much the same way as we introduced accelerated motion; namely by pretending that during a very small interval in time, $\Delta t$, the velocity and acceleration are constant, and then considering the motion as the sum over many small intervals in time. In the limit that $\Delta t$ tends to zero, this will be an accurate description. 
+
+\subsection{Instantaneous and average velocity}
 
 Suppose that an object is moving with a non constant velocity, and covers a distance $\Delta x$ in an amount of time $\Delta t$. We can define an \textbf{average velocity}, $v^{avg}$:
 \begin{align*}
@@ -291,7 +293,7 @@ The instantaneous velocity is the velocity only in that small instant in time wh
  \begin{align*}
  x(t) = v_{0x}+v_xt
  \end{align*}
- If we go back to Figure \ref{fig:chap3:1dxvvst_aconst}, where speed was no longer constant, we can indeed see that the graph of the velocity versus time ($v(t)$) corresponds to the instantaneous slope of the graph of position versus time ($x(t)$). For $t<\SI{1.02}{s}$, the slope of the $x(t)$ graph is positive but decreasing (as is $v(t)$). At $t=\SI{1}.02{s}$, the slope of $x(t)$ is instantaneously \SI{0}{m/s} (as is the velocity). Finally, for $t>\SI{1.02}{s}$, the slope of $x(t)$ is negative and increasing in magnitude, as is $v(t)$.
+ If we go back to Figure \ref{fig:chap3:1dxvvst_aconst}, where velocity was no longer constant, we can indeed see that the graph of the velocity versus time, $v(t)$, corresponds to the instantaneous slope of the graph of position versus time, $x(t)$. For $t<\SI{1.02}{s}$, the slope of the $x(t)$ graph is positive but decreasing (as is $v(t)$). At $t=\SI{1}.02{s}$, the slope of $x(t)$ is instantaneously \SI{0}{m/s} (as is the velocity). Finally, for $t>\SI{1.02}{s}$, the slope of $x(t)$ is negative and increasing in magnitude, as is $v(t)$.
 
 Leibniz and Newton were the first to develop mathematical tools to deal with calculations that involve quantities that tend to zero, as we have here for our time interval $\Delta t$. Nowadays, we call that field of mathematics ``calculus'', and we will make use of it here. Using the vocabulary of calculus, rather than saying that ``instantaneous velocity is the slope of the graph of position versus time at some point in time'', we say that ``instantaneous velocity is the time derivative of position as a function of time''. We also use a slightly different notation so that we do not have to write the limit $\lim_{\Delta t\to 0}$:
 \begin{align}
@@ -304,61 +306,25 @@ Similarly, we introduce the \textbf{instantaneous acceleration}, as the time der
 \begin{align}
 \Aboxed{a_x(t)=\frac{dv}{dt}=\frac{d}{dt}v(t)}
 \end{align}
-\newpage
+
+
 \subsection{Using calculus to obtain acceleration from position}
-Suppose that we know the function for position as a function of time, and that it is given by our previous result:
+Suppose that we know the function for position as a function of time, and that it is given by our previous result (for the case when the acceleration $a_x$ is constant):
 \begin{align*}
 x(t)=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 \end{align*}
-\rwcapfig[16]{0.5\textwidth}{figures/Chapter3/1dDeltaXT.png}{\label{fig:chap3:1dDeltaXT}Obtaining the instantaneous velocity from the graph of position as a function of time. As $\Delta t\to 0$, $\frac{\Delta x}{\Delta t}$ approaches the instantaneous velocity $v(t)$, which is the slope of the curve $x(t)$ at time $t$.}
-With our calculus-based definitions above, we should be able to recover that:
+The velocity is given by taking the derivative of $x(t)$ with respect to time:
 \begin{align*}
-v(t) = v_{0x}t+at\\
-a_x(t) = a_x
-\end{align*} 
-Let us start by determining $v(t)$:
-\begin{align*}
-v(t) = \frac{dx}{dt}=\lim_{\Delta t\to 0} \frac{\Delta x}{\Delta t}
+v(t)&=\frac{dx}{dt}=\frac{d}{dt}\left(x_0+v_{0x}t+\frac{1}{2}a_xt^2\right)\\
+&=v_{0x}t+a_xt
 \end{align*}
-Knowing our function $x(t)$, we can can rewrite this as:
-\begin{align}
-\Aboxed{ \frac{dx}{dt}=\lim_{\Delta t\to 0} \frac{x(t+\Delta t)-x(t)}{\Delta t} }
-\end{align}
-which is the formal definition of the derivative $\frac{dx}{dt}$ and gives us a prescription to evaluate it. We will proceed as illustrated in Figure \ref{fig:chap3:1dDeltaXT}:
-\begin{enumerate}
-\item Use $x(t)$ to determine $\Delta x$ for a small interval $\Delta t$
-\item Divide $\Delta x$ by $\Delta t$
-\item Take the limit, $\lim_{\Delta t\to 0}$
-\end{enumerate}
-To obtain $\Delta x$, we introduce a start time, $t_1$, and an end time $t_2$ for our time interval, such that $t_2-t_1=\Delta t$, centred about a time $t$. The change in position is then given by:
+as we found before, in equation \ref{eqn:chap3L1dvvst}. The acceleration is then given by the time-derivative of the velocity:
 \begin{align*}
-\Delta x &= x(t_2) - x(t_1)\\
-&=\left(x_0+v_{0x}t_2+\frac{1}{2}a_xt_2^2\right )- \left(x_0+v_{0x}t_1+\frac{1}{2}a_xt_1^2\right )\\
-&=v_{0x}(t_2-t_1)+\frac{1}{2}a_x(t_2^2-t_1^2)\\
-&=v_{0x}\Delta t+\frac{1}{2}a_x(t_2-t_1)(t_2+t_1)\\
-&=v_{0x}\Delta t+\frac{1}{2}a_x\Delta t (t_2+t_1)\\
+a_x &= \frac{dv}{dt}=\frac{d}{dt}\left(v_{0x}t+a_xt\right)\\
+&=a_x
 \end{align*}
-which we divide by $\Delta t$ to get $v(t)$:
-\begin{align*}
-v(t) &= \frac{\Delta x}{\Delta t}\\
-&=\frac{v_{0x}\Delta t+\frac{1}{2}a_x\Delta t (t_2+t_1)}{\Delta t}\\
-&=v_{0x}+\frac{1}{2}a_x(t_2+t_1)
-\end{align*}
-We now take the limit where $\Delta t\to 0$, namely when $t_2-t_1$ is very small. As we make the interval small, $t_2$ and $t_1$ will both approach the same value of time, say $t$, corresponding to the time at the centre of the interval. In particular, the average of $t_1$ and $t_2$, given by $\frac{1}{2}(t_1+t_2)$, will approach the time at the centre of the interval, $t$. We thus recover the equation for instantaneous velocity:
-\begin{align*}
-v(t) &= v_{0x}+a_xt
-\end{align*}
-Of course, once you become more familiar with calculus, you will be able to directly use the formulas for derivatives to recover the answer:
-\begin{align*}
-v(t) &= \frac{d}{dt}\left( x_0+v_{0x}t+\frac{1}{2}a_xt^2 \right) \\
-     &= v_{0x}+at 
-\end{align*}
-Similarly, we can now confirm that the acceleration is a constant, independent of time:
-\begin{align*}
-a_x(t) &= \frac{dv}{dt} = \frac{d}{dt}\left(v_{0x}+a_xt \right)\\
-     &=a_x
-\end{align*}
-You can easily verify that you obtain this result by first calculating $v(t)$ at two different times, $t_1$ and $t_2$, taking the difference, $\Delta v = v(t_2)-v(t_1)$, and then taking the limit of $\lim_{\Delta t\to 0}\frac{\Delta v}{\Delta t}$ to get $a_x(t)$.
+as expected.
+
 
 \begin{checkpointMC}{Chlo\"e has been working on a detailed study of how vicu\~nas\footnote{Never heard of vicu\~nas? Internet!} run, and found that their position as a function of time when they start running is well modelled by the function $x(t)=(\SI{40}{m/s^2})t^2+(\SI{20}{m/s^3})t^3$. What is the acceleration of the vicu\~nas?}
 \item $a_x(t)=\SI{40}{m/s^2}$
@@ -380,122 +346,36 @@ which tells us that we know the slope (derivative) of the function $v(t)$, but n
 \end{align*}
 then:
 \begin{align*}
-v(t) =\int a_x(t) dt +C
+v(t) =\int a_x(t) dt
 \end{align*}
-where as we will see later, the constant $C$ is required in order for the function $v(t)$ to go through the point $v(t=0)=v_{0x}$. All we need now is to determine how to calculate the anti-derivative, $\int a_x(t) dt$. Since in this case, $a_x(t)$ is a constant, $a_x$, we can determine the anti-derivative quite easily. 
-
-For a small interval in time, $\Delta t$, the velocity will change by a small amount, $\Delta v$, such that:
+Since in this case, $a_x(t)$ is a constant, $a_x$, the anti-derivative is easily found:
 \begin{align*}
-a_x &= \frac{\Delta v}{\Delta t}\\
-\Delta v &= a_x \Delta t
+\int a_xdt = a_xt + C
 \end{align*}
-If we label the start time of the interval as $t_1$ and the end of the interval as $t_2$, we have:
+The velocity is thus given by:
 \begin{align*}
-\Delta t &= t_2 - t_1 \\
-\Delta v &= v(t_2) - v(t_1) = a_x \Delta t\\
-\therefore v(t_2) &= v(t_1)+a_x\Delta t
+v(t) &=\int a_x dt =a_xt+C
 \end{align*}
-If we set $t_1=\SI{0}{s}$ to correspond to the point where $v(t)=v_{0x}$, then we can write the velocity at $t_2$ as:
+The constant $C$ is determined by what we call our ``initial conditions''. In this case, we stated that at time $t=0$, the velocity should be $v_{0x}$. The constant $C$ is thus $v_{0x}$:
 \begin{align*}
-v(t_2) = v(t=\Delta t) = v_{0x}+a_x\Delta t
+v(t) &=C+a_x t =v_{0x}+a_xt
 \end{align*}
-and we see that the velocity changed by an amount $a \Delta t$ over a period of time $\Delta t$. Since $a_x$ is the same at all times, this is always true, and after a period of time $t = N\Delta t$, the velocity will have changed by $N a_x \Delta t$, and we recover the original equation for velocity as a function of time when acceleration is constant:
+and we recover the formula for velocity when the acceleration is constant. Now that we know the velocity as a function of time, we can take one more anti-derivative with respect to time to obtain the position:
 \begin{align*}
-v(t=N \Delta t) &= v_{0x}+Na_x\Delta t\\
-\therefore v(t) &= v_{0x}+a_xt\\
+v(t) &= \frac{dx}{dt}\\
+\therefore x(t) &= \int v(t)dt 
 \end{align*}
-We can identify the anti-derivative for the case where $a(t)$ is constant:
+In the case where acceleration is constant, this gives:
 \begin{align*}
-\frac{d}{dt} v(t) &=a_x\\
-\int a_x dt &=a_xt +C
-\end{align*}
-where the constant, $C$, is given by $v_{0x}$.
-
-To now obtain position as a function of time, we proceed in the same manner, namely:
-\begin{enumerate}
-\item Define a small interval in time $\Delta t$
-\item Calculate the corresponding change in position $\Delta x$
-\item Add $\Delta x$ to our original position, and repeat.
-\end{enumerate}
-\rwcapfig[20]{0.5\textwidth}{figures/Chapter3/1dDeltaV.png}{\label{fig:chap3:1dDeltaV} Determining $\Delta x$, given $v(t)$ and $\Delta t$. Three different choices of $v(t)$ are shown, depending on whether $v(t)$ is evaluated at the start of the interval, in the middle, or at the end. As $\Delta t \to 0$, these all become equal.}
-
-Again, we have the time-derivative of the position equal to a function of time:
+ x(t) &= \int v(t)dt\\
+ &=\int (v_{0x}+a_xt )dt\\
+ &=v_{0x}t+\frac{1}{2}a_xt^2+C'
+\end{align*} 
+where $C'$ is a different constant than the one we had when determining velocity. The constant is given by our initial conditions. If the object was located at position $x=x_0$ at time $t=0$, then $C'=x_0$ and we recover the equation for position as a function of time for constant acceleration:
 \begin{align*}
-\frac{d}{dt}x(t)=v(t)=v_{0x}+a_xt
-\end{align*}
-and we need to find the anti-derivative:
-\begin{align*}
-x(t) = \int \left(  v_{0x}+av_xt \right) dt 
-\end{align*}
-given that, at time $t=0$, the position was $x=x_0$. After a small interval in time, $\Delta t$, the position will have changed by an amount $\Delta x$:
-\begin{align*}
-\Delta x &= v(t) \Delta t\\
-\end{align*}
-so that the position at time $t=\Delta t$ will be given by:
-\begin{align*}
-x(t=\Delta t) &= x_0+ \Delta x\\
-& = x_0+v(t) \Delta t
-\end{align*}
-The problem here is to evaluate $v(t)$ since the velocity changes throughout the interval. One possible choice is to evaluate the velocity at $t = \frac{1}{2}\Delta t$, midway in the interval, as we did before. We could also choose to use the velocity at the beginning or at the end of the time interval, as all three choices will converge to the same value when $\Delta t \to 0$, as illustrated in Figure \ref{fig:chap3:1dDeltaV}. For now, we will leave the choice open and simply call the velocity that we use $v_1$ to indicate that it is the velocity in the first interval. We thus write the position, $x(t=\Delta t)$, after a time interval $\Delta t$ as:
-\begin{align*}
-x(t=\Delta t) = x_0+v_1\Delta t
-\end{align*}
-The position, $x(t=2\Delta t)$, after another interval in time $\Delta t$ will then be given by:
-\begin{align*}
-x(t=2\Delta t) &= x(t=\Delta t)+v_2\Delta t\\
-&=x_0+v_1\Delta t+v_2\Delta t
-\end{align*}
-where $v_2$ is the velocity over the second interval in time (different than $v_1$, since velocity changes with time). For the Nth interval, we label the position $x_N=x(t=N\Delta t)$:
-\begin{align*}
-x_N=x(t=N\Delta t)&=x_0+v_1\Delta t+v_2\Delta t+\dots+v_N\Delta t\\
-&=x_0+\sum_{i=1}^Nv_i\Delta t 
+x(t)=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 \end{align*}
 
-\rwcapfig[12]{0.5\textwidth}{figures/Chapter3/1dvint.png}{\label{fig:chap3:1dvint} Illustration of the anti-derivative $\int v(t) dt$ as a sum.}
-
-where we made use of the summation notation ($\sum$) to avoid writing out every term. The above equation is only correct in the limit of $\Delta t\to 0$, in which case it must be the anti-derivative of $v(t)$:
-\begin{align*}
-x(t) &= \int v(t) dt\\
-     &= x_0+\lim_{\Delta t\to 0}\sum_{i=1}^Nv_i\Delta t 
-\end{align*}
-so that we can identify:
-\begin{align}
-\label{eqn:chap3:intsum}
-\Aboxed{\int v(t) dt&=\lim_{\Delta t\to 0}\sum_{i=1}^Nv_i\Delta t + C}
-\end{align}
-where it is understood that $v_i$ is the ``average'' velocity in the ith interval, and the constant $C=x_0$ ensures that $x(t=0)=x_0$. This is now a general definition for the anti-derivative, as we have made no specific assumption about the function $v(t)$. Equation \ref{eqn:chap3:intsum} tells us that the anti-derivative of a function (in this case, $v(t)$) can be obtained from a sum.
-
-The sum is illustrated in Figure \ref{fig:chap3:1dvint}, which shows the function $v(t)$ and several intervals $\Delta t$. Over each interval, $i$, we labeled the average velocity, $v_i$. As the intervals shrink, $\Delta t\to 0$, the average velocity $v_i$ approaches the instantaneous velocity, $v(t)$, at the centre for the interval. Since the function $v(t)$ is linear (for constant acceleration), the speed at the middle of an interval is exactly equal to the average speed in the interval. Taking $v_i$ as the speed in the middle of the interval, we then see that each term in the sum, $v_i\Delta t$, is equal to the area between the curve $v(t)$ and the t-axis. This is illustrated for the second term in the sum, $v_2\Delta t$, with the grey rectangle in Figure \ref{fig:chap3:1dvint}.
-
-The anti-derivative of a function is thus related to the area between the function and the horizontal axis. If we specify limits on the horizontal axis between which we calculate the area, then the anti-derivative is called an \textbf{integral}. For example, if we wish to calculate the sum of $v_i \Delta t$ for values between $t_a$ and $t_b$, we would write the integral as:
-\begin{align*}
-\int_{t_a}^{t_b}v(t) dt = \lim_{\Delta t\to 0}\sum_{i=1}^Nv_i\Delta t 
-\end{align*}
-where the sum is such that for $i=1$, $v_i$ is close to $v(t=t_a)$ and for $i=N$, $v_N$ is close to $v(t=t_b)$. An illustration of taking the integral of $v(t)$ is shown in Figure \ref{fig:chap3:1dvintN} where the sum is shown for two different values of $\Delta t$. It is clear that as $\Delta t \to 0$, the sum becomes equal to the area between the curve and the horizontal axis.
-
-\capfig{0.7\textwidth}{figures/Chapter3/1dvintN.png}{\label{fig:chap3:1dvintN}Integral of $v(t)$ between $t_a=\SI{0.2}{s}$ and $t_b=\SI{0.6}{s}$ illustrated as a sum with of 4 terms when $\Delta t=\SI{0.1}{s}$ or of 8 terms when $\Delta t=\SI{0.05}{s}$.}
-
-Since $v(t)$ is a linear function when acceleration is constant, we can easily calculate the area between the curve and the horizontal axis. In the case of a linear function, $v(t)=v_{0x}+at$, the area is a trapezoid, and we have:
-\begin{align*}
-\int_{t_a}^{t_b}v(t) dt &= \text{base}\times\text{average height}\\
-&=(t_b-t_a)\times\frac{1}{2}\left(v(t_a)+v(t_b)\right)\\
-&=(t_b-t_a)\frac{1}{2}(v_{0x}+a_xt_a+v_{0x}+a_xt_b)\\
-&=\left( \frac{1}{2}(v_{0x}t_b+a_xt_at_b+v_{0x}t_b+a_xt_b^2)  \right)- \left( \frac{1}{2}(v_{0x}t_a+a_xt_a^2+v_{0x}t_a+a_xt_bt_a) \right)\\
-&=\left( v_{0x}t_b+\frac{1}{2}a_xt_b^2 \right)-\left( v_{0x}t_a+\frac{1}{2}a_xt_a^2 \right)
-\end{align*}
-If we define a new function, $V(t)=v_{0x}t+\frac{1}{2}a_xt^2$, then we have:
-\begin{align*}
-\int_{t_a}^{t_b}v(t) dt &= V(t_b) -V(t_a)
-\end{align*}
-In other words, given a function, $v(t)$, the integral of that function between two values $t_a$ and $t_b$ can be found by evaluating a different function, $V(t)$, at the end points $t_a$ and $t_b$\footnote{Note that we only explicitly showed that this true if $v(t)$ is linear, but the result is in fact general.}. As you will see in your calculus course, the function $V(t)$ is precisely what we call the anti-derivative:
-\begin{align*}
-\int v(t) dt= V(t) + C
-\end{align*}
-which has derivative:
-\begin{align*}
-\frac{dV}{dt}=v(t)
-\end{align*}
-Note that when taking the integral, the constant $C$ always cancels.  
 \begin{checkpointMC}{The acceleration of a cricket jumping sideways is observed to increase linearly with time, that is, $a_x(t)=a_0+jt$, where $a_0$ and $j$ are constants. What can you say about the velocity of the cricket as a function of time?}
 \item it is constant
 \item it increases linearly with time ($v(t)\propto t$)
@@ -503,6 +383,7 @@ Note that when taking the integral, the constant $C$ always cancels.
 \item it increases with the cube of time ($v(t)\propto t^3$)
 \end{checkpointMC}
 
+TODO: Checkpoint MC, choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, and $\omega$ is constant, and velocity and position are zero at $t=0$.
 
 \section{Relative motion}
 In order to describe the motion of an object confined to a straight line, we introduced a an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:chap3:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
@@ -519,7 +400,6 @@ In principle, if you blocked out all of the windows in the train, it would not b
 
 Not only is it impossible to define a frame of reference that is truly at rest, the rules from transforming from one frame to the other depend on the speed between the reference frames. Our common experience is described by what we call ``Galilean Relativity'', but if the speed between trains is very large, close to the speed of light, then we need to use Einstein's Special Theory of Relativity.
 
-\subsection{Galilean Relativity}
 Referring to Figure \ref{fig:chap3:TrainABC}, we wish to use Brice's description of Alice's motion, $x^A(t)$, and convert it into a description, $x'^A(t)$ that Igor can use in the train station. Since Brice is at rest in the train, the speed of Brice \textit{relative} to Igor is $v'^B(t)$. The first step is for Igor to describe Brice's position, $x'^B(t)$, (that is, the position of Brice's origin). Assume that we choose $t=0$ to be the point in time where the two origins are aligned. Since the train is moving at a constant speed, $v_B$ (as measured by Brice), then the position of Brice's origin as measured from Igor's origin is given by:
 \begin{align*}
 x'^B(t)=v'^Bt
