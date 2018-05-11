@@ -311,18 +311,48 @@ x_i&=x_a+i\Delta x\\
 The limit of $\Delta x \to 0$ is thus equivalent to the limit $N \to \infty$. Our strategy for evaluating the integral is thus:
 \begin{enumerate}
 \item Define a Python function for $f(x)$
-\item Create an array, \code{xvals}, of $N$ values of $x$ between $x_1$ and $x_2$
+\item Create an array, \code{xvals}, of $N$ values of $x$ between $x_a$ and $x_b$
 \item Evaluate the function for all those values and store those into an array, \code{fvals}
 \item Loop over all of the values in the array \code{fvals}, multiply them by $\Delta x$, and sum them together.
 \end{enumerate}
-Let us thus use Python to evaluate the integral of the function $f(x)=\frac{1}{4}x^3+\frac{1}{3}x^2+5$ between $x=1$ and $x=5$:
-
+Let us thus use Python to evaluate the integral of the function $f(x)=4x^3+3x^2+5$ between $x=1$ and $x=5$:
 \begin{python}[caption=Numerical integration of a function] 
-#A loop to print out a statement 5 times:
+#import numpy to work with arrays:
+import numpy as np
 
-for i in range(5):
-  print("The value of i is ",i)
+#define our function
+def f(x):
+  return 4*x**3 + 3*x**2 + 5
+  
+#Make N and the range of integration variables:
+N = 1000
+xmin = 1
+xmax = 5
+
+#create the array of values of x between xmin and xmax
+xvals = np.linspace(xmin, xmax, N)
+
+#evaluate the function at all those values of x
+fvals = f(xvals)
+
+#calculate delta x
+deltax = (xmax - xmin) / N
+
+#initialize the sum to be zero:
+sum = 0
+
+#loop over the values fvals and add them to the sum
+for fi in fvals:
+  sum = sum + fi*deltax
+
+#print the result:
+print("The integral between {} and {} using {} steps is {:.2f} ".format(xmin, xmax, N, sum))
+
 \end{python}
 \begin{poutput}
-
+The integral between 1 and 5 using 1000 steps is 768.42 
 \end{poutput}
+One can easily integrate the above function analytically and obtain the exact result of $\num{768}$. The numerical answer will approach the exact answer as we make $N$ bigger. Of course, the power of numerical integration is to use it when the function cannot be integrated analytically.
+
+\begin{checkpointSA}{What value of $N$ should you use above in order to get within $\num{0.01}$ of the exact analytic answer?}
+\end{checkpointSA}
