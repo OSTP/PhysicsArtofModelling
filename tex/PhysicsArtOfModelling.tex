@@ -1,9 +1,3 @@
-%Copyright 2017 R.D. Martin
-%This book is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-%
-%This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
-
-
 \documentclass[12pt]{book}
 \usepackage{mathtools} % for \Aboxed
 \usepackage{paralist}
@@ -47,6 +41,8 @@
 \newcommand{\ddt}{\frac{d}{dt}}
 \newcommand{\lagd}{\mathcal{L}}
 \newcommand{\code}[1]{\texttt{#1}}
+
+\newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}} % for a vector of a primed quantity, e.g. \vec p ', should be \pvec p'
 
 
 %Stuff for writing code:
@@ -229,23 +225,6 @@
   {\vspace{2ex}\\}
 
 
-%\def\secondpage{\clearpage\null\vfill
-%%\pagestyle{empty}
-%\begin{minipage}[b]{0.9\textwidth}
-%\footnotesize\raggedright
-%\setlength{\parskip}{0.5\baselineskip}
-%Copyright \copyright \the\year\ R.D. Martin\par
-%This book is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-%
-%This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
-%\end{minipage}
-%\vspace*{2\baselineskip}
-%\cleardoublepage
-%\rfoot{\thepage}}
-
-%\makeatletter
-%\g@addto@macro{\maketitle}{\secondpage}
-%\makeatother
           
 \usepackage[paper=letterpaper,
             %includefoot, % Uncomment to put page number above margin
@@ -265,10 +244,11 @@
 \tableofcontents
 \pagenumbering{arabic}
 
-\include{Chapter1_Introduction}
-\include{Chapter2_ModelAndExperiment}
-\include{Chapter3_DescribingMotionIn1D}
+%\include{Chapter1_Introduction}
+%\include{Chapter2_ModelAndExperiment}
+%\include{Chapter3_DescribingMotionIn1D}
 \include{Chapter4_DescribingMotionInND}
+
 %Newton's Laws
 %Applying Newton's Laws
 %Work, energy, power
@@ -295,9 +275,9 @@
 
 \appendix
 \renewcommand\chaptername{Appendix}
-\include{AppendixA_Calculus}
+%\include{AppendixA_Calculus}
 \include{AppendixB_Vectors}
-\include{AppendixC_Python}
+%\include{AppendixC_Python}
 %AppendixB vectors
 
 \end{document}
