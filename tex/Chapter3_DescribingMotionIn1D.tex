@@ -9,7 +9,7 @@ In this chapter, we will introduce the tools required to describe motion in one 
 \begin{learningObjectives}
 \item Describe motion in 1D using functions and defining an axis.
 \item Define position, velocity, speed, and acceleration.
-\item Use calculus to describe motion
+\item Use calculus to describe motion.
 \item Define the meaning of an inertial frame of reference.
 \item Use Galilean and Lorentz transformations to convert the description of an object's position from one inertial frame to another.
 \end{learningObjectives}
@@ -147,7 +147,7 @@ Now that we have an understanding of acceleration, how do we describe the positi
 
 \capfig{0.1\textwidth}{figures/Chapter3/1daxis_vertical.png}{\label{fig:chap3:1daxis_vertical} X-axis for an object that starts at rest at $x=\SI{0}{m}$ when $t=\SI{0}{s}$ and falls downwards (in the direction of increasing $x$).}
 
-Let us work out the corresponding equation for position as a function of time for accelerated motion using the x-axis depicted in Figure \ref{fig:chap3:1daxis_vertical}. We will determine $x(t)$ for the grey ball that starts at rest ($v_{0x}=\SI{0}{m/s}$) at the position $x=\SI{0}{m}$ at time $t=\SI{0}{s}$ with a constant positive acceleration $a_x=\SI{10}{m/s\squared}$. We would like to use equation \ref{eqn:chap3:1dxvst_noa}, but we cannot because it only applies if the velocity is constant. To remedy this, we pretend (we ``approximate'') that for a a very small amount of time, the velocity is almost constant. Let us take a very small interval in time, say $\Delta t=\SI{0.001}{s}$, and approximate that the velocity is constant during that interval. 
+Let us work out the corresponding equation for position as a function of time for accelerated motion using the x-axis depicted in Figure \ref{fig:chap3:1daxis_vertical}. We will determine $x(t)$ for the grey ball that starts at rest ($v_{0x}=\SI{0}{m/s}$) at the position $x=\SI{0}{m}$ at time $t=\SI{0}{s}$ with a constant positive acceleration $a_x=\SI{10}{m/s\squared}$. We would like to use equation \ref{eqn:chap3:1dxvst_noa}, but we cannot because it only applies if the velocity is constant. To remedy this, we pretend (we ``approximate'') that for a very small amount of time, the velocity is almost constant. Let us take a very small interval in time, say $\Delta t=\SI{0.001}{s}$, and approximate that the velocity is constant during that interval. 
 
 At $t=\SI{0}{s}$, we have $x=\SI{0}{m}$, $v_{0x}=\SI{0}{m/s}$ and $a_x=\SI{10}{m/s\squared}$. We can use equation \ref{eqn:chap3L1dvvst} to find the velocity at $t=\Delta t$ (at the end of the first interval):
 \begin{align*}
@@ -289,11 +289,11 @@ That is, regardless of our choice of time interval, $\Delta t$, we can always ca
 \begin{align*}
 v = \lim_{\Delta t\to 0} \frac{\Delta x}{\Delta t}
 \end{align*}
-The instantaneous velocity is the velocity only in that small instant in time where we choose $\Delta x$ and $\Delta t$. Another way to read this equation is that the velocity, $v$, is the slope of the graph of $x(t)$. Recall that the slope is the ``rise over run'', in other words the change in $x$ divided by the corresponding change in $t$. Indeed, when we had no acceleration, the position as a function of time, equation \ref{eqn:chap3:1dxvst_noa}, explicitly had the velocity as the slope of a linear function:
+The instantaneous velocity is the velocity only in that small instant in time where we choose $\Delta x$ and $\Delta t$. Another way to read this equation is that the velocity, $v$, is the slope of the graph of $x(t)$. Recall that the slope is the ``rise over run'', in other words, the change in $x$ divided by the corresponding change in $t$. Indeed, when we had no acceleration, the position as a function of time, equation \ref{eqn:chap3:1dxvst_noa}, explicitly had the velocity as the slope of a linear function:
  \begin{align*}
  x(t) = v_{0x}+v_xt
  \end{align*}
- If we go back to Figure \ref{fig:chap3:1dxvvst_aconst}, where velocity was no longer constant, we can indeed see that the graph of the velocity versus time, $v(t)$, corresponds to the instantaneous slope of the graph of position versus time, $x(t)$. For $t<\SI{1.02}{s}$, the slope of the $x(t)$ graph is positive but decreasing (as is $v(t)$). At $t=\SI{1}.02{s}$, the slope of $x(t)$ is instantaneously \SI{0}{m/s} (as is the velocity). Finally, for $t>\SI{1.02}{s}$, the slope of $x(t)$ is negative and increasing in magnitude, as is $v(t)$.
+ If we go back to Figure \ref{fig:chap3:1dxvvst_aconst}, where velocity was no longer constant, we can indeed see that the graph of the velocity versus time, $v(t)$, corresponds to the instantaneous slope of the graph of position versus time, $x(t)$. For $t<\SI{1.02}{s}$, the slope of the $x(t)$ graph is positive but decreasing (as is $v(t)$). At $t=\SI{1.02}{s}$, the slope of $x(t)$ is instantaneously \SI{0}{m/s} (as is the velocity). Finally, for $t>\SI{1.02}{s}$, the slope of $x(t)$ is negative and increasing in magnitude, as is $v(t)$.
 
 Leibniz and Newton were the first to develop mathematical tools to deal with calculations that involve quantities that tend to zero, as we have here for our time interval $\Delta t$. Nowadays, we call that field of mathematics ``calculus'', and we will make use of it here. Using the vocabulary of calculus, rather than saying that ``instantaneous velocity is the slope of the graph of position versus time at some point in time'', we say that ``instantaneous velocity is the time derivative of position as a function of time''. We also use a slightly different notation so that we do not have to write the limit $\lim_{\Delta t\to 0}$:
 \begin{align}
@@ -386,7 +386,7 @@ x(t)=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 TODO: Checkpoint MC, choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, and $\omega$ is constant, and velocity and position are zero at $t=0$.
 
 \section{Relative motion}
-In order to describe the motion of an object confined to a straight line, we introduced a an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:chap3:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
+In order to describe the motion of an object confined to a straight line, we introduced an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:chap3:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
 \capfig{0.7\textwidth}{figures/Chapter3/TrainABC.png}{\label{fig:chap3:TrainABC}Alice is walking in the train and her position is described by both Brice, who is sitting in the train (using the $x$ axis), and Igor, who is at rest on the ground (using the $x'$ axis).} 
 
 Since Brice already went through the work of determining the function $x^A(t)$ in the \textbf{reference frame} of the train, we wish to determine how to \textit{transform} $x^A(t)$ into the reference frame of the train station, $x'^A(t)$, so that Igor can also describe Alice's motion. In other words, we wish to describe Alice's motion in two different \textit{reference frames}.
@@ -424,9 +424,9 @@ a'^A(t)&=\frac{d}{dt}v'^A(t)\\
 &=0+\frac{d}{dt}v^A(t)\\
 &=a^A
 \end{align}
-where we have explicitly used the fact that the train is moving at constant velocity ($\frac{d}{dt}v'^B=0$). Here we find that both Brice and Igor will measure the same number when referring to Alice's acceleration (if the train is moving at constant velocity). This is a particularity of ``inertial'' frame of references: accelerations do not depend on the reference frame, as long as the reference frames are moving with a constant velocity relative to each other. As we will see later, forces exerted on a object are directly related to the acceleration experienced by that object. Thus, the forces on a object do not depend on the choice of inertial reference frame. 
+where we have explicitly used the fact that the train is moving at constant velocity ($\frac{d}{dt}v'^B=0$). Here we find that both Brice and Igor will measure the same number when referring to Alice's acceleration (if the train is moving at a constant velocity). This is a particularity of ``inertial'' frame of references: accelerations do not depend on the reference frame, as long as the reference frames are moving with a constant velocity relative to each other. As we will see later, forces exerted on an object are directly related to the acceleration experienced by that object. Thus, the forces on an object do not depend on the choice of inertial reference frame. 
 
-\begin{example}{A large boat is sailing North at a speed of $v'^B=\SI{15}{m/s}$ and a restless passenger is walking about on the deck. Chlo\"e, another passenger on the boat, finds that the passenger is walking at a constant speed of $v^A=\SI{3}{m/s}$ towards the South (opposite the direction of the boat's motion). Marcel is watching the boat pass by from shore. What velocity (magnitude and direction) does Marcel measure for the restless passenger?}
+\begin{example}{A large boat is sailing North at a speed of $v'^B=\SI{15}{m/s}$ and a restless passenger is walking about on the deck. Chlo\"e, another passenger on the boat, finds that the passenger is walking at a constant speed of $v^A=\SI{3}{m/s}$ towards the South (opposite the direction of the boat's motion). Marcel is watching the boat pass by from the shore. What velocity (magnitude and direction) does Marcel measure for the restless passenger?}
 First, we must choose coordinate systems in the boat and on the shore. On the boat, let us define an $x$ axis that is positive in the North direction and has an origin such that the position of the restless passenger was $x^A(t=0)=0$ at time $t=0$. In Chlo\"e's reference frame, the passenger is thus described by:
 \begin{align*}
 x^A(t)=v^At=(\SI{-3}{m/s})t
@@ -462,9 +462,9 @@ Since this is a positive number, Marcel still sees the passenger moving in the N
 \item To describe motion in one dimension, we must define an axis with:
 \begin{enumerate}
 \item An origin (where $x=0$)
-\item A direction (the direction in which $x$ increases)
+\item A direction (the direction in which $x$ increases).
 \end{enumerate}
-\item We describe the position of an object with a function $x(t)$ that \textit{depends} on time
+\item We describe the position of an object with a function $x(t)$ that \textit{depends} on time.
 \item The rate of change of position is called ``velocity'' and is a function given by the time-derivative of position.
 \item The rate of change of velocity is called ``acceleration'' and is a function given by the time-derivative of velocity.
 \item Given a function for acceleration, $a_x(t)$, one can use its anti-derivative to determine velocity.
