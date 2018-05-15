@@ -342,7 +342,7 @@ v_y'^A(t)&=v'^B_y+v_y^A(t)
 
 
 \section{Motion in three dimensions}
-The big challenge was to expand our description of motion from one dimension to two. Adding a third dimension ends up being trivial now that we know how to use vectors. In three dimensions, we describe the position of a point using three coordinates, so all of the vector simply have three independent components, but are treated in exactly the same way as in the two dimensional case. The position of an object is now described by three independent functions, $x(t)$, $y(t)$, $z(t)$, that make up the three components of a position vector $\vec r(t)$:
+The big challenge was to expand our description of motion from one dimension to two. Adding a third dimension ends up being trivial now that we know how to use vectors. In three dimensions, we describe the position of a point using three coordinates, so all of the vectors simply have three independent components, but are treated in exactly the same way as in the two dimensional case. The position of an object is now described by three independent functions, $x(t)$, $y(t)$, $z(t)$, that make up the three components of a position vector $\vec r(t)$:
 \begin{align*}
 \vec r(t) &= \begin{pmatrix}
            x(t) \\
@@ -401,16 +401,20 @@ and the position vector is given by:
 where again, we see how writing a single vector equation (e.g. $\vec v(t) = \vec v_0+\vec at$) is really just a way to write the three independent equations that are true for each component.
 \section{Circular motion}
 We often consider the motion of an object around a circle of fixed radius, $R$. In principle, this is motion in two dimensions, as a circle is necessarily in a two dimensional plane. However, since the object is constrained to move along the circumference of the circle, it can be thought of (and treated as) motion along a one dimensional axis that is curved. 
-\rwcapfig[14]{0.35\textwidth}{figures/Chapter4/circle.png}{\label{fig:chap4:circle} Describing the motion of an object around a circle of radius $R$.}
+\capfig{0.35\textwidth}{figures/Chapter4/circle.png}{\label{fig:chap4:circle} Describing the motion of an object around a circle of radius $R$.}
 
-Figure \ref{fig:chap4:circle} shows how we can describe motion on a circle. We could use $x(t)$ and $y(t)$ to describe the position on the circle, however, $x(t)$ and $y(t)$ are no longer independent, as $x^2(t))+y^2(t)=R^2$ for motion on the circle. Instead, we could think of an axis that is bent around the circle (as shown by the curved arrow, the $d$ axis). The $d$ axis is such that $d=0$ where the circle intersects the $x$ axis, and the value of $d$ increases as we move counter-clockwise along the circle. Instead of using $d$, we can also use the angle, $\theta$, between the position of the object on the circle and the $x$ axis. 
+Figure \ref{fig:chap4:circle} shows how we can describe motion on a circle. We could use $x(t)$ and $y(t)$ to describe the position on the circle, however, $x(t)$ and $y(t)$ are no longer independent since they have to correspond to the coordinates of points on a circle:
+\begin{align*}
+x^2(t)+y^2(t)=R^2
+\end{align*}
+Instead of using $x$ and $y$, we could think of an axis that is bent around the circle (as shown by the curved arrow in Figure \ref{fig:chap4:circle}, the $s$ axis). The $s$ axis is such that $s=0$ where the circle intersects the $x$ axis, and the value of $s$ increases as we move counter-clockwise along the circle. Distance along the $s$ axis thus corresponds to the distance along the circumference of the circle.
 
-If we express the angle $\theta$ in radians, then it easy to convert between $d$ and $\theta$. Recall, an angle in radians is defined as the length of an arc subtended by that angle divided by the radius of the circle. We thus have:
+Another variable that could be used for position instead of $s$ is the angle, $\theta$, between the position vector of the object and the $x$ axis, as illustrated in Figure \ref{fig:chap4:circle}. If we express the angle $\theta$ in radians, then it easy to convert between $s$ and $\theta$. Recall, an angle in radians is defined as the length of an arc subtended by that angle divided by the radius of the circle. We thus have:
 \begin{align}
 \label{eqn:chap4:raddef}
-\Aboxed{\theta=\frac{d}{R}}
+\Aboxed{\theta(t)=\frac{s(t)}{R}}
 \end{align}
-In particular, if the object has gone around the whole circle, then $d=2\pi R$ (the circumference of a circle), and the corresponding angle is, $\theta=\frac{2\pi R}{R}=2\pi$, namely \SI{360}{\degree}. 
+In particular, if the object has gone around the whole circle, then $s=2\pi R$ (the circumference of a circle), and the corresponding angle is, $\theta=\frac{2\pi R}{R}=2\pi$, namely \SI{360}{\degree}. 
 
 By using the angle, $\theta$, instead of $x$ and $y$, we are effectively using polar coordinates, with a fixed radius. As we already saw, the $x$ and $y$ positions are related to $\theta$ by:
 \begin{align*}
@@ -428,7 +432,7 @@ where $R$ is a constant. For an object moving along the circle, we can write its
            \sin(\theta(t)) \\
          \end{pmatrix}
 \end{align*}
-\lwcapfig[8]{0.35\textwidth}{figures/Chapter4/vcircle.png}{\label{fig:chap4:vcircle} The position vector, $\vec r(t)$ is always perpendicular to the velocity vector, $\vec v(t)$, for motion on a circle.}
+\capfig{0.35\textwidth}{figures/Chapter4/vcircle.png}{\label{fig:chap4:vcircle} The position vector, $\vec r(t)$ is always perpendicular to the velocity vector, $\vec v(t)$, for motion on a circle.}
 and the velocity vector is thus given by:
 \begin{align*}
 \vec v(t) &=\frac{d}{dt}\vec r(t) 
@@ -453,51 +457,51 @@ where we used the Chain Rule to calculate the time derivatives of the trigonomet
 &=R\left |\frac{d\theta}{dt}\right|
 \end{align*}
 
-The position and velocity vectors are illustrated in Figure \ref{fig:chap4:vcircle} for an angle $\theta$ in the first quadrant ($\theta<\frac{\pi}{2}$). In this case, you can note that the $x$ component of the velocity is negative (in the equation above, and in the Figure). From the equation above, you can also see that $\frac{|v_x|}{|v_y|}=\tan(\theta)$, which is illustrated in Figure \ref{fig:chap4:vcircle}, showing that \textbf{the velocity vector is tangent to the circle} and perpendicular to the position vector.
+The position and velocity vectors are illustrated in Figure \ref{fig:chap4:vcircle} for an angle $\theta$ in the first quadrant ($0<\theta<\frac{\pi}{2}$). In this case, you can note that the $x$ component of the velocity is negative (in the equation above, and in the Figure). From the equation above, you can also see that $\frac{|v_x|}{|v_y|}=\tan(\theta)$, which is illustrated in Figure \ref{fig:chap4:vcircle}, showing that \textbf{the velocity vector is tangent to the circle} and perpendicular to the position vector. This is always the case for motion along a circle.
 
-However, we can simplify our description of motion along the circle by using either $d(t)$ or $\theta(t)$ instead of the vectors for position and velocity. If we use $d(t)$ to represent position along the circumference ($d=0$ where the circle intersects the $x$ axis), then the velocity along the $d$ axis is:
+We can simplify our description of motion along the circle by using either $s(t)$ or $\theta(t)$ instead of the vectors for position and velocity. If we use $s(t)$ to represent position along the circumference ($s=0$ where the circle intersects the $x$ axis), then the velocity along the $s$ axis is:
 \begin{align*}
-v_d(t)&=\frac{d}{dt}d(t)\\
+v_s(t)&=\frac{d}{dt}s(t)\\
 &=\frac{d}{dt}R\theta(t)\\
 &=R\frac{d\theta}{dt}
 \end{align*}
-where we used the fact that $\theta=\frac{d}{R}$ to convert from $d$ to $\theta$. The velocity along the $d$ axis is thus precisely equal to the magnitude of the velocity vector (derived above), which makes sense since the velocity vector is tangent to the circle (and thus in the $d$ direction).
+where we used the fact that $\theta=\frac{s}{R}$ to convert from $s$ to $\theta$. The velocity along the $s$ axis is thus precisely equal to the magnitude of the two-dimensional velocity vector (derived above), which makes sense since the velocity vector is tangent to the circle (and thus in the $s$ ``direction'').
 
-If the object has a \textbf{constant velocity} along the circle and started at a position along the circumference $d=d_0$, then its position can be described as:
+If the object has a \textbf{constant speed}, $v_s$, along the circle and started at a position along the circumference $s=s_0$, then its position along the $s$ axis can be described as:
 \begin{align*}
-d(t)=d_0+v_dt
+s(t)=s_0+v_st
 \end{align*}
 or, in terms of $\theta$:
 \begin{align*}
-\theta(t)&=\frac{d(t)}{R}=frac{d_0}{R}+\frac{v_d}{R}t\\
+\theta(t)&=\frac{s(t)}{R}=\frac{s_0}{R}+\frac{v_s}{R}t\\
 &=\theta_0 + \frac{d\theta}{dt}t\\
 &=\theta_0 + \omega t\\
 \Aboxed{\therefore \omega &= \frac{d\theta}{dt}}
 \end{align*}
-where we introduced $\theta_0$ as the angle corresponding to $d_0$, and we introduced $\omega=\frac{d\theta}{dt}$, which is analogous to velocity, but for an angle. $\omega$ is called the \textbf{angular velocity} and is a measure of the rate of change of the angle $\theta$. The relation between the ``linear'' velocity $v_d$ and $\omega$ is:
+where we introduced $\theta_0$ as the angle corresponding to the position $s_0$, and we introduced $\omega=\frac{d\theta}{dt}$, which is analogous to velocity, but for an angle. $\omega$ is called the \textbf{angular velocity} and is a measure of the rate of change of the angle $\theta$ (as it is the time derivative of the angle). The relation between the ``linear'' velocity $v_s$ (the magnitude of the velocity vector, which corresponds to the velocity in the direction tangent to the circle) and $\omega$ is:
 \begin{align*}
-\Aboxed{v_d=R\omega }
+\Aboxed{v_s=R\frac{d\theta}{dt}=R\omega }
 \end{align*}
 
-Similarly, if the object is accelerating, we can define an \textbf{angular acceleration}, $\alpha(t)$:
+Similarly, if the object is accelerating, we can define an \textbf{angular acceleration}, $\alpha(t)$, as the rate of change of the angular acceleration:
 \begin{align*}
 \alpha(t)=\frac{d\omega}{dt}
 \end{align*}
-which can directly be related to the acceleration in the $d$ direction, $a_d(t)$:
+which can directly be related to the acceleration in the $s$ direction, $a_s(t)$:
 \begin{align*}
-a_d(t) &= \frac{d}{dt}v_d\\
+a_d(t) &= \frac{d}{dt}v_s\\
 &=\frac{d}{dt}\omega R=R\frac{d\omega}{dt}\\
 \Aboxed{a_d(t)&=R\alpha }
 \end{align*}
-Thus, the linear quantities (those along the $d$ axis) can be related to the angular quantities by multiplying the angular quantities by $R$:
+Thus, the linear quantities (those along the $s$ axis) can be related to the angular quantities by multiplying the angular quantities by $R$:
 \begin{align}
-d&=R\theta\\
-v_d&=R\omega\\
-a_d&=R\alpha
+s&=R\theta\\
+v_s&=R\omega\\
+a_s&=R\alpha
 \end{align}
-If the object started at $t=0$ with a position $d=d_0$ ($\theta=\theta_0$), and an initial linear velocity $v_{0d}$ (angular velocity $\omega_0$), and has a \textbf{constant linear acceleration} around the circle, $a_d$ (angular acceleration, $\alpha$), then the position of the object can be described as:
+If the object started at $t=0$ with a position $s=s_0$ ($\theta=\theta_0$), and an initial linear velocity $v_{0s}$ (angular velocity $\omega_0$), and has a \textbf{constant linear acceleration} around the circle, $a_s$ (angular acceleration, $\alpha$), then the position of the object can be described as:
 \begin{align*}
-d(t) &= d_0+v_{d0}t+\frac{1}{2}a_d t^2\\
+s(t) &= s_0+v_{s0}t+\frac{1}{2}a_s t^2\\
 \theta(t) &= \theta_0+\omega_0t+\frac{1}{2}\alpha t^2
 \end{align*}
 which corresponds to an object that is going around the circle faster and faster.
@@ -511,7 +515,7 @@ The first term, $\vec a_{\parallel}(t)=\frac{dv}{dt}\hat v(t)$, is parallel to t
 \begin{align*}
 ||\vec a_{\parallel}(t)||&=\frac{dv}{dt}=\ddt v(t)=\ddt R\omega=R\alpha
 \end{align*}
-That is, the component of the acceleration vector that is parallel to the velocity is precisely the acceleration in the $d$ direction (the linear acceleration). This component of the acceleration is responsible for increasing (or decreasing) the speed of the object. 
+That is, the component of the acceleration vector that is parallel to the velocity is precisely the acceleration in the $s$ direction (the linear acceleration). This component of the acceleration is responsible for increasing (or decreasing) the speed of the object and is zero if the object goes around the circle with a constant speed (linear or angular). 
 
 As we saw earlier, the perpendicular component of the acceleration, $\vec a_{\bot}(t)$, is responsible for changing the direction of the velocity vector (as the object continuously changes direction when going in a circle). When the motion is around a circle, this component of the acceleration vector is called ``centripetal'' acceleration (i.e. acceleration pointing towards the centre of the circle, as we will see). We can calculate the centripetal acceleration in terms of our angular variables, noting that the unit vector in the direction of the velocity is $\hat v=-\sin(\theta)\hat x+\cos(\theta)\hat y$:
 \begin{align}
@@ -526,7 +530,7 @@ where you can easily verify that the vector $[-\cos(\theta)\hat x-\sin(\theta)\h
 \begin{align}
 a_c(t) = ||\vec a_{\bot}(t)||=\omega^2(t) R = \frac{v^2(t)}{R}
 \end{align}
-where in the last equal sign, we wrote the centripetal acceleration in terms of the speed around the circle.
+where in the last equal sign, we wrote the centripetal acceleration in terms of the speed around the circle ($v=||\vec v||=v_s$).
 
 If an object goes around a circle, it will always have a centripetal acceleration (since its velocity vector must change direction). In addition, if the object's speed is changing, it will also have a linear acceleration, which points in the same direction as the velocity vector (it changes the velocity vector's length but not its direction).
 
@@ -539,7 +543,7 @@ If an object goes around a circle, it will always have a centripetal acceleratio
 \end{checkpointMC}
 
 \subsection{Period and frequency}
-When an object is moving around in a circle, it will typically complete more than one revolution. If the object is going around the circle with a constant speed, then we can define the \textbf{period and frequency} of the motion. 
+When an object is moving around in a circle, it will typically complete more than one revolution. If the object is going around the circle with a constant speed, we call the motion ``uniform circular motion'', and we can define the \textbf{period and frequency} of the motion. 
 
 The period, $T$, is defined to be the time that it takes to complete one revolution around the circle. If the object has constant angular speed $\omega$, we can find the time, $T$, that it takes to complete one full revolution, from $\theta=0$ to $\theta=2\pi$:
 \begin{align}
@@ -556,8 +560,8 @@ The frequency, $f$, is defined to be the inverse of the period:
 \begin{align*}
 f&=\frac{1}{T}=\frac{\omega}{2\pi}
 \end{align*}
-and has SI units of $\si{Hz}=\si{s^{-1}}$. Think of frequency as the number of revolutions completed per second. Thus, if the frequency is $f=\SI{1}{Hz}$, then the object goes around the circle once per second. 
-\rwcapfig[16]{0.35\textwidth}{figures/Chapter4/twocircles.png}{\label{fig:chap4:twocircles} For a given angular velocity, the linear velocity will be larger on a larger circle ($v=\omega R$).} Given the frequency, we can of course obtain the angular velocity:
+and has SI units of $\si{Hz}=\si{s^{-1}}$. Think of frequency as the number of revolutions completed per second. Thus, if the frequency is $f=\SI{1}{Hz}$, the object goes around the circle once per second. 
+\capfig{0.35\textwidth}{figures/Chapter4/twocircles.png}{\label{fig:chap4:twocircles} For a given angular velocity, the linear velocity will be larger on a larger circle ($v=\omega R$).} Given the frequency, we can of course obtain the angular velocity:
 \begin{align*}
 \omega = 2\pi f
 \end{align*}
