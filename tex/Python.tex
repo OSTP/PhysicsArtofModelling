@@ -1,5 +1,5 @@
 \chapter{The Python programming language}
-\label{chap:app:python}
+\label{python}
 This appendix gives a very brief introduction to programming in python and is primarily aimed at introducing tools that are useful for the experimental side of physics. 
  \vspace{1cm}
 \begin{learningObjectives}
@@ -79,7 +79,7 @@ pl.show()
 
 \end{python}
 \begin{poutput}
-(*  \capfig{0.6\textwidth}{figures/AppendixC/positiontime.png}{Plotting two arrays.} *)
+(*  \capfig{0.6\textwidth}{figures/Python/positiontime.png}{Plotting two arrays.} *)
 \end{poutput}
 
 \begin{checkpointSA}{How would you modify the Python code above to show only the points, and not the line?}
@@ -111,14 +111,14 @@ pl.show()
 
 \end{python}
 \begin{poutput}
-(*  \capfig{0.6\textwidth}{figures/AppendixC/functionplot.png}{Plotting a function using arrays.} *)
+(*  \capfig{0.6\textwidth}{figures/Python/functionplot.png}{Plotting a function using arrays.} *)
 \end{poutput}
 
 \section{The QExpy python package for experimental physics}
 QExpy is a Python module that was developed with students from Queen's University to handle all aspects of undergraduate physics laboratories. In this section, we look at how to use QExpy to propagate uncertainties and to plot experimental data.
 
 \subsection{Propagating uncertainties}
-In Chapter \ref{chap:2_ModelAndExperiment}, we saw how to use the ``derivative method'' to propagate the uncertainty from measurements into the uncertainty in a value that depended on those measurements. In Example \ref{ex:Chap2:derivprop}, we propagated the uncertainties $x=\SI{3.00 \pm 0.01}{m}$ and $t=\SI{0.76\pm0.15}{s}$ to the quantity $k=\frac{t}{\sqrt x}$. We show below how easily this can be done with QExpy:
+In Chapter \ref{chap:ModelAndExperiment}, we saw how to use the ``derivative method'' to propagate the uncertainty from measurements into the uncertainty in a value that depended on those measurements. In Example \ref{ex:ModelAndExperiment:derivprop}, we propagated the uncertainties $x=\SI{3.00 \pm 0.01}{m}$ and $t=\SI{0.76\pm0.15}{s}$ to the quantity $k=\frac{t}{\sqrt x}$. We show below how easily this can be done with QExpy:
 
 \begin{python}[caption=QExpy to propagate uncertainties] 
 #First, we load the QExpy module
@@ -151,11 +151,11 @@ print("t = ",t)
 \begin{poutput}
 t = 0.76 +/- 0.15
 \end{poutput}
-By using QExpy, we do not need to tediously calculate the mean and standard deviation, as we had in Example \ref{ex:chap2:stdcalc}.
+By using QExpy, we do not need to tediously calculate the mean and standard deviation, as we had in Example \ref{ex:ModelAndExperiment:stdcalc}.
 
 
 \subsection{Plotting experimental data with uncertainties}
-In Chapter \ref{chap:2_ModelAndExperiment} we had presented the data in Table \ref{tab:appPython:kmes} which corresponded to our measurements of how long it took ($t$) for an object to drop a certain distance, $x$. We had also introduced  Chlo\"e's Theory of gravity that predicted that the data should be described by the following model:
+In Chapter \ref{chap:ModelAndExperiment} we had presented the data in Table \ref{tab:Python:kmes} which corresponded to our measurements of how long it took ($t$) for an object to drop a certain distance, $x$. We had also introduced  Chlo\"e's Theory of gravity that predicted that the data should be described by the following model:
 \begin{align*}
 t = k \sqrt{x}
 \end{align*}
@@ -173,7 +173,7 @@ where $k$ was an undetermined constant of proportionality.
 4.00 &1.07 &2.00 &0.54 \\ \hline
 5.00 &1.10 &2.24 &0.49 \\ \hline
 \end{tabular}
-\caption{\label{tab:appPython:kmes} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
+\caption{\label{tab:Python:kmes} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
 \end{table}
 
 The easiest way to visualize and analyse those data is to plot them. In particular, if we plot (graph) $t$ versus $\sqrt{x}$, we  expect that the points will fall on a straight line that goes through zero, with a slope of $k$ (if the data are described by Chlo\"e's Theory). We can use QExpy to graph the data as well as determine (``fit'') for the slope of the line that best describes the data, since we expect that the slope will correspond to the value of $k$. When plotting data and fitting them to a line (or other function), it is important to make sure that the values have at least an uncertainty in the quantity that is being plotted on the $y$ axis. In this case, we have assumed that all of the measurements of time have an uncertainty of $\SI{0.15}{s}$ and that the measurements of the distance have no (or negligible) uncertainties:
@@ -219,9 +219,9 @@ Correlation matrix:
 
 chi2/ndof = 2.04/2
 ---------------End fit results----------------
-(* \capfig{0.75\textwidth}{figures/AppendixC/tvssqx.png}{\label{fig:appPython:tvssqx} QExpy plot of $t$ versus $\sqrt{x}$ and line of best fit.} *)
+(* \capfig{0.75\textwidth}{figures/Python/tvssqx.png}{\label{fig:Python:tvssqx} QExpy plot of $t$ versus $\sqrt{x}$ and line of best fit.} *)
 \end{poutput}
-The plot in Figure \ref{fig:appPython:tvssqx} shows that the data points are consistent with falling on a straight line, when their error bars are taken into account. We've also asked QExpy to show us the line of best fit to the data, represented by the line with the shaded area. When we asked for the line of best fit, QExpy not only drew the line, but also gave us the values and uncertainties for the slope and the intercept of the line. The shaded area around the line corresponds to other possible lines that one would obtain using different values of the slope and intercept within their corresponding uncertainties. The output also provides a line that tells us that \code{chi2/ndof = 2.04/2}; although you do not need to understand the details, this is a measure of how well the data are described by the line of best fit. Generally, the fit is assumed to be ``good'' if this ratio is close to 1 (the ratio is called ``the reduced chi-squared'').  The ``correlation matrix'' tells us how the best fit value of the slope is linked to the best fit value of the intercept, which you do not need to worry about here.
+The plot in Figure \ref{fig:Python:tvssqx} shows that the data points are consistent with falling on a straight line, when their error bars are taken into account. We've also asked QExpy to show us the line of best fit to the data, represented by the line with the shaded area. When we asked for the line of best fit, QExpy not only drew the line, but also gave us the values and uncertainties for the slope and the intercept of the line. The shaded area around the line corresponds to other possible lines that one would obtain using different values of the slope and intercept within their corresponding uncertainties. The output also provides a line that tells us that \code{chi2/ndof = 2.04/2}; although you do not need to understand the details, this is a measure of how well the data are described by the line of best fit. Generally, the fit is assumed to be ``good'' if this ratio is close to 1 (the ratio is called ``the reduced chi-squared'').  The ``correlation matrix'' tells us how the best fit value of the slope is linked to the best fit value of the intercept, which you do not need to worry about here.
 
 
 Since we expect the slope of the data to be $k$, this provides us a method to determine $k$ from the data as \SI{0.61\pm 0.13}{s.m^{-\frac{1}{2}}}. \textbf{Performing a linear fit of the data is the best way to determine a constant of proportionality between the measurements}. Finally, we expect the intercept to be equal to zero according to our model. The best fit line from QExpy has an intercept of \SI{-0.24\pm 0.22}{s}, which is slightly below, but consistent, with zero. From these data, we would conclude that our measurements are consistent with Chlo\"e's Theory. Again, remember that we can never confirm a theory, we can only exclude it; in this case, we cannot exclude Chlo\"e's Theory.
