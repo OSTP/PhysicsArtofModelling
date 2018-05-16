@@ -3,7 +3,7 @@
 %
 %This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
 \chapter{Calculus}
-\label{app:calculus}
+\label{calculus}
 This appendix gives a very brief introduction to calculus with a focus on the tools needed in physics. 
  \vspace{1cm}
 \begin{learningObjectives}
@@ -13,7 +13,7 @@ This appendix gives a very brief introduction to calculus with a focus on the to
 \end{learningObjectives}
 
 \section{Functions of real numbers}
-In calculus, we work with functions and their properties, rather than variables. We are usually concerned with describing functions in terms of their slope, the area (or volumes) that they enclose, their curvature, their roots (when they have a value of zero) and their continuity. The functions that we will examine are a mapping from one of more \textit{independent} real numbers to a single real number. By convention, we will use $x,y,z$ to indicate independent variables, and $f() $and $g()$ to denote functions. For example, if we say:
+In calculus, we work with functions and their properties, rather than variables. We are usually concerned with describing functions in terms of their slope, the area (or volumes) that they enclose, their curvature, their roots (when they have a value of zero) and their continuity. The functions that we will examine are a mapping from one or more \textit{independent} real numbers to a single real number. By convention, we will use $x,y,z$ to indicate independent variables, and $f()$ and $g()$ to denote functions. For example, if we say:
 \begin{align*}
 f(x) &= x^2\\
 \therefore f(2) &= 4
@@ -46,7 +46,7 @@ pl.grid()
 pl.show()
 \end{python}
 \begin{poutput}
-(*\capfig{0.5\textwidth}{figures/AppendixA/xsquared.png}{\label{fig:appA:xsquared}$f(x)=x^2$ plotted between $x=-5$ and $=+5$.}*)
+(*\capfig{0.5\textwidth}{figures/Calculus/xsquared.png}{\label{fig:appA:xsquared}$f(x)=x^2$ plotted between $x=-5$ and $=+5$.}*)
 \end{poutput}
 
 Plotting a function of 2 variables is a little trickier, since we need to do it in three dimensions (1 axis for $x$, 1 axis for $y$, and one axis for $g(x,y)$). This can be done in python with a little more work:
@@ -85,10 +85,10 @@ ax.view_init(elev=30, azim=-25)
 pl.show()
 \end{python}
 \begin{poutput}
-(*\capfig{0.5\textwidth}{figures/AppendixA/gxy.png}{\label{fig:appA:gxy}$g(x,y)=x^2+2y^2$ plotted for $x$ between -5 and +5 and for $y$ between -5 and +5. }*)
+(*\capfig{0.5\textwidth}{figures/Calculus/gxy.png}{\label{fig:Calculus:gxy}$g(x,y)=x^2+2y^2$ plotted for $x$ between -5 and +5 and for $y$ between -5 and +5. }*)
 \end{poutput}
 
-Unfortunately, it becomes difficult to visualize functions of more than 2 variables, although one can usually look at projections of those functions to try and visualize some of the features (for example, contour maps are 2D projections of 3D surfaces, as shown in the xy plane of Figure \ref{fig:appA:gxy}). When you encounter a function, it is good practice to try and visualize it if you can. For example, ask yourself the following questions:
+Unfortunately, it becomes difficult to visualize functions of more than 2 variables, although one can usually look at projections of those functions to try and visualize some of the features (for example, contour maps are 2D projections of 3D surfaces, as shown in the xy plane of Figure \ref{fig:Calculus:gxy}). When you encounter a function, it is good practice to try and visualize it if you can. For example, ask yourself the following questions:
 \begin{itemize}
 \item Does the function have one or more maxima and/or minima?
 \item Does the function cross zero?
@@ -97,7 +97,7 @@ Unfortunately, it becomes difficult to visualize functions of more than 2 variab
 \end{itemize} 
 
 \section{Derivatives}
-Consider the function $f(x)=x^2$ that is plotted in Figure \ref{fig:appA:xsquared}. For any value of $x$, we can define the slope of the function as the ``steepness of the curve''. For values of $x>0$ the function increases as $x$ increases, so we say that the slope is positive. For values of $x<0$, the function decreases as $x$ increases, so we say that the slope is negative. A synonym for the word slope is ``derivative'', which is the word that we prefer to use in calculus. The derivative of a function $f(x)$ is given the symbol $\frac{df}{dx}$ to indicate that we are referring to the slope of $f(x)$ when plotted as a function of $x$. 
+Consider the function $f(x)=x^2$ that is plotted in Figure \ref{fig:Calculus:xsquared}. For any value of $x$, we can define the slope of the function as the ``steepness of the curve''. For values of $x>0$ the function increases as $x$ increases, so we say that the slope is positive. For values of $x<0$, the function decreases as $x$ increases, so we say that the slope is negative. A synonym for the word slope is ``derivative'', which is the word that we prefer to use in calculus. The derivative of a function $f(x)$ is given the symbol $\frac{df}{dx}$ to indicate that we are referring to the slope of $f(x)$ when plotted as a function of $x$. 
 
 We need to specify which variable we are taking the derivative with respect to when the function has more than one variable but only one of them should be considered \textit{independent}. For example, the function $f(x)=ax^2+c$ will have different values if $a$ and $b$ are changed, so we have to be precise in specifying that we are taking the derivative with respect to $x$. The following notations are equivalent ways to say that we are taking the derivative of $f(x)$ with respect to $x$:
 \begin{align*}
@@ -109,7 +109,7 @@ The slope (derivative) of a function tells us how rapidly the function value is 
 
 We can approximate the derivative by evaluating how much $f(x)$ changes when $x$ changes by a small amount, say, $\Delta x$. In the limit of $\Delta x\to 0$, we get the derivative. In fact, this is the formal definition of the derivative: 
 \begin{align}
-\label{eqn:appA:derdef}
+\label{eqn:Calculus:derdef}
 \Aboxed{\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{\Delta f}{\Delta x} =\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} }
 \end{align}
 where $\Delta f$ is the small change in $f(x)$ that corresponds to the small change, $\Delta x$, in $x$. This makes the notation for the derivative more clear, $dx$ is $\Delta x$ in the limit where $\Delta x\to0$, and $df$ is $\Delta f$, in the same limit of $\Delta x\to 0$.
@@ -132,18 +132,18 @@ and take the limit $\Delta x\to 0$:
 &=\lim_{\Delta x\to 0 }(2x+\Delta x)\\
 &=2x
 \end{align*}
-We have thus found that the function, $f'(x)=2x$, is the derivative of the function $f(x)=x^2$. This is illustrated in Figure \ref{fig:appA:ffprime}. Note that:
+We have thus found that the function, $f'(x)=2x$, is the derivative of the function $f(x)=x^2$. This is illustrated in Figure \ref{fig:Calculus:ffprime}. Note that:
 \begin{itemize}
 \item For $x>0$, $f'(x)$ is positive and increasing with increasing $x$, just as we described earlier (the function $f(x)$ is increasing and getting steeper).
 \item For $x<0$, $f'(x)$ is negative and decreasing in magnitude as $x$ increases. Thus $f(x)$ decreases and gets less steep as $x$ increases.
 \item At $x=0$, $f'(x)=0$ indicating that, at the origin, the function $f(x)$ is (momentarily) flat.
 \end{itemize}   
 
-\capfig{0.7\textwidth}{figures/AppendixA/ffprime.png}{\label{fig:appA:ffprime}$f(x)=x^2$ and its derivative, $f'(x)=2x$ plotted for x between -5 and +5.}
+\capfig{0.7\textwidth}{figures/Calculus/ffprime.png}{\label{fig:Calculus:ffprime}$f(x)=x^2$ and its derivative, $f'(x)=2x$ plotted for x between -5 and +5.}
 
 
 \subsection{Common derivatives and properties}
-It is beyond the scope of this document to derive the functional form of the derivative for any function using equation \ref{eqn:appA:derdef}. Table \ref{tab:appA:commonders} below gives the derivatives for common functions. In all cases, $x$ is the independent variable, and all other variables should be thought of as constants:
+It is beyond the scope of this document to derive the functional form of the derivative for any function using equation \ref{eqn:Calculus:derdef}. Table \ref{tab:Calculus:commonders} below gives the derivatives for common functions. In all cases, $x$ is the independent variable, and all other variables should be thought of as constants:
 
 \begin{center}
 \begin{tabular}{l l}
@@ -158,9 +158,9 @@ $f(x)=e^x$ & $f'(x)=e^x$ \\
 $f(x)=\ln(x)$ & $f'(x)=\frac{1}{x}$ \\
 \hline
 \end{tabular}
-\captionof{table}{\label{tab:appA:commonders}Common derivatives of functions.}
+\captionof{table}{\label{tab:Calculus:commonders}Common derivatives of functions.}
 \end{center}
-If two functions of 1 variable, $f(x)$ and $g(x)$, are combined into a third function, $h(x)$, then there are simple rules for finding the derivative of $h(x)$, $h'(x)$. These are summarized in Table \ref{tab:appA:combders} below.
+If two functions of 1 variable, $f(x)$ and $g(x)$, are combined into a third function, $h(x)$, then there are simple rules for finding the derivative of $h(x)$, $h'(x)$. These are summarized in Table \ref{tab:Calculus:combders} below.
 \begin{center}
 \begin{tabular}{l l}
 \textbf{Function, $h(x)$} & \textbf{Derivative, $h'(x)$}\\
@@ -172,16 +172,16 @@ $h(x)=\frac{f(x)}{g(x)}$ & $h'(x)=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}$ \\
 $h(x)=f(g(x))$ & $h'(x)=f'(g(x))g'(x)$ (The Chain Rule) \\
 \hline
 \end{tabular}
-\captionof{table}{\label{tab:appA:combders}Derivatives of combined functions.}
+\captionof{table}{\label{tab:Calculus:combders}Derivatives of combined functions.}
 \end{center}
-\begin{example}{Use the properties from Table \ref{tab:appA:combders} to show that the derivative of $\tan(x)$ is $\frac{1}{\cos^2(x)}$}
+\begin{example}{Use the properties from Table \ref{tab:Calculus:combders} to show that the derivative of $\tan(x)$ is $\frac{1}{\cos^2(x)}$}
 Since $\tan(x)=\frac{\sin(x)}{\cos(x)}$, we can write:
 \begin{align*}
 h(x) &= \frac{f(x)}{g(x)} \\
 f(x) &= \sin(x)\\
 g(x) &= \cos(x)
 \end{align*}
-Using the fourth row in Table \ref{tab:appA:combders}, and the common derivatives from Table \ref{tab:appA:commonders}, we have:
+Using the fourth row in Table \ref{tab:Calculus:combders}, and the common derivatives from Table \ref{tab:Calculus:commonders}, we have:
 \begin{align*}
 f'(x) &= \cos(x) \\
 g'(x) &= -\sin(x) \\
@@ -194,14 +194,14 @@ h'(x) &=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}\\
 as required.
 \end{example}
 
-\begin{example}{Use the properties from Table \ref{tab:appA:combders} to calculate the derivative of $h(x)=\sin^2(x)$}
+\begin{example}{Use the properties from Table \ref{tab:Calculus:combders} to calculate the derivative of $h(x)=\sin^2(x)$}
 To calculate the derivative of $h(x)$, we need to use the Chain Rule. $h(x)$ is found by first taking $\sin(x)$ and then taking that result squared. We can thus identify:
 \begin{align*}
 h(x) &= \sin^2(x) = f(g(x))\\
 f(x) &= x^2 \\
 g(x) &= \sin(x)
 \end{align*}
-Using the common derivatives from Table \ref{tab:appA:commonders}, we have:
+Using the common derivatives from Table \ref{tab:Calculus:commonders}, we have:
 \begin{align*}
 f'(x) &= 2x \\
 g'(x) &= \cos(x)
@@ -216,13 +216,13 @@ where $f'(g(x))$ means apply the derivative of $f(x)$ to the function $g(x)$. Si
 \end{example}
 \newpage
 \subsection{Partial derivatives and gradients}
-So far, we have only looked at the derivative of a function of a single independent variable and used it to quantify how much the function changes when the independent variable changes. We can processed analogously for a function of multiple variables, $f(x,y)$, by quantifying how much the function changes along the direction of a particular variable. This is illustrated in Figure \ref{fig:appA:fxy} for the function $f(x,y)=x^2-2y^2$, which looks somewhat like a saddle. 
+So far, we have only looked at the derivative of a function of a single independent variable and used it to quantify how much the function changes when the independent variable changes. We can proceed analogously for a function of multiple variables, $f(x,y)$, by quantifying how much the function changes along the direction of a particular variable. This is illustrated in Figure \ref{fig:Calculus:fxy} for the function $f(x,y)=x^2-2y^2$, which looks somewhat like a saddle. 
 
-\capfig{0.5\textwidth}{figures/AppendixA/fxy.png}{\label{fig:appA:fxy}$f(x,y)=x^2-2y^2$ plotted for $x$ between -5 and +5 and for $y$ between -5 and +5. The point P labelled on the figure shows the value of the function at $f(-2,-2)$. The two lines show the function evaluated when one of $x$ or $y$ is held constant.}
+\capfig{0.5\textwidth}{figures/Calculus/fxy.png}{\label{fig:Calculus:fxy}$f(x,y)=x^2-2y^2$ plotted for $x$ between -5 and +5 and for $y$ between -5 and +5. The point P labelled on the figure shows the value of the function at $f(-2,-2)$. The two lines show the function evaluated when one of $x$ or $y$ is held constant.}
 
 Suppose that we wish to determine the derivative of the function $f(x)$ at $x=-2$ and $y=-2$. In this case, it does not make sense to simply determine the ``derivative'', but rather, we must specify \textit{in which direction} we want the derivative. That is, we need to specify in which direction we are interested in quantifying the rate of change of the function.
 
-One possibility is to quantify the rate of change in the $x$ direction. The solid line in Figure \ref{fig:appA:fxy} shows the part of the function surface where $y$ is fixed at -2, that is, the function evaluated as $f(x,y=-2)$. The point $P$ on the figure shows the value of the function when $x=-2$ and $y=-2$. By looking at the solid line at point $P$, we can see that as $x$ increases, the value of the function is gently decreasing. The derivative of $f(x,y)$ with respect to $x$ when $y$ is held constant and evaluated at $x=-2$ and $y=-2$ is thus negative. Rather than saying ``The derivative of $f(x,y)$ with respect to $x$ when $y$ is held constant'' we say ``The \textbf{partial derivative} of $f(x,y)$ with respect to $x$''.
+One possibility is to quantify the rate of change in the $x$ direction. The solid line in Figure \ref{fig:Calculus:fxy} shows the part of the function surface where $y$ is fixed at -2, that is, the function evaluated as $f(x,y=-2)$. The point $P$ on the figure shows the value of the function when $x=-2$ and $y=-2$. By looking at the solid line at point $P$, we can see that as $x$ increases, the value of the function is gently decreasing. The derivative of $f(x,y)$ with respect to $x$ when $y$ is held constant and evaluated at $x=-2$ and $y=-2$ is thus negative. Rather than saying ``The derivative of $f(x,y)$ with respect to $x$ when $y$ is held constant'' we say ``The \textbf{partial derivative} of $f(x,y)$ with respect to $x$''.
 
  Since the partial derivative is different than the ordinary derivative (as it implies that we are holding independent variables fixed), we give it a different symbol, namely, we use $\partial$ instead of $d$:
 \begin{align*}
@@ -237,7 +237,7 @@ A function will have as many partial derivatives as it has independent variables
 
 \begin{example}{Determine the partial derivatives of $f(x,y,z)=ax^2+byz-\sin(z)$.}
 In this case, we have three partial derivatives to evaluate. Note that $a$ are $b$ constants and can be thought of as numbers that we do not know.
-\label{ex:appA:partials}
+\label{ex:Calculus:partials}
 \begin{align*}
 \die{f}{x}&=\die{}{x}(ax^2+byz-\sin(z)) = 2ax\\
 \die{f}{y}&=\die{}{y}(ax^2+byz-\sin(z)) = bz \\
@@ -245,7 +245,7 @@ In this case, we have three partial derivatives to evaluate. Note that $a$ are $
 \end{align*} 
 \end{example}
 
-Since the partial derivatives tell us how the function changes in a particular direction, we can use them to find the direction in which the function changes \textit{the most rapidly}. For example, suppose that the surface from Figure \ref{fig:appA:fxy} corresponds to a real physical surface and that we place a ball at point $P$. We wish to know in which direction the ball will roll. The direction that it will roll in is the opposite of the direction where $f(x,y)$ increases the most rapidly (i.e. it will roll in the direction where $f(x,y)$ decreases the most rapidly). The direction in which the function increases the most rapidly is called the ``gradient'' and denoted by $\nabla f(x,y)$.
+Since the partial derivatives tell us how the function changes in a particular direction, we can use them to find the direction in which the function changes \textit{the most rapidly}. For example, suppose that the surface from Figure \ref{fig:Calculus:fxy} corresponds to a real physical surface and that we place a ball at point $P$. We wish to know in which direction the ball will roll. The direction that it will roll in is the opposite of the direction where $f(x,y)$ increases the most rapidly (i.e. it will roll in the direction where $f(x,y)$ decreases the most rapidly). The direction in which the function increases the most rapidly is called the ``gradient'' and denoted by $\nabla f(x,y)$.
 
 Since the gradient is a direction, it cannot be represented by a single number. Rather, we use a ``vector'' to indicate this direction. Since $f(x,y)$ has two independent variables, the gradient will be a vector with two components. The components of the gradient are given by the partial derivatives:
 \begin{align*}
@@ -267,14 +267,14 @@ Evaluating the gradient at $x=-2$ and $y=-2$:
 &=-4 \hat x + 8 \hat y\\
 &=4 (-\hat x+2\hat y)\\
 \end{align*}
-The gradient vector points in the direction $(-1,2)$. That is, the function increases the most in the direction where you would take 1 pace in the negative $x$ direction and 2 paces in the positive $y$ direction. You can confirm this by looking at point $P$ in Figure \ref{fig:appA:fxy} and imagining in which direction you would have to go to climb the surface to get the steepest climb.
+The gradient vector points in the direction $(-1,2)$. That is, the function increases the most in the direction where you would take 1 pace in the negative $x$ direction and 2 paces in the positive $y$ direction. You can confirm this by looking at point $P$ in Figure \ref{fig:Calculus:fxy} and imagining in which direction you would have to go to climb the surface to get the steepest climb.
 \end{example}
 
-The gradient is itself a function, but it is not a real function (in the sense of a real number), since it evaluates to a vector. It is a mapping from real numbers $x,y$ to a vector. As you take more advanced calculus courses, you will eventually encounter ``vector calculus'', which is just the calculus for function of multiple variables to which you were just introduced. The key point to remember here is that the gradient can be used to find the vector that points in the direction of maximal increase of the corresponding multi-variate function. This is precisely the quantity that we need in physics to determine in which direction a ball will roll when placed on a surface.
+The gradient is itself a function, but it is not a real function (in the sense of a real number), since it evaluates to a vector. It is a mapping from real numbers $x,y$ to a vector. As you take more advanced calculus courses, you will eventually encounter ``vector calculus'', which is just the calculus for functions of multiple variables to which you were just introduced. The key point to remember here is that the gradient can be used to find the vector that points in the direction of maximal increase of the corresponding multi-variate function. This is precisely the quantity that we need in physics to determine in which direction a ball will roll when placed on a surface.
 
 
 \section{Anti-derivatives and integrals}
-In the previous section, we were concerned with determining the derivative of a function $f(x)$. The derivative is useful because it tells how the function $f(x)$ varies as a function of $x$. In physics, we often know how a function varies, but we do not know the actual function. In other words, we often have the opposite problem: we are given the derivative of a function, and wish to determine the actual function. For this case, we will limit our discussion to functions of a single independent variable.
+In the previous section, we were concerned with determining the derivative of a function $f(x)$. The derivative is useful because it tells us how the function $f(x)$ varies as a function of $x$. In physics, we often know how a function varies, but we do not know the actual function. In other words, we often have the opposite problem: we are given the derivative of a function, and wish to determine the actual function. For this case, we will limit our discussion to functions of a single independent variable.
 
 Suppose that we are given a function $f(x)$ and we know that this is the derivative of some other function, $F(x)$, which we do not know. We call $F(x)$ the \textbf{anti-derivative} of $f(x)$. The anti-derivative of a function $f(x)$, written $F(x)$, thus satisfies the property:
 \begin{align*}
@@ -282,66 +282,64 @@ Suppose that we are given a function $f(x)$ and we know that this is the derivat
 \end{align*}
 Since we have a symbol for indicating that we take the derivative with respect to $x$ ($\frac{d}{dx}$), we also have a symbol, $\int dx$, for indicating that we take the anti-derivative with respect to $x$:
 \begin{align*}
-F(x) &= \int f(x) dx \\
-\therefore \frac{d}{dx}\left(\int f(x) dx\right) &= f(x)
+\int f(x) dx &= F(x) \\
+\therefore \frac{d}{dx}\left(\int f(x) dx\right) &= \frac{dF}{dx}=f(x)
 \end{align*}
-Earlier, we justified the symbol for the derivative by pointing out that it is like $\frac{\Delta f}{\Delta x}$ but for the case when $\Delta x\to 0$. Similarly, we will justify the anti-derivative sign, $\int f(x) dx$, by showing that it is related to a sum with $f(x)\Delta x$, in the limit $\Delta x\to 0$. The $\int$ sign looks like an ``S'' for sum.
+Earlier, we justified the symbol for the derivative by pointing out that it is like $\frac{\Delta f}{\Delta x}$ but for the case when $\Delta x\to 0$. Similarly, we will justify the anti-derivative sign, $\int f(x) dx$, by showing that it is related to a sum of $f(x)\Delta x$, in the limit $\Delta x\to 0$. The $\int$ sign looks like an ``S'' for sum.
 
-Your mathematician friends may be screaming at the lack of precision in the above equation, and they would be correct in doing so. While it is possible to exactly determine the derivative of a function $f(x)$, the anti-derivative can only be determined up to a constant. We should thus be precise and indicate this by including a constant, $C$, when we write out $F(x)$ as an anti-derivative:
-\begin{align}
-\label{eqn:appA:antiderDef}
-F(x) = \int f(x) dx + C
-\end{align}
-Since the derivative of $C$ with respect to $x$ is zero (Table \ref{tab:appA:commonders}), when we take the derivative of the above equation, the $C$ will drop out, and we recover $f(x)$:
+While it is possible to exactly determine the derivative of a function $f(x)$, the anti-derivative can only be determined up to a constant. Consider for example a different function, $\tilde F(x)=F(x)+C$, where $C$ is a constant. The derivative of $\tilde F(x)$ is given by:
 \begin{align*}
-\frac{dF}{dx}&= \frac{d}{dx}\left(\int f(x) dx+C\right)\\
-&=\frac{d}{dx}\left(\int f(x) dx\right) +\frac{d}{dx}C\\
-&=f(x) + 0\\
+\frac{d\tilde{F}}{dx}&=\frac{d}{dx}\left(F(x)+C\right)\\
+&=\frac{dF}{dx}+\frac{dC}{dx}\\
+&=\frac{dF}{dx}+0\\
 &=f(x)
 \end{align*}
-The constant $C$ can often be determined using additional information (sometimes called ``initial conditions''). Consider the function, $f(x)$, shown in Figure \ref{fig:appA:ffprime} (left panel). If you imagine shifting the whole function up or down, the derivative would not change. In other words, if the origin of the axes were not drawn on the left panel, you would still be able to determine the derivative of the function (how steep it is). Adding a constant, $C$, to a function is exactly the same as shifting the function up or down, which does not change its derivative. Thus, when you know the derivative, you cannot know the value of $C$, unless you are also told that the function must go through a specific point (a so-called initial condition).
+Hence, the function $\tilde F(x)=F(x)+C$ is also an anti-derivative of $f(x)$. The constant $C$ can often be determined using additional information (sometimes called ``initial conditions''). Recall the function, $f(x)=x^2$, shown in Figure \ref{fig:Calculus:ffprime} (left panel). If you imagine shifting the whole function up or down, the derivative would not change. In other words, if the origin of the axes were not drawn on the left panel, you would still be able to determine the derivative of the function (how steep it is). Adding a constant, $C$, to a function is exactly the same as shifting the function up or down, which does not change its derivative. Thus, when you know the derivative, you cannot know the value of $C$, unless you are also told that the function must go through a specific point (a so-called initial condition).
 
-In order to determine the derivative of a function, we used equation \ref{eqn:appA:derdef}. We now need to derive an equivalent prescription for determining the anti-derivative. Suppose that we have the two pieces of information required to determine $F(x)$ completely, namely:
+In order to determine the derivative of a function, we used equation \ref{eqn:Calculus:derdef}. We now need to derive an equivalent prescription for determining the anti-derivative. Suppose that we have the two pieces of information required to determine $F(x)$ completely, namely:
 \begin{enumerate}
 \item the function $f(x)=\frac{dF}{dx}$
 \item the condition that $F(x)$ must pass through a specific point, $F(x_0)=F_0$.
 \end{enumerate}
-\capfig{0.5\textwidth}{figures/AppendixA/fint.png}{\label{fig:appA:fint}Determining the anti-derivative, $F(x)$, given the function $f(x)=2x$ and the initial condition that $F(x)$ passes through the point $(x_0,F_0)=(1,3)$.}
+\capfig{0.5\textwidth}{figures/Calculus/fint.png}{\label{fig:Calculus:fint}Determining the anti-derivative, $F(x)$, given the function $f(x)=2x$ and the initial condition that $F(x)$ passes through the point $(x_0,F_0)=(1,3)$.}
 
-The procedure for determining the anti-derivative $F(x)$ is illustrated above in Figure \ref{fig:appA:fint}. Namely, we start at the point that we know the function must go through. We then choose a value of $\Delta x$ and calculate the corresponding value of $\Delta F_0$ using the derivative evaluated at $x_0$:
+The procedure for determining the anti-derivative $F(x)$ is illustrated above in Figure \ref{fig:Calculus:fint}. We start by drawing the point that we know the function $F(x)$ must go through, $(x_0,F_0)$. We then choose a value of $\Delta x$ and use the derivative, $f(x)$, to calculate $\Delta F_0$, the amount by which $F(x)$ changes when $x$ changes by $\Delta x$. Using the derivative $f(x)$ evaluated at $x_0$, we have:
 \begin{align*}
-\frac{\Delta F_0}{\Delta x} &\approx f(x_0)\; (\text{in the limit} \Delta x\to 0 )\\
+\frac{\Delta F_0}{\Delta x} &\approx f(x_0)\;\;\;\; (\text{in the limit} \Delta x\to 0 )\\
 \therefore \Delta F_0 &= f(x_0) \Delta x
 \end{align*}
-We can then estimate the value of the function $F(x)$ at the next point, $x_1=x_0+\Delta x$, as illustrated by the black arrow in Figure \ref{fig:appA:fint} 
+We can then estimate the value of the function $F(x)$ at the next point, $x_1=x_0+\Delta x$, as illustrated by the black arrow in Figure \ref{fig:Calculus:fint} 
 \begin{align*}
-F_1&=F(x_1)=F(x+\Delta x) \approx F_0 + \Delta F_0\\
+F_1&=F(x_1)\\
+&=F(x+\Delta x) \\
+&\approx F_0 + \Delta F_0\\
 &\approx F_0+f(x_0)\Delta x
 \end{align*}
-Once we have determined the value of the function $F(x)$ at $x=x_1$, we can proceed to evaluate the derivative there, $f(x_1)$, then determine $\Delta F$, to find the the value of $F(x)$ at the next point, as illustrated by the grey arrow in Figure \ref{fig:appA:fint}:
+Now that we have determined the value of the function $F(x)$ at $x=x_1$, we can repeat the procedure to determine the value of the function $F(x)$ at the next point, $x_2=x_1+\Delta x$. Again, we use the derivative evaluated at $x_1$, $f(x_1)$, to determine $\Delta F_1$, and add that to $F_1$ to get $F_2=F(x_2)$, as illustrated by the grey arrow in Figure \ref{fig:Calculus:fint}:
 \begin{align*}
 F_2&=F(x_1+\Delta x) \\
+&\approx F_1+\Delta F_1\\
 &\approx F_1+f(x_1)\Delta x\\
 &\approx F_0+f(x_0)\Delta x+f(x_1)\Delta x
 \end{align*}
-Using the summation notation, we can write the function $F(x)$ evaluated at any point, $x_N=x_0+N\Delta x$:
+Using the summation notation, we can generalize the result and write the function $F(x)$ evaluated at any point, $x_N=x_0+N\Delta x$:
 \begin{align*}
 F(x_N) \approx F_0+\sum_{i=1}^{i=N} f(x_{i-1}) \Delta x
 \end{align*}
 The result above will become exactly correct in the limit $\Delta x\to 0$:
 \begin{align}
-\label{eqn:appA:intsum}
+\label{eqn:Calculus:intsum}
 F(x_N) = F(x_0)+\lim_{\Delta x\to 0}\sum_{i=1}^{i=N} f(x_{i-1}) \Delta x
 \end{align}
-Let us take a closer look at the sum. Each term in the sum is of the of the form $f(x_{i-1})\Delta x$, and is illustrated in Figure \ref{fig:appA:fintarea} for the same case as in Figure \ref{fig:appA:fint} (that is Figure \ref{fig:appA:fintarea} shows $f(x)$ that we know, and Figure \ref{fig:appA:fint} shows $F(x)$ that we are trying to find).
-\capfig{0.5\textwidth}{figures/AppendixA/fintarea.png}{\label{fig:appA:fintarea} The function $f(x)=2x$ and illustration of the terms $f(x_0)\Delta x$ and $f(x_1)\Delta x$ as the area between the curve $f(x)$ and the $x$ axis when $\Delta x\to 0$.}
+Let us take a closer look at the sum. Each term in the sum is of the form $f(x_{i-1})\Delta x$, and is illustrated in Figure \ref{fig:Calculus:fintarea} for the same case as in Figure \ref{fig:Calculus:fint} (that is, Figure \ref{fig:Calculus:fintarea} shows $f(x)$ that we know, and Figure \ref{fig:Calculus:fint} shows $F(x)$ that we are trying to find).
+\capfig{0.5\textwidth}{figures/Calculus/fintarea.png}{\label{fig:Calculus:fintarea} The function $f(x)=2x$ and illustration of the terms $f(x_0)\Delta x$ and $f(x_1)\Delta x$ as the area between the curve $f(x)$ and the $x$ axis when $\Delta x\to 0$.}
 
-As you can see, each term in the sum corresponds to the area of a rectangle between the function $f(x)$ and the $x$ axis (with a piece missing). In the limit where $\Delta x\to 0$, the missing pieces (shown by the hashed areas in Figure \ref{fig:appA:fintarea}) will vanish and $f(x_i)\Delta x$ will become exactly the area between $f(x)$ and the $x$ axis over a length $\Delta x$. The sum of the rectangular areas will thus approach the area between $f(x)$ and the  $x$ axis between $x_0$ and $x_N$:
+As you can see, each term in the sum corresponds to the area of a rectangle between the function $f(x)$ and the $x$ axis (with a piece missing). In the limit where $\Delta x\to 0$, the missing pieces (shown by the hashed areas in Figure \ref{fig:Calculus:fintarea}) will vanish and $f(x_i)\Delta x$ will become exactly the area between $f(x)$ and the $x$ axis over a length $\Delta x$. The sum of the rectangular areas will thus approach the area between $f(x)$ and the  $x$ axis between $x_0$ and $x_N$:
 \begin{align*}
 \lim_{\Delta x\to 0}\sum_{i=1}^{i=N} f(x_{i-1}) \Delta x=\text{Area between f(x) and x axis from $x_0$ to $x_N$}
 \end{align*}
 
-Re-arranging equation \ref{eqn:appA:intsum} gives us a prescription for determining the anti-derivative:
+Re-arranging equation \ref{eqn:Calculus:intsum} gives us a prescription for determining the anti-derivative:
 \begin{align*}
 F(x_N) - F(x_0)&=\lim_{\Delta x\to 0}\sum_{i=1}^{i=N} f(x_{i-1}) \Delta x
 \end{align*}
@@ -350,7 +348,7 @@ We see that if we determine the area between $f(x)$ and the $x$ axis from $x_0$ 
 
 The difference between the anti-derivative, $F(x)$, evaluated at two different values of $x$ is called the \textbf{integral} of $f(x)$ and has the following notation:
 \begin{align}
-\label{eqn:appA:intdef}
+\label{eqn:Calculus:intdef}
 \Aboxed{\int_{x_0}^{x_N}f(x) dx=F(x_N) - F(x_0)=\lim_{\Delta x\to 0}\sum_{i=1}^{i=N} f(x_{i-1}) \Delta x}
 \end{align}
 As you can see, the integral has labels that specify the range over which we calculate the area between $f(x)$ and the $x$ axis. A common notation to express the difference $F(x_N) - F(x_0)$ is to use brackets:
@@ -361,11 +359,11 @@ As you can see, the integral has labels that specify the range over which we cal
 
 Recall that we wrote the anti-derivative with the same $\int$ symbol earlier:
 \begin{align*}
-F(x) = \int f(x) dx +C
+\int f(x) dx = F(x)
 \end{align*}
-The symbol $\int f(x) dx$ without the limits is called the \textbf{indefinite integral}. You can also see that when you take the (definite) integral (i.e. the  difference between $F(x)$ evaluated at two points), the constant $C$ will cancel. Physical quantities are always based on integrals, so the constant $C$ is really just for completeness (and to keep our mathematician friends happy).
+The symbol $\int f(x) dx$ without the limits is called the \textbf{indefinite integral}. You can also see that when you take the (definite) integral (i.e. the  difference between $F(x)$ evaluated at two points), any constant that is added to $F(x)$ will cancel. Physical quantities are always based on definite integrals, so when we write the constant $C$ it is primarily for completeness and to emphasize that we have an indefinite integral.
 
-As an example, let us determine the integral of $f(x)=2x$ between $x=1$ and $x=4$, as well as the indefinite integral of $f(x)$. Using equation \ref{eqn:appA:intdef}, we have:
+As an example, let us determine the integral of $f(x)=2x$ between $x=1$ and $x=4$, as well as the indefinite integral of $f(x)$, which is the case that we illustrated in Figures \ref{fig:Calculus:fint} and \ref{fig:Calculus:fintarea}. Using equation \ref{eqn:Calculus:intdef}, we have:
 \begin{align*}
 \int_{x_0}^{x_N}f(x) dx&=\lim_{\Delta x\to 0}\sum_{i=1}^{i=N} f(x_{i-1}) \Delta x \\
 &=\lim_{\Delta x\to 0}\sum_{i=1}^{i=N} 2x_{i-1} \Delta x 
@@ -376,7 +374,7 @@ x_0 &=1 \\
 x_N &=4 \\
 \Delta x &= \frac{x_N-x_0}{N}
 \end{align*}
-Note that $N$ is the number of times we have $\Delta x$ in the interval between $x_0$ and $x_N$. Thus, taking the limit of $\Delta x\to 0$ is the same as taking the limit $N\to\infty$. Let us illustrate the sum for the case where $N=3$, and thus when $\Delta x=1$, corresponding to the illustration in Figure \ref{fig:appA:fintarea}:
+Note that $N$ is the number of times we have $\Delta x$ in the interval between $x_0$ and $x_N$. Thus, taking the limit of $\Delta x\to 0$ is the same as taking the limit $N\to\infty$. Let us illustrate the sum for the case where $N=3$, and thus when $\Delta x=1$, corresponding to the illustration in Figure \ref{fig:Calculus:fintarea}:
 \begin{align*}
 \sum_{i=1}^{i=N=3} 2x_{i-1} \Delta x &=2x_0\Delta x+2x_1\Delta x+2x_2\Delta x\\
 &=2\Delta x (x_0+x_1+x_2) \\
@@ -384,7 +382,7 @@ Note that $N$ is the number of times we have $\Delta x$ in the interval between 
 &=2 \frac{(4)-(1)}{(3)}(1+2+3) \\
 &=12
 \end{align*}
-where in the second line, we noticed that we could factor out the $2\Delta x$, since it appears in each term. Since we only used 4 points, this is a pretty coarse approximation of the integral, and we expect it to be an underestimate (as the missing area represented by the hashed lines in Figure \ref{fig:appA:fintarea} is quite large).
+where in the second line, we noticed that we could factor out the $2\Delta x$ because it appears in each term. Since we only used 4 points, this is a pretty coarse approximation of the integral, and we expect it to be an underestimate (as the missing area represented by the hashed lines in Figure \ref{fig:Calculus:fintarea} is quite large).
 
 If we repeat this for a larger value of N, $N=6$ ($\Delta x = 0.5$), we should obtain a more accurate answer:
 \begin{align*}
@@ -393,16 +391,16 @@ If we repeat this for a larger value of N, $N=6$ ($\Delta x = 0.5$), we should o
 &=13.5
 \end{align*}
 
-Writing this out again for the general case, and factoring out the $2\Delta x$:
+Writing this out again for the general case so that we can take the limit $N\to\infty$, and factoring out the $2\Delta x$:
 \begin{align*}
 \sum_{i=1}^{i=N} 2x_{i-1} \Delta x &=2 \Delta x\sum_{i=1}^{i=N}x_{i-1}\\
 &=2 \frac{x_N-x_0}{N}\sum_{i=1}^{i=N}x_{i-1}
 \end{align*}
-and consider specifically the the combination:
+Now, consider the combination:
 \begin{align*}
 \frac{1}{N}\sum_{i=1}^{i=N}x_{i-1}
 \end{align*}
-This corresponds to the arithmetic average of the values from $x_0$ to $x_{N-1}$ (sum the values and divide by the number of values). In the limit where $N\to \infty$, then the value $x_{N-1}\approx x_N$. The average of the values between $x_0$ and $x_N$ is simply given by:
+that appears above. This corresponds to the arithmetic average of the values from $x_0$ to $x_{N-1}$ (sum the values and divide by the number of values). In the limit where $N\to \infty$, then the value $x_{N-1}\approx x_N$. The average of the values between $x_0$ and $x_N$ is simply given by:
 \begin{align*}
 \lim_{N\to\infty}\frac{1}{N}\sum_{i=1}^{i=N}x_{i-1}=\frac{1}{2}(x_N-x_0)
 \end{align*}
@@ -410,19 +408,19 @@ Putting everything together:
 \begin{align*}
 \lim_{N\to\infty}\sum_{i=1}^{i=N} 2x_{i-1} \Delta x &=2 (x_N-x_0)\lim_{N\to\infty}\frac{1}{N}\sum_{i=1}^{i=N}x_{i-1}\\
 &=2 (x_N-x_0)\frac{1}{2}(x_N-x_0)\\
-&=x_N^2 - x_0^2
+&=x_N^2 - x_0^2\\
 &=(4)^2 - (1)^2 = 15
 \end{align*}
-Writing this as the integral:
+where in the last line, we substituted in the values of $x_0=1$ and $x_N=4$. Writing this as the integral:
 \begin{align*}
 \int_{x_0}^{x_N}2x dx=F(x_N) - F(x_0)=x_N^2 - x_0^2
 \end{align*}
 we can immediately identify the anti-derivative and the indefinite integral:
 \begin{align*}
 F(x) &= x^2 +C \\
-\int 2xdx&=x^2
+\int 2xdx&=x^2 +C
 \end{align*}
-This of course the result that we expected, since:
+This is of course the result that we expected, and we can check our answer by taking the derivative of $F(x)$:
 \begin{align*}
 \frac{dF}{dx}=\frac{d}{dx}(x^2+C) = 2x
 \end{align*}
@@ -430,7 +428,7 @@ We have thus confirmed that $F(x)=x^2+C$ is the anti-derivative of $f(x)=2x$.
 
 
 \subsection{Common anti-derivative and properties}
-Table \ref{tab:appA:commonints} below gives the anti-derivatives (indefinite integrals) for common functions. In all cases, $x$ is the independent variable, and all other variables should be thought of as constants:
+Table \ref{tab:Calculus:commonints} below gives the anti-derivatives (indefinite integrals) for common functions. In all cases, $x$ is the independent variable, and all other variables should be thought of as constants:
 \begin{center}
 \begin{tabular}{l l}
 \textbf{Function, $f(x)$} & \textbf{Anti-derivative, $F(x)$}\\
@@ -445,23 +443,29 @@ $f(x)=e^x$ & $F(x)=e^x+C$ \\
 $f(x)=\ln(x)$ & $F(x)=x\ln(x)-x+C$ \\
 \hline
 \end{tabular}
-\captionof{table}{\label{tab:appA:commonints}Common indefinite integrals of functions.}
+\captionof{table}{\label{tab:Calculus:commonints}Common indefinite integrals of functions.}
 \end{center}
 
-Note that in general, it is much more difficult to obtain the anti-derivative of a function that it is to take the derivative. A few common properties to help evaluate indefinite integrals are:
-\begin{enumerate}
-\item $\int (f(x)+g(x)) dx=\int f(x)dx+\int g(x) dx$
-\item $\int (f(x)-g(x)) dx=\int f(x)dx-\int g(x) dx$
-\item $\int af(x) dx=a\int f(x)dx$
-\item $\int f'(x)g(x) dx= f(x)g(x)-\int f(x)g'(x) dx$ (integration by parts)
-\end{enumerate}
+Note that in general, it is much more difficult to obtain the anti-derivative of a function than it is to take the derivative. A few common properties to help evaluate indefinite integrals are shown in Table \ref{tab:Calculus:intprops} below.
+\begin{center}
+\begin{tabular}{l l}
+\textbf{Anti-derivative} & \textbf{Equivalent anti-derivative}\\
+\hline\hline
+$\int (f(x)+g(x)) dx$ &$\int f(x)dx+\int g(x) dx$ (sum)\\
+$\int (f(x)-g(x)) dx$ &$\int f(x)dx-\int g(x) dx$ (subtraction)\\
+$\int af(x) dx$ & $a\int f(x)dx$ (multiplication by constant)\\
+$\int f'(x)g(x) dx$ & $f(x)g(x)-\int f(x)g'(x) dx$ (integration by parts)\\
+\hline
+\end{tabular}
+\captionof{table}{\label{tab:Calculus:intprops}Some properties of indefinite integrals.}
+\end{center}
 
 \subsection{Common uses of integrals in Physics - from a sum to an integral}
 Integrals are extremely useful in physics because they are related to sums. If we assume that our mathematician friends (or computers) can determine anti-derivatives for us, using integrals is not that complicated. 
 
-The key idea in physics is that \textbf{integrals are sums}. As we saw above, that sum also corresponds to the area underneath a curve, which is found by \textit{summing} the different areas of an infinite number of infinitely small rectangles. In physics, it is often the case that we need to take the sum of an infinite number of small things that keep varying. 
+The key idea in physics is that \textbf{integrals are a tool to easily performing sums}. As we saw above, integrals correspond to the area underneath a curve, which is found by \textit{summing} the different areas of an infinite number of infinitely small rectangles that are each different. In physics, it is often the case that we need to take the sum of an infinite number of small things that keep varying. 
 
-Consider, for example, a rod of length, $L$, and total mass $M$. If the rod is uniform in density, then if we cut it into, say, two equal pieces, those two pieces will weigh the same. We can define a ``linear mass density'', $\mu$, for the rod, as:
+Consider, for example, a rod of length, $L$, and total mass $M$, as shown in Figure \ref{fig:Calculus:rod}. If the rod is uniform in density, then if we cut it into, say, two equal pieces, those two pieces will weigh the same. We can define a ``linear mass density'', $\mu$, for the rod, as:
 \begin{align*}
 \mu = \frac{M}{L}
 \end{align*} 
@@ -469,17 +473,17 @@ The linear mass density has dimensions of mass over length and can be used to fi
 \begin{align*}
 \mu=\frac{M}{L}=\frac{(\SI{5}{kg})}{(\SI{2}{m})}=\SI{2.5}{kg/m}
 \end{align*}
-Knowing the mass density, we could now easily know the mass,$m$ of a piece of rod that measures $l=\SI{10}{cm}$. Using the mass density, the mass of the short rod would be given by:
+Knowing the mass density, we can now easily find the mass, $m$, of a piece of rod that has a length of, say, $l=\SI{10}{cm}$. Using the mass density, the mass of the \SI{10}{cm} rod is given by:
 \begin{align*}
 m=\mu l=(\SI{2.5}{kg/m})(\SI{0.1}{m})=\SI{0.25}{kg}
 \end{align*}
-Now suppose that we have a rod of length $L$ that is not uniform, as in Figure \ref{fig::appA:rod}, and that does not have a constant linear mass density. Perhaps the rod gets wider and wider, or it has a holes in it that make it not uniform. Imagine that the mass density of the rod is instead given by a function, $\mu(x)$, where $x$ is the distance measured from one side of the rod. 
+Now suppose that we have a rod of length $L$ that is not uniform, as in Figure \ref{fig::Calculus:rod}, and that does not have a constant linear mass density. Perhaps the rod gets wider and wider, or it has a holes in it that make it not uniform. Imagine that the mass density of the rod is instead given by a function, $\mu(x)$, where $x$ is the distance measured from one side of the rod. 
 
-\capfig{0.7\textwidth}{figures/AppendixA/rod.png}{\label{fig::appA:rod}A rod with a varying linear density. To calculate the mass of the rod, we consider a small mass element $\Delta m_i$ of length $\Delta x$ at position $x_i$. The total mass of the rod is found by summing the mass elements.}
+\capfig{0.7\textwidth}{figures/Calculus/rod.png}{\label{fig::Calculus:rod}A rod with a varying linear density. To calculate the mass of the rod, we consider a small mass element $\Delta m_i$ of length $\Delta x$ at position $x_i$. The total mass of the rod is found by summing the mass elements.}
 
-Then we cannot simply determine the mass of the rod by multiplying $\mu(x)$ and $L$, since we do not know which value of $x$ to use. In fact, we have to use all of the values of $x$, between $x=0$ and $x=L$. 
+Now, we cannot simply determine the mass of the rod by multiplying $\mu(x)$ and $L$, since we do not know which value of $x$ to use. In fact, we have to use all of the values of $x$, between $x=0$ and $x=L$. 
 
-The strategy is to divide the rod up into $N$ pieces of length $\Delta x$. If label our pieces of rod with an index $i$, we can say that the piece that is at position $x_i$ has a tiny mass, $\Delta m_i$. We assume that $\Delta x$ is small enough so that $mu(x)$ can be taken as constant for that tiny piece of rod. Then, the tiny piece of rod, has a mass given by:
+The strategy is to divide the rod up into $N$ pieces of length $\Delta x$. If we label our pieces of rod with an index $i$, we can say that the piece that is at position $x_i$ has a tiny mass, $\Delta m_i$. We assume that $\Delta x$ is small enough so that $\mu(x)$ can be taken as constant for that tiny piece of rod. Then, the tiny piece of rod, has a mass given by:
 \begin{align*}
 \Delta m_i = \mu(x_i) \Delta x
 \end{align*}
@@ -488,7 +492,7 @@ where $\mu(x_i)$ is evaluated at the position, $x_i$, of our tiny piece of rod. 
 M &= \lim_{\Delta x\to 0}\sum_{i=1}^{i=N}\Delta m_i \\
   &= \lim_{\Delta x\to 0}\sum_{i=1}^{i=N} \mu(x_i) \Delta x
 \end{align*}
-But this is precisely the definition of the integral (equation \ref{eqn:appA:intsum}), which we can easily evaluate with an anti-derivative:
+But this is precisely the definition of the integral (equation \ref{eqn:Calculus:intsum}), which we can easily evaluate with an anti-derivative:
 \begin{align*}
 M &=\lim_{\Delta x\to 0}\sum_{i=1}^{i=N} \mu(x_i) \Delta x \\
   &= \int_0^L \mu(x) dx \\
@@ -500,11 +504,11 @@ Suppose that the mass density is given by the function:
 \begin{align*}
 \mu(x)=ax^3
 \end{align*}
-with anti-derivative (Table \ref{tab:appA:commonints}):
+with anti-derivative (Table \ref{tab:Calculus:commonints}):
 \begin{align*}
 G(x)=a\frac{1}{4}x^4 + C
 \end{align*}
-and where $a=\SI{5}{kg/m^4}$. If the length of the rod is $L=\SI{0.5}{m}$, the total mass of the rod is then:
+Let $a=\SI{5}{kg/m^4}$ and let's say that the length of the rod is $L=\SI{0.5}{m}$. The total mass of the rod is then:
 \begin{align*}
 M&=\int_0^L \mu(x) dx \\
 &=\int_0^L ax^3 dx \\

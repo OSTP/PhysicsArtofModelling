@@ -3,7 +3,7 @@
 %
 %This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
 \chapter{Describing motion in one dimension}
-\label{chap:3_Kinematics1D}
+\label{Kinematics1D}
 In this chapter, we will introduce the tools required to describe motion in one dimension. In later chapters, we will use the theories of physics to model the motion of objects, but first, we need to make sure that we have the tools to describe the motion. We generally use the word ``kinematics'' to label the tools for describing motion (e.g. speed, acceleration, position, etc), whereas we refer to ``dynamics'' when we use the laws of physics to predict motion (e.g. what motion will occur if a force is applied to an object). 
  \vspace{1cm}
 \begin{learningObjectives}
@@ -23,14 +23,14 @@ The most simple type of motion to describe is that of a particle that is constra
 \end{itemize}
 That is, unless all of these are specified, you would have a hard time describing the motion of an object to one of your friends over the phone. 
 
-\capfig{0.4\textwidth}{figures/Chapter3/1daxis.png}{\label{fig:chap3:1daxis.png}In order to describe the motion of the grey ball along a straight line, we introduce the x-axis, represented by an arrow to indicate the direction of increasing $x$, and the location of the origin, where $x=\SI{0}{m}$. Given our choice of origin, the ball is currently at a position of $x=\SI{0.5}{m}$.
+\capfig{0.4\textwidth}{figures/DescribingMotionIn1D/1daxis.png}{\label{fig:DescribingMotionIn1D:1daxis.png}In order to describe the motion of the grey ball along a straight line, we introduce the x-axis, represented by an arrow to indicate the direction of increasing $x$, and the location of the origin, where $x=\SI{0}{m}$. Given our choice of origin, the ball is currently at a position of $x=\SI{0.5}{m}$.
 }
-Consider Figure \ref{fig:chap3:1daxis.png} where we would like to describe the motion of the grey ball as it moves along a straight line. In order to quantify where the ball is, we introduce the ``$x$-axis'', illustrated by the black arrow. The direction of the arrow corresponds to the direction where $x$ increases (i.e. becomes more positive). We have also chosen a point where $x=0$, and by convention, we choose to express $x$ in units of meters (the S.I. unit for the dimension of length).
+Consider Figure \ref{fig:DescribingMotionIn1D:1daxis.png} where we would like to describe the motion of the grey ball as it moves along a straight line. In order to quantify where the ball is, we introduce the ``$x$-axis'', illustrated by the black arrow. The direction of the arrow corresponds to the direction where $x$ increases (i.e. becomes more positive). We have also chosen a point where $x=0$, and by convention, we choose to express $x$ in units of meters (the S.I. unit for the dimension of length).
 
 Note that we are completely free to choose both the direction of the $x$-axis and the location of the origin. The $x$-axis is a mathematical construct that we introduce in order to describe the physical world; we could just as easily have chosen for it to point in the opposite direction with a different origin. Since we are completely free to choose where we define the $x$-axis, we should choose the option that is most convenient to us. 
 
 \section{Motion with constant speed}
-Now suppose that the ball in Figure \ref{fig:chap3:1daxis.png} is rolling, and that we recorded its x position every second in a table and obtained the values in Table \ref{tab:chap3:1dmotion} (we will ignore measurement uncertainties and pretend that the values are exact).
+Now suppose that the ball in Figure \ref{fig:DescribingMotionIn1D:1daxis.png} is rolling, and that we recorded its x position every second in a table and obtained the values in Table \ref{tab:DescribingMotionIn1D:1dmotion} (we will ignore measurement uncertainties and pretend that the values are exact).
 \begin{table}[!h]
 \centering
 \begingroup
@@ -50,7 +50,7 @@ Now suppose that the ball in Figure \ref{fig:chap3:1daxis.png} is rolling, and t
 \SI{8.0}{s}& \SI{4.5}{m}\\ \hline
 \SI{9.0}{s}& \SI{5.0}{m}\\ \hline
 \end{tabular}
-\caption{\label{tab:chap3:1dmotion} Position of a ball along the x-axis recorded every second.}
+\caption{\label{tab:DescribingMotionIn1D:1dmotion} Position of a ball along the x-axis recorded every second.}
 \endgroup
 \end{table}
 The easiest way to visualize the values in the table is to plot them on a graph. Plotting position as a function of time is one of the most common graphs to make in physics, since it is often a complete description of the motion of an object. We can easily plot these values in Python:
@@ -73,19 +73,19 @@ pl.grid()
 pl.show()
 \end{python}
 \begin{poutput}
-(* \capfig{0.7\textwidth}{figures/Chapter3/1dxvst.png}{\label{fig:chap3:1dxvst}Plot of position as a function of time using the values from Table \ref{tab:chap3:1dmotion}.} *)
+(* \capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1dxvst.png}{\label{fig:DescribingMotionIn1D:1dxvst}Plot of position as a function of time using the values from Table \ref{tab:DescribingMotionIn1D:1dmotion}.} *)
 \end{poutput}
 
-The data plotted in Figure \ref{fig:chap3:1dxvst} show that the $x$ position of the ball increases linearly with time (i.e. it is a straight line). This means that in equal time increments, the ball will cover equal distances. Note that we also had the liberty to choose when we define $t=0$; in this case, we chose that time is zero when the ball is at $x=\SI{0.5}{m}$. 
+The data plotted in Figure \ref{fig:DescribingMotionIn1D:1dxvst} show that the $x$ position of the ball increases linearly with time (i.e. it is a straight line). This means that in equal time increments, the ball will cover equal distances. Note that we also had the liberty to choose when we define $t=0$; in this case, we chose that time is zero when the ball is at $x=\SI{0.5}{m}$. 
 
-\begin{checkpointSA}{Using the data from Table \ref{tab:chap3:1dmotion}, at what position along the x-axis will the ball be when time is $t=\SI{9.5}{s}$, if it continues its motion undisturbed?} %5.25m
+\begin{checkpointSA}{Using the data from Table \ref{tab:DescribingMotionIn1D:1dmotion}, at what position along the x-axis will the ball be when time is $t=\SI{9.5}{s}$, if it continues its motion undisturbed?} %5.25m
 \end{checkpointSA} 
 
-Since the position as a function of time for the ball plotted in Figure \ref{fig:chap3:1dxvst} is linear, we can summarize our description of the motion using a function, $x(t)$, instead of having to tabulate the values as we did in Table \ref{tab:chap3:1dmotion}. The function will have the functional form:
+Since the position as a function of time for the ball plotted in Figure \ref{fig:DescribingMotionIn1D:1dxvst} is linear, we can summarize our description of the motion using a function, $x(t)$, instead of having to tabulate the values as we did in Table \ref{tab:DescribingMotionIn1D:1dmotion}. The function will have the functional form:
 \begin{align*}
 x(t) = a + b t
 \end{align*}
-The constant $a$ is the ``offset'' of the function, the value that the function has at $t=\SI{0}{s}$. The constant $b$ is the slope and gives the rate of change of the position as a function of time. We can determine the values for the constants $a$ and $b$ by choosing any two rows from Table \ref{tab:chap3:1dmotion} (to determine 2 unknown quantities, you need 2 equations), and obtain 2 equations and 2 unknowns. For example, choosing the points where $t=\SI{0}{s}$ and $t=\SI{2.0}{s}$:
+The constant $a$ is the ``offset'' of the function, the value that the function has at $t=\SI{0}{s}$. The constant $b$ is the slope and gives the rate of change of the position as a function of time. We can determine the values for the constants $a$ and $b$ by choosing any two rows from Table \ref{tab:DescribingMotionIn1D:1dmotion} (to determine 2 unknown quantities, you need 2 equations), and obtain 2 equations and 2 unknowns. For example, choosing the points where $t=\SI{0}{s}$ and $t=\SI{2.0}{s}$:
 \begin{align*}
 x(t=\SI{0}{s})&=\SI{0.5}{m}=a + b(\SI{0}{s}) \\
 x(t=\SI{2.0}{s})&=\SI{1.5}{m}=a + b(\SI{2.0}{s}) \\
@@ -103,20 +103,20 @@ where you should note that $a$ and $b$ have different dimensions. Since $a$ is a
 
 We can generalize the description of an object whose position increases linearly with time as:
 \begin{align}
-\label{eqn:chap3:1dxvst_noa}
+\label{eqn:DescribingMotionIn1D:1dxvst_noa}
 \Aboxed{x(t) = x_0 + v_xt}
 \end{align}
 where $x_0$ is the position of the object at time $t=\SI{0}{s}$ ($a$ from above), and $v_x$ corresponds to the distance that the object covers per unit time ($b$ from above) along the x-axis. We call $v_x$ the ``velocity'' of the object. If $v_x$ is large, then the object covers more distance in a given time, i.e. it moves faster. If $v_x$ is a negative number, then the object moves in the negative $x$ direction.
 
-\capfig{0.7\textwidth}{figures/Chapter3/1dturn.png}{\label{fig:chap3:1dturn}Position as a function of time for an object.}
-\begin{checkpointMC}{Referring to Figure \ref{fig:chap3:1dturn}, what can you say about the motion of the object? }
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1dturn.png}{\label{fig:DescribingMotionIn1D:1dturn}Position as a function of time for an object.}
+\begin{checkpointMC}{Referring to Figure \ref{fig:DescribingMotionIn1D:1dturn}, what can you say about the motion of the object? }
 \item The object moved faster and faster between $t=\SI{0}{s}$ and $t=\SI{30}{s}$, then slowed down to a stop at $t=\SI{60}{s}$.
 \item The object moved in the positive x-direction between $t=\SI{0}{s}$ and $t=\SI{30}{s}$, and then turned around and moved in the negative x-direction between $t=\SI{30}{s}$ and $t=\SI{60}{s}$. %correct
 \item The object moved faster between $t=\SI{0}{s}$ and $t=\SI{30}{s}$ than it did between $t=\SI{30}{s}$ and $t=\SI{60}{s}$.
 \end{checkpointMC}
 
-\capfig{0.7\textwidth}{figures/Chapter3/1d2objects.png}{\label{fig:chap3:1d2objects}Positions as a function of time for two objects.}
-\begin{checkpointMC}{Referring to Figure \ref{fig:chap3:1d2objects}, what can you say about the motion of the two objects? }
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1d2objects.png}{\label{fig:DescribingMotionIn1D:1d2objects}Positions as a function of time for two objects.}
+\begin{checkpointMC}{Referring to Figure \ref{fig:DescribingMotionIn1D:1d2objects}, what can you say about the motion of the two objects? }
 \item Object 1 is slower than Object 2
 \item Object 1 is more than twice as fast as Object 2 %correct
 \item Object 1 is less than twice as fast as Object 2
@@ -127,11 +127,11 @@ Until now, we have considered motion where the velocity is a constant (i.e. wher
 
 Formally, we define acceleration as the rate of change of velocity. Recall that velocity is the rate of change of position, so acceleration is to velocity what velocity is to position. In particular, we saw that if the velocity, $v_x$, is constant, then position as a function of time is given by:
 \begin{align}
-x(t) = x_0 + v_xt \tag{\ref{eqn:chap3:1dxvst_noa}}
+x(t) = x_0 + v_xt \tag{\ref{eqn:DescribingMotionIn1D:1dxvst_noa}}
 \end{align} 
 In analogy, if the acceleration is constant, then the velocity as a function of time is given by:
 \begin{align}
-\label{eqn:chap3L1dvvst}
+\label{eqn:DescribingMotionIn1DL1dvvst}
 \Aboxed{v_x(t) = v_{0x} + a_xt }
 \end{align}
 where $a_x$ is the ``acceleration'' and $v_{0x}$ is the velocity of the object at $t=0$. We can work out the dimensions of acceleration for this equation to make sense. Since we are adding $v_{0x}$ and $a_xt$, we need the dimensions of $a_xt$ to be velocity:
@@ -143,13 +143,13 @@ where $a_x$ is the ``acceleration'' and $v_{0x}$ is the velocity of the object a
 \end{align*}
 Acceleration thus has dimensions of length over time squared, with corresponding S.I. units of m/s$^2$ (meters per second squared or meters per second per second). 
 
-Now that we have an understanding of acceleration, how do we describe the position of an object that is accelerating? We cannot use equation \ref{eqn:chap3:1dxvst_noa}, since it is only correct if the velocity is constant. 
+Now that we have an understanding of acceleration, how do we describe the position of an object that is accelerating? We cannot use equation \ref{eqn:DescribingMotionIn1D:1dxvst_noa}, since it is only correct if the velocity is constant. 
 
-\capfig{0.1\textwidth}{figures/Chapter3/1daxis_vertical.png}{\label{fig:chap3:1daxis_vertical} X-axis for an object that starts at rest at $x=\SI{0}{m}$ when $t=\SI{0}{s}$ and falls downwards (in the direction of increasing $x$).}
+\capfig{0.1\textwidth}{figures/DescribingMotionIn1D/1daxis_vertical.png}{\label{fig:DescribingMotionIn1D:1daxis_vertical} X-axis for an object that starts at rest at $x=\SI{0}{m}$ when $t=\SI{0}{s}$ and falls downwards (in the direction of increasing $x$).}
 
-Let us work out the corresponding equation for position as a function of time for accelerated motion using the x-axis depicted in Figure \ref{fig:chap3:1daxis_vertical}. We will determine $x(t)$ for the grey ball that starts at rest ($v_{0x}=\SI{0}{m/s}$) at the position $x=\SI{0}{m}$ at time $t=\SI{0}{s}$ with a constant positive acceleration $a_x=\SI{10}{m/s\squared}$. We would like to use equation \ref{eqn:chap3:1dxvst_noa}, but we cannot because it only applies if the velocity is constant. To remedy this, we pretend (we ``approximate'') that for a very small amount of time, the velocity is almost constant. Let us take a very small interval in time, say $\Delta t=\SI{0.001}{s}$, and approximate that the velocity is constant during that interval. 
+Let us work out the corresponding equation for position as a function of time for accelerated motion using the x-axis depicted in Figure \ref{fig:DescribingMotionIn1D:1daxis_vertical}. We will determine $x(t)$ for the grey ball that starts at rest ($v_{0x}=\SI{0}{m/s}$) at the position $x=\SI{0}{m}$ at time $t=\SI{0}{s}$ with a constant positive acceleration $a_x=\SI{10}{m/s\squared}$. We would like to use equation \ref{eqn:DescribingMotionIn1D:1dxvst_noa}, but we cannot because it only applies if the velocity is constant. To remedy this, we pretend (we ``approximate'') that for a very small amount of time, the velocity is almost constant. Let us take a very small interval in time, say $\Delta t=\SI{0.001}{s}$, and approximate that the velocity is constant during that interval. 
 
-At $t=\SI{0}{s}$, we have $x=\SI{0}{m}$, $v_{0x}=\SI{0}{m/s}$ and $a_x=\SI{10}{m/s\squared}$. We can use equation \ref{eqn:chap3L1dvvst} to find the velocity at $t=\Delta t$ (at the end of the first interval):
+At $t=\SI{0}{s}$, we have $x=\SI{0}{m}$, $v_{0x}=\SI{0}{m/s}$ and $a_x=\SI{10}{m/s\squared}$. We can use equation \ref{eqn:DescribingMotionIn1DL1dvvst} to find the velocity at $t=\Delta t$ (at the end of the first interval):
 \begin{align*}
 v_x(t=\Delta t) &= v_{0x} + a_x\Delta t\\
 &=(\SI{0}{m/s})+ a_x\Delta t\\&=a_x\Delta t
@@ -163,7 +163,7 @@ v_1^{avg}(t=\Delta t)&=\frac{1}{2}\left[ v(t=0) + v(t=\Delta t)\right]\\
 &=\frac{1}{2}(\SI{10}{m/s^2})(\SI{0.001}{s})\\
 &=\SI{0.005}{m/s}
 \end{align*}
-Using the average velocity during the interval, we can use equation \ref{eqn:chap3:1dxvst_noa} to find the position at $t=\Delta t$: 
+Using the average velocity during the interval, we can use equation \ref{eqn:DescribingMotionIn1D:1dxvst_noa} to find the position at $t=\Delta t$: 
 \begin{align*}
 x(t=\Delta t) &= x_0 +v_1^{avg}\Delta t\\
 &=(\SI{0}{m}) + \frac{1}{2}a_x(\Delta t)^2\\
@@ -178,7 +178,7 @@ v_2^{avg}(t=2\Delta t)&= \frac{1}{2}\left[v(t=\Delta t)+v(t=2\Delta t) \right]\\
 &=\frac{3}{2}(\SI{10}{m/s^2})(\SI{0.001}{s})\\
 &=\SI{0.015}{m/s}
 \end{align*}
-To find the position at the end of the second time interval, when $t=2\Delta t$, we use equation \ref{eqn:chap3:1dxvst_noa} again, but with a different starting position and the average velocity that we just found:
+To find the position at the end of the second time interval, when $t=2\Delta t$, we use equation \ref{eqn:DescribingMotionIn1D:1dxvst_noa} again, but with a different starting position and the average velocity that we just found:
 \begin{align*}
 x(t=2\Delta t) &= x(t=\Delta t) +v_2^{avg}\Delta t\\
 &= \frac{1}{2}a_x(\Delta t)^2+\frac{3}{2}a(\Delta t)^2\\
@@ -195,33 +195,33 @@ x(t=N\Delta t)&=\frac{1}{2}a_x(N\Delta t)^2&\text{(position at end of interval)}
 
 The last line gives us exactly what we were after, namely the position as a function of time for a constant acceleration, $a_x$, when the object started at rest at a position of $x=\SI{0}{m}$:
 \begin{align}
-\label{eqn:chap3:1dxoft_novonoxo}
+\label{eqn:DescribingMotionIn1D:1dxoft_novonoxo}
  x(t) = \frac{1}{2} a_x t^2
 \end{align}
 
 If at $t=0$, the object had an initial position along the x-axis of $x_0$, then the position $x(t)$ would be shifted by an amount $x_0$:
 
 \begin{align}
-\label{eqn:chap3:1dxoft_novo}
+\label{eqn:DescribingMotionIn1D:1dxoft_novo}
  x(t) = x_0+\frac{1}{2} a_x t^2
 \end{align}
 
 Finally, if the object had an initial speed $v_{0x}$ at $t=0$, one can easily reproduce the iterations above to find that we need to add an additional term to account for this. We arrive at the general description of the position of an object moving in a straight line with acceleration, $a_x$:
 \begin{align}
-\label{eqn:chap3:1dxvst}
+\label{eqn:DescribingMotionIn1D:1dxvst}
 \Aboxed{ x(t) = x_0+v_{0x}t+ \frac{1}{2}a_xt^2}
 \end{align}
-Note that equation \ref{eqn:chap3:1dxvst_noa} is just a special case of the above when $a=0$. 
+Note that equation \ref{eqn:DescribingMotionIn1D:1dxvst_noa} is just a special case of the above when $a=0$. 
 
 \begin{example}{A ball is thrown upwards with a velocity of \SI{10}{m/s}. After which distance will the ball stop before falling back down? Assume that gravity causes a constant downwards acceleration of \SI{9.8}{m/s^2}.}
-\label{ex:chap3:ballupandown}
+\label{ex:DescribingMotionIn1D:ballupandown}
 We will solve this problem in the following steps:
 \begin{enumerate}[topsep=-10pt]
 \item Setup a coordinate system (define the x-axis).
 \item Identify the condition that corresponds to the ball stopping its upwards motion and falling back down.
 \item Determine the distance at which the ball stopped.
 \end{enumerate}
-Since we throw the ball upwards with an initial velocity upwards, it makes sense to choose an x-axis that points up and has the origin at the point where we release the ball. With this choice, referring to the variables in equation \ref{eqn:chap3:1dxvst}, we have:
+Since we throw the ball upwards with an initial velocity upwards, it makes sense to choose an x-axis that points up and has the origin at the point where we release the ball. With this choice, referring to the variables in equation \ref{eqn:DescribingMotionIn1D:1dxvst}, we have:
 \begin{align*}
 x_0&=0\\
 v_{0x}&=+\SI{10}{m/s}\\
@@ -229,7 +229,7 @@ a_x&=\SI{-9.8}{m/s^2}
 \end{align*}
 where the initial velocity is in the positive x-direction, and the acceleration, $a_x$, is in the negative direction (the velocity will be getting smaller and smaller, so its rate of change is negative).
 
-The condition for the ball to stop at the top of the trajectory is that its velocity will be zero (that is what it means to stop). We can use equation \ref{eqn:chap3L1dvvst} to find what time that corresponds to:
+The condition for the ball to stop at the top of the trajectory is that its velocity will be zero (that is what it means to stop). We can use equation \ref{eqn:DescribingMotionIn1DL1dvvst} to find what time that corresponds to:
 \begin{align*}
 v(t) &= v_{0x}+a_xt\\
 0 &= (\SI{10}{m/s}) + (\SI{-9.8}{m/s^2})t\\
@@ -250,15 +250,15 @@ When an object has a constant acceleration, its velocity and position as a funct
 v(t) &= v_{0x} + a_xt\\
 x(t) &= x_0+v_{0x}t+ \frac{1}{2}a_xt^2
 \end{align*}
-where the velocity changes linearly with time, and the position changes quadratically with time (it goes as $t^2$). Figure \ref{fig:chap3:1dxvvst_aconst} shows the position and the speed as a function of time for the ball from example \ref{ex:chap3:ballupandown} for the first three seconds of the motion.
+where the velocity changes linearly with time, and the position changes quadratically with time (it goes as $t^2$). Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst} shows the position and the speed as a function of time for the ball from example \ref{ex:DescribingMotionIn1D:ballupandown} for the first three seconds of the motion.
 
-\capfig{0.7\textwidth}{figures/Chapter3/1dxvvst_aconst.png}{\label{fig:chap3:1dxvvst_aconst} Position and speed as a function of time for the ball in example \ref{ex:chap3:ballupandown}.}
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1dxvvst_aconst.png}{\label{fig:DescribingMotionIn1D:1dxvvst_aconst} Position and speed as a function of time for the ball in example \ref{ex:DescribingMotionIn1D:ballupandown}.}
 
-We can divide the motion into three parts (shown by the vertical dashed lines in Figure \ref{fig:chap3:1dxvvst_aconst}):
+We can divide the motion into three parts (shown by the vertical dashed lines in Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst}):
 
 \textbf{1) Between $t=\SI{0}{s}$ and $t=\SI{1.02}{s}$}
 
-At time $t=\SI{0}{s}$, the ball starts at a position of $x=\SI{0}{m}$ (left) and a speed of $v_{0x}=\SI{10}{m/s}$ (right). During the first second of motion, the position, $(t)$, increases (the ball is moving up), until the position stops increasing at $t=\SI{1.02}{s}$, as found in example \ref{ex:chap3:ballupandown}. During that time, the velocity decreases linearly from \SI{10}{m/s} to \SI{0}{m/s} due to the constant negative acceleration from gravity. At $t=\SI{1,02}{s}$, the velocity is instantaneously \SI{0}{m/s} and the ball is momentarily at rest (as it reaches the top of the trajectory before falling back down).
+At time $t=\SI{0}{s}$, the ball starts at a position of $x=\SI{0}{m}$ (left) and a speed of $v_{0x}=\SI{10}{m/s}$ (right). During the first second of motion, the position, $(t)$, increases (the ball is moving up), until the position stops increasing at $t=\SI{1.02}{s}$, as found in example \ref{ex:DescribingMotionIn1D:ballupandown}. During that time, the velocity decreases linearly from \SI{10}{m/s} to \SI{0}{m/s} due to the constant negative acceleration from gravity. At $t=\SI{1,02}{s}$, the velocity is instantaneously \SI{0}{m/s} and the ball is momentarily at rest (as it reaches the top of the trajectory before falling back down).
 
 \textbf{2) Between $t=\SI{1.02}{s}$ and $t=\SI{2.04}{s}$}
 
@@ -268,13 +268,13 @@ At $t=\SI{1.02}{s}$, the velocity continues to decrease linearly (it becomes mor
 
 If nothing is there to stop the ball, it continues to move downwards with ever increasing velocity. The position continues to become more negative and the velocity continues to become larger in magnitude and more negative.
 
-\begin{checkpointSA}{Make a sketch of the acceleration as a function of time corresponding to the position and velocity shown in Figure \ref{fig:chap3:1dxvvst_aconst}.}
+\begin{checkpointSA}{Make a sketch of the acceleration as a function of time corresponding to the position and velocity shown in Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst}.}
 \end{checkpointSA}
 
 \subsection{Speed versus velocity}
-In the previous example, our language was not quite as precise as it should be when conducting science. Specifically, we need a way to distinguish the situation when the velocity is decreasing (becoming more negative), while the object is actually going faster and faster (after $t=\SI{1.02}{s}$ in Figure \ref{fig:chap3:1dxvvst_aconst}). We will use the term \textbf{speed} to refer to how fast an object is moving (how much distance it covers per unit time), and we will use the term \textbf{velocity} to also indicate the direction of the motion. In other words, the speed is the absolute value of the velocity\footnote{This is true for one-dimensional motion, whereas in two or more dimensions, velocity is a vector and speed is the magnitude of that vector.}. The speed is thus always positive, whereas the velocity can also be negative.
+In the previous example, our language was not quite as precise as it should be when conducting science. Specifically, we need a way to distinguish the situation when the velocity is decreasing (becoming more negative), while the object is actually going faster and faster (after $t=\SI{1.02}{s}$ in Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst}). We will use the term \textbf{speed} to refer to how fast an object is moving (how much distance it covers per unit time), and we will use the term \textbf{velocity} to also indicate the direction of the motion. In other words, the speed is the absolute value of the velocity\footnote{This is true for one-dimensional motion, whereas in two or more dimensions, velocity is a vector and speed is the magnitude of that vector.}. The speed is thus always positive, whereas the velocity can also be negative.
 
-With this vocabulary, the speed of the ball in Figure \ref{fig:chap3:1dxvvst_aconst} decreases between $t=\SI{0}{s}$ and $t=\SI{1.02}{s}$, and increases thereafter. On the other hand, the velocity continuously decreases (it is always becoming more and more negative). Velocity is thus the more general term since it tells us both the speed and the direction of the motion. 
+With this vocabulary, the speed of the ball in Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst} decreases between $t=\SI{0}{s}$ and $t=\SI{1.02}{s}$, and increases thereafter. On the other hand, the velocity continuously decreases (it is always becoming more and more negative). Velocity is thus the more general term since it tells us both the speed and the direction of the motion. 
 
 \section{Using calculus to describe motion}
 Objects do not necessarily have a constant velocity or acceleration. We thus need to extend our description of the position and velocity of an object to a more general case. This can be done in much the same way as we introduced accelerated motion; namely by pretending that during a very small interval in time, $\Delta t$, the velocity and acceleration are constant, and then considering the motion as the sum over many small intervals in time. In the limit that $\Delta t$ tends to zero, this will be an accurate description. 
@@ -289,15 +289,15 @@ That is, regardless of our choice of time interval, $\Delta t$, we can always ca
 \begin{align*}
 v = \lim_{\Delta t\to 0} \frac{\Delta x}{\Delta t}
 \end{align*}
-The instantaneous velocity is the velocity only in that small instant in time where we choose $\Delta x$ and $\Delta t$. Another way to read this equation is that the velocity, $v$, is the slope of the graph of $x(t)$. Recall that the slope is the ``rise over run'', in other words, the change in $x$ divided by the corresponding change in $t$. Indeed, when we had no acceleration, the position as a function of time, equation \ref{eqn:chap3:1dxvst_noa}, explicitly had the velocity as the slope of a linear function:
+The instantaneous velocity is the velocity only in that small instant in time where we choose $\Delta x$ and $\Delta t$. Another way to read this equation is that the velocity, $v$, is the slope of the graph of $x(t)$. Recall that the slope is the ``rise over run'', in other words, the change in $x$ divided by the corresponding change in $t$. Indeed, when we had no acceleration, the position as a function of time, equation \ref{eqn:DescribingMotionIn1D:1dxvst_noa}, explicitly had the velocity as the slope of a linear function:
  \begin{align*}
  x(t) = v_{0x}+v_xt
  \end{align*}
- If we go back to Figure \ref{fig:chap3:1dxvvst_aconst}, where velocity was no longer constant, we can indeed see that the graph of the velocity versus time, $v(t)$, corresponds to the instantaneous slope of the graph of position versus time, $x(t)$. For $t<\SI{1.02}{s}$, the slope of the $x(t)$ graph is positive but decreasing (as is $v(t)$). At $t=\SI{1.02}{s}$, the slope of $x(t)$ is instantaneously \SI{0}{m/s} (as is the velocity). Finally, for $t>\SI{1.02}{s}$, the slope of $x(t)$ is negative and increasing in magnitude, as is $v(t)$.
+ If we go back to Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst}, where velocity was no longer constant, we can indeed see that the graph of the velocity versus time, $v(t)$, corresponds to the instantaneous slope of the graph of position versus time, $x(t)$. For $t<\SI{1.02}{s}$, the slope of the $x(t)$ graph is positive but decreasing (as is $v(t)$). At $t=\SI{1.02}{s}$, the slope of $x(t)$ is instantaneously \SI{0}{m/s} (as is the velocity). Finally, for $t>\SI{1.02}{s}$, the slope of $x(t)$ is negative and increasing in magnitude, as is $v(t)$.
 
 Leibniz and Newton were the first to develop mathematical tools to deal with calculations that involve quantities that tend to zero, as we have here for our time interval $\Delta t$. Nowadays, we call that field of mathematics ``calculus'', and we will make use of it here. Using the vocabulary of calculus, rather than saying that ``instantaneous velocity is the slope of the graph of position versus time at some point in time'', we say that ``instantaneous velocity is the time derivative of position as a function of time''. We also use a slightly different notation so that we do not have to write the limit $\lim_{\Delta t\to 0}$:
 \begin{align}
-\label{eqn:chap3:vdef}
+\label{eqn:DescribingMotionIn1D:vdef}
 \Aboxed{v(t)=\lim_{\Delta t\to 0} \frac{\Delta x}{\Delta t}=\frac{dx}{dt}=\frac{d}{dt} x(t)}
 \end{align}
 where we can really think of $dt$ as $\lim_{\Delta t\to 0}\Delta t$, and $dx$ as the corresponding change in position over an \textit{infinitesimally} small time interval $dt$.
@@ -318,7 +318,7 @@ The velocity is given by taking the derivative of $x(t)$ with respect to time:
 v(t)&=\frac{dx}{dt}=\frac{d}{dt}\left(x_0+v_{0x}t+\frac{1}{2}a_xt^2\right)\\
 &=v_{0x}t+a_xt
 \end{align*}
-as we found before, in equation \ref{eqn:chap3L1dvvst}. The acceleration is then given by the time-derivative of the velocity:
+as we found before, in equation \ref{eqn:DescribingMotionIn1DL1dvvst}. The acceleration is then given by the time-derivative of the velocity:
 \begin{align*}
 a_x &= \frac{dv}{dt}=\frac{d}{dt}\left(v_{0x}t+a_xt\right)\\
 &=a_x
@@ -386,8 +386,8 @@ x(t)=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 TODO: Checkpoint MC, choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, and $\omega$ is constant, and velocity and position are zero at $t=0$.
 
 \section{Relative motion}
-In order to describe the motion of an object confined to a straight line, we introduced an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:chap3:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
-\capfig{0.7\textwidth}{figures/Chapter3/TrainABC.png}{\label{fig:chap3:TrainABC}Alice is walking in the train and her position is described by both Brice, who is sitting in the train (using the $x$ axis), and Igor, who is at rest on the ground (using the $x'$ axis).} 
+In order to describe the motion of an object confined to a straight line, we introduced an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:DescribingMotionIn1D:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/TrainABC.png}{\label{fig:DescribingMotionIn1D:TrainABC}Alice is walking in the train and her position is described by both Brice, who is sitting in the train (using the $x$ axis), and Igor, who is at rest on the ground (using the $x'$ axis).} 
 
 Since Brice already went through the work of determining the function $x^A(t)$ in the \textbf{reference frame} of the train, we wish to determine how to \textit{transform} $x^A(t)$ into the reference frame of the train station, $x'^A(t)$, so that Igor can also describe Alice's motion. In other words, we wish to describe Alice's motion in two different \textit{reference frames}.
 
@@ -400,7 +400,7 @@ In principle, if you blocked out all of the windows in the train, it would not b
 
 Not only is it impossible to define a frame of reference that is truly at rest, the rules from transforming from one frame to the other depend on the speed between the reference frames. Our common experience is described by what we call ``Galilean Relativity'', but if the speed between trains is very large, close to the speed of light, then we need to use Einstein's Special Theory of Relativity.
 
-Referring to Figure \ref{fig:chap3:TrainABC}, we wish to use Brice's description of Alice's motion, $x^A(t)$, and convert it into a description, $x'^A(t)$ that Igor can use in the train station. Since Brice is at rest in the train, the speed of Brice \textit{relative} to Igor is $v'^B(t)$. The first step is for Igor to describe Brice's position, $x'^B(t)$, (that is, the position of Brice's origin). Assume that we choose $t=0$ to be the point in time where the two origins are aligned. Since the train is moving at a constant speed, $v_B$ (as measured by Brice), then the position of Brice's origin as measured from Igor's origin is given by:
+Referring to Figure \ref{fig:DescribingMotionIn1D:TrainABC}, we wish to use Brice's description of Alice's motion, $x^A(t)$, and convert it into a description, $x'^A(t)$ that Igor can use in the train station. Since Brice is at rest in the train, the speed of Brice \textit{relative} to Igor is $v'^B(t)$. The first step is for Igor to describe Brice's position, $x'^B(t)$, (that is, the position of Brice's origin). Assume that we choose $t=0$ to be the point in time where the two origins are aligned. Since the train is moving at a constant speed, $v_B$ (as measured by Brice), then the position of Brice's origin as measured from Igor's origin is given by:
 \begin{align*}
 x'^B(t)=v'^Bt
 \end{align*}
