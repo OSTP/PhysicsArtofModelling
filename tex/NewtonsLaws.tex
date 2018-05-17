@@ -36,7 +36,14 @@ Newton's Second Law is often written as a vector equation:
 \begin{align*}
 \sum \vec F = m\vec a
 \end{align*}
-where $\sum \vec F$ is the vector sum of the forces exerted on an object, $\vec a$ is the acceleration vector of the object, and $m$ is the ``inertial mass'' of the object. As we will see, a force is represented by a vector, and the sum of the force vectors on an object is often called the ``net force''. Newton's Second Law is the foundation for Classical Physics, in which we seek to be able to describe the motion of any object. The motion of an object is fully specified by its acceleration as long as we know the position and velocity at a specific point in time. That is, by knowing the position and velocity of the object at a point in time and its acceleration, we can describe its motion both in the future and in the in past; we call Classical Physics a deterministic theory (as opposed to, say, Quantum Mechanics, which would only tell us the probability that a particle would be at some particular position in the future). The right side of the equation is thus the kinematic description of the object; if we know the acceleration, we know everything that the object will do.
+where $\sum \vec F$ is the vector sum of the forces exerted on an object, $\vec a$ is the acceleration vector of the object, and $m$ is the ``inertial mass'' of the object. As we will see, a force is represented by a vector, and the sum of the force vectors on an object is often called the ``net force''. Recall that using vectors to write an equation is just a shorthand for writing the equation out for each component. In three dimensions, this would thus correspond to three independent scalar equations (one for each component):
+\begin{align*}
+\sum F_x &= ma_x \\
+\sum F_y &= ma_y \\
+\sum F_z &= ma_z
+\end{align*}
+
+Newton's Second Law is the foundation for Classical Physics, in which we seek to be able to describe the motion of any object. The motion of an object is fully specified by its acceleration as long as we know the position and velocity at a specific point in time. That is, by knowing the position and velocity of the object at a point in time and its acceleration, we can describe its motion both in the future and in the in past; we call Classical Physics a deterministic theory (as opposed to, say, Quantum Mechanics, which would only tell us the probability that a particle would be at some particular position in the future). The right side of the equation is thus the kinematic description of the object; if we know the acceleration, we know everything that the object will do.
 
 The left side of the equation contains all of the ``dynamics''; force is the tool that Newton introduced in order to be able to determine the acceleration of an object. Newton's Second Law thus tells how to determine the kinematics of an object by using the concept of forces; it relates the dynamics to the kinematics. Having already covered kinematics, we will now focus on understanding dynamics and how to develop models that allow us to calculate the net force on an object. The inertial mass, $m$, is a specific property of an object that tells us how large an acceleration it will experience based on a given net force. Thus, objects with different masses will experience different accelerations if subject to the same net force.
 
@@ -125,28 +132,43 @@ f_s\leq\mu_sN
 \end{align*}
 where $\mu_s$ is called the ``coefficient of static friction'' and the inequality sign is used to indicate that the force of static friction has a maximum value, but that its magnitude depends on the other forces being exerted on the object. For example, if you do not push against a crate on a horizontal surface, there is no force of static friction on the crate (as long as no other forces are exerted that are parallel to the surface).
 
-\capfig{0.1\textwidth}{figures/NewtonsLaws/friction.png}{\label{fig:newtonslaws:friction} (Left) A block sliding to the right on a horizontal surface (not shown). The force of kinetic friction is always perpendicular to the normal force and opposite of the direction of motion. (Right) A block that is being acted upon by an external force $\vec F$ to the right. A force of static friction is perpendicular to the normal force and opposite the direction of ``impeding motion'' - with the static friction }
-\subsubsection{Tension forces}
+\capfig{0.5\textwidth}{figures/NewtonsLaws/friction.png}{\label{fig:newtonslaws:friction} (Left:) A block sliding to the right on a horizontal surface (not shown). The force of kinetic friction is always perpendicular to the normal force and opposite of the direction of motion. (Right:) A block that is being acted upon by an external force $\vec F$ to the right. A force of static friction is perpendicular to the normal force and opposite the direction of ``impeding motion'' - without the force of static friction, the block would start to accelerate towards the right, so the force of static friction is to the left.}
 
-\subsubsection{Applied forces}
+\subsubsection{Tension forces}
+Tension forces are ``pulling'' forces that are applied by a rope or other non rigid media (e.g. a chain) which cannot usually be used to push\footnote{If you attached a rigid rod to an object and pulled on the rigid rod, you could call the force exerted by the rod on the object a force of tension.}. If you attach a rope to a crate and use the rope to pull the crate, we call the force exerted by the rope onto the crate a force of tension.
+
+When you pull on a rope that is attached to a wall at the other end, we say that the rope is under tension, or that the tension force is present throughout the rope. If you pull really hard on the rope, it is harder to displace the centre of the rope than if you did not pull on the rope at all. It thus makes is reasonable to view the tension as being present throughout the rope. The force of tension that a rope can apply onto an object depends on what is pulling on the rope at the other end. A rope can be used to change the direction of a force, as illustrated in Figure \ref{fig:newtonslaws:tension}, which shows a pulley and rope being used to lift a block vertically by applying a horizontal force to the rope.
+ 
+\capfig{0.52\textwidth}{figures/NewtonsLaws/tension.png}{\label{fig:newtonslaws:tension} A force $\vec F$ is applied to a rope, which goes around a pulley and is attached to a crate. The rope exerts a force of tension $\vec T$ to the crate. If the pulley and rope are mass-less, then the applied force is equal to the tension force and the rope+pulley effectively allow one to change the direction of the applied force vector.}
+
+The same tension is present throughout sections of the rope that can move freely. Imagine a rope lying on the ground and someone pressing down with their foot on the rope at its midpoint. If you pull on one end of the rope with your hand, there will be a tension in the section of the rope between your hand and the foot that is pressing on the rope, but the other side of the rope will be slack; the tension is thus different in different sections of the rope. As we will see in later chapters, if a rope goes around a pulley that is accelerating and has mass, then the tension in the rope on either side of the pulley is different; this is similar to the tension being different on either side of the foot pressing down on the rope. 
 
 \subsubsection{Drag forces}
+Drag forces are exerted on an object that is moving through a fluid (a gas or a liquid). As an object moves through a fluid, the fluid must be displaced which results in a net force opposing the motion of the object. Drag forces are thus always in the opposite direction of the motion of the object relative to the fluid, similar to friction. Often, one hears the term ``air friction'' which refers to the drag force experienced by an object that is moving through the air. 
+
+There is no good general model for calculating the magnitude of the drag force on any object moving through any fluid. The magnitude of the drag force generally depends on the cross-section of the object (the area of the object as seen when looking at the object in the direction of motion), the speed of the object, and the visocity of the fluid (how difficult it is to displace the fluid). For small objects moving relatively slowly through a fluid (e.g. pollen falling through the air), the drag force is usually proportional to speed, whereas for larger objects moving faster through a fluid (e.g car or airplane in air) the drag force is usually proportional to speed squared.
 
 \subsubsection{Spring forces}
+Spring forces are those forces that are exerted when certain materials are compressed or extended. A common example is a simple coil spring, which has a natural rest length. If the spring is extended, the spring will exert ``restoring forces'' on both ends of the spring that are directed towards the centre of the spring. If the spring is compressed, the spring will exert restoring forces that point away from the centre of the spring. In either case, the spring will exert forces that would allow it to come back to its rest length.
+
+Most springs, if they are not stretched or compressed too much, will exert a restoring force that is given by Hooke's Law:
+\begin{align*}
+\vec F = -kx \hat x
+\end{align*}
+where $\vec F$ is the force exerted by the spring, $k$ is called the ``spring constant'' of the spring, and $x$ is the amount that the spring has been stretched or compressed. The negative sign indicates that the restoring force from the spring will be in the opposite direction that the spring length was changed, and it is assumed that the $x$ axis is parallel to the length of the spring with the origin located where the spring is at rest.
+TODO: Figure, and make it better!
+
+\subsubsection{``Applied'' forces}
+``Applied'' forces is just a general ``catch-all'' term for specifying forces that are not described above. For example, the force applied by a person onto an object is often referred to as an applied force. 
+
+
 
 
 
 \section{Mass and inertia}
 Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
 
-\begin{studentTake}{Emma}
 
-My take on this...
-
-Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
-
-
-\end{studentTake}
 
 \section{Applying Newton's Laws}
 
