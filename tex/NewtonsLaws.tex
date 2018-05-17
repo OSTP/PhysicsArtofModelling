@@ -17,13 +17,52 @@ Newton's classical theory of physics is based on the three following laws:
 \item \textbf{Law 2}: An object's acceleration is proportional to the net force exerted \textbf{on the object}, inversely proportional to the mass of the object, and in the same direction as the net force exerted on the object.
 \item \textbf{Law 3}: If one object exerts a force on another object, the second object exerts a force on the first object that is equal in magnitude and opposite in direction.
 \end{itemize}
-The three statements above are sufficient to describe almost all of the natural phenomena that we experience in our lives. Concepts such as energy, centre of mass, torque, etc, which you may have already encountered, are derived naturally from Newton's Laws. In order to build models to describe specific experiments or observations using Newton's Laws, one needs to understand the two main mathematical concepts that are introduced by the theory: force and mass. The next two sections introduce these concepts, before we describe how to use Newton's Laws. 
+The three statements above are sufficient to describe almost all of the natural phenomena that we experience in our lives. Concepts such as energy, centre of mass, torque, etc, which you may have already encountered, are derived naturally from Newton's Laws. In order to build models to describe specific experiments or observations using Newton's Laws, one needs to understand the two main mathematical concepts that are introduced by the theory: force and mass. A few comments on each of the three laws are first provided before the concepts of force and mass are developed further.
 
-TODO: Briefly discuss each law
+\subsection{Newton's First Law}
+Newton's First Law is often referred to as the law of inertia which was originally stated by Galileo. The first law is counter-intuitive, as our experience is that if you push a block on a table and let it go, it will eventually stop. Indeed, Aristotle proposed that the natural state of objects is to be at rest. We now understand that if you start a block sliding on a table, there is a force of friction between the table and the block that acts to slow it down; the block is thus not in a situation where to no external force is exerted on the object.
 
+Newton's First Law is useful in defining what we call an ``inertial frame of reference'', which is a frame of reference in which Newton's First Law holds true. A frame of reference can be thought of as a coordinate system which can be moving. For example, if a train is moving with constant velocity, we can consider the train as an inertial frame of reference, as objects in the train would follow Newton's First Law for observers that are in the train. If a train passenger placed an object on a table, they would observe that the object does not spontaneously start moving; if they slide an object on a frictionless table, they would observe that it keeps on sliding at constant velocity. However, if the train is accelerating forwards, then an object placed on a frictionless table would appear, for observers in the train's frame of reference, to be accelerating in the direction opposite to that of the train, and violate Newton's First Law. To an observer on the ground, looking into the train through a window the object would appear to move with the same constant velocity as when it was placed on the table. In a similar way, when you are in a car, Newton's First Law holds if the car is going at constant velocity, but if the car goes around a curve (and thus accelerates even is speed is constant), you will find that all objects in the car suddenly appear to be pushed towards the outside of the curve.
+
+Newton's First Law thus allows us to define an inertial frame of reference; Newton's Three Laws only hold in inertial frames of reference.
+
+\begin{checkpointMC}{You are in an elevator accelerating upwards.}
+\item The elevator is an inertial frame of reference.
+\item The elevator is not an inertial frame of reference.%correct
+\end{checkpointMC}
+
+\subsection{Newton's Second Law}
+Newton's Second Law is often written as a vector equation:
+\begin{align*}
+\sum \vec F = m\vec a
+\end{align*}
+where $\sum \vec F$ is the vector sum of the forces exerted on an object, $\vec a$ is the acceleration vector of the object, and $m$ is the ``inertial mass'' of the object. As we will see, a force is represented by a vector, and the sum of the force vectors on an object is often called the ``net force''. Newton's Second Law is the foundation for Classical Physics, in which we seek to be able to describe the motion of any object. The motion of an object is fully specified by its acceleration as long as we know the position and velocity at a specific point in time. That is, by knowing the position and velocity of the object at a point in time and its acceleration, we can describe its motion both in the future and in the in past; we call Classical Physics a deterministic theory (as opposed to, say, Quantum Mechanics, which would only tell us the probability that a particle would be at some particular position in the future). The right side of the equation is thus the kinematic description of the object; if we know the acceleration, we know everything that the object will do.
+
+The left side of the equation contains all of the ``dynamics''; force is the tool that Newton introduced in order to be able to determine the acceleration of an object. Newton's Second Law thus tells how to determine the kinematics of an object by using the concept of forces; it relates the dynamics to the kinematics. Having already covered kinematics, we will now focus on understanding dynamics and how to develop models that allow us to calculate the net force on an object. The inertial mass, $m$, is a specific property of an object that tells us how large an acceleration it will experience based on a given net force. Thus, objects with different masses will experience different accelerations if subject to the same net force.
+
+\begin{checkpointMC}{Object 1 has twice the inertial mass of object 2. If both objects have the same acceleration vector.}
+\item The net force on both objects is the same.
+\item The net force on object 1 is twice that on object 2. %correct
+\item The net force on object 1 is half of that on object 2.
+\end{checkpointMC}
+
+
+\subsection{Newton's Third Law}
+Newton's Third Law relates the forces that two objects exert on each other. It is important to understand that the forces that are mentioned in the Newton's Third Law are exerted on \textit{different} objects. If object A exerts a force on object B, then object B will also exert a force on object A. The two forces have the same magnitude but opposite directions. Sometimes, the forces are called ``action'' and ``reaction'' forces, although this is misleading, because it makes it sound that the reaction force in in response to some voluntary action force. However, inanimate object can exert forces, and so this can lead to needless confusion as to which force is the reaction force.
+
+It does not matter which force you choose to call the action (reaction) force. If a block is pushing down on a table (action force), then the table is pushing up on the block (reaction force). However, one could just as well say that the table is pushing up on the block (action force) so the block is pushing down on the table (reaction force). It does not matter which force you call the action force. This can be confusing, because if you choose to push on a wall (exerting an action force), then the wall exerts a force on you (the reaction force). If you choose not to push on the wall (exerting no force), then the wall does not exert the reaction force. This leads to people thinking that the reaction force is in response to an action force exerted by a sentient being, which is not the case. You can call the force that you choose to exert on the wall the reaction force and Newton's Laws will still work just as well!
+
+Newton's Third law often leads to confusion when Newton's Second Law is applied. Recall that Newton's Second Law involves the sum of the forces on a particular object. The \textbf{two forces that are mentioned in Newton's Third Law are not exerted on the same object}, so they would never appear together in the sum of the forces from Newton's Second Law, and they never cancel each other. 
+
+\begin{checkpointMC}{You push a heavy block in the North direction. The block is twice as heavy as you are. Which statement is true?}
+\item The block exerts half of the force on you, in the North direction.
+\item The block exerts the same force on you, but in the South direction. %correct
+\item The block exerts double of the force on you, in the South direction.
+\item The block is inanimate and thus does not exert a force on you. 
+\end{checkpointMC}
 
 \section{Force}
-A force is a mathematical tool that is introduced in Newton's theory of physics. A force is not a real ``thing''; there are no forces in the real world, you cannot give someone a force, or buy a force at the supermarket. A force is a purely mathematical tool, so it is important to fight your intuition about what a force is and to stick to well-defined rules for using forces to build models.
+A force is a mathematical tool that is introduced in Newton's theory of physics. A force is not a real ``thing''; there are no forces in the real world, you cannot give someone a force, or buy a force at the supermarket. A force is a purely mathematical tool, so it is important to fight your intuition about what a force is and to stick to well-defined rules for identifying forces to build models.
 
 Mathematically, a \textbf{force is represented by a vector}, and thus has a magnitude and a direction. The SI unit for the magnitude of a force is the Newton, abbreviated $\si{N}$. A force is used to describe how the motion of an object is affected by external agents. It is important to note that a force can be exerted by an inanimate being; that is, there is no intent - no conscious decision to push or pull - that is associated with a force.
 
@@ -31,20 +70,30 @@ When you push a block along a horizontal surface, we would model the motion of t
 
 If you are pulling on a cart, we would model the motion of the cart by including a force that is exerted on the cart by you. The force would be represented by a vector in the direction that you are pulling with a magnitude based on how hard you are pulling. Similarly, to model your motion, we would include a force vector that is equal in magnitude and opposite in direction to represent the force exerted by the cart on you. When modelling the motion of an object, it is important to consider only the forces exerted on that object.
 
-One way to quantify a force is to use a spring scale. Springs have a natural ``rest length'' if not acted upon by external forces. If you try to stretch a spring, it will ``want'' to come back to its normal rest length; it exerts a force on your hand in the opposite direction that you pulled on the spring. You may have noticed that the more you stretch a spring, the harder you have to pull on it. We can quantify the magnitude of a force by the distance that the forces causes a spring to stretch, since that distance increases with what we conceptualize as a force. For example, one could designate a ``standard spring'' to be one that extends (or compresses) by $\SI{1}{cm}$ when a force of $\SI{1}{N}$ is exerted on the spring\footnote{In practice, $\SI{1}{N}$ is defined as the force that causes a mass of $\SI{1}{kg}$ to accelerate by $\SI{1}{m/s^2}$}. 
+One way to quantify a force is to use a spring scale. Springs have a natural ``rest length'' if not acted upon by external forces. If you try to stretch a spring, it will ``want'' to come back to its normal rest length; it exerts a force on your hand in the opposite direction that you pulled on the spring. You may have noticed that the more you stretch a spring, the harder you have to pull on it. We can quantify the magnitude of a force by the distance that the forces causes a spring to stretch, since that distance increases with what we conceptualize as a force. For example, one could designate a ``standard spring'' to be one that extends (or compresses) by $\SI{1}{cm}$ when a force of $\SI{1}{N}$ is exerted on the spring. 
 
 \subsection{Types of forces}
-There are several ways for a force to be exerted on an object. Some of the forces can be classified as ``contact forces'' as they arise from something making contact with the object (such as you pushing on the object). Other forces can be exerted ``at a distance''; for example, the force of gravity from the Earth can be exerted on a bird in flight, even if the bird is not in contact with the Earth. In this section, we present the most common types of force that arise when modelling the real world. When determining the forces that are acting on an object, it is usually a good idea to run down this list to see if any of these forces should be included.
+When modelling the dynamics for an object, we need to identify all of the items that can influence the motion of the object; we do this using the concept of force and identifying all of the forces exerted on an object. Some of the forces can be classified as ``contact forces'' as they arise from something making contact with the object (such as you pushing on the object). Other forces can be exerted ``at a distance''; for example, the force of gravity from the Earth can be exerted on a bird in flight, even if the bird is not in contact with the Earth. In reality, contact forces arise because the electrons from two objects repel each other. When you push against a wall, the reason that you feel a resistance is because the electrons on your hand are repelled by the electrons on the wall; you never actually ``touch'' the wall\footnote{As a matter of fact, it is impossible to ever touch anything, you can just get really close!}!
+
+In this section, we present the most common types of force that arise. When determining the forces that are acting on an object, it is usually a good idea to run down this list to see if any of these forces should be included. Again, try to fight your intuition about what a force ``feels'' like and instead be objective in determining whether any of the forces below should be included based on their characteristics.
 
 \subsubsection{Weight}
 Weight is the force exerted by gravity. While all objects with mass exert an attractive force of gravity on other objects, the force is usually negligible unless the mass of one of the objects is large. For an object near the surface of the Earth, we can, to a very good degree of approximation, assume that the only force of gravity on the object is from the Earth. We usually label the force of gravity on an object as $\vec F_g$. All objects near the surface of the Earth will experience a weight, as long as they have a mass. If an object has a mass, $m$, and is located near the surface of the Earth, it will experience a force that:
 \begin{itemize}
 \item Points towards the centre of the Earth (as illustrated in Figure \ref{fig:newtonslaws:weight}).
-\item Has a magnitude of $F_g=mg$, where $g$ is the magnitude of the Earth's gravitational field, and in most locations on Earth\footnote{The value of $g$ decreases as you move further from the center of Earth} has a value of approximately $g=\SI{9.8}{N/kg}$.
+\item Has a magnitude of $F_g=mg$, where $g$ is the magnitude of the Earth's gravitational field, and in most locations on Earth\footnote{The value of $g$ decreases as you move further from the centre of Earth.} has a value of approximately $g=\SI{9.8}{N/kg}$.
 \end{itemize}
 
 \capfig{0.1\textwidth}{figures/NewtonsLaws/weight.png}{\label{fig:newtonslaws:weight}The weight force on an object near the surface of the Earth points towards the centre of the Earth (downwards).}
 Although we have not yet introduced the concept of mass, it is worth noting that mass and weight are different (they had different dimensions). Mass is an intrinsic property of an object, whereas weight is a force of gravity that is exerted on that object because it has mass. On Earth, when we measure our weight, we are measuring $mg$, which also relates to our mass since, on Earth, weight and mass are related by a factor of $g=\SI{9.8}{N/kg}$; this is usually what leads to the confusion between mass and weight.
+
+\begin{checkpointMC}{A person standing on a scale finds that they weigh $\SI{80}{kg}$.}
+\item They exert an upwards force on the Earth with a magnitude of $\SI{80}{N}$.
+\item They exert an upwards force on the Earth with a magnitude of $\SI{784}{N}$.%correct
+\item They exert an downwards force on the Earth with a magnitude of $\SI{80}{N}$.
+\item They exert an downwards force on the Earth with a magnitude of $\SI{784}{N}$.
+\item They exert no force on the Earth.
+\end{checkpointMC}
 
 
 \subsubsection{Normal forces}
@@ -55,14 +104,33 @@ Figure \ref{fig:newtonslaws:normal} shows two examples of the normal force on a 
 \capfig{0.5\textwidth}{figures/NewtonsLaws/normal.png}{\label{fig:newtonslaws:normal}The normal force, $\vec N$, exerted by a horizontal surface on a block (left side) and by an inclined surface (right side). In both cases, the normal force on the object is perpendicular to the interface between the object and the surface and points in the direction from the interface towards the object.}
 
 
-\subsubsection{Friction forces}
+\subsubsection{Frictional forces}
+A frictional force can exist at the interface between two surfaces and is always perpendicular to the normal force that corresponds to that interface. A frictional force is used to model the resistance that is felt when one tries to slide an object along a surface. The frictional force is used to model the details of how two surfaces interact at a microscopic level; since surfaces are never perfectly flat, two surfaces will never slide without resistance as the various bumps and valleys of the two surfaces will interact (Figure \ref{fig:newtonslaws:fsurfaces}). Furthermore, even if the two surfaces were perfectly smooth, the electrons on the two surfaces would still interact and lead to an effective force when one surface moves with respect to the other. 
 
+\capfig{0.3\textwidth}{figures/NewtonsLaws/fsurfaces.png}{\label{fig:newtonslaws:fsurfaces}Illustration that the frictional force between surfaces can be thought of as arising from microscopic imperfection in the surfaces. }
 
+One distinguishes between two types of frictional forces: kinetic and static, depending on whether the surfaces are sliding with respect to each other (kinetic) or not (static). Because of Newton's Third Law, there the objects associated with each surface will both experience a frictional force (same magnitude, opposite direction).
+
+The frictional force exerted on an object is always parallel to the surface and in the direction that is opposite to the motion of the object relative to the surface (kinetic) or in the direction opposite to the impeding motion (static). If a block is sliding towards the right on a table, it will experience a kinetic force of friction that is to the left. The table will then experience a force of friction that is to the right. If there is a heavy crate on the ground which you try to push but does not move, there is a force of static friction exerted by the ground on the object that is in the opposite direction that you are pushing. One key difference between the static and kinetic friction forces is that the static force can vary in magnitude; the static force of friction on the crate increases as you push harder, until you push hard enough to overcome the maximal force of static friction that can exist between the ground and the crate. Often, the force of kinetic friction is smaller than the static force of friction; you may have noticed that you have to push very hard to get an object sliding, but once it is sliding, you do not need to push as hard to keep it moving.
+
+The magnitude of the kinetic friction force between two surfaces, $f_k$, is modelled as being proportional to the normal force between the two surfaces:
+\begin{align*}
+f_k=\mu_kN
+\end{align*}
+where $\mu_k$ is called the ``coefficient of kinetic friction''. If you push down on an object, it is more difficult to slide it along a surface, because the normal force, and thus the kinetic friction force increases.
+
+Similarly, the maximum value of the static friction force between to surfaces, $f_s$, is modelled as:
+\begin{align*}
+f_s\leq\mu_sN
+\end{align*}
+where $\mu_s$ is called the ``coefficient of static friction'' and the inequality sign is used to indicate that the force of static friction has a maximum value, but that its magnitude depends on the other forces being exerted on the object. For example, if you do not push against a crate on a horizontal surface, there is no force of static friction on the crate (as long as no other forces are exerted that are parallel to the surface).
+
+\capfig{0.1\textwidth}{figures/NewtonsLaws/friction.png}{\label{fig:newtonslaws:friction} (Left) A block sliding to the right on a horizontal surface (not shown). The force of kinetic friction is always perpendicular to the normal force and opposite of the direction of motion. (Right) A block that is being acted upon by an external force $\vec F$ to the right. A force of static friction is perpendicular to the normal force and opposite the direction of ``impeding motion'' - with the static friction }
 \subsubsection{Tension forces}
-
 
 \subsubsection{Applied forces}
 
+\subsubsection{Drag forces}
 
 \subsubsection{Spring forces}
 
@@ -70,6 +138,15 @@ Figure \ref{fig:newtonslaws:normal} shows two examples of the normal force on a 
 
 \section{Mass and inertia}
 Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
+
+\begin{studentTake}{Emma}
+
+My take on this...
+
+Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
+
+
+\end{studentTake}
 
 \section{Applying Newton's Laws}
 
@@ -83,3 +160,10 @@ Mass is a property of an object that quantifies how much matter the object conta
 \begin{chapterSummary}
 \item Something interesting
 \end{chapterSummary}
+
+\section{Thinking about the material}
+
+\begin{enumerate}
+\item What was the name of the publication in which Newton's published his three laws, and when was it published?
+\item When did Galileo come up with his principle of inertia?
+\end{enumerate}
