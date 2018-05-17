@@ -73,7 +73,9 @@ If you are pulling on a cart, we would model the motion of the cart by including
 One way to quantify a force is to use a spring scale. Springs have a natural ``rest length'' if not acted upon by external forces. If you try to stretch a spring, it will ``want'' to come back to its normal rest length; it exerts a force on your hand in the opposite direction that you pulled on the spring. You may have noticed that the more you stretch a spring, the harder you have to pull on it. We can quantify the magnitude of a force by the distance that the forces causes a spring to stretch, since that distance increases with what we conceptualize as a force. For example, one could designate a ``standard spring'' to be one that extends (or compresses) by $\SI{1}{cm}$ when a force of $\SI{1}{N}$ is exerted on the spring. 
 
 \subsection{Types of forces}
-When modelling the dynamics for an object, we need to identify all of the items that can influence the motion of the object; we do this using the concept of force and identifying all of the forces exerted on an object. Some of the forces can be classified as ``contact forces'' as they arise from something making contact with the object (such as you pushing on the object). Other forces can be exerted ``at a distance''; for example, the force of gravity from the Earth can be exerted on a bird in flight, even if the bird is not in contact with the Earth. In this section, we present the most common types of force that arise. When determining the forces that are acting on an object, it is usually a good idea to run down this list to see if any of these forces should be included. Again, try to fight your intuition about what a force ``feels'' like and instead be objective in determining whether any of the forces below should be included based on their characteristics.
+When modelling the dynamics for an object, we need to identify all of the items that can influence the motion of the object; we do this using the concept of force and identifying all of the forces exerted on an object. Some of the forces can be classified as ``contact forces'' as they arise from something making contact with the object (such as you pushing on the object). Other forces can be exerted ``at a distance''; for example, the force of gravity from the Earth can be exerted on a bird in flight, even if the bird is not in contact with the Earth. In reality, contact forces arise because the electrons from two objects repel each other. When you push against a wall, the reason that you feel a resistance is because the electrons on your hand are repelled by the electrons on the wall; you never actually ``touch'' the wall\footnote{As a matter of fact, it is impossible to ever touch anything, you can just get really close!}!
+
+In this section, we present the most common types of force that arise. When determining the forces that are acting on an object, it is usually a good idea to run down this list to see if any of these forces should be included. Again, try to fight your intuition about what a force ``feels'' like and instead be objective in determining whether any of the forces below should be included based on their characteristics.
 
 \subsubsection{Weight}
 Weight is the force exerted by gravity. While all objects with mass exert an attractive force of gravity on other objects, the force is usually negligible unless the mass of one of the objects is large. For an object near the surface of the Earth, we can, to a very good degree of approximation, assume that the only force of gravity on the object is from the Earth. We usually label the force of gravity on an object as $\vec F_g$. All objects near the surface of the Earth will experience a weight, as long as they have a mass. If an object has a mass, $m$, and is located near the surface of the Earth, it will experience a force that:
@@ -103,10 +105,28 @@ Figure \ref{fig:newtonslaws:normal} shows two examples of the normal force on a 
 
 
 \subsubsection{Frictional forces}
-A frictional force can exist at the interface between two surfaces and is always perpendicular to the normal force that corresponds to that interface. The magnitude of the frictional force is proportional to the corresponding normal force, and the proportionality constant is called a ``coefficient of friction''. 
+A frictional force can exist at the interface between two surfaces and is always perpendicular to the normal force that corresponds to that interface. A frictional force is used to model the resistance that is felt when one tries to slide an object along a surface. The frictional force is used to model the details of how two surfaces interact at a microscopic level; since surfaces are never perfectly flat, two surfaces will never slide without resistance as the various bumps and valleys of the two surfaces will interact (Figure \ref{fig:newtonslaws:fsurfaces}). Furthermore, even if the two surfaces were perfectly smooth, the electrons on the two surfaces would still interact and lead to an effective force when one surface moves with respect to the other. 
 
+\capfig{0.3\textwidth}{figures/NewtonsLaws/fsurfaces.png}{\label{fig:newtonslaws:fsurfaces}Illustration that the frictional force between surfaces can be thought of as arising from microscopic imperfection in the surfaces. }
+
+One distinguishes between two types of frictional forces: kinetic and static, depending on whether the surfaces are sliding with respect to each other (kinetic) or not (static). Because of Newton's Third Law, there the objects associated with each surface will both experience a frictional force (same magnitude, opposite direction).
+
+The frictional force exerted on an object is always parallel to the surface and in the direction that is opposite to the motion of the object relative to the surface (kinetic) or in the direction opposite to the impeding motion (static). If a block is sliding towards the right on a table, it will experience a kinetic force of friction that is to the left. The table will then experience a force of friction that is to the right. If there is a heavy crate on the ground which you try to push but does not move, there is a force of static friction exerted by the ground on the object that is in the opposite direction that you are pushing. One key difference between the static and kinetic friction forces is that the static force can vary in magnitude; the static force of friction on the crate increases as you push harder, until you push hard enough to overcome the maximal force of static friction that can exist between the ground and the crate. Often, the force of kinetic friction is smaller than the static force of friction; you may have noticed that you have to push very hard to get an object sliding, but once it is sliding, you do not need to push as hard to keep it moving.
+
+The magnitude of the kinetic friction force between two surfaces, $f_k$, is modelled as being proportional to the normal force between the two surfaces:
+\begin{align*}
+f_k=\mu_kN
+\end{align*}
+where $\mu_k$ is called the ``coefficient of kinetic friction''. If you push down on an object, it is more difficult to slide it along a surface, because the normal force, and thus the kinetic friction force increases.
+
+Similarly, the maximum value of the static friction force between to surfaces, $f_s$, is modelled as:
+\begin{align*}
+f_s\leq\mu_sN
+\end{align*}
+where $\mu_s$ is called the ``coefficient of static friction'' and the inequality sign is used to indicate that the force of static friction has a maximum value, but that its magnitude depends on the other forces being exerted on the object. For example, if you do not push against a crate on a horizontal surface, there is no force of static friction on the crate (as long as no other forces are exerted that are parallel to the surface).
+
+\capfig{0.1\textwidth}{figures/NewtonsLaws/friction.png}{\label{fig:newtonslaws:friction} (Left) A block sliding to the right on a horizontal surface (not shown). The force of kinetic friction is always perpendicular to the normal force and opposite of the direction of motion. (Right) A block that is being acted upon by an external force $\vec F$ to the right. A force of static friction is perpendicular to the normal force and opposite the direction of ``impeding motion'' - with the static friction }
 \subsubsection{Tension forces}
-
 
 \subsubsection{Applied forces}
 
@@ -118,6 +138,15 @@ A frictional force can exist at the interface between two surfaces and is always
 
 \section{Mass and inertia}
 Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
+
+\begin{studentTake}{Emma}
+
+My take on this...
+
+Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
+
+
+\end{studentTake}
 
 \section{Applying Newton's Laws}
 

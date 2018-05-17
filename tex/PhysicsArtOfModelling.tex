@@ -208,6 +208,10 @@
 \newenvironment{chapterSummary}{\begin{itemize}[topsep=-10pt]}{\end{itemize}}
 \surroundwithmdframed[linewidth=2pt, backgroundcolor=yellow!10, roundcorner=10pt]{chapterSummary}
 
+%% student's take
+\newenvironment{studentTake}[1]{\textbf{#1's take\\}}{}
+\surroundwithmdframed[linewidth=2pt, backgroundcolor=pink!10, roundcorner=1pt]{studentTake}
+
 %%Worked out example box with a counter
 \newcounter{example}[chapter]
 \def\theexample{\thechapter-\arabic{example}}
@@ -244,10 +248,11 @@
 \tableofcontents
 \pagenumbering{arabic}
 
-\include{Introduction}
-\include{ModelAndExperiment}
-\include{DescribingMotionIn1D}
-\include{DescribingMotionInND}
+%\include{Introduction}
+%\include{ModelAndExperiment}
+%\include{DescribingMotionIn1D}
+%\include{DescribingMotionInND}
+\include{NewtonsLaws}
 
 %Newton's Laws
 %Applying Newton's Laws
@@ -275,9 +280,9 @@
 
 \appendix
 \renewcommand\chaptername{Appendix}
-\include{Calculus}
-\include{Vectors}
-\include{Python}
+%\include{Calculus}
+%\include{Vectors}
+%\include{Python}
 %AppendixB vectors
 
 \end{document}
