@@ -208,18 +208,23 @@
 \newenvironment{chapterSummary}{\begin{itemize}[topsep=-10pt]}{\end{itemize}}
 \surroundwithmdframed[linewidth=2pt, backgroundcolor=yellow!10, roundcorner=10pt]{chapterSummary}
 
-%% student's take
-\newenvironment{studentTake}[1]{\textbf{#1's take\\}}{}
-\surroundwithmdframed[linewidth=2pt, backgroundcolor=pink!10, roundcorner=1pt]{studentTake}
-
 %%Worked out example box with a counter
 \newcounter{example}[chapter]
 \def\theexample{\thechapter-\arabic{example}}
 
+%%Student opinion
+\newenvironment{studentopinion}[1]{\refstepcounter{ncheckpoint}%
+    \textbf{Emma's Thoughts \thecheckpoint: }#1\\}{}
+\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=orange!10, roundcorner=10pt,nobreak=true]{studentopinion}
+
+%%Reflect and Research
+\newenvironment{reflectresearch}[1]{\refstepcounter{ncheckpoint}%
+    \textbf{Reflect and Research \thecheckpoint: }#1\\}{}
+\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=blue!10, roundcorner=10pt,nobreak=true]{reflectresearch}
+
 \newenvironment{example}[2]
 {\refstepcounter{example} \textbf{Example \theexample:} #1\\ \\ \itshape #2}{}
 \surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=red!10, roundcorner=10pt]{example}
-
 
 \newcounter{problem}[chapter]
 \def\theproblem{\thechapter-\arabic{problem}}
@@ -248,11 +253,10 @@
 \tableofcontents
 \pagenumbering{arabic}
 
-%\include{Introduction}
-%\include{ModelAndExperiment}
-%\include{DescribingMotionIn1D}
-%\include{DescribingMotionInND}
-\include{NewtonsLaws}
+\include{Introduction}
+\include{ModelAndExperiment}
+\include{DescribingMotionIn1D}
+\include{DescribingMotionInND}
 
 %Newton's Laws
 %Applying Newton's Laws
@@ -280,9 +284,9 @@
 
 \appendix
 \renewcommand\chaptername{Appendix}
-%\include{Calculus}
-%\include{Vectors}
-%\include{Python}
+\include{Calculus}
+\include{Vectors}
+\include{Python}
 %AppendixB vectors
 
 \end{document}
