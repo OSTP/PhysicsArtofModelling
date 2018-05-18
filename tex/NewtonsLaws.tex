@@ -36,7 +36,14 @@ Newton's Second Law is often written as a vector equation:
 \begin{align*}
 \sum \vec F = m\vec a
 \end{align*}
-where $\sum \vec F$ is the vector sum of the forces exerted on an object, $\vec a$ is the acceleration vector of the object, and $m$ is the ``inertial mass'' of the object. As we will see, a force is represented by a vector, and the sum of the force vectors on an object is often called the ``net force''. Newton's Second Law is the foundation for Classical Physics, in which we seek to be able to describe the motion of any object. The motion of an object is fully specified by its acceleration as long as we know the position and velocity at a specific point in time. That is, by knowing the position and velocity of the object at a point in time and its acceleration, we can describe its motion both in the future and in the in past; we call Classical Physics a deterministic theory (as opposed to, say, Quantum Mechanics, which would only tell us the probability that a particle would be at some particular position in the future). The right side of the equation is thus the kinematic description of the object; if we know the acceleration, we know everything that the object will do.
+where $\sum \vec F$ is the vector sum of the forces exerted on an object, $\vec a$ is the acceleration vector of the object, and $m$ is the ``inertial mass'' of the object. As we will see, a force is represented by a vector, and the sum of the force vectors on an object is often called the ``net force''. Recall that using vectors to write an equation is just a shorthand for writing the equation out for each component. In three dimensions, this would thus correspond to three independent scalar equations (one for each component):
+\begin{align*}
+\sum F_x &= ma_x \\
+\sum F_y &= ma_y \\
+\sum F_z &= ma_z
+\end{align*}
+
+Newton's Second Law is the foundation for Classical Physics, in which we seek to be able to describe the motion of any object. The motion of an object is fully specified by its acceleration as long as we know the position and velocity at a specific point in time. That is, by knowing the position and velocity of the object at a point in time and its acceleration, we can describe its motion both in the future and in the in past; we call Classical Physics a deterministic theory (as opposed to, say, Quantum Mechanics, which would only tell us the probability that a particle would be at some particular position in the future). The right side of the equation is thus the kinematic description of the object; if we know the acceleration, we know everything that the object will do.
 
 The left side of the equation contains all of the ``dynamics''; force is the tool that Newton introduced in order to be able to determine the acceleration of an object. Newton's Second Law thus tells how to determine the kinematics of an object by using the concept of forces; it relates the dynamics to the kinematics. Having already covered kinematics, we will now focus on understanding dynamics and how to develop models that allow us to calculate the net force on an object. The inertial mass, $m$, is a specific property of an object that tells us how large an acceleration it will experience based on a given net force. Thus, objects with different masses will experience different accelerations if subject to the same net force.
 
@@ -73,16 +80,17 @@ If you are pulling on a cart, we would model the motion of the cart by including
 One way to quantify a force is to use a spring scale. Springs have a natural ``rest length'' if not acted upon by external forces. If you try to stretch a spring, it will ``want'' to come back to its normal rest length; it exerts a force on your hand in the opposite direction that you pulled on the spring. You may have noticed that the more you stretch a spring, the harder you have to pull on it. We can quantify the magnitude of a force by the distance that the forces causes a spring to stretch, since that distance increases with what we conceptualize as a force. For example, one could designate a ``standard spring'' to be one that extends (or compresses) by $\SI{1}{cm}$ when a force of $\SI{1}{N}$ is exerted on the spring. 
 
 \subsection{Types of forces}
+\label{sec:newtonslaws:typesofforces}
 When modelling the dynamics for an object, we need to identify all of the items that can influence the motion of the object; we do this using the concept of force and identifying all of the forces exerted on an object. Some of the forces can be classified as ``contact forces'' as they arise from something making contact with the object (such as you pushing on the object). Other forces can be exerted ``at a distance''; for example, the force of gravity from the Earth can be exerted on a bird in flight, even if the bird is not in contact with the Earth. In reality, contact forces arise because the electrons from two objects repel each other. When you push against a wall, the reason that you feel a resistance is because the electrons on your hand are repelled by the electrons on the wall; you never actually ``touch'' the wall\footnote{As a matter of fact, it is impossible to ever touch anything, you can just get really close!}!
 
 In this section, we present the most common types of force that arise. When determining the forces that are acting on an object, it is usually a good idea to run down this list to see if any of these forces should be included. Again, try to fight your intuition about what a force ``feels'' like and instead be objective in determining whether any of the forces below should be included based on their characteristics.
 
 \subsubsection{Weight}
-Weight is the force exerted by gravity. While all objects with mass exert an attractive force of gravity on other objects, the force is usually negligible unless the mass of one of the objects is large. For an object near the surface of the Earth, we can, to a very good degree of approximation, assume that the only force of gravity on the object is from the Earth. We usually label the force of gravity on an object as $\vec F_g$. All objects near the surface of the Earth will experience a weight, as long as they have a mass. If an object has a mass, $m$, and is located near the surface of the Earth, it will experience a force that:
-\begin{itemize}
-\item Points towards the centre of the Earth (as illustrated in Figure \ref{fig:newtonslaws:weight}).
-\item Has a magnitude of $F_g=mg$, where $g$ is the magnitude of the Earth's gravitational field, and in most locations on Earth\footnote{The value of $g$ decreases as you move further from the centre of Earth.} has a value of approximately $g=\SI{9.8}{N/kg}$.
-\end{itemize}
+Weight is the force exerted by gravity. While all objects with mass exert an attractive force of gravity on other objects, the force is usually negligible unless the mass of one of the objects is large. For an object near the surface of the Earth, we can, to a very good degree of approximation, assume that the only force of gravity on the object is from the Earth. We usually label the force of gravity on an object as $\vec F_g$. All objects near the surface of the Earth will experience a weight, as long as they have a mass. If an object has a mass, $m$, and is located near the surface of the Earth, it will experience a force (its weight) that is given by:
+\begin{align*}
+\vec F_g = m\vec g
+\end{align*}
+where $\vec g$ is the Earth's ``gravitational field'' vector and points towards the centre of the Earth. Near the surface of the Earth, the magnitude of the gravitational field is approximately $g=\SI{9.8}{N/kg}$. The gravitational field is a measure of the strength of the force of gravity from the Earth (it is the gravitational force per unit mass). The magnitude of the gravitational field is weaker as you move further from the centre of the Earth (e.g. at the top of a mountain, or in Earth's orbit). The gravitational field is also different on different planets; for example, at the surface of the moon, it is approximately $g_m=\SI{1.62}{N/kg}$ (six times less) - thus the weight of an object is six times less at the surface of the moon (but its mass is still the same).
 
 \capfig{0.1\textwidth}{figures/NewtonsLaws/weight.png}{\label{fig:newtonslaws:weight}The weight force on an object near the surface of the Earth points towards the centre of the Earth (downwards).}
 Although we have not yet introduced the concept of mass, it is worth noting that mass and weight are different (they had different dimensions). Mass is an intrinsic property of an object, whereas weight is a force of gravity that is exerted on that object because it has mass. On Earth, when we measure our weight, we are measuring $mg$, which also relates to our mass since, on Earth, weight and mass are related by a factor of $g=\SI{9.8}{N/kg}$; this is usually what leads to the confusion between mass and weight.
@@ -125,33 +133,162 @@ f_s\leq\mu_sN
 \end{align*}
 where $\mu_s$ is called the ``coefficient of static friction'' and the inequality sign is used to indicate that the force of static friction has a maximum value, but that its magnitude depends on the other forces being exerted on the object. For example, if you do not push against a crate on a horizontal surface, there is no force of static friction on the crate (as long as no other forces are exerted that are parallel to the surface).
 
-\capfig{0.1\textwidth}{figures/NewtonsLaws/friction.png}{\label{fig:newtonslaws:friction} (Left) A block sliding to the right on a horizontal surface (not shown). The force of kinetic friction is always perpendicular to the normal force and opposite of the direction of motion. (Right) A block that is being acted upon by an external force $\vec F$ to the right. A force of static friction is perpendicular to the normal force and opposite the direction of ``impeding motion'' - with the static friction }
-\subsubsection{Tension forces}
+\capfig{0.5\textwidth}{figures/NewtonsLaws/friction.png}{\label{fig:newtonslaws:friction} (Left:) A block sliding to the right on a horizontal surface (not shown). The force of kinetic friction is always perpendicular to the normal force and opposite of the direction of motion. (Right:) A block that is being acted upon by an external force $\vec F$ to the right. A force of static friction is perpendicular to the normal force and opposite the direction of ``impeding motion'' - without the force of static friction, the block would start to accelerate towards the right, so the force of static friction is to the left.}
 
-\subsubsection{Applied forces}
+\subsubsection{Tension forces}
+Tension forces are ``pulling'' forces that are applied by a rope or other non rigid media (e.g. a chain) which cannot usually be used to push\footnote{If you attached a rigid rod to an object and pulled on the rigid rod, you could call the force exerted by the rod on the object a force of tension.}. If you attach a rope to a crate and use the rope to pull the crate, we call the force exerted by the rope onto the crate a force of tension.
+
+When you pull on a rope that is attached to a wall at the other end, we say that the rope is under tension, or that the tension force is present throughout the rope. If you pull really hard on the rope, it is harder to displace the centre of the rope than if you did not pull on the rope at all. It thus makes is reasonable to view the tension as being present throughout the rope. The force of tension that a rope can apply onto an object depends on what is pulling on the rope at the other end. A rope can be used to change the direction of a force, as illustrated in Figure \ref{fig:newtonslaws:tension}, which shows a pulley and rope being used to lift a block vertically by applying a horizontal force to the rope.
+ 
+\capfig{0.25\textwidth}{figures/NewtonsLaws/tension.png}{\label{fig:newtonslaws:tension} A force $\vec F$ is applied to a rope, which goes around a pulley and is attached to a crate. The rope exerts a force of tension $\vec T$ to the crate. If the pulley and rope are mass-less, then the applied force is equal to the tension force and the rope+pulley effectively allow one to change the direction of the applied force vector.}
+
+The same tension is present throughout sections of the rope that can move freely. Imagine a rope lying on the ground and someone pressing down with their foot on the rope at its midpoint. If you pull on one end of the rope with your hand, there will be a tension in the section of the rope between your hand and the foot that is pressing on the rope, but the other side of the rope will be slack; the tension is thus different in different sections of the rope. As we will see in later chapters, if a rope goes around a pulley that is accelerating and has mass, then the tension in the rope on either side of the pulley is different; this is similar to the tension being different on either side of the foot pressing down on the rope. 
 
 \subsubsection{Drag forces}
+Drag forces are exerted on an object that is moving through a fluid (a gas or a liquid). As an object moves through a fluid, the fluid must be displaced which results in a net force opposing the motion of the object. Drag forces are thus always in the opposite direction of the motion of the object relative to the fluid, similar to friction. Often, one hears the term ``air friction'' which refers to the drag force experienced by an object that is moving through the air. 
+
+There is no good general model for calculating the magnitude of the drag force on any object moving through any fluid. The magnitude of the drag force generally depends on the cross-section of the object (the area of the object as seen when looking at the object in the direction of motion), the speed of the object, and the visocity of the fluid (how difficult it is to displace the fluid). For small objects moving relatively slowly through a fluid (e.g. pollen falling through the air), the drag force is usually proportional to speed, whereas for larger objects moving faster through a fluid (e.g car or airplane in air) the drag force is usually proportional to speed squared.
 
 \subsubsection{Spring forces}
+Spring forces are those forces that are exerted when certain materials are compressed or extended. A common example is a simple coil spring, which has a natural rest length. If the spring is extended, the spring will exert ``restoring forces'' on both ends of the spring that are directed towards the centre of the spring. If the spring is compressed, the spring will exert restoring forces that point away from the centre of the spring. In either case, the spring will exert forces that would allow it to come back to its rest length.
+
+Most springs, if they are not stretched or compressed too much, will exert a restoring force that is given by Hooke's Law:
+\begin{align*}
+\vec F = -kx \hat x
+\end{align*}
+where $\vec F$ is the force exerted by the spring, $k$ is called the ``spring constant'' of the spring, and $x$ is the amount that the spring has been stretched or compressed. The negative sign indicates that the restoring force from the spring will be in the opposite direction that the spring length was changed, and it is assumed that the $x$ axis is parallel to the length of the spring with the origin located where the spring is at rest. This is illustrated in Figure \ref{fig:newtonslaws:spring}.
+
+\capfig{0.7\textwidth}{figures/NewtonsLaws/spring.png}{\label{fig:newtonslaws:spring} A spring is attached to a fixed wall on one side and a movable block on the other. The $x$ axis is chosen to describe the position of the block and the origin corresponds to the point where the spring is not extended or compressed (the top row). The $x$ axis is chosen so that positive values of $x$ correspond to the spring being extended. On the bottom left, the spring is extended by a distance $x$ (the position of the block has positive $x$), and the force from the spring on the block is in the negative $x$ direction. On the bottom right, the spring is compressed (the position of the block has negative $x$), and the force from the spring is in the positive $x$ direction.}
+
+\begin{checkpointMC}{In Figure \ref{fig:newtonslaws:spring}, we chose the positive $x$ axis to correspond positions when the spring is extended and verified that Hooke's Law ($\vec F=-kx\hat x$) holds. If we had chosen the positive direction to correspond to compression, would Hooke's Law still correctly describe the direction of the force exerted by the spring on the block?}
+\item Yes. % correct
+\item No.
+\end{checkpointMC}
 
 
+\subsubsection{``Applied'' forces}
+``Applied'' forces is just a general ``catch-all'' term for specifying forces that are not described above. For example, the force applied by a person onto an object is often referred to as an applied force. 
 
 \section{Mass and inertia}
-Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
+Mass is a property of an object that quantifies how much matter the object contains. In SI units, mass is measured in kilograms. One kilogram is defined to be the mass of cylinder that is made of a platinum-iridium alloy that is kept at the international Bureau of Weights and Measures, in France. All other masses are obtained by comparison to this standard. 
 
-\begin{studentTake}{Emma}
+Newton's Second Law introduces the concept of mass as that property of the object that determines how large of an acceleration it will experience given a net force exerted on that object. In principle, one can compare the accelerations of different bodies to that of the international standard to determine their mass in kilograms. For example, under a given net force, if an object's acceleration is half of that of the standard kilogram, the object has a mass of $\SI{2}{kg}$. 
 
-My take on this...
+In the context of Newton's Second Law, mass is a measure of the inertia of an object; that is, it is a measure of how that particular object resists a change in motion due to a force (we can think of a large acceleration as a large change in motion, as the velocity vector of the object will change more). For this reason, the mass that appears in Newton's Second Law is referred to as ``inertial mass''.
 
-Mass is a property of an object that quantifies how much matter the object contains. To be precise, we refer to ``inertial mass'', because mass in the context of Newton's Laws is a measure of the acceleration that an object will experience as the result of a net force. That is, if two objects have different masses and are acted upon by the same net force, the object with the higher mass will experience the smaller acceleration. The object with the higher mass as a stronger tendency to remain in the same state of motion (i.e. velocity) than the lighter object.
+As you recall, the weight of an object is given by the mass of the object multiplied by the strength of the gravitational field, $\vec g$. There is no reason that the mass that is used to calculate weight, $F_g=mg$, has to be the same quantity as the mass that is used to calculate inertia $F=ma$. Thus, people will sometimes make the distinction between ``gravitational mass'' (the mass that you use to calculate gravity) and ``inertial mass'' as described above. Very precise experiments have been carried out to determine if the gravitational and inertial masses are equal. So far, experiments have been unable to detect any difference between the two quantities. As we will see, both Newton's Universal Theory of Gravity and Einstein Theory of General Relativity assume that the two are indeed equal. In fact, it is a key requirement for Einstein's Theory that the two be equal (the assumption that they are equal is called the ``Equivalence Principle''). You should however keep in mind that there is no physical reason that the two are the same, and that as far as we know, it is a coincidence!
 
-
-\end{studentTake}
+Unless stated otherwise, we will not make any distinction between gravitational and inertial mass and assume that they are equal. We will simply use the term ``mass'' and only clarify the type of mass when relevant (e.g. when we cover gravity).
 
 \section{Applying Newton's Laws}
+Now that we have introduced all of the concepts from Newton's Theory of Classical Physics, we present some general strategies for building models that use the theory. Recall that if we can describe the motion of all objects of interest to us, we have described everything that we can. Newton's Second Law allows us to determine the acceleration of an object based on the net force acting on the object. Once we have determined the accelerations of all objects of interest we have built a complete model. 
+
+The most important step in applying Newton's Theory is to identify the forces that are exerted on an object. The most important step in applying Newton's Theory is to identify the forces that are exerted on an object. The most important step in applying Newton's Theory is to identify the forces that are exerted on an object. Now that you have read it three times, you realize this step is important, right?!
+
+The strategy for building a model for the motion of an object using Newton's Theory is straightforward:
+\begin{enumerate}
+\item Identify an inertial frame of reference in which to build the model.
+\item Identify the forces acting on the object (did we mention that this step is important?).
+\item Draw a free-body diagram.
+\item Apply Newton's Second Law.
+\end{enumerate}
+
+\subsection{Identifying the forces}
+The first step in applying Newton's theory is to identify all of the forces that are acting on an object. This can be done by asking yourself: ``what could possibly be pushing or pulling on the object'', as well as running through the list of forces that we enumerated in section \ref{sec:newtonslaws:typesofforces} to identify if any of them are relevant here. For easy reference, we reproduce the types of forces here:
+\begin{itemize}
+\item Weight (is the object near the surface of a planet?)
+\item Normal forces (there could be more than one)
+\item Frictional forces (are there static or kinetic friction forces?)
+\item Tension forces (is something like a rope pulling on the object?)
+\item Drag forces (is the object moving through a fluid?)
+\item Spring forces (is there spring pushing or pulling on the object?)
+\item Applied forces (is anything else pushing or pulling on the object?)
+\end{itemize}
+
+\begin{example}{A block of mass $m$ is at rest on a horizontal table, as shown in Figure \ref{fig:newtonslaws:blockH}. What forces are exerted on the block? }
+\capfig{0.2\textwidth}{figures/NewtonsLaws/blockH.png}{\label{fig:newtonslaws:blockH} A block on a horizontal table.}
+The forces on the block are illustrated in Figure \ref{fig:newtonslaws:blockH_forces} and are:
+\begin{enumerate}
+\item $\vec F_g$, its weight.
+\item $\vec N$, a normal force exerted by the plane. The normal force is perpendicular to the interface between the table and the block. It points upwards in ``reaction'' to the downwards force that the block exerts onto the table. The downwards force from the block onto the table is not shown, since that force is not exerted on the block but on the table.
+\end{enumerate}
+\capfig{0.2\textwidth}{figures/NewtonsLaws/blockH_forces.png}{\label{fig:newtonslaws:blockH_forces} Forces on a block on a horizontal table.}
+\end{example}
+
+
+\begin{example}{A block of mass $m$ is at rest on a inclined surface, as shown in Figure \ref{fig:newtonslaws:blockI}. What forces are exerted on the block? }
+\label{ex:newtonslaws:blockI}
+\capfig{0.2\textwidth}{figures/NewtonsLaws/blockI.png}{\label{fig:newtonslaws:blockI} A block on an inclined surface.}
+The forces on the block are illustrated in Figure \ref{fig:newtonslaws:blockI_forces} and are:
+\begin{enumerate}
+\item $\vec F_g$, its weight.
+\item $\vec N$, a normal force exerted by the inclined plane.
+\item $\vec f_s$, a force of static friction exerted by the inclined plane. Without this force, the block would slide down. The force is in the direction opposite of impeding motion and is parallel to the interface (and perpendicular to the normal force).
+\end{enumerate}
+
+\capfig{0.2\textwidth}{figures/NewtonsLaws/blockI_forces.png}{\label{fig:newtonslaws:blockI_forces} Forces on block on an inclined surface.}
+\end{example}
+
+\begin{example}{A block of mass $m$ is at rest on a wedge-shaped block of mass $M$ itself at rest on a horizontal table, as shown in Figure \ref{fig:newtonslaws:2blockswedge}. What forces are exerted on each of the two blocks? }
+\label{ex:newtonslaws:2blockswedge}
+\capfig{0.2\textwidth}{figures/NewtonsLaws/2blockswedge.png}{\label{fig:newtonslaws:2blockswedge} A block resting on a wedge-shaped block.}
+Since it will be too messy to draw all of the forces on the same diagram, we have drawn each block separately in Figure \ref{fig:newtonslaws:2blockswedge_forces}. 
+
+Usually, when multiple blocks are stacked on each other, it is easiest to start with the forces on the top block. In this case, the top block is in the same condition as the block from Example \ref{ex:newtonslaws:blockI}. The forces on the top block are:
+\begin{enumerate}
+\item $\vec F_g^m$, its weight.
+\item $\vec N^m$, a normal force from the wedge-shaped block.
+\item $\vec f_s^m$, a force of static friction exerted by the wedge-shaped block.
+\end{enumerate}
+
+The wedge-shaped block has the following forces exerted on it:
+\begin{enumerate}
+\item $\vec F_g^M$, its weight.
+\item $\vec N^M$, a normal force exerted by the small block. Note that this force is equal in magnitude and opposite in direction to $\vec N^m$ (the two forces, $\vec N^m$ and $\vec N^M$, which are on different objects, are an action/reaction pair of forces).
+\item $\vec f_s^M$, a force of friction exerted by the small block (again, this forms an action/reaction pair of forces with  $\vec f_s^m$). 
+\item $N_2^M$, a normal force exerted by the table.
+\end{enumerate}
+
+
+The forces for both blocks are shown in Figure \ref{fig:newtonslaws:2blockswedge_forces}.
+\capfig{0.5\textwidth}{figures/NewtonsLaws/2blockswedge_forces.png}{\label{fig:newtonslaws:2blockswedge_forces} Forces on the block and the wedge-shaped block.}
+\end{example}
+
 
 \subsection{Free body diagrams}
-\subsection{The net force}
+In order to analyse the forces on an object more clearly, it is a very good idea to draw a ``Free-Body Diagram'' (FBD). A free-body diagram is simply a diagram where we draw the forces on a single object and represent the object as a point. Because the object is a point, we do not worry where on the object the forces are exerted\footnote{In later chapters, we will see that for extended bodies, it does matter where the forces are applied. However, Newton's Laws as presented so far are only valid for objects that can be represented by a small point (a ``point mass'').}.
+
+For Example \ref{ex:newtonslaws:2blockswedge}, we would draw one free-body diagram for each object (each mass), as shown in Figure \ref{fig:newtonslaws:2blockswedge_fbd}.
+\capfig{0.5\textwidth}{figures/NewtonsLaws/2blockswedge_fbd.png}{\label{fig:newtonslaws:2blockswedge_fbd} Free-body diagram for the block and the wedge-shaped block from Example \ref{ex:newtonslaws:2blockswedge}.}
+
+\begin{example}{Two blocks, of masses $m_1$ and $m_2$ are placed on an inclined plane that makes an angle $\theta$ with the horizontal. The blocks are connected by a massless string, as shown in Figure \ref{fig:newtonslaws:2blocksI}. The two blocks are sliding and accelerating downwards with an acceleration, $\vec a$. The coefficient of kinetic friction between the plane and either block is $\mu_k$. Draw a free-body diagram for each block.}
+\label{ex:newtonslaws:2blocksI}
+\capfig{0.2\textwidth}{figures/NewtonsLaws/2blocksI.png}{\label{fig:newtonslaws:2blocksI} Two connected blocks sliding down an inclined plane.}
+First, we identify the forces on each mass (each block), which we then use to make the free-body diagram shown in Figure \ref{fig:newtonslaws:2blocksI_fbd}. On mass $m_1$, the forces are:
+
+\begin{enumerate}
+\item $\vec F_{g1}$, its weight.
+\item $\vec N_1$, a normal force from the inclined plane.
+\item $\vec f_{k1}$, a force of kinetic friction exerted by inclined plane. The force is opposite of the direction of motion, and has a magnitude given by $f_{k1}=\mu_kN_1$.
+\item $\vec T$, a force of tension from the string. 
+\end{enumerate}
+
+On mass $m_2$, the forces are:
+
+\begin{enumerate}
+\item $\vec F_{g2}$, its weight.
+\item $\vec N_2$, a normal force from the inclined plane.
+\item $\vec f_{k2}$, a force of kinetic friction exerted by inclined plane. The force is opposite of the direction of motion, and has a magnitude given by $f_{k2}=\mu_kN_2$.
+\item $-\vec T$, a force of tension from the string. This is the same force as on $m_1$, but in the opposite direction. We chose to label the force as $-\vec T$, instead of using a different variable, since it is just the negative of the vector that represents the tension force on $m_1$. 
+\end{enumerate}
+
+In Figure \ref{fig:newtonslaws:2blocksI_fbd}, we have shown the forces on each block using a free-body diagram. We also reproduced the vector for the acceleration (we drew the vector for the acceleration using a thicker arrow to indicate that it has a different dimension). We also reproduced the angle $\theta$ in the free-body diagram, as this is helpful once the free-body diagram is used with Newton's Second Law.
+
+\capfig{0.5\textwidth}{figures/NewtonsLaws/2blocksI_fbd.png}{\label{fig:newtonslaws:2blocksI_fbd} Free-body diagram for the blocks $m_1$ and $m_2$ from Figure \ref{fig:newtonslaws:2blocksI}.}
+\end{example}
+
+\subsection{Using Newton's Second Law}
+- don't forget reaction forces
 
 
 \newpage
@@ -163,7 +300,17 @@ Mass is a property of an object that quantifies how much matter the object conta
 
 \section{Thinking about the material}
 
+\subsection{Finding more context}
 \begin{enumerate}
 \item What was the name of the publication in which Newton's published his three laws, and when was it published?
 \item When did Galileo come up with his principle of inertia?
 \end{enumerate}
+
+\subsection{Experiments to try at home}
+
+\subsection{Experiment to try in the lab}
+\begin{enumerate}
+\item How would you make an experiment to determine whether gravitational and inertial mass are equal?
+\end{enumerate}
+
+
