@@ -199,6 +199,29 @@
     \textbf{Checkpoint \thecheckpoint: }#1\\}{}
 \surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{checkpointSA}
 
+%%MC Opener
+\newenvironment{openingMC}[1]{
+    \textbf{Opening Question: }#1 %
+    \begin{enumerate}[label=\Alph*),topsep=-10pt]}%
+   {\end{enumerate}}
+\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{openingMC}
+
+%%Short Answer Opening Question
+\newenvironment{openingSA}[1]{
+    \textbf{Opening Question: \thecheckpoint: }#1\\}{}
+\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{openingSA}
+
+
+%%Multiple choice questions, with counter:
+\newcounter{nMCquestion}[chapter]
+\def\theMCquestion{\thechapter-\arabic{nMCquestion}}
+
+%%General MC
+\newenvironment{MCquestion}[1]{\refstepcounter{nMCquestion}%
+    \textbf{Question \theMCquestion: }#1 %
+    \begin{enumerate}[label=\Alph*),topsep=-10pt]}%
+   {\end{enumerate}}
+
 
 %%Learning objectives box:
 \newenvironment{learningObjectives}{\textbf{Learning Objectives:} \begin{itemize}[topsep=-10pt]}{\end{itemize}}
@@ -212,10 +235,15 @@
 \newcounter{example}[chapter]
 \def\theexample{\thechapter-\arabic{example}}
 
-%%Student opinion
+%%Student opinion EN
 \newenvironment{studentopinion}[1]{\refstepcounter{ncheckpoint}%
     \textbf{Emma's Thoughts \thecheckpoint: }#1\\}{}
 \surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=orange!10, roundcorner=10pt,nobreak=true]{studentopinion}
+
+%%Student opinion OW
+\newenvironment{studentopinionOW}[1]{\refstepcounter{ncheckpoint}%
+    \textbf{Olivia's Thoughts \thecheckpoint: }#1\\}{}
+\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=orange!10, roundcorner=10pt,nobreak=true]{studentopinionOW}
 
 %%Reflect and Research
 \newenvironment{reflectresearch}[1]{\refstepcounter{ncheckpoint}%
