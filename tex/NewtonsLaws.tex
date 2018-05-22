@@ -329,13 +329,83 @@ The two equations that we obtained above for $x$ and $y$ fully specify the motio
 \item Treat each mass separately (since Newton's Second Law is only true for an individual mass). This means that each mass will have its own free-body diagram and that you can choose the coordinate system that is most convenient for a given free-body diagram. In particular, this means that you do not need to choose the same coordinate system for different masses in a problem.
 \end{itemize}
 
-TODO: A full example, mass on an incline and pulley?
+\begin{example}{A block of mass $m_1$ is placed on an incline that makes an angle of $\theta$ with the horizontal. The block of mass $m_1$ is connected by a massless string through a massless pulley to a second block of mass $m_2$ which rests on a horizontal surface. The blocks are accelerating in such a way that the block of mass $m_1$ is accelerating down the incline, as shown in Figure \ref{ex:newtonslaws:2blocksIH}. The coefficient of kinetic friction between either block and the surface it is resting on is $\mu_k$. Write Newton's Second Law for both blocks.}
+\label{ex:newtonslaws:2blocksHI}
+\capfig{0.5\textwidth}{figures/NewtonsLaws/2blocksHI.png}{\label{fig:newtonslaws:2blocksHI} Two blocks connected by a massless string and massless pulley. Both blocks are accelerating.}
+
+First, we identify the forces on each mass (each block). On mass $m_1$, the forces are:
+
+\begin{enumerate}
+\item $\vec F_{g1}$, its weight.
+\item $\vec N_1$, a normal force exerted by the inclined plane.
+\item $\vec f_{k1}$, a force of kinetic friction exerted by the inclined plane. The force is opposite of the direction of motion, and has a magnitude given by $f_{k1}=\mu_kN_1$.
+\item $\vec T_1$, a force of tension from the string. 
+\end{enumerate}
+
+On mass $m_2$, the forces are:
+
+\begin{enumerate}
+\item $\vec F_{g2}$, its weight.
+\item $\vec N_2$, a normal force from the horizontal surface.
+\item $\vec f_{k2}$, a force of kinetic friction exerted by the horizontal surface. The force is opposite of the direction of motion, and has a magnitude given by $f_{k2}=\mu_kN_2$.
+\item $\vec T_1$, a force of tension from the string. This force has the same magnitude as the tension force $\vec T_1$ exerted on mass $m_1$, because the pulley is massless. 
+\end{enumerate}
+
+We can then proceed to draw the free-body diagram for each mass, and use that to write out Newton's Second Law. For mass $m_1$, the free-body diagram is shown in Figure \ref{fig:newtonslaws:2blocksHI_fbd_m1}. We have chosen a coordinate system that has the $x$ axis parallel to the acceleration of the block, and the $y$ axis upwards and perpendicular to the $x$ axis, as shown. 
+
+\capfig{0.2\textwidth}{figures/NewtonsLaws/2blocksHI_fbd_m1.png}{\label{fig:newtonslaws:2blocksHI_fbd_m1} Free-body diagram for $m_1$.}
+
+For $m_1$, we can write Newton's Second Law, starting with the $x$ components:
+\begin{align*}
+\sum F_x = F_{g1}\sin\theta-f_{k1}-T_1&=m_1a_1\\
+\therefore m_1 g\sin\theta -\mu_k N_1 - T_1 &= m_1 a_1
+\end{align*}
+where, in the second line, we used the magnitude of the weight ($m_1g$) and of the force of kinetic friction $\mu_kN_1$. For the $y$ component of Newton's Second Law, in which the acceleration has no component, we have:
+\begin{align*}
+\sum F_y = N_1 - F_{g1}\cos\theta &= 0\\
+\therefore N_1=m_1g\cos\theta
+\end{align*}
+which shows us the magnitude of the normal force can easily be expressed in terms of the weight ($F_{g1}=m_1g$) and the angle of the incline.
+
+For $m_2$, we can proceed in much the same way, choosing a different coordinate system, since the acceleration vector for $m_2$ points in a different direction (we don't have to choose a different coordinate system, but we can if we find it makes things easier). The free-body diagram for $m_2$ is shown in Figure \ref{fig:newtonslaws:2blocksHI_fbd_m2} along with our choice of coordinate system.
+
+\capfig{0.2\textwidth}{figures/NewtonsLaws/2blocksHI_fbd_m2.png}{\label{fig:newtonslaws:2blocksHI_fbd_m2} Free-body diagram for $m_2$.}
+
+We start by writing out the $x$ component of Newton's Second Law for $m_2$:
+\begin{align*}
+\sum F_x = T_2 - f_{k2} &= m_2 a_2\\
+\therefore T_2 - \mu_k N_2 = m_2 a_2
+\end{align*}
+where again, we expressed the kinetic force of friction using the normal force and the coefficient of kinetic friction. The $y$ component of Newton's Second Law gives:
+\begin{align*}
+\sum F_y = F_{g2}-N_2 &=0\\
+\therefore N_2 = m_2g
+\end{align*}
+where again, we expressed the weight in terms of the mass and $g$, and find that the normal force can be expressed in terms of the weight. 
+
+Now that we have written Newton's Second Law \textbf{for each mass}, we can write all four equations that we obtained to describe \textbf{the system of two masses}. We should also note that the magnitude of the tension forces are the same for the two masses ($T_1=T_2=T$), and that since the masses are connected by a string, the magnitude of their acceleration vectors are the same ($a_1=a_2=a$). Using this, we can describe the full system with the following 4 equations:
+\begin{align*}
+m_1 g\sin\theta -\mu_k N_1 - T &= m_1 a\\
+N_1=m_1g\cos\theta\\
+T - \mu_k N_2 = m_2 a\\
+N_2 = m_2g
+\end{align*}
+Of the variables above ($m_1$, $m_2$, $\mu_k$, $T$, $N_1$, $N_2$, $a$), one would only need to specify all but four of them to fully describe the motion of the system. For example, if one specifies the two masses and the coefficient of kinetic friction, all of the other variables can be determined.
+
+\end{example}
 
 \newpage
 \section{Summary}
 \vspace{2cm}
 \begin{chapterSummary}
-\item Something interesting
+\item Newton's Three Laws are a theory of classical physics.
+\item Newton's First Law allows inertial frames to be defined.
+\item Newton's Second Law connects dynamics and kinematics, by relating the forces exerted on an object to its acceleration.
+\item Newton's Third Law states that for every action force there is a reaction force on a different object.
+\item Newton's Theory introduces the concept of a force, which is a mathematical tool.
+\item The concept of mass is introduced as a quantity of matter. Inertial mass refers to how that quantity of matter resists acceleration, whereas gravitational mass refers to how that quantity of mass experiences the force of gravity. As far as we can tell, inertial and gravitational mass are the same, but we don't know why. 
+\item When applying Newton's Theory, the most important part is to identify the forces that act on one object. This can be represented graphically by using a free-body diagram.
+\item When applying Newton's Second Law, one needs to choose a coordinate system so that Newton's Second Law can be written out for each component. It is usually good to choose the coordinate system such that the $x$ axis is parallel to the acceleration vector of the object.
 \end{chapterSummary}
 
 \section{Thinking about the material}
