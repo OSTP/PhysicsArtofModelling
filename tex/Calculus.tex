@@ -460,6 +460,13 @@ $\int f'(x)g(x) dx$ & $f(x)g(x)-\int f(x)g'(x) dx$ (integration by parts)\\
 \captionof{table}{\label{tab:Calculus:intprops}Some properties of indefinite integrals.}
 \end{center}
 
+\begin{checkpointMC}{The function $F(t)=\int_{a}^{b}F(t)dt$ represents...}
+\item $F(a)-F(b)$
+\item $\lim_{t\to\infty}\sum_{i=0}^{i=N}f(t_i)\Delta t$
+\item $F(b)-F(a)$
+\item The area above the curve of $f(t)$ vs. $t$, evaluated between $t=a$ and $t=b$.
+\end{checkpointMC}
+
 \subsection{Common uses of integrals in Physics - from a sum to an integral}
 Integrals are extremely useful in physics because they are related to sums. If we assume that our mathematician friends (or computers) can determine anti-derivatives for us, using integrals is not that complicated. 
 
@@ -543,62 +550,82 @@ One should note that coming up with the above integral is physics. Solving it is
 \subsection{Experiments to try in the lab}
 
 \subsection{Sample problems and solutions}
+ \vspace{0.25cm}
+\begin{problem}{Derive a formula for a solid Double Chocolate Donut of radius r rotated about its axis of symmetry.}
 
-\begin{example}{Derive a formula for a solid donut of radius R rotated about its axis of symmetry.}
+\capfig{0.5\textwidth}{figures/Calculus/donut.png}{\label{fig:Calculus:donut} This is a Double Chocolate Donut.}
 
-%%Insert picture here
 
 This is the equation for the moment of inertia:
-
-$I=\sum m_ir_i^{2}$
+\begin{align*}
+I=\sum m_ir_i^{2}
+\end{align*}
 
 Solution:
 
-In order to solve this problem, we should imagine that the donut is composed of small cylinders of radius R:
-
-%%Insert picture here
+In order to solve this problem, we should imagine that the Double Chocolate Donut\footnote{Please take special note of the asymmetry of the icing of this Double Chocolate Donut. In physics, we must often perform approximations to model physical situations. We can appropriately approximate this Double Chocolate Donut by ascribing its shape to that of a regular torus.} is composed of small donut cylinders of radius r.
 
 So, each cylinder must have a volume of: $V=\Delta xy\Delta z$
 
 Using the formula for density, D= M/V, we can solve for the mass of a small cylinder.
-$\rho=m/v$
-$m=\rho v$
-$m=\Delta xy\Delta z\rho$
 
-Now, we must put variables x,y and z in terms of the variables theta, R and X (the height);
+\begin{align*}
+\rho=m/v
+m=\rho v
+m=\Delta xy\Delta z\rho
+\end{align*}
 
-Let us first look at the y variable, which is the height of the donut;
+Now, we must put variables x,y and z in terms of the variables theta, r and X (the height);
 
-This is the equation for a circle with radius ``2R'', which is:
+Let us first look at the y variable, which is the height of the Double Chocolate Donut;
 
-$R^{2}=y^{2}+(x-R)^{2}$
+This is the equation for a circle with radius ``2r'', which is:
+
+\begin{align*}
+r^{2}=y^{2}+(x-r)^{2}
+\end{align*}
 
 Solving in terms of y, we get:
 
-$y=\sqrt{R^{2}-(x-R)^{2}}$
+\begin{align*}
+y=\sqrt{r^{2}-(x-r)^{2}}
+\end{align*}
 
-Now, plug in r=2R
+Now, plug in r=2r
 
-$y=\sqrt{2R-(x-2R)^{2}}$
-$y=\sqrt{2R^{2}+2Rx-x^{2}}$
+\begin{align*}
+y=\sqrt{2r-(x-2r)^{2}}
+y=\sqrt{2r^{2}+2rx-x^{2}}
+\end{align*}
 
 For the actual height, we must multiply by 2 for the top and bottom semicircles. Also, we have to multiply by the distance from the rotational axis, which is: $(R+x)$ equation. So we get:
 
-$y=2\sqrt{2R^{2}+2Rx-x^{2}}(R+x)$
+\begin{align*}
+y=2\sqrt{2r^{2}+2rx-x^{2}}(R+x)
+\end{align*}
 
-To solve further from here, we need to put dz in terms of R, X and theta. Z here is the width, which depends on the distance from the centre multiplied by the angle:
+To solve further from here, we need to put dz in terms of R, r, X and theta. Z here is the width, which depends on the distance from the centre multiplied by the angle:
 
-$dz=(R+x)dt\theta$
+\begin{align*}
+dz=(R+x)dt\theta
+\end{align*}
 
 Plugging it all in, we'll need a double integral:
 
-
+\begin{align*}
+I=\int_{0}^{2\pi}\int_{0}^{2r} 2\rho\sqrt{2r^{2}+2rx-x^{2}}(R+x)^{2}(R+x)dxd\theta
+\end{align*}
 
 Simplifying this we get:
 
+\begin{align*}
+I=\int_{0}^{2\pi}\int_{0}^{2r} 2\rho\sqrt{2r^{2}+2rx-x^{2}}(R+x)^{3}dxd\theta
+\end{align*}
 
+This is the correct expression for the moment of inertia of a solid Double Chocolate Donut. Note that solving complicated double integrals is beyond the scope of the course and is an exercise in mathematics rather than physics. For those who would like to solve it for fun, solving the above expression gives the moment of inertia for a solid donut to be:
 
-This is the correct expression for the moment of inertia of a solid donut. Note that solving complicated double integrals is beyond the scope of the course and is an exercise in mathematics rather than physics. For those who would like to solve it for fun, solving the above expression gives the moment of inertia for a solid donut to be:
-
-\end{example}
+\begin{align*}
+I=2\rho \sqrt{\frac{8r^{3}(10R^{3}+30rR^{2}+39r^{2}R+19r^{3}}{15}}
+\end{align*}
+\end{problem}
 
