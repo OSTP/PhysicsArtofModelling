@@ -6,6 +6,10 @@
 \label{Kinematics1D}
 In this chapter, we will introduce the tools required to describe motion in one dimension. In later chapters, we will use the theories of physics to model the motion of objects, but first, we need to make sure that we have the tools to describe the motion. We generally use the word ``kinematics'' to label the tools for describing motion (e.g. speed, acceleration, position, etc), whereas we refer to ``dynamics'' when we use the laws of physics to predict motion (e.g. what motion will occur if a force is applied to an object). 
  \vspace{1cm}
+\begin{openingSA}
+You are taking your 6 year old cousin, Lily, to see the aquarium in Toronto. You are sitting on the train in Kingston waiting to leave the station. Lily exclaims that your train must be moving, and is excited that you are on your way to Toronto. You wonder why she said this, so you look out the window and notice that train beside you is moving backwards. You conclude that your train is not moving after all. How do you explain this to Lily? Do you know for certain that you aren't moving?
+\end{openingSA}
+\vspace{12pt}
 \begin{learningObjectives}
 \item Describe motion in 1D using functions and defining an axis.
 \item Define position, velocity, speed, and acceleration.
@@ -307,6 +311,13 @@ Similarly, we introduce the \textbf{instantaneous acceleration}, as the time der
 \Aboxed{a_x(t)=\frac{dv}{dt}=\frac{d}{dt}v(t)}
 \end{align}
 
+\begin{studentopinionOW}{Speeding up or slowing down?}
+When looking at a graph of position versus time, it is sometimes hard to tell at first glance whether the speed of the object is increasing or decreasing. This section gives us an easy way to figure it out. The velocity is the instantaneous slope of the graph $x(t)$, so the speed is the ``steepness" of that slope. Simply draw a few lines that are tangent to (meaning just touching) the curve, and see what happens as time increases. If the lines get steeper, the object is speeding up. If they are getting flatter, the object is slowing down.
+\capfig{0.5\textwidth}{figures/DescribingMotionIn1D/SpeedingSlowing.jpg}{\label{fig:SpeedingSlowing}Two graphs of $x(t)$ showing tangent lines.} 
+From here, you can also figure out what the direction of the acceleration is. If an object is speeding up, the acceleration and velocity must be in the same direction (i.e. both positive or both negative). If the object is slowing down, they must be in opposite directions. Imagine the graphs in Figure \ref{fig:SpeedingSlowing} are describing the motion of a person in heavy wind. In the graph on the left, the person is running with the wind ($v(t)$ and $a(t)$ positive), and in the second graph the person is running against the wind ($v(t)$ positive and $a(t)$ negative). 
+\end{studentopinionOW} 
+
+
 
 \subsection{Using calculus to obtain acceleration from position}
 Suppose that we know the function for position as a function of time, and that it is given by our previous result (for the case when the acceleration $a_x$ is constant):
@@ -383,7 +394,20 @@ x(t)=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 \item it increases with the cube of time ($v(t)\propto t^3$)
 \end{checkpointMC}
 
-TODO: Checkpoint MC, choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, and $\omega$ is constant, and velocity and position are zero at $t=0$.
+\begin{checkpointSA}{Choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, where $\omega$ is a constant. The velocity and position are zero at $t=0$}
+\begin{center}
+\includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigA.png}
+\includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigB.png}
+\includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigC.png}
+\end{center}
+\begin{enumerate}[label=\Alph*)]
+\item Figure A
+\item Figure B
+\item Figure C
+\end{enumerate}
+\end{checkpointSA}
+
+
 
 \section{Relative motion}
 In order to describe the motion of an object confined to a straight line, we introduced an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:DescribingMotionIn1D:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
@@ -495,3 +519,82 @@ x'^A(t) &= v'^Bt + x^A(t)\\
 v'^A(t) &=v'^B+v^A(t)\\
 a'^A(t) &= a(t)
 \end{align*}
+
+\section{Problems}
+
+\begin{problemParts}{Rob is riding is bike at a speed of $\SI{8}{m/s}$. He passes by a velociraptor, as one often does, who is eating by the side of the road. The velociraptor begins chasing him. The velociraptor accelerates from rest at a rate of $\SI{4}{m/s^2}$.} 
+\item Assuming it takes 3 seconds for the velociraptor to react, how long does it take from the moment Rob passes by for the velicoraptor to catch up to him? 
+\item If there is a safe place 70 metres from where Rob passes the velociraptor, will Rob make it there in time to escape being eaten?  
+\end{problemParts}
+
+\textbf{Solution:}\\
+We start by choosing our coordinate system. The solution is simplest if the $x$ axis is positive in the direction of motion and has an origin at the point where Rob passes the velociraptor. We set $t=0$ to be the moment the velociraptor starts running.\\
+
+\capfig{\textwidth}{figures/DescribingMotionIn1D/VelociraptorQuestion.png}{\label{fig:VelociraptorProblem1D} Rob is being chased by a velociraptor. At $t=0$, Rob is a distance $x_{0R}$ from the velociraptor. Safety is $\SI{70}{m}$ away from the origin.}
+
+Since we are dealing with constant accelerations, we can use the equation:
+\begin{align*}
+x(t)&=x_0+v_{0x}t+\frac{1}{2}a_xt^2
+\end{align*}
+We can use a table to take stock of our known values and variables:
+\begin{table}[h!]
+\centering
+\label{KnownsUnknownsSampleProb1D}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Rob}          & \textbf{Velociraptor}  \\ \hline
+$x_{0R} = ?$          & $x_{0V} = \SI{0}{m}$   \\
+$v_R = \SI{8}{m/s}$   & $v_{0V} = \SI{0}{m/s}$ \\
+$a_R = \SI{0}{m/s^2}$ & $a_V = \SI{4}{m/s^2}$  \\
+$t$                   & $t$                    \\
+$x_R$                 & $x_V$                 
+\end{tabular}
+\end{table}
+
+The value of $x_{0R}$ is unknown but can be easily solved for. We defined $t=0$ as the moment the velociraptor starts running. It takes 3 seconds for the velociraptor to react, so at $t=0$, Rob has moved $(\SI{8}{m/s})\times (\SI{3}{s}) = \SI{24}{m}$.\\
+
+Next, we can write out our equations as,
+\begin{align*}
+x_R&=x_{0R}+v_{R}t\\
+x_V&=\frac{1}{2}a_Vt^2
+\end{align*}
+ 
+Now what do we mean by ``catch up"? It means that Rob and the velociraptor are in the same place at the same time. So, we are interested in the value of $t$ when $x_R=x_V$. Setting the above equations equal to one another gives
+\begin{align*}
+x_{0R}+v_{R}t&=\frac{1}{2}a_Vt^2 
+\end{align*}
+that we can rearrange to get this quadratic:
+\begin{align*}
+0&=\frac{1}{2}a_Vt^2-v_{R}t-x_{0R} 
+\end{align*}
+
+By solving the quadratic, we find that $t=\SI{6}{s}$. This doesn't quite give us the answer we want. We want to know how long it takes the velociraptor to catch up \textit{from the moment Rob passes by}, so we have to add on the $\SI{3}{s}$ reaction time, giving a total time of $\SI{9}{s}$.\\
+
+We can use this solution to figure out whether Rob makes it to safety. In 9 seconds, Rob travels a distance of $(\SI{8}{m/s})\times (\SI{9}{s}) = \SI{72}{m}$. The shelter is only $\SI{70}{m}$ away, so Rob gets to safety in time!
+
+
+\begin{problem} Figure \ref{fig:AccelerationProblem1D} shows a graph of the acceleration, $a(t)$, of a particle moving in one dimension. Draw the corresponding velocity and position graphs. Assume that $v(0)=x(0)=0$. 
+\end{problem}
+\capfig{0.6\textwidth}{figures/DescribingMotionIn1D/AccelerationProblem.jpg}{\label{fig:AccelerationProblem1D}A graph of acceleration as a function of time. The scale and units are arbitrary.}
+\textbf{Solution:}
+\begin{center}
+\includegraphics[scale=0.6]{figures/DescribingMotionIn1D/VelocityPositionProblem.jpg}{\label{fig:VelocityPositionProblem1D}}
+\end{center}
+Solutions may vary, however there are a few key features that must be present.\\
+For the graph of $v(t)$:
+\begin{itemize}
+\item Velocity is zero at $t=0$.
+\item When acceleration is negative, the velocity is (negative slope). It follows that when the acceleration is positive, the velocity is increasing. 
+\item When the acceleration is zero, the velocity should be a flat line
+\end{itemize}
+For the graph of $x(t)$:
+\begin{itemize}
+\item Position is zero at $x=0$
+\item When velocity is negative, $x(t)$ is decreasing. When velocity is positive, $x(t)$ is increasing
+\item Take note of the turning points on the graph of $x(t)$.The particle turns around (the position goes from increasing or decreasing, or from decreasing to increasing) when the velocity changes sign. 
+\item When the velocity and acceleration are in the same direction, the slope of $x(t)$ increases in magnitude. When the acceleration and velocity are in opposite directions, the slope of $x(t)$ decreases in magnitude. 
+\end{itemize}
+
+\begin{reflectresearch}\\
+Look up the depth of a competition diving pool. What is the relationship between the height of the diving platform and the minimum pool depth? Why? If the designers of the pool assumed that every diver drops straight down off the diving board, would the pool still be safe for divers that jump up first?
+\end{reflectresearch}
