@@ -1,7 +1,7 @@
 
 \chapter{Newton's Laws}
-In this chapter, we introduce Newton's Laws, which is a succinct theory of physics that describes an incredibly large number of phenomena in the natural world. Newton's Laws are one possible formulation of what we call ``Classical Physics'' (as opposed to ``Modern Physics'' which include Quantum Mechanics and Special Relativity). Newton's Laws make the connection between dynamics (the causes of motion) and the kinematics of motion (the description of that motion). 
 \label{chap:NewtonsLaws}
+In this chapter, we introduce Newton's Laws, which is a succinct theory of physics that describes an incredibly large number of phenomena in the natural world. Newton's Laws are one possible formulation of what we call ``Classical Physics'' (as opposed to ``Modern Physics'' which include Quantum Mechanics and Special Relativity). Newton's Laws make the connection between dynamics (the causes of motion) and the kinematics of motion (the description of that motion). 
  \vspace{1cm}
 \begin{learningObjectives}
 \item Understand Newton's Three Laws
@@ -426,57 +426,69 @@ Of the variables above ($m_1$, $m_2$, $\mu_k$, $T$, $N_1$, $N_2$, $a$), one woul
 
 \subsection{Problems and Solutions}
  \vspace{0.25cm}
-\begin{problem}\\ Katie, an amateur snowboarder, rests at the top of a 40$m$ long hill inclined at 50$^{\circ}$. Taking off, she starts to glide down the hill, until she face-plants into a large pile of snow. If the coefficient of kinetic friction between Katie's snowboard and the hill is 0.45, how long does it take for her to reach the bottom?
+\begin{problem}\\ Katie, an amateur snowboarder, rests at the top of hill inclined by an angle of $\theta =\SI{50}{\degree}$ with respect to the horizontal, as shown in Figure \ref{fig:newtonslaws:katiesnowboarding}. She gracefully slides down the hill until she face-plants into a large pile of snow at the bottom, $\SI{40}{m}$ from where she started. If the coefficient of kinetic friction between Katie's snowboard and the hill is $\mu_k=0.45$, how long elapses between when she starts to glide and when she face plants?
 
+TODO: Show the angle on the diagram
 \capfig{0.5\textwidth}{figures/NewtonsLaws/katiesnowboarding.png}{\label{fig:newtonslaws:katiesnowboarding} Katie, snowboarding.}
 
-\capfig{0.4\textwidth}{figures/NewtonsLaws/katieforces.png}{\label{fig:newtonslaws:katieforces} Forces acting on Katie as she snowboards.}
+Before trying to solve the problem, we should think of the strategy that will allow us to model the time that it takes to arrive at the bottom. We know that Newton's Second Law relates the forces on Katie to her acceleration. If we build a model of the forces on Katie, we can then determine her acceleration. Once we know her acceleration, we can use kinematics to determine how long it takes for her to cover the distance of $\SI{40}{m}$.
 
-The forces acting on Katie are:
+The forces exerted on Katie are:
 \begin{enumerate}
 \item $\vec F_g$, her weight.
-\item $\vec N$, a normal force exerted by the inclined plane.
-\item $\vec f_k$, a force of kinetic friction exerted by the snow on the hill. 
+\item $\vec N$, a normal force exerted by the slope.
+\item $\vec f_k$, a force of kinetic friction exerted by the slope, with magnitude $f_k=\mu_kN$ 
 \end{enumerate}
 
-First, we can calculate the x and y components of Katie's weight.
+This allows us to build a free-body diagram for the forces on Katie, as shown in Figure \ref{fig:newtonslaws:katieforces}. Since Katie will glide down the slope, her acceleration will be parallel to the slope and downwards, which we showed with a thicker arrow on the free-body diagram. Our free-body diagram also shows the coordinate system that we chose, with the $x$ axis pointing parallel to the acceleratin. 
 
+
+TODO: Make this an FBD! Show the angle $\theta$. Weight is wrong, should be vertical!
+\capfig{0.4\textwidth}{figures/NewtonsLaws/katieforces.png}{\label{fig:newtonslaws:katieforces} Forces acting on Katie as she snowboards.}
+
+With a free-body diagram, we can write Newton's Second Law for the $x$ and $y$ components. In the $x$ direction, both the force of friction and the weight have components. The force of friction is in the negative $x$ direction, whereas the component of gravity in the $x$ direction is $F_g\sin\theta$. The acceleration vector is also in the $x$ direction. Putting this altogether into Newton's Second Law:
 \begin{align*}
-F_gx=(9.8m)(sin50) = 7.51m
-\\F_gy=(9.8m)(cos50)= 6.29m
+\sum F_x = F_g\sin\theta - f_k &= ma\\
+\therefore mg\sin\theta -\mu_k N &= ma
+\end{align*}
+where we used the fact that the weight is given by $mg$ ($m$ is Katie's mass) and the magnitude of the force of friction is given by $f_k=\mu_kN$.
+
+Next, we write out the $y$ component of Newton's Second Law. The normal force is in the positive $y$ direction, whereas the component of gravity in the $y$ direction is $-F_g\cos\theta$. The acceleration has no component in the $y$ direction. Putting this into Newton's Second Law:
+\begin{align*}
+\sum F_y = N-F_g\cos\theta &=0\\
+\therefore N-mg\cos\theta &=0
 \end{align*}
 
-where m is Katie's mass.
-
-Next, we can find an expression for the normal force by writing the y component of Newton's Second Law:
-
+We now have two equations that describe Katie's motion:
 \begin{align*}
-\sum F_y=N-F_g=ma_y
-\\\therefore N=6.29m
+mg\sin\theta -\mu_k N &= ma\\
+N-mg\cos\theta &=0
 \end{align*}
-
-Using the normal force, we can write an expression for the kinetic force of friction:
-
+We have three unknowns, $m$, $N$, and $a$, but only two equations! Hopefully, one of these will cancel out! At this point, all of the physics for the problem is done! We can now proceed to solve these equations to find the acceleration. The second equation allows us to solve for the normal force, $N=mg\cos\theta$, which we substitute into the first equation:
 \begin{align*}
-f_k=u_kN=(0.45)(6.29m)
-\\\therefore f_k=2.83m
+mg\sin\theta -\mu_k N &= ma\\
+\therefore mg\sin\theta -\mu_k mg\cos\theta &= ma\\
 \end{align*}
-
-To calculate the acceleration, we can write the x component of Newton's Second Law:
-
+As you can see, the mass $m$ can be cancelled out of this equation, and we can find the acceleration:
 \begin{align*}
-\sum F_x=F_g-f_k=ma_x
-\\\therefore ma_x=4.14m-2.83m
-\\\therefore a_x=1.31m/s^2
+a&=g\sin\theta -\mu_k g\cos\theta\\
+&=g(\sin\theta-\mu_k\cos\theta)\\
+&=(\SI{9.8}{N/kg})\left(\sin(\SI{50}{\degree})-(0.45)\cos(\SI{50}{\degree})\right)\\
+&=\SI{1.31}{N/kg} %TODO: check this result!
 \end{align*}
-
-Knowing that Katie's initial velocity is $0m/s$, her acceleration is $1.31m/s^2$ and the distance that she must travel is $40m$, we can find the time it takes for her to face-plant:
-
+At this point, we should ask ourselves if our result makes sense. In particular, we have found that the acceleration has unit of $\si{N/kg}$ instead of $\si{m/s^2}$. A quick examination of Newton's Second Law shows us that these two units are equivalent:
 \begin{align*}
-x(t)=x_0+v_0t+\frac{1}{2}at^{2}
-\\40m=\frac{1}{2}(1.31m/s^{2})t^{2}
-\\\therefore t=7.82s
+F &= ma\\
+a &= \frac{F}{m}\\
+\therefore SI[a] = \frac{SI[F]}{SI[m]}=\frac{N}{kg}
 \end{align*}
 
 
-Katie has 7.82 seconds of airborne bliss before face-planting into the large pile of snow.\end{problem}
+Knowing that Katie's initial velocity is $0m/s$, her acceleration is $1.31m/s^2$ in the $x$ direction (the same direction as the slope), and the distance that she must travel is $x=\SI{40}{m}$, we can find the time it takes for her to face-plant if we set the origin of the $x$ axis where she starts (so that her initial position along the $x$ axis, $x_0=0$):
+\begin{align*}
+x(t)=x_0+v_0t+\frac{1}{2}at^2\\
+\SI{40}{m}=\frac{1}{2}(\SI{1.31}{m/s^2})t^2
+\therefore t=7.82s
+\end{align*}
+Katie has $\SI{7.82}{s}$ of gliding bliss before face-planting into the large pile of snow.
+\end{problem}
