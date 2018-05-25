@@ -201,14 +201,14 @@
 
 %%MC Opener
 \newenvironment{openingMC}[1]{
-    \textbf{Opening Question: }#1 %
+    \textbf{Think about it: }#1 %
     \begin{enumerate}[label=\Alph*),topsep=-10pt]}%
    {\end{enumerate}}
 \surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{openingMC}
 
 %%Short Answer Opening Question
 \newenvironment{openingSA}[1]{
-    \textbf{Opening Question: \thecheckpoint: }#1\\}{}
+    \textbf{Think about it: }#1}{}
 \surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{openingSA}
 
 
@@ -240,6 +240,7 @@
     \textbf{Emma's Thoughts \thecheckpoint: }#1\\}{}
 \surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=orange!10, roundcorner=10pt,nobreak=true]{studentopinion}
 
+
 %%Student opinion OW
 \newenvironment{studentopinionOW}[1]{\refstepcounter{ncheckpoint}%
     \textbf{Olivia's Thoughts \thecheckpoint: }#1\\}{}
@@ -258,10 +259,15 @@
 \def\theproblem{\thechapter-\arabic{problem}}
 
 \newenvironment{problem}[1]
-  {\refstepcounter{problem}\textbf{Problem \theproblem: #1}\\}
-  {\vspace{2ex}\\}
-
-
+  {\refstepcounter{problem}\textbf{Problem \theproblem: }#1} %
+  {\vspace{2ex}}
+  
+\newenvironment{problemParts}[1]
+  {\refstepcounter{problem}\textbf{Problem \theproblem: }#1 %
+  \begin{enumerate}[label=\alph*),topsep=-10pt]}%
+   {\end{enumerate}}
+  {\vspace{2ex}}
+  
           
 \usepackage[paper=letterpaper,
             %includefoot, % Uncomment to put page number above margin
