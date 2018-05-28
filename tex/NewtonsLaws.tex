@@ -173,6 +173,9 @@ where $\vec F$ is the force exerted by the spring, $k$ is called the ``spring co
 \item No.
 \end{checkpointMC}
 
+\subsubsection{Inertial forces}
+Inertial forces are exerted on an object when the forces on the object are modelled in a non-inertial frame of reference. For example, in the frame of reference of an accelerating elevator, or that of a car going around a curve, one can use Newton's Three Laws to model motion, if an additional inertial force is included. In a frame of reference that has an acceleration given by $\vec a$, an inertial force $-m\vec a$ is exerted on an object. This is the nature of the outwards force that is felt when your car goes around a curve, or the perception of being weightless in an elevator that has a large downwards acceleration. We will discuss inertial forces in more detail in section \ref{sec:newtonslaws:typesofforces}.
+
 
 \subsubsection{``Applied'' forces}
 ``Applied'' forces is just a general ``catch-all'' term for specifying forces that are not described above. For example, the force applied by a person onto an object is often referred to as an applied force. 
@@ -307,7 +310,7 @@ Newton's Second Law is a vector equation that relates the vector sum of all forc
 \sum F_z &= ma_z
 \end{align*}
 
-In order to use Newton's Second Law, we thus need to introduce a coordinate system so that we can work with the components of the vectors (forces and acceleration) in that coordinate system. Usually, a good choice of coordinate system is one where the $x$ axis is parallel to the acceleration vector. Figure \ref{fig:newtonslaws:2blocksI} shows the free-body diagram from the $m_1$ block from the previous example (Example \ref{ex:newtonslaws:2blocksI}) along with a good choice of coordinate system. 
+In order to use Newton's Second Law, we thus need to introduce a coordinate system so that we can work with the components of the vectors (forces and acceleration) in that coordinate system. Usually, a good choice of coordinate system is one where the $x$ (or $y$) axis is parallel to the acceleration vector. Figure \ref{fig:newtonslaws:2blocksI} shows the free-body diagram from the $m_1$ block from the previous example (Example \ref{ex:newtonslaws:2blocksI}) along with a good choice of coordinate system. 
 
 \capfig{0.2\textwidth}{figures/NewtonsLaws/2blocksI_fbd_m1.png}{\label{fig:newtonslaws:2blocksI_fbd_m1} Free-body diagram and choice of coordinate system for the $m_1$ blocks from Figure \ref{fig:newtonslaws:2blocksI}, Example \ref{ex:newtonslaws:2blocksI}.}
 
@@ -394,6 +397,95 @@ Of the variables above ($m_1$, $m_2$, $\mu_k$, $T$, $N_1$, $N_2$, $a$), one woul
 
 \end{example}
 
+\section{The acceleration due to gravity}
+If you have studied some physics before reading this textbook, you may have been surprised by our choice of dimension for $g$ to be force per unit mass rather than acceleration. This is indeed an unconventional choice as $g$ is usually presented as ``the acceleration due to Earth's gravity'' instead of the ``strength of Earth's gravitational field''. Our choice comes from the potential difference between inertial mass, $m_I$, and gravitational mass, $m_G$.
+
+Consider the simple model of a mass falling freely near the surface of the Earth in the absence of air-resistance. The only force exerted on the object is its weight, $m_g\vec g$, which is given in terms of gravitational mass (the mass that determines how an object experiences gravity). Both the weight and the acceleration of the object point downwards. The free-body diagram for the mass is shown in Figure \ref{fig:newtonslaws:gravity_fbd}, where the $y$ axis was chosen to be vertically upwards (co-linear with the acceleration).
+
+\capfig{0.2\textwidth}{figures/NewtonsLaws/gravity_fbd.png}{\label{fig:newtonslaws:gravity_fbd}Free-body diagram for a mass that is free-falling in the absence of air resistance (drag).}
+
+Writing out the $y$ component of Newton's Second Law, being careful to distinguish between inertial and gravitational mass, and noting that both the weight and the acceleration are in the negative $y$ direction:
+\begin{align*}
+\sum F_y = -F_g &= -m_I a\\
+\therefore m_gg &= m_I a
+\end{align*}
+This makes it clear that $g$ is not necessarily the acceleration due to gravity. It is only the acceleration due to gravity in the limit that the inertial and gravitational masses are the same. If $m_g=m_I$, then we have:
+\begin{align*}
+a = g
+\end{align*}
+and indeed, the acceleration of objects near the surface of the Earth has a magnitude of $g$. It is also clear that the dimensions of $g$ can also be written as an acceleration, and in most cases, one writes that, near the surface of the Earth, $g=\SI{9.8}{m/s^2}$. You should however remember that this is only true when inertial and gravitational masses are the same. 
+
+\section{Non-inertial frames of reference and inertial forces}
+\label{sec:newtonslaws:inertialforces}
+In the previous section, we described how to use Newton's First Law to identify an inertial frame of reference (one where Newton's First Law holds true) in order to identify the forces exerted on an object so that Newton's Second Law could be applied. It is possible to apply Newton's Laws in a non-inertial frame of reference, \textbf{provided that one includes an additional ``inertial force''.}
+
+Let us assume that we hang a mass, $m$, from the ceiling of our car using a string. If the car accelerates forwards with a constant acceleration, $\vec a$, the mass will swing towards the back of the car and the string will not be vertical as long as the car maintains its constant acceleration, as shown in Figure \ref{fig:newtonslaws:car}. As as the car maintains its acceleration, the hanging mass will not move relative to the car.
+
+\capfig{0.3\textwidth}{figures/NewtonsLaws/car.png}{\label{fig:newtonslaws:car}A mass hanging from the ceiling of a car accelerating to the right.}
+
+We can analyse this motion from the inertial frame of reference of the ground. In this frame of reference, there are two forces exerted on the mass:
+\begin{enumerate}
+\item $\vec F_g$, its weight, with magnitude $mg$.
+\item $\vec T$, a force of tension exerted by the string, in the direction of the string.
+\end{enumerate}
+The two forces are shown in the free-body diagram of Figure \ref{fig:newtonslaws:car_fbd}, along with a coordinate system chosen such that $x$ points in the direction of the acceleration the mass (which is the same as the acceleration of the car). 
+\capfig{0.2\textwidth}{figures/NewtonsLaws/car_fbd.png}{\label{fig:newtonslaws:car_fbd}Free-body diagram for the forces acting on a mass suspended from the ceiling of accelerating car.}
+Writing out the $x$ and $y$ components of Newton's Second Law for the mass, we have:
+\begin{align*}
+\sum \vec F &= \vec T + \vec F_g= m \vec a\\
+\therefore\sum F_x &= T\sin\theta = ma\\
+\therefore\sum F_y &= T\cos\theta-F_g=0
+\end{align*}
+We can, instead, model the motion of the mass in the frame of reference of the car, by pretending that we are sitting in the car. In the frame of reference of the car, the mass is immobile, and thus has no acceleration. In the non-inertial frame of reference of the car, we still have the weight and tension forces exerted on the mass; these have the same magnitude and direction as in the inertial frame of reference of the ground. One could replace the string with a spring scale, and observers in the car and on the ground would agree that the spring scale reads the same number. Those observers would also agree that the weight of the mass is the same. However, the two observers disagree on whether the mass is accelerating, since the observer in the car measures that the mass has no acceleration.
+
+In the frame of reference of the car, the acceleration of the mass is zero. If we want Newton's Second Law to hold, this implies that, in that reference frame, the sum of the forces on the mass must be zero:
+\begin{align*}
+\sum \vec F & = 0\quad\quad\text{(car reference frame)}
+\end{align*}
+We know from analysing the motion from the frame of reference of the ground that the vector sum of the forces $\vec T$ and $\vec F_g$ is equal to $m\vec a$. The only way for the force in the frame of reference of the car to add up to zero is if there is an additional force, $\vec F_I$, that is exerted in that frame of reference:
+\begin{align*}
+\sum \vec F &= \vec T + \vec F_g + \vec F_I =0\quad\quad\text{(car reference frame)}
+\end{align*}
+Since we know that $\vec T + \vec F_g=m\vec a$, we can substitute this in the equation above:
+\begin{align*}
+\sum \vec F &= \vec T + \vec F_g + \vec F_I =0\quad\quad\text{(car reference frame)}\\
+&=m\vec a+\vec F_I = 0\\
+\therefore F_I &= -m\vec a
+\end{align*}
+and we find that this ``inertial force'' must be exerted in the opposite direction from the acceleration of the frame of reference, with a magnitude given by $ma$. The free-body diagram for the mass is illustrated in Figure \ref{fig:newtonslaws:car_fbd2}. 
+\capfig{0.3\textwidth}{figures/NewtonsLaws/car_fbd2.png}{\label{fig:newtonslaws:car_fbd2}Free-body diagram for the forces acting on a mass suspended from the ceiling of accelerating car, in the frame of reference of the car. An additional inertial force, $\vec F_I=-m\vec a$, has to be included.}
+
+\begin{example}{You are in an elevator that is accelerating downwards with a constant acceleration $\vec a$. You are standing on a spring scale, what is the value of your weight as displayed on the spring scale? Assume that your mass is $m$. (The spring scale will display your weight as having the same magnitude as the normal force that the scale exerts on you). }
+We can model your motion in the non-inertial frame of reference of the elevator. The forces that are exerted on you are:
+\begin{enumerate}
+\item $\vec F_g$, your weight, with magnitude $mg$.
+\item $\vec N$, the normal force exerted upwards by the spring scale, which is the weight as measured by the scale.
+\item $\vec F_I$, an inertial force with magnitude $ma$ that is exerted upwards (in the direction opposite of the acceleration of the frame of reference).
+\end{enumerate}
+The forces in the frame of reference of the elevator are illustrated in Figure \ref{fig:newtonslaws:elevator_fbd}, along with a coordinate system that was chosen so that the forces are co-linear with one of the axes (since the acceleration is zero).
+\capfig{0.2\textwidth}{figures/NewtonsLaws/elevator_fbd.png}{\label{fig:newtonslaws:elevator_fbd}Free-body diagram for the forces exerted on a person as modelled in a frame of reference that is accelerating downwards.}
+All of the forces are in the vertical direction, so we only need to write out the $y$ component of Newton's Second Law, which we can easily solve for the normal force:
+\begin{align*}
+\sum F_y = N+F_I-F_g &=0\\
+N + ma -mg &=0\\
+\therefore N=m(g-a)
+\end{align*}
+Remember that you need to be careful about the signs. We have included the fact that $F_I$ is exerted upwards with the plus sign in the first equation (the $y$ component of $\vec F_I=0\hat x+F_I\hat y$ is $+F_I$). We then used the fact that the magnitude of the inertial force is given by $F_I=ma$ in the second line.
+
+You can easily verify that you would obtain the same result in the inertial frame of reference of the ground, where there is no inertial force, but the acceleration is non-zero (and in the negative $y$ direction if we use the same coordinate system):
+\begin{align*}
+\sum F_y =N-mg = -ma \quad\quad\text{(ground frame of reference)}
+\end{align*}
+The normal force, which corresponds to weight as read by the scale, is thus $N=m(g-a)$. We should ask ourselves if the result makes sense:
+\begin{itemize}
+\item Since the dimension of $a$ and $g$ are the same, $m(g-a)$ has the correct dimension of force.
+\item If the acceleration, $a$, is zero, then the magnitude is $N=mg$, as it should be if the elevator is at rest with respect to the ground.
+\item If the acceleration $a$ is equal to $g$, the normal force exerted by the scale is exactly zero, and your measured weight is zero. This is what we call being ``weightless'', which is not a good description, since the force of weight is still applied, and it is the normal force which is zero.
+\item If the acceleration, $a$, is bigger than $g$, then the normal force would be negative. This corresponds to the elevator accelerating downwards faster than gravity, and the model breaks down, since in this case, you would first hit the ceiling of the elevator, which would then exert a downwards normal force with magnitude $m(a+g)$.
+\end{itemize}
+
+\end{example}
+
 \newpage
 \section{Summary}
 \vspace{1cm}
@@ -406,6 +498,7 @@ Of the variables above ($m_1$, $m_2$, $\mu_k$, $T$, $N_1$, $N_2$, $a$), one woul
 \item The concept of mass is introduced as a quantity of matter. Inertial mass refers to how that quantity of matter resists acceleration, whereas gravitational mass refers to how that quantity of mass experiences the force of gravity. As far as we can tell, inertial and gravitational mass are the same, but we don't know why. 
 \item When applying Newton's theory, the most important part is to identify the forces that act on one object. This can be represented graphically by using a free-body diagram.
 \item When applying Newton's Second Law, one needs to choose a coordinate system so that Newton's Second Law can be written out for each component. It is usually good to choose the coordinate system such that the $x$ axis is parallel to the acceleration vector of the object.
+\item When using Newton's Laws to model the motion of an object of mass $m$ in a non-inertial frame of reference that is accelerating with acceleration $\vec a$ relative to an inertial frame of reference, an additional inertial force, $\vec F_I=-m\vec a$, must be included on the the object.
 \end{chapterSummary}
 
 
