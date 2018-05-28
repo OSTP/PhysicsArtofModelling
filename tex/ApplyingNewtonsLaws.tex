@@ -7,16 +7,48 @@ Newton's Laws are meant to describe ``point particles'', that is, objects that c
 
 \vspace{1cm}
 \begin{learningObjectives}
-\item Understand the definitions of linear motion and uniform circular motion.
-\item Understand how to use inertial forces.
+\item Be able to develop models for linear motion
 \end{learningObjectives}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Beginning of chapter content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Statics}
+When using Newton's Laws to model an object, one can identify two broad categories: static and dynamic. In static situations, the acceleration of the object is zero. By Newton's Second Law, this means that the vector sum of the forces (and torques, as we will see in a later chapter) exerted on an object must be zero. In dynamic situations, the acceleration of the object is non-zero. 
+
+For static problems, since the acceleration vector is zero, we can choose a coordinate system in a way that results in as many forces as possible being aligned with the axes (so that we minimize the number of forces that we need to break up into components).
+
+\begin{example}{You push horizontally with a force $\vec F$ on a box of mass $m$ that is resting against a vertical wall, as shown in Figure \ref. The coefficient of static friction between the wall and the box is $\mu_s$. What is the minimum magnitude of the force that you must exert for the ball to remain stationary?}
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockwall.png}{\label{fig:applyingnewtonslaws:blockwall} A horizontal force exerted on box that is resting against a wall.}
+
+Since the box does not move, we can build a model where the sum of the forces exerted on the box is zero. We start by identifying the forces exerted on the box; these are:
+\begin{enumerate}
+\item $\vec F$, the horizontal force you apply on the box.
+\item $\vec F_g$, the weight of the box, with magnitude $mg$.
+\item $\vec N$, a normal force exerted by the wall on the box. The force is in the horizontal direction, in the opposite direction to $\vec F$.
+\item $\vec f_s$, a vertical force of static friction between the wall and the box. The force points upwards as the ``impeding motion'' of the block is downwards. The force will have at most a magnitude of $\mu_s N$.
+\end{enumerate}
+The forces are shown in the free-body diagram in Figure \ref{fig:applyingnewtonslaws:blockwall_fbd}, along with our choice of coordinate system.
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockwall_fbd.png}{\label{fig:applyingnewtonslaws:blockwall_fbd} Free-body diagram of the forces applied on the box.}
+We can then write the $x$ component of Newton's Second Law:
+\begin{align*}
+\sum F_x = F - N &=0\\
+\therefore N = F
+\end{align*}
+which tells us that the normal force exerted by the wall as the same magnitude as the applied force, $\vec F$. The $y$ component of Newton's Second Law is:
+\begin{align*}
+\sum F_y f_s - F_g &=0\\
+\therefore \mu_s N -mg &=0\\
+\end{align*}
+Note that we set the force of friction to have a magnitude $f_s = \mu_s N$. The question asks for the minimum force with which you must push on the box. From the $x$ component of Newton's Second Law, we found that the normal force is equal to the applied force. If you push with a smaller force, then the normal force will be smaller. The maximal value of the force of static friction is $f_s = \mu_s N$, and so the force of friction is also proportional to the force that you exert (since $N$ is proportional to the force that you exert). RESUME HERE!
+\end{example}
+
+
+
+
 
 \section{Linear motion}
-We can broadly describe an object whose \textit{velocity does not change continuously} as undergoing linear motion. For example, an object that moves along a straight line in a particular direction, then abruptly changes direction and continues to move in a straight line can be modelled as undergoing linear motion over two different segments (which we would model individually). An object moving around a circle, with its velocity vector continuously changing direction, would not be considered as undergoing linear motion. Example paths of objects undergoing linear and non-linear motion are illustrated in Figure \ref{chap:ApplyingNewtonsLaws}.
+We can broadly describe an object whose \textit{velocity vector does continuously change direction} as undergoing linear motion. For example, an object that moves along a straight line in a particular direction, then abruptly changes direction and continues to move in a straight line can be modelled as undergoing linear motion over two different segments (which we would model individually). An object moving around a circle, with its velocity vector continuously changing direction, would not be considered as undergoing linear motion. Example paths of objects undergoing linear and non-linear motion are illustrated in Figure \ref{chap:ApplyingNewtonsLaws}.
 \capfig{0.3\textwidth}{figures/ApplyingNewtonsLaws/linearmotion.png}{\label{fig:applyingnewtonslaws:linearmotion} (Left:) Displacement vector for an object undergoing three segments that can each be modelled as linear motion. (Right:) Path of an object whose velocity vector changes continuously and cannot be considered as linear motion.}
 
 When an object undergoes linear motion, we always model the motion of the object over straight segments separately, if the motion is made of multiple straight segments. Over one such segment, the acceleration vector will be co-linear with the displacement vector of the object (parallel or anti-parallel - note that the acceleration can change direction, but will always be co-linear with the displacement).
