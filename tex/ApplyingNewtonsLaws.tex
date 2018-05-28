@@ -21,7 +21,100 @@ We can broadly describe an object whose \textit{velocity does not change continu
 
 When an object undergoes linear motion, we always model the motion of the object over straight segments separately, if the motion is made of multiple straight segments. Over one such segment, the acceleration vector will be co-linear with the displacement vector of the object (parallel or anti-parallel - note that the acceleration can change direction, but will always be co-linear with the displacement).
 
+\begin{example}{A block of mass $m$ is placed at rest on an inclined that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:applyingnewtonslaws:blockI}. The block is nudged slightly so that the force of static friction is overcome and the block starts to accelerate down the incline. At the bottom of the incline, the block slides on a horizontal surface. The coefficient of kinetic friction between the block and the incline is $\mu_{k1}$, and the coefficient of kinetic friction between the block and horizontal surface is $\mu_{k2}$. If one assumes that the block started at rest a distance $L$ from the horizontal surface, how far along the horizontal surface will the block slide before stopping?}
 
+\capfig{0.5\textwidth}{figures/ApplyingNewtonsLaws/blockI.png}{\label{fig:applyingnewtonslaws:blockI} A block sliding down an incline before sliding on a flat surface. }
+
+We can identify that this is linear motion that we can break up into two segments: (1) the motion down the incline, and (2), the motion along the horizontal surface. We will thus identify the forces, draw the free-body diagram for the block, and use Newton's Second Law twice, once for each segment.
+
+It is often useful to describe the motion in words to help us identify the steps required in building a model for the block. In this case we could say that:
+\begin{enumerate}
+\item The block slides down the incline and accelerates in the direction of motion. By identifying the forces and applying Newton's Second Law, we can determine the acceleration.
+\item The block will reach a certain speed at the bottom of the incline, which we can determine by knowing that the block travelled a distance $L$, with a known acceleration and that it started at rest.
+\item The block will decelerate along the horizontal surface. Again, by identifying the forces and using Newton's Second Law, we will be able to determine that acceleration.
+\item The block will stop after having travelled an unknown distance, which we can find by knowing the deceleration of the block and the initial velocity at the bottom of the incline.
+\end{enumerate}
+
+Our first step is thus to identify the forces on the block while it is on the incline. These are:
+\begin{enumerate}
+\item $\vec F_{g1}$, its weight.
+\item $\vec N_1$, a normal force exerted by the inclined plane.
+\item $\vec f_{k1}$, a force of kinetic friction exerted by the inclined plane. The force is opposite of the direction of motion, and has a magnitude given by $f_{k1}=\mu_{k1}N_1$.
+\end{enumerate}
+These are shown on the free-body diagram in Figure \ref{fig:applyingnewtonslaws:blockI_fbd1}. As usual, we drew the acceleration, $\vec a_1$, on the free-body diagram, and chose the direction of the $x$ axis to be parallel to the acceleration. 
+
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockI_fbd1.png}{\label{fig:applyingnewtonslaws:blockI_fbd1} Free-body diagram for the block when it is on the incline.}
+
+Writing out the $x$ component of Newton's Second Law, and the fact that the acceleration is in the $x$ direction:
+\begin{align*}
+\sum F_x = F_g\sin\theta - f_{k1} &= ma_1\\
+\therefore mg\sin\theta - \mu_{k1} N_1 &= ma_1
+\end{align*}
+where we expressed the magnitude of the kinetic force of friction in terms of the normal force exerted by the plane, and the weight in terms of the mass and gravitational field, $g$. The $y$ component of Newton's Second Law can be written:
+\begin{align*}
+\sum F_y = N_1-F_g\cos\theta &= 0\\
+\therefore N_1 = mg\cos\theta
+\end{align*}
+which we used to express the normal force in terms of the weight. We can use this expression for the normal force by substituting it into equation we obtained from the $x$ component to find the acceleration along the incline:
+\begin{align*}
+mg\sin\theta - \mu_{k1} N_1 &= ma_1\\
+mg\sin\theta - \mu_{k1} mg\cos\theta&= ma_1\\
+\therefore a_1 &= g(\sin\theta-\mu_{k1}\cos\theta)
+\end{align*}
+Now that we know the acceleration down the incline, we can easily find the velocity at the bottom of the incline using kinematics. We choose the origin of the $x$ axis to be zero where the block started, so that the block is at position $x=L$ at the bottom of the incline. Using kinematics, we can find the speed, $v$, given that the initial speed, $v_0=0$:
+\begin{align*}
+v^2-v_0^2&=2a_1(x-x_0)\\
+v^2&=2a_1L\\
+\therefore v &= \sqrt{2a_1L}\\
+&=\sqrt{2Lg(\sin\theta-\mu_{k1}\cos\theta)}
+\end{align*}
+We can now move on to the second segment and identify the forces on the block when it is on the horizontal surface. The forces are:
+\begin{enumerate}
+\item $\vec F_{g1}$, its weight.
+\item $\vec N_2$, a normal force exerted by the horizontal surface. This is in general different than the force exerted when the block was on the inclined plane. 
+\item $\vec f_{k2}$, a force of kinetic friction exerted by the horizontal surface. The force is opposite of the direction of motion, and has a magnitude given by $f_{k2}=\mu_{k2}N_2$.
+\end{enumerate}
+These are illustrated by the free-body diagram in Figure \ref{fig:applyingnewtonslaws:blockI_fbd2}, where we showed the acceleration vector, $\vec a_2$, which we determined to be to the left since the block is decelerating. We also chose an $xy$ coordinate system such that the $x$ axis is anti-parallel to the acceleration, so that the motion is in the positive $x$ direction (and the acceleration in the negative $x$ direction).
+
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockI_fbd2.png}{\label{fig:applyingnewtonslaws:blockI_fbd2} Free-body diagram for the block when it is sliding along the horizontal surface. We (arbitrarily) chose the positive $x$ direction to be in the direction of motion and anti-parallel to the acceleration. We could easily have chosen the opposite direction.}
+
+Writing out the $x$ component of Newton's Second Law:
+\begin{align*}
+\sum F_x = -f_{k2} &= -ma_2\\
+\therefore \mu_{k2}N_2 &= ma_2
+\end{align*}
+where we expressed the force of kinetic friction using the normal force. We  have to be careful here with the sign of the acceleration; the equation that we wrote implies that $a_2$ is a positive number, since $\mu_{k2}$ is positive and $N_2$ is also positive (it is the magnitude of the normal force). $a_2$ is the magnitude of the acceleration, and we included the fact that the acceleration points in the negative $x$ direction when we put a negative sign in the first line. The $x$ component of the acceleration is $-a_2$; that is, it is negative with a length $a_2$. This is the same that we did for the force of friction, which we said has a length $f_k$ in the negative $x$ direction. Be careful with the signs!
+
+The $y$ component of Newton's Second Law will allow us to find the normal force:
+\begin{align*}
+\sum F_y = N_2 -F_g &=0\\
+\therefore N_2 = mg
+\end{align*}
+which we can substitute back into the $x$ equation to find the acceleration along the horizontal surface:
+\begin{align*}
+ma_2 &=\mu_{k2}N_2 \\
+\therefore a_2&=\mu_{k2}g
+\end{align*}
+Now that we have found the acceleration along the horizontal surface, we can use kinematics to find the distance that the block travelled before stopping. We choose the origin of the $x$ axis to be the bottom of the incline ($x_0=0$), the acceleration is negative $a_x = -a_2 = -mu_{k2}g$, the final speed is zero, $v=0$, and the initial speed, $v_0$ is given by our model for the first segment. Using one of the kinematic equations:
+\begin{align*}
+v^2-v_0^2&=2(-a_2)(x-x_0)\\
+v_0^2&=2a_2x\\
+\therefore x &=\frac{1}{2a_2}v_0^2\\
+&=\frac{1}{2\mu_{k2}g}2Lg(\sin\theta-\mu_{k1}\cos\theta)\\
+&=\frac{(\sin\theta-\mu_{k1}\cos\theta)}{\mu_{k2}}L
+\end{align*}
+We should ask ourselves if this makes sense, dimensionally, and physically:
+\begin{itemize}
+\item All of the terms in the fraction are dimensionless, so the value of $x$ will have the same dimension as $L$, which is good, since they are both distances. 
+\item If we make $L$ bigger, then $x$ will be bigger (if we release the block from higher up on the incline, it will have more time to accelerate and will slide further before dropping), which makes sense.
+\item If we make $mu_{k1}$ bigger, then $x$ will be smaller, which makes sense (if we increase friction on the incline, the block will have a smaller acceleration and smaller speed at the bottom).
+\item If we increase the friction with the horizontal plane (increase $\mu_k2$), then $x$ will be reduced (it won't slide as far if there is more friction).
+\item If we increase $\theta$, the numerator will be larger, so $x$ will increase (the block will accelerate more down a steeper incline).
+\end{itemize} 
+
+TODO: Make this into a problem, but give the stopping distance and ask for $L$!
+
+\end{example}
 
 \subsection{}
 
@@ -29,6 +122,9 @@ When an object undergoes linear motion, we always model the motion of the object
 
 \subsection{Using the drag force}
 
+
+\section{Non linear motion}
+e.g a parabola 
 
 \section{Uniform circular motion}
 As we saw in Chapter \ref{chap:describingmotioninnd}, uniform circular motion is defined to be motion along a circle with constant speed. 
