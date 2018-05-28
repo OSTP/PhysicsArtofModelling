@@ -593,7 +593,68 @@ which is sometimes called the ``angular frequency'' instead of the angular veloc
 \item Where does he land?
 \end{problemParts}
 
-\begin{problemParts}{A cowboy swings a lasso above his head. The lasso moves in a circle in the horizontal plane and has a radius of $\SI{1.5}{m}$. A hawk flies toward the lasso at $\SI{50}{km/h}$ [N]. The bird sees the lasso moving at $\SI{60}{km/h}$ when it is directly in front of him. In the reference frame of the cowboy, what is...}
-\item The angular velocity of the lasso?
-\item The angular acceleration of the lasso? 
+\begin{problemParts}{A cowboy swings a lasso above his head. The lasso moves in a circle of radius $\SI{1.5}{m}$ in the horizontal plane. A hawk flies toward the lasso at $\SI{50}{km/h}$. The hawk sees the end of the lasso moving at $\SI{60}{km/h}$ when the lasso is directly in front of it (see Figure \ref{fig:CowboyQuestion}). In the reference frame of the cowboy ...}
+\item How long does it take for the lasso to complete one revolution?
+\item What is the centripetal acceleration of the end of the lasso? 
+\item What is the angular acceleration of the lasso?
+\capfig{0.5\textwidth}{figures/DescribingMotionInND/CowboyQuestionGiven.png}{\label{fig:CowboyQuestion} The problem as viewed from above. This diagram depicts the moment that the end of the lasso passes in front of the hawk.}
 \end{problemParts} 
+
+
+\textbf{Solution:}
+\begin{enumerate}[label=\alph*)]
+\item Our goal is the find the period of the lasso's motion. To do this, we can use the formula, 
+\begin{align*}
+T&=\frac{2\pi}{\omega}
+\end{align*}
+for which we need the angular velocity, $\omega$. We know the radius of the lasso, so if we find the linear velocity of the end point of the lasso, we can find the angular velocity by
+\begin{align*}
+\omega&=\frac{v}{R}
+\end{align*}
+We start by using what we know about relative motion to find the linear velocity of the lasso in the cowboy's reference frame. First, we need to set up our coordinate systems. We assign the $xy$ coordinate system to the hawk's reference frame and we assign the $x'y'$ system to the cowboy's reference frame. The solution will be simplest if we align the coordinate systems so that positive $y$ and positive $y'$ are in the same direction, as in Figure \ref{fig:CowboySolution}. When we are talking about the velocity of the hawk, we will denote it with the superscript ``H", and when we are talking about the lasso, we will use ``L".\\
+
+We want the velocity of the \textbf{lasso} in the \textbf{cowboy's reference frame}, so we want $v'^L$. To find this, we start with the velocity of the lasso in the hawk's reference frame,$v^L$ and then take into account that the hawk is moving relative to the cowboy. We do this by adding the velocity of the hawk in the cowboy's reference frame, $v'^H$ to $v^L$. So, our equation is,
+\begin{align*}
+v^L+v'^H&=v'^L
+\end{align*}
+We are adding velocities, which have both a magnitude and a direction. However, we were not given any directions in the problem, so we describe the directions with respect to our coordinate system. The way we have set up our axes, the velocity of the hawk in the cowboy's reference frame is simply $\SI{50}{km/h}$ in the positive $y'$ direction.\\
+
+Now here's the key to solving this problem: We don't know the speed of the lasso in the cowboy's reference frame, but we do know something about its direction. Since the motion of the lasso is circular, it's velocity must be tangent to the circle. This means that when the lasso is directly in front of the hawk, its velocity must be in either the $+x'$ or $-x'$ direction. In this case, we can just choose one, so we will choose the $+x'$ direction.
+\capfig{0.5\textwidth}{figures/DescribingMotionInND/CowboySolution.png}{\label{fig:CowboySolution}The two coordinate systems are aligned so that positive $y'$ and positive $y$ are in the same direction. The velocity vectors of the hawk and the lasso in the reference frame of the cowboy are shown.}
+The velocity vectors $v'^H$ and $v'^L$ are shown in Figure \ref{fig:CowboySolution}. Remember that when we add two vectors they must be lined up so that the ``head" of one touches the ``tail" of the other, so there can only be one direction for $v^L$, as shown in Figure \ref{fig:CowboyVector}. 
+\capfig{0.25\textwidth}{figures/DescribingMotionInND/CowboyVectorAddition.png}{\label{fig:CowboyVector} Vector addition to determine the velocity of the lasso in the cowboy's reference frame.}
+This is a right angle triangle, so we use the Pythagorean theorem so solve for $v'^L$:
+\begin{align*}
+v'^{L^2}+v'^{H^2}&=v^{L^2}\\
+&=\sqrt{v^{L^2}-v'^{H^2}}\\
+&=\sqrt{(\SI{60}{km/h})^2-(\SI{50}{km/h})^2}\\
+v'^L&=\SI{33}{km/h}
+\end{align*}
+The linear velocity of the end of the lasso at this moment is $\SI{33}{km/h}$ in the positive $x$ direction.  To find the angular velocity, first convert the linear velocity from km/h to m/s:
+\begin{align*}
+\frac{\SI{33}{km}}{h}\times \frac{\SI{1000}{m}}{\SI{1}{km}} \times \frac{\SI{1}{h}}{\SI{3600}{s}} &= \SI{9.2}{m/s}
+\end{align*}     
+Now we can substitute $\omega=\frac{v}{R}$ into $T=\frac{2\pi}{\omega}$ and solve for $T$:
+\begin{align*}
+T&={2\pi}\frac{R}{v}\\
+&={2\pi}\frac{\SI{1.5}{m}}{\SI{9.2}{m/s}}\\
+&={2\pi}\frac{\SI{1.5}{m}}{\SI{9.2}{m/s}}\\
+T&=\SI{1.0}{s}
+\end{align*}
+$\therefore$ it takes $\SI{1.0}{s}$ for the lasso to complete one revolution.
+\item The motion is circular, so it has a centripetal acceleration given by
+\begin{align*}
+a_c(t)&=\frac{v^2(t)}{R}
+\end{align*}
+To find the centripetal acceleration of the end of the lasso, we just substitute in our values for $v$ and $R$.
+\begin{align*}
+a_c(t)&=\frac{\SI{9.2}{m/s}^2}{\SI{1.5}{m}}\\
+a_c(t)&=\SI{56}{m/s^2}
+\end{align*}
+$\therefore$ the centripetal acceleration of the end of the lasso is $\SI{56}{m/s^2}$ towards the centre of the circle. 
+\item You may be tempted to divide the centripetal acceleration by $R$ to find the angular acceleration $\alpha$. However, the angular acceleration is the rate of change of the angular velocity. For circular motion, the angular velocity is constant, so \textbf{the angular acceleration is zero}. (Remember that in the equation $a_s=R\alpha$, $a_s$ refers to the component of acceleration that is parallel to the velocity. For circular motion, $a_s$ is zero.)
+\end{enumerate}
+
+
+
+
