@@ -50,11 +50,11 @@ N&=F\\
 \therefore \mu_s F &= mg\\
 \therefore F &= \frac{1}{\mu_s}mg
 \end{align*}
-As usual, we check that this model makes sense:
+\textbf{Discussion:} This model makes sense because:
 \begin{itemize}
 \item The dimension of $\mu_s mg$ are indeed dimensions of force.
-\item If the mass of the box is increased, then one needs to push harder against the box, which makes sense.
-\item If the coefficient of static friction, $\mu_s$, is increased, one does not need to push as hard, which makes sense. 
+\item If the mass of the box is increased, then one needs to push harder against the box to keep it up.
+\item If the coefficient of static friction, $\mu_s$, is increased, one does not need to push as hard. 
 \end{itemize}
 \end{example}
 
@@ -150,11 +150,11 @@ v_0^2&=2a_2x\\
 &=\frac{1}{2\mu_{k2}g}2Lg(\sin\theta-\mu_{k1}\cos\theta)\\
 \therefore x&=\frac{(\sin\theta-\mu_{k1}\cos\theta)}{\mu_{k2}}L
 \end{align*}
-We should ask ourselves if this makes sense, dimensionally, and physically:
+\textbf{Discussion:} The result makes sense because:
 \begin{itemize}
 \item All of the terms in the fraction are dimensionless, so the value of $x$ will have the same dimension as $L$, which is good, since they are both distances. 
-\item If we make $L$ bigger, then $x$ will be bigger (if we release the block from higher up on the incline, it will have more time to accelerate and will slide further before dropping), which makes sense.
-\item If we make $\mu_{k1}$ bigger, then $x$ will be smaller, which makes sense (if we increase friction on the incline, the block will have a smaller acceleration and smaller speed at the bottom).
+\item If we make $L$ bigger, then $x$ will be bigger (if we release the block from higher up on the incline, it will have more time to accelerate and will slide further before stopping).
+\item If we make $\mu_{k1}$ bigger, then $x$ will be smaller: if we increase friction on the incline, the block will have a smaller acceleration and smaller speed at the bottom.
 \item If we increase the friction with the horizontal plane (increase $\mu_{k2}$), then $x$ will be reduced (it won't slide as far if there is more friction on the horizontal plane).
 \item If we increase $\theta$, the numerator will be larger, so $x$ will increase (the block will accelerate more down a steeper incline and end up further).
 \end{itemize} 
@@ -262,16 +262,108 @@ which is the same as we found earlier. If the acceleration is constant, we recov
 \begin{align*}
 V^2 &= v_0^2+ 2\int_{x_0}^{X}adx\\
 &=v_0^2+ 2a(X-x_0)\\
-\therefore V^2- v_0^ = 2a(X-x_0)
+\therefore V^2- v_0^2 &= 2a(X-x_0)
 \end{align*}
 
 %Example with spring, example with drag and terminal velocity
+\begin{example}{A block of mass $m$ can slide freely along a frictionless surface. A horizontal spring, with spring constant, $k$, is attached to a wall on one end, while the other end can move freely, as shown in Figure \ref{fig:applyingnewtonslaws:blockspring}. A coordinate system is setup such that the $x$ axis is horizontal and the free end of the spring is at $x=0$ when the spring is at rest. The block is pushed against the spring so that the spring is compressed by a distance $D$. The block is then released. What speed will the block have when it leaves the spring?}
+
+\capfig{0.4\textwidth}{figures/ApplyingNewtonsLaws/blockspring.png}{\label{fig:applyingnewtonslaws:blockspring} A block is launched along a frictionless surface by compressing a spring by a distance $D$. The top panel shows the spring when at rest, and the bottom panel shows the spring compressed by a distance $D$ just before releasing the block.}
+As you recall, the force exerted by a spring depends on the compression or extension of the spring and is given by Hooke's Law:
+\begin{align*}
+\vec F(x) = -kx\hat x
+\end{align*}
+In our case, when the edge of the block is located at $x_0=-D$ (the spring is compressed), the force is thus in the positive $x$ direction (since $x_0$ is a negative number). 
+
+The forces on the block are:
+\begin{enumerate}
+\item $\vec F_g$, its weight, with magnitude $mg$.
+\item $\vec N$, a normal force exerted by the ground, with magnitude $mg$.
+\item $\vec F(x)$, the spring force.
+\end{enumerate}
+where we used the fact that this is the same scenario that we discussed in Figure \ref{fig:applyingnewtonslaws:blockvaryingforce_fbd} and found that the normal force is equal in magnitude to the weight. The $x$ component of Newton's Second Law gives us the acceleration of the block (which depends on $x$):
+\begin{align*}
+\sum F_x = -kx &= ma(x)\\
+\therefore a(x)&=-\frac{k}{m}x
+\end{align*}
+Again, recall that if $x$ is negative, then the acceleration will be in the positive direction. Since this scenario is exactly the same that we described above in the text, namely a force that varies continuously with position, we can apply the formula that we found earlier:
+\begin{align*}
+V^2 &= v_0^2 + 2\int_{x_0}^{X}a(x)dx
+\end{align*}
+$V$ is the final speed that we would like to find, $v_0=0$ because the block starts at rest, and $x_0=-D$ is the starting position of the block. $X$ is the position along the $x$ axis where the block leaves the spring. We have to think a little about what the value of $X$ should be: when the spring is compressed and the block accelerating, the spring is pushing the block in the positive $x$ direction. Once the block reaches $x=0$ the spring would want to pull the block backwards, but since it is not attached to the block, it stops exerting a force on the block at that point. The block thus leaves the spring at $x=0$, so that the final position is $X=0$. The speed at that point is thus:
+\begin{align*}
+V^2 &= v_0^2 + 2\int_{x_0}^{X}a(x)dx\\
+&= 0 + 2\int_{-D}^{0}a(x)dx\\
+&= 2\int_{-D}^{0}-\frac{k}{m}xdx\\
+&= 2\left[ - \frac{k}{m}\frac{1}{2}x^2\right]_{-D}^{0}\\
+&= \frac{k}{m}D^2\\
+\therefore V &= \sqrt{\frac{k}{m}}D
+\end{align*}
+\textbf{Discussion:} This result makes sense because:
+\begin{itemize}
+\item The dimension for the expression for $V$ is correct (you should check this!).
+\item If the spring is compressed more (bigger value of $D$), then the speed will be higher.
+\item If the mass is bigger (more inertia), then the final speed will be lower.
+\item If the spring is stiffer (bigger value of $k$), then the final speed will be higher.
+\end{itemize}
+If you have studied some physics before, you may have realized that the speed is easily found by conservation of energy:
+\begin{align*}
+\frac{1}{2}mV^2=\frac{1}{2}kD^2
+\end{align*}
+which gives the same value for $V$. As we will see in a later chapter, kinetic and potential energy are defined as they are, precisely because it makes using conservation of energy equivalent to using forces as we just did.
+\end{example}
+
+\begin{example}{An object of mass $m$ is released from rest out of a helicopter. The drag (air-resistance) on the object can be modelled as having a magnitude given by $bv^2$, where $v$ is the speed of the object and $b$ is a constant of proportionality. How long does the object fall before reaching its terminal velocity?}
+As the object falls through the air, the forces exerted on the object are:
+\begin{enumerate}
+\item $F_g$, its weight, with magnitude $mg$, exerted downwards.
+\item $F_d$, the force of drag, with magnitude $bv^2$, exerted upwards. 
+\end{enumerate}
+Since the object will fall in a straight line, this is a one-dimensional problem, and we can choose the $x$ axis to be vertical, with positive $x$ pointing downwards, and the origin located where the object was released. The object will thus have a positive acceleration and move in the positive $x$ direction with this choice of coordinate system.
+
+Newton's Second Law for the object gives:
+\begin{align*}
+\sum F_x = F_g - F_d &= ma\\
+mg - bv^2 &= -ma\\
+\therefore a &= \left (g-\frac{b}{m}v^2 \right)
+\end{align*}
+In this case, the acceleration depends explicitly on velocity rather than position, as we had before. However, we can use the same methodology to find how the speed changes with time. First, we can note that the acceleration is zero if:
+\begin{align*}
+g-\frac{b}{m}v^2 &=0\\
+\therefore v = \sqrt{\frac{mg}{b}}
+\end{align*}
+That is, once the object reaches a speed of $v_{term}=\sqrt{\frac{mg}{b}}$, it will stop to accelerate, i.e. it will reach ``terminal velocity''. Note that this is the same condition as requiring that the drag force ($bv^2$) have the same magnitude as the weight ($mg$).
+
+Writing the acceleration as $a=\frac{dv}{dt}$, we can write:
+\begin{align*}
+\frac{dv}{dt} &= \left(g-\frac{b}{m}v^2 \right)
+\end{align*}
+which again, is a separable differential equation that we can write as:
+\begin{align*}
+dv \left(1+  \frac{b}{m}v^2\right) &= gdt
+\end{align*}
+We can find $V$ at some time $T$ if we state that $v=0$ at $t=0$ and take the integrals on both sides:
+\begin{align*}
+\int_0^V\left(1+  \frac{b}{m}v^2\right) dv &= \int_0^T gdt\\
+\left [ v  - \frac{b}{3m}v^3\right]_0^V &=gT\\
+V  - \frac{b}{3m}V^3 &= gT
+\end{align*}
+which we cannot re-arrange into a closed form for $V(T)$. However, we can instead find the value of $T$ that corresponds to reaching terminal velocity:
+\begin{align*}
+V  - \frac{b}{3m}V^3 &= gT\\
+ \sqrt{\frac{mg}{b}}   - \frac{b}{3m}\left(\frac{mg}{b}\right)^\frac{3}{2} &= gT\\
+ \therefore T &= \sqrt{\frac{m}{gb}} - \frac{b}{3mg}\left(\frac{mg}{b}\right)^\frac{3}{2}
+\end{align*}
+
+\end{example}
 
 \section{Non linear motion}
 e.g a parabola 
 
 \section{Uniform circular motion}
 As we saw in Chapter \ref{chap:describingmotioninnd}, uniform circular motion is defined to be motion along a circle with constant speed. 
+
+\subsection{Banked curves}
 
 \section{Non-uniform circular motion}
 
