@@ -14,48 +14,63 @@ Newton's Laws are meant to describe ``point particles'', that is, objects that c
 %% Beginning of chapter content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Statics}
-When using Newton's Laws to model an object, one can identify two broad categories: static and dynamic. In static situations, the acceleration of the object is zero. By Newton's Second Law, this means that the vector sum of the forces (and torques, as we will see in a later chapter) exerted on an object must be zero. In dynamic situations, the acceleration of the object is non-zero. 
+When using Newton's Laws to model an object, one can identify two broad categories of situations: static and dynamic. In static situations, the acceleration of the object is zero. By Newton's Second Law, this means that the vector sum of the forces (and torques, as we will see in a later chapter) exerted on an object must be zero. In dynamic situations, the acceleration of the object is non-zero. 
 
 For static problems, since the acceleration vector is zero, we can choose a coordinate system in a way that results in as many forces as possible being aligned with the axes (so that we minimize the number of forces that we need to break up into components).
 
-\begin{example}{You push horizontally with a force $\vec F$ on a box of mass $m$ that is resting against a vertical wall, as shown in Figure \ref. The coefficient of static friction between the wall and the box is $\mu_s$. What is the minimum magnitude of the force that you must exert for the ball to remain stationary?}
+\begin{example}{You push horizontally with a force $\vec F$ on a box of mass $m$ that is resting against a vertical wall, as shown in Figure \ref{fig:applyingnewtonslaws:blockwall}. The coefficient of static friction between the wall and the box is $\mu_s$. What is the minimum magnitude of the force that you must exert for the box to remain stationary?}
 \capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockwall.png}{\label{fig:applyingnewtonslaws:blockwall} A horizontal force exerted on box that is resting against a wall.}
 
-Since the box does not move, we can build a model where the sum of the forces exerted on the box is zero. We start by identifying the forces exerted on the box; these are:
+Since the acceleration of the box is zero, the vector sum of the forces exerted on the box is zero. We start by identifying the forces exerted on the box; these are:
 \begin{enumerate}
-\item $\vec F$, the horizontal force you apply on the box.
+\item $\vec F$, the horizontal force that you exert on the box.
 \item $\vec F_g$, the weight of the box, with magnitude $mg$.
 \item $\vec N$, a normal force exerted by the wall on the box. The force is in the horizontal direction, in the opposite direction to $\vec F$.
 \item $\vec f_s$, a vertical force of static friction between the wall and the box. The force points upwards as the ``impeding motion'' of the block is downwards. The force will have at most a magnitude of $\mu_s N$.
 \end{enumerate}
-The forces are shown in the free-body diagram in Figure \ref{fig:applyingnewtonslaws:blockwall_fbd}, along with our choice of coordinate system.
-\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockwall_fbd.png}{\label{fig:applyingnewtonslaws:blockwall_fbd} Free-body diagram of the forces applied on the box.}
-We can then write the $x$ component of Newton's Second Law:
+The forces are shown in the free-body diagram in Figure \ref{fig:applyingnewtonslaws:blockwall_fbd}, along with our choice of coordinate system which was chosen so that all forces are either in the $x$ or $y$ direction. 
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockwall_fbd.png}{\label{fig:applyingnewtonslaws:blockwall_fbd} Free-body diagram of the forces exerted on the box.}
+The $x$ component of Newton's Second Law is:
 \begin{align*}
 \sum F_x = F - N &=0\\
 \therefore N = F
 \end{align*}
-which tells us that the normal force exerted by the wall as the same magnitude as the applied force, $\vec F$. The $y$ component of Newton's Second Law is:
+which tells us that the normal force exerted by the wall has the same magnitude as the applied force, $\vec F$. The $y$ component of Newton's Second Law is:
 \begin{align*}
-\sum F_y f_s - F_g &=0\\
+\sum F_y = f_s - F_g &=0\\
 \therefore \mu_s N -mg &=0\\
+\therefore \mu_s N = mg\\
 \end{align*}
-Note that we set the force of friction to have a magnitude $f_s = \mu_s N$. The question asks for the minimum force with which you must push on the box. From the $x$ component of Newton's Second Law, we found that the normal force is equal to the applied force. If you push with a smaller force, then the normal force will be smaller. The maximal value of the force of static friction is $f_s = \mu_s N$, and so the force of friction is also proportional to the force that you exert (since $N$ is proportional to the force that you exert). RESUME HERE!
+which tells us that the force of friction must have the same magnitude as the weight. This makes sense, since they are the only forces with components in the $y$ direction, and must thus cancel each other out. 
+
+Note that we set the force of friction to have a magnitude $f_s = \mu_s N$. As you recall, the force of static friction is given by $f_s \leq \mu_s N$ and depends on the other forces exerted on the object. The question asks for the minimum force with which you must push on the box. From the $x$ component of Newton's Second Law, we found that the normal force is equal to the applied force, and the maximal value of the force of friction thus depends on the magnitude of the force that you apply. As you decrease the magnitude of the force that you exert on the box, the maximal value of the force of friction will decrease, until it is no longer big enough to support the weight of the box (the only other force in the direction opposite of the force of friction). By setting the force of friction equal to its maximal magnitude, we can thus find the minimal value of the magnitude of $\vec F$:
+\begin{align*}
+N&=F\\
+\mu_sN &= mg\\
+\therefore \mu_s F &= mg\\
+\therefore F &= \frac{1}{\mu_s}mg
+\end{align*}
+As usual, we check that this model makes sense:
+\begin{itemize}
+\item The dimension of $\mu_s mg$ are indeed dimensions of force.
+\item If the mass of the box is increased, then one needs to push harder against the box, which makes sense.
+\item If the coefficient of static friction, $\mu_s$, is increased, one does not need to push as hard, which makes sense. 
+\end{itemize}
 \end{example}
 
-
+TODO: A student's thought of how to use the force of static friction, in particular about when to set it equal to $\mu_sN$ instead of less than. Perhaps this would belong in chapter 5, when the forces of friction are discussed?
 
 
 
 \section{Linear motion}
-We can broadly describe an object whose \textit{velocity vector does continuously change direction} as undergoing linear motion. For example, an object that moves along a straight line in a particular direction, then abruptly changes direction and continues to move in a straight line can be modelled as undergoing linear motion over two different segments (which we would model individually). An object moving around a circle, with its velocity vector continuously changing direction, would not be considered as undergoing linear motion. Example paths of objects undergoing linear and non-linear motion are illustrated in Figure \ref{chap:ApplyingNewtonsLaws}.
+We can broadly describe an object whose \textit{velocity vector does continuously change direction} as undergoing linear motion. For example, an object that moves along a straight line in a particular direction, then abruptly changes direction and continues to move in a straight line can be modelled as undergoing linear motion over two different segments (which we would model individually). An object moving around a circle, with its velocity vector continuously changing direction, would not be considered as undergoing linear motion. Example paths of objects undergoing linear and non-linear motion are illustrated in Figure \ref{fig:applyingnewtonslaws:linearmotion}.
 \capfig{0.3\textwidth}{figures/ApplyingNewtonsLaws/linearmotion.png}{\label{fig:applyingnewtonslaws:linearmotion} (Left:) Displacement vector for an object undergoing three segments that can each be modelled as linear motion. (Right:) Path of an object whose velocity vector changes continuously and cannot be considered as linear motion.}
 
 When an object undergoes linear motion, we always model the motion of the object over straight segments separately, if the motion is made of multiple straight segments. Over one such segment, the acceleration vector will be co-linear with the displacement vector of the object (parallel or anti-parallel - note that the acceleration can change direction, but will always be co-linear with the displacement).
 
 \begin{example}{A block of mass $m$ is placed at rest on an inclined that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:applyingnewtonslaws:blockI}. The block is nudged slightly so that the force of static friction is overcome and the block starts to accelerate down the incline. At the bottom of the incline, the block slides on a horizontal surface. The coefficient of kinetic friction between the block and the incline is $\mu_{k1}$, and the coefficient of kinetic friction between the block and horizontal surface is $\mu_{k2}$. If one assumes that the block started at rest a distance $L$ from the horizontal surface, how far along the horizontal surface will the block slide before stopping?}
 
-\capfig{0.5\textwidth}{figures/ApplyingNewtonsLaws/blockI.png}{\label{fig:applyingnewtonslaws:blockI} A block sliding down an incline before sliding on a flat surface. }
+\capfig{0.5\textwidth}{figures/ApplyingNewtonsLaws/blockI.png}{\label{fig:applyingnewtonslaws:blockI} A block slides down an incline before sliding on a flat surface and coming to a stop. }
 
 We can identify that this is linear motion that we can break up into two segments: (1) the motion down the incline, and (2), the motion along the horizontal surface. We will thus identify the forces, draw the free-body diagram for the block, and use Newton's Second Law twice, once for each segment.
 
@@ -63,8 +78,8 @@ It is often useful to describe the motion in words to help us identify the steps
 \begin{enumerate}
 \item The block slides down the incline and accelerates in the direction of motion. By identifying the forces and applying Newton's Second Law, we can determine the acceleration.
 \item The block will reach a certain speed at the bottom of the incline, which we can determine by knowing that the block travelled a distance $L$, with a known acceleration and that it started at rest.
-\item The block will decelerate along the horizontal surface. Again, by identifying the forces and using Newton's Second Law, we will be able to determine that acceleration.
-\item The block will stop after having travelled an unknown distance, which we can find by knowing the deceleration of the block and the initial velocity at the bottom of the incline.
+\item The block will decelerate along the horizontal surface. Again, by identifying the forces and using Newton's Second Law, we will be able to determine the acceleration of the block.
+\item The block will stop after having travelled an unknown distance, which we can find by knowing the acceleration of the block and the initial velocity at the bottom of the incline.
 \end{enumerate}
 
 Our first step is thus to identify the forces on the block while it is on the incline. These are:
@@ -100,7 +115,7 @@ v^2&=2a_1L\\
 \therefore v &= \sqrt{2a_1L}\\
 &=\sqrt{2Lg(\sin\theta-\mu_{k1}\cos\theta)}
 \end{align*}
-We can now move on to the second segment and identify the forces on the block when it is on the horizontal surface. The forces are:
+We can now proceed to build a model for the second segment. We first identify the forces on the block when it is on the horizontal surface; these are:
 \begin{enumerate}
 \item $\vec F_{g1}$, its weight.
 \item $\vec N_2$, a normal force exerted by the horizontal surface. This is in general different than the force exerted when the block was on the inclined plane. 
@@ -115,7 +130,7 @@ Writing out the $x$ component of Newton's Second Law:
 \sum F_x = -f_{k2} &= -ma_2\\
 \therefore \mu_{k2}N_2 &= ma_2
 \end{align*}
-where we expressed the force of kinetic friction using the normal force. We  have to be careful here with the sign of the acceleration; the equation that we wrote implies that $a_2$ is a positive number, since $\mu_{k2}$ is positive and $N_2$ is also positive (it is the magnitude of the normal force). $a_2$ is the magnitude of the acceleration, and we included the fact that the acceleration points in the negative $x$ direction when we put a negative sign in the first line. The $x$ component of the acceleration is $-a_2$; that is, it is negative with a length $a_2$. This is the same that we did for the force of friction, which we said has a length $f_k$ in the negative $x$ direction. Be careful with the signs!
+where we expressed the force of kinetic friction using the normal force. We  have to be careful here with the sign of the acceleration; the equation that we wrote implies that $a_2$ is a positive number, since $\mu_{k2}$ is positive and $N_2$ is also positive (it is the magnitude of the normal force). $a_2$ is the magnitude of the acceleration, and we included the fact that the acceleration points in the negative $x$ direction when we put a negative sign in the first line. The $x$ component of the acceleration is $-a_2$, and the vector is given by $\vec a_2=-a_2\hat x$.
 
 The $y$ component of Newton's Second Law will allow us to find the normal force:
 \begin{align*}
@@ -133,27 +148,124 @@ v^2-v_0^2&=2(-a_2)(x-x_0)\\
 v_0^2&=2a_2x\\
 \therefore x &=\frac{1}{2a_2}v_0^2\\
 &=\frac{1}{2\mu_{k2}g}2Lg(\sin\theta-\mu_{k1}\cos\theta)\\
-&=\frac{(\sin\theta-\mu_{k1}\cos\theta)}{\mu_{k2}}L
+\therefore x&=\frac{(\sin\theta-\mu_{k1}\cos\theta)}{\mu_{k2}}L
 \end{align*}
 We should ask ourselves if this makes sense, dimensionally, and physically:
 \begin{itemize}
 \item All of the terms in the fraction are dimensionless, so the value of $x$ will have the same dimension as $L$, which is good, since they are both distances. 
 \item If we make $L$ bigger, then $x$ will be bigger (if we release the block from higher up on the incline, it will have more time to accelerate and will slide further before dropping), which makes sense.
-\item If we make $mu_{k1}$ bigger, then $x$ will be smaller, which makes sense (if we increase friction on the incline, the block will have a smaller acceleration and smaller speed at the bottom).
-\item If we increase the friction with the horizontal plane (increase $\mu_k2$), then $x$ will be reduced (it won't slide as far if there is more friction).
-\item If we increase $\theta$, the numerator will be larger, so $x$ will increase (the block will accelerate more down a steeper incline).
+\item If we make $\mu_{k1}$ bigger, then $x$ will be smaller, which makes sense (if we increase friction on the incline, the block will have a smaller acceleration and smaller speed at the bottom).
+\item If we increase the friction with the horizontal plane (increase $\mu_{k2}$), then $x$ will be reduced (it won't slide as far if there is more friction on the horizontal plane).
+\item If we increase $\theta$, the numerator will be larger, so $x$ will increase (the block will accelerate more down a steeper incline and end up further).
 \end{itemize} 
 
 TODO: Make this into a problem, but give the stopping distance and ask for $L$!
 
 \end{example}
 
-\subsection{}
 
-\subsection{Inertial forces}
+\subsection{Modelling situations where forces change magnitude}
+So far, the models that we have considered involved forces that remained constant in magnitude. In many cases, the forces exerted on an object can change. For example, the force exerted by a spring changes as the spring changes length or the force of drag changes as the object changes speed. In these case, even if the object undergoes linear motion, we need to break up the motion into many small segments over which we can assume that the forces are constant. If the forces change continuously, we will need to break up the motion into an infinite number of segments and use calculus.
 
-\subsection{Using the drag force}
+Consider the block of mass $m$ that is shown in Figure \ref{fig:applyingnewtonslaws:blockvaryingforce}, which is sliding along a frictionless horizontal surface and has a  horizontal force exerted on it that changes with distance along three different segments of equal length $\Delta x$. If the block starts at  at the origin of the $x$ axis with speed $v_0$, we can find, for example, its speed at position $x_3=3\Delta x$, after the block travelled through the three segments.
 
+\capfig{0.7\textwidth}{figures/ApplyingNewtonsLaws/blockvaryingforce.png}{\label{fig:applyingnewtonslaws:blockvaryingforce} A block being pushed along a frictionless horizontal surface with a force that changes.}
+
+The horizontal force, $\vec F$, exerted on the block can be written as:
+\begin{align*}
+  \vec F =
+  \begin{cases}
+    F_1\hat x & x<\Delta x \quad \text{(segment 1)}\\
+    F_2\hat x & \Delta x \leq x< 2\Delta x \quad \text{(segment 2)}\\
+    F_3\hat x & 2\Delta x \leq x\quad \text{(segment 3)}
+  \end{cases}
+\end{align*}
+as it depends on the location of the block. To find the speed of the block at the end of the third segment, we can model each segment separately. The forces exerted on the block are the same in each segment:
+\begin{enumerate}
+\item $\vec F_g$, its weight, with magnitude $mg$.
+\item $\vec N$, a normal force exerted by the ground.
+\item $\vec F$, an applied force that changes magnitude with position and is different in the three different segments.
+\end{enumerate}
+which are illustrated in the free-body diagram show in Figure \ref{fig:applyingnewtonslaws:blockvaryingforce_fbd}.
+
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/blockvaryingforce_fbd.png}{\label{fig:applyingnewtonslaws:blockvaryingforce_fbd} Free-body diagram for the block shown in Figure \ref{fig:applyingnewtonslaws:blockvaryingforce}.}
+
+Newton's Second Law can be used to determine the acceleration of the block for each of the three segments, since the forces are constant within one segment. For all three segments, the $y$ component of Newton's Second Law just tells us that the normal force exerted by the ground is equal in magnitude to the weight of the block. The $x$ component of Newton's Second Law gives the acceleration:
+\begin{align*}
+\sum F_x = F_i = ma_i
+\end{align*}
+where we have used the index $i$ to indicate which segment the block is in ($i$ can be 1, 2 or 3). The acceleration of the block in segment $i$ is given by:
+\begin{align*}
+a_i = \frac{F_i}{m}
+\end{align*}
+If the speed of the block is $v_0$ at the beginning of segment 1 ($x=x_0$), we can find its speed at the end of segment 1 ($x=x_1$), $v_1$, using kinematics and the fact that the acceleration in segment 1 is $a_1$:
+\begin{align*}
+v_1^2-v_0^2 &= 2a_1(x_1 - x_0)\\
+v_1^2 &=v_0^2+ 2a_1\Delta x\\
+\therefore v_1^2 &=v_0^2+2\frac{F_1}{m}\Delta x
+\end{align*}
+We can now easily find the speed at the end of segment 2 ($x=x_2$), $v_2$, since we know the speed at the beginning of segment 2 ($x_1$,$v_1$) and the acceleration $a_2$:
+\begin{align*}
+v_2^2 -v_1^2 &= 2a_2(x_2 - x_1)\\
+\therefore v_2^2 &= v_1^2 + 2a_2\Delta x\\
+&=v_0^2+ 2\frac{F_1}{m}\Delta x + 2\frac{F_2}{m}\Delta x
+\end{align*}
+It is easy to show that the speed at the end of the third segment is:
+\begin{align*}
+v_3^2 = v_0^2+ 2\frac{F_1}{m}\Delta x + 2\frac{F_2}{m}\Delta x +2\frac{F_3}{m}\Delta x
+\end{align*}
+If there were $N$ segments, with the force being different in each segment, we could use the summation notation to write:
+\begin{align*}
+v_N^2 &= v_0^2 + 2\sum_{i=1}^{i=N} \frac{F_i}{m}\Delta x
+\end{align*}
+Finally, if the magnitude of the force varied continuously as a function of $x$, $\vec F(x)$, we would model this by taking segments whose length, $\Delta x$, tends to zero (and we would need an infinite number of such segments). For example, if we wanted to know the speed of the object at position $x=X$ along the $x$ axis, with a force that was given by $\vec F(x)=F(x)\hat x$), if the object started at position $x_0$ with speed $v_0$, we would take the following limit:
+\begin{align*}
+v^2 = v_0^2 + \lim_{\Delta x \to 0} 2\sum_{i=1}^{i=N} \frac{F(x)}{m}\Delta x
+\end{align*}
+where $\Delta x = \frac{X}{N}$ so that as $\Delta x\to 0$, $N\to\infty$. Of course, integrals are the exact tool that allow us to evaluate the sum in this limit:
+\begin{align*}
+\lim_{\Delta x \to 0} 2\sum_{i=1}^{i=N} \frac{F_i}{m}\Delta x =2 \int_{x_0}^{X}\frac{F(x)}{m}dx 
+\end{align*}
+and the speed at position $x=X$ is given by:
+\begin{align*}
+v^2 = v_0^2 + 2 \int_{x_0}^{X}\frac{F(x)}{m}dx 
+\end{align*}
+Naturally, we can find the above result starting directly from calculus. If the component of the (net) force in the $x$ direction is given by $F(x)$, then the  acceleration is given by $a(x) = \frac{F(x)}{m}$. The velocity is related to the acceleration:
+\begin{align*}
+a(x) &= \frac{dv}{dt}\\
+\therefore dv &= a(x)dt\\
+\end{align*}
+We cannot simply integrate the last equation to find that $v=\int a(x)dt$ because the acceleration is given as a function of position, $a(x)$, and not a function of time, $t$. Thus, we cannot simply take the integral over $t$ and must instead ``change variables'' to take the integral over $x$. $x$ and $t$ are related through velocity:
+\begin{align*}
+v &= \frac{dx}{dt}\\
+\therefore dt &= \frac{1}{v}dx
+\end{align*}
+We can thus write:
+\begin{align*}
+dv &= a(x)dt = a(x)\frac{1}{v}dx \\
+\end{align*}
+The equation above is called a ``separable differential equation'', which can also be written:
+\begin{align*}
+\frac{dv}{dx}=\frac{1}{v}a(x)
+\end{align*}
+This is called a differential equation because it relates the derivative of a function (the derivative of $v$ with respect to $x$, on the left) to the function itself ($v$ appears on the right as well). The differential equation is ``separable'', because we can separate out all of the quantities that depend on $v$ and on $x$ on different sides of the equation:
+\begin{align*}
+vdv = a(x)dx
+\end{align*} 
+This last equation says that $vdv$ is equal to $a(x)dx$. Remember that $dx$ is the length of a very small interval in $x$, and that $dv$ is the change in velocity over that very small interval. Since the terms on the left and right are equal, if we sum (integrate) the quantity $vdv$ over many intervals, that sum must be equal to the sum (integral) of the quantity $a(x)dx$ over the same intervals. Let us choose those intervals such that for the beginning of the first interval the position and speed are $x_0$ and $v_0$, respectively, and the position and speed at the end of the last interval are $X$ and $V$, respectively. We then must have that:
+\begin{align*}
+\int_{v_0}^{V}vdv&=\int_{x_0}^{X}a(x)dx\\
+ \frac{1}{2}V^2 - \frac{1}{2}v_0^2 &= \int_{x_0}^{X}a(x)dx\\
+\therefore V^2 &= v_0^2 + 2\int_{x_0}^{X}a(x)dx\\
+\end{align*}
+which is the same as we found earlier. If the acceleration is constant, we recover our formula from kinematics:
+\begin{align*}
+V^2 &= v_0^2+ 2\int_{x_0}^{X}adx\\
+&=v_0^2+ 2a(X-x_0)\\
+\therefore V^2- v_0^ = 2a(X-x_0)
+\end{align*}
+
+%Example with spring, example with drag and terminal velocity
 
 \section{Non linear motion}
 e.g a parabola 
