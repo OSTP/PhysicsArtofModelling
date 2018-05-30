@@ -5,18 +5,18 @@
 \chapter{Describing motion in one dimension}
 \label{Kinematics1D}
 In this chapter, we will introduce the tools required to describe motion in one dimension. In later chapters, we will use the theories of physics to model the motion of objects, but first, we need to make sure that we have the tools to describe the motion. We generally use the word ``kinematics'' to label the tools for describing motion (e.g. speed, acceleration, position, etc), whereas we refer to ``dynamics'' when we use the laws of physics to predict motion (e.g. what motion will occur if a force is applied to an object). 
- \vspace{1cm}
-\begin{openingSA}
-You are taking your 6 year old cousin, Lily, to see the aquarium in Toronto. You are sitting on the train in Kingston waiting to leave the station. Lily exclaims that your train must be moving, and is excited that you are on your way to Toronto. You wonder why she said this, so you look out the window and notice that train beside you is moving backwards. You conclude that your train is not moving after all. How do you explain this to Lily? Do you know for certain that you aren't moving?
-\end{openingSA}
-\vspace{12pt}
+
 \begin{learningObjectives}
-\item Describe motion in 1D using functions and defining an axis.
+{\item Describe motion in 1D using functions and defining an axis.
 \item Define position, velocity, speed, and acceleration.
 \item Use calculus to describe motion.
 \item Define the meaning of an inertial frame of reference.
-\item Use Galilean and Lorentz transformations to convert the description of an object's position from one inertial frame to another.
+\item Use Galilean and Lorentz transformations to convert the description of an object's position from one inertial frame to another.}
 \end{learningObjectives}
+
+\begin{opening}
+{You are taking your 6 year old cousin, Lily, to see the aquarium in Toronto. You are sitting on the train in Kingston waiting to leave the station. Lily exclaims that your train must be moving, and is excited that you are on your way to Toronto. You wonder why she said this, so you look out the window and notice that train beside you is moving backwards. You conclude that your train is not moving after all. How do you explain this to Lily? Do you know for certain that you aren't moving?}
+\end{opening}
 
 
 The most simple type of motion to describe is that of a particle that is constrained to move along a straight line (one-dimensional motion); much like a train along a straight piece of track. When we say that we want to describe the motion of the particle (or train), what we mean is that we want to be able to say where it is at what time. Formally, we want to know the particle's \textbf{position as a function of time}, which we will label as $x(t)$. The function will only be meaningful if:
@@ -82,8 +82,8 @@ pl.show()
 
 The data plotted in Figure \ref{fig:DescribingMotionIn1D:1dxvst} show that the $x$ position of the ball increases linearly with time (i.e. it is a straight line). This means that in equal time increments, the ball will cover equal distances. Note that we also had the liberty to choose when we define $t=0$; in this case, we chose that time is zero when the ball is at $x=\SI{0.5}{m}$. 
 
-\begin{checkpointSA}{Using the data from Table \ref{tab:DescribingMotionIn1D:1dmotion}, at what position along the x-axis will the ball be when time is $t=\SI{9.5}{s}$, if it continues its motion undisturbed?} %5.25m
-\end{checkpointSA} 
+\begin{checkpoint}{Using the data from Table \ref{tab:DescribingMotionIn1D:1dmotion}, at what position along the x-axis will the ball be when time is $t=\SI{9.5}{s}$, if it continues its motion undisturbed?} %5.25m
+\end{checkpoint} 
 
 Since the position as a function of time for the ball plotted in Figure \ref{fig:DescribingMotionIn1D:1dxvst} is linear, we can summarize our description of the motion using a function, $x(t)$, instead of having to tabulate the values as we did in Table \ref{tab:DescribingMotionIn1D:1dmotion}. The function will have the functional form:
 \begin{align*}
@@ -113,18 +113,21 @@ We can generalize the description of an object whose position increases linearly
 where $x_0$ is the position of the object at time $t=\SI{0}{s}$ ($a$ from above), and $v_x$ corresponds to the distance that the object covers per unit time ($b$ from above) along the x-axis. We call $v_x$ the ``velocity'' of the object. If $v_x$ is large, then the object covers more distance in a given time, i.e. it moves faster. If $v_x$ is a negative number, then the object moves in the negative $x$ direction.
 
 \capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1dturn.png}{\label{fig:DescribingMotionIn1D:1dturn}Position as a function of time for an object.}
-\begin{checkpointMC}{Referring to Figure \ref{fig:DescribingMotionIn1D:1dturn}, what can you say about the motion of the object? }
+\begin{checkpoint}{
+\begin{choices}{Referring to Figure \ref{fig:DescribingMotionIn1D:1dturn}, what can you say about the motion of the object? }
 \item The object moved faster and faster between $t=\SI{0}{s}$ and $t=\SI{30}{s}$, then slowed down to a stop at $t=\SI{60}{s}$.
 \item The object moved in the positive x-direction between $t=\SI{0}{s}$ and $t=\SI{30}{s}$, and then turned around and moved in the negative x-direction between $t=\SI{30}{s}$ and $t=\SI{60}{s}$. %correct
 \item The object moved faster between $t=\SI{0}{s}$ and $t=\SI{30}{s}$ than it did between $t=\SI{30}{s}$ and $t=\SI{60}{s}$.
-\end{checkpointMC}
+\end{choices}}
+\end{checkpoint}
 
 \capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1d2objects.png}{\label{fig:DescribingMotionIn1D:1d2objects}Positions as a function of time for two objects.}
-\begin{checkpointMC}{Referring to Figure \ref{fig:DescribingMotionIn1D:1d2objects}, what can you say about the motion of the two objects? }
+\begin{checkpoint}{\begin{choices}{Referring to Figure \ref{fig:DescribingMotionIn1D:1d2objects}, what can you say about the motion of the two objects? }
 \item Object 1 is slower than Object 2
 \item Object 1 is more than twice as fast as Object 2 %correct
 \item Object 1 is less than twice as fast as Object 2
-\end{checkpointMC}
+\end{choices}}
+\end{checkpoint}
 
 \section{Motion with constant acceleration}
 Until now, we have considered motion where the velocity is a constant (i.e. where velocity does not change with time). Suppose that we wish to describe the position of a falling object that we released from rest at time $t=\SI{0}{s}$. The object will start with a velocity of \SI{0}{m/s} and it will \textbf{accelerate} as it falls. We say that an object is ``accelerating'' if its velocity is not constant. As we will see in later chapters, objects that fall near the surface of the Earth experience a constant acceleration (their velocity changes at a constant rate).
@@ -272,8 +275,8 @@ At $t=\SI{1.02}{s}$, the velocity continues to decrease linearly (it becomes mor
 
 If nothing is there to stop the ball, it continues to move downwards with ever increasing velocity. The position continues to become more negative and the velocity continues to become larger in magnitude and more negative.
 
-\begin{checkpointSA}{Make a sketch of the acceleration as a function of time corresponding to the position and velocity shown in Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst}.}
-\end{checkpointSA}
+\begin{checkpoint}{Make a sketch of the acceleration as a function of time corresponding to the position and velocity shown in Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst}.}
+\end{checkpoint}
 
 \subsection{Speed versus velocity}
 In the previous example, our language was not quite as precise as it should be when conducting science. Specifically, we need a way to distinguish the situation when the velocity is decreasing (becoming more negative), while the object is actually going faster and faster (after $t=\SI{1.02}{s}$ in Figure \ref{fig:DescribingMotionIn1D:1dxvvst_aconst}). We will use the term \textbf{speed} to refer to how fast an object is moving (how much distance it covers per unit time), and we will use the term \textbf{velocity} to also indicate the direction of the motion. In other words, the speed is the absolute value of the velocity\footnote{This is true for one-dimensional motion, whereas in two or more dimensions, velocity is a vector and speed is the magnitude of that vector.}. The speed is thus always positive, whereas the velocity can also be negative.
@@ -311,11 +314,11 @@ Similarly, we introduce the \textbf{instantaneous acceleration}, as the time der
 \Aboxed{a_x(t)=\frac{dv}{dt}=\frac{d}{dt}v(t)}
 \end{align}
 
-\begin{studentopinionOW}{Speeding up or slowing down?}
+\begin{studentOpinion}{Olivia}{
 When looking at a graph of position versus time, it is sometimes hard to tell at first glance whether the speed of the object is increasing or decreasing. This section gives us an easy way to figure it out. The velocity is the instantaneous slope of the graph $x(t)$, so the speed is the ``steepness" of that slope. Simply draw a few lines that are tangent to (meaning just touching) the curve, and see what happens as time increases. If the lines get steeper, the object is speeding up. If they are getting flatter, the object is slowing down.
 \capfig{0.5\textwidth}{figures/DescribingMotionIn1D/SpeedingSlowing.jpg}{\label{fig:SpeedingSlowing}Two graphs of $x(t)$ showing tangent lines.} 
-From here, you can also figure out what the direction of the acceleration is. If an object is speeding up, the acceleration and velocity must be in the same direction (i.e. both positive or both negative). If the object is slowing down, they must be in opposite directions. Imagine the graphs in Figure \ref{fig:SpeedingSlowing} are describing the motion of a person in heavy wind. In the graph on the left, the person is running with the wind ($v(t)$ and $a(t)$ positive), and in the second graph the person is running against the wind ($v(t)$ positive and $a(t)$ negative). 
-\end{studentopinionOW} 
+From here, you can also figure out what the direction of the acceleration is. If an object is speeding up, the acceleration and velocity must be in the same direction (i.e. both positive or both negative). If the object is slowing down, they must be in opposite directions. Imagine the graphs in Figure \ref{fig:SpeedingSlowing} are describing the motion of a person in heavy wind. In the graph on the left, the person is running with the wind ($v(t)$ and $a(t)$ positive), and in the second graph the person is running against the wind ($v(t)$ positive and $a(t)$ negative).} 
+\end{studentOpinion} 
 
 
 
@@ -337,12 +340,13 @@ a_x &= \frac{dv}{dt}=\frac{d}{dt}\left(v_{0x}t+a_xt\right)\\
 as expected.
 
 
-\begin{checkpointMC}{Chlo\"e has been working on a detailed study of how vicu\~nas\footnote{Never heard of vicu\~nas? Internet!} run, and found that their position as a function of time when they start running is well modelled by the function $x(t)=(\SI{40}{m/s^2})t^2+(\SI{20}{m/s^3})t^3$. What is the acceleration of the vicu\~nas?}
+\begin{checkpoint}{\begin{choices}{Chlo\"e has been working on a detailed study of how vicu\~nas\footnote{Never heard of vicu\~nas? Internet!} run, and found that their position as a function of time when they start running is well modelled by the function $x(t)=(\SI{40}{m/s^2})t^2+(\SI{20}{m/s^3})t^3$. What is the acceleration of the vicu\~nas?}
 \item $a_x(t)=\SI{40}{m/s^2}$
 \item $a_x(t)=\SI{80}{m/s^2}$
 \item $a_x(t)=\SI{40}{m/s^2}+(\SI{20}{m/s^3})t$
 \item $a_x(t)=\SI{80}{m/s^2}+(\SI{120}{m/s^3})t$ % correct
-\end{checkpointMC}
+\end{choices}}
+\end{checkpoint}
 
 \subsection{Using calculus to obtain position from acceleration}
 Now that we saw that we can use derivatives to determine acceleration from position, we will see how to do the reverse and use acceleration to determine position. Let us suppose that we have a constant acceleration, $a_x(t)=a_x$, and that we know that at time $t=\SI{0}{s}$, the object had a speed of $v_{0x}$ and was located at a position $x_0$. 
@@ -387,25 +391,25 @@ where $C'$ is a different constant than the one we had when determining velocity
 x(t)=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 \end{align*}
 
-\begin{checkpointMC}{The acceleration of a cricket jumping sideways is observed to increase linearly with time, that is, $a_x(t)=a_0+jt$, where $a_0$ and $j$ are constants. What can you say about the velocity of the cricket as a function of time?}
+\begin{checkpoint}{\begin{choices}{The acceleration of a cricket jumping sideways is observed to increase linearly with time, that is, $a_x(t)=a_0+jt$, where $a_0$ and $j$ are constants. What can you say about the velocity of the cricket as a function of time?}
 \item it is constant
 \item it increases linearly with time ($v(t)\propto t$)
 \item it increases quadratically with time ($v(t)\propto t^2$) %correct
 \item it increases with the cube of time ($v(t)\propto t^3$)
-\end{checkpointMC}
+\end{choices}}
+\end{checkpoint}
 
-\begin{checkpointSA}{Choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, where $\omega$ is a constant. The velocity and position are zero at $t=0$}
+\begin{checkpoint}{\begin{choices}{Choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, where $\omega$ is a constant. The velocity and position are zero at $t=0$
 \begin{center}
 \includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigA.png}
 \includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigB.png}
 \includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigC.png}
-\end{center}
-\begin{enumerate}[label=\Alph*)]
+\end{center}}
 \item Figure A
 \item Figure B
 \item Figure C
-\end{enumerate}
-\end{checkpointSA}
+\end{choices}}
+\end{checkpoint}
 
 
 
@@ -451,15 +455,15 @@ a'^A(t)&=\frac{d}{dt}v'^A(t)\\
 where we have explicitly used the fact that the train is moving at constant velocity ($\frac{d}{dt}v'^B=0$). Here we find that both Brice and Igor will measure the same number when referring to Alice's acceleration (if the train is moving at a constant velocity). This is a particularity of ``inertial'' frame of references: accelerations do not depend on the reference frame, as long as the reference frames are moving with a constant velocity relative to each other. As we will see later, forces exerted on an object are directly related to the acceleration experienced by that object. Thus, the forces on an object do not depend on the choice of inertial reference frame. 
 
 \begin{example}{A large boat is sailing North at a speed of $v'^B=\SI{15}{m/s}$ and a restless passenger is walking about on the deck. Chlo\"e, another passenger on the boat, finds that the passenger is walking at a constant speed of $v^A=\SI{3}{m/s}$ towards the South (opposite the direction of the boat's motion). Marcel is watching the boat pass by from the shore. What velocity (magnitude and direction) does Marcel measure for the restless passenger?}
-First, we must choose coordinate systems in the boat and on the shore. On the boat, let us define an $x$ axis that is positive in the North direction and has an origin such that the position of the restless passenger was $x^A(t=0)=0$ at time $t=0$. In Chlo\"e's reference frame, the passenger is thus described by:
+First, we must choose coordinate systems in the boat and on the shore. On the boat, let us define an $x$ axis that is positive in the North direction and has an origin such that the position of the restless passenger was $x^A(t=0)=0$ at time $t=0$. In Chlo\"e's reference frame, the passenger is thus described by:\\
 \begin{align*}
 x^A(t)=v^At=(\SI{-3}{m/s})t
 \end{align*}
-where we note that $v^A$ is negative since the passenger is moving the in negative $x$ direction (the passenger is walking towards the South, but we chose positive $x$ to be in the North direction). On shore, we choose an $x'$ axis that also is positive in the North direction. We can choose the origin such that the origin of the boat's coordinate system was $x'=0$. The origin of the boat's coordinate system as measured by Marcel (on shore) is thus:
+where we note that $v^A$ is negative since the passenger is moving the in negative $x$ direction (the passenger is walking towards the South, but we chose positive $x$ to be in the North direction). On shore, we choose an $x'$ axis that also is positive in the North direction. We can choose the origin such that the origin of the boat's coordinate system was $x'=0$. The origin of the boat's coordinate system as measured by Marcel (on shore) is thus:\\
 \begin{align*}
 x'^B(t)=v'^Bt=(\SI{15}{m/s})t
 \end{align*}
-The position of the passenger, $x'^A(t)$, as measured by Marcel, is then given by adding the position of the boat's origin and the position of the passenger as measured from the boat's origin:
+The position of the passenger, $x'^A(t)$, as measured by Marcel, is then given by adding the position of the boat's origin and the position of the passenger as measured from the boat's origin:\\
 \begin{align*}
 x'^A(t) &= x'^B(t)+x^A(t)\\
 &= v'^Bt + v^At \\
@@ -467,7 +471,7 @@ x'^A(t) &= x'^B(t)+x^A(t)\\
 &= ((\SI{15}{m/s})+(\SI{-3}{m/s}))t\\
 &= (\SI{12}{m/s})t
 \end{align*}
-To find the velocity of the passenger as measured by Marcel, we take the time derivative:
+To find the velocity of the passenger as measured by Marcel, we take the time derivative:\\
 \begin{align*}
 v'^A &= \frac{d}{dt}x'^A(t)\\
 &= \frac{d}{dt} \left((v'^B+v^A)t\right)\\
@@ -481,8 +485,7 @@ Since this is a positive number, Marcel still sees the passenger moving in the N
 
 \newpage
 \section{Summary}
-\vspace{1cm}
-\begin{chapterSummary}
+\begin{chapterSummary}{
 \item To describe motion in one dimension, we must define an axis with:
 \begin{enumerate}
 \item An origin (where $x=0$)
@@ -495,9 +498,9 @@ Since this is a positive number, Marcel still sees the passenger moving in the N
 \item Given a function for velocity, $v_x(t)$, one can use its anti-derivative to determine position.
 \item An inertial frame of reference is one that is moving with a constant velocity.
 \item It is impossible to define a frame of reference that is truly ``at rest'', so we consider inertial frames of reference only relative to other frames of reference that we also consider to be inertial.
-\item If an object has a position $x^A(t)$ in a given inertial frame of reference, $x$, that is moving with a velocity $v'^B$ compared to a different inertial frame of reference, $x'$, then the position of the object in the $x'$ frame of reference is given by $x'(t)=v'^B+x^A(t)$.
+\item If an object has a position $x^A(t)$ in a given inertial frame of reference, $x$, that is moving with a velocity $v'^B$ compared to a different inertial frame of reference, $x'$, then the position of the object in the $x'$ frame of reference is given by $x'(t)=v'^B+x^A(t)$.}
 \end{chapterSummary}
-\subsection{Important equations}
+\begin{importantEquations}{
 If the position of an object is described by a function $x(t)$, then, its velocity, $v_x(t)$, and acceleration, $a_x(t)$, are given by:
 \begin{align*}
 v_x(t)&=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\frac{dx}{dt}\\
@@ -518,16 +521,31 @@ If an object has position $x^A$ as measured in a frame of reference $x$ that is 
 x'^A(t) &= v'^Bt + x^A(t)\\
 v'^A(t) &=v'^B+v^A(t)\\
 a'^A(t) &= a(t)
-\end{align*}
+\end{align*}}
+\end{importantEquations}
 
-\section{Problems}
+\newpage
+\section{Thinking about the material}
+\subsection{Reflect and research}
+Look up the depth of a competition diving pool. What is the relationship between the height of the diving platform and the minimum pool depth? Why? If the designers of the pool assumed that every diver drops straight down off the diving board, would the pool still be safe for divers that jump up first?
 
-\begin{problemParts}{Rob is riding is bike at a speed of $\SI{8}{m/s}$. He passes by a velociraptor, as one often does, who is eating by the side of the road. The velociraptor begins chasing him. The velociraptor accelerates from rest at a rate of $\SI{4}{m/s^2}$.} 
+\subsection{To try at home}
+\subsection{To try in the lab}
+
+\section{Sample Problems and Solutions}
+\subsection{Problems}
+\begin{problemParts}{Rob is riding is bike at a speed of $\SI{8}{m/s}$. He passes by a velociraptor, as one often does, who is eating by the side of the road. The velociraptor begins chasing him. The velociraptor accelerates from rest at a rate of $\SI{4}{m/s^2}$.\label{Q:Velociraptor}} 
 \item Assuming it takes 3 seconds for the velociraptor to react, how long does it take from the moment Rob passes by for the velicoraptor to catch up to him? 
 \item If there is a safe place 70 metres from where Rob passes the velociraptor, will Rob make it there in time to escape being eaten?  
 \end{problemParts}
 
-\textbf{Solution:}\\
+\begin{problem} {Figure \ref{fig:AccelerationProblem1D} shows a graph of the acceleration, $a(t)$, of a particle moving in one dimension. Draw the corresponding velocity and position graphs. Assume that $v(0)=x(0)=0$.\label{Q:accelerationTime}}
+\end{problem}
+\capfig{0.6\textwidth}{figures/DescribingMotionIn1D/AccelerationProblem.jpg}{\label{fig:AccelerationProblem1D}A graph of acceleration as a function of time. The scale and units are arbitrary.}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{\ref{Q:Velociraptor}}{
 We start by choosing our coordinate system. The solution is simplest if the $x$ axis is positive in the direction of motion and has an origin at the point where Rob passes the velociraptor. We set $t=0$ to be the moment the velociraptor starts running.\\
 
 \capfig{\textwidth}{figures/DescribingMotionIn1D/VelociraptorQuestion.png}{\label{fig:VelociraptorProblem1D} Rob is being chased by a velociraptor. At $t=0$, Rob is a distance $x_{0R}$ from the velociraptor. Safety is $\SI{70}{m}$ away from the origin.}
@@ -537,7 +555,7 @@ Since we are dealing with constant accelerations, we can use the equation:
 x(t)&=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 \end{align*}
 We can use a table to take stock of our known values and variables:
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \label{KnownsUnknownsSampleProb1D}
 \begin{tabular}{|c|c|}
@@ -570,13 +588,10 @@ that we can rearrange to get this quadratic:
 
 By solving the quadratic, we find that $t=\SI{6}{s}$. This doesn't quite give us the answer we want. We want to know how long it takes the velociraptor to catch up \textit{from the moment Rob passes by}, so we have to add on the $\SI{3}{s}$ reaction time, giving a total time of $\SI{9}{s}$.\\
 
-We can use this solution to figure out whether Rob makes it to safety. In 9 seconds, Rob travels a distance of $(\SI{8}{m/s})\times (\SI{9}{s}) = \SI{72}{m}$. The shelter is only $\SI{70}{m}$ away, so Rob gets to safety in time!
+We can use this solution to figure out whether Rob makes it to safety. In 9 seconds, Rob travels a distance of $(\SI{8}{m/s})\times (\SI{9}{s}) = \SI{72}{m}$. The shelter is only $\SI{70}{m}$ away, so Rob gets to safety in time!}
+\end{solution}
 
-
-\begin{problem} Figure \ref{fig:AccelerationProblem1D} shows a graph of the acceleration, $a(t)$, of a particle moving in one dimension. Draw the corresponding velocity and position graphs. Assume that $v(0)=x(0)=0$. 
-\end{problem}
-\capfig{0.6\textwidth}{figures/DescribingMotionIn1D/AccelerationProblem.jpg}{\label{fig:AccelerationProblem1D}A graph of acceleration as a function of time. The scale and units are arbitrary.}
-\textbf{Solution:}
+\begin{solution}{\ref{Q:accelerationTime}}{
 \begin{center}
 \includegraphics[scale=0.6]{figures/DescribingMotionIn1D/VelocityPositionProblem.jpg}{\label{fig:VelocityPositionProblem1D}}
 \end{center}
@@ -593,8 +608,8 @@ For the graph of $x(t)$:
 \item When velocity is negative, $x(t)$ is decreasing. When velocity is positive, $x(t)$ is increasing
 \item Take note of the turning points on the graph of $x(t)$.The particle turns around (the position goes from increasing or decreasing, or from decreasing to increasing) when the velocity changes sign. 
 \item When the velocity and acceleration are in the same direction, the slope of $x(t)$ increases in magnitude. When the acceleration and velocity are in opposite directions, the slope of $x(t)$ decreases in magnitude. 
-\end{itemize}
+\end{itemize}}
 
-\begin{reflectresearch}\\
-Look up the depth of a competition diving pool. What is the relationship between the height of the diving platform and the minimum pool depth? Why? If the designers of the pool assumed that every diver drops straight down off the diving board, would the pool still be safe for divers that jump up first?
-\end{reflectresearch}
+\end{solution}
+
+
