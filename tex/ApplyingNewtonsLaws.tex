@@ -313,55 +313,113 @@ If you have studied some physics before, you may have realized that the speed is
 which gives the same value for $V$. As we will see in a later chapter, kinetic and potential energy are defined as they are, precisely because it makes using conservation of energy equivalent to using forces as we just did.
 \end{example}
 
-\begin{example}{An object of mass $m$ is released from rest out of a helicopter. The drag (air-resistance) on the object can be modelled as having a magnitude given by $bv^2$, where $v$ is the speed of the object and $b$ is a constant of proportionality. How long does the object fall before reaching its terminal velocity?}
+\begin{example}{An object of mass $m$ is released from rest out of a helicopter. The drag (air-resistance) on the object can be modelled as having a magnitude given by $bv$, where $v$ is the speed of the object and $b$ is a constant of proportionality. How does the velocity of the object depend on time?}
+\label{ex:applyingnewtonslaws:drag}
 As the object falls through the air, the forces exerted on the object are:
 \begin{enumerate}
 \item $F_g$, its weight, with magnitude $mg$, exerted downwards.
-\item $F_d$, the force of drag, with magnitude $bv^2$, exerted upwards. 
+\item $F_d$, the force of drag, with magnitude $bv$, exerted upwards. 
 \end{enumerate}
-Since the object will fall in a straight line, this is a one-dimensional problem, and we can choose the $x$ axis to be vertical, with positive $x$ pointing downwards, and the origin located where the object was released. The object will thus have a positive acceleration and move in the positive $x$ direction with this choice of coordinate system.
+Since the object will fall in a straight line, this is a one-dimensional problem, and we can choose the $x$ axis to be vertical, with positive $x$ pointing downwards, and the origin located where the object was released. The object will thus have a positive acceleration and move in the positive $x$ direction with this choice of coordinate system. This is illustrated in the free-body diagram in Figure \ref{fig:applyingnewtonslaws:drag_fbd}.
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/drag_fbd.png}{\label{fig:applyingnewtonslaws:drag_fbd} Free-body diagram for a block free-falling with drag.}
 
 Newton's Second Law for the object gives:
 \begin{align*}
 \sum F_x = F_g - F_d &= ma\\
-mg - bv^2 &= -ma\\
-\therefore a &= \left (g-\frac{b}{m}v^2 \right)
+mg - bv &= -ma\\
+\therefore a &= \left (g-\frac{b}{m} \right)
 \end{align*}
-In this case, the acceleration depends explicitly on velocity rather than position, as we had before. However, we can use the same methodology to find how the speed changes with time. First, we can note that the acceleration is zero if:
+In this case, the acceleration depends explicitly on velocity rather than position, as we had before. However, we can use the same methodology to find how the velocity changes with time. First, we can note that the acceleration is zero if:
 \begin{align*}
-g-\frac{b}{m}v^2 &=0\\
-\therefore v = \sqrt{\frac{mg}{b}}
+g-\frac{b}{m}v &=0\\
+\therefore v = \frac{mg}{b}
 \end{align*}
-That is, once the object reaches a speed of $v_{term}=\sqrt{\frac{mg}{b}}$, it will stop to accelerate, i.e. it will reach ``terminal velocity''. Note that this is the same condition as requiring that the drag force ($bv^2$) have the same magnitude as the weight ($mg$).
+That is, once the object reaches a speed of $v_{T}=\frac{mg}{b}$, it will stop to accelerate, i.e. it will reach ``terminal velocity''. Note that this is the same condition as requiring that the drag force ($bv$) have the same magnitude as the weight ($mg$).
 
 Writing the acceleration as $a=\frac{dv}{dt}$, we can write:
 \begin{align*}
-\frac{dv}{dt} &= \left(g-\frac{b}{m}v^2 \right)
+\frac{dv}{dt} &= \left(g-\frac{b}{m}v \right)
 \end{align*}
-which again, is a separable differential equation that we can write as:
+which again, is a separable differential equation, in which we can write the terms that depend on $v$ and those that depend on $t$ on separate sides of the equal sign:
 \begin{align*}
-dv \left(1+  \frac{b}{m}v^2\right) &= gdt
+\frac{dv}{g-\frac{b}{m}v}&= dt\\
+\frac{dv}{v-\frac{mg}{b}}&= -\frac{b}{m}dt\\
 \end{align*}
-We can find $V$ at some time $T$ if we state that $v=0$ at $t=0$ and take the integrals on both sides:
+where we re-arranged the equation in the second line so that it would be easier to integrate in the next step. We can find the velocity, $v(t)$, at some time, $t$, by stating that $v=0$ at $t=0$ and taking the integrals (sum) on both sides. Again, we are modelling the motion as being made up of a large number of very small segments where the quantities on both sides of the equation are the same. Thus, if we sum (integrate) those quantities over all of the same segments, the left and right hand side of the equations will still be equal to each other:
 \begin{align*}
-\int_0^V\left(1+  \frac{b}{m}v^2\right) dv &= \int_0^T gdt\\
-\left [ v  - \frac{b}{3m}v^3\right]_0^V &=gT\\
-V  - \frac{b}{3m}V^3 &= gT
+\int_0^{v(t)}\frac{dv}{v-\frac{mg}{b}} &= -\int_0^t\frac{b}{m} dt\\
+\left[\ln\left(v-\frac{mg}{b} \right)\right]_0^{v(t)} &=-\frac{b}{m}t\\
+\ln\left(v(t)-\frac{mg}{b} \right)-\ln\left(-\frac{mg}{b} \right)&=-\frac{b}{m}t\\
+\ln\left( \frac{v(t)-\frac{mg}{b}}{-\frac{mg}{b}} \right)&=-\frac{b}{m}t\\
 \end{align*}
-which we cannot re-arrange into a closed form for $V(T)$. However, we can instead find the value of $T$ that corresponds to reaching terminal velocity:
+where, in the last line, we use the property that $\ln(a)-\ln(b)=\ln(a/b$. By taking the exponential on either side of the equation ($e^{\ln(x)}=x$), we can find an expression for the velocity as a function of time:
 \begin{align*}
-V  - \frac{b}{3m}V^3 &= gT\\
- \sqrt{\frac{mg}{b}}   - \frac{b}{3m}\left(\frac{mg}{b}\right)^\frac{3}{2} &= gT\\
- \therefore T &= \sqrt{\frac{m}{gb}} - \frac{b}{3mg}\left(\frac{mg}{b}\right)^\frac{3}{2}
+\frac{v(t)-\frac{mg}{b}}{-\frac{mg}{b}} &= e^{-\frac{b}{m}t}\\
+v(t)-\frac{mg}{b} &= -\frac{mg}{b}e^{-\frac{b}{m}t}\\
+\therefore v(t) &= \frac{mg}{b}-\frac{mg}{b}e^{-\frac{b}{m}t}\\
+&=\frac{mg}{b}\left(1-e^{-\frac{b}{m}t}\right)
 \end{align*}
+\textbf{Discussion:} This equation tells us that the velocity increases as a function of time, but the rate of increase decreases exponentially with time. At time $t=0$, the velocity is zero, as expected. As $t$ approaches infinity, $v$ approaches, $\frac{mg}{b}$, which is the terminal velocity. The time dependence of the velocity is illustrated in Figure 
 
+\capfig{0.7\textwidth}{figures/ApplyingNewtonsLaws/drag_vt.png}{\label{fig:applyingnewtonslaws:drag_vt} Velocity as a function of time for an object of mass $m\SI{10}{kg}$ which is free-falling from rest with a drag coefficient $b=0.5$.}
+
+ 
 \end{example}
 
-\section{Non linear motion}
-e.g a parabola 
+\section{Non-linear motion}
+We can always sub-divide the motion of an object as being made of small straight segments in which we can apply Newton's Laws as we did in the previous sections. However, if the direction of the acceleration vector continuously changes, it become impractical to define a coordinate system that changes orientation for each segment; that is, in general, one cannot necessarily choose a coordinate system such that the acceleration is parallel to one of the axes. 
+
+Consider for example the trajectory of an object that is released from an airplane that is flying in the horizontal direction, as depicted in Figure \ref{fig:applyingnewtonslaws:plane}. 
+\capfig{0.4\textwidth}{figures/ApplyingNewtonsLaws/plane.png}{\label{fig:applyingnewtonslaws:plane} An object dropped from a moving airplane.}
+In the absence of a drag force, the motion of the object can be modelled independently in the horizontal ($x$) and vertical ($y$) directions as linear motion.  The only force on the object is its weight (in the negative $y$ direction), so the two components of Newton's Second Law are:
+\begin{align*}
+\sum F_x &= 0\\
+\sum F_y &= -F_g = ma_y\\
+\therefore \vec a &= -a_y \hat y=-g\hat y
+\end{align*}
+With the acceleration ($a_y=-g$), the initial velocity of the object (which is horizontal, since it was released from the airplane) and the kinematic equations, the motion of the falling object is completely specified. 
+
+Consider instead the case of the object falling from the airplane with drag. In that case, there is a force of drag that points in the opposite direction of the velocity, as shown in the free-body diagram in Figure \ref{fig:applyingnewtonslaws:plane_fbd}. The free-body diagram also shows the velocity vector of the falling object at some point in time after being released. 
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/plane_fbd.png}{\label{fig:applyingnewtonslaws:plane_fbd} Free-body diagram for an object falling with a force of drag, when the initial velocity of the object was horizontal. The velocity of the object is shown in this case so that the direction of the force of drag can be determined.}
+Since the velocity depends on the acceleration, the acceleration depends on the force of drag, and the force of drag depends on the velocity, the acceleration vector will continuously change in both magnitude and direction. There is thus no straightforward choice of coordinate system that will make the acceleration colinear with one of the axes, so our best choice of a coordinate system is one where the most number of forces are colinear with the axes. If at some time $t$, the velocity vector makes an angle $\theta(t)$ with the horizontal (as shown in Figure \ref{fig:applyingnewtonslaws:plane_fbd}), we can write the $x$ and $y$ components of Newton's Second Law as follows:
+\begin{align*}
+\sum F_x &= -F_d\cos\theta = ma_x \\
+\therefore a_x &= -\frac{1}{m}F_d\cos\theta\\
+\sum F_y &= F_d\sin\theta-F_g = ma_y \\
+\therefore a_y &= \frac{1}{m}F_d\sin\theta-g
+\end{align*}
+We can write the velocity vector as $\vec v(t) = (v_x(t), v_y(t))$, so that the magnitude (squared) of the velocity vector is $v^2=v_x^2+v_y^2$. If we assume that drag is proportional to the speed of the object squared, we can write the drag force as $F_d = bv^2=b(v_x^2+v_y^2)$. The cosine and sine of the angle between the velocity vector and the horizontal are given by:
+\begin{align*}
+\cos\theta &= \frac{v_x}{v_x^2+v_y^2}\\
+\sin\theta &= \frac{v_y}{v_x^2+v_y^2}\\
+\end{align*}
+We can then write the $x$ and $y$ components of the acceleration as:
+\begin{align*}
+a_x&=\frac{dv_x}{dt}=-\frac{1}{m}F_d\cos\theta=-\frac{1}{m}b(v_x^2+v_y^2)\frac{v_x}{v_x^2+v_y^2}=-\frac{b}{m}v_x\\
+a_y&=\frac{dv_y}{dt}=\frac{1}{m}F_d\sin\theta-g=\frac{1}{m}b(v_x^2+v_y^2)\frac{v_y}{v_x^2+v_y^2}-g=\frac{b}{m}v_y-g\\
+\end{align*}
+which give us two independent\footnote{Independent because the equation for, say, the $x$ component does refer to any of the $y$ components. If the drag force were proportional to the speed (instead of the speed squared), the equations would not be independent.} separable differential equation for the $x$ and $y$ components of the speed:
+\begin{align*}
+\frac{dv_x}{dt} &=-\frac{b}{m}v_x\\
+\frac{dv_y}{dt} &= \frac{b}{m}v_y-g\\
+\end{align*}
+These can be solved in the same manner Example \ref{ex:applyingnewtonslaws:drag}, except that one must now solve for the $x$ and $y$ components of the velocity. This is left as an exercise in the question library.
+
+TODO: Make the above, including plotting the solutions ($v_x, v_y, v$), a question in the Question Library! Perhaps even to find when the object reaches a speed of 99\% of the terminal velocity. They should also find the terminal velocity (which will be vertical!).
+
 
 \section{Uniform circular motion}
-As we saw in Chapter \ref{chap:describingmotioninnd}, uniform circular motion is defined to be motion along a circle with constant speed. 
+As we saw in Chapter \ref{chap:describingmotioninnd}, ``uniform circular motion'' is defined to be motion along a circle with constant speed. This may be a good time to review section \ref{sec:describingmotioninnd:circular} for the kinematics of motion along a circle. In particular, for the uniform circular motion of an object around a circle of radius $R$, you should recall that:
+\begin{itemize}
+\item The velocity vector, $\vec v$, is always tangent to the circle.
+\item The acceleration vector, $\vec a$, is always perpendicular to the velocity vector, because the magnitude of the velocity vector does not change.
+\item The acceleration vector, $\vec a$, always points towards the centre of the circle.
+\item The acceleration vector has magnitude $a=v^2/R$.
+\item The angular velocity, $\omega$ is related to the magnitude of the velocity vector by $v=\omega R$ and is constant.
+\item The angular acceleration, $\alpha$, is zero for uniform circular motion, since the angular velocity does not change.
+\end{itemize}
+In particular, you should recall that even if the speed is constant, the acceleration vector is always non-zero in uniform circular motion because the velocity changes direction. According to Newton's Second Law, this implies that there must be a net force on the object that is directed towards the centre of the circle (parallel to the acceleration). 
+
 
 \subsection{Banked curves}
 
