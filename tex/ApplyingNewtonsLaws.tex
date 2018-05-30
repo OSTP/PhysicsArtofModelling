@@ -359,7 +359,7 @@ v(t)-\frac{mg}{b} &= -\frac{mg}{b}e^{-\frac{b}{m}t}\\
 \therefore v(t) &= \frac{mg}{b}-\frac{mg}{b}e^{-\frac{b}{m}t}\\
 &=\frac{mg}{b}\left(1-e^{-\frac{b}{m}t}\right)
 \end{align*}
-\textbf{Discussion:} This equation tells us that the velocity increases as a function of time, but the rate of increase decreases exponentially with time. At time $t=0$, the velocity is zero, as expected. As $t$ approaches infinity, $v$ approaches, $\frac{mg}{b}$, which is the terminal velocity. The time dependence of the velocity is illustrated in Figure 
+\textbf{Discussion:} This equation tells us that the velocity increases as a function of time, but the rate of increase decreases exponentially with time. At time $t=0$, the velocity is zero, as expected. As $t$ approaches infinity, $v$ approaches, $\frac{mg}{b}$, which is the terminal velocity. The time dependence of the velocity is illustrated in Figure \ref{fig:applyingnewtonslaws:drag_vt}.
 
 \capfig{0.7\textwidth}{figures/ApplyingNewtonsLaws/drag_vt.png}{\label{fig:applyingnewtonslaws:drag_vt} Velocity as a function of time for an object of mass $m\SI{10}{kg}$ which is free-falling from rest with a drag coefficient $b=0.5$.}
 
@@ -379,7 +379,7 @@ In the absence of a drag force, the motion of the object can be modelled indepen
 \end{align*}
 With the acceleration ($a_y=-g$), the initial velocity of the object (which is horizontal, since it was released from the airplane) and the kinematic equations, the motion of the falling object is completely specified. 
 
-Consider instead the case of the object falling from the airplane with drag. In that case, there is a force of drag that points in the opposite direction of the velocity, as shown in the free-body diagram in Figure \ref{fig:applyingnewtonslaws:plane_fbd}. The free-body diagram also shows the velocity vector of the falling object at some point in time after being released. 
+Consider instead the case of the object falling from the airplane with drag. In that case, there is a force of drag that points in the opposite direction of the velocity, as shown in the free-body diagram in Figure \ref{fig:applyingnewtonslaws:plane_fbd}. The free-body diagram is drawn at some instant in time after the object was released and also shows the velocity vector of object in order for the drag force to be drawn in the correct direction. 
 \capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/plane_fbd.png}{\label{fig:applyingnewtonslaws:plane_fbd} Free-body diagram for an object falling with a force of drag, when the initial velocity of the object was horizontal. The velocity of the object is shown in this case so that the direction of the force of drag can be determined.}
 Since the velocity depends on the acceleration, the acceleration depends on the force of drag, and the force of drag depends on the velocity, the acceleration vector will continuously change in both magnitude and direction. There is thus no straightforward choice of coordinate system that will make the acceleration colinear with one of the axes, so our best choice of a coordinate system is one where the most number of forces are colinear with the axes. If at some time $t$, the velocity vector makes an angle $\theta(t)$ with the horizontal (as shown in Figure \ref{fig:applyingnewtonslaws:plane_fbd}), we can write the $x$ and $y$ components of Newton's Second Law as follows:
 \begin{align*}
@@ -398,7 +398,7 @@ We can then write the $x$ and $y$ components of the acceleration as:
 a_x&=\frac{dv_x}{dt}=-\frac{1}{m}F_d\cos\theta=-\frac{1}{m}b(v_x^2+v_y^2)\frac{v_x}{v_x^2+v_y^2}=-\frac{b}{m}v_x\\
 a_y&=\frac{dv_y}{dt}=\frac{1}{m}F_d\sin\theta-g=\frac{1}{m}b(v_x^2+v_y^2)\frac{v_y}{v_x^2+v_y^2}-g=\frac{b}{m}v_y-g\\
 \end{align*}
-which give us two independent\footnote{Independent because the equation for, say, the $x$ component does refer to any of the $y$ components. If the drag force were proportional to the speed (instead of the speed squared), the equations would not be independent.} separable differential equation for the $x$ and $y$ components of the speed:
+which give us two independent\footnote{The differential equations are ``independent'' because the equation for, say, the $x$ component does not refer to any of the $y$ components. If the drag force were proportional to the speed (instead of the speed squared), the equations would not be independent.} separable differential equation for the $x$ and $y$ components of the speed:
 \begin{align*}
 \frac{dv_x}{dt} &=-\frac{b}{m}v_x\\
 \frac{dv_y}{dt} &= \frac{b}{m}v_y-g\\
@@ -415,13 +415,42 @@ As we saw in Chapter \ref{chap:describingmotioninnd}, ``uniform circular motion'
 \item The acceleration vector, $\vec a$, is always perpendicular to the velocity vector, because the magnitude of the velocity vector does not change.
 \item The acceleration vector, $\vec a$, always points towards the centre of the circle.
 \item The acceleration vector has magnitude $a=v^2/R$.
-\item The angular velocity, $\omega$ is related to the magnitude of the velocity vector by $v=\omega R$ and is constant.
+\item The angular velocity, $\omega$, is related to the magnitude of the velocity vector by $v=\omega R$ and is constant.
 \item The angular acceleration, $\alpha$, is zero for uniform circular motion, since the angular velocity does not change.
 \end{itemize}
-In particular, you should recall that even if the speed is constant, the acceleration vector is always non-zero in uniform circular motion because the velocity changes direction. According to Newton's Second Law, this implies that there must be a net force on the object that is directed towards the centre of the circle (parallel to the acceleration). 
+In particular, you should recall that even if the speed is constant, the acceleration vector is always non-zero in uniform circular motion because the \textbf{velocity changes direction}. According to Newton's Second Law, this implies that there \textbf{must be a net force on the object that is directed towards the centre of the circle} (parallel to the acceleration):
+\begin{align*}
+\sum \vec F = m\vec a
+\end{align*} 
+where the acceleration has a magnitude $a=v^2/R$. Because the acceleration is directed towards the centre of the circle, we sometimes call it a ``radial'' acceleration (parallel to the radius), $a_R$, or a ``centripetal'' acceleration (directed towards the centre), $a_c$.
 
+Consider an object in uniform circular motion in a horizontal plane on a frictionless surface, as depicted in Figure \ref{fig:applyingnewtonslaws:circleH}.
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/circleH.png}{\label{fig:applyingnewtonslaws:circleH} An object undergoing uniform circular motion on a frictionless surface, as see from above.}
+The only way for the object to undergo uniform circular motion is if there is if the net force on the object is directed towards the centre of the circle. One way to have a force that is directed towards the centre of the circle is to attach a string between the center of the circle and the object, as depicted in Figure \ref{fig:applyingnewtonslaws:circleH}. If the string is under tension, the force of tension will always be towards the centre of the circle. The forces on the object are:
+\begin{enumerate}
+\item $\vec F_g$, its weight with magnitude $mg$.
+\item $\vec N$, a normal forced exerted by the surface.
+\item $\vec T$, a force of tension exerted by the string.
+\end{enumerate}
+The forces are depicted in the free-body diagram shown in Figure \ref{fig:applyingnewtonslaws:circleH_fbd}, where we also drew the acceleration vector. Note that this free-body diagram is only ``valid'' at a particular instant in time since the acceleration vector continuously changes direction and would not always be lined up with the $x$ axis (unless the coordinate system also changes direction continuously). 
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/circleH_fbd.png}{\label{fig:applyingnewtonslaws:circleH_fbd} Free-body diagram for the object from Figure \ref{fig:applyingnewtonslaws:circleH_fbd} undergoing uniform circular motion.}
+Writing out the $x$ and $y$ components of Newton's Second Law:
+\begin{align*}
+\sum F_x &= T = ma_R\\
+\sum F_y &= N - F_g =0
+\end{align*}
+The $y$ component just tells us that the normal force must have the same magnitude as the weight because the object is not accelerating in the vertical direction. The $x$ component tells us the relation between the magnitudes of the tension in the string and the radial acceleration. Using the speed of the object, we can also write the relation between the tension and the speed:
+\begin{align*}
+T &= ma_R=m\frac{v^2}{R}\\
+\end{align*}
+
+\begin{example}{A ball of mass $m$ is attached to a mass-less string and executing circular motion along a circle of radius $R$, as depicted in Figure \ref{fig:applyingnewtonslaws:circleV}. Can the speed of the block be constant? What is the minimum speed of the block at the top of the circle?}
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/circleV.png}{\label{fig:applyingnewtonslaws:circleV} An object undergoing circular motion in a vertical plane.}
+\end{example}
 
 \subsection{Banked curves}
+
+\subsection{Inertial forces in circular motion}
 
 \section{Non-uniform circular motion}
 
