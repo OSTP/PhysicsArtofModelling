@@ -53,7 +53,7 @@ which gives us the condition that $F\geq mg/\mu_s$, and thus the minimum magnitu
 
 Although we used the lesser than or equal sign in the above equations, we could have used an equal sign if we were confident that the force of friction has its maximal magnitude, $f_s=\mu_sN$. The maximal magnitude of the force of friction is proportional to the force that we exert (since $N=F$); if we want to exert the least amount of force $F$, then we need the force of friction to be equal to its maximal magnitude which needs to be equal to the weight of the box. 
 
-\textbf{Discussion:} This model makes sense because:
+\textbf{Discussion:} This model for the minimal required force makes sense because:
 \begin{itemize}
 \item The dimension of $mg/\mu_s$ is force.
 \item If the mass of the box is increased, then one needs to push harder against the box to keep it up.
@@ -61,7 +61,7 @@ Although we used the lesser than or equal sign in the above equations, we could 
 \end{itemize}
 \end{example}
 
-TODO: A student's thought of how to use the force of static friction, in particular about when to set it equal to $\mu_sN$ instead of less than. Perhaps this would belong in chapter 5, when the forces of friction are discussed?
+TODO: A student's thought of how to use the force of static friction and deal with the inequality?
 
 
 
@@ -153,7 +153,7 @@ v_0^2&=2a_2x\\
 &=\frac{1}{2\mu_{k2}g}2Lg(\sin\theta-\mu_{k1}\cos\theta)\\
 \therefore x&=\frac{(\sin\theta-\mu_{k1}\cos\theta)}{\mu_{k2}}L
 \end{align*}
-\textbf{Discussion:} The result makes sense because:
+\textbf{Discussion:} The model for the distance $x$ that it takes the block to stop makes sense because:
 \begin{itemize}
 \item All of the terms in the fraction are dimensionless, so the value of $x$ will have the same dimension as $L$. 
 \item If we make $L$ bigger, then $x$ will be bigger (if we release the block from higher up on the incline, it will have more time to accelerate and will slide further before stopping).
@@ -304,7 +304,7 @@ V^2 &= v_0^2 + 2\int_{x_0}^{X}a(x)dx\\
 &= \frac{k}{m}D^2\\
 \therefore V &= \sqrt{\frac{k}{m}}D
 \end{align*}
-\textbf{Discussion:} This result makes sense because:
+\textbf{Discussion:} This model for the speed of the block when it leaves the spring makes sense because:
 \begin{itemize}
 \item The dimension for the expression for $V$ is correct (you should check this!).
 \item If the spring is compressed more (bigger value of $D$), then the speed will be higher.
@@ -453,26 +453,82 @@ Thus, we find that the tension is the string increases with the square of the sp
 TODO: Checkpoint question about what happens to the motion of the block if the string breaks (images with different possible trajectories). 
 
 \begin{example}{A car goes around a curve which can be approximated as the arc of a circle of radius $R$. The coefficient of static friction between the tires of the car and the road is $\mu_s$. What is the maximum speed with which the car can go around the curve without skidding?}
+\capfig{0.3\textwidth}{figures/ApplyingNewtonsLaws/car.png}{\label{fig:applyingnewtonslaws:car} A car going around a curve that can be approximated as the arc of a circle of radius $R$.}
+\label{ex:applyingnewtonslaws:car}
+If the car is going at constant speed around a circle, then the sum of the forces on the car must be directed towards the centre of the circle. The only force on the car that could be directed towards the centre of the circle is the friction between the tires and the road. If the road were perfectly slick (think driving in icy conditions), it would not be possible to drive around a curve. The forces on the car are:
+\begin{enumerate}
+\item $\vec F_g$, its weight with magnitude $mg$.
+\item $\vec N$, a normal forced exerted by the upwards by the road.
+\item $\vec f_s$, a force of static friction between the tires and the road. This is static friction, because the surface of the tire does not move relative to the surface of the road if the car is not skidding. The force of static friction has a magnitude that is at most $f_s\leq\mu_sN$.
+\end{enumerate}
+The forces on the car are shown in the free-diagram in Figure \ref{fig:applyingnewtonslaws:car_fbd}.
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/car_fbd.png}{\label{fig:applyingnewtonslaws:car_fbd} Free-body diagram for the car as seen looking at the car from the back (the centre of the curve is towards the left).}
+The $y$ component of Newton's Second Law tells us that the normal force exerted by the road must equal the weight of the car:
+\begin{align*}
+\sum F_y = N-F_g&=0\\
+\therefore N &=mg
+\end{align*}
+The $x$ component relates the force of friction to the radial acceleration (and thus to the speed):
+\begin{align*}
+\sum F_x = f_s =ma_R&=m\frac{v^2}{R}\\
+\therefore f_s &= m\frac{v^2}{R}
+\end{align*}
+The force of friction must be less than or equal to $f_s\leq\mu_sN=\mu_smg$ (since $N=mg$ from the $y$ component of Newton's Second Law), which gives us a condition on the speed:
+\begin{align*}
+f_s = m\frac{v^2}{R}&\leq\mu_smg\\
+v^2 &\leq \mu_s g R\\
+\therefore v_{max} &\leq \sqrt{\mu_s g R}
+\end{align*}
+Thus, if the speed is less than $\sqrt{\mu_s g R}$, the car will not skid and the magnitude of the force of static friction, which results in an acceleration towards the centre of the circle, will be smaller or equal to its maximal possible value.
 
+\textbf{Discussion:} The for the maximum speed that the car can travel around the curve makes sense because:
+\begin{itemize}
+\item The dimension of $\sqrt{\mu_s g R}$ is speed.
+\item The speed is larger if the radius of the curve is larger (one can go faster around a wider curve without skidding).
+\item The speed is larger if the coefficient of friction is large (if the force of friction is larger, a larger radial acceleration can be sustained).
+\end{itemize}
 \end{example}
 
-\begin{example}{A ball of mass $m$ is attached to a mass-less string and executing circular motion along a circle of radius $R$, as depicted in Figure \ref{fig:applyingnewtonslaws:circleV}. Can the speed of the block be constant? What is the minimum speed of the ball at the top of the circle?}
-\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/circleV.png}{\label{fig:applyingnewtonslaws:circleV} A ball attached to a string undergoing circular motion in a vertical plane.}
+\begin{example}{A ball is attached to a mass-less string and executing circular motion along a circle of radius $R$ that is in the vertical plane, as depicted in Figure \ref{fig:applyingnewtonslaws:circleV}. Can the speed of the ball be constant? What is the minimum speed of the ball at the top of the circle?}
+\capfig{0.3\textwidth}{figures/ApplyingNewtonsLaws/circleV.png}{\label{fig:applyingnewtonslaws:circleV} A ball attached to a string undergoing circular motion in a vertical plane.}
+The forces that are acting on the ball are:
+\begin{enumerate}
+\item $\vec F_g$, its weight with magnitude $mg$.
+\item $\vec T$, a force of tension exerted by the string.
+\end{enumerate}
+Figure \ref{fig:applyingnewtonslaws:circleV_fbd} shows the free-body diagram for the forces on the ball at five different locations along the path of the circle.
+\capfig{0.4\textwidth}{figures/ApplyingNewtonsLaws/circleV_fbd.png}{\label{fig:applyingnewtonslaws:circleV_fbd} A ball attached to a string undergoing circular motion in a vertical plane.}
+In order for the ball to go around in a circle, there must be at least a component of the net force on the ball that is directed towards the centre of the circle at all times. In the bottom half of the circle (positions 1 and 2), only the tension can have a component directed towards the centre of the circle.
+
+Consider in particular the position labelled 2, when the string is horizontal and the tension is equal to $\vec T_2$. The free-body diagram in Figure \ref{fig:applyingnewtonslaws:circleV_fbd} also shows the vector sum of the weight and tension at position 2 (the red arrow labelled $\sum \vec F$), which points downwards and to the left. It is thus clearly impossible for the acceleration vector to point towards the centre of the circle, and the acceleration will have components that are both tangential ($a_T$) to the circle and radial ($a_R$), as shown by the vector $\vec a_2$ in Figure \ref{fig:applyingnewtonslaws:circleV_fbd}.
+
+The radial component of the acceleration will change the direction of the velocity vector so that the ball remains on the circle, and the tangential component will reduce the magnitude of the velocity vector. According to our model, it is thus impossible for the ball to go around the circle at constant speed, and the speed must decrease as it goes from position 2 to position 3, no matter how one pulls on the string (you can convince yourself of this by drawing the free-body diagram at any point between points 2 and 3). 
+
+The minimum speed for the ball at the top of the circle is given by the condition that the tension in the string is zero just at the top of the trajectory (position 3). The ball can still go around the circle because, at position 3, gravity is towards the centre of the circle and can thus give an acceleration that is radial, even with no tension. The $y$ component of Newton's Second Law, at position 3 gives:
+\begin{align*}
+\sum F_y = -F_g &= ma_y\\
+\therefore a_y &=-g
+\end{align*}
+The magnitude of the acceleration is the radial acceleration, and thus related to the speed at the top of the trajectory:
+\begin{align*}
+a_R&=-a_y=g = m\frac{v^2}{R}\\
+\therefore v_{min}=\sqrt{\frac{gR}{m}}
+\end{align*}
+which is the minimum speed at the top of trajectory for the ball to be able to continue along the circle. The tension in the string would change as the ball moves around the circle, and will be highest at the bottom of the trajectory, since the tension has to bigger than gravity so that the net force at the bottom of the trajectory is upwards (towards the centre of the circle).
+\textbf{Discussion:} The model for the minimum speed of the ball at the top of the circle makes sense because:
+\begin{itemize}
+\item $\sqrt{\frac{gR}{m}}$ has the dimension of speed.
+\item The minimum velocity is larger if the circle has a larger radius (try this with a mass attached at the end of a string). 
+\item The minimum velocity is larger if the mass is bigger (again, try this at home!). 
+\end{itemize}
 \end{example}
 
 \subsection{Banked curves}
+As we saw in in Example \ref{ex:applyingnewtonslaws:car}, there is a maximum speed with which a car can go around a curve before it starts to skid. You may have noticed that roads, highways especially, are banked where there are curves. Racetracks for cars that go around an oval (the boring kind of car races) also have banked curves. As we will see, this allows the speed of vehicles to be higher when going around the curve; or rather, it makes the curves safer as the speed at which vehicles \textit{would} skid is higher. 
 
 \subsection{Inertial forces in circular motion}
 
 \section{Non-uniform circular motion}
-
-
-
-
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -496,10 +552,15 @@ TODO: Checkpoint question about what happens to the motion of the block if the s
 
 \subsection{Experiments to try at home}
 
+\begin{enumerate}
+\item Spin a mass on a string in a vertical circle, what is the tension in the string when the mass is at the top for it to barely make it around
+\item Spin a mass on a string in a vertical circle, how does the minimum speed at the top of the circle to barely make it around around depend on radius of circle or the mass?
+\item Spin a mass on a string in a vertical circle, describe the motion if the mass does not have the minimum speed. If it makes it to the top, does it get all the way around, i.e., is the minimum speed that which allows it to get to the top in the first place?
+\end{enumerate}
 \subsection{Experiment to try in the lab}
 \begin{enumerate}
 \item try
 \end{enumerate}
 
 \subsection{Problems and Solutions}
- 
+%Conical pendulum, roller coaster (speed at the top) 
