@@ -4,17 +4,18 @@
 In this chapter, we will learn how to extend our description of an object's motion to two and three dimensions by using vectors. We will also consider the specific case of an object moving along the circumference of a circle. 
 
 \begin{learningObjectives}{
-\item Describe motion in a 2D plane.
-\item Describe motion in 3D space.
-\item Describe motion along the circumference of a circle.}
+ \item Describe motion in a 2D plane.
+ \item Describe motion in 3D space.
+ \item Describe motion along the circumference of a circle.}
 \end{learningObjectives}
 
-\begin{opening}{\begin{choices}{Jake and Madi are riding a carousel that spins at a constant rate. Madi is closer to the centre of the carousel than Jake is. What can you say about their accelerations?}
+\begin{opening}
+\begin{MCquestion}{Jake and Madi are riding a carousel that spins at a constant rate. Madi is closer to the centre of the carousel than Jake is. What can you say about their accelerations?}
 \item Both of their accelerations are zero
 \item Madi's acceleration is greater than Jake's
-\item Jake's acceleration is greater than Madi's
+\item Jake's acceleration is greater than Madi's %correct
 \item Madi and Jake have the same non-zero acceleration
-\end{choices}}
+\end{MCquestion}
 \end{opening}
 
 \section{Motion in two dimensions}
@@ -67,12 +68,13 @@ That is, the $x$ and $y$ components of the average velocity vector can be found 
 \end{align*}
 where $\Delta r$ is the magnitude of the displacement vector. Thus, the average speed is given by the distance covered divided by the time taken to cover that distance, in analogy to the one dimensional case.
 
-\begin{checkpoint}{\begin{choices}{A llama runs in a field from a position $(x_1,y_1)=(\SI{2}{m},\SI{5}{m})$ to a position $(x_2,y_2)=(\SI{6}{m},\SI{8}{m})$ in a time $\Delta t=\SI{0.5}{s}$, as measured by Marcel, a llama farmer standing at the origin of the Cartesian coordinate system. What is the average speed of the llama?}
+\begin{checkpoint}
+\begin{MCquestion}{A llama runs in a field from a position $(x_1,y_1)=(\SI{2}{m},\SI{5}{m})$ to a position $(x_2,y_2)=(\SI{6}{m},\SI{8}{m})$ in a time $\Delta t=\SI{0.5}{s}$, as measured by Marcel, a llama farmer standing at the origin of the Cartesian coordinate system. What is the average speed of the llama?}
 \item \SI{1}{m/s}
 \item \SI{5}{m/s}
 \item \SI{10}{m/s}%correct
 \item \SI{15}{m/s}
-\end{choices}}
+\end{MCquestion}
 \end{checkpoint}
 
 If the velocity of the object is not constant, then we define the \textbf{instantaneous velocity vector} by taking the limit $\Delta t\to 0$:
@@ -225,12 +227,12 @@ pl.show()
 As you can see, the trajectory is a parabola, and corresponds to what you would get when throwing an object with an initial velocity with upwards (positive $y$) and horizontal (positive $x$) components. If you look at only the $y$ axis, you will see that the object first goes up, then turns around and goes back down. This is exactly what happens when you throw a ball upwards, independently of whether the object is moving in the $x$ direction. In the $x$ direction, the object just moves with a constant velocity. The points on the graph are drawn for constant time intervals (the time between each point, $\Delta t$ is constant). If you look at the distance between points projected onto the $x$ axis, you will see that they are all equidistant and that along $x$, the motion corresponds to that of an object with constant velocity. 
 \end{example}
 
-\begin{checkpoint}{\begin{choices}{In example \ref{ex:DescribingMotionInND:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:DescribingMotionInND:parabola}?}
+\begin{checkpoint}{\begin{MCquestion}{In example \ref{ex:DescribingMotionInND:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:DescribingMotionInND:parabola}?}
 \item $\vec v=(\SI{10}{m/s})\hat x+(\SI{15}{m/s})\hat y$
 \item $\vec v=(\SI{15}{m/s})\hat y$
 \item $\vec v=(\SI{10}{m/s})\hat x$ %correct
 \item none of the above
-\end{choices}}
+\end{MCquestion}}
 \end{checkpoint}
 
 \subsection{Accelerated motion when the velocity vector changes direction}
@@ -301,12 +303,12 @@ In other words, when we write the acceleration vector, we can identify two compo
 \end{align*}
 where $\vec a_{\parallel}(t)$ is the component of the acceleration that is parallel to the velocity vector, and is responsible for changing its magnitude, and $\vec a_{\perp}(t)$, is the component that is perpendicular to the velocity vector and is responsible for changing the direction of the motion.
 
-\begin{checkpoint}{\begin{choices}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
+\begin{checkpoint}{\begin{MCquestion}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
 \item it has a magnitude of zero.
 \item it is perpendicular to the velocity vector.
 \item it is parallel to the velocity vector.
 \item it is in a direction other than parallel or perpendicular to the velocity vector.
-\end{choices}}
+\end{MCquestion}}
 \end{checkpoint}
 
 \subsection{Relative motion}
@@ -344,11 +346,11 @@ v_y'^A(t)&=v'^B_y+v_y^A(t)
 \end{align*}
 
 
-\begin{checkpoint}{\begin{choices}{You are on a boat and crossing a North-flowing river, from the East bank to the West bank. You point your boat in the West direction and cross the river. \chloe is watching your boat cross the river from the shore, in which direction does she measure your velocity vector to be?}
+\begin{checkpoint}{\begin{MCquestion}{You are on a boat and crossing a North-flowing river, from the East bank to the West bank. You point your boat in the West direction and cross the river. \chloe is watching your boat cross the river from the shore, in which direction does she measure your velocity vector to be?}
 \item in the North direction
 \item in the West direction
 \item a combination of North and West directions
-\end{choices}}
+\end{MCquestion}}
 \end{checkpoint}
 
 
@@ -494,15 +496,15 @@ where we introduced $\theta_0$ as the angle corresponding to the position $s_0$,
 \Aboxed{v_s=R\frac{d\theta}{dt}=R\omega }
 \end{align*}
 
-\begin{studentOpinion}{Olivia}{There's a trick I like to use to remember how linear and angular velocities work.Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2). Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1).This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular your hand, they will always point in the positive $s$ direction. 
+\begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2). Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
 
-Imagine that you have a blue glob of paint on the back of your pinky, then rotate your hand until it is in position (2). The length of the curve that the paint makes is the value of $s$. The angle between the back of your hand and the positive $x$-axis is $\theta$. Now, imagine that there is a red glob of paint at your palm. It takes the same amount of time for your palm to get from position (1) to position (2) as it does for your fingers. Since they both go through the same angle $\theta$ in the same amount of time, the \textbf{angular velocity}, $\omega$ must be the same for both. However, the blue line left by your fingers will be much longer than the red line left by your palm. Your fingers travelled a greater distance than your palm in the same amount of time, so they must have a greater \textbf{linear velocity}, $v_s$. The further you are from your thumb, the greater the linear velocity will be, which we know from the formula $v_s=R\omega$.
+Imagine that you have a blue glob of paint on the back of your pinky. Rotate your hand until it is in position (2). The length of the curve that the paint makes is the value of $s$. The angle between the back of your hand and the positive $x$-axis is $\theta$. Now, imagine that there is a red glob of paint at your palm. It takes the same amount of time for your palm to get from position (1) to position (2) as it does for your fingers. Since they both go through the same angle $\theta$ in the same amount of time, the \textbf{angular velocity}, $\omega$ must be the same for both. However, the blue line left by your fingers will be much longer than the red line left by your palm. Your fingers travelled a greater distance than your palm in the same amount of time, so they must have a greater \textbf{linear velocity}, $v_s$. The further you are from your thumb, the greater the linear velocity will be, which we know from the formula $v_s=R\omega$.
 
 If you kept rotating your hand around the circle, you would see that your fingers always point in the same  direction as your linear velocity. This means that if you are using cartesian coordinates, the direction of your linear velocity is always changing.
 
-There are a couple limitations to this ``trick". Remember that this only works for circular motion (the radius $R$ must be constant) and that if you are moving in the negative $s$ direction, your fingers will point antiparallel to the linear velocity.(TO DO: update diagram)
+There are a couple limitations to this trick. Remember that this only works for circular motion (the radius $R$ must be constant) and that if you are moving in the negative $s$ direction, your fingers will point antiparallel to the linear velocity.
 
-\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand circular motion}}
+\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand circular motion}
 \end{studentOpinion}
 
 Similarly, if the object is accelerating, we can define an \textbf{angular acceleration}, $\alpha(t)$, as the rate of change of the angular velocity:
@@ -556,13 +558,13 @@ where in the last equal sign, we wrote the centripetal acceleration in terms of 
 
 If an object goes around a circle, it will always have a centripetal acceleration (since its velocity vector must change direction). In addition, if the object's speed is changing, it will also have a linear acceleration, which points in the same direction as the velocity vector (it changes the velocity vector's length but not its direction).
 
-\begin{checkpoint}{\begin{choices}{A vicu\~na is going clockwise around a circle that is centred at the origin of an $xy$ coordinate system that is in the plane of the circle. The vicu\~na runs faster and faster around the circle. In which direction does its acceleration vector point just as the vicu\~na is at the point where the circle intersects the positive $y$ axis?}
+\begin{checkpoint}{\begin{MCquestion}{A vicu\~na is going clockwise around a circle that is centred at the origin of an $xy$ coordinate system that is in the plane of the circle. The vicu\~na runs faster and faster around the circle. In which direction does its acceleration vector point just as the vicu\~na is at the point where the circle intersects the positive $y$ axis?}
 \item In the negative $y$ direction
 \item In the positive $y$ direction
 \item A combination of the positive $y$ and positive $x$ directions
 \item A combination of the negative $y$ and positive $x$ directions %correct
 \item A combination of the negative $y$ and negative $x$ directions
-\end{choices}}
+\end{MCquestion}}
 \end{checkpoint}
 
 \subsection{Period and frequency}
@@ -590,26 +592,31 @@ and has SI units of $\si{Hz}=\si{s^{-1}}$. Think of frequency as the number of r
 \end{align*}
 which is sometimes called the ``angular frequency'' instead of the angular velocity. The angular velocity can really be thought of as a frequency, as it represents the ``amount of angle'' per second that an object covers when going around a circle. The angular velocity does not tell us anything about the actual speed of the object, which depends on the radius $v=\omega R$. This is illustrated in Figure \ref{fig:DescribingMotionInND:twocircles}, where two objects can be travelling around two circles of radius $R_1$ and $R_2$ with the same angular velocity $\omega$. If they have the same angular velocity, then it will take them the same amount of time to complete a revolution. However, the outer object has to cover a much larger distance (the circumference is larger), and thus has to move with a larger linear speed.
 
-\begin{checkpoint}{\begin{choices}{A motor is rotating at \SI{3000}{rpm}, what is the corresponding frequency in \si{Hz}?}
+\begin{checkpoint}{\begin{MCquestion}{A motor is rotating at \SI{3000}{rpm}, what is the corresponding frequency in \si{Hz}?}
 \item \SI{5}{Hz}
 \item \SI{50}{Hz}%correct
 \item \SI{500}{Hz}
-\end{choices}}
+\end{MCquestion}}
 \end{checkpoint}
 
 
 \newpage
 \section{Summary}
-\begin{chapterSummary}{
-\item Something interesting}
+\begin{chapterSummary}
+\item Something interesting
 \end{chapterSummary}
 
-\begin{importantEquations}{}
+\begin{importantEquations}
+Equations
 \end{importantEquations}
 
 \newpage
 \section{Thinking about the material}
 \subsection{Reflect and research}
+\begin{tQuestion}A question
+\end{tQuestion}
+\begin{tQuestion}Another question
+\end{tQuestion}
 \subsection{To try at home}
 \subsection{To try in the lab}
 
