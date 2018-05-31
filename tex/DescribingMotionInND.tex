@@ -238,7 +238,7 @@ As you can see, the trajectory is a parabola, and corresponds to what you would 
 \subsection{Accelerated motion when the velocity vector changes direction}
 \label{sec:DescribingMotionInND:accvconst}
 One key difference with one dimensional motion is that, in two dimensions, it is possible to have a non-zero acceleration even when the speed is constant. Recall, the acceleration \textbf{vector} is defined as the time derivative of the velocity \textbf{vector} (equation \ref{eqn:DescribingMotionInND:avecdef}). This means that if the velocity vector changes with time, then the acceleration vector is non-zero. The length of the velocity vector is called the speed. If the length of the velocity vector (speed) is constant, it is still possible that the \textbf{direction} of the velocity vector changes with time, and thus, that the acceleration vector is non-zero. In this case, the acceleration would not result in a change of speed, but rather in a change of the direction of motion. This is exactly what happens when an object goes around in a circle with a constant speed (the direction of the velocity vector changes). 
-\rwcapfig[14]{0.35\textwidth}{figures/DescribingMotionInND/deltav.png}{\label{fig:DescribingMotionInND:deltav} Illustration of how the direction of the velocity vector can change when speed is constant.}
+\capfig{0.35\textwidth}{figures/DescribingMotionInND/deltav.png}{\label{fig:DescribingMotionInND:deltav} Illustration of how the direction of the velocity vector can change when speed is constant.}
 
 Figure \ref{fig:DescribingMotionInND:deltav} shows an illustration of a velocity vector, $\vec v(t)$, at two different times, $\vec v_1$ and $\vec v_2$, as well as the vector difference, $\Delta \vec v=\vec v_2 - \vec v_1$, between the two. In this case, the length of the velocity vector did not change with time ($||\vec v_1||=||\vec v_2||$). The acceleration vector is given by:
 \begin{align*}
@@ -284,7 +284,7 @@ In other words, if the magnitude of the velocity is constant, then the $x$ and $
 &=\frac{dv_x}{dt}\hat x - \frac{v_x(t)}{v_y(t)}\frac{dv_x}{dt}\hat y\nonumber\\
 \therefore\quad\Aboxed{\vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)}
 \end{align}
-where most of the algebra that we did was to separate out the $x$ and $y$ components of the acceleration vector. The resulting acceleration vector is illustrated in Figure \ref{fig:DescribingMotionInND:aperpv} along with the velocity vector. Rather, a vector parallel to the acceleration vector is illustrated, as the factor of $\frac{dv_x}{dt}$ was omitted (as you recall, multiplying by a scalar only changes the length, not the direction). The velocity vector has components $v_x$ and $v_y$, which allows us to calculate the angle, $\theta$ that it makes with the $x$ axis:
+where most of the algebra that we did was to separate the $x$ and $y$ components of the acceleration vector. The resulting acceleration vector is illustrated in Figure \ref{fig:DescribingMotionInND:aperpv} along with the velocity vector. Rather, a vector parallel to the acceleration vector is illustrated, as the factor of $\frac{dv_x}{dt}$ was omitted (as you recall, multiplying by a scalar only changes the length, not the direction). The velocity vector has components $v_x$ and $v_y$, which allows us to calculate the angle, $\theta$ that it makes with the $x$ axis:
 \begin{align*}
 \tan(\theta)=\frac{v_y}{v_x}
 \end{align*}
@@ -322,7 +322,7 @@ In two dimensions, we proceed in exactly the same way, but use vectors instead:
 \begin{align*}
 \pvec r'^A(t) = \pvec v'^Bt+\vec r^A(t)
 \end{align*}
-where $r^A(t)$ is the position of the object as described in the $xy$ reference frame, $\pvec v'^B$, is the velocity vector describing the motion of the origin of the $xy$ coordinate system relative to an $x'y'$ coordinate system. $\pvec r'^A(t)$ is the position of the object in the $x'y'$ coordinate system. We have assumed that the origins of the two coordinate systems coincided at $t=0$ and that the axes of the coordinate systems are parallel ($x$ parallel to $x'$ and $y$ parallel to $y'$).
+where $r^A(t)$ is the position of the object as described in the $xy$ reference frame, $\pvec v'^B$, is the velocity vector describing the motion of the origin of the $xy$ coordinate system relative to an $x'y'$ coordinate system and $\pvec r'^A(t)$ is the position of the object in the $x'y'$ coordinate system. We have assumed that the origins of the two coordinate systems coincided at $t=0$ and that the axes of the coordinate systems are parallel ($x$ parallel to $x'$ and $y$ parallel to $y'$).
 
 Note that the velocity of the object in the $x'y'$ system is found by adding the velocity of $xy$ relative to $x'y'$ and the velocity of the object in the $xy$ frame ($\vec v^A(t)$):
 \begin{align*}
@@ -422,7 +422,7 @@ x^2(t)+y^2(t)=R^2
 \end{align*}
 Instead of using $x$ and $y$, we could think of an axis that is bent around the circle (as shown by the curved arrow in Figure \ref{fig:DescribingMotionInND:circle}, the $s$ axis). The $s$ axis is such that $s=0$ where the circle intersects the $x$ axis, and the value of $s$ increases as we move counter-clockwise along the circle. Distance along the $s$ axis thus corresponds to the distance along the circumference of the circle.
 
-Another variable that could be used for position instead of $s$ is the angle, $\theta$, between the position vector of the object and the $x$ axis, as illustrated in Figure \ref{fig:DescribingMotionInND:circle}. If we express the angle $\theta$ in radians, then it easy to convert between $s$ and $\theta$. Recall, an angle in radians is defined as the length of an arc subtended by that angle divided by the radius of the circle. We thus have:
+Another variable that could be used for position instead of $s$ is the angle, $\theta$, between the position vector of the object and the $x$ axis, as illustrated in Figure \ref{fig:DescribingMotionInND:circle}. If we express the angle $\theta$ in radians, then it is easy to convert between $s$ and $\theta$. Recall, an angle in radians is defined as the length of an arc subtended by that angle divided by the radius of the circle. We thus have:
 \begin{align}
 \label{eqn:DescribingMotionInND:raddef}
 \Aboxed{\theta(t)=\frac{s(t)}{R}}
@@ -495,17 +495,6 @@ where we introduced $\theta_0$ as the angle corresponding to the position $s_0$,
 \begin{align*}
 \Aboxed{v_s=R\frac{d\theta}{dt}=R\omega }
 \end{align*}
-
-\begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2). Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
-
-Imagine that you have a blue glob of paint on the back of your pinky. Rotate your hand until it is in position (2). The length of the curve that the paint makes is the value of $s$. The angle between the back of your hand and the positive $x$-axis is $\theta$. Now, imagine that there is a red glob of paint at your palm. It takes the same amount of time for your palm to get from position (1) to position (2) as it does for your fingers. Since they both go through the same angle $\theta$ in the same amount of time, the \textbf{angular velocity}, $\omega$ must be the same for both. However, the blue line left by your fingers will be much longer than the red line left by your palm. Your fingers travelled a greater distance than your palm in the same amount of time, so they must have a greater \textbf{linear velocity}, $v_s$. The further you are from your thumb, the greater the linear velocity will be, which we know from the formula $v_s=R\omega$.
-
-If you kept rotating your hand around the circle, you would see that your fingers always point in the same  direction as your linear velocity. This means that if you are using cartesian coordinates, the direction of your linear velocity is always changing.
-
-There are a couple limitations to this trick. Remember that this only works for circular motion (the radius $R$ must be constant) and that if you are moving in the negative $s$ direction, your fingers will point antiparallel to the linear velocity.
-
-\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand circular motion}
-\end{studentOpinion}
 
 Similarly, if the object is accelerating, we can define an \textbf{angular acceleration}, $\alpha(t)$, as the rate of change of the angular velocity:
 \begin{align*}
@@ -610,6 +599,18 @@ which is sometimes called the ``angular frequency'' instead of the angular veloc
 Equations
 \end{importantEquations}
 
+\begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2). Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
+
+Imagine that you have a blue glob of paint on the back of your pinky. Rotate your hand until it is in position (2). The length of the curve that the paint makes is the value of $s$. The angle between the back of your hand and the positive $x$-axis is $\theta$. Now, imagine that there is a red glob of paint at your palm. It takes the same amount of time for your palm to get from position (1) to position (2) as it does for your fingers. Since they both go through the same angle $\theta$ in the same amount of time, the \textbf{angular velocity}, $\omega$ must be the same for both. However, the blue line left by your fingers will be much longer than the red line left by your palm. Your fingers travelled a greater distance than your palm in the same amount of time, so they must have a greater \textbf{linear velocity}, $v_s$. The further you are from your thumb, the greater the linear velocity will be, which we know from the formula $v_s=R\omega$.
+
+If you kept rotating your hand around the circle, you would see that your fingers always point in the same  direction as your linear velocity. This means that if you are using cartesian coordinates, the direction of your linear velocity is always changing.
+
+There are a couple of limitations to this trick. Remember that this only works for circular motion (the radius $R$ must be constant) and that if you are moving in the negative $s$ direction, your fingers will point antiparallel to the linear velocity.
+
+\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand circular motion}
+\end{studentOpinion}
+
+
 \newpage
 \section{Thinking about the material}
 \subsection{Reflect and research}
@@ -618,6 +619,9 @@ Equations
 \begin{tQuestion}Another question
 \end{tQuestion}
 \subsection{To try at home}
+
+\begin{tQuestion}All you need for this exercise are two identical objects that you can throw, one other person, and something tall that you can drop the objects from. Both people should hold the objects at the exact same height. One person will drop their object, and the other person will give their object an initial horizontal velocity by throwing it straight forward (make sure they don't throw it up or down!). Which object do you expect to land first? Why? If you do not see the results you expect, think of reasons why that might be. \end{tQuestion}
+
 \subsection{To try in the lab}
 
 \section{Sample problems and solutions}
@@ -726,7 +730,7 @@ v^L+v'^H&=v'^L
 \end{align*}
 We are adding velocities, which have both a magnitude and a direction. However, we were not given any directions in the problem, so we describe the directions with respect to our coordinate system. The way we have set up our axes, the velocity of the hawk in the cowboy's reference frame is simply $\SI{50}{km/h}$ in the positive $y'$ direction.\\
 
-Now here's the key to solving this problem: We don't know the speed of the lasso in the cowboy's reference frame, but we do know something about its direction. Since the motion of the lasso is circular, it's velocity must be tangent to the circle. This means that when the lasso is directly in front of the hawk, its velocity must be in either the $+x'$ or $-x'$ direction. In this case, we can just choose one, so we will choose the $+x'$ direction.
+Now here's the key to solving this problem: We don't know the speed of the lasso in the cowboy's reference frame, but we do know something about its direction. Since the motion of the lasso is circular, its velocity must be tangent to the circle. This means that when the lasso is directly in front of the hawk, its velocity must be in either the $+x'$ or $-x'$ direction. In this case, we can just choose one, so we will choose the $+x'$ direction.
 \capfig{0.5\textwidth}{figures/DescribingMotionInND/CowboySolution.png}{\label{fig:CowboySolution}The two coordinate systems are aligned so that positive $y'$ and positive $y$ are in the same direction. The velocity vectors of the hawk and the lasso in the reference frame of the cowboy are shown.}
 The velocity vectors $v'^H$ and $v'^L$ are shown in Figure \ref{fig:CowboySolution}. Remember that when we add two vectors they must be lined up so that the ``head" of one touches the ``tail" of the other, so there can only be one direction for $v^L$, as shown in Figure \ref{fig:CowboyVector}. 
 \capfig{0.25\textwidth}{figures/DescribingMotionInND/CowboyVectorAddition.png}{\label{fig:CowboyVector} Vector addition to determine the velocity of the lasso in the cowboy's reference frame.}
@@ -749,7 +753,7 @@ T&={2\pi}\frac{R}{v}\\
 T&=\SI{1.0}{s}
 \end{align*}
 $\therefore$ it takes $\SI{1.0}{s}$ for the lasso to complete one revolution.
-\item The motion is circular, so it has a centripetal acceleration given by
+\item The motion is uniform circular motion, so it has a centripetal acceleration given by
 \begin{align*}
 a_c(t)&=\frac{v^2(t)}{R}
 \end{align*}
@@ -762,6 +766,3 @@ $\therefore$ the centripetal acceleration of the end of the lasso is $\SI{56}{m/
 \item You may be tempted to divide the centripetal acceleration by $R$ to find the angular acceleration $\alpha$. However, the angular acceleration is the rate of change of the angular velocity. For circular motion, the angular velocity is constant, so \textbf{the angular acceleration is zero}. (Remember that in the equation $a_s=R\alpha$, $a_s$ refers to the component of acceleration that is parallel to the velocity. For circular motion, $a_s$ is zero.)
 \end{enumerate}}
 \end{solution}
-
-
-
