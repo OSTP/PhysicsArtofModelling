@@ -1,14 +1,22 @@
 
 \chapter{Describing motion in multiple dimensions}
-\label{chap:describingmotioninnd}
+\label{chapter:describingmotioninnd}
 In this chapter, we will learn how to extend our description of an object's motion to two and three dimensions by using vectors. We will also consider the specific case of an object moving along the circumference of a circle. 
 
-\vspace{1cm}
-\begin{learningObjectives}
-\item Describe motion in a 2D plane.
-\item Describe motion in 3D space.
-\item Describe motion along the circumference of a circle.
+\begin{learningObjectives}{
+ \item Describe motion in a 2D plane.
+ \item Describe motion in 3D space.
+ \item Describe motion along the circumference of a circle.}
 \end{learningObjectives}
+
+\begin{opening}
+\begin{MCquestion}{Jake and Madi are riding a carousel that spins at a constant rate. Madi is closer to the centre of the carousel than Jake is. What can you say about their accelerations?}
+\item Both of their accelerations are zero
+\item Madi's acceleration is greater than Jake's
+\item Jake's acceleration is greater than Madi's %correct
+\item Madi and Jake have the same non-zero acceleration
+\end{MCquestion}
+\end{opening}
 
 \section{Motion in two dimensions}
 
@@ -60,12 +68,14 @@ That is, the $x$ and $y$ components of the average velocity vector can be found 
 \end{align*}
 where $\Delta r$ is the magnitude of the displacement vector. Thus, the average speed is given by the distance covered divided by the time taken to cover that distance, in analogy to the one dimensional case.
 
-\begin{checkpointMC}{A llama runs in a field from a position $(x_1,y_1)=(\SI{2}{m},\SI{5}{m})$ to a position $(x_2,y_2)=(\SI{6}{m},\SI{8}{m})$ in a time $\Delta t=\SI{0.5}{s}$, as measured by Marcel, a llama farmer standing at the origin of the Cartesian coordinate system. What is the average speed of the llama?}
+\begin{checkpoint}
+\begin{MCquestion}{A llama runs in a field from a position $(x_1,y_1)=(\SI{2}{m},\SI{5}{m})$ to a position $(x_2,y_2)=(\SI{6}{m},\SI{8}{m})$ in a time $\Delta t=\SI{0.5}{s}$, as measured by Marcel, a llama farmer standing at the origin of the Cartesian coordinate system. What is the average speed of the llama?}
 \item \SI{1}{m/s}
 \item \SI{5}{m/s}
 \item \SI{10}{m/s}%correct
 \item \SI{15}{m/s}
-\end{checkpointMC}
+\end{MCquestion}
+\end{checkpoint}
 
 If the velocity of the object is not constant, then we define the \textbf{instantaneous velocity vector} by taking the limit $\Delta t\to 0$:
 \begin{align}
@@ -217,12 +227,13 @@ pl.show()
 As you can see, the trajectory is a parabola, and corresponds to what you would get when throwing an object with an initial velocity with upwards (positive $y$) and horizontal (positive $x$) components. If you look at only the $y$ axis, you will see that the object first goes up, then turns around and goes back down. This is exactly what happens when you throw a ball upwards, independently of whether the object is moving in the $x$ direction. In the $x$ direction, the object just moves with a constant velocity. The points on the graph are drawn for constant time intervals (the time between each point, $\Delta t$ is constant). If you look at the distance between points projected onto the $x$ axis, you will see that they are all equidistant and that along $x$, the motion corresponds to that of an object with constant velocity. 
 \end{example}
 
-\begin{checkpointMC}{In example \ref{ex:DescribingMotionInND:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:DescribingMotionInND:parabola}?}
+\begin{checkpoint}{\begin{MCquestion}{In example \ref{ex:DescribingMotionInND:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:DescribingMotionInND:parabola}?}
 \item $\vec v=(\SI{10}{m/s})\hat x+(\SI{15}{m/s})\hat y$
 \item $\vec v=(\SI{15}{m/s})\hat y$
 \item $\vec v=(\SI{10}{m/s})\hat x$ %correct
 \item none of the above
-\end{checkpointMC}
+\end{MCquestion}}
+\end{checkpoint}
 
 \subsection{Accelerated motion when the velocity vector changes direction}
 \label{sec:DescribingMotionInND:accvconst}
@@ -292,12 +303,13 @@ In other words, when we write the acceleration vector, we can identify two compo
 \end{align*}
 where $\vec a_{\parallel}(t)$ is the component of the acceleration that is parallel to the velocity vector, and is responsible for changing its magnitude, and $\vec a_{\perp}(t)$, is the component that is perpendicular to the velocity vector and is responsible for changing the direction of the motion.
 
-\begin{checkpointMC}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
+\begin{checkpoint}{\begin{MCquestion}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
 \item it has a magnitude of zero.
 \item it is perpendicular to the velocity vector.
 \item it is parallel to the velocity vector.
 \item it is in a direction other than parallel or perpendicular to the velocity vector.
-\end{checkpointMC}
+\end{MCquestion}}
+\end{checkpoint}
 
 \subsection{Relative motion}
 In the previous chapter, we examined how to convert the description of motion from one reference frame to another. Recall the one dimensional situation where we described the position of an object, $A$, using an axis $x$ as $x^A(t)$. Suppose that the reference frame, $x$, is moving with a constant speed, $v'^B$, relative to a second reference frame, $x'$. We found that the position of the object is described in the $x'$ reference frame as:
@@ -334,11 +346,12 @@ v_y'^A(t)&=v'^B_y+v_y^A(t)
 \end{align*}
 
 
-\begin{checkpointMC}{You are on a boat and crossing a North-flowing river, from the East bank to the West bank. You point your boat in the West direction and cross the river. \chloe is watching your boat cross the river from the shore, in which direction does she measure your velocity vector to be?}
+\begin{checkpoint}{\begin{MCquestion}{You are on a boat and crossing a North-flowing river, from the East bank to the West bank. You point your boat in the West direction and cross the river. \chloe is watching your boat cross the river from the shore, in which direction does she measure your velocity vector to be?}
 \item in the North direction
 \item in the West direction
 \item a combination of North and West directions
-\end{checkpointMC}
+\end{MCquestion}}
+\end{checkpoint}
 
 
 \section{Motion in three dimensions}
@@ -400,7 +413,6 @@ and the position vector is given by:
 \end{align*}
 where again, we see how writing a single vector equation (e.g. $\vec v(t) = \vec v_0+\vec at$) is really just a way to write the three independent equations that are true for each component.
 \section{Circular motion}
-\label{sec:describingmotioninnd:circular}
 We often consider the motion of an object around a circle of fixed radius, $R$. In principle, this is motion in two dimensions, as a circle is necessarily in a two dimensional plane. However, since the object is constrained to move along the circumference of the circle, it can be thought of (and treated as) motion along a one dimensional axis that is curved. 
 \capfig{0.35\textwidth}{figures/DescribingMotionInND/circle.png}{\label{fig:DescribingMotionInND:circle} Describing the motion of an object around a circle of radius $R$.}
 
@@ -484,10 +496,16 @@ where we introduced $\theta_0$ as the angle corresponding to the position $s_0$,
 \Aboxed{v_s=R\frac{d\theta}{dt}=R\omega }
 \end{align*}
 
-\begin{studentopinionOW}{A way to think about angular and linear velocity}
-TO DO: Explain figure
-\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand polar coordinates}
-\end{studentopinionOW}
+\begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2). Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
+
+Imagine that you have a blue glob of paint on the back of your pinky. Rotate your hand until it is in position (2). The length of the curve that the paint makes is the value of $s$. The angle between the back of your hand and the positive $x$-axis is $\theta$. Now, imagine that there is a red glob of paint at your palm. It takes the same amount of time for your palm to get from position (1) to position (2) as it does for your fingers. Since they both go through the same angle $\theta$ in the same amount of time, the \textbf{angular velocity}, $\omega$ must be the same for both. However, the blue line left by your fingers will be much longer than the red line left by your palm. Your fingers travelled a greater distance than your palm in the same amount of time, so they must have a greater \textbf{linear velocity}, $v_s$. The further you are from your thumb, the greater the linear velocity will be, which we know from the formula $v_s=R\omega$.
+
+If you kept rotating your hand around the circle, you would see that your fingers always point in the same  direction as your linear velocity. This means that if you are using cartesian coordinates, the direction of your linear velocity is always changing.
+
+There are a couple limitations to this trick. Remember that this only works for circular motion (the radius $R$ must be constant) and that if you are moving in the negative $s$ direction, your fingers will point antiparallel to the linear velocity.
+
+\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand circular motion}
+\end{studentOpinion}
 
 Similarly, if the object is accelerating, we can define an \textbf{angular acceleration}, $\alpha(t)$, as the rate of change of the angular velocity:
 \begin{align*}
@@ -540,13 +558,14 @@ where in the last equal sign, we wrote the centripetal acceleration in terms of 
 
 If an object goes around a circle, it will always have a centripetal acceleration (since its velocity vector must change direction). In addition, if the object's speed is changing, it will also have a linear acceleration, which points in the same direction as the velocity vector (it changes the velocity vector's length but not its direction).
 
-\begin{checkpointMC}{A vicu\~na is going clockwise around a circle that is centred at the origin of an $xy$ coordinate system that is in the plane of the circle. The vicu\~na runs faster and faster around the circle. In which direction does its acceleration vector point just as the vicu\~na is at the point where the circle intersects the positive $y$ axis?}
+\begin{checkpoint}{\begin{MCquestion}{A vicu\~na is going clockwise around a circle that is centred at the origin of an $xy$ coordinate system that is in the plane of the circle. The vicu\~na runs faster and faster around the circle. In which direction does its acceleration vector point just as the vicu\~na is at the point where the circle intersects the positive $y$ axis?}
 \item In the negative $y$ direction
 \item In the positive $y$ direction
 \item A combination of the positive $y$ and positive $x$ directions
 \item A combination of the negative $y$ and positive $x$ directions %correct
 \item A combination of the negative $y$ and negative $x$ directions
-\end{checkpointMC}
+\end{MCquestion}}
+\end{checkpoint}
 
 \subsection{Period and frequency}
 When an object is moving around in a circle, it will typically complete more than one revolution. If the object is going around the circle with a constant speed, we call the motion ``uniform circular motion'', and we can define the \textbf{period and frequency} of the motion. 
@@ -573,36 +592,123 @@ and has SI units of $\si{Hz}=\si{s^{-1}}$. Think of frequency as the number of r
 \end{align*}
 which is sometimes called the ``angular frequency'' instead of the angular velocity. The angular velocity can really be thought of as a frequency, as it represents the ``amount of angle'' per second that an object covers when going around a circle. The angular velocity does not tell us anything about the actual speed of the object, which depends on the radius $v=\omega R$. This is illustrated in Figure \ref{fig:DescribingMotionInND:twocircles}, where two objects can be travelling around two circles of radius $R_1$ and $R_2$ with the same angular velocity $\omega$. If they have the same angular velocity, then it will take them the same amount of time to complete a revolution. However, the outer object has to cover a much larger distance (the circumference is larger), and thus has to move with a larger linear speed.
 
-\begin{checkpointMC}{A motor is rotating at \SI{3000}{rpm}, what is the corresponding frequency in \si{Hz}?}
+\begin{checkpoint}{\begin{MCquestion}{A motor is rotating at \SI{3000}{rpm}, what is the corresponding frequency in \si{Hz}?}
 \item \SI{5}{Hz}
 \item \SI{50}{Hz}%correct
 \item \SI{500}{Hz}
-\end{checkpointMC}
+\end{MCquestion}}
+\end{checkpoint}
 
 
 \newpage
 \section{Summary}
-\vspace{2cm}
 \begin{chapterSummary}
 \item Something interesting
 \end{chapterSummary}
 
+\begin{importantEquations}
+Equations
+\end{importantEquations}
+
+\newpage
+\section{Thinking about the material}
+\subsection{Reflect and research}
+\begin{tQuestion}A question
+\end{tQuestion}
+\begin{tQuestion}Another question
+\end{tQuestion}
+\subsection{To try at home}
+\subsection{To try in the lab}
+
 \section{Sample problems and solutions}
-\begin{problemParts}{Ethan is jumping hurdles in the Olympics. He gets a running start, moving with a velocity of $\SI{4}{m/s}$ [E], and will not slow down before jumping. The hurdle is $\SI{1}{m}$ high and the maximum speed he can have when he leaves the ground is $\SI{5}{m/s}$. (You can assume Ethan is a point particle).}
+\subsection{Problems}
+\begin{problemParts}{Ethan is jumping hurdles. He gets a running start, moving with a velocity of $\SI{3}{m/s}$ [E], and will not slow down before jumping. The hurdle is $\SI{0.5}{m}$ high and the maximum speed he can have when he leaves the ground is $\SI{5}{m/s}$. (You can assume Ethan is a point particle).\label{Q:hurdles}}
 \item How close can he get to the hurdle before he has to jump?
 \item What maximum height does he reach?
-\item Where does he land?
 \end{problemParts}
 
-\begin{problemParts}{A cowboy swings a lasso above his head. The lasso moves in a circle of radius $\SI{1.5}{m}$ in the horizontal plane. A hawk flies toward the lasso at $\SI{50}{km/h}$. The hawk sees the end of the lasso moving at $\SI{60}{km/h}$ when the lasso is directly in front of it (see Figure \ref{fig:CowboyQuestion}). In the reference frame of the cowboy ...}
+\begin{problemParts}{A cowboy swings a lasso above his head. The lasso moves in a circle of radius $\SI{1.5}{m}$ in the horizontal plane. A hawk flies toward the lasso at $\SI{50}{km/h}$. The hawk sees the end of the lasso moving at $\SI{60}{km/h}$ when the lasso is directly in front of it (see Figure \ref{fig:CowboyQuestion}). In the reference frame of the cowboy ...\label{Q:cowboy}}
 \item How long does it take for the lasso to complete one revolution?
 \item What is the centripetal acceleration of the end of the lasso? 
 \item What is the angular acceleration of the lasso?
 \capfig{0.5\textwidth}{figures/DescribingMotionInND/CowboyQuestionGiven.png}{\label{fig:CowboyQuestion} The problem as viewed from above. This diagram depicts the moment that the end of the lasso passes in front of the hawk.}
 \end{problemParts} 
 
+\newpage
+\subsection{Solutions}
+\begin{solution}{\ref{Q:hurdles}}{
+Our approach will be to consider the $x$ and $y$ components separately. We start by drawing a diagram and setting up our coordinate axes. We will set ``up" to be in the positive $y$ direction.
+\begin{enumerate}[label=\alph*)]
+\item We are given that Ethan's maximum initial speed is $\SI{5}{m/s}$ and that the horizontal component of his velocity must be at least $\SI{3}{m/s}$. The first question we need to answer is whether we want the horizontal component to be equal to or greater than $\SI{3}{m/s}$. For this question, we want to minimize the horizontal distance and maximize the vertical distance. This means that we want as much of our initial velocity as possible to be in the $y$ direction. In order to do this, we want to minimize the $x$ component, so $v_x=\SI{3}{m/s}$. To find the $y$ component of the initial velocity, we use the Pythagorean theorem: 
+\begin{align*}
+v_x^2+v_y^2&=v^2\\
+v_y&=\sqrt{v^2-v_x^2}\\
+v_y&=\SI{4}{m/s}
+\end{align*}
+Now is a good time to take stock of our knowns and unknowns using a table:
+\begin{table}[H]
+\centering
+\label{KnownsUnknownsHurdleProb}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{$x$} (constant velocity)          & \textbf{$y$}  (constant acceleration) \\ \hline
+$v_x = \SI{3}{m/s}$          & $v_{0y} = \SI{4}{m/s}$   \\
+$x = ?$   & $v_{y} = ?$ \\
+$t = ?$ & $y = \SI{0.5}{m}$  \\
+                   & $t = ?$                    \\
+                 & $a_y = \SI{-9.8}{m/s^2}$                 
+\end{tabular}
+\end{table}
+The horizontal and vertical displacements are given by the equations,
+\begin{align*}
+x&=v_{x}t\\
+y&=v_{0y}t+\frac{1}{2}a_yt^2
+\end{align*}
+We are interested in the value of $x$ when the vertical displacement $y$ is equal to the height of the hurdle. So we will find the value of $t$ when $y=\SI{0.5}{m}$ and find the value of $x$ at this time.\\
+First, rearrange the equation for $y$ and solve the quadratic:
+\begin{align*}
+0&=\frac{1}{2}a_yt^2+v_{0y}t-y\\
+0&=\frac{1}{2}(\SI{-9.8}{m/s^2})t^2+(\SI{4}{m/s})t-\SI{0.5}{m}\\
+t&=\SI{0.15}{s}, \SI{0.66}{s}
+\end{align*}
+We want to know when Ethan reaches $\SI{0.5}{m}$ for the first time, so $t=\SI{0.15}{s}$. All that's left is to find the horizontal displacement at this time:
+\begin{align*}
+x&=v_xt\\
+&=(\SI{3}{m/s})(\SI{0.15}{s})\\
+&=\SI{0.45}{m}
+\end{align*}
+$\therefore$ he can get as close as $\SI{0.45}{m}$ from the hurdle before he has to jump.
+\item Ethan's motion follows a parabolic shape. At the maximum height, Ethan's vertical velocity is equal to zero. Our known values are,
+\begin{align*}
+v_{0y}&=\SI{3}{m/s}\\
+v_y&=\SI{0}{m/s}\\
+a_y&=\SI{-9.8}{m/s^2}
+\end{align*}
+, which leaves two unknowns: $t$ and $y_{max}$. Since we have two unknowns we need two equations. We can use our equations for velocity and for displacement:
+\begin{align*}
+v_y&=v_{0y}+a_yt\\
+y_{max}&=v_{0y}t+\frac{1}{2}at^2
+\end{align*}
+Rearranging the equation for $v_y$, and using $v_y=0$ gives
+\begin{align*}
+t&=\frac{v_y-v_{0y}}{a_y}\\
+t&=-\frac{v_{0y}}{a_y}
+\end{align*}
+We substitute this into the equation for $y_max$:
+\begin{align*}
+y_{max}&=-(\frac{v_{0y}^2}{a_y})+\frac{1}{2}a_y\frac{v_{0y}^2}{a_y^2}\\
+&=-\frac{1}{2}\frac{v_{0y}^2}{a_y}\\
+&=-\frac{1}{2}\frac{\SI{4}{m/s}^2}{\SI{-9.8}{m/s^2}}\\
+y_{max}&=\SI{0.82}{m}
+\end{align*}
+$\therefore$ Ethan reaches a maximum height of $\SI{0.82}{m}$. \\
 
-\textbf{Solution:}
+(Note: there is more than one way to solve for $y_max$)
+\end{enumerate}}
+\end{solution}
+
+\newpage
+\begin{solution}{\ref{Q:cowboy}}{
 \begin{enumerate}[label=\alph*)]
 \item Our goal is the find the period of the lasso's motion. To do this, we can use the formula, 
 \begin{align*}
@@ -654,8 +760,8 @@ a_c(t)&=\SI{56}{m/s^2}
 \end{align*}
 $\therefore$ the centripetal acceleration of the end of the lasso is $\SI{56}{m/s^2}$ towards the centre of the circle. 
 \item You may be tempted to divide the centripetal acceleration by $R$ to find the angular acceleration $\alpha$. However, the angular acceleration is the rate of change of the angular velocity. For circular motion, the angular velocity is constant, so \textbf{the angular acceleration is zero}. (Remember that in the equation $a_s=R\alpha$, $a_s$ refers to the component of acceleration that is parallel to the velocity. For circular motion, $a_s$ is zero.)
-\end{enumerate}
-
+\end{enumerate}}
+\end{solution}
 
 
 
