@@ -258,10 +258,10 @@
     innertopmargin={0.5cm},
     linecolor=TBred,%
     linewidth=1pt,topline=true,%
-    %frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
-    frametitleaboveskip=-\strutbox
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+    %frametitleaboveskip=-\strutbox
 }
-\begin{mdframed}[]\relax #1 \newline \newline { \color{TBred}\textsf{\large Solution}} \\ {\color{TBred}\rule[10pt]{\textwidth}{1pt}} \\ #2}{%
+\begin{mdframed}[]\relax #1 \leavevmode \\ \newline { \color{TBred}\textsf{\large Solution}} \\ {\color{TBred}\rule[10pt]{\textwidth}{1pt}} \\ #2}{%
 \end{mdframed}}
 
 %%Checkpoint question in a box, with counter:
@@ -293,8 +293,10 @@
         \node[anchor=west,rectangle,fill=TBorange, minimum width=5cm,rounded corners=0.2cm]
         {\strut #1's Thoughts};},
     frametitlefont=\color{white}\sffamily\bfseries,
-    innertopmargin=0pt,linecolor=TBorange,%
-    linewidth=1pt,topline=true,%
+    linecolor=TBorange,%
+    linewidth=1pt,topline=true,
+    skipabove=\strutbox,
+    innertopmargin={0.5cm},%
     frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
 }
 \vspace{10pt}
@@ -314,7 +316,7 @@
     frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
 }
 \vspace{10pt}
-\begin{mdframed}[nobreak=true]\relax #1}{%
+\begin{mdframed}[nobreak=false]\relax #1}{%
 \end{mdframed}}
 
 %%Key Takeaways:
@@ -343,7 +345,7 @@
 \def\therQuestion{\thechapter-\arabic{tQuestion}}
 
 \newenvironment{tQuestion}[1]{\refstepcounter{tQuestion}%
-    \textbf{ Activity~\therQuestion: }#1}
+    \textbf{Activity~\therQuestion: }#1}
 
 %%Environments to be deleted once we transfer to new environments
 %%MC checkpoint
@@ -439,7 +441,7 @@
 \include{DescribingMotionIn1D}
 \include{DescribingMotionInND}
 \include{NewtonsLaws}
-%\include{SpecialRelativity}
+\include{SpecialRelativity}
 
 %Newton's Laws
 %Applying Newton's Laws
@@ -470,6 +472,6 @@
 \include{Calculus}
 \include{Vectors}
 \include{Python}
-AppendixB vectors
+%AppendixB vectors
 
 \end{document}
