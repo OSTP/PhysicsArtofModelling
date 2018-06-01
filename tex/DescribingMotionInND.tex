@@ -226,7 +226,6 @@ pl.show()
 \end{poutput}
 As you can see, the trajectory is a parabola, and corresponds to what you would get when throwing an object with an initial velocity with upwards (positive $y$) and horizontal (positive $x$) components. If you look at only the $y$ axis, you will see that the object first goes up, then turns around and goes back down. This is exactly what happens when you throw a ball upwards, independently of whether the object is moving in the $x$ direction. In the $x$ direction, the object just moves with a constant velocity. The points on the graph are drawn for constant time intervals (the time between each point, $\Delta t$ is constant). If you look at the distance between points projected onto the $x$ axis, you will see that they are all equidistant and that along $x$, the motion corresponds to that of an object with constant velocity. 
 \end{example}
-
 \begin{checkpoint}{\begin{MCquestion}{In example \ref{ex:DescribingMotionInND:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:DescribingMotionInND:parabola}?}
 \item $\vec v=(\SI{10}{m/s})\hat x+(\SI{15}{m/s})\hat y$
 \item $\vec v=(\SI{15}{m/s})\hat y$
@@ -234,6 +233,51 @@ As you can see, the trajectory is a parabola, and corresponds to what you would 
 \item none of the above
 \end{MCquestion}}
 \end{checkpoint}
+\begin{example}{A monkey is hanging from a tree branch. You want to feed the monkey by throwing it a banana. You know that the monkey is easily frightened and will let go of the tree branch the instant you throw the banana. The monkey is a horizontal distance $d$ away from you and a height $h$ above you. What angle should you throw the banana at so that you hit the monkey?}
+This question is asking us to find what the angle, $\theta$, of the banana's initial velocity, $v_{0B}$, should be if we want to hit the monkey with the banana. This angle can be found by finding the ratio of the initial vertical velocity to the initial horizontal velocity:
+\begin{align*}
+\tan\theta&=\frac{v_{0By}}{v_{Bx}}
+\end{align*}
+Now, how do we know if we hit the monkey? A ``hit" means that the monkey and the banana are \textbf{in the same place at the same time} at some time, $t$. So, our approach will be as follows: We will start by finding equations that describe the motion of the monkey and of the banana. Then, we will use our conditions for a successful ``hit" to find the ratio $\frac{v_{0By}}{v_{Bx}}$ that we want for our initial throw, and use that to find $\theta$.\\
+
+First, we need to set up our coordinate system. We set the origin to be where you are standing. This is the initial position of the banana. We let $y$ be in the vertical direction and let $x$ be in the horizontal direction. We let ``up" be positive and let the values of $x$ increase as you get closer to the tree, as shown in Figure \ref{fig:MonkeyTreeExample}. \\
+
+We treat the components of the banana's and the monkey's motion as being independent. The monkey's motion has only a vertical component. The acceleration of the monkey in the vertical direction is the acceleration due to gravity, $g$, which points in the $-y$ direction. The initial vertical position of the monkey is $h$ and its initial vertical velocity is 0, so we can describe the vertical position of the monkey, $y_M$, by:
+\begin{align*}
+y_M&=h-\frac{1}{2}gt^2
+\end{align*}
+The horizontal position of the monkey is constant, and is equal to $d$.\\
+
+The banana's motion has both $x$ and $y$ components. There is no acceleration in the $x$ direction, and we defined the banana's initial horizontal position to be $x_{0B}=0$, so the horizontal position of the banana, $x_B$ is given by:
+\begin{align*}
+x_B&=v_{xB}t
+\end{align*}
+We defined the initial vertical position of the banana to be $y_{0B}=0$. The vertical position, $y_B$, can thus be described by:
+\begin{align*}
+y_B&=v_{0yB}t-\frac{1}{2}gt^2
+\end{align*}
+Now that we have our equations, we can use our conditions for a successful hit. For the monkey and the banana to be in the same position, we need $y_M=y_B$ and $x_B=d$. Setting our equations for $y_M$ and $y_B$ equal to one another gives:
+\begin{align*}
+h-\frac{1}{2} gt^2&=v_{0yB}t-\frac{1}{2}gt^2\\
+h&=v_{0yB}t
+\end{align*}
+And setting $x_B$ to be equal to $d$ gives:
+\begin{align*}
+d&=v_{xB}t
+\end{align*} 
+Because these conditions have to be true at the same time for us to hit the monkey, we can just divide our equations to find:
+\begin{align*}
+\frac{h}{d}&=\frac{v_{0By}t}{v_{xB}t}\\
+\frac{h}{d}&=\frac{v_{0By}}{v_{xB}}
+\end{align*}
+This gives us the ratio we are looking for, so we now know that
+\begin{align*}
+\tan\theta&=\frac{h}{d}\\
+\theta&=\arctan(\frac{h}{d})
+\end{align*}
+Some people make the mistake of thinking that you should aim below the monkey. This equation is telling us that what we should actually do is aim directly at the monkey! This works because the $x$ and $y$ components of the motion are independent, and the acceleration of the banana is the same as the acceleration of the monkey. 
+\capfig{0.7\textwidth}{figures/DescribingMotionInND/MonkeyTreeExample.png}{\label{fig:MonkeyTreeExample} Feeding a monkey in a tree.}
+\end{example} 
 
 \subsection{Relative motion}
 In the previous chapter, we examined how to convert the description of motion from one reference frame to another. Recall the one dimensional situation where we described the position of an object, $A$, using an axis $x$ as $x^A(t)$. Suppose that the reference frame, $x$, is moving with a constant speed, $v'^B$, relative to a second reference frame, $x'$. We found that the position of the object is described in the $x'$ reference frame as:
@@ -337,7 +381,7 @@ and the position vector is given by:
 \end{align*}
 where again, we see how writing a single vector equation (e.g. $\vec v(t) = \vec v_0+\vec at$) is really just a way to write the three independent equations that are true for each component.
 
-\subsection{Accelerated motion when the velocity vector changes direction}
+\section{Accelerated motion when the velocity vector changes direction}
 \label{sec:DescribingMotionInND:accvconst}
 One key difference with one dimensional motion is that, in two dimensions, it is possible to have a non-zero acceleration even when the speed is constant. Recall, the acceleration \textbf{vector} is defined as the time derivative of the velocity \textbf{vector} (equation \ref{eqn:DescribingMotionInND:avecdef}). This means that if the velocity vector changes with time, then the acceleration vector is non-zero. The length of the velocity vector is called the speed. If the length of the velocity vector (speed) is constant, it is still possible that the \textbf{direction} of the velocity vector changes with time, and thus, that the acceleration vector is non-zero. In this case, the acceleration would not result in a change of speed, but rather in a change of the direction of motion. This is exactly what happens when an object goes around in a circle with a constant speed (the direction of the velocity vector changes). 
 \capfig{0.35\textwidth}{figures/DescribingMotionInND/deltav.png}{\label{fig:DescribingMotionInND:deltav} Illustration of how the direction of the velocity vector can change when speed is constant.}
@@ -503,9 +547,9 @@ Similarly, if the object is accelerating, we can define an \textbf{angular accel
 \end{align*}
 which can directly be related to the acceleration in the $s$ direction, $a_s(t)$:
 \begin{align*}
-a_d(t) &= \frac{d}{dt}v_s\\
+a_s(t) &= \frac{d}{dt}v_s\\
 &=\frac{d}{dt}\omega R=R\frac{d\omega}{dt}\\
-\Aboxed{a_d(t)&=R\alpha }
+\Aboxed{a_s(t)&=R\alpha }
 \end{align*}
 Thus, the linear quantities (those along the $s$ axis) can be related to the angular quantities by multiplying the angular quantities by $R$:
 \begin{align}
@@ -588,6 +632,18 @@ which is sometimes called the ``angular frequency'' instead of the angular veloc
 \item \SI{500}{Hz}
 \end{MCquestion}}
 \end{checkpoint}
+
+\begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2).
+\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand circular motion} 
+Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
+
+Imagine that you have a blue glob of paint on the back of your pinky. Rotate your hand until it is in position (2). The length of the curve that the paint makes is the value of $s$. The angle between the back of your hand and the positive $x$-axis is $\theta$. Now, imagine that there is a red glob of paint at your palm. It takes the same amount of time for your palm to get from position (1) to position (2) as it does for your fingers. Since they both go through the same angle $\theta$ in the same amount of time, the \textbf{angular velocity}, $\omega$ must be the same for both. However, the blue line left by your fingers will be much longer than the red line left by your palm. Your fingers travelled a greater distance than your palm in the same amount of time, so they must have a greater \textbf{linear velocity}, $v_s$. The further you are from your thumb, the greater the linear velocity will be, which we know from the formula $v_s=R\omega$.
+
+If you kept rotating your hand around the circle, you would see that your fingers always point in the same  direction as your linear velocity. This means that if you are using cartesian coordinates, the direction of your linear velocity is always changing.
+
+There are a couple of limitations to this trick. Remember that this only works for circular motion (the radius $R$ must be constant) and that if you are moving in the negative $s$ direction, your fingers will point antiparallel to the linear velocity.
+\end{studentOpinion}
+
 
 
 \newpage
@@ -694,17 +750,6 @@ f=\frac{1}{T}&=\frac{\omega}{2\pi}
 \end{align*}
 \end{importantEquations}
 
-\begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2). Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
-
-Imagine that you have a blue glob of paint on the back of your pinky. Rotate your hand until it is in position (2). The length of the curve that the paint makes is the value of $s$. The angle between the back of your hand and the positive $x$-axis is $\theta$. Now, imagine that there is a red glob of paint at your palm. It takes the same amount of time for your palm to get from position (1) to position (2) as it does for your fingers. Since they both go through the same angle $\theta$ in the same amount of time, the \textbf{angular velocity}, $\omega$ must be the same for both. However, the blue line left by your fingers will be much longer than the red line left by your palm. Your fingers travelled a greater distance than your palm in the same amount of time, so they must have a greater \textbf{linear velocity}, $v_s$. The further you are from your thumb, the greater the linear velocity will be, which we know from the formula $v_s=R\omega$.
-
-If you kept rotating your hand around the circle, you would see that your fingers always point in the same  direction as your linear velocity. This means that if you are using cartesian coordinates, the direction of your linear velocity is always changing.
-
-There are a couple of limitations to this trick. Remember that this only works for circular motion (the radius $R$ must be constant) and that if you are moving in the negative $s$ direction, your fingers will point antiparallel to the linear velocity.
-
-\capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:HandPolarCoordinates} How to use your hand to better understand circular motion}
-\end{studentOpinion}
-
 
 \newpage
 \section{Thinking about the material}
@@ -718,18 +763,19 @@ There are a couple of limitations to this trick. Remember that this only works f
 \end{enumerate}
 \subsection{To try at home}
 
-\begin{tQuestion}All you need for this exercise are two identical objects that you can throw, one other person, and something tall that you can drop the objects from. Both people should hold the objects at the exact same height. One person will drop their object, and the other person will give their object an initial horizontal velocity by throwing it straight forward (make sure they don't throw it up or down!). Which object do you expect to land first? Why? If you do not see the results you expect, think of reasons why that might be. \end{tQuestion}
+\begin{tQuestion}All you need for this exercise is two identical objects that you can throw, one other person, and something tall that you can drop the objects from. Both people should hold the objects at the exact same height. One person will drop their object, and the other person will give their object an initial horizontal velocity by throwing it straight forward (make sure they don't throw it up or down!). Which object do you expect to land first? Why? If you do not see the results you expect, think of reasons why that might be. \end{tQuestion}
 
 \subsection{To try in the lab}
 
+\newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{Ethan is jumping hurdles. He gets a running start, moving with a velocity of $\SI{3}{m/s}$ [E], and will not slow down before jumping. The hurdle is $\SI{0.5}{m}$ high and the maximum speed he can have when he leaves the ground is $\SI{5}{m/s}$. (You can assume Ethan is a point particle).\label{Q:hurdles}}
+\begin{problemParts}{Ethan is jumping hurdles. He gets a running start, moving with a velocity of $\SI{3}{m/s}$ [E], and will not slow down before jumping. The hurdle is $\SI{0.5}{m}$ high and the maximum speed he can have when he leaves the ground is $\SI{5}{m/s}$. (You can assume Ethan is a point particle, and ignore air resistance).\label{Q:hurdles}}
 \item How close can he get to the hurdle before he has to jump?
 \item What maximum height does he reach?
 \end{problemParts}
 
-\begin{problemParts}{A cowboy swings a lasso above his head. The lasso moves in a circle of radius $\SI{1.5}{m}$ in the horizontal plane. A hawk flies toward the lasso at $\SI{50}{km/h}$. The hawk sees the end of the lasso moving at $\SI{60}{km/h}$ when the lasso is directly in front of it (see Figure \ref{fig:CowboyQuestion}). In the reference frame of the cowboy ...\label{Q:cowboy}}
+\begin{problemParts}{A cowboy swings a lasso above his head. The lasso moves at a constant speed in a circle of radius $\SI{1.5}{m}$ in the horizontal plane. A hawk flies toward the lasso at $\SI{50}{km/h}$. The hawk sees the end of the lasso moving at $\SI{60}{km/h}$ when the lasso is directly in front of it (see Figure \ref{fig:CowboyQuestion}). In the reference frame of the cowboy ...\label{Q:cowboy}}
 \item How long does it take for the lasso to complete one revolution?
 \item What is the centripetal acceleration of the end of the lasso? 
 \item What is the angular acceleration of the lasso?
@@ -738,40 +784,33 @@ There are a couple of limitations to this trick. Remember that this only works f
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{\ref{Q:hurdles}}{
-Our approach will be to consider the $x$ and $y$ components separately. We start by drawing a diagram and setting up our coordinate axes. We will set ``up" to be in the positive $y$ direction.
+\begin{solution}{\ref{Q:hurdles}}{This is a question about motion in two dimensions. Our approach will be to consider the $x$ and $y$ components of the motion separately. We start by drawing a diagram and setting up our coordinate axes. We will set ``up" to be in the positive $y$ direction and East to be in the positive $x$ direction, as in Figure \ref{fig:HurdleQuestion}. We set the origin to be where Ethan leaves the ground.
+
+\capfig{0.7\textwidth}{figures/DescribingMotionInND/HurdleQuestion.png}{\label{fig:HurdleQuestion} Ethan wants to clear a \SI{0.5}{m} hurdle and has an initial velocity $\vec v_0$ with $x$ and $y$ components.}
+
 \begin{enumerate}[label=\alph*)]
-\item We are given that Ethan's maximum initial speed is $\SI{5}{m/s}$ and that the horizontal component of his velocity must be at least $\SI{3}{m/s}$. The first question we need to answer is whether we want the horizontal component to be equal to or greater than $\SI{3}{m/s}$. For this question, we want to minimize the horizontal distance and maximize the vertical distance. This means that we want as much of our initial velocity as possible to be in the $y$ direction. In order to do this, we want to minimize the $x$ component, so $v_x=\SI{3}{m/s}$. To find the $y$ component of the initial velocity, we use the Pythagorean theorem: 
+\item We are given that Ethan's maximum initial speed is $\SI{5}{m/s}$ and that the horizontal component of his velocity must be at least $\SI{3}{m/s}$. The first question we need to answer is whether we want the horizontal component to be equal to or greater than $\SI{3}{m/s}$. This question is asking us to minimize the horizontal distance Ethan must travel to reach a height of $\SI{0.5}{m}$. Since the magnitude of our initial velocity cannot exceed $\SI{5}{m/s}$, we want as little of our initial velocity as possible to be in the $x$ direction, so we want $v_x=\SI{3}{m/s}$. To find the $y$ component of the initial velocity, we use the Pythagorean theorem: 
 \begin{align*}
-v_x^2+v_y^2&=v^2\\
-v_y&=\sqrt{v^2-v_x^2}\\
-v_y&=\SI{4}{m/s}
+v_x^2+v_{0y}^2&=v_0^2\\
+v_{0y}&=\sqrt{v_0^2-v_x^2}\\
+v_{0y}&=\sqrt{(\SI{5}{m/s})^2-(\SI{3}{m/s})^2}\\
+v_{0y}&=\SI{4}{m/s}
 \end{align*}
-Now is a good time to take stock of our knowns and unknowns using a table:
-\begin{table}[H]
-\centering
-\label{KnownsUnknownsHurdleProb}
-\begin{tabular}{|c|c|}
-\hline
-\textbf{$x$} (constant velocity)          & \textbf{$y$}  (constant acceleration) \\ \hline
-$v_x = \SI{3}{m/s}$          & $v_{0y} = \SI{4}{m/s}$   \\
-$x = ?$   & $v_{y} = ?$ \\
-$t = ?$ & $y = \SI{0.5}{m}$  \\
-                   & $t = ?$                    \\
-                 & $a_y = \SI{-9.8}{m/s^2}$                 
-\end{tabular}
-\end{table}
-The horizontal and vertical displacements are given by the equations,
+We set Ethan's takeoff point to be at the origin, so we know that $x_0=0$ and $y_0=0$. Once Ethan is in the air, there will be no acceleration in the $x$ direction, and the only acceleration in the $y$ direction will be due to gravity.
+So, Ethan's position at any time $t$ can be described by the following equations: 
 \begin{align*}
 x&=v_{x}t\\
-y&=v_{0y}t+\frac{1}{2}a_yt^2
+y&=v_{0y}t-\frac{1}{2}gt^2
 \end{align*}
+where $g$ is the acceleration due to gravity, $g=\SI{9.8}{m/s^2}$.\\
+
 We are interested in the value of $x$ when the vertical displacement $y$ is equal to the height of the hurdle. So we will find the value of $t$ when $y=\SI{0.5}{m}$ and find the value of $x$ at this time.\\
+
 First, rearrange the equation for $y$ and solve the quadratic:
 \begin{align*}
-0&=\frac{1}{2}a_yt^2+v_{0y}t-y\\
+0&=-\frac{1}{2}gt^2+v_{0y}t-y\\
 0&=\frac{1}{2}(\SI{-9.8}{m/s^2})t^2+(\SI{4}{m/s})t-\SI{0.5}{m}\\
-t&=\SI{0.15}{s}, \SI{0.66}{s}
+t&=\SI{0.15}{s},\quad \SI{0.66}{s}
 \end{align*}
 We want to know when Ethan reaches $\SI{0.5}{m}$ for the first time, so $t=\SI{0.15}{s}$. All that's left is to find the horizontal displacement at this time:
 \begin{align*}
@@ -779,50 +818,43 @@ x&=v_xt\\
 &=(\SI{3}{m/s})(\SI{0.15}{s})\\
 &=\SI{0.45}{m}
 \end{align*}
-$\therefore$ he can get as close as $\SI{0.45}{m}$ from the hurdle before he has to jump.
-\item Ethan's motion follows a parabolic shape. At the maximum height, Ethan's vertical velocity is equal to zero. Our known values are,
+$\therefore$ he can get as close as $\SI{0.45}{m}$ from the hurdle before he has to jump, if his initial horizontal velocity is $\SI{3}{m/s}$.
+\item Ethan's motion follows a parabolic shape. At the maximum height, Ethan's vertical velocity is equal to zero. Our approach will be to solve for the value of $y$ when $v_y=0$. Our known values are,
 \begin{align*}
-v_{0y}&=\SI{3}{m/s}\\
+v_{0y}&=\SI{4}{m/s}\\
 v_y&=\SI{0}{m/s}\\
-a_y&=\SI{-9.8}{m/s^2}
+g&=\SI{9.8}{m/s^2}
 \end{align*}
-, which leaves two unknowns: $t$ and $y_{max}$. Since we have two unknowns we need two equations. We can use our equations for velocity and for displacement:
+The easiest way to solve this problem is to use the formula, 
 \begin{align*}
-v_y&=v_{0y}+a_yt\\
-y_{max}&=v_{0y}t+\frac{1}{2}at^2
+v_y^2&=v_{0y}^2-2gy\\
+\textrm{So,}\qquad y&=\frac{v_y^2-v_{0y}^2}{(-2g)}
 \end{align*}
-Rearranging the equation for $v_y$, and using $v_y=0$ gives
+Substituting our values for $v_y$, $v_{0y}$, and $g$, we get:
 \begin{align*}
-t&=\frac{v_y-v_{0y}}{a_y}\\
-t&=-\frac{v_{0y}}{a_y}
-\end{align*}
-We substitute this into the equation for $y_max$:
-\begin{align*}
-y_{max}&=-(\frac{v_{0y}^2}{a_y})+\frac{1}{2}a_y\frac{v_{0y}^2}{a_y^2}\\
-&=-\frac{1}{2}\frac{v_{0y}^2}{a_y}\\
-&=-\frac{1}{2}\frac{\SI{4}{m/s}^2}{\SI{-9.8}{m/s^2}}\\
+y_{max}&=\frac{(\SI{-4}{m/s})^2}{(2)(\SI{-9.8}{m/s^2})}\\
 y_{max}&=\SI{0.82}{m}
 \end{align*}
 $\therefore$ Ethan reaches a maximum height of $\SI{0.82}{m}$. \\
 
-(Note: there is more than one way to solve for $y_max$)
+(Note: there is more than one way to solve for $y_{max}$)
 \end{enumerate}}
 \end{solution}
 
 \newpage
 \begin{solution}{\ref{Q:cowboy}}{
 \begin{enumerate}[label=\alph*)]
-\item Our goal is the find the period of the lasso's motion. To do this, we can use the formula, 
+\item Our goal is the find the period of the lasso's motion. To do this, we can use the formula: 
 \begin{align*}
 T&=\frac{2\pi}{\omega}
 \end{align*}
-for which we need the angular velocity, $\omega$. We know the radius of the lasso, so if we find the linear velocity of the end point of the lasso, we can find the angular velocity by
+for which we need the angular velocity, $\omega$. We know the radius of the lasso, so if we find the linear velocity of the end point of the lasso, we can find the angular velocity using:
 \begin{align*}
 \omega&=\frac{v}{R}
 \end{align*}
 We start by using what we know about relative motion to find the linear velocity of the lasso in the cowboy's reference frame. First, we need to set up our coordinate systems. We assign the $xy$ coordinate system to the hawk's reference frame and we assign the $x'y'$ system to the cowboy's reference frame. The solution will be simplest if we align the coordinate systems so that positive $y$ and positive $y'$ are in the same direction, as in Figure \ref{fig:CowboySolution}. When we are talking about the velocity of the hawk, we will denote it with the superscript ``H", and when we are talking about the lasso, we will use ``L".\\
 
-We want the velocity of the \textbf{lasso} in the \textbf{cowboy's reference frame}, so we want $v'^L$. To find this, we start with the velocity of the lasso in the hawk's reference frame,$v^L$ and then take into account that the hawk is moving relative to the cowboy. We do this by adding the velocity of the hawk in the cowboy's reference frame, $v'^H$ to $v^L$. So, our equation is,
+We want the velocity of the \textbf{lasso} in the \textbf{cowboy's reference frame}, so we want $v'^L$. To find this, we start with the velocity of the lasso in the hawk's reference frame,$v^L$ and then take into account that the hawk is moving relative to the cowboy. We do this by adding the velocity of the hawk in the cowboy's reference frame, $v'^H$, to $v^L$. So, our equation is,
 \begin{align*}
 v^L+v'^H&=v'^L
 \end{align*}
@@ -841,7 +873,7 @@ v'^L&=\SI{33}{km/h}
 \end{align*}
 The linear velocity of the end of the lasso at this moment is $\SI{33}{km/h}$ in the positive $x$ direction.  To find the angular velocity, first convert the linear velocity from km/h to m/s:
 \begin{align*}
-\frac{\SI{33}{km}}{h}\times \frac{\SI{1000}{m}}{\SI{1}{km}} \times \frac{\SI{1}{h}}{\SI{3600}{s}} &= \SI{9.2}{m/s}
+\frac{\SI{33}{km}}{\SI{1}{h}}\times \frac{\SI{1000}{m}}{\SI{1}{km}} \times \frac{\SI{1}{h}}{\SI{3600}{s}} &= \SI{9.2}{m/s}
 \end{align*}     
 Now we can substitute $\omega=\frac{v}{R}$ into $T=\frac{2\pi}{\omega}$ and solve for $T$:
 \begin{align*}
@@ -857,10 +889,10 @@ a_c(t)&=\frac{v^2(t)}{R}
 \end{align*}
 To find the centripetal acceleration of the end of the lasso, we just substitute in our values for $v$ and $R$.
 \begin{align*}
-a_c(t)&=\frac{\SI{9.2}{m/s}^2}{\SI{1.5}{m}}\\
+a_c(t)&=\frac{(\SI{9.2}{m/s})^2}{\SI{1.5}{m}}\\
 a_c(t)&=\SI{56}{m/s^2}
 \end{align*}
 $\therefore$ the centripetal acceleration of the end of the lasso is $\SI{56}{m/s^2}$ towards the centre of the circle. 
-\item You may be tempted to divide the centripetal acceleration by $R$ to find the angular acceleration $\alpha$. However, the angular acceleration is the rate of change of the angular velocity. For circular motion, the angular velocity is constant, so \textbf{the angular acceleration is zero}. (Remember that in the equation $a_s=R\alpha$, $a_s$ refers to the component of acceleration that is parallel to the velocity. For circular motion, $a_s$ is zero.)
+\item You may be tempted to divide the centripetal acceleration by $R$ to find the angular acceleration $\alpha$. However, the angular acceleration is the rate of change of the angular velocity. The angular velocity is constant, so the angular acceleration is zero. (Remember that in the equation $a_s=R\alpha$, $a_s$ refers to the component of acceleration that is \textbf{parallel} to the velocity.)
 \end{enumerate}}
 \end{solution}
