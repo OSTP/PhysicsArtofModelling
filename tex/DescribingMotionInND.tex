@@ -235,82 +235,6 @@ As you can see, the trajectory is a parabola, and corresponds to what you would 
 \end{MCquestion}}
 \end{checkpoint}
 
-\subsection{Accelerated motion when the velocity vector changes direction}
-\label{sec:DescribingMotionInND:accvconst}
-One key difference with one dimensional motion is that, in two dimensions, it is possible to have a non-zero acceleration even when the speed is constant. Recall, the acceleration \textbf{vector} is defined as the time derivative of the velocity \textbf{vector} (equation \ref{eqn:DescribingMotionInND:avecdef}). This means that if the velocity vector changes with time, then the acceleration vector is non-zero. The length of the velocity vector is called the speed. If the length of the velocity vector (speed) is constant, it is still possible that the \textbf{direction} of the velocity vector changes with time, and thus, that the acceleration vector is non-zero. In this case, the acceleration would not result in a change of speed, but rather in a change of the direction of motion. This is exactly what happens when an object goes around in a circle with a constant speed (the direction of the velocity vector changes). 
-\capfig{0.35\textwidth}{figures/DescribingMotionInND/deltav.png}{\label{fig:DescribingMotionInND:deltav} Illustration of how the direction of the velocity vector can change when speed is constant.}
-
-Figure \ref{fig:DescribingMotionInND:deltav} shows an illustration of a velocity vector, $\vec v(t)$, at two different times, $\vec v_1$ and $\vec v_2$, as well as the vector difference, $\Delta \vec v=\vec v_2 - \vec v_1$, between the two. In this case, the length of the velocity vector did not change with time ($||\vec v_1||=||\vec v_2||$). The acceleration vector is given by:
-\begin{align*}
-\vec a = \lim_{\Delta t\to 0}\frac{\Delta \vec v}{\Delta t}
-\end{align*}
-and will thus have a direction parallel to $\Delta \vec v$, and a magnitude that is proportional to $\Delta v$. Thus, even if the velocity vector does not change amplitude (speed is constant), the acceleration vector can be non-zero if the velocity vector changes \textit{direction}.
-
-Let us write the velocity vector, $\vec v$, in terms of its magnitude, $v$, and a unit vector, $\hat v$, in the direction of $\vec v$:
-\begin{align*}
-\vec v &=v_x\hat x+v_y\hat y= v \hat v\\
-v&=||\vec v||=\sqrt{v_x^2+v_y^2}\\
-\hat v &= \frac{v_x}{v}\hat x+\frac{v_y}{v}\hat y\\
-\end{align*}
-In the most general case, both the magnitude of the velocity and its direction can change with time. That is, both the direction and the magnitude of the velocity vector are functions of time:
-\begin{align*}
-\vec v(t)&=v(t)\hat v(t)
-\end{align*}
-When we take the time derivative of $\vec v(t)$ to obtain the acceleration vector, we need to take the derivative of a product of two functions of time, $v(t)$ and $\hat v(t)$. Using the rules for taking the derivative of a product, the acceleration vector is given by:
-\begin{align}
-\label{eqn:DescribingMotionInND:avecdef2}
-\vec a &= \frac{d}{dt}\vec v(t)= \frac{d}{dt}v(t)\hat v(t)\nonumber\\
-\Aboxed{\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}}
-\end{align}
-and has two terms. The first term, $\frac{dv}{dt}\hat v(t)$, is zero if the speed is constant ($\frac{dv}{dt}=0$). The second term, $v(t)\frac{d\hat v}{dt}$, is zero if the direction of the velocity vector is constant ($\frac{d\hat v}{dt}=0$). In general though, the acceleration vector has two terms corresponding to the change in speed, and to the change in the direction of the velocity, respectively.
-
-The specific functional form of the acceleration vector will depend on the path being taken by the object. If we consider the case where speed is constant, then we have:
-\begin{align*}
-v(t) &= v \\
-\frac{dv}{dt}&=0\\
-v_x^2(t)+v_y^2(t) &=v^2 \\
-\therefore v_y(t)&=\sqrt{v^2-v_x(t)^2}
-\end{align*}
-\capfig{0.35\textwidth}{figures/DescribingMotionInND/aperpv.png}{\label{fig:DescribingMotionInND:aperpv} Illustration that the acceleration vector is perpendicular to the velocity vector if speed is constant.}
-In other words, if the magnitude of the velocity is constant, then the $x$ and $y$ components are no longer independent (if the $x$ component gets larger, then the $y$ component must get smaller so that the total magnitude remains unchanged). If the speed is constant, then the acceleration vector is given by:
-\begin{align}
-\label{eqn:DescribingMotionInND:vecaconstv}
-\vec a&=\frac{dv}{dt}\hat v(t)+v\frac{d\hat v}{dt}\nonumber\\
-&=0 + v\frac{d}{dt}\hat v(t)\nonumber\\
-&=v\frac{d}{dt}\left(\frac{v_x(t)}{v}\hat x+\frac{v_y(t)}{v}\hat y   )\right)\nonumber\\
-&=\frac{dv_x}{dt}\hat x + \frac{d}{dt}\sqrt{v^2-v_x(t)^2}\hat y\nonumber\\
-&=\frac{dv_x}{dt}\hat x + \frac{1}{2\sqrt{v^2-v_x(t)^2}}(-2v_x(t))\frac{dv_x}{dt}\hat y\nonumber\\
-&=\frac{dv_x}{dt}\hat x - \frac{v_x(t)}{\sqrt{v^2-v_x(t)^2}}\frac{dv_x}{dt}\hat y\nonumber\\
-&=\frac{dv_x}{dt}\hat x - \frac{v_x(t)}{v_y(t)}\frac{dv_x}{dt}\hat y\nonumber\\
-\therefore\quad\Aboxed{\vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)}
-\end{align}
-where most of the algebra that we did was to separate the $x$ and $y$ components of the acceleration vector. The resulting acceleration vector is illustrated in Figure \ref{fig:DescribingMotionInND:aperpv} along with the velocity vector. Rather, a vector parallel to the acceleration vector is illustrated, as the factor of $\frac{dv_x}{dt}$ was omitted (as you recall, multiplying by a scalar only changes the length, not the direction). The velocity vector has components $v_x$ and $v_y$, which allows us to calculate the angle, $\theta$ that it makes with the $x$ axis:
-\begin{align*}
-\tan(\theta)=\frac{v_y}{v_x}
-\end{align*}
-Similarly, the vector that is parallel to the acceleration has components of $1$ and $-\frac{v_x}{v_y}$, allowing us to determine the angle, $\phi$, that it makes with the $x$ axis:
-\begin{align*}
-\tan(\phi)=\frac{v_x}{v_y}
-\end{align*}
-Note that $\tan(\theta)$ is the inverse of $\tan(\phi)$, or in other words, $\tan(\theta)=\cot(\phi)$, meaning that $\theta$ and $\phi$ are complementary and thus must sum to $\frac{\pi}{2}$ (\SI{90}{\degree}). This means that \textbf{the acceleration vector is perpendicular to the velocity vector if the speed is constant and the direction of the velocity changes}. 
-
-In other words, when we write the acceleration vector, we can identify two components, $\vec a_{\parallel}(t)$ and $\vec a_{\perp}(t)$:
-\begin{align*}
-\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}\\
-&=\vec a_{\parallel}(t) + \vec a_{\perp}(t)\\
-\therefore \vec a_{\parallel}(t)&=\frac{dv}{dt}\hat v(t)\\
-\therefore \vec a_{\perp}(t)&=v\frac{d\hat v}{dt}=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)
-\end{align*}
-where $\vec a_{\parallel}(t)$ is the component of the acceleration that is parallel to the velocity vector, and is responsible for changing its magnitude, and $\vec a_{\perp}(t)$, is the component that is perpendicular to the velocity vector and is responsible for changing the direction of the motion.
-
-\begin{checkpoint}{\begin{MCquestion}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
-\item it has a magnitude of zero.
-\item it is perpendicular to the velocity vector.
-\item it is parallel to the velocity vector.
-\item it is in a direction other than parallel or perpendicular to the velocity vector.
-\end{MCquestion}}
-\end{checkpoint}
-
 \subsection{Relative motion}
 In the previous chapter, we examined how to convert the description of motion from one reference frame to another. Recall the one dimensional situation where we described the position of an object, $A$, using an axis $x$ as $x^A(t)$. Suppose that the reference frame, $x$, is moving with a constant speed, $v'^B$, relative to a second reference frame, $x'$. We found that the position of the object is described in the $x'$ reference frame as:
 \begin{align*}
@@ -412,6 +336,83 @@ and the position vector is given by:
          \end{pmatrix}\\
 \end{align*}
 where again, we see how writing a single vector equation (e.g. $\vec v(t) = \vec v_0+\vec at$) is really just a way to write the three independent equations that are true for each component.
+
+\subsection{Accelerated motion when the velocity vector changes direction}
+\label{sec:DescribingMotionInND:accvconst}
+One key difference with one dimensional motion is that, in two dimensions, it is possible to have a non-zero acceleration even when the speed is constant. Recall, the acceleration \textbf{vector} is defined as the time derivative of the velocity \textbf{vector} (equation \ref{eqn:DescribingMotionInND:avecdef}). This means that if the velocity vector changes with time, then the acceleration vector is non-zero. The length of the velocity vector is called the speed. If the length of the velocity vector (speed) is constant, it is still possible that the \textbf{direction} of the velocity vector changes with time, and thus, that the acceleration vector is non-zero. In this case, the acceleration would not result in a change of speed, but rather in a change of the direction of motion. This is exactly what happens when an object goes around in a circle with a constant speed (the direction of the velocity vector changes). 
+\capfig{0.35\textwidth}{figures/DescribingMotionInND/deltav.png}{\label{fig:DescribingMotionInND:deltav} Illustration of how the direction of the velocity vector can change when speed is constant.}
+
+Figure \ref{fig:DescribingMotionInND:deltav} shows an illustration of a velocity vector, $\vec v(t)$, at two different times, $\vec v_1$ and $\vec v_2$, as well as the vector difference, $\Delta \vec v=\vec v_2 - \vec v_1$, between the two. In this case, the length of the velocity vector did not change with time ($||\vec v_1||=||\vec v_2||$). The acceleration vector is given by:
+\begin{align*}
+\vec a = \lim_{\Delta t\to 0}\frac{\Delta \vec v}{\Delta t}
+\end{align*}
+and will thus have a direction parallel to $\Delta \vec v$, and a magnitude that is proportional to $\Delta v$. Thus, even if the velocity vector does not change amplitude (speed is constant), the acceleration vector can be non-zero if the velocity vector changes \textit{direction}.
+
+Let us write the velocity vector, $\vec v$, in terms of its magnitude, $v$, and a unit vector, $\hat v$, in the direction of $\vec v$:
+\begin{align*}
+\vec v &=v_x\hat x+v_y\hat y= v \hat v\\
+v&=||\vec v||=\sqrt{v_x^2+v_y^2}\\
+\hat v &= \frac{v_x}{v}\hat x+\frac{v_y}{v}\hat y\\
+\end{align*}
+In the most general case, both the magnitude of the velocity and its direction can change with time. That is, both the direction and the magnitude of the velocity vector are functions of time:
+\begin{align*}
+\vec v(t)&=v(t)\hat v(t)
+\end{align*}
+When we take the time derivative of $\vec v(t)$ to obtain the acceleration vector, we need to take the derivative of a product of two functions of time, $v(t)$ and $\hat v(t)$. Using the rules for taking the derivative of a product, the acceleration vector is given by:
+\begin{align}
+\label{eqn:DescribingMotionInND:avecdef2}
+\vec a &= \frac{d}{dt}\vec v(t)= \frac{d}{dt}v(t)\hat v(t)\nonumber\\
+\Aboxed{\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}}
+\end{align}
+and has two terms. The first term, $\frac{dv}{dt}\hat v(t)$, is zero if the speed is constant ($\frac{dv}{dt}=0$). The second term, $v(t)\frac{d\hat v}{dt}$, is zero if the direction of the velocity vector is constant ($\frac{d\hat v}{dt}=0$). In general though, the acceleration vector has two terms corresponding to the change in speed, and to the change in the direction of the velocity, respectively.
+
+The specific functional form of the acceleration vector will depend on the path being taken by the object. If we consider the case where speed is constant, then we have:
+\begin{align*}
+v(t) &= v \\
+\frac{dv}{dt}&=0\\
+v_x^2(t)+v_y^2(t) &=v^2 \\
+\therefore v_y(t)&=\sqrt{v^2-v_x(t)^2}
+\end{align*}
+\capfig{0.35\textwidth}{figures/DescribingMotionInND/aperpv.png}{\label{fig:DescribingMotionInND:aperpv} Illustration that the acceleration vector is perpendicular to the velocity vector if speed is constant.}
+In other words, if the magnitude of the velocity is constant, then the $x$ and $y$ components are no longer independent (if the $x$ component gets larger, then the $y$ component must get smaller so that the total magnitude remains unchanged). If the speed is constant, then the acceleration vector is given by:
+\begin{align}
+\label{eqn:DescribingMotionInND:vecaconstv}
+\vec a&=\frac{dv}{dt}\hat v(t)+v\frac{d\hat v}{dt}\nonumber\\
+&=0 + v\frac{d}{dt}\hat v(t)\nonumber\\
+&=v\frac{d}{dt}\left(\frac{v_x(t)}{v}\hat x+\frac{v_y(t)}{v}\hat y   )\right)\nonumber\\
+&=\frac{dv_x}{dt}\hat x + \frac{d}{dt}\sqrt{v^2-v_x(t)^2}\hat y\nonumber\\
+&=\frac{dv_x}{dt}\hat x + \frac{1}{2\sqrt{v^2-v_x(t)^2}}(-2v_x(t))\frac{dv_x}{dt}\hat y\nonumber\\
+&=\frac{dv_x}{dt}\hat x - \frac{v_x(t)}{\sqrt{v^2-v_x(t)^2}}\frac{dv_x}{dt}\hat y\nonumber\\
+&=\frac{dv_x}{dt}\hat x - \frac{v_x(t)}{v_y(t)}\frac{dv_x}{dt}\hat y\nonumber\\
+\therefore\quad\Aboxed{\vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)}
+\end{align}
+where most of the algebra that we did was to separate the $x$ and $y$ components of the acceleration vector. The resulting acceleration vector is illustrated in Figure \ref{fig:DescribingMotionInND:aperpv} along with the velocity vector. Rather, a vector parallel to the acceleration vector is illustrated, as the factor of $\frac{dv_x}{dt}$ was omitted (as you recall, multiplying by a scalar only changes the length, not the direction). The velocity vector has components $v_x$ and $v_y$, which allows us to calculate the angle, $\theta$ that it makes with the $x$ axis:
+\begin{align*}
+\tan(\theta)=\frac{v_y}{v_x}
+\end{align*}
+Similarly, the vector that is parallel to the acceleration has components of $1$ and $-\frac{v_x}{v_y}$, allowing us to determine the angle, $\phi$, that it makes with the $x$ axis:
+\begin{align*}
+\tan(\phi)=\frac{v_x}{v_y}
+\end{align*}
+Note that $\tan(\theta)$ is the inverse of $\tan(\phi)$, or in other words, $\tan(\theta)=\cot(\phi)$, meaning that $\theta$ and $\phi$ are complementary and thus must sum to $\frac{\pi}{2}$ (\SI{90}{\degree}). This means that \textbf{the acceleration vector is perpendicular to the velocity vector if the speed is constant and the direction of the velocity changes}. 
+
+In other words, when we write the acceleration vector, we can identify two components, $\vec a_{\parallel}(t)$ and $\vec a_{\perp}(t)$:
+\begin{align*}
+\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}\\
+&=\vec a_{\parallel}(t) + \vec a_{\perp}(t)\\
+\therefore \vec a_{\parallel}(t)&=\frac{dv}{dt}\hat v(t)\\
+\therefore \vec a_{\perp}(t)&=v\frac{d\hat v}{dt}=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)
+\end{align*}
+where $\vec a_{\parallel}(t)$ is the component of the acceleration that is parallel to the velocity vector, and is responsible for changing its magnitude, and $\vec a_{\perp}(t)$, is the component that is perpendicular to the velocity vector and is responsible for changing the direction of the motion.
+
+\begin{checkpoint}{\begin{MCquestion}{A satellite moves in a circular orbit around the Earth with a constant speed. What can you say about its acceleration vector?}
+\item it has a magnitude of zero.
+\item it is perpendicular to the velocity vector.
+\item it is parallel to the velocity vector.
+\item it is in a direction other than parallel or perpendicular to the velocity vector.
+\end{MCquestion}}
+\end{checkpoint}
+
 \section{Circular motion}
 We often consider the motion of an object around a circle of fixed radius, $R$. In principle, this is motion in two dimensions, as a circle is necessarily in a two dimensional plane. However, since the object is constrained to move along the circumference of the circle, it can be thought of (and treated as) motion along a one dimensional axis that is curved. 
 \capfig{0.35\textwidth}{figures/DescribingMotionInND/circle.png}{\label{fig:DescribingMotionInND:circle} Describing the motion of an object around a circle of radius $R$.}
@@ -591,12 +592,106 @@ which is sometimes called the ``angular frequency'' instead of the angular veloc
 
 \newpage
 \section{Summary}
-\begin{chapterSummary}
-\item Something interesting
+
+\begin{chapterSummary}{
+\item When the motion of an object is in more than one dimension, we describe the position of the object using a vector, $\vec{r}$.
+
+\item We can treat motion in two dimensions as having two independent components: a motion along $x$ and  a separate motion along $y$. This can be extended for motion in $N$ dimensions.
+
+\item We can convert the description of motion from one reference frame to another the same way as we did for motion in one dimension, except that now we use vectors.
+
+\item The instantaneous velocity vector is given by the time derivative of the position vector. The acceleration vector is given by the time derivative of the velocity vector.
+\item An acceleration can change the magnitude and/or the direction of the velocity vector.
+\begin{enumerate}
+\item The parallel component of the acceleration changes the magnitude of the velocity.
+\item The perpendicular component of the acceleration changes the direction of the velocity.
+\end{enumerate}
+
+\item The position of an object moving in a circular path can be described by $s(t)$ or $\theta (t)$. $s(t)$ is the position of the object along the curved axis $s$, and $\theta (t)$ is found by dividing $s(t)$ by the radius of the circle.
+
+\item In circular motion, the velocity vector is tangent to the circle.
+
+\item The linear velocity, $v_s$, is the velocity along the $s$ axis. The angular velocity, $\omega$, is the rate of change of the angle $\theta$. 
+
+\item The angular acceleration, $\alpha$, is the rate of change of the angular velocity, and the linear acceleration $a_s$ is the time derivative of $v_s$.
+
+\item For circular motion, the perpendicular component of the acceleration is called the centripetal acceleration and it points towards the centre of the circle.
+
+\item Uniform circular motion refers to when an object is going around a circle with a constant speed.
+
+\item The period, $T$, is the time that it takes for an object undergoing uniform circular motion to complete one revolution of the circle. The frequency, $f$, is the inverse of the period, and can be thought of as the number of revolutions completed per second.
+
+\item The angular velocity is sometimes called the angular frequency.}
 \end{chapterSummary}
 
+\newpage
 \begin{importantEquations}
-Equations
+The position vector for motion in two dimensions can be written as:
+\begin{align*}
+\vec r(t) = \begin{pmatrix}
+          x(t) \\
+          y(t) \\
+        \end{pmatrix}= x(t) \hat x + y(t) \hat y
+\end{align*}
+This formula can be extended for motion in $N$ dimensions.\\
+The instantaneous velocity vector and the acceleration vector are given by:
+\begin{align*}
+\vec v(t) &=\frac{d}{dt}\vec r(t)\\
+\vec a(t) &= \frac{d}{dt}\vec v(t)
+\end{align*}
+If an object has position $\vec{r}^A$ as measured in a frame of reference $xy$ that is moving at constant speed $\vec{v}'^B$ as measured in a second frame of reference $x'y'$, then in the $x'y'$ reference frame:
+\begin{align*}
+\pvec r'^A(t) &= \pvec v'^Bt+\vec r^A(t)\\
+v'^A(t) &=\pvec v'^B+\vec v^A(t)\\
+\pvec a'^A(t)&=\vec a^A(t)
+\end{align*}
+The acceleration vector for motion in two dimensions can be written as:
+\begin{align*}
+\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}
+\end{align*}
+If the speed is constant, then the acceleration vector is given by:
+\begin{align*}
+\vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)
+\end{align*}
+If the position of an object moving in a circle of radius $R$ is described by its position along the curved axis $s$, then the angle in radians can be found by:
+\begin{align*}
+\theta(t)=\frac{s(t)}{R}
+\end{align*}
+For an object moving along a circle, we can write its position vector, $\vec r(t)$, as:
+\begin{align*}
+\vec r(t)&= \begin{pmatrix}
+          x(t) \\
+          y(t) \\
+        \end{pmatrix}
+        =R \begin{pmatrix}
+          \cos(\theta(t)) \\
+          \sin(\theta(t)) \\
+        \end{pmatrix}
+\end{align*}
+The angular velocity, $\omega$, is the rate of change of the angle, $\theta$. The angular acceleration, $\alpha$, is the rate of change of the angular velocity:
+\begin{align*}
+\omega &= \frac{d\theta}{dt}\\
+\alpha &= \frac{d\omega}{dt}
+\end{align*}
+The linear kinematic quantities can be found from the angular quantities:
+\begin{align*}
+s=R\theta\\
+v_s=R\omega\\
+a_s=R\alpha
+\end{align*}
+The centripetal acceleration points towards the centre of the circle and has magnitude:
+\begin{align*}
+a_c(t) = \omega^2(t)R = \frac{v^2(t)}{R}
+\end{align*}
+The centripetal acceleration vector can be written as:
+\begin{align*}
+\vec a_{\bot}(t)&=\omega^2 R[-\cos(\theta)\hat x-\sin(\theta)\hat y]
+\end{align*}
+The period, $T$, and the frequency, $f$, of an object that undergoes uniform circular motion are given by:
+\begin{align*}
+T&=\frac{2\pi}{\omega}\\
+f=\frac{1}{T}&=\frac{\omega}{2\pi}
+\end{align*}
 \end{importantEquations}
 
 \begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:HandPolarCoordinates} shows your hand in two positions, which we call (1) and (2). Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
@@ -614,10 +709,13 @@ There are a couple of limitations to this trick. Remember that this only works f
 \newpage
 \section{Thinking about the material}
 \subsection{Reflect and research}
-\begin{tQuestion}A question
-\end{tQuestion}
-\begin{tQuestion}Another question
-\end{tQuestion}
+
+\begin{enumerate}
+\item Why do we observe the sun to be ``changing directions'' in the sky throughout the year?
+\item It was once believed that there was an absolute space and time called the ``luminiferous aether'' which all objects moved relative to. What was the name of the experiment that disproved this belief?
+\item Find the centripetal acceleration of the Earth around the Sun.
+\item Your friend William believes that the earth is flat. Name two relative motion phenomena that would falsify William's belief.
+\end{enumerate}
 \subsection{To try at home}
 
 \begin{tQuestion}All you need for this exercise are two identical objects that you can throw, one other person, and something tall that you can drop the objects from. Both people should hold the objects at the exact same height. One person will drop their object, and the other person will give their object an initial horizontal velocity by throwing it straight forward (make sure they don't throw it up or down!). Which object do you expect to land first? Why? If you do not see the results you expect, think of reasons why that might be. \end{tQuestion}
