@@ -3,11 +3,17 @@
 \label{chap:ApplyingNewtonsLaws}
 In this chapter, we take a closer look at how to use Newton's Laws to build models to describe motion. Whereas the previous chapter was focused on identifying the forces that are acting on an object, this chapter focuses on using those forces to describe the motion of the object.
 
-Newton's Laws are meant to describe ``point particles'', that is, objects that can be thought of as a point and thus have no orientation. A block sliding down a hill, a person on a merry-go-round, a bird flying through the air can all be modelled as point particles, as long as we do not need to model their orientation. In all these cases, we can model the forces on the object using a free-body diagram as the location of where the forces are applied on the object do not matter. In a later chapter, we will introduce the tools required to apply Newton's Second Law to objects that can rotate, where we will see that the location of where a force is exerted is important.
+Newton's Laws are meant to describe ``point particles'', that is, objects that can be thought of as a point and thus have no orientation. A block sliding down a hill, a person on a merry-go-round, a bird flying through the air can all be modelled as point particles, as long as we do not need to model their orientation. In all of these cases, we can model the forces on the object using a free-body diagram as the location of where the forces are applied on the object do not matter. In a later chapter, we will introduce the tools required to apply Newton's Second Law to objects that can rotate, where we will see that the location of where a force is exerted matters.
 
 \vspace{1cm}
 \begin{learningObjectives}
-\item Be able to develop models for linear motion
+{
+\item Understand when an object's motion can be modelled as one dimensional (linear).
+\item Be able to develop models for objects undergoing linear motion.
+\item Be able to develop models for objects undergoing circular motion.
+\item Be able to develop models for objects undergoing arbitrary three dimensional motion.
+\item Understand the forces involved in circular motion, and understand that ``centripetal'' and ``centrifugal'' forces are not really forces.
+}
 \end{learningObjectives}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -423,7 +429,7 @@ As we saw in Chapter \ref{chap:describingmotioninnd}, ``uniform circular motion'
 \item The angular velocity, $\omega$, is related to the magnitude of the velocity vector by $v=\omega R$ and is constant.
 \item The angular acceleration, $\alpha$, is zero for uniform circular motion, since the angular velocity does not change.
 \end{itemize}
-In particular, you should recall that even if the speed is constant, the acceleration vector is always non-zero in uniform circular motion because the \textbf{velocity changes direction}. According to Newton's Second Law, this implies that there \textbf{must be a net force on the object that is directed towards the centre of the circle} (parallel to the acceleration):
+In particular, you should recall that even if the speed is constant, the acceleration vector is always non-zero in uniform circular motion because the \textbf{velocity changes direction}. According to Newton's Second Law, this implies that there \textbf{must be a net force on the object that is directed towards the centre of the circle}\footnote{The sum of the forces is often called the ``net force'' on an object, and in the specific case of uniform circular motion, that net force is sometimes called the ``centripetal force'' - however, it is not a force in and of itself and it is always the sum of the forces that points towards the centre of the circle.} (parallel to the acceleration):
 \begin{align*}
 \sum \vec F = m\vec a
 \end{align*} 
@@ -452,13 +458,14 @@ Thus, we find that the tension is the string increases with the square of the sp
 
 TODO: Checkpoint question about what happens to the motion of the block if the string breaks (images with different possible trajectories). 
 
-\begin{example}{A car goes around a curve which can be approximated as the arc of a circle of radius $R$. The coefficient of static friction between the tires of the car and the road is $\mu_s$. What is the maximum speed with which the car can go around the curve without skidding?}
-\capfig{0.3\textwidth}{figures/ApplyingNewtonsLaws/car.png}{\label{fig:applyingnewtonslaws:car} A car going around a curve that can be approximated as the arc of a circle of radius $R$.}
-\label{ex:applyingnewtonslaws:car}
+\begin{example}{\label{ex:applyingnewtonslaws:car}
+\capfig{0.25\textwidth}{figures/ApplyingNewtonsLaws/car.png}{\label{fig:applyingnewtonslaws:car} A car going around a curve that can be approximated as the arc of a circle of radius $R$.}
+A car goes around a curve which can be approximated as the arc of a circle of radius $R$, as shown in Figure \ref{fig:applyingnewtonslaws:car}. The coefficient of static friction between the tires of the car and the road is $\mu_s$. What is the maximum speed with which the car can go around the curve without skidding?
+}
 If the car is going at constant speed around a circle, then the sum of the forces on the car must be directed towards the centre of the circle. The only force on the car that could be directed towards the centre of the circle is the friction between the tires and the road. If the road were perfectly slick (think driving in icy conditions), it would not be possible to drive around a curve. The forces on the car are:
 \begin{enumerate}
 \item $\vec F_g$, its weight with magnitude $mg$.
-\item $\vec N$, a normal forced exerted by the upwards by the road.
+\item $\vec N$, a normal force exerted upwards by the road.
 \item $\vec f_s$, a force of static friction between the tires and the road. This is static friction, because the surface of the tire does not move relative to the surface of the road if the car is not skidding. The force of static friction has a magnitude that is at most $f_s\leq\mu_sN$.
 \end{enumerate}
 The forces on the car are shown in the free-diagram in Figure \ref{fig:applyingnewtonslaws:car_fbd}.
@@ -481,7 +488,7 @@ v^2 &\leq \mu_s g R\\
 \end{align*}
 Thus, if the speed is less than $\sqrt{\mu_s g R}$, the car will not skid and the magnitude of the force of static friction, which results in an acceleration towards the centre of the circle, will be smaller or equal to its maximal possible value.
 
-\textbf{Discussion:} The for the maximum speed that the car can travel around the curve makes sense because:
+\textbf{Discussion:} The model for the maximum speed that the car can travel around the curve makes sense because:
 \begin{itemize}
 \item The dimension of $\sqrt{\mu_s g R}$ is speed.
 \item The speed is larger if the radius of the curve is larger (one can go faster around a wider curve without skidding).
@@ -489,14 +496,14 @@ Thus, if the speed is less than $\sqrt{\mu_s g R}$, the car will not skid and th
 \end{itemize}
 \end{example}
 
-\begin{example}{A ball is attached to a mass-less string and executing circular motion along a circle of radius $R$ that is in the vertical plane, as depicted in Figure \ref{fig:applyingnewtonslaws:circleV}. Can the speed of the ball be constant? What is the minimum speed of the ball at the top of the circle?}
-\capfig{0.3\textwidth}{figures/ApplyingNewtonsLaws/circleV.png}{\label{fig:applyingnewtonslaws:circleV} A ball attached to a string undergoing circular motion in a vertical plane.}
+\begin{example}{\capfig{0.3\textwidth}{figures/ApplyingNewtonsLaws/circleV.png}{\label{fig:applyingnewtonslaws:circleV} A ball attached to a string undergoing circular motion in a vertical plane.}
+A ball is attached to a mass-less string and executing circular motion along a circle of radius $R$ that is in the vertical plane, as depicted in Figure \ref{fig:applyingnewtonslaws:circleV}. Can the speed of the ball be constant? What is the minimum speed of the ball at the top of the circle?}
 The forces that are acting on the ball are:
 \begin{enumerate}
 \item $\vec F_g$, its weight with magnitude $mg$.
 \item $\vec T$, a force of tension exerted by the string.
 \end{enumerate}
-Figure \ref{fig:applyingnewtonslaws:circleV_fbd} shows the free-body diagram for the forces on the ball at five different locations along the path of the circle.
+Figure \ref{fig:applyingnewtonslaws:circleV_fbd} shows the free-body diagram for the forces on the ball at three different locations along the path of the circle.
 \capfig{0.4\textwidth}{figures/ApplyingNewtonsLaws/circleV_fbd.png}{\label{fig:applyingnewtonslaws:circleV_fbd} A ball attached to a string undergoing circular motion in a vertical plane.}
 In order for the ball to go around in a circle, there must be at least a component of the net force on the ball that is directed towards the centre of the circle at all times. In the bottom half of the circle (positions 1 and 2), only the tension can have a component directed towards the centre of the circle.
 
@@ -512,9 +519,10 @@ The minimum speed for the ball at the top of the circle is given by the conditio
 The magnitude of the acceleration is the radial acceleration, and thus related to the speed at the top of the trajectory:
 \begin{align*}
 a_R&=-a_y=g = m\frac{v^2}{R}\\
-\therefore v_{min}=\sqrt{\frac{gR}{m}}
+\therefore v_{min}&=\sqrt{\frac{gR}{m}}
 \end{align*}
 which is the minimum speed at the top of trajectory for the ball to be able to continue along the circle. The tension in the string would change as the ball moves around the circle, and will be highest at the bottom of the trajectory, since the tension has to bigger than gravity so that the net force at the bottom of the trajectory is upwards (towards the centre of the circle).
+
 \textbf{Discussion:} The model for the minimum speed of the ball at the top of the circle makes sense because:
 \begin{itemize}
 \item $\sqrt{\frac{gR}{m}}$ has the dimension of speed.
@@ -523,12 +531,151 @@ which is the minimum speed at the top of trajectory for the ball to be able to c
 \end{itemize}
 \end{example}
 
+TODO: checkpoint question, based on example above, does the minimum angular velocity increase or decrease with radius?
+
 \subsection{Banked curves}
-As we saw in in Example \ref{ex:applyingnewtonslaws:car}, there is a maximum speed with which a car can go around a curve before it starts to skid. You may have noticed that roads, highways especially, are banked where there are curves. Racetracks for cars that go around an oval (the boring kind of car races) also have banked curves. As we will see, this allows the speed of vehicles to be higher when going around the curve; or rather, it makes the curves safer as the speed at which vehicles \textit{would} skid is higher. 
+As we saw in Example \ref{ex:applyingnewtonslaws:car}, there is a maximum speed with which a car can go around a curve before it starts to skid. You may have noticed that roads, highways especially, are banked where there are curves. Racetracks for cars that go around an oval (the boring kind of car races) also have banked curves. As we will see, this allows the speed of vehicles to be higher when going around the curve; or rather, it makes the curves safer as the speed at which vehicles \textit{would} skid is higher. In Example \ref{ex:applyingnewtonslaws:car}, we saw that it was the force of static friction between the tires of the car and the road that provided the only force with a component towards the centre of the circle. The idea of using a banked curve is to change the direction of the normal force between the road and the car tires so that it, too, has a component in the direction towards the centre of the circle. 
+
+Consider the car depicted in Figure \ref{fig:applyingnewtonslaws:carbank} which is seen from behind making a left turn around a curve that is banked by an angle $\theta$ with respect to the horizontal and can be modelled as an arc from a circle of radius $R$.
+\capfig{0.7\textwidth}{figures/ApplyingNewtonsLaws/carbank.png}{\label{fig:applyingnewtonslaws:carbank} A car moving into the page and going around a banked curved so that it is turning towards the left (the centre of the circle is to the left). }
+The forces exerted on the car are the same as in Example \ref{ex:applyingnewtonslaws:car}, except that they point in different directions. The forces are:
+\begin{enumerate}
+\item $\vec F_g$, its weight with magnitude $mg$.
+\item $\vec N$, a normal force exerted by the road, perpendicular to the surface of the road.
+\item $\vec f_s$, a force of static friction between the tires and the road. This is static friction, because the surface of the tire does not move relative to the surface of the road if the car is not skidding. The force of static friction has a magnitude that is at most $f_s\leq\mu_sN$ and is perpendicular to the normal force. The force could be either upwards or downwards, \textit{depending on the other forces on the car}.
+\end{enumerate} 
+A free-body diagram for the forces on the car is shown in Figure \ref{fig:applyingnewtonslaws:carbank_fbd}, along with the acceleration (which is in the radial direction, towards the centre of the circle), and our choice of coordinate system (choosing $x$ parallel to the acceleration). The direction of the force of static friction is not known \textit{a priori} and depends on the speed of the car:
+\begin{itemize}
+\item If the speed of the car is zero, the force of static friction is upwards. With a speed of zero, the radial acceleration is zero, and the sum of the forces must thus be zero. The impeding motion of the car would be to slide down the banked curve (just like a block on an incline).
+\item If the speed of the car is very large, the force of static friction is downwards, as the impeding motion of the car would be to slide up the bank. The natural motion of the car is to go in a straight line (Newton's First Law). If the components of the normal force and of the force of static friction directed towards the centre of the circle are too small to allow the car to turn, then the car would slide up the bank.
+\end{itemize}
+\capfig{0.2\textwidth}{figures/ApplyingNewtonsLaws/carbank_fbd.png}{\label{fig:applyingnewtonslaws:carbank_fbd} Free-body diagram for the forces on the car. The direction of the force of static friction cannot be determined, as it depends on the acceleration of the car, so it is shown twice (with dotted lines). }
+There is thus an ``ideal speed'' at which the force of static friction is precisely zero, and the $x$ component of the normal force is responsible for the radial acceleration. At higher speeds, the force of static friction is downwards and increases in magnitude to keep the car's acceleration towards the centre of the circle. At some maximal  speed, the force of friction will reach its maximal value, and no longer be able to keep the car's acceleration pointing towards the centre of the circle. At speeds lower than the ideal speed, the force of friction is directed upwards to prevent the car from sliding down the bank. If the coefficient of static friction is too low, it is possible that at low speeds, the car would start to slide down the bank (so there would be a minimum speed below which the car would start to slide down). 
+
+Let us start by modelling the situation where the force of static friction is identically zero so that we can determine the ideal speed for the banked curve. The only two forces on the car are thus its weight and the normal force. The $x$ and $y$ component of Newton's Second Law give:
+\begin{align}
+\label{eq:applyingnewtonslaws:carbank_x}
+\sum F_x &= N\sin\theta = ma_R=m\frac{v^2}{R}\nonumber\\
+\therefore N\sin\theta &= m\frac{v^2}{R}
+\end{align}
+\begin{align}
+\label{eq:applyingnewtonslaws:carbank_y}
+\sum F_y &= N\cos\theta-F_g = 0\nonumber\\
+\therefore N\cos\theta&=mg
+\end{align}
+We can divide Equation \ref{eq:applyingnewtonslaws:carbank_x} by Equation \ref{eq:applyingnewtonslaws:carbank_y}, noting that $\tan\theta=\sin\theta/\cos\theta$, to obtain:
+\begin{align*}
+\tan\theta &= \frac{v^2}{gR}\\
+\therefore v_{ideal} &=\sqrt{gR\tan\theta}
+\end{align*}
+At this speed, the force of static friction is zero. In practice, one would use this equation to determine which bank angle to use when designing a road, so that the ideal speed is around the speed limit or the average speed of traffic. We leave it as an exercise in the question library to determine the maximal speed that the car can go around the curve before sliding out.
+
+TODO: Question Library problem to find the maximal speed before sliding out of the curve, and perhaps, minimal value of $\mu_s$ to have the car not slide down when it's at rest.
 
 \subsection{Inertial forces in circular motion}
+As you sit in a car that is going around a curve, you will feel pushed outwards, away from the centre of the circle that the car is going around. This is because of your inertia (Newton's First Law), and your body would go in a straight line if the car were not exerting a net force on you towards the centre of the circle. You are not so much feeling a force that is pushing you outwards as you are feeling the effects of the car seat pushing you inwards; if you were leaning against the side of the car that is on the outside of the curve, you would feel the side of the car pushing you inwards towards the centre of curve, even if it ``feels'' like you are pushing outwards against the side of the car\footnote{Again, remember that it is arbitrary which force we call the reaction and which we call the reaction, so it is relevant whether you feel that you are pushing against the car or the car pushing on you.}.
+
+If we model your motion looking at you from the ground, we would include a force of friction between the car seat (or the side of the car, or both) and you that is pointing towards the centre of the circle, so that the sum of the forces exerted on you is towards the centre of the circle. We can also model your motion from the non-inertial frame of the car. As you recall, because this is a non-inertial frame of reference, we need to include an additional inertial force, $\vec F_I$, that points opposite of the acceleration of the car, with magnitude $F_I=ma_R$ (if the net acceleration of the car is $a_R$). Inside the non-inertial frame of reference of the car, your acceleration (relative to the reference frame, i.e. the car) is zero. This is illustrated by the diagrams in Figure \ref{fig:applyingnewtonslaws:carinertial}.
+\capfig{0.6\textwidth}{figures/ApplyingNewtonsLaws/carinertial.png}{\label{fig:applyingnewtonslaws:carinertial}(Left:) A person sitting on a car seat in a car turning towards the left. (Centre:) Free-body diagram for the person as modelled in the inertial reference frame of the ground. (Right:) Free-body diagram for the person as modelled in the non-inertial frame of reference of the car, including an additional inertial force. }
+The $y$ component of Newton's Second Law in both frames of reference is the same:
+\begin{align*}
+\sum F_y&=N-F_g=0\\
+\therefore N&=mg
+\end{align*}
+and simply tells us that the normal force is equal to the weight. In the reference frame of the ground, the $x$ component of Newton's Second Law gives:
+\begin{align*}
+\sum F_x &= f_s = ma_R\\
+\therefore f_s &= m\frac{v^2}{R}
+\end{align*}
+In the frame of reference of the car, where your acceleration is zero and you an inertial force of magnitude $F_I=mv^2/R$ is exerted on you, the $x$ component of Newton's Second Law gives:
+\begin{align*}
+\sum F_x &= f_s-F_I = 0\\
+\therefore f_s - m\frac{v^2}{R} &= 0
+\end{align*}
+which of course, mathematically, is exactly equivalent. The inertial force is not a real force in the sense that it is not exerted by anything. It only comes into play because we are trying to use Newton's Laws in a non-inertial frame of reference. However, it does provide a good model for describing the sensation that we have of being pushed outwards when the car goes around a curve. Sometimes, people will refer to this force as a ``centrifugal'' force, which means ``a force that points away from the centre''. You should however remember that this is not a real force exerted on the object, but is the result of modelling motion in a non-inertial frame of reference.
+
+TODO: A checkpoint question about if you go twice as fast, how much stronger will the centrifugal force feel?
 
 \section{Non-uniform circular motion}
+In non-uniform circular motion, an object's motion is along a circle, but the object's speed is not constant. In particular, the following will be true
+\begin{itemize}
+\item The object's velocity vector is always tangent to the circle.
+\item The speed and angular speed of the object are not constant.
+\item The angular acceleration of the object is not zero.
+\item The acceleration vector will not point towards the centre of the circle. 
+\end{itemize}
+Since the acceleration vector does not point towards the centre of the circle, it is usually convenient to break up the acceleration vector into two components: $a_R$, a component that is radial (towards the centre of the circle), and $a_T$, a component that is tangent to the circle (and perpendicular to to the radial component). The \textbf{radial component is ``responsible'' for the change in direction of the velocity} such that the object goes in a circle. the magnitude of the radial acceleration is the same as it is for uniform circular motion:
+\begin{align*}
+a_R=\frac{v^2}{r}
+\end{align*}
+where the speed is no longer constant in time. The tangential component of the acceleration is responsible for changing the magnitude of the velocity of the object:
+\begin{align*}
+a_T = \frac{dv}{dt}
+\end{align*}
+
+
+\begin{example}{
+\capfig{0.25\textwidth}{figures/ApplyingNewtonsLaws/ant.png}{\label{fig:applyingnewtonslaws:ant}An ant on a horizontal turntable that is starting to spin, as seen from above.}
+A small ant is sleeping on a turntable just as the turntable starts to spin from rest, with an angular acceleration $\alpha=\SI{1}{rad/s}$ that is small enough so that, initially, the ant remains on the turntable. The ant is a distance $R=\SI{0.1}{m}$ from the centre of the turntable, as shown in Figure \ref{fig:applyingnewtonslaws:ant}  and the coefficient of static friction between the ant's ``feet'' and the turntable is $\mu_s=0.5$. After how much time will the ant slide off from the turntable?}
+As the turntable accelerates, the force of static friction between the turntable and the ant will keep the ant moving with the turntable. Once the turntable is going fast enough, the force of friction will no longer be large enough to provide the total acceleration that is required to keep the ant moving with the turntable (with a constant tangential component of the acceleration and an increasing radial component of the acceleration). 
+
+The forces on the ant are:
+\begin{enumerate}
+\item $\vec F_g$, its weight, with magnitude $mg$.
+\item $\vec N$, a normal force exerted by the turntable on the ant.
+\item $\vec f_s$, a force of static friction exerted by the turntable on the ant. The force of friction will be such that it has both radial and tangential components.
+\end{enumerate}
+A free-body diagram for the forces on the ant is shown in Figure \ref{fig:applyingnewtonslaws:ant_fbd}, as seen from above and from the side, for some point in time. We have chosen the point in time to be just when the ant is about to slide off of the turntable, when the force of static friction makes an unknown angle $\theta$ with $x$ axis. We used a three dimension coordinate system where the weight and normal force are exerted in the $z$ (vertical) direction since the acceleration vector of the ant will have both radial ($x$) and tangential ($y$) components.
+\capfig{0.4\textwidth}{figures/ApplyingNewtonsLaws/ant_fbd.png}{\label{fig:applyingnewtonslaws:ant_fbd}(Left:) Forces on the ant as seen from above. The normal force is out of the page ($\odot$), whereas the weight is into the page ($\times$). (Right:) Forces on the ant as seen from the side. Note that the acceleration vector and force of static friction also have component in the $y$ direction, which is why their magnitude is shown as being smaller than in the top view.}
+Newton's Second Law has to be written out in three components. The $z$ component relates the weight and normal force:
+\begin{align*}
+\sum F_z &= N - F_g = 0\\
+\therefore N&=mg
+\end{align*}
+The $x$ component of Newton's Second Law is such that the $x$ component of the acceleration is its radial component:
+\begin{align*}
+\sum F_x &= -f_s\cos\theta = -ma_R = -m\frac{v^2}{R}\\
+\therefore f_s\cos\theta &= m\frac{v^2}{R}
+\end{align*}
+The $y$ component of Newton's Second relates the tangential component of the force of static friction to the tangential component of the acceleration:
+\begin{align*}
+\sum F_y &= f_s\sin\theta = ma_T \\
+\therefore f_s\sin\theta &= m\alpha R
+\end{align*}
+where we used the fact that the (linear) tangential acceleration, $a_T$, is related to the angular acceleration, $\alpha$, by:
+\begin{align*}
+a_T = \alpha R
+\end{align*}
+Summarizing the three equations that we obtained from the three components of Newton's Second Law:
+\begin{align*}
+f_s\cos\theta &= m\frac{v^2}{R}\\
+f_s\sin\theta &= m\alpha R\\
+N&=mg
+\end{align*}
+Also, note that the speed, $v(t)$ at some time $t$ is given by simple kinematics:
+\begin{align*}
+v(t)=v_0+a_Tt=(0)+\alpha R t
+\end{align*}
+The ant will start to slip when the force of friction reaches its maximal value, $\mu_sN=\mu_Smg$. The $x$ of Newton's Second Law can be used to find an expression for the time at which force of friction reaches its maximal value:
+\begin{align*}
+f_s\cos\theta &= m\frac{v^2}{R}\\
+\mu_sg\cos\theta &= R\alpha^2t^2\\
+\therefore t &= \sqrt{\frac{\mu_sg\cos\theta}{R\alpha^2}}
+\end{align*}
+We can use the $y$ component to determine the angle $\theta$:
+\begin{align*}
+f_s\sin\theta &= m\alpha R\\
+\mu_sg\sin\theta &= \alpha R\\
+\therefore \sin\theta &= \frac{\alpha R}{\mu_s g}\\
+\therefore \theta &= \sin^{-1}\left( \frac{\alpha R}{\mu_s g}  \right)=\sin^{-1}\left( \frac{(\SI{1}{rad/s^2})(\SI{0.1}{m})}{(0.5)(\SI{9.8}{N/kg})}  \right)\\
+&=\SI{1.17}{\degree}
+\end{align*}
+which we can then use to find the time:
+\begin{align*}
+t &= \sqrt{\frac{\mu_sg\cos\theta}{R\alpha^2}}= \sqrt{\frac{(0.5)(\SI{9.8}{N/kg})\cos(\SI{1.17}{\degree})}{(\SI{0.1}{m})(\SI{1}{rad/s^2})^2}}\\
+&=\SI{7.0}{s}
+\end{align*}
+\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -539,7 +686,14 @@ As we saw in in Example \ref{ex:applyingnewtonslaws:car}, there is a maximum spe
 \section{Summary}
 \vspace{1cm}
 \begin{chapterSummary}
-\item something you learned
+{
+\item When the velocity of an object does not change direction continuously (``linear motion''), we can model its motion independently over several segments in such a way that the motion is one dimensional. That is, we can choose a coordinate system such that the acceleration vector is colinear with one of the axes.
+\item When the forces on an object changes continuously, we need to use calculus. 
+\item If the velocity vector for an object changes direction continuously, we need to model the motion in each dimension independently.
+\item If an object undergoes uniform circular motion, the acceleration vector and the sum of the forces always point towards the centre of the circle.
+\item If an object's speed is changing as it moves around a circle the acceleration vector will have a component that is towards the centre of the circle (the radial component) and a component that is tangential to the circle. The tangential component is responsible for the change in speed, whereas the radial component is responsible for the change in direction of the velocity.
+\item In a reference frame that is rotating about a circle, an inertial force, sometimes called the centrifugal force, appears to push all objects co-moving with the reference frame towards the outside of the circle.
+}
 \end{chapterSummary}
 
 
@@ -547,7 +701,7 @@ As we saw in in Example \ref{ex:applyingnewtonslaws:car}, there is a maximum spe
 
 \subsection{Finding more context}
 \begin{enumerate}
-\item what
+\item Is there a maximum speed with which an object can spin? (Something about the thing eventually flying apart if it rotates two fast, as the atoms can not be held together at some point - maybe there is a cool video to look up?)
 \end{enumerate}
 
 \subsection{Experiments to try at home}
