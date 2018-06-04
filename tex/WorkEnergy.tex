@@ -1,0 +1,172 @@
+
+\chapter{Work and energy}
+\label{chapter:workenergy}
+In this chapter, we introduce a new way to build models derived from Newton's Theory of Classical Physics. We will introduce the concepts of work and energy in order to allow us to model situations using scalar quantities, such as energy, instead of vector quantities, such as forces. It is important to remember that even if we use energy and work, these are tools that are derived from Newton's Laws; that is, we may not be using Newton's Second Law explicitly, but the models that we develop are still based on the same theory of Classical Physics. 
+
+\begin{learningObjectives}{
+ \item something to learn
+ }
+\end{learningObjectives}
+
+\begin{opening}
+\begin{MCquestion}{A question}
+\item a choice
+\item another choice %correct
+\end{MCquestion}
+\end{opening}
+
+\section{Work}
+We introduce the concept of work as the starting point for using energy instead of forces. Work is a scalar quantity that is meant to represent how a force that was exerted onto an object over a given distance has resulted in a change in the motion of the object. We will first introduce the concept of work done by a force on an object, and then look at how work can change the kinematics of the object. This is analogous to how we first defined the concept of force, and then looked at how force affects motion (by using Newton's Second Law, which connected the concept of force to the acceleration of the object).
+
+The work done by a force, $\vec F$, on an object over a displacement, $\vec d$, is defined to be:
+\begin{align*}
+W = \vec F \cdot \vec d = Fd\cos\theta
+\end{align*}
+where $\theta$ is the angle between the vectors when these are placed tail to tail. The dimension of work, force times displacement, is also called ``energy''. The S.I. unit for work is the Joule ($\si{J}$) which is equivalent to $\si{Nm}$ or $\si{kg m^2/s^2}$ in base units.
+
+The work done by the force is the scalar product of the force vector and the displacement vector of the object. That is, the force ``does work'' if it is exerted while the object moves (has a displacement vector) and in such a way that the scalar product of the force and displacement vectors is non-zero. A force that is perpendicular to the displacement vector of an object does no work (since the scalar product of two perpendicular vectors is zero).  A force exerted in the same direction as the displacement will do positive work ($\cos\theta$ positive), and a force in the opposite direction of the displacement will do negative work $\cos\theta$ negative). As we will see, positive work corresponds to increasing the speed of the object, whereas negative work corresponds to decreasing its speed.
+
+TODO: Checkpoint question: work done by the net force on an object in uniform circular motion.
+
+You may be tempted, as you will be when we introduce other quantities, to ask, ``Why work? Why not something else? Why that scalar product in particular? How could we possible have thought of that?''. In general, it seems arbitrary that we introduce this quantity (work) and then find that it leads to a convenient way of building models. We did not just pull this quantity ``out of thin air''! Many theorists, over many years, defined all sorts of quantities, and tried different ways to rephrase Newton's Theory, that were not useful. The ones that make it into the textbooks are those that turned out to be useful! You should thus accept that, when we present quantities, like work, that seem to come out of nowhere, there was in fact a lot of work done to evaluate different ways to do things, and the one we chose to present is the one that turned out to be most useful! So let's talk about work, and see why it's useful!
+
+
+You should also keep in mind that, just like force, work is a ``made-up'' mathematical tool that we find to be useful in describing the world around us. There is no such thing as work or energy, they are just useful mathematical tools.
+
+\subsection{Work in one dimension.}
+Since work involves vectors, we first examine the concept in one dimension, before extending this to two and three dimensions. If we choose $x$ as that dimension, then all vectors only have an $x$ component. We can write a force vector as $\vec F=F\hat x$, where $F$ is the $x$ component of the force (which could be positive or negative). A displacement vector can be written as $\vec d = d \hat x$, where again, $d$ is the $x$ component of the displacement, and can be positive or negative. In one dimension, work is thus:
+\begin{align*}
+W = \vec F \cdot \vec d = (F\hat x) \cdot ( d\hat x ) = Fd (\hat x\cdot\hat x)=Fd
+\end{align*}
+where $\hat x \cdot \hat x = 1$. Consider, for example, the work done by a force, $\vec F$, on a box, as the box moves along the $x$ axis from position $x=x_0$ to position $x=x_1$, as shown in Figure \ref{fig:workenergy:work1d}.
+\capfig{0.4\textwidth}{figures/WorkEnergy/work1d.png}{\label{fig:workenergy:work1d}A force, $\vec F$, exerted on an object as it moves from position $x=x_0$ to position $x=x_1$.}
+We can write the length of the displacement vector as $||\vec d|| =d= \Delta x = x_1-x_0$. The work done on the force is given by:
+\begin{align*}
+W = \vec F \cdot \vec d = F\hat x\cdot \Delta x\hat x =F\Delta x =F(x_1-x_0) 
+\end{align*}
+which is a positive quantity, since $x_1 > x_0$, with our choice of coordinate system. 
+
+TODO: Checkpoint, refer to above diagram, same force, but is the work done by F in going from x1 to x0 the same? (it's negative). 
+
+\subsection{Work in one dimension - varying force}
+Suppose that instead of a constant force, $\vec F$, we have a force that changes with position, $\vec F(x)$, and can take on three different values between $x=x_0$ and $x=x_1$:
+\begin{align*}
+  \vec F (x)=
+  \begin{cases}
+    F_1\hat x & x<\Delta x \quad \text{(segment 1)}\\
+    F_2\hat x & \Delta x \leq x< 2\Delta x \quad \text{(segment 2)}\\
+    F_3\hat x & 2\Delta x \leq x\quad \text{(segment 3)}
+  \end{cases}
+\end{align*}
+as illustrated in Figure \ref{fig:workenergy:work1d}, which shows the force on an object as it moves from position $x=x_0$ to position $x=x_3$, along three (equal) displacement vectors, $\vec d_1=\vec d_2=\vec d_3=\Delta x \hat x$. 
+\capfig{0.7\textwidth}{figures/WorkEnergy/work1dvarying.png}{\label{fig:workenergy:work1dvarying}A varying force, $\vec F(x)$, exerted on an object as it moves from position $x=x_0$ to position $x=x_3$.}
+The total work done by the force over the three separate displacements is the sum of the work done over each displacement:
+\begin{align*}
+W^{tot}&=W_1+W_2+W_3\\
+&=\vec F_1\cdot \vec d_2+\vec F_1\cdot \vec d_2+\vec F_3\cdot \vec d_3\\
+&= F_1\Delta x +F_2\Delta x + F_3\Delta x
+\end{align*}
+If instead of 3 segments we had $N$ segments and the $x$ component of the force had the $N$ corresponding values $F_i$ in the $N$ segments, the total work done by the force would be:
+\begin{align*}
+W^{tot} = \sum_{i=0}^N\vec F_i \cdot \Delta \vec x
+\end{align*}
+where we introduced a vector $\Delta \vec x$ to be the vector of length $\Delta x$ pointing in the positive $x$ direction. In the limit where $\vec F(x)$ changes continuously as a function of position, we take the limit of an infinite number of infinitely small segments of length $dx$, and the sum becomes an integral:
+\begin{align*}
+W^{tot} = \int_{x_0}^{x_f}\vec F(x) \cdot d\vec x
+\end{align*}
+where the work was calculated in going from $x=x_0$ to $x=x_f$, and $d\vec x=dx\hat x$ is an infinitely small displacement vector in the positive $x$ direction.
+
+\begin{example}{\capfig{0.4\textwidth}{figures/WorkEnergy/spring.png}{\label{fig:workenergy:spring}A block is pressed against a spring so as to compress the spring by a distance $D$ relative to its rest length.} A block is pressed against the free end of spring so as to compress the spring by a distance $D$ relative to its rest length. The other end of the spring is fixed to a wall. What is the work done by the spring force on the block in going from $x=x_0-D$ to $x=0$? What is the work done by the block on the spring over the same displacement?}
+The exerted by the spring on the block changes continuously with position, according to Hooke's law:
+\begin{align*}
+\vec F(x) = -kx \hat x
+\end{align*}
+and points in the positive $x$ direction when the end of the spring has a negative $x$ position. To calculate the work done by the force, we sum the work done by the force over many small displacements $d\vec x$:
+\begin{align*}
+W &= \int_{-D}^0 \vec F(x) \cdot d\vec x\\
+&=\int_{-D}^0 (-kx \hat x) \cdot (dx \hat x)\\
+&=\int_{-D}^0 -kxdx (\hat x \cdot \hat x)\\
+&=-\int_{-D}^0 kx dx\\
+&=-\left[\frac{1}{2}kx^2  \right]_{-D}^0\\
+&=\frac{1}{2}kD^2
+\end{align*}
+In order to determine the work that was done by the block on the spring, we need to determine the force, $\pvec F'(x)$, exerted by the block on the spring. By Newton's Third Law, this is equal in magnitude but opposite in direction to the force exerted by the spring on the block:
+\begin{align*}
+\pvec F'(x) = -\vec F(x) = kx \hat x
+\end{align*}
+The work done by block on the spring over the same displacement is thus:
+\begin{align*}
+W' &= \int_{-D}^0 \pvec F(x) \cdot d\vec x\\
+&=\int_{-D}^0 (kx \hat x) \cdot (dx \hat x)\\
+&=\int_{-D}^0 kx dx=-\frac{1}{2}kD^2\\
+\end{align*}
+which is negative. Indeed, the force exerted by the block onto the spring is in the direction opposite of the displacement, so the work will be negative. 
+\end{example}
+
+\subsection{Work in multiple dimensions}
+Consider the work done by a force $\vec F$ in pulling a crate over a displacement $\vec d$, in the case where the force is directed at an angle $\theta$ above the horizontal, as shown in Figure \ref{fig:workenergy:workangle}.
+\capfig{0.4\textwidth}{figures/WorkEnergy/workangle.png}{\label{fig:workenergy:workangle}A force, $\vec F$, exerted on an object as it moves from position $x=x_0$ to position $x=x_1$.}
+The work done by the force is given by:
+\begin{align*}
+W = \vec F \cdot \vec d &= Fd\cos\theta\\
+&= F_{\parallel}d\\
+&= Fd_{\parallel}\\
+\end{align*}
+where we highlighted the fact that the scalar product ``picks out'' components of vectors that are parallel to each other. $F_{\parallel} = F\cos\theta$ is thus the component of $\vec F$ that is parallel to $\vec d$, and $d_{\parallel}=d\cos\theta$ is the component of $\vec d$ that is parallel to $\vec F$. These are also shown in Figure \ref{fig:workenergy:workangle}.
+
+
+
+\subsection{Net work done}
+
+\section{Kinetic energy and the work energy theorem}
+
+\section{Power}
+
+
+\newpage
+\section{Summary}
+
+\begin{chapterSummary}{
+\item Something that was learned
+}
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+This is an important equation
+\begin{align*}
+E = mc^2
+\end{align*}
+
+\end{importantEquations}
+
+
+\newpage
+\section{Thinking about the material}
+\subsection{Reflect and research}
+
+\begin{enumerate}
+\item Something to research more.
+\end{enumerate}
+\subsection{To try at home}
+
+\begin{tQuestion}Try doing this \end{tQuestion}
+
+\subsection{To try in the lab}
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+\begin{problemParts}{A question\label{Q:chaptertitle:q1}}
+\item How close can he get to the hurdle before he has to jump?
+\item What maximum height does he reach?
+\end{problemParts}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{\ref{Q:chaptertitle:q1}}
+{
+the solution
+}
+\end{solution}
+
