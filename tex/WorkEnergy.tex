@@ -66,6 +66,7 @@ W^{tot}&=W_1+W_2+W_3\\
 &=\vec F_1\cdot \vec d_2+\vec F_1\cdot \vec d_2+\vec F_3\cdot \vec d_3\\
 &= F_1\Delta x +F_2\Delta x + F_3\Delta x
 \end{align*}
+TODO: Question Library question to show that over a segment, using scalar product, that if F is constant, the work done over the whole displacement is equal to the sum of the work done over the displacement subdivided into $N$ segments (e.g. if $\vec d$ is the displacement, show that $W = \sum F d_i$ where $d_i$ is part of $d$.  
 If instead of 3 segments we had $N$ segments and the $x$ component of the force had the $N$ corresponding values $F_i$ in the $N$ segments, the total work done by the force would be:
 \begin{align*}
 W^{tot} = \sum_{i=0}^N\vec F_i \cdot \Delta \vec x
@@ -104,7 +105,7 @@ which is negative. Indeed, the force exerted by the block onto the spring is in 
 \end{example}
 
 \subsection{Work in multiple dimensions}
-Consider the work done by a force $\vec F$ in pulling a crate over a displacement $\vec d$, in the case where the force is directed at an angle $\theta$ above the horizontal, as shown in Figure \ref{fig:workenergy:workangle}.
+First, consider the work done by a force $\vec F$ in pulling a crate over a displacement $\vec d$, in the case where the force is directed at an angle $\theta$ above the horizontal, as shown in Figure \ref{fig:workenergy:workangle}, and the displacement is along the $x$ axis (or rather, we chose the $x$ axis to be parallel to the displacement).
 \capfig{0.4\textwidth}{figures/WorkEnergy/workangle.png}{\label{fig:workenergy:workangle}A force, $\vec F$, exerted on an object as it moves from position $x=x_0$ to position $x=x_1$.}
 The work done by the force is given by:
 \begin{align*}
@@ -114,6 +115,55 @@ W = \vec F \cdot \vec d &= Fd\cos\theta\\
 \end{align*}
 where we highlighted the fact that the scalar product ``picks out'' components of vectors that are parallel to each other. $F_{\parallel} = F\cos\theta$ is thus the component of $\vec F$ that is parallel to $\vec d$, and $d_{\parallel}=d\cos\theta$ is the component of $\vec d$ that is parallel to $\vec F$. These are also shown in Figure \ref{fig:workenergy:workangle}.
 
+In general, if an object is moving along an arbitrary path, we cannot choose the $x$ axis to be parallel to the displacement or to the force. If the path can be sub-divided into straight segments over which the force is constant, as in Figure \ref{fig:workenergy:workd2d}, we can calculate the work done by the force over each segment and add  the those together to obtain the total work done by the force. Note that, in general, the work done by a force as an object moves from position to another depends on the particular path that is taken.
+\capfig{0.3\textwidth}{figures/WorkEnergy/work2d.png}{\label{fig:workenergy:work2d}A arbitrary two dimension path of an object from $A$ to $B$ broken into three straight segments.}
+
+\begin{example}{
+\capfig{0.3\textwidth}{figures/WorkEnergy/workfriction.png}{\label{fig:workenergy:workfriction}Two possible paths to slide a crate from position $A$ to position $B$, as seen from above.}
+Compare the work done by the force of kinetic friction in sliding a crate along a horizontal surface from position $A$ (coordinates $x_A, y_A$) to position $B$ (coordinates $x_B, y_B$) using the two different paths depicted in Figure \ref{fig:workenergy:workfriction}. Assume that the mass of the crate is $m$ and that the coefficient of kinetic friction between the crate and the ground is $\mu_k$.}
+The force of kinetic friction is always in the direction opposite to that of motion. Thus, regardless of the path taken, the force of friction will do negative work. 
+
+Let us first calculate the work done by the force of kinetic friction along the first path (the straight line). The force of kinetic friction will have a magnitude:
+\begin{align*}
+f_k = \mu_k N = \mu_k mg
+\end{align*}
+since the normal force will have the same magnitude as the weight because the crate is not moving (accelerating) in the direction perpendicular to the $xy$ plane.  The displacement vector from $A$ to $B$ can be written as:
+\begin{align*}
+\vec d &= (x_B-x_A)\hat x + (y_B-y_A) \hat y\\
+\therefore ||\vec d|| &=d= \sqrt{(x_B-x_A)^2 - (y_B-y_A)^2}
+\end{align*}  
+The force of kinetic friction will be in the opposite direction of the displacement vector, and the angle between the two vectors will thus be $\SI{180}{\degree}$ ($\cos\theta=-1$). The work done by the force of kinetic friction is thus:
+\begin{align*}
+W = \vec f_k \cdot\vec d = f_k d \cos\theta = -\mu_k mg\sqrt{(x_B-x_A)^2 - (y_B-y_A)^2}
+\end{align*}
+and is negative, as expected.
+
+For path 2, we break up the motion into two segments, with displacements vectors $\vec d_1$ (along $y$) and $\vec d_2$ (along $x$). We can write the vectors as:
+\begin{align*}
+\vec d_1 &= 0\hat x + (y_A-y_B) \hat y\\
+\therefore ||\vec d_1||=d_1=(y_A-y_B)\\
+\vec d_2 &= (x_A-x_B)\hat x + 0 \hat y\\
+\therefore ||\vec d_2||=d_2=(x_A-x_B)\\
+\end{align*}
+
+Along each segment, the force of kinetic friction is anti-parallel to the displacement (note that the force of friction changes direction over the two segments), but the magnitude is $f_k=\mu_kmg$. The work done along the first segment is thus:
+\begin{align*}
+W_1 = \vec f_k \cdot \vec d_1 = f_k d_1 \cos\theta = -\mu_k mg(y_A-y_B)
+\end{align*}
+The work done along the second segment is:
+\begin{align*}
+W_2 = \vec f_k \cdot \vec d_2 = f_k d_2 \cos\theta = -\mu_k mg(x_A-x_B)
+\end{align*}
+And the total work done by the force of kinetic friction over the second path is:
+\begin{align*}
+W^{tot} = W_1 + W_2 = -\mu_k mg \left((x_A-x_B) + (y_A-y_B)\right)
+\end{align*}
+which is more work than was done along path 1. This makes sense because for both paths, the force of friction has the same magnitude and is always in the opposite direction of motion; thus, the longer the path, the more work will be done by the force.
+\end{example}
+
+TODO: A checkpoint on the work done by static friction (displacement is zero if static friction, so zero)
+
+START HERE: Same example, but work done by gravity over two different paths. 
 
 
 \subsection{Net work done}
