@@ -7,11 +7,13 @@
 In this chapter, we will learn about the process of doing science and lay the foundations for developing skills that will be of use throughout your scientific careers. In particular, we will start to learn how to test a model with an experiment, as well as learn to estimate whether a given result or model makes sense.
 \vspace{1cm}
 \begin{learningObjectives}
+{
 \item Be able to estimate orders of magnitude
 \item Understand units
 \item Understand the process of building a model and performing an experiment
 \item Understand uncertainties in experiments
 \item Be able to use a computer for simple data analysis
+}
 \end{learningObjectives}
 
 \section{Orders of magnitude}
@@ -27,7 +29,7 @@ We can model a school bus as a box, say $\SI{20}{\meter}\times \SI{2}{\meter}\ti
 Thus, we expect to be able to fit about three million ping pong balls in a school bus. 
 \end{example}
 
-\begin{checkpointSA}{Fill in the following table, giving the order of magnitude in meters of the sizes of different physical objects. Feel free to Google these!}
+\begin{checkpointSA}{Fill in the following table, giving the order of magnitude in meters of the sizes of different physical objects. Feel free to look these up on the internet!}
 \begin{center}
 \begin{tabular}{|c|c| }
 \hline  
@@ -83,7 +85,7 @@ Amount of substance [N]& mole [mol] \\ \hline
 Luminous intensity [J]& candela [cd] \\ \hline
 Dimensionless [0]& unitless [] \\ \hline
 \end{tabular}
-\caption{\label{tab:chap2:SIunits} Base dimensions and their SI units with abbreviations.}
+\caption{\label{tab:ModelAndExperiment:SIunits} Base dimensions and their SI units with abbreviations.}
 \end{table}
 
 From the base dimensions, one can obtain ``derived'' dimensions such as ``speed'' which is a measure of how fast an object is moving. The dimension of speed is $\frac{L}{T}$ (length over time) and the corresponding SI unit is m/s (meters per second)\footnote{Note that we can also write meters per second as m$\cdot$s$^{-1}$, but we often use a divide by sign if the power of the unit in the denominator is 1.} and corresponds to a measure of how much distance an object can cover per unit time (the higher the speed, the larger the distance covered per unit time). Table \ref{tab:ModelAndExperiment:DerivedSIunits} shows a few derived dimensions and their corresponding SI units.
@@ -102,7 +104,7 @@ Power [M$\cdot$L$^2\cdot$T$^{-3}$]& watt [W]&[J/s=kg$\cdot$m$^2\cdot$s$^{-3}$]\\
 Electric Charge [I$\cdot$ T]& coulomb [C]&[A$\cdot$ s] \\ \hline
 Voltage [M$\cdot$L$^2\cdot$T$^{-3}\cdot$I$^{-1}$]& volt [V]&[J/C=kg$\cdot$m$^2\cdot$s$^{-3}\cdot$A$^{-1}$] \\ \hline
 \end{tabular}
-\caption{\label{tab:chap2:DerivedSIunits} Example of derived dimensions and their SI units with abbreviations.}
+\caption{\label{tab:ModelAndExperiment:DerivedSIunits} Example of derived dimensions and their SI units with abbreviations.}
 \end{table}
 
 By convention, we can indicate the dimension of a quantity, $X$, by writing it in square brackets, $[X]$. For example, $[X]=I$, would mean that the quantity $X$ has dimensions of electric current. Similarly, we can indicate the SI units of $X$ with $SI[X]$; since $X$ has dimensions of current, $SI[X]=A$.
@@ -146,7 +148,7 @@ while force, speed and current have dimensions:
 \end{align*}
 The dimension of force multiplied by speed divided by electric charge
 \begin{align*}
-[\frac{force\cdot speed}{current}]&=\frac{[force]\cdot [speed]}{[current]}=\frac{M\cdot L\cdot T^{-2} \cdot L\cdot T^{-1} }{I}\\
+\left[\frac{force\cdot speed}{current}\right]&=\frac{[force]\cdot [speed]}{[current]}=\frac{M\cdot L\cdot T^{-2} \cdot L\cdot T^{-1} }{I}\\
 &=M\cdot L^2 \cdot T^{-3}\cdot I^{-1}
 \end{align*}
 where, in the last line, we combined the powers of the same dimensions. By inspection, this is the same dimension as voltage.
@@ -184,7 +186,7 @@ One possible way to test Chlo\"e's theory of falling objects is to measure $k$ f
 4.00 &1.07 &2.00 &0.54 \\ \hline
 5.00 &1.10 &2.24 &0.49 \\ \hline
 \end{tabular}
-\caption{\label{tab:chap2:kmes} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
+\caption{\label{tab:ModelAndExperiment:kmes} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
 \end{table}
 
 When looking at Table \ref{tab:ModelAndExperiment:kmes}, it is clear that each drop height gave a different value of $k$, so at face value, we would claim that Chlo\"e's theory is incorrect, as there does not seem to be a value of $k$ that applies to all situations. However, we would be incorrect in doing so unless we understood \textit{the precision of the measurements} that we made. Suppose that we repeated the measurement multiple times at a fixed drop height of $x=\SI{3}{m}$, and obtained the values in Table \ref{tab:ModelAndExperiment:kmes_3m}.
@@ -201,7 +203,7 @@ When looking at Table \ref{tab:ModelAndExperiment:kmes}, it is clear that each d
 3.00 &0.73 &1.73 &0.42 \\ \hline
 3.00 &0.66 &1.73 &0.38 \\ \hline
 \end{tabular}
-\caption{\label{tab:chap2:kmes_3m} Repeated measurements of the drop time, $t$, for a bowling ball to fall a distance $x=\SI{3}{m}$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
+\caption{\label{tab:ModelAndExperiment:kmes_3m} Repeated measurements of the drop time, $t$, for a bowling ball to fall a distance $x=\SI{3}{m}$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
 \end{table}
 
 This simple example highlights the critical aspect of making any measurement: it is impossible to make a measurement with infinite precision. The values in Table \ref{tab:ModelAndExperiment:kmes_3m} show that if we repeat the exact same experiment, we are likely to measure different values for a single quantity. In this case, for a fixed drop height, $x=\SI{3}{m}$, we obtained a spread in values of the drop time, $t$, between roughly \SI{0.6}{s} and \SI{1.0}{s}. Does this mean that it is hopeless to do science, since we can never repeat measurements? Thankfully, no! It does however require that we deal with the inherent imprecision of measurements in a formal manner.
@@ -219,13 +221,13 @@ where \SI{0.76}{s} is called the ``central value'' and \SI{0.15}{s} the ``uncert
 You're not alone! Precision, accuracy and uncertainty all relate to error, but have different meanings. To clarify these terms, I think it is useful to study them side-by-side.
 
 \textbf{Precision}
- is the repeatability of a measurement. If the values obtained are close to one another, they are precise. For example, say you were measuring the rebound height of a basketball, dropped from a fixed height. After performing the calculation multiple times, you find that your measurements are very close in value. Something that you could say about this data is: ``After repeating our measurement multiple times, the values that we obtained were very close together. Our measurements were very precise!''.
+ is the repeatability of a measurement. If the values obtained are close to one another, they are precise. For example, say you were measuring the rebound height of a basketball, dropped from a fixed height. After performing the measurement multiple times, you find that they are very close in value to each other. Something that you could say about these data is: ``After repeating our measurement multiple times, the values that we obtained were very close together. Our measurements were very precise!''
 
 \textbf{Accuracy}
- measures the agreement between the actual value and the value that you measured. If the values are close to the accepted value, they are accurate. For example, say you performed calculations that estimated the distance that a slingshot will catapult a rock before it falls and stops. When we actually perform the experiment, our estimated value was the same as the actual value. You could describe your data as follows: ``Our estimated value was almost exactly the same as the actual value that we measured - it was really accurate!''.
+ measures the agreement between the true value and the value that you measured. If the values are close to the true value, they are accurate. For example, say you performed calculations that estimated the distance that a slingshot will catapult a rock before it falls and stops. When we actually perform the experiment, our estimated value was the same as the actual value. You could describe your data as follows: ``Our estimated value was almost exactly the same as the actual value that we measured - it was really accurate!''.
 
 \textbf{Uncertainty}
- is an estimate of the amount that a measurement will differ from an accepted value. In science, we aim to lower the uncertainty in our measurements. Let's say that you are measuring the number of rotations of a spinning top, spun with a fixed force. Your measurements are close together, but deviate from one another in a fixed range. This would be an example where you could calculate the uncertainty in your measurements. It would be sensible to say ``After multiple measurements, we've found that our values are similar. They deviate from one another within a fixed uncertainty.''
+ is an estimate of the amount that a measurement will differ from a true value. In science, we aim to lower the uncertainty in our measurements, so that we can test models and theories with more precision. Let's say that you are measuring the number of rotations of a spinning top during a certain period of time. Your measurements are close together, but have a fixed range of values. This would be an example where you could calculate the uncertainty in your measurements. It would be sensible to say ``After multiple measurements, we've found that our values are similar and our uncertainty captures the range of values that we measured.''
 \end{studentopinion}
 
 
@@ -245,7 +247,7 @@ If we have $N$ measurements of some quantity $t$, $\{t_1, t_2, t_3, \dots t_N\}$
 The mean is just the arithmetic average of the values, and the standard deviation, $\sigma_t$, requires one to first calculate the mean, then the variance ($\sigma^2_t$, the square of the standard deviation). You should also note that for the variance, we divide by $N-1$ instead of $N$. The standard deviation and variance are quantities that come from statistics and are a good measure of how spread out the values of $t$ are about their mean.
 
 \begin{example}{Calculate the mean and standard deviation of the values for $k$ from Table \ref{tab:ModelAndExperiment:kmes_3m}.}
-\label{ex:chap2:stdcalc}
+\label{ex:modelandexperiment:stdcalc}
 In order to calculate the standard deviation, we first need to calculate the mean of the $N=5$ values of $k$: $\{0.58, 0.44, 0.37, 0.42, 0.38 \}$. The mean is given by:
 \begin{align*}
 \bar k = \frac{0.58 + 0.44 + 0.37 + 0.42 + 0.38}{5}=\SI{0.44}{s.m^{-\frac{1}{2}}}
@@ -259,7 +261,11 @@ and the standard deviation is then given by the square root of the variance:
 \begin{align*}
 \sigma_k=\sqrt{0.0073}=\SI{0.09}{s.m^{-\frac{1}{2}}}
 \end{align*}
-Using the mean and standard deviation, we would quote our value of $k$ as $k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$.
+Using the mean and standard deviation, we would quote our value of $k$ as :
+\begin{align*}
+k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}
+\end{align*}
+
 \end{example}
 Any value that we measure should always have an uncertainty. In the case where we can easily repeat the measurement, we should do so to evaluate how reproducible it is, and the standard deviation of those values is usually a good first estimate of the uncertainty in a value\footnote{In practice, the standard deviation is an overly conservative estimate of the error and we would use the error on the mean, which is the standard deviation divided by the square root of the number of measurements.}. Sometimes, the measurements cannot easily be reproduced; in that case, it is still important to determine a reasonable uncertainty, but in this case, it usually has to be estimated. Table \ref{tab:ModelAndExperiment:uncertainties} shows a few common types of measurements and how to determine the uncertainties in those measurements. 
 
@@ -286,9 +292,9 @@ It is important to note that there are two possible sources of uncertainty in a 
 
 The other source of uncertainty is called ``systematic''. Systematic uncertainties are much more difficult to detect and to estimate. One example would be trying to measure something with a scale that was not properly tarred (where the 0 weight was not set). You may end up with very small random errors when measuring the weights of object (very repeatable measurements), but you would have a hard time noticing that all of your weights were offset by a certain amount unless you had access to a second scale. Some common examples of systematic uncertainties are: incorrectly calibrated equipment, parallax error when measuring distance, reaction times when measuring time, effects of temperature on materials, etc.
 
-In this section, we want to further emphasize the difference between ''error'' and ''mistake''. ''Uncertainty'' or ''error'' in a measurement comes from an unavoidable source that affects experimental results. A ''mistake'' also affects experimental results, but is preventable. If a ''mistake'' occurs in physics, the experiment is generally re-done and the previous data is discarded. The broad term ''human error'' may refer to a variety of errors or mistakes, so it is best to avoid this term in experimental physics (especially in your lab reports)!
+In this section, we want to further emphasize the difference between ``error'' and ``mistake''. ``Uncertainty'' or ``error'' in a measurement comes from an unavoidable source that affects experimental results. A ``mistake'' also affects experimental results, but is preventable. If a ``mistake'' occurs in physics, the experiment is generally re-done and the previous data are discarded. The broad term ``human error'' may refer to a variety of errors or mistakes, so it is best to avoid this term in experimental physics (especially in your lab reports), as it means that you know you made a mistake! Instead, if you think that you measured time imprecisely, refer to human reaction time, rather than ``human error''.
 
-The following table refers to examples of error that may be confused with ''human error'' that could be more accurately explained:
+Table \ref{tab:ModelAndExperiment:uncertainties} shows examples of sources of error that students often call ``human error'' but that should be instead described more precisely.
 
 \begin{table}[!h]
 \centering
@@ -296,17 +302,19 @@ The following table refers to examples of error that may be confused with ''huma
 \textbf{Situation} &\textbf{Source of Error} \\
 \hline
 \hline
-While taking measurements, your line of sight was not completely parallel to the measuring device. & This is parallax error - a type of random error.\\ \hline
+While taking measurements, your line of sight was not completely parallel to the measuring device. & This is parallax error - a type of systematic error.\\ \hline
 You incorrectly performed calculations. & Mistake! Redo the calculations.\\ \hline
-A draft of wind in the lab slightly altered the direction of your ball rolling down an incline. & This is an environmental error - a type of random error (in this situation).\\ \hline
+A draft of wind in the lab slightly altered the direction of your ball rolling down an incline. & This is an environmental effect/error - it could be random or systematic, depending on whether it always had the same effect.\\ \hline
 Your hand slipped while holding the ruler - the object was measured to be twice its original size! & Mistake! Redo this experiment and discard the data.\\ \hline
-When timing an experiment, you don't hit the ''STOP'' button exactly when the experiment stops. & Reaction time error - a type of random error.\\ \hline
+When timing an experiment, you don't hit the ''STOP'' button exactly when the experiment stops. & Reaction time error - usually a systematic error (time is usally measured longer than it is).\\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:uncertainties} Different situations in the lab and type of error.}
+\caption{\label{tab:ModelAndExperiment:uncertainties} Don't use the term ``human error, instead, use these.}
 \end{table}
 
 \subsubsection{Propagating uncertainties}
-Going back to the data in Table \ref{tab:ModelAndExperiment:kmes_3m}, we found that for a known drop height of $x=\SI{3}{m}$, we measured different values of the drop time, which we found to be $t=\SI{0.76 \pm 0.15}{s}$ (using the mean and standard deviation). We also calculated a value of $k$ corresponding to each value of $t$, and found $k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$. Suppose that we did not have access to the individual values of $t$, but only to the value of $t=\SI{0.76 \pm 0.15}{s}$ with uncertainty. How do we calculate a value for $k$ with uncertainty? In order to answer this question, we need to know how to ``propagate'' the uncertainties in a measured value to the uncertainty in a valued derived from the measurements. We briefly present different methods for propagating uncertainties, before advocating for the use of computers to do the calculations for you.
+Going back to the data in Table \ref{tab:ModelAndExperiment:kmes_3m}, we found that for a known drop height of $x=\SI{3}{m}$, we measured different values of the drop time, which we found to be $t=\SI{0.76 \pm 0.15}{s}$ (using the mean and standard deviation). We also calculated a value of $k$ corresponding to each value of $t$, and found $k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$ (Example \ref{ex:modelandexperiment:stdcalc}).
+
+Suppose that we did not have access to the individual values of $t$, but only to the value of $t=\SI{0.76 \pm 0.15}{s}$ with uncertainty. How do we calculate a value for $k$ with uncertainty? In order to answer this question, we need to know how to ``propagate'' the uncertainties in a measured value to the uncertainty in a valued derived from the measurements. We briefly present different methods for propagating uncertainties, before advocating for the use of computers to do the calculations for you.
 
 \textbf{1. Estimate using relative uncertainties}
 The relative uncertainty in a measurement gives us an idea of how precisely a value was determined. Any quantity that depends on that measurement should have a precision that is similar; that is we expect the relative uncertainty on $k$ to be similar to that in $t$. For $t$, we saw that the relative uncertainty was approximately 20\%. If we take the central value of $k$ to be the central value of $t$ divided by $\sqrt x$, we find:
@@ -341,7 +349,9 @@ The derivative method lets us propagate the uncertainty in a general way, so lon
 \bar F &= F(\bar x, \bar y) \nonumber \\
 \sigma_F &= \sqrt{\left(\die{F}{x}\sigma_x \right)^2 + \left(\die{F}{y}\sigma_y \right)^2 }
 \end{align}
-That is, the central value of the function $F$ is found by evaluating the function at the central values of $x$ and $y$. The uncertainty in $F$, $\sigma_F$ is found by taking the quadrature sum of the partial derivatives of $F$ evaluated at the central values of $x$ and $y$ multiplied by the uncertainties in the corresponding variables that $F$ depends on. The uncertainty will contain one term in the sum per variable that $F$ depends on. At the end of the chapter, we will show you how to calculate this easily with a computer, so do not worry about getting comfortable with partial derivatives (yet!). Note that the partial derivative, $\die{F}{x}$ is simply the derivative of $F(x,y)$ relative to $x$ evaluated as if $y$ were a constant. Also, when we say ``add in quadrature'', we mean square the quantities, add them, and then take the square root (same as you would do to calculate the hypotenuse of a right-angle triangle).
+That is, the central value of the function $F$ is found by evaluating the function at the central values of $x$ and $y$. The uncertainty in $F$, $\sigma_F$, is found by taking the quadrature sum of the partial derivatives of $F$ evaluated at the central values of $x$ and $y$ multiplied by the uncertainties in the corresponding variables that $F$ depends on. The uncertainty will contain one term in the sum per variable that $F$ depends on.
+
+In appendix \ref{app:python}, we will show you how to calculate this easily with a computer, so do not worry about getting comfortable with partial derivatives (yet!). Note that the partial derivative, $\die{F}{x}$ is simply the derivative of $F(x,y)$ relative to $x$ evaluated as if $y$ were a constant. Also, when we say ``add in quadrature'', we mean square the quantities, add them, and then take the square root (same as you would do to calculate the hypotenuse of a right-angle triangle).
 
 \begin{example}{Use the derivative method to evaluate $k=\frac{t}{\sqrt{x}}$ for $x=\SI{3.00 \pm 0.01}{m}$ and $t=\SI{0.76\pm0.15}{s}$.}
 \label{ex:ModelAndExperiment:derivprop}
@@ -364,7 +374,7 @@ k&= \SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}
 \end{align*}
 which is consistent with what we found with the other two methods.
 
-We should ask ourselves if the value we found is reasonable, since we also included an uncertainty in $x$ and would expect a bigger uncertainty than in the previous calculations where we only had an uncertainty in $t$. The reason that the uncertainty in $k$ has remained the same is that the relative uncertainty in $x$ is very small, $\frac{0.01}{3.00}\sim 0.3\%$, so it contributes very little compared to the 20\% uncertainty from $t$. 
+\textbf{Discussion:} We should ask ourselves if the value we found is reasonable, since we also included an uncertainty in $x$ and would expect a bigger uncertainty than in the previous calculations where we only had an uncertainty in $t$. The reason that the uncertainty in $k$ has remained the same is that the relative uncertainty in $x$ is very small, $\frac{0.01}{3.00}\sim 0.3\%$, so it contributes very little compared to the 20\% uncertainty from $t$. 
 \end{example}
 
 The derivative method leads to a few simple short cuts when propagating the uncertainties for simple operations, as shown in Table \ref{tab:ModelAndExperiment:prop_uncertainties}. A few rules to note:
@@ -414,7 +424,7 @@ Now that you know how to attribute an uncertainty to a measured quantity and the
 \subsection{Comparing model and measurement - discussing a result}
 In order to advance science, we make measurements and compare them to a theory or model prediction. We thus need a precise and consistent way to compare measurements with each other and with predictions. Suppose that we have measured a value for Chlo\"e's constant $k= \SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$. Of course, Chlo\"e's theory does not predict a value for $k$, only that fall time is proportional to the square root of the distance fallen. Isaac Newton's Universal Theory of Gravity does predict a value for $k$ of \SI{0.45}{s.m^{-\frac{1}{2}}} with negligible uncertainty. In this case, since the model (theoretical) value easily falls within the range given by our uncertainty, we would say that our measurement is consistent (or compatible) with the theoretical prediction. 
 
-Suppose that instead, we had measured $k=\SI{0.55 \pm 0.08}{s.m^{-\frac{1}{2}}}$ so that the lowest value compatible with our measurement, $k=\SI{0.55}{s.m^{-\frac{1}{2}}}-\SI{0.08}{s.m^{-\frac{1}{2}}}=\SI{0.47}{s.m^{-\frac{1}{2}}}$ is not compatible with Newton's prediction. Would we conclude that our measurement invalidates Newton's theory? The answer is: it depends... And what ``it depends on'' should always be discussed any time that you present a measurement (even it it happened that your measurement is compatible with a prediction - maybe that was a fluke). Below, we list a few common points that should be addressed when presenting a measurement that will guide you into deciding whether your measurement is consistent with a prediction:
+Suppose that instead, we had measured $k=\SI{0.55 \pm 0.08}{s.m^{-\frac{1}{2}}}$ so that the lowest value compatible with our measurement, $k=\SI{0.55}{s.m^{-\frac{1}{2}}}-\SI{0.08}{s.m^{-\frac{1}{2}}}=\SI{0.47}{s.m^{-\frac{1}{2}}}$, is not compatible with Newton's prediction. Would we conclude that our measurement invalidates Newton's theory? The answer is: it depends... And what ``it depends on'' should always be discussed any time that you present a measurement (even it it happened that your measurement is compatible with a prediction - maybe that was a fluke). Below, we list a few common points that should be addressed when presenting a measurement that will guide you into deciding whether your measurement is consistent with a prediction:
 \begin{itemize}
 \item How was the uncertainty determined and/or propagated?
 \item Are there systematic effects that were not taken into account when determining the uncertainty? (e.g. reaction time, parallax, something difficult to reproduce).
@@ -431,6 +441,7 @@ In a similar way, we would discuss whether two different measurements, each with
 \section{Summary}
 \vspace{2cm}
 \begin{chapterSummary}
+{
 \item Measurable quantities have dimensions and units.
 \item A physical quantity should always be reported with units, preferably SI units.
 \item When you build a model to predict a physical quantity, you should always ask if the prediction makes sense (Does it have a reasonable order of magnitude? Does it have the right dimensions?).
@@ -440,6 +451,7 @@ In a similar way, we would discuss whether two different measurements, each with
 \item You have to pay special attention to systematic uncertainties, which are difficult to determine. You should always think of ways that your measured values could be wrong, even after repeated measurements.
 \item Relative uncertainties tell you whether your measurement is precise.
 \item If you expect two measured quantities to be linearly related (one is proportional to the other), plot them to find out! Use a computer to do so!
+}
 \end{chapterSummary}
 
 \section{Thinking about the Material}
