@@ -221,7 +221,7 @@ Finally, if the object had an initial speed $v_{0x}$ at $t=0$, one can easily re
 \end{align}
 Note that equation \ref{eqn:DescribingMotionIn1D:1dxvst_noa} is just a special case of the above when $a=0$. 
 
-\begin{example}{A ball is thrown upwards with a velocity of \SI{10}{m/s}. After which distance will the ball stop before falling back down? Assume that gravity causes a constant downwards acceleration of \SI{9.8}{m/s^2}.}
+\begin{example}{A ball is thrown upwards with a velocity of \SI{10}{m/s}. After what distance will the ball stop before falling back down? Assume that gravity causes a constant downwards acceleration of \SI{9.8}{m/s^2}.}
 \label{ex:DescribingMotionIn1D:ballupandown}
 We will solve this problem in the following steps:
 \begin{enumerate}[topsep=-10pt]
@@ -317,8 +317,8 @@ Similarly, we introduce the \textbf{instantaneous acceleration}, as the time der
 
 \begin{studentOpinion}{Olivia}
 When looking at a graph of position versus time, it is sometimes hard to tell at first glance whether the speed of the object is increasing or decreasing. This section gives us an easy way to figure it out. The velocity is the instantaneous slope of the graph $x(t)$, so the speed is the ``steepness" of that slope. Simply draw a few lines that are tangent to (meaning just touching) the curve, and see what happens as time increases. If the lines get steeper, the object is speeding up. If they are getting flatter, the object is slowing down.
-\capfig{0.5\textwidth}{figures/DescribingMotionIn1D/SpeedingSlowing.jpg}{\label{fig:SpeedingSlowing}Two graphs of $x(t)$ showing tangent lines.} 
-From here, you can also figure out what the direction of the acceleration is. If an object is speeding up, the acceleration and velocity must be in the same direction (i.e. both positive or both negative). If the object is slowing down, they must be in opposite directions. Imagine the graphs in Figure \ref{fig:SpeedingSlowing} are describing the motion of a person in heavy wind. In the graph on the left, the person is running with the wind ($v(t)$ and $a(t)$ positive), and in the second graph the person is running against the wind ($v(t)$ positive and $a(t)$ negative). 
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/SpeedingSlowing.png}{\label{fig:DescribingMotionIn1D:speedingslowing}Two graphs of $x(t)$ showing tangent lines. Left: The object is speeding up (positive velocity, positive acceleration). Right: The object is slowing down (positive velocity, negative acceleration).} 
+From here, you can also figure out what the direction of the acceleration is. If an object is speeding up, the acceleration and velocity must be in the same direction (i.e. both positive or both negative). If the object is slowing down, they must be in opposite directions. Imagine the graphs in Figure \ref{fig:DescribingMotionIn1D:speedingslowing} are describing the motion of a person running in heavy wind. In the graph on the left, the person is running with the wind ($v(t)$ and $a(t)$ positive), and in the second graph the person is running against the wind ($v(t)$ positive and $a(t)$ negative). 
 \end{studentOpinion} 
 
 
@@ -404,14 +404,10 @@ x(t)=x_0+v_{0x}t+\frac{1}{2}a_xt^2
 
 \begin{checkpoint}
 \begin{MCquestion}{Choose the graph of $x(t)$ for the case when acceleration is given by $\cos(\omega t)$, where $\omega$ is a constant. The velocity and position are zero at $t=0$
-\begin{center}
-\includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigA.png}
-\includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigB.png}
-\includegraphics[scale=0.25]{figures/DescribingMotionin1D/XfromAcheckpointFigC.png}
-\end{center}}
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/xfromacheckpoint.png}{\label{fig:DescribingMotionIn1D:xfromacheckpoint} Choose the correct position versus time graph.}}
 \item Figure A
 \item Figure B
-\item Figure C
+\item Figure C %correct
 \end{MCquestion}
 \end{checkpoint}
 
@@ -515,10 +511,11 @@ Conversely, given the acceleration, $a_x(t)$, on can find the velocity and posit
 v_x(t)&=\int a_x(t)dt\\
 x(t)&=\int v_x(t)dt\\
 \end{align*}
-With a constant acceleration, $a_x(t)=a_x$, if the object had velocity $v_{0x}$ and position $x_0$ at $t=0$:
+With a constant acceleration, $a_x(t)=a_x$, if the object had velocity $v_{0x}$ and position $x_0$ at $t=0$:\footnote{We did not derive the third of these kinematic equations in this chapter, but it is derived in problem \ref{prob:kinematicDerivation}.} 
 \begin{align*}
 v_x(t)&=v_{0x}t+a_xt\\
-x(t)&=x_0+v_{0x}t+\frac{1}{2}a_xt^2
+x(t)&=x_0+v_{0x}t+\frac{1}{2}a_xt^2\\
+v^2-v_0^2&=2a\Delta x 
 \end{align*}
 If an object has position $x^A$ as measured in a frame of reference $x$ that is moving at constant speed $v'^B$ as measured in a second frame of reference $x'$, then in the $x'$ reference frame, the kinematic quantities for the object are obtained by the Galilean transformation:
 \begin{align*}
@@ -527,6 +524,7 @@ v'^A(t) &=v'^B+v^A(t)\\
 a'^A(t) &= a(t)
 \end{align*}
 \end{importantEquations}
+
 
 \newpage
 \section{Thinking about the material}
@@ -539,31 +537,85 @@ a'^A(t) &= a(t)
 \end{enumerate}
 
 \subsection{To try at home}
+Design an experiment to find the acceleration due to gravity: One of the important equations in this chapter was $x(t)=x_0+v_{0x}+\frac{1}{2}at^2$. If you drop an object from rest, the distance it falls can be represented by $x=\frac{1}{2}gt^2$. Design an experiment to find the value of the acceleration due to gravity, $g$. Hint: This equation can be viewed as a linear relationship between $x$ and $t^2$. 
 \subsection{To try in the lab}
 
 \section{Sample Problems and Solutions}
 \subsection{Problems}
-\begin{problemParts}{Rob is riding is bike at a speed of $\SI{8}{m/s}$. He passes by a velociraptor, as one often does, who is eating by the side of the road. The velociraptor begins chasing him. The velociraptor accelerates from rest at a rate of $\SI{4}{m/s^2}$.\label{Q:Velociraptor}} 
+\begin{problem}
+Derive a kinematic equation that is independent of time. Specifically, derive: $v^2-v_0^2=2ax$, starting with equations \ref{eqn:DescribingMotionIn1DL1dvvst} and \ref{eqn:DescribingMotionIn1D:1dxvst}.  \label{prob:kinematicDerivation}
+\end{problem}
+
+\begin{problemParts}{Rob is riding is bike at a speed of $\SI{8}{m/s}$. He passes by a velociraptor, as one often does, who is eating by the side of the road. The velociraptor begins chasing him. The velociraptor accelerates from rest at a rate of $\SI{4}{m/s^2}$.\label{prob:Velociraptor}} 
 \item Assuming it takes 3 seconds for the velociraptor to react, how long does it take from the moment Rob passes by for the velicoraptor to catch up to him? 
 \item If there is a safe place 70 metres from where Rob passes the velociraptor, will Rob make it there in time to escape being eaten?  
 \end{problemParts}
 
-\begin{problem} {Figure \ref{fig:AccelerationProblem1D} shows a graph of the acceleration, $a(t)$, of a particle moving in one dimension. Draw the corresponding velocity and position graphs. Assume that $v(0)=x(0)=0$.\label{Q:accelerationTime}}
+\begin{problem} {Figure \ref{fig:DescribingMotionIn1D:accelerationproblem1D} shows a graph of the acceleration, $a(t)$, of a particle moving in one dimension. Draw the corresponding velocity and position graphs. Assume that $v(0)=0$ and $x(0)=0$.\label{prob:accelerationTime}}
 \end{problem}
-\capfig{0.6\textwidth}{figures/DescribingMotionIn1D/AccelerationProblem.jpg}{\label{fig:AccelerationProblem1D}A graph of acceleration as a function of time. The scale and units are arbitrary.}
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/accelerationproblem.png}{\label{fig:DescribingMotionIn1D:accelerationproblem1D}A graph of acceleration as a function of time. The scale and units are arbitrary.}
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{\ref{Q:Velociraptor}}{
+\begin{solution}{\ref{prob:kinematicDerivation}}We start with the equations for position and velocity that we derived in this chapter:
+\begin{align*}
+x&=x_0+v_0t+\frac{1}{2}at^2\\
+v&=v_0+at
+\end{align*}
+The first equation can be written as:
+\begin{align*}
+\Delta x&=v_0t+\frac{1}{2}at^2
+\end{align*}
+Our goal is to find an equation that is independent of time $t$. We start by isolating $t$ in our equation for velocity:
+\begin{align*}
+v&=v_0+at\\
+t&=\frac{v-v_0}{a}
+\end{align*}
+We then substitute this value of $t$ into our equation for $\Delta x$:
+\begin{align*}
+\Delta x&=v_0t+\frac{1}{2}at^2\\
+\Delta x&=v_0\left(\frac{v-v_0}{a}\right)+\frac{1}{2}a\left(\frac{v-v_0}{a}\right)^2
+\end{align*}
+We want the left hand side to be $2a\Delta x$, so we multiply each term by $2a$:
+\begin{align*}
+2a\Delta x&=(2a)v_0\left( \frac{v-v_0}{a}\right) +(2a)\frac{1}{2}a\left( \frac{v-v_0}{a}\right) ^2\\
+2a\Delta x&=(2v_0)a\left(\frac{v-v_0}{a}\right)+a^2\left( \frac{v-v_0}{a}\right) ^2\\
+2a\Delta x&=2v_0(v-v_0)+(v-v_0)^2
+\end{align*}
+We distribute $2v_0$ into the brackets. Then we expand the third term and get:
+\begin{align*}
+2a\Delta x&=(2v_0v-2v_0^2)+(v_0-v^2)(v_0-v^2)\\
+2a\Delta x&=(2v_0v-2v_0^2)+(v_0^2-2v_0v+v^2)
+\end{align*}
+All that's left to do is collect like terms, and we get the formula we are looking for:
+\begin{align*}
+2a\Delta x&=2v_0v-2v_0^2+v_0^2-2v_0v+v^2\\
+2a\Delta x&=(v^2)+(2v_0v-2v_0v)+(v_0^2-2v_0^2)\\
+2a\Delta x&=v^2-v_0^2\\
+v^2-v_0^2&=2a\Delta x\\
+\therefore \text{QED}
+\end{align*}
+If you choose a coordinate system such that $x_0$, this equation becomes $v^2-v_0^2=2ax$.
+\end{solution}
+
+\newpage
+\begin{solution}{\ref{prob:Velociraptor}}
 We start by choosing our coordinate system. The solution is simplest if the $x$ axis is positive in the direction of motion and has an origin at the point where Rob passes the velociraptor. We set $t=0$ to be the moment the velociraptor starts running.\\
 
-\capfig{\textwidth}{figures/DescribingMotionIn1D/VelociraptorQuestion.png}{\label{fig:VelociraptorProblem1D} Rob is being chased by a velociraptor. At $t=0$, Rob is a distance $x_{0R}$ from the velociraptor. Safety is $\SI{70}{m}$ away from the origin.}
+\capfig{\textwidth}{figures/DescribingMotionIn1D/velociraptorquestion.png}{\label{fig:DescribingMotionIn1D:velociraptorproblem1D} Rob is being chased by a velociraptor. At $t=0$, Rob is a distance $x_{0R}$ from the velociraptor. Safety is $\SI{70}{m}$ away from the origin.}
 
-Since we are dealing with constant accelerations, we can use the equation:
+\begin{enumerate}[label=(\alph*)]
+\item What do we mean by ``catch up"? It means that Rob and the velociraptor are in the same place at the same time. So, we are interested in the value of $t$ when $x_R=x_V$. 
+
+We need two equations, one describing Rob's position and one describing the position of the velociraptor. Rob is moving at a constant velocity, so his position is described by:
 \begin{align*}
-x(t)&=x_0+v_{0x}t+\frac{1}{2}a_xt^2
+x_R&=x_{0R}+v_{R}t
 \end{align*}
-We can use a table to take stock of our known values and variables:
+The velociraptor has a constant acceleration, so its position is described by:
+\begin{align*}
+x_V&=x_{0V}+v_{0V}t+\frac{1}{2}a_Vt^2
+\end{align*}
+We can use a table to take stock of our known values:
 \begin{table}[H]
 \centering
 \label{KnownsUnknownsSampleProb1D}
@@ -572,51 +624,53 @@ We can use a table to take stock of our known values and variables:
 \textbf{Rob}          & \textbf{Velociraptor}  \\ \hline
 $x_{0R} = ?$          & $x_{0V} = \SI{0}{m}$   \\
 $v_R = \SI{8}{m/s}$   & $v_{0V} = \SI{0}{m/s}$ \\
-$a_R = \SI{0}{m/s^2}$ & $a_V = \SI{4}{m/s^2}$  \\
-$t$                   & $t$                    \\
-$x_R$                 & $x_V$                 
+                   & $a_V = \SI{4}{m/s^2}$  \\                                     
 \end{tabular}
 \end{table}
 
-The value of $x_{0R}$ is unknown but can be easily solved for. We defined $t=0$ as the moment the velociraptor starts running. It takes 3 seconds for the velociraptor to react, so at $t=0$, Rob has moved $(\SI{8}{m/s})\times (\SI{3}{s}) = \SI{24}{m}$.\\
+$x_{0R}$ is Rob's position at the instant the velociraptor starts running. The value of $x_{0R}$ is unknown but can be easily solved for. It takes 3 seconds for the velociraptor to react, so at $t=0$, Rob has moved $(\SI{8}{m/s})\times (\SI{3}{s}) = \SI{24}{m} = x_{0R}$ (where we used the formula $x=vt$).\\
 
-Next, we can write out our equations as,
+Since $v_{0V}=0$ (the velociraptor starts running from rest) and $x_{0V}=0$, we can write our equations as:
 \begin{align*}
 x_R&=x_{0R}+v_{R}t\\
 x_V&=\frac{1}{2}a_Vt^2
 \end{align*}
  
-Now what do we mean by ``catch up"? It means that Rob and the velociraptor are in the same place at the same time. So, we are interested in the value of $t$ when $x_R=x_V$. Setting the above equations equal to one another gives
+
+Remember that we want to find $t$ when $x_R$=$x_V$. Setting the above equations equal to one another gives:
 \begin{align*}
 x_{0R}+v_{R}t&=\frac{1}{2}a_Vt^2 
 \end{align*}
-that we can rearrange to get this quadratic:
+that we can rearrange to get the quadratic:
 \begin{align*}
 0&=\frac{1}{2}a_Vt^2-v_{R}t-x_{0R} 
 \end{align*}
 
-By solving the quadratic, we find that $t=\SI{6}{s}$. This doesn't quite give us the answer we want. We want to know how long it takes the velociraptor to catch up \textit{from the moment Rob passes by}, so we have to add on the $\SI{3}{s}$ reaction time, giving a total time of $\SI{9}{s}$.\\
+Solving the quadratic gives $t=\SI{6}{s}$. This doesn't quite give us the answer we want. We want to know how long it takes the velociraptor to catch up \textit{from the moment Rob passes by}, so we have to add on the $\SI{3}{s}$ reaction time, giving a total time of $\SI{9}{s}$.\\
 
-We can use this solution to figure out whether Rob makes it to safety. In 9 seconds, Rob travels a distance of $(\SI{8}{m/s})\times (\SI{9}{s}) = \SI{72}{m}$. The shelter is only $\SI{70}{m}$ away, so Rob gets to safety in time!}
+\item We can use this solution to figure out whether Rob makes it to safety. The velociraptor catches up after 9 seconds. In 9 seconds, Rob has travelled a distance of $(\SI{8}{m/s})\times (\SI{9}{s}) = \SI{72}{m}$. The shelter is only $\SI{70}{m}$ away, so Rob gets to safety in time!
+\end{enumerate}
 \end{solution}
 
-\begin{solution}{\ref{Q:accelerationTime}}{
-\begin{center}
-\includegraphics[scale=0.6]{figures/DescribingMotionIn1D/VelocityPositionProblem.jpg}{\label{fig:VelocityPositionProblem1D}}
-\end{center}
-Solutions may vary, however there are a few key features that must be present.\\
-For the graph of $v(t)$:
+
+\newpage
+\begin{solution}{\ref{prob:accelerationTime}}{
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/velocitypositionsolution.png}{\label{fig:DescribingMotionIn1D:velocitypositionproblem1D}Graphs of $v(t)$ and $x(t)$ corresponding to the accleration versus time graph given in the question.}
+We start by drawing the graph of $v(t)$ from the graph of $a(t)$. Solutions may vary, but a few key features must be present:
 \begin{itemize}
 \item Velocity is zero at $t=0$.
-\item When acceleration is negative, the velocity is (negative slope). It follows that when the acceleration is positive, the velocity is increasing. 
-\item When the acceleration is zero, the velocity should be a flat line
+\item When acceleration is negative, the velocity is decreasing. When the acceleration is positive, the velocity is increasing. 
+\item When the acceleration is zero, the graph of $v(t)$ is a horizontal line
 \end{itemize}
-For the graph of $x(t)$:
+We can get the graph of $x(t)$ from the graph of $v(t)$. The graph of $x(t)$ should have these features:
 \begin{itemize}
 \item Position is zero at $x=0$
-\item When velocity is negative, $x(t)$ is decreasing. When velocity is positive, $x(t)$ is increasing
-\item Take note of the turning points on the graph of $x(t)$.The particle turns around (the position goes from increasing or decreasing, or from decreasing to increasing) when the velocity changes sign. 
-\item When the velocity and acceleration are in the same direction, the slope of $x(t)$ increases in magnitude. When the acceleration and velocity are in opposite directions, the slope of $x(t)$ decreases in magnitude. 
+\item When the velocity is negative, $x(t)$ is decreasing. When the velocity is positive, $x(t)$ is increasing
+\item The particle turns around (the position goes from decreasing to increasing) when the velocity changes sign. 
+\item When the velocity is negative and decreasing, or if it is positive and increasing, the magnitude of the slope of $x(t)$ increases. When velocity is positive and decreasing or negative and increasing, the magnitude of the slope decreases. When velocity is constant, the slope of $x(t)$ does not change. 
+\begin{itemize}
+\item Note:This is the same as saying that when the velocity and acceleration are both negative or both positive (when they are in the same direction), the slope of $x(t)$ increases in magnitude; when the acceleration and velocity are in opposite directions, the slope of $x(t)$ decreases in magnitude. 
+\end{itemize}
 \end{itemize}}
 
 \end{solution}
