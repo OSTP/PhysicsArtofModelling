@@ -1,0 +1,369 @@
+
+\chapter{Work and energy}
+\label{chapter:workenergy}
+In this chapter, we introduce a new way to build models derived from Newton's Theory of Classical Physics. We will introduce the concepts of work and energy in order to allow us to model situations using scalar quantities, such as energy, instead of vector quantities, such as forces. It is important to remember that even if we use energy and work, these are tools that are derived from Newton's Laws; that is, we may not be using Newton's Second Law explicitly, but the models that we develop are still based on the same theory of Classical Physics. 
+
+\begin{learningObjectives}{
+ \item something to learn
+ }
+\end{learningObjectives}
+
+\begin{opening}
+\begin{MCquestion}{A question}
+\item a choice
+\item another choice %correct
+\end{MCquestion}
+\end{opening}
+
+\section{Work}
+We introduce the concept of work as the starting point for using energy instead of forces. Work is a scalar quantity that is meant to represent how a force that was exerted onto an object over a given distance has resulted in a change in the speed of the object. We will first introduce the concept of work done by a force on an object, and then look at how work can change the kinematics of the object. This is analogous to how we first defined the concept of force, and then looked at how force affects motion (by using Newton's Second Law, which connected the concept of force to the acceleration of the object).
+
+The work done by a force, $\vec F$, on an object over a displacement, $\vec d$, is defined to be:
+\begin{align*}
+W = \vec F \cdot \vec d = Fd\cos\theta = F_xd_x+F_yd_y+F_zd_z
+\end{align*}
+where $\theta$ is the angle between the vectors when these are placed tail to tail. The dimension of work, force times displacement, is also called ``energy''. The S.I. unit for energy is the Joule ($\si{J}$) which is equivalent to $\si{Nm}$ or $\si{kg m^2/s^2}$ in base units.
+
+The work done by the force is the scalar product of the force vector and the displacement vector of the object. That is, the force ``does work'' if it is exerted while the object moves (has a displacement vector) and in such a way that the scalar product of the force and displacement vectors is non-zero. A force that is perpendicular to the displacement vector of an object does no work (since the scalar product of two perpendicular vectors is zero).  A force exerted in the same direction as the displacement will do positive work ($\cos\theta$ positive), and a force in the opposite direction of the displacement will do negative work $\cos\theta$ negative). As we will see, positive work corresponds to increasing the speed of the object, whereas negative work corresponds to decreasing its speed.
+
+TODO: Checkpoint question: work done by tension in a pendulum
+
+You may be tempted, as you will be when we introduce other quantities, to ask, ``Why work? Why not something else? Why that scalar product in particular? How could we possible have thought of that?''. In general, it seems arbitrary that we introduce this quantity (work) and then find that it leads to a convenient way of building models. We did not just pull this quantity ``out of thin air''! Many theorists, over many years, defined all sorts of quantities, and tried different ways to rephrase Newton's Theory, that were not useful. The ones that make it into the textbooks are those that turned out to be useful! You should thus accept that, when we present quantities, like work, that seem to come out of nowhere, there was in fact a lot of work done to evaluate different ways to do things, and the one we chose to present is the one that turned out to be most useful! So let's talk about work, and see why it's useful!
+
+
+You should also keep in mind that, just like force, work is a ``made-up'' mathematical tool that we find to be useful in describing the world around us. There is no such thing as work or energy; they are just useful mathematical tools.
+
+\subsection{Work in one dimension.}
+Since work involves vectors, we first examine the concept in one dimension, before extending this to two and three dimensions. If we choose $x$ as that dimension, then all vectors only have an $x$ component, in one dimension. We can write a force vector as $\vec F=F\hat x$, where $F$ is the $x$ component of the force (which could be positive or negative). A displacement vector can be written as $\vec d = d \hat x$, where again, $d$ is the $x$ component of the displacement, and can be positive or negative. In one dimension, work is thus:
+\begin{align*}
+W = \vec F \cdot \vec d = (F\hat x) \cdot ( d\hat x ) = Fd (\hat x\cdot\hat x)=Fd
+\end{align*}
+where $\hat x \cdot \hat x = 1$. Consider, for example, the work done by a force, $\vec F$, on a box, as the box moves along the $x$ axis from position $x=x_0$ to position $x=x_1$, as shown in Figure \ref{fig:workenergy:work1d}.
+\capfig{0.4\textwidth}{figures/WorkEnergy/work1d.png}{\label{fig:workenergy:work1d}A force, $\vec F$, exerted on an object as it moves from position $x=x_0$ to position $x=x_1$.}
+We can write the length of the displacement vector as $||\vec d|| =d= \Delta x = x_1-x_0$. The work done on the force is given by:
+\begin{align*}
+W = \vec F \cdot \vec d = F\hat x\cdot \Delta x\hat x =F\Delta x =F(x_1-x_0) 
+\end{align*}
+which is a positive quantity, since $x_1 > x_0$, with our choice of coordinate system. 
+
+TODO: Checkpoint, refer to above diagram, same force, but is the work done by F in going from x1 to x0 the same? (it's negative). 
+
+\subsection{Work in one dimension - varying force}
+Suppose that instead of a constant force, $\vec F$, we have a force that changes with position, $\vec F(x)$, and can take on three different values between $x=x_0$ and $x=x_1$:
+\begin{align*}
+  \vec F (x)=
+  \begin{cases}
+    F_1\hat x & x<\Delta x \\
+    F_2\hat x & \Delta x \leq x< 2\Delta x \\
+    F_3\hat x & 2\Delta x \leq x
+  \end{cases}
+\end{align*}
+as illustrated in Figure \ref{fig:workenergy:work1d}, which shows the force on an object as it moves from position $x=x_0$ to position $x=x_3$, along three (equal) displacement vectors, $\vec d_1=\vec d_2=\vec d_3=\Delta x \hat x$. 
+\capfig{0.7\textwidth}{figures/WorkEnergy/work1dvarying.png}{\label{fig:workenergy:work1dvarying}A varying force, $\vec F(x)$, exerted on an object as it moves from position $x=x_0$ to position $x=x_3$.}
+The total work done by the force over the three separate displacements is the sum of the work done over each displacement:
+\begin{align*}
+W^{tot}&=W_1+W_2+W_3\\
+&=\vec F_1\cdot \vec d_2+\vec F_1\cdot \vec d_2+\vec F_3\cdot \vec d_3\\
+&= F_1\Delta x +F_2\Delta x + F_3\Delta x
+\end{align*}
+TODO: Question Library question to show that over a segment, using scalar product, that if F is constant, the work done over the whole displacement is equal to the sum of the work done over the displacement subdivided into $N$ segments (e.g. if $\vec d$ is the displacement, show that $W = \sum F d_i$ where $d_i$ is part of $d$.  
+
+
+If instead of 3 segments we had $N$ segments and the $x$ component of the force had the $N$ corresponding values $F_i$ in the $N$ segments, the total work done by the force would be:
+\begin{align*}
+W^{tot} = \sum_{i=0}^N\vec F_i \cdot \Delta \vec x
+\end{align*}
+where we introduced a vector $\Delta \vec x$ to be the vector of length $\Delta x$ pointing in the positive $x$ direction. In the limit where $\vec F(x)$ changes continuously as a function of position, we take the limit of an infinite number of infinitely small segments of length $dx$, and the sum becomes an integral:
+\begin{align*}
+W^{tot} = \int_{x_0}^{x_f}\vec F(x) \cdot d\vec x
+\end{align*}
+where the work was calculated in going from $x=x_0$ to $x=x_f$, and $d\vec x=dx\hat x$ is an infinitely small displacement vector in the positive $x$ direction.
+
+\begin{example}{\capfig{0.4\textwidth}{figures/WorkEnergy/spring.png}{\label{fig:workenergy:spring}A block is pressed against a spring so as to compress the spring by a distance $D$ relative to its rest length.} A block is pressed against the free end of spring so as to compress the spring by a distance $D$ relative to its rest length. The other end of the spring is fixed to a wall. What is the work done by the spring force on the block in going from $x=x_0-D$ to $x=0$? What is the work done by the block on the spring over the same displacement?}
+The force exerted by the spring on the block changes continuously with position, according to Hooke's law:
+\begin{align*}
+\vec F(x) = -kx \hat x
+\end{align*}
+and points in the positive $x$ direction when the end of the spring has a negative $x$ position (with our coordinate choice illustrated in Figure \ref{fig:workenergy:spring}, where the origin is located at the rest length of the spring). To calculate the work done by the force, we sum the work done by the force over many small displacements $d\vec x$:
+\begin{align*}
+W &= \int_{-D}^0 \vec F(x) \cdot d\vec x\\
+&=\int_{-D}^0 (-kx \hat x) \cdot (dx \hat x)\\
+&=\int_{-D}^0 -kxdx (\hat x \cdot \hat x)\\
+&=-\int_{-D}^0 kx dx\\
+&=-\left[\frac{1}{2}kx^2  \right]_{-D}^0\\
+&=\frac{1}{2}kD^2
+\end{align*}
+In order to determine the work that was done by the block on the spring, we need to determine the force, $\pvec F'(x)$, exerted by the block on the spring. By Newton's Third Law, this is equal in magnitude but opposite in direction to the force exerted by the spring on the block:
+\begin{align*}
+\pvec F'(x) = -\vec F(x) = kx \hat x
+\end{align*}
+The work done by block on the spring over the same displacement is thus:
+\begin{align*}
+W' &= \int_{-D}^0 \pvec F'(x) \cdot d\vec x\\
+&=\int_{-D}^0 (kx \hat x) \cdot (dx \hat x)\\
+&=\int_{-D}^0 kx dx=-\frac{1}{2}kD^2\\
+\end{align*}
+which is negative. Indeed, the force exerted by the block onto the spring is in the direction opposite of the displacement, so the work will be negative. 
+\end{example}
+
+\subsection{Work in multiple dimensions}
+First, consider the work done by a force $\vec F$ in pulling a crate over a displacement $\vec d$, in the case where the force is directed at an angle $\theta$ above the horizontal, as shown in Figure \ref{fig:workenergy:workangle}, and the displacement is along the $x$ axis (or rather, we chose the $x$ axis to be parallel to the displacement).
+\capfig{0.4\textwidth}{figures/WorkEnergy/workangle.png}{\label{fig:workenergy:workangle}A force, $\vec F$, exerted on an object as it moves from position $x=x_0$ to position $x=x_1$.}
+The work done by the force is given by:
+\begin{align*}
+W = \vec F \cdot \vec d &= Fd\cos\theta\\
+&= F_{\parallel}d\\
+&= Fd_{\parallel}\\
+\end{align*}
+where we highlighted the fact that the scalar product ``picks out'' components of vectors that are parallel to each other. $F_{\parallel} = F\cos\theta$ is thus the component of $\vec F$ that is parallel to $\vec d$, and $d_{\parallel}=d\cos\theta$ is the component of $\vec d$ that is parallel to $\vec F$. These are also shown in Figure \ref{fig:workenergy:workangle}.
+
+In general, if an object is moving along an arbitrary path, we cannot choose the $x$ axis to be parallel to the displacement or to the force. If the path can be sub-divided into straight segments over which the force is constant, as in Figure \ref{fig:workenergy:workd2d}, we can calculate the work done by the force over each segment and add the work done in each segment together to obtain the total work done by the force. Note that, in general, the work done by a force as an object moves from one position to another depends on the particular path that was taken between the two positions.
+\capfig{0.3\textwidth}{figures/WorkEnergy/work2d.png}{\label{fig:workenergy:work2d}A arbitrary two dimension path of an object from $A$ to $B$ broken into three straight segments.}
+
+\begin{example}{\label{ex:workenergy:workfriction}
+\capfig{0.3\textwidth}{figures/WorkEnergy/workfriction.png}{\label{fig:workenergy:workfriction}Two possible paths to slide a crate from position $A$ to position $B$, as seen from above.}
+Compare the work done by the force of kinetic friction in sliding a crate along a horizontal surface from position $A$ (coordinates $x_A, y_A$) to position $B$ (coordinates $x_B, y_B$) using the two different paths depicted in Figure \ref{fig:workenergy:workfriction}. Assume that the mass of the crate is $m$ and that the coefficient of kinetic friction between the crate and the ground is $\mu_k$.}
+The force of kinetic friction is always in the direction opposite to that of motion. Thus, regardless of the path taken, the force of friction will do negative work. 
+
+Let us first calculate the work done by the force of kinetic friction along the first path (the straight line). The force of kinetic friction will have a magnitude:
+\begin{align*}
+f_k = \mu_k N = \mu_k mg
+\end{align*}
+since the normal force will have the same magnitude as the weight because the crate is not moving (accelerating) in the direction perpendicular to the $xy$ plane.  The displacement vector from $A$ to $B$ can be written as:
+\begin{align*}
+\vec d &= (x_B-x_A)\hat x + (y_B-y_A) \hat y\\
+\therefore ||\vec d|| &=d= \sqrt{(x_B-x_A)^2 - (y_B-y_A)^2}
+\end{align*}  
+The force of kinetic friction will be in the opposite direction of the displacement vector, and the angle between the two vectors will thus be $\SI{180}{\degree}$ ($\cos\theta=-1$). The work done by the force of kinetic friction is thus:
+\begin{align*}
+W = \vec f_k \cdot\vec d = f_k d \cos\theta = -\mu_k mg\sqrt{(x_B-x_A)^2 - (y_B-y_A)^2}
+\end{align*}
+and is negative, as expected.
+
+For path 2, we break up the motion into two segments, with displacements vectors $\vec d_1$ (along $y$) and $\vec d_2$ (along $x$). We can write the two displacement vectors as:
+\begin{align*}
+\vec d_1 &= 0\hat x + (y_A-y_B) \hat y\\
+\therefore ||\vec d_1||&=d_1=(y_A-y_B)\\
+\vec d_2 &= (x_A-x_B)\hat x + 0 \hat y\\
+\therefore ||\vec d_2||&=d_2=(x_A-x_B)\\
+\end{align*}
+
+Along each segment, the force of kinetic friction is anti-parallel to the displacement (note that the force of friction changes direction over the two segments), but the magnitude is $f_k=\mu_kmg$. The work done along the first segment is thus:
+\begin{align*}
+W_1 = \vec f_k \cdot \vec d_1 = f_k d_1 \cos\theta = -\mu_k mg(y_A-y_B)
+\end{align*}
+The work done along the second segment is:
+\begin{align*}
+W_2 = \vec f_k \cdot \vec d_2 = f_k d_2 \cos\theta = -\mu_k mg(x_A-x_B)
+\end{align*}
+And the total work done by the force of kinetic friction over the second path is:
+\begin{align*}
+W^{tot} = W_1 + W_2 = -\mu_k mg \left((x_A-x_B) + (y_A-y_B)\right)
+\end{align*}
+which is more work than was done along path 1. This makes sense because for both paths, the force of friction has the same magnitude and is always in the opposite direction of motion; thus, the longer the path, the more work will be done by the force.
+\end{example}
+
+\begin{example}{\capfig{0.5\textwidth}{figures/WorkEnergy/workgravity.png}{\label{fig:workenergy:workgravity}Two possible paths to move a box from the floor onto a table. }
+A box of mass $m$ is moved from the floor onto a table using two different paths, as shown in Figure \ref{fig:workenergy:workgravity}. The table is a horizontal distance $L$ away from where the box starts and a height $H$ above the floor. Compare the work done by the weight of the box along the two possible paths.}
+We can use a coordinate system such that the origin coincides with the initial position of the box, $x$ is horizontal, and $y$ is vertical, as shown in Figure \ref{fig:workenergy:workgravity}. The weight of the box can be written as:
+\begin{align*}
+\vec F_g = -mg \hat y
+\end{align*}
+and points in the negative $y$ direction with a magnitude of $mg$. To calculate the work done by the weight along the first path, we first determine the corresponding displacement vector, $\vec d$:
+\begin{align*}
+\vec d = L\hat x + H\hat y
+\end{align*}
+and we can then determine the work:
+\begin{align*}
+W &= \vec F_g \cdot \vec d = (-mg \hat y) \cdot (L\hat x + H\hat y)\\
+&=(F_xd_x+F_yd_y)=( (0)(L) + (-mg)(H))\\
+&= -mgH
+\end{align*}
+Along path 1, the work from the weight is negative, and does not depend on the horizontal distance $L$. Let us now calculate the work done along the second path, which we break up into two segments with displacement vectors $\vec d_1$ (vertical) and $\vec d_2$ (horizontal). The displacement vectors are:
+\begin{align*}
+\vec d_1 &= H\hat y\\
+\vec d_2 &= L\hat x
+\end{align*}
+The work done along the vertical segment is:
+\begin{align*}
+W_1 &= \vec F_g \cdot \vec d_1 = (-mg \hat y) \cdot (H\hat y)\\
+&=-mgH
+\end{align*}
+The work done along the horizontal segment is:
+\begin{align*}
+W_2 &= \vec F_g \cdot \vec d_2 = (-mg \hat y) \cdot (L\hat x)\\
+&=0
+\end{align*}
+which is zero, because the force of gravity is always vertical and thus perpendicular to the displacement vector of the horizontal segment. The total work done by the weight along the second path is:
+\begin{align*}
+W^{tot} = W_1 + W_2 = -mgH
+\end{align*}
+which is the same as the work done along path 1. As we will see, when a force is constant in magnitude and direction, the work that it does on an object in going from one position to another is independent of the path taken. This was not the case in Example \ref{ex:workenergy:workfriction}, because the direction of the force of kinetic friction depends on the direction of the displacement. 
+\end{example} 
+
+The most general case in which one can calculate the work done by a force is the case when the force change continuously along a path where the displacement also changes direction continuously. This is illustrated in Figure \ref{fig:workenergy:workgeneral} which shows a force, $\vec F(\vec r)$, that depends on position ($\vec r$), and an arbitrary path between two points $A$ and $B$. In general, the work done by the force on an object that goes from $A$ to $B$ will depend on the actual path that was taken.
+\capfig{0.5\textwidth}{figures/WorkEnergy/workgeneral.png}{\label{fig:workenergy:workgeneral}An arbitrary path between two points $A$ and $B$ with a force that depends on position, $\vec F(\vec r)$. }
+The strategy for calculating the work in the general case is the same: we break up the path into small straight segments with displacement vectors $d\vec r$ where we assume that the force is constant over the segment. The total work is then sum of the work over each segment:
+\begin{align*}
+W = \int_A^B \vec F(\vec r) \cdot d\vec r
+\end{align*}
+As usual, we use the integral symbol to indicate that you need to take an infinite number of infinitely small segments $d\vec r$ in order to calculate the sum. You should note that this is not an integral like any other that we have seen so far: the integral is not over a single integration variable (usually we use $x$), but it is the integral (the sum!) over the specific path that we have chosen in going from $A$ to $B$. This is called a ``path integral'', and is generally difficult to evaluate. 
+
+\begin{example}{\capfig{0.4\textwidth}{figures/WorkEnergy/workparabola.png}{\label{fig:workenergy:workparabola}A parabolic path between $A$ and $B$. }
+A force, $\vec F(\vec r) = \vec F(x,y) = F_x\hat x + F_y \hat y$, is exerted on an object. The object starts at position $A$ and ends at position $B$, along a parabolic path, $y(x) = a+bx^2$, as depicted in Figure \ref{fig:workenergy:workparabola}. What is the work done by the force, $\vec F$, along this trajectory?}
+In this case, the force is constant in magnitude and direction, but because the path is curved, the displacement vector changes direction continuously. When we break up the path into small segments $d\vec r$, we need to incorporate the equation of the parabola to include the fact that $d\vec r$ must always be tangent to the parabola. Consider one small segment along the trajectory and the infinitesimal displacement vector $d\vec r$ at that point, as in Figure \ref{fig:workenergy:workparabola_dr}.
+\capfig{0.2\textwidth}{figures/WorkEnergy/workparabola_dr.png}{\label{fig:workenergy:workparabola_dr}The infinitesimal displacement vector, $d\vec r$. }
+
+We can write the $x$ and $y$ components of the vector as infinitesimal distances, $dx$ and $dy$, along the $x$ and $y$ axes, respectively. The vector $d\vec r$ can thus be written:
+\begin{align*}
+d\vec r = dx \hat x + dy \hat y
+\end{align*}
+The total work done by the force is then:
+\begin{align*}
+W &= \int_A^B \vec F(\vec r) \cdot d\vec r\\
+&=\int_A^B (F_x\hat x + F_y \hat y) \cdot (dx \hat x + dy \hat y)\\
+&=\int_A^B (F_x dx + F_ydy)\\
+\therefore W&= \int_A^B F_x dx + \int_A^B F_ydy
+\end{align*}
+where in the last line, we simply used the property that the integral of a sum is the sum of the corresponding integrals. At this point, we have two integrals over integration variables ($x$ and $y$) that are meaningful. However, we have not yet used the fact that our path is a parabola, and in general, we expect that the shape of the path is important. By saying that we are integrating (or calculating the work) over a specific path, we are really saying that $x$ and $y$ are not independent; that is, if we know the value of $x$ at some point on the path, we know the corresponding value of $y$ ($y = a+bx^2$). 
+
+Since $x$ and $y$ are not independent, we can use a ``substitution of variables'' in order to express $y$ in terms of $x$, and $dy$ in terms of $dx$:
+\begin{align*}
+y(x) &= a + bx^2\\
+\frac{dy}{dx} &= 2bx\\
+\therefore dy &= 2bxdx
+\end{align*} 
+This allows us to convert the integral over $y$ to an integral over $x$, which also allows us to be explicit for the limits of the integral (in our example, the integral goes from $x=0$ to $x=x_1$):
+\begin{align*}
+W&= \int_A^B F_x dx + \int_A^B F_ydy\\
+&=\int_0^{x_1} F_x dx + \int_0^{x_1} F_y(2bxdx)\\
+&=\int_0^{x_1} (F_x + 2bxF_y)dx
+\end{align*}
+where we would need to know how $F_x$ and $F_y$ depends on $x$ and $y$ in order to actually evaluate the integral.
+\end{example}
+
+\subsection{Net work done}
+So far, we have considered the work done on an object by a single force. If more than one force is exerted on an object, then each force can do work on the object, and we can calculate the ``net work'' done on the object by adding together the work done by each force. We will show that this is equivalent to first calculating the net force on the object, $F^{net}$ (i.e. the vector sum of the forces on the object), and then calculating the work done by the net force.
+ 
+Suppose that three forces, $\vec F_1$, $\vec F_2$, and $\vec F_3$ are exerted on an object as it moves such that its displacement vector is $\vec d$. The net work done on the object is:
+\begin{align*}
+W^{net} &= W_1 + W_2 + W_3 \\
+&= \vec F_1 \cdot \vec d + \vec F_2 \cdot \vec d  + \vec F_3 \cdot \vec d \\
+&=(F_{1x}d_x+F_{1y}d_y+F_{1z}d_z)+ (F_{2x}d_x+F_{2y}d_y+F_{2z}d_z) + (F_{3x}d_x+F_{3y}d_y+F_{3z}d_z)\\
+&=(F_{1x} + F_{2x} + F_{3x})d_x+(F_{1y} + F_{2y} + F_{3y})d_y+(F_{1z} + F_{2z} + F_{3z})d_z\\
+&=\vec F^{net} \cdot \vec d
+\end{align*}
+where $\vec F^{net} = \vec F_1 + \vec F_2 + \vec F_3$. The result is easily generalized to any number of forces, including if those forces change as a function of position:
+\begin{align*}
+W^{net} = \int_A^B F^{net}(\vec r) \cdot d\vec r
+\end{align*} 
+
+\begin{example}{\capfig{0.3\textwidth}{figures/WorkEnergy/workincline.png}{\label{fig:workenergy:workincline} A crate being pushed up an incline.}
+You push with an unknown horizontal force, $\vec F$, against a crate of mass $m$ that is located on an inclined plane that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:workenergy:workincline}. The coefficient of kinetic friction between the crate and the incline is $\mu_k$. You push in such a way that that crates moves at constant speed up the incline. What is the net work done on the crate if it moves up the incline by a distance $d$?}
+Although the answer may be obvious, let's go the long way about it and calculate the work done by each force, and then sum them together to get the total work done. We start by identifying the forces exerted on the crate:
+\begin{enumerate}
+\item $\vec F$, the applied force, of unknown magnitude, $\vec F$.
+\item $\vec F_g$, the weight of the crate, with magnitude $mg$. 
+\item $\vec N$, a normal force exerted by the incline.
+\item $\vec f_k$, a force of kinetic friction, with magnitude $\mu_k N$, that points in the direction opposite of $\vec d$. 
+\end{enumerate}
+These are shown in the free-body diagram in Figure \ref{fig:workenergy:workincline_fbd}, along with our choice of coordinate system, and the displacement vector. 
+\capfig{0.25\textwidth}{figures/WorkEnergy/workincline_fbd.png}{\label{fig:workenergy:workincline_fbd} Free-body diagram for the crate on the incline.}
+With our choice of coordinate system, the displacement vector is given by:
+\begin{align*}
+\vec d = d (\cos\theta \hat x + \sin\theta \hat y)
+\end{align*}
+Before calculating the work done by each force, we need to determine the magnitude of the normal force (and thus of the force of kinetic friction). Since the crate is moving at constant velocity, its acceleration is zero, so the sum of the forces must be zero. Writing out the $y$ component of Newton's Second Law allows us to find the magnitude of the normal force:
+\begin{align*}
+\sum F_y &= N\cos\theta -F_g - f_k\sin\theta = 0\\
+\therefore mg &= N\cos\theta-\mu_kN\sin\theta = N(\cos\theta-\mu_k\sin\theta)\\
+\therefore N &= \frac{mg}{\cos\theta-\mu_k\sin\theta}
+\end{align*}
+Writing out the $x$ component of Newton's Second Law allows us to find the magnitude of the unknown force $F$:
+\begin{align*}
+\sum F_x &= F - N\sin\theta - f_k\cos\theta = 0\\
+\therefore F &= N\sin\theta+\mu_kN\cos\theta = N(\sin\theta+\mu_k\cos\theta)\\
+&=mg\frac{\sin\theta+\mu_k\cos\theta}{\cos\theta-\mu_k\sin\theta}
+\end{align*}
+We now proceed to calculate the work done by each force. The work done by the normal force is identically zero, since it is perpendicular to the displacement vector. The work done by the applied force, $\vec F = F\hat x$, is:
+\begin{align*}
+W_F &= \vec F \cdot \vec d = (F\hat x)\cdot(d (\cos\theta \hat x + \sin\theta \hat y))\\
+&=Fd\cos\theta=mg\frac{\sin\theta+\mu_k\cos\theta}{\cos\theta-\mu_k\sin\theta}d\cos\theta
+\end{align*}
+The work done by the force of gravity, $\vec F_g = -mg \hat y$, is:
+\begin{align*}
+W_g &= \vec F_g \cdot \vec d = (-mg \hat y)\cdot(d (\cos\theta \hat x + \sin\theta \hat y))\\
+&=-mgd\sin\theta
+\end{align*}
+The work done by the force of friction, $\vec f_k$, noting that $\vec f_k$ and $\vec d$ are antiparallel:
+\begin{align*}
+W_f &= \vec f_k \cdot \vec d = -f_kd = -\mu_kNd\\
+&=-\mu_k\frac{mg}{\cos\theta-\mu_k\sin\theta}d
+\end{align*}
+The net work done on the crate is thus:
+\begin{align*}
+W^{net}&=W_F + W_g + W_f\\
+&=mg\frac{\sin\theta+\mu_k\cos\theta}{\cos\theta-\mu_k\sin\theta}d\cos\theta-mgd\sin\theta -\mu_k\frac{mg}{\cos\theta-\mu_k\sin\theta}d\\
+&=mgd \left(  \frac{\sin\theta+\mu_k\cos\theta}{\cos\theta-\mu_k\sin\theta}\cos\theta - \sin\theta - \mu_k\frac{1}{\cos\theta-\mu_k\sin\theta} \right)\\
+&=mgd \left(  \frac{(\sin\theta+\mu_k\cos\theta)\cos\theta - \sin\theta(\cos\theta-\mu_k\sin\theta) - \mu_k}{\cos\theta-\mu_k\sin\theta} \right)\\
+&=mgd \left(  \frac{\sin\theta\cos\theta+\mu_k\cos^2\theta - \sin\theta\cos\theta+\mu_k\sin^2\theta - \mu_k}{\cos\theta-\mu_k\sin\theta} \right)\\
+&=mgd \left(  \frac{\mu_k(\cos^2\theta+\sin^2\theta) - \mu_k}{\cos\theta-\mu_k\sin\theta} \right)\\
+&=0
+\end{align*}
+where we used the fact that $\cos^2\theta+\sin^2\theta=1$. Thus we find that the net work done on the crate is zero!
+
+\textbf{Discussion:} Of course, this makes sense, because the net force on the crate is zero, since it is not accelerating, so the net work done is also zero. As a consequence, or rather, by construction, we have the condition that if the net work done on an object is zero, then that object does not accelerate. We thus have scalar quantity (work) that can tell us something about whether an object is changing speed. In the next section, we introduce a new quantity, ``kinetic energy'', to describe how an object's speed changes when the work done is not zero.
+\end{example}
+
+\section{Kinetic energy and the work energy theorem}
+
+\section{Power}
+
+
+\newpage
+\section{Summary}
+
+\begin{chapterSummary}{
+\item If the net work done on an object is zero, that object does not accelerate.
+}
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+This is an important equation
+\begin{align*}
+E = mc^2
+\end{align*}
+
+\end{importantEquations}
+
+
+\newpage
+\section{Thinking about the material}
+\subsection{Reflect and research}
+
+\begin{enumerate}
+\item Something to research more.
+\end{enumerate}
+\subsection{To try at home}
+
+\begin{tQuestion}Try doing this \end{tQuestion}
+
+\subsection{To try in the lab}
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+\begin{problemParts}{A question\label{Q:chaptertitle:q1}}
+\item How close can he get to the hurdle before he has to jump?
+\item What maximum height does he reach?
+\end{problemParts}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{\ref{Q:chaptertitle:q1}}
+{
+the solution
+}
+\end{solution}
+
