@@ -1,4 +1,4 @@
-%Copyright 2017 R.D. Martin
+ch%Copyright 2017 R.D. Martin
 %This book is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 %
 %This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
@@ -7,6 +7,13 @@
 In this chapter, we will learn about the process of doing science and lay the foundations for developing skills that will be of use throughout your scientific careers. In particular, we will start to learn how to test a model with an experiment, as well as learn to estimate whether a given result or model makes sense.
 \vspace{1cm}
 \begin{learningObjectives}
+<<<<<<< HEAD
+{\item Be able to estimate orders of magnitude
+\item Understand units
+\item Understand the process of building a model and performing an experiment
+\item Understand uncertainties in experiments
+\item Be able to use a computer for simple data analysis}
+=======
 {
 \item Be able to estimate orders of magnitude
 \item Understand units
@@ -14,6 +21,7 @@ In this chapter, we will learn about the process of doing science and lay the fo
 \item Understand uncertainties in experiments
 \item Be able to use a computer for simple data analysis
 }
+>>>>>>> master
 \end{learningObjectives}
 
 \section{Orders of magnitude}
@@ -29,7 +37,11 @@ We can model a school bus as a box, say $\SI{20}{\meter}\times \SI{2}{\meter}\ti
 Thus, we expect to be able to fit about three million ping pong balls in a school bus. 
 \end{example}
 
+<<<<<<< HEAD
+\begin{checkpoint}{Fill in the following table, giving the order of magnitude in meters of the sizes of different physical objects. Feel free to Google these!}
+=======
 \begin{checkpointSA}{Fill in the following table, giving the order of magnitude in meters of the sizes of different physical objects. Feel free to look these up on the internet!}
+>>>>>>> master
 \begin{center}
 \begin{tabular}{|c|c| }
 \hline  
@@ -49,7 +61,7 @@ Distance to the Moon&\\ \hline
 Radius of the Milky Way&\\ \hline
 \end{tabular}
 \end{center}
-\end{checkpointSA}
+\end{checkpoint}
 
 
 \section{Units and dimensions}
@@ -58,12 +70,14 @@ In 1999, the NASA Mars Climate Orbiter disintegrated in the Martian atmosphere b
 ``Dimensions'' can be thought of as types of measurements. For example, length and time are both dimensions. A unit is the standard that we choose to quantify a dimension. For example, meters and feet are both units for the dimension of length, whereas seconds and jiffys\footnote{A jiffy is a unit used in electronics and generally corresponds to either 1/50 or 1/60 seconds.} are units for the dimension of time.
 
 When we compare two numbers, for example a prediction from a model and a measurement, it is important that both quantities have the same dimension \textit{and} be expressed in the same unit.
-\begin{checkpointMC}{The speed limit on a highway:}
+\begin{checkpoint}
+\begin{MCquestion}{The speed limit on a highway:}
 \item has dimension of length over time and can be expressed in units of kilometers per hour %correct
 \item has dimension of length can be expressed in units of kilometers
 \item has dimension of time over length and can be expressed in units of meters per second
 \item has dimension of time and can be expressed in units of meters
-\end{checkpointMC}
+\end{MCquestion}
+\end{checkpoint}
 
 \subsection{Base dimensions and their SI units}
 In order to facilitate communication of scientific information, the International System of units (SI for the french, Syst\`eme International d'unit\'es) was developed. This allows us to use a well-defined convention for which units to use when expressing quantities. For example, the SI unit for the dimension of length is the meter and the SI unit for the dimension of time is the second.
@@ -156,12 +170,14 @@ where, in the last line, we combined the powers of the same dimensions. By inspe
 
 When you build a model to describe a situation, your model will typically provide a value for a quantity that you are interested in modelling. You should always use dimensional analysis to ensure that the dimension of the quantity your model predicts has the correct dimension. For example, suppose that you model the speed, $v$, that an object has after falling from a height of \SI{100}{\meter} on the surface of the planet Mars. Presumably, $v$ will depend on the mass and radius of the planet. You can be guaranteed that your model for $v$ is incorrect if the dimension of $v$ is not speed. Dimensional analysis should always be used to check that your model is not incorrect (note that getting the correct dimension is not a guarantee of the model being correct, only that it is ``not definitely wrong''). Similarly, you should also use order of magnitude estimates to evaluate whether your model gives a reasonable prediction.
 
-\begin{checkpointMC}{In Chlo\"e's theory of falling objects from Chapter \ref{Introduction}, the time, $t$, for an object to fall a distance, $x$, was given by $t=k\sqrt{x}$. What must the SI units of Chlo\"e's constant, $k$, be?}
+\begin{checkpoint}
+\begin{MCquestion}{In Chlo\"e's theory of falling objects from Chapter \ref{Introduction}, the time, $t$, for an object to fall a distance, $x$, was given by $t=k\sqrt{x}$. What must the SI units of Chlo\"e's constant, $k$, be?}
 \item \si{T.L^{\frac{1}{2}}}
 \item \si{T.L^{-\frac{1}{2}}}
 \item \si{s.m^{\frac{1}{2}}}
 \item \si{s.m^{-\frac{1}{2}}} %correct
-\end{checkpointMC}
+\end{MCquestion}
+\end{checkpoint}
 
 \section{Making measurements}
 Having introduced some tools for the modelling aspect of physics, we now address the other side of physics, namely performing experiments. Since the goal of developing theories and models is to describe the real world, we need to understand how to make meaningful measurements that test our theories and models.
@@ -215,7 +231,7 @@ t = \SI{0.76 \pm 0.15}{s}
 \end{align*}
 where \SI{0.76}{s} is called the ``central value'' and \SI{0.15}{s} the ``uncertainty'' or the ``error''\footnote{We use the word error as a synonym for uncertainty, not ``mistake''.}. When we present a number with an uncertainty, we mean that we are ``pretty certain'' that the true value is in the range that we quote. In this case, the range that we quote is that $t$ is between \SI{0.61}{s} and \SI{0.91}{s} (given by \SI{0.76}{s} - \SI{0.15}{s} and \SI{0.76}{s} + \SI{0.15}{s}). When we say that we are ``pretty sure'' that the value is within the quoted range, we usually mean that there is a 68\% chance of this being true and allow for the possibility that the true value is actually outside the range that we quoted. The value of 68\% comes from statistics and the normal distribution which you can learn about on the internet or in a more advanced course. 
 
-\begin{studentopinion}{``Precision'', ``Accuracy'' and ``Uncertainty'' - what's the difference?}
+\begin{studentOpinion}{Emma}{\textbf{``Precision'', ``Accuracy'' and ``Uncertainty'' - what's the difference?}}
 \\Have you ever started writing a lab report and wondered whether or not you should describe your measurement in terms of ``accuracy'' or ``precision''? What about describing the error in your experiment as a measure of ``accuracy'' or ``uncertainty''? 
 
 You're not alone! Precision, accuracy and uncertainty all relate to error, but have different meanings. To clarify these terms, I think it is useful to study them side-by-side.
@@ -227,8 +243,13 @@ You're not alone! Precision, accuracy and uncertainty all relate to error, but h
  measures the agreement between the true value and the value that you measured. If the values are close to the true value, they are accurate. For example, say you performed calculations that estimated the distance that a slingshot will catapult a rock before it falls and stops. When we actually perform the experiment, our estimated value was the same as the actual value. You could describe your data as follows: ``Our estimated value was almost exactly the same as the actual value that we measured - it was really accurate!''.
 
 \textbf{Uncertainty}
+<<<<<<< HEAD
+ is an estimate of the amount that a measurement will differ from an accepted value. In science, we aim to lower the uncertainty in our measurements. Let's say that you are measuring the number of rotations of a spinning top, spun with a fixed force. Your measurements are close together, but deviate from one another in a fixed range. This would be an example where you could calculate the uncertainty in your measurements. It would be sensible to say ``After multiple measurements, we've found that our values are similar. They deviate from one another within a fixed uncertainty.''
+\end{studentOpinion}
+=======
  is an estimate of the amount that a measurement will differ from a true value. In science, we aim to lower the uncertainty in our measurements, so that we can test models and theories with more precision. Let's say that you are measuring the number of rotations of a spinning top during a certain period of time. Your measurements are close together, but have a fixed range of values. This would be an example where you could calculate the uncertainty in your measurements. It would be sensible to say ``After multiple measurements, we've found that our values are similar and our uncertainty captures the range of values that we measured.''
 \end{studentopinion}
+>>>>>>> master
 
 
 
@@ -281,7 +302,7 @@ Counted quantity & Counted value and square root of the value \\ \hline
 \end{tabular}
 \caption{\label{tab:chap2:uncertainties} Different types of measurements and how to assign central values uncertainties.}
 \end{table}
-\Lwcapfig[11]{0.4\textwidth}{figures/ModelAndExperiment/ruler.png}{\label{fig:ModelAndExperiment:ruler}The length of the grey rectangle would be quoted as $L=\SI{2.8\pm0.5}{cm}$ using the rule of ``half the smallest division''.}
+\capfig{0.4\textwidth}{figures/ModelAndExperiment/ruler.png}{\label{fig:ModelAndExperiment:ruler}The length of the grey rectangle would be quoted as $L=\SI{2.8\pm0.5}{cm}$ using the rule of ``half the smallest division''.}
 For example, we would quote the length of the grey object in Figure \ref{fig:ModelAndExperiment:ruler} to be $L=\SI{2.8\pm0.5}{cm}$ based on the rules in Table \ref{tab:ModelAndExperiment:uncertainties}, since \SI{2.8}{cm} is the closest value on the ruler that matches the length of the object and \SI{0.5}{mm} is half of the smallest division on the ruler. Using half of the smallest division of the ruler means that our uncertainty range covers one full division. Note that it is usually better to reproduce a measurement to evaluate the uncertainty instead of using half of the smallest division, although half of the smallest division should be the lower limit on the uncertainty. That is, by repeating the measurements and obtaining the standard deviation, you should see if the uncertainty is \textit{larger} than half of the of the smallest division, not smaller.
 
 
@@ -399,9 +420,9 @@ $z=f(x)$ (a function of 1 variable) &$\sigma_z=\left|\frac{df}{dx}\sigma_x \righ
 \caption{\label{tab:ModelAndExperiment:prop_uncertainties} How to propagate uncertainties from measured values $x\pm\sigma_x$ and $y\pm\sigma_y$ to a quantity $z(x,y)$ for common operations.}
 \end{table}
 
-\begin{checkpointSA}{We have measured that a llama can cover a distance of \SI{20.0 \pm 0.5}{m} in \SI{4.0\pm 0.5}{s}. What is the speed (with uncertainty) of the llama?}
+\begin{checkpoint}{We have measured that a llama can cover a distance of \SI{20.0 \pm 0.5}{m} in \SI{4.0\pm 0.5}{s}. What is the speed (with uncertainty) of the llama?}
 %5.0 +/- 0.6 m/s
-\end{checkpointSA}
+\end{checkpoint}
 
 
 \subsection{Reporting measured values}
@@ -414,12 +435,14 @@ Now that you know how to attribute an uncertainty to a measured quantity and the
 \item Factor out the power 10 from the central value and uncertainty (e.g. \SI{10123\pm 310}{m} would be \SI{10.12\pm 0.31e3}{m} or \SI{101.2\pm 3.1e2}{m} 
 \end{enumerate}
 
-\begin{checkpointMC}{Someone has measured the average height of tables in the laboratory to be \SI{1.0535}{m} with a standard deviation of \SI{0.0525}{m}. What is the best way to present this measurement?}
+\begin{checkpoint}
+\begin{MCquestion}{Someone has measured the average height of tables in the laboratory to be \SI{1.0535}{m} with a standard deviation of \SI{0.0525}{m}. What is the best way to present this measurement?}
 \item \SI{1.0535\pm 0.0525}{m}
 \item \SI{1.054\pm 0.053}{m}
 \item \SI{105.4\pm 5.3e-2}{m}
 \item \SI{105.35\pm 5.25}{cm}
-\end{checkpointMC}
+\end{MCquestion}
+\end{checkpoint}
 
 \subsection{Comparing model and measurement - discussing a result}
 In order to advance science, we make measurements and compare them to a theory or model prediction. We thus need a precise and consistent way to compare measurements with each other and with predictions. Suppose that we have measured a value for Chlo\"e's constant $k= \SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$. Of course, Chlo\"e's theory does not predict a value for $k$, only that fall time is proportional to the square root of the distance fallen. Isaac Newton's Universal Theory of Gravity does predict a value for $k$ of \SI{0.45}{s.m^{-\frac{1}{2}}} with negligible uncertainty. In this case, since the model (theoretical) value easily falls within the range given by our uncertainty, we would say that our measurement is consistent (or compatible) with the theoretical prediction. 
@@ -441,8 +464,12 @@ In a similar way, we would discuss whether two different measurements, each with
 \section{Summary}
 \vspace{2cm}
 \begin{chapterSummary}
+<<<<<<< HEAD
+{\item Measurable quantities have dimensions and units.
+=======
 {
 \item Measurable quantities have dimensions and units.
+>>>>>>> master
 \item A physical quantity should always be reported with units, preferably SI units.
 \item When you build a model to predict a physical quantity, you should always ask if the prediction makes sense (Does it have a reasonable order of magnitude? Does it have the right dimensions?).
 \item Any quantity that you measure will have an uncertainty.
@@ -450,8 +477,12 @@ In a similar way, we would discuss whether two different measurements, each with
 \item The best way to determine an uncertainty is to repeat the measurement and use the mean and standard deviation of the measurements as the central value and uncertainty.
 \item You have to pay special attention to systematic uncertainties, which are difficult to determine. You should always think of ways that your measured values could be wrong, even after repeated measurements.
 \item Relative uncertainties tell you whether your measurement is precise.
+<<<<<<< HEAD
+\item If you expect two measured quantities to be linearly related (one is proportional to the other), plot them to find out! Use a computer to do so!}
+=======
 \item If you expect two measured quantities to be linearly related (one is proportional to the other), plot them to find out! Use a computer to do so!
 }
+>>>>>>> master
 \end{chapterSummary}
 
 \section{Thinking about the Material}
