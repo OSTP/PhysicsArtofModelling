@@ -15,7 +15,7 @@ In this chapter, we will introduce the tools required to describe motion in one 
 \end{learningObjectives}
 
 \begin{opening}
-You are taking your 6 year old cousin, Lily, to see the aquarium in Toronto. You are sitting on the train in Kingston waiting to leave the station. Lily exclaims that your train must be moving, and is excited that you are on your way to Toronto. You wonder why she said this, so you look out the window and notice that train beside you is moving backwards. You conclude that your train is not moving after all. How do you explain this to Lily? Do you know for certain that you aren't moving?
+You are taking your 6 year old cousin, Lily, to see the aquarium in Toronto. You are sitting on the train in Kingston waiting to leave the station. Lily exclaims that your train is moving, and is excited that you are on your way to Toronto. You wonder why she said this, so you look out the window and notice that train beside you is moving backwards. You conclude that your train is not moving after all. How do you explain this to Lily? Do you know for certain that you aren't moving?
 \end{opening}
 
 
@@ -485,31 +485,22 @@ Since this is a positive number, Marcel still sees the passenger moving in the N
 
 \newpage
 \section{Summary}
-\begin{chapterSummary}{
-\item To describe motion in one dimension, we must define an axis with:
+\begin{chapterSummary}
+To describe motion in one dimension, we must define an axis with:
 \begin{enumerate}
 \item An origin (where $x=0$)
 \item A direction (the direction in which $x$ increases).
 \end{enumerate}
-\item We describe the position of an object with a function $x(t)$ that \textit{depends} on time.
-\item The rate of change of position is called ``velocity'' and is a function given by the time-derivative of position.
-\item The rate of change of velocity is called ``acceleration'' and is a function given by the time-derivative of velocity.
-\item Given a function for acceleration, $a_x(t)$, one can use its anti-derivative to determine velocity.
-\item Given a function for velocity, $v_x(t)$, one can use its anti-derivative to determine position.
-\item An inertial frame of reference is one that is moving with a constant velocity.
-\item It is impossible to define a frame of reference that is truly ``at rest'', so we consider inertial frames of reference only relative to other frames of reference that we also consider to be inertial.
-\item If an object has a position $x^A(t)$ in a given inertial frame of reference, $x$, that is moving with a velocity $v'^B$ compared to a different inertial frame of reference, $x'$, then the position of the object in the $x'$ frame of reference is given by $x'(t)=v'^B+x^A(t)$.}
-\end{chapterSummary}
-\begin{importantEquations}
-If the position of an object is described by a function $x(t)$, then, its velocity, $v_x(t)$, and acceleration, $a_x(t)$, are given by:
+
+We describe the position of an object with a function $x(t)$ that \textit{depends} on time. The rate of change of position is called ``velocity'', $v_x(t)$, and the rate of change of velocity is called ``acceleration'', $a_x(t)$:
 \begin{align*}
 v_x(t)&=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\frac{dx}{dt}\\
-a_x(t)&=\lim_{\Delta t\to 0}\frac{\Delta v}{\Delta t}=\frac{dv_x}{dt}\\
+a_x(t)&=\lim_{\Delta t\to 0}\frac{\Delta v}{\Delta t}=\frac{dv_x}{dt}
 \end{align*}
-Conversely, given the acceleration, $a_x(t)$, on can find the velocity and position:
+Given the acceleration, one can find the velocity and position:
 \begin{align*}
 v_x(t)&=\int a_x(t)dt\\
-x(t)&=\int v_x(t)dt\\
+x(t)&=\int v_x(t)dt
 \end{align*}
 With a constant acceleration, $a_x(t)=a_x$, if the object had velocity $v_{0x}$ and position $x_0$ at $t=0$:\footnote{We did not derive the third of these kinematic equations in this chapter, but it is derived in problem \ref{prob:kinematicDerivation}.} 
 \begin{align*}
@@ -517,12 +508,42 @@ v_x(t)&=v_{0x}t+a_xt\\
 x(t)&=x_0+v_{0x}t+\frac{1}{2}a_xt^2\\
 v^2-v_0^2&=2a\Delta x 
 \end{align*}
-If an object has position $x^A$ as measured in a frame of reference $x$ that is moving at constant speed $v'^B$ as measured in a second frame of reference $x'$, then in the $x'$ reference frame, the kinematic quantities for the object are obtained by the Galilean transformation:
+An inertial frame of reference is one that is moving with a constant velocity. It is impossible to define a frame of reference that is truly ``at rest'', so we consider inertial frames of reference only relative to other frames of reference that we also consider to be inertial. If an object has position $x^A$ as measured in a frame of reference $x$ that is moving at constant speed $v'^B$ as measured in a second frame of reference $x'$, then in the $x'$ reference frame, the kinematic quantities for the object are obtained by the Galilean transformation:
 \begin{align*}
 x'^A(t) &= v'^Bt + x^A(t)\\
 v'^A(t) &=v'^B+v^A(t)\\
 a'^A(t) &= a(t)
 \end{align*}
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+\begin{multicols}{2}
+\begin{center}
+\textbf{Position, Velocity, and\\ Acceleration:}
+\begin{align*}
+v_x(t)&=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\frac{dx}{dt}\\
+a_x(t)&=\lim_{\Delta t\to 0}\frac{\Delta v}{\Delta t}=\frac{dv_x}{dt}\\
+v_x(t)&=\int a_x(t)dt\\
+x(t)&=\int v_x(t)dt
+\end{align*}
+\textbf{Kinematic Equations:}
+\begin{align*}
+v_x(t)&=v_{0x}t+a_xt\\
+x(t)&=x_0+v_{0x}t+\frac{1}{2}a_xt^2\\
+v^2-v_0^2&=2a\Delta x 
+\end{align*}
+\end{center}
+\columnbreak
+\begin{center}
+\textbf{Relative Motion:}\\
+\begin{align*}
+x'^A(t) &= v'^Bt + x^A(t)\\
+v'^A(t) &=v'^B+v^A(t)\\
+a'^A(t) &= a(t)
+\end{align*}
+\end{center}
+\end{multicols}
 \end{importantEquations}
 
 
