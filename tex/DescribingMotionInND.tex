@@ -229,7 +229,7 @@ As you can see, the trajectory is a parabola, and corresponds to what you would 
 \end{MCquestion}}
 \end{checkpoint}
 \begin{example}{
-\capfig{0.6\textwidth}{figures/DescribingMotionInND/MonkeyTreeExample.png}{\label{fig:describingmotioninnd:MonkeyTreeExample} Feeding a monkey in a tree.}
+\capfig{0.7\textwidth}{figures/DescribingMotionInND/MonkeyTreeExample.png}{\label{fig:describingmotioninnd:MonkeyTreeExample} Feeding a monkey in a tree.}
 A monkey is hanging from a tree branch and you want to feed the monkey by throwing it a banana (Figure \ref{fig:describingmotioninnd:MonkeyTreeExample}). You know that the monkey is easily frightened and will let go of the tree branch the instant you throw the banana. The monkey is a horizontal distance $d$ away and a height $h$ above the point from which you release the banana when you throw it. At what angle with respect to the horizontal should you throw the banana so that the banana reaches the monkey?}
 This question is asking us to find what the angle, $\theta$, of the banana's initial velocity, $v_{0B}$, should be if we want to hit the monkey with the banana. This angle can be found by finding the ratio of the initial vertical velocity to the initial horizontal velocity:
 \begin{align*}
@@ -645,47 +645,15 @@ There are a couple of limitations to this trick. Remember that this only works f
 \newpage
 \section{Summary}
 
-\begin{chapterSummary}{
-\item When the motion of an object is in more than one dimension, we describe the position of the object using a vector, $\vec{r}$.
-
-\item We can treat motion in two dimensions as having two independent components: a motion along $x$ and  a separate motion along $y$. This can be extended for motion in $N$ dimensions.
-
-\item We can convert the description of motion from one reference frame to another the same way as we did for motion in one dimension, except that now we use vectors.
-
-\item The instantaneous velocity vector is given by the time derivative of the position vector. The acceleration vector is given by the time derivative of the velocity vector.
-\item An acceleration can change the magnitude and/or the direction of the velocity vector.
-\begin{enumerate}
-\item The component of the acceleration that is parallel to the velocity vector changes the magnitude of the velocity.
-\item The component of the acceleration that is perpendicular to the velocity vector changes the direction of the velocity.
-\end{enumerate}
-
-\item The position of an object moving in a circular path can be described by $s(t)$ or $\theta (t)$. $s(t)$ is the position of the object along the curved axis $s$, and $\theta (t)$ is found by dividing $s(t)$ by the radius of the circle.
-
-\item In circular motion, the velocity vector is tangent to the circle.
-
-\item The linear velocity, $v_s$, is the velocity along the $s$ axis. The angular velocity, $\omega$, is the rate of change of the angle $\theta$. 
-
-\item The angular acceleration, $\alpha$, is the rate of change of the angular velocity, and the linear acceleration $a_s$ is the time derivative of $v_s$.
-
-\item For circular motion, the perpendicular component of the acceleration is called the centripetal acceleration and it points towards the centre of the circle.
-
-\item Uniform circular motion refers to when an object is going around a circle with a constant speed.
-
-\item The period, $T$, is the time that it takes for an object undergoing uniform circular motion to complete one revolution of the circle. The frequency, $f$, is the inverse of the period, and can be thought of as the number of revolutions completed per second.
-
-\item The angular velocity is sometimes called the angular frequency.}
-\end{chapterSummary}
-
-\newpage
-\begin{importantEquations}
-The position vector for motion in two dimensions can be written as:
+\begin{chapterSummary}When the motion of an object is in more than one dimension, we describe the position of the object using a vector, $\vec{r}$. We can treat motion in two dimensions as having two independent components, a motion along $x$ and  a separate motion along $y$:
 \begin{align*}
 \vec r(t) = \begin{pmatrix}
           x(t) \\
           y(t) \\
         \end{pmatrix}= x(t) \hat x + y(t) \hat y
 \end{align*}
-This formula can be extended for motion in $N$ dimensions.\\
+This can be extended for motion in $N$ dimensions.\\
+
 The instantaneous velocity vector and the acceleration vector are given by:
 \begin{align*}
 \vec v(t) &=\frac{d}{dt}\vec r(t)\\
@@ -694,9 +662,14 @@ The instantaneous velocity vector and the acceleration vector are given by:
 If an object has position $\vec{r}^A$ as measured in a frame of reference $xy$ that is moving at constant speed $\vec{v}'^B$ as measured in a second frame of reference $x'y'$, then in the $x'y'$ reference frame:
 \begin{align*}
 \pvec r'^A(t) &= \pvec v'^Bt+\vec r^A(t)\\
-v'^A(t) &=\pvec v'^B+\vec v^A(t)\\
+\pvec v'^A(t) &=\pvec v'^B+\vec v^A(t)\\
 \pvec a'^A(t)&=\vec a^A(t)
 \end{align*}
+An acceleration can change the magnitude and/or the direction of the velocity vector.
+\begin{enumerate}
+\item The component of the acceleration that is parallel to the velocity vector changes the magnitude of the velocity.
+\item The component of the acceleration that is perpendicular to the velocity vector changes the direction of the velocity.
+\end{enumerate}
 The acceleration vector for motion in two dimensions can be written as:
 \begin{align*}
 \vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}
@@ -705,7 +678,8 @@ If the speed is constant, then the acceleration vector is given by:
 \begin{align*}
 \vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)
 \end{align*}
-If the position of an object moving in a circle of radius $R$ is described by its position along the curved axis $s$, then its position along the circle can be described using an angle in radians:
+
+If the position of an object moving in a circle of radius $R$ is described by its position along the curved axis $s$, then its position along the circle can be described using an angle, $\theta$, in radians:
 \begin{align*}
 \theta(t)=\frac{s(t)}{R}
 \end{align*}
@@ -720,7 +694,7 @@ For an object moving along a circle, we can write its position vector, $\vec r(t
           \sin(\theta(t)) \\
         \end{pmatrix}
 \end{align*}
-The angular velocity, $\omega$, is the rate of change of the angle, $\theta$. The angular acceleration, $\alpha$, is the rate of change of the angular velocity:
+The angular velocity, $\omega$, is the rate of change of the angle. The angular acceleration, $\alpha$, is the rate of change of the angular velocity:
 \begin{align*}
 \omega &= \frac{d\theta}{dt}\\
 \alpha &= \frac{d\omega}{dt}
@@ -731,7 +705,7 @@ s=R\theta\\
 v_s=R\omega\\
 a_s=R\alpha
 \end{align*}
-The centripetal acceleration points towards the centre of the circle and has magnitude:
+For circular motion, the velocity vector is tangent to the circle and the perpendicular component of the acceleration is called the centripetal acceleration. The centripetal acceleration points towards the centre of the circle and has a magnitude of:
 \begin{align*}
 a_c(t) = \omega^2(t)R = \frac{v^2(t)}{R}
 \end{align*}
@@ -739,11 +713,59 @@ The centripetal acceleration vector can be written as:
 \begin{align*}
 \vec a_{\bot}(t)&=\omega^2 R[-\cos(\theta)\hat x-\sin(\theta)\hat y]
 \end{align*}
-The period, $T$, and the frequency, $f$, of an object that undergoes uniform circular motion are given by:
+Uniform circular is when an object is going around a circle with a constant speed. The period, $T$, is the time that it takes for the object to complete one revolution of the circle. The frequency, $f$, is the inverse of the period, and can be thought of as the number of revolutions completed per second:
 \begin{align*}
 T&=\frac{2\pi}{\omega}\\
 f=\frac{1}{T}&=\frac{\omega}{2\pi}
 \end{align*}
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+\begin{multicols}{2}
+\textbf{Motion in 2D:}
+\begin{align*}
+\vec r(t) = \begin{pmatrix}
+          x(t) \\
+          y(t) \\
+        \end{pmatrix}&= x(t) \hat x + y(t) \hat y\\
+\vec v(t) &=\frac{d}{dt}\vec r(t)\\
+\vec a(t) &= \frac{d}{dt}\vec v(t)
+\end{align*}
+\textbf{Relative Motion 2D:}
+\begin{align*}
+\pvec r'^A(t) &= \pvec v'^Bt+\vec r^A(t)\\
+\pvec v'^A(t) &=\pvec v'^B+\vec v^A(t)\\
+\pvec a'^A(t)&=\vec a^A(t)
+\end{align*}
+\textbf{Acceleration Vector 2D:}
+\begin{align*}
+\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}\\
+\textrm{(constant speed:)} \quad \vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right) 
+\end{align*}
+\columnbreak
+
+\textbf{Circular Motion:}
+\begin{align*}
+\vec r(t)&= \begin{pmatrix}
+          x(t) \\
+          y(t) \\
+        \end{pmatrix}
+        =R \begin{pmatrix}
+          \cos(\theta(t)) \\
+          \sin(\theta(t)) \\
+        \end{pmatrix}\\
+\omega &= \frac{d\theta}{dt}\\
+\alpha &= \frac{d\omega}{dt}\\
+s&=R\theta\\
+v_s&=R\omega\\
+a_s&=R\alpha\\
+a_c(t) &= \omega^2(t)R = \frac{v^2(t)}{R}\\
+\vec a_{\bot}(t)&=\omega^2 R[-\cos(\theta)\hat x-\sin(\theta)\hat y]\\
+T&=\frac{2\pi}{\omega}\\
+f=\frac{1}{T}&=\frac{\omega}{2\pi}
+\end{align*}
+\end{multicols}
 \end{importantEquations}
 
 
