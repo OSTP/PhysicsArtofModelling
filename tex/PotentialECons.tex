@@ -1,7 +1,7 @@
 
 \chapter{Potential Energy and Conservation of Energy}
 \label{chapter:potentialecons}
-
+In this chapter, we continue to develop the concept of energy in order to introduce a different formulation for Classical Physics that does not use forces. Although we will see that we can describe many phenomena using energy instead of forces, this method is completely equivalent to using Newton's Three Laws, and as such, can be derived from Newton's formulation as we will see. The chapter will conclude with a presentation of the more modern approach, using ``Lagrangian Mechanics", that is currently preferred in physics and forms the basis for extending our description of physics to the microscopic world (e.g. quantum mechanics). 
 
 \begin{learningObjectives}{
  \item something to learn
@@ -16,13 +16,101 @@
 \end{opening}
 
 \section{Conservative forces}
+In Chapter \ref{chap:workenergy}, we introduced the concept of work done by a force, $\vec F(\vec r)$, acting on a object as it moves along a path from position $A$ to position $B$:
+\begin{align}
+\label{eq:potentialecons:workdef}
+W = \int_A^B \vec F(\vec r) \cdot d\vec l
+\end{align}
+where $\vec F(\vec r)$ is a force vector that, in general, is different in different positions in space ($\vec r$). We can also say that $\vec F$ depends on position by writing $\vec F(\vec r)=\vec F(x,y,z)$, since the position vector $\vec r$, is simply the vector $\vec r = x\hat x + y \hat y+ z\hat z$. The above integral is in general difficult to evaluate, as it depends on the specific path over which the object moved. In Example \ref{ex:workenergy:workfriction} of Chapter \ref{chap:workenergy}, we calculated the work done by friction on a crate that was slid across the floor along two different paths and indeed found that the work depended on the path that was taken. In Example \ref{ex:workenergy:workgravity} of the same chapter, we saw that the work done by the force of gravity when moving a box along two different paths did not depend on the path chosen\footnote{At least for those two paths that we tried in the example.}.
 
+We call ``conservative forces'' those force for which the work done only depends on the initial and final positions and not on the path taken. ``Non-conservative'' forces are those for which the work done does depend on the path taken. The force of gravity is an example of a conservative force, whereas friction is an example of a non-conservative force.
+
+This means that the work done by a conservative force on a ``closed path'' is zero; that is, the work done by a force on a object that moves along a path that brings the object back to its starting position is zero. Indeed, since the work done by a conservative force only depends on the location of the initial and final positions, and not the path taken between them, the work has to be zero if the object ends back where it started (as a possible path is for the object to not move at all).
+
+Consider the work done by gravity in raising and lowering an object back to its starting position along a vertical path, as depicted in Figure \ref{fig:potentialecons:gravityvertical}.
+\capfig{0.2\textwidth}{figures/PotentialECons/gravityvertical.png}{\label{fig:potentialecons:gravityvertical} An object that has moved up and back down.}
+The total work done by gravity on this particular closed path is easily shown to be zero, as the work can be broken up into the negative work done as the object moves up (displacement vector $\vec d_1$) and the positive work done on the downwards path (displacement vector $\vec d_2$):
+\begin{align*}
+W^{tot} = \vec F_g \cdot \vec d_1 + \vec F_g \cdot \vec d_2 = -mgd + mgd = 0 
+\end{align*}
+In order to write the path integral of the force over a closed path, we introduce a new notation to indicate the starting and ending position are the same (to avoid writing the integral sign with both limits being the same):
+\begin{align*}
+\int_A^A \vec F(\vec r) \cdot d\vec l = \oint \vec F(\vec r) \cdot d\vec l
+\end{align*}
+The condition for a force to be conservative is thus:
+\begin{align}
+\Aboxed{\oint \vec F(\vec r) \cdot d\vec l = 0}
+\end{align}
+since this means that the work done over a closed path is zero. The condition on the particular form for this integral to be zero can be found by Stokes' Theorem:
+\begin{align*}
+\oint \vec F(\vec r) \cdot d\vec l = \int_S \left[\left(\die{F_z}{y}-\die{F_y}{z}\right)\hat x+ \left(\die{F_x}{z}-\die{F_z}{x}\right)\hat y + \left(\die{F_y}{x}-\die{F_x}{y}\right)\hat z \right]\cdot d\vec A
+\end{align*}
+where the integral on the right is called a ``surface integral'' over the surface, $S$, enclosed by the closed path over which the work is being calculated. Do not worry, it is way beyond the scope of this text to understand this integral or Stokes' Theorem in detail! It is however useful in that it gives us the following conditions on the components of a force for that force to be conservative (by requiring the terms in parentheses to be zero):
+\begin{align}
+\label{eq:potentialecons:conservative}
+\die{F_z}{y}-\die{F_y}{z} &= 0 \nonumber\\
+\die{F_x}{z}-\die{F_z}{x} &= 0\nonumber\\
+\die{F_y}{x}-\die{F_x}{y} &= 0
+\end{align}
+In general:
+\begin{enumerate}
+\item A force can be conservative if it only depends on position in space, and not speed, time, or any other quantity.
+\item A force is conservative if it is constant in magnitude and direction.
+\end{enumerate}
+
+TODO: Checkpoint: Is the force exerted by a person when pushing a crate conservative?
+
+\begin{example}{Is the force of gravity on an object of mass $m$, given by:
+\begin{align*}
+\vec F(x,y,z) = -mg \hat z
+\end{align*}
+conservative?}
+The force is expected to be conservative since it is constant in magnitude and position. We can verify this explicitly using the conditions in Equation \ref{eq:potentialecons:conservative}:
+\begin{align*}
+\die{F_z}{y}-\die{F_y}{z} &= \die{}{y}(-mg) - 0 &= 0\\
+\die{F_x}{z}-\die{F_z}{x} &= 0 - \die{}{x}(-mg) &= 0\\
+\die{F_y}{x}-\die{F_x}{y} &= 0 - 0 &=0
+\end{align*}
+and the force is indeed conservative since all three conditions are zero.
+\end{example}
+
+
+\begin{example}{Is the force given by:
+\begin{align*}
+\vec F(x,y,z) = \frac{-k}{r^3}\vec r = \frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\hat x + \frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\hat y + \frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\hat z
+\end{align*}
+conservative?}
+Since the force only depends on position, it could be conservative, so we must check using the conditions from Equation \ref{eq:potentialecons:conservative}:
+\begin{align*}
+\die{F_z}{y}-\die{F_y}{z} &= \die{}{y}\left(\frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{z}\left( \frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
+&=\frac{3kz(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3ky(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0\\
+\die{F_x}{z}-\die{F_z}{x} &= \die{}{z}\left(\frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{x}\left( \frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
+&=\frac{3kx(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kz(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0\\
+\die{F_y}{x}-\die{F_x}{y} &= \die{}{x}\left(\frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{y}\left( \frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
+&=\frac{3ky(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kx(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
+\end{align*}
+where we used the Chain Rule to take the derivatives. Since all of the conditions are zero, the force is conservative. As we will see in a later chapter, the force represented here is similar mathematically to both the force that Newton introduced in his Universal Theory of Gravity, and the force introduced by Coulomb as the electric force, which are both conservative.
+\end{example}
+
+TODO: Make taking one of the above partial derivatives a problem in the Math section of the question library!
 
 \section{Potential energy}
+In this section, we introduce the concept of ``potential energy''. Potential energy, $U(\vec r)$, is a scalar function of position that can be defined for any conservative force. Potential energy is specifically defined in a way to make it easy to calculate the work done by a conservative force. Since the work done by a conservative force in going from position $A$ to position $B$ does not depend on the particular path taken, but only on the end points, we can write the work done by a conservative force in terms of a function that can be evaluated at the end points:
+\begin{align*}
+-W = - \int_A^B \vec F(\vec r) \cdot d\vec l = U(\vec r_B) - U(\vec r_A) = \Delta U
+\end{align*}
+where we have have chosen to define the function $U(\vec r)$ so that it relates to the negative of the work done for reasons that will be apparent in the next section. Figure \ref{fig:potentialecons:potentialpath} shows an example of an arbitrary path between two points $A$ and $B$ in two dimensions for which one could calculate the work done by a conservative force.
+\capfig{0.5\textwidth}{figures/PotentialECons/potentialpath.png}{\label{fig:potentialecons:potentialpath} Illustration of calculating the work of a conservative function along an arbitrary path.}
 
-\section{Mechanical energy}
 
-\section{Conservation of energy}
+\subsection{Recovering the force from potential energy}
+
+\section{Mechanical energy and conservation of energy}
+
+\section{Potential energy diagrams and equilibria}
+
+\section{The Lagrangian formulation of classical physics}
+
 
 
 \newpage
