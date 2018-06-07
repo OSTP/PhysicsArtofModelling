@@ -155,7 +155,7 @@ By using QExpy, we do not need to tediously calculate the mean and standard devi
 
 
 \subsection{Plotting experimental data with uncertainties}
-In Chapter \ref{chap:ModelAndExperiment} we had presented the data in Table \ref{tab:Python:kmes} which corresponded to our measurements of how long it took ($t$) for an object to drop a certain distance, $x$. We had also introduced  Chlo\"e's Theory of gravity that predicted that the data should be described by the following model:
+In Chapter \ref{chap:modelandexperiment} we had presented the data in Table \ref{tab:Python:kmes} which corresponded to our measurements of how long it took ($t$) for an object to drop a certain distance, $x$. We had also introduced  Chlo\"e's Theory of gravity that predicted that the data should be described by the following model:
 \begin{align*}
 t = k \sqrt{x}
 \end{align*}
@@ -176,7 +176,7 @@ where $k$ was an undetermined constant of proportionality.
 \caption{\label{tab:Python:kmes} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
 \end{table}
 
-The easiest way to visualize and analyse those data is to plot them. In particular, if we plot (graph) $t$ versus $\sqrt{x}$, we  expect that the points will fall on a straight line that goes through zero, with a slope of $k$ (if the data are described by Chlo\"e's Theory). We can use QExpy to graph the data as well as determine (``fit'') for the slope of the line that best describes the data, since we expect that the slope will correspond to the value of $k$. When plotting data and fitting them to a line (or other function), it is important to make sure that the values have at least an uncertainty in the quantity that is being plotted on the $y$ axis. In this case, we have assumed that all of the measurements of time have an uncertainty of $\SI{0.15}{s}$ and that the measurements of the distance have no (or negligible) uncertainties:
+The easiest way to visualize and analyse those data is to plot them. In particular, if we plot (graph) $t$ versus $\sqrt{x}$, we  expect that the points will fall on a straight line that goes through zero, with a slope of $k$ (if the data are described by Chlo\"e's Theory). We can use QExpy to graph the data as well as determine (``fit'') for the slope of the line that best describes the data, since we expect that the slope will correspond to the value of $k$. When plotting data and fitting them to a line (or other function), it is important to make sure that the values have at least an uncertainty in the quantity that is being plotted on the $y$ axis. In this case, we have assumed that all of the measurements of time have an uncertainty of $\SI{0.15}{s}$ and that the measurements of the distance have no (or negligible) uncertainties. The python code below shows how to use QExpy to plot and fit the data to a straight line.
 
 \begin{python}[caption=Using QExPy to plot and fit linear data]
 #First, we load the QExpy module:

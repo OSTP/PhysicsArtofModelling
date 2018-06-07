@@ -3,7 +3,7 @@ ch%Copyright 2017 R.D. Martin
 %
 %This book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details, http://www.gnu.org/licenses/.
 \chapter{Comparing Model and Experiment}
-\label{chap:2_ModelAndExperiment}
+\label{chap:modelandexperiment}
 In this chapter, we will learn about the process of doing science and lay the foundations for developing skills that will be of use throughout your scientific careers. In particular, we will start to learn how to test a model with an experiment, as well as learn to estimate whether a given result or model makes sense.
 \vspace{1cm}
 \begin{learningObjectives}
@@ -409,6 +409,35 @@ $z=f(x)$ (a function of 1 variable) &$\sigma_z=\left|\frac{df}{dx}\sigma_x \righ
 %5.0 +/- 0.6 m/s
 \end{checkpoint}
 
+\subsection{Using graphs to visualize and analyse data}
+Table \ref{tab:modelandexperiment:kmes2} below reproduces our measurements of how long it took ($t$) for an object to drop a certain distance, $x$.  Chlo\"e's Theory of gravity predicted that the data should be described by the following model:
+\begin{align*}
+t = k \sqrt{x}
+\end{align*}
+where $k$ was an undetermined constant of proportionality.
+
+\begin{center}
+\begin{tabular}{cccc} 
+\textbf{x} [m]&\textbf{t} [s]&\textbf{$\sqrt x$}  [\si{m^{\frac{1}{2}}}]&\textbf{k}  [\si{s.m^{-\frac{1}{2}}}]\\
+\hline
+\hline
+1.00 &0.33 &1.00 &0.33 \\ \hline
+2.00 &0.74 &1.41 &0.52 \\ \hline
+3.00 &0.67 &1.73 &0.39 \\ \hline
+4.00 &1.07 &2.00 &0.54 \\ \hline
+5.00 &1.10 &2.24 &0.49 \\ \hline
+\end{tabular}
+\captionof{table}{\label{tab:modelandexperiment:kmes2} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$.}
+\end{center}
+
+
+The easiest way to visualize and analyse these data is to plot them on a graph. In particular, if we plot (graph) $t$ versus $\sqrt{x}$, we  expect that the points will fall on a straight line that goes through zero, with a slope of $k$ (if the data are described by Chlo\"e's Theory). In Appendix \ref{app:python}, we show you how you can easily plot these data using the Python programming language as well as find the slope and offset of the line that best fits the data, as show in Figure \ref{fig:modelandexperiment:tvssqx}. 
+
+\capfig{0.75\textwidth}{figures/Python/tvssqx.png}{\label{fig:modelandexperiment:tvssqx} Graph of $t$ versus $\sqrt{x}$ and line of best fit.}
+
+When plotting data and fitting them to a line (or other function), it is important to make sure that the values have at least an uncertainty in the quantity that is being plotted on the $y$ axis. In this case, we have assumed that all of the measurements of time have an uncertainty of $\SI{0.15}{s}$ and that the measurements of the distance have no (or negligible) uncertainties.
+
+Since we expect the slope of the data to be $k$, fitting the data provides us a with method to determine $k$ by using all of the data points. In this case, we find that $k=\SI{0.61\pm 0.13}{s.m^{-\frac{1}{2}}}$. \textbf{Performing a linear fit of the data is the best way to determine a constant of proportionality between the measurements}. Note that we expect the intercept to be equal to zero according to our model, but the best fit line has an intercept of $\SI{-0.24\pm 0.22}{s}$, which is slightly below, but consistent, with zero. From these data, we would conclude that our measurements are consistent with Chlo\"e's Theory. Again, remember that we can never confirm a theory, we can only exclude it; in this case, we cannot exclude Chlo\"e's Theory.
 
 \subsection{Reporting measured values}
 Now that you know how to attribute an uncertainty to a measured quantity and then propagate that uncertainty to a derived quantity, you are ready to present your measurement to the world. In order to conduct ``good science'', your measurements should be reproducible, clearly presented, and precisely described. Here are general rules to follow when reporting a measured number:
