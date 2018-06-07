@@ -1,6 +1,5 @@
-
 \chapter{Work and energy}
-\label{chapter:workenergy}
+\label{chap:workenergy}
 In this chapter, we introduce a new way to build models derived from Newton's Theory of Classical Physics. We will introduce the concepts of work and energy in order to allow us to model situations using scalar quantities, such as energy, instead of vector quantities, such as forces. It is important to remember that even if we use energy and work, these are tools that are derived from Newton's Laws; that is, we may not be using Newton's Second Law explicitly, but the models that we develop are still based on the same theory of Classical Physics. 
 
 \begin{learningObjectives}{
@@ -166,7 +165,7 @@ W^{tot} = W_1 + W_2 = -\mu_k mg \left((x_A-x_B) + (y_A-y_B)\right)
 which is more work than was done along path 1. This makes sense because for both paths, the force of friction has the same magnitude and is always in the opposite direction of motion; thus, the longer the path, the more work will be done by the force.
 \end{example}
 
-\begin{example}{\capfig{0.5\textwidth}{figures/WorkEnergy/workgravity.png}{\label{fig:workenergy:workgravity}Two possible paths to move a box from the floor onto a table. }
+\begin{example}{\label{ex:workenergy:workgravity}\capfig{0.5\textwidth}{figures/WorkEnergy/workgravity.png}{\label{fig:workenergy:workgravity}Two possible paths to move a box from the floor onto a table. }
 A box of mass $m$ is moved from the floor onto a table using two different paths, as shown in Figure \ref{fig:workenergy:workgravity}. The table is a horizontal distance $L$ away from where the box starts and a height $H$ above the floor. Compare the work done by the weight of the box along the two possible paths.}
 We can use a coordinate system such that the origin coincides with the initial position of the box, $x$ is horizontal, and $y$ is vertical, as shown in Figure \ref{fig:workenergy:workgravity}. The weight of the box can be written as:
 \begin{align*}
@@ -206,24 +205,24 @@ which is the same as the work done along path 1. As we will see, when a force is
 
 The most general case in which one can calculate the work done by a force is the case when the force change continuously along a path where the displacement also changes direction continuously. This is illustrated in Figure \ref{fig:workenergy:workgeneral} which shows a force, $\vec F(\vec r)$, that depends on position ($\vec r$), and an arbitrary path between two points $A$ and $B$. In general, the work done by the force on an object that goes from $A$ to $B$ will depend on the actual path that was taken.
 \capfig{0.5\textwidth}{figures/WorkEnergy/workgeneral.png}{\label{fig:workenergy:workgeneral}An arbitrary path between two points $A$ and $B$ with a force that depends on position, $\vec F(\vec r)$. }
-The strategy for calculating the work in the general case is the same: we break up the path into small straight segments with displacement vectors $d\vec r$ where we assume that the force is constant over the segment. The total work is then sum of the work over each segment:
+The strategy for calculating the work in the general case is the same: we break up the path into small straight segments with displacement vectors $d\vec l$ where we assume that the force is constant over the segment. The total work is then sum of the work over each segment:
 \begin{align}
-\Aboxed{W = \int_A^B \vec F(\vec r) \cdot d\vec r}
+\Aboxed{W = \int_A^B \vec F(\vec r) \cdot d\vec l}
 \end{align}
-As usual, we use the integral symbol to indicate that you need to take an infinite number of infinitely small segments $d\vec r$ in order to calculate the sum. You should note that this is not an integral like any other that we have seen so far: the integral is not over a single integration variable (usually we use $x$), but it is the integral (the sum!) over the specific path that we have chosen in going from $A$ to $B$. This is called a ``path integral'', and is generally difficult to evaluate. 
+As usual, we use the integral symbol to indicate that you need to take an infinite number of infinitely small segments $d\vec l$ in order to calculate the sum. You should note that this is not an integral like any other that we have seen so far: the integral is not over a single integration variable (usually we use $x$), but it is the integral (the sum!) over the specific path that we have chosen in going from $A$ to $B$. This is called a ``path integral'', and is generally difficult to evaluate. 
 
 \begin{example}{\capfig{0.4\textwidth}{figures/WorkEnergy/workparabola.png}{\label{fig:workenergy:workparabola}A parabolic path between $A$ and $B$. }
 A force, $\vec F(\vec r) = \vec F(x,y) = F_x\hat x + F_y \hat y$, is exerted on an object. The object starts at position $A$ and ends at position $B$, along a parabolic path, $y(x) = a+bx^2$, as depicted in Figure \ref{fig:workenergy:workparabola}. What is the work done by the force, $\vec F$, along this trajectory?}
-In this case, the force is constant in magnitude and direction, but because the path is curved, the displacement vector changes direction continuously. When we break up the path into small segments $d\vec r$, we need to incorporate the equation of the parabola to include the fact that $d\vec r$ must always be tangent to the parabola. Consider one small segment along the trajectory and the infinitesimal displacement vector $d\vec r$ at that point, as in Figure \ref{fig:workenergy:workparabola_dr}.
-\capfig{0.2\textwidth}{figures/WorkEnergy/workparabola_dr.png}{\label{fig:workenergy:workparabola_dr}The infinitesimal displacement vector, $d\vec r$. }
+In this case, the force is constant in magnitude and direction, but because the path is curved, the displacement vector changes direction continuously. When we break up the path into small segments $d\vec l$, we need to incorporate the equation of the parabola to include the fact that $d\vec l$ must always be tangent to the parabola. Consider one small segment along the trajectory and the infinitesimal displacement vector $d\vec l$ at that point, as in Figure \ref{fig:workenergy:workparabola_dr}.
+\capfig{0.2\textwidth}{figures/WorkEnergy/workparabola_dr.png}{\label{fig:workenergy:workparabola_dr}The infinitesimal displacement vector, $d\vec l$. }
 
-We can write the $x$ and $y$ components of the vector as infinitesimal distances, $dx$ and $dy$, along the $x$ and $y$ axes, respectively. The vector $d\vec r$ can thus be written:
+We can write the $x$ and $y$ components of the vector as infinitesimal distances, $dx$ and $dy$, along the $x$ and $y$ axes, respectively. The vector $d\vec l$ can thus be written:
 \begin{align*}
-d\vec r = dx \hat x + dy \hat y
+d\vec l = dx \hat x + dy \hat y
 \end{align*}
 The total work done by the force is then:
 \begin{align*}
-W &= \int_A^B \vec F(\vec r) \cdot d\vec r\\
+W &= \int_A^B \vec F(\vec r) \cdot d\vec l\\
 &=\int_A^B (F_x\hat x + F_y \hat y) \cdot (dx \hat x + dy \hat y)\\
 &=\int_A^B (F_x dx + F_ydy)\\
 \therefore W&= \int_A^B F_x dx + \int_A^B F_ydy
@@ -271,7 +270,7 @@ W^{net} &= W_1 + W_2 + W_3 \\
 \end{align*}
 where $\vec F^{net} = \vec F_1 + \vec F_2 + \vec F_3$. The result is easily generalized to any number of forces, including if those forces change as a function of position:
 \begin{align*}
-W^{net} = \int_A^B F^{net}(\vec r) \cdot d\vec r
+W^{net} = \int_A^B F^{net}(\vec r) \cdot d\vec l
 \end{align*} 
 
 \begin{example}{\capfig{0.3\textwidth}{figures/WorkEnergy/workincline.png}{\label{fig:workenergy:workincline} A crate being pushed up an incline.}
@@ -336,27 +335,27 @@ TODO: Recycle above example into the question library for Newton's Laws and ask 
 \section{Kinetic energy and the work energy theorem}
 At this point, you should be comfortable calculating the net work done on an object upon which several forces are exerted. In this section, we derive a new quantity, kinetic energy, which allows us to connect the work done on an object with its change in speed. As we saw in the previous section, the net work done on an object is connected to the objects acceleration; if the net force on the object is zero, then the net work done and acceleration are also zero. The following derivation also appears to ``come out of thin air'', but again, remember that theorists have tried all sorts of mathematical tricks to reformulate Newton's Theory, and this is the one that worked. 
 
-Consider the most general case of an object of mass $m$ acted upon by a net force, $\vec F^{net}(\vec r)$, which can vary in magnitude and direction. We wish to calculate the  net work done on the object as it moves along an arbitrary path between two points, $A$ and $B$ in space, as show in Figure \ref{fig:workenergy:kepath}. The instantaneous acceleration of the object, $\vec a$, is shown along with an ``element of the path'', $d\vec r$. 
+Consider the most general case of an object of mass $m$ acted upon by a net force, $\vec F^{net}(\vec r)$, which can vary in magnitude and direction. We wish to calculate the  net work done on the object as it moves along an arbitrary path between two points, $A$ and $B$ in space, as show in Figure \ref{fig:workenergy:kepath}. The instantaneous acceleration of the object, $\vec a$, is shown along with an ``element of the path'', $d\vec l$. 
 \capfig{0.4\textwidth}{figures/WorkEnergy/kepath.png}{\label{fig:workenergy:kepath} An object moving along an arbitrary path between points $A$ and $B$ that is acted upon by a net force $\vec F^{net}$.}
 The net work done on the object can be written:
 \begin{align*}
-W^{net} = \int_A^B F^{net}(\vec r) \cdot d\vec r
+W^{net} = \int_A^B F^{net}(\vec r) \cdot d\vec l
 \end{align*} 
 and is in general a difficult integral to evaluate for an arbitrary path. Our goal is to find a way to evaluate this integral by finding a function, $K$, with the property that:
 \begin{align*}
-\int_A^B F^{net}(\vec r) \cdot d\vec r =K_B - K_A
+\int_A^B F^{net}(\vec r) \cdot d\vec l =K_B - K_A
 \end{align*}
 That is, the function $K$ is akin to an anti-derivative in the sense that it can be evaluated only at the end points of the path to determine the integral.
 
 In order to determine the form for the function $K$, we start by noting that, by using Newton's Second Law, we can write the integral for work in terms of the acceleration of the object:
 \begin{align*}
 \sum \vec F &= \vec F^{net} = m\vec a\\
-\therefore \int_A^B F^{net}(\vec r) \cdot d\vec r &= \int_A^B m\vec a\cdot d\vec r =m\int_A^B \vec a\cdot d\vec r
+\therefore \int_A^B F^{net}(\vec r) \cdot d\vec l &= \int_A^B m\vec a\cdot d\vec l =m\int_A^B \vec a\cdot d\vec l
 \end{align*}
-where we assumed that the mass of the object does not change along the path and can thus be factored out of the integral. Consider the scalar product of the acceleration, $\vec a$, and the path element, $d\vec r=dx\hat x  +dy\hat y + dz\hat z$, written in terms of the velocity vector:
+where we assumed that the mass of the object does not change along the path and can thus be factored out of the integral. Consider the scalar product of the acceleration, $\vec a$, and the path element, $d\vec l=dx\hat x  +dy\hat y + dz\hat z$, written in terms of the velocity vector:
 \begin{align*}
 \vec a & = \frac{d\vec v}{dt}\\
-\therefore \vec a\cdot d\vec r &= \frac{d\vec v}{dt}\cdot d\vec r\\
+\therefore \vec a\cdot d\vec l &= \frac{d\vec v}{dt}\cdot d\vec l\\
 &=\left(\frac{dv_x}{dt}\hat x+ \frac{dv_y}{dt}\hat y + \frac{dv_z}{dt}\hat z\right) \cdot (dx\hat x  +dy\hat y + dz\hat z)\\
 &=\frac{dv_x}{dt}dx+\frac{dv_y}{dt}dy+\frac{dv_z}{dt}dz
 \end{align*}
@@ -366,12 +365,12 @@ Any of the terms in the sum can be re-arranged so that the time derivative acts 
 \end{align*}
 where we recognize that $\frac{dx}{dt} = v_x$. We can thus write the scalar product between the acceleration vector and the path element as:
 \begin{align*}
-\vec a\cdot d\vec r&= \frac{dv_x}{dt}dx+\frac{dv_y}{dt}dy+\frac{dv_z}{dt}dz\\
+\vec a\cdot d\vec l&= \frac{dv_x}{dt}dx+\frac{dv_y}{dt}dy+\frac{dv_z}{dt}dz\\
 &=\frac{dx}{dt}dv_x + \frac{dy}{dt}dv_y+\frac{dz}{dt}dv_z
 \end{align*}
 We can thus write the integral for the net work done as:
 \begin{align*}
-W^{net} &= \int_A^B F^{net}(\vec r) \cdot d\vec r =m \int_A^B (v_xdv_x + v_ydv_y + v_zdv_z)\\
+W^{net} &= \int_A^B F^{net}(\vec r) \cdot d\vec l =m \int_A^B (v_xdv_x + v_ydv_y + v_zdv_z)\\
 &=m\int_A^B v_xdv_x +m\int_A^B  v_ydv_y + m\int_A^B v_zdv_z
 \end{align*}
 which corresponds to the sum of three integrals over the three independent components of the velocity vector. The components of the velocity vector are functions that change over the path and have fixed values at either end of the path. Let the velocity vector of the object at point $A$ be $\vec v_A=(v_{Ax}, v_{Ay}, v_{Az})$ and the velocity vector at point $B$ be $\vec v_B=(v_{Bx}, v_{By}, v_{Bz}$. The integral over, say, the $x$ component of velocity is then:
@@ -527,12 +526,12 @@ W = \vec F \cdot \vec d = Fd\cos\theta = F_xd_x+F_yd_y+F_zd_z
 
 If the force changes with position and/or the object moves along an arbitrary path in space, the work done by that force over the path is given by:
 \begin{align*}
-W =\int_A^B \vec F(\vec r) \cdot  d\vec r
+W =\int_A^B \vec F(\vec r) \cdot  d\vec l
 \end{align*}
 
 If multiple forces are exerted on an object, then one can calculate the net force on the object (the vector sum of the forces), and the total work done on the object will be equal to the work done by the net force:
 \begin{align*}
-W^{net} = \int_A^B \vec F^{net}(\vec r) \cdot d\vec r
+W^{net} = \int_A^B \vec F^{net}(\vec r) \cdot d\vec l
 \end{align*}
 
 One can define the kinetic energy, $K(v)$ of an object of mass $m$ that has speed $v$ as:
