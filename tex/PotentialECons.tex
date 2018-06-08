@@ -1,7 +1,7 @@
 
 \chapter{Potential Energy and Conservation of Energy}
 \label{chapter:potentialecons}
-In this chapter, we continue to develop the concept of energy in order to introduce a different formulation for Classical Physics that does not use forces. Although we will see that we can describe many phenomena using energy instead of forces, this method is completely equivalent to using Newton's Three Laws, and as such, can be derived from Newton's formulation as we will see. The chapter will conclude with a presentation of the more modern approach, using ``Lagrangian Mechanics", that is currently preferred in physics and forms the basis for extending our description of physics to the microscopic world (e.g. quantum mechanics). 
+In this chapter, we continue to develop the concept of energy in order to introduce a different formulation for Classical Physics that does not use forces. Although we will see that we can describe many phenomena using energy instead of forces, this method is completely equivalent to using Newton's Three Laws, and as such, can be derived from Newton's formulation as we will see. Because energy is a scalar quantity, for many problems, it leads to models that are much easier to develop mathematically than if one had used forces. The chapter will conclude with a presentation of the more modern approach, using ``Lagrangian Mechanics", that is currently preferred in physics and forms the basis for extending our description of physics to the microscopic world (e.g. quantum mechanics). 
 
 \begin{learningObjectives}{
  \item something to learn
@@ -16,12 +16,14 @@ In this chapter, we continue to develop the concept of energy in order to introd
 \end{opening}
 
 \section{Conservative forces}
-In Chapter \ref{chap:workenergy}, we introduced the concept of work done by a force, $\vec F(\vec r)$, acting on a object as it moves along a path from position $A$ to position $B$:
+In Chapter \ref{chap:workenergy}, we introduced the concept of work, $W$, done by a force, $\vec F(\vec r)$, acting on a object as it moves along a path from position $A$ to position $B$:
 \begin{align}
 \label{eq:potentialecons:workdef}
 W = \int_A^B \vec F(\vec r) \cdot d\vec l
 \end{align}
-where $\vec F(\vec r)$ is a force vector that, in general, is different in different positions in space ($\vec r$). We can also say that $\vec F$ depends on position by writing $\vec F(\vec r)=\vec F(x,y,z)$, since the position vector $\vec r$, is simply the vector $\vec r = x\hat x + y \hat y+ z\hat z$. The above integral is in general difficult to evaluate, as it depends on the specific path over which the object moved. In Example \ref{ex:workenergy:workfriction} of Chapter \ref{chap:workenergy}, we calculated the work done by friction on a crate that was slid across the floor along two different paths and indeed found that the work depended on the path that was taken. In Example \ref{ex:workenergy:workgravity} of the same chapter, we saw that the work done by the force of gravity when moving a box along two different paths did not depend on the path chosen\footnote{At least for those two paths that we tried in the example.}.
+where $\vec F(\vec r)$ is a force vector that, in general, is different in different positions in space ($\vec r$). We can also say that $\vec F$ depends on position by writing $\vec F(\vec r)=\vec F(x,y,z)$, since the position vector $\vec r$, is simply the vector $\vec r = x\hat x + y \hat y+ z\hat z$. 
+
+The above integral is in general difficult to evaluate, as it depends on the specific path over which the object moved. In Example \ref{ex:workenergy:workfriction} of Chapter \ref{chap:workenergy}, we calculated the work done by friction on a crate that was slid across the floor along two different paths and indeed found that the work depended on the path that was taken. In Example \ref{ex:workenergy:workgravity} of the same chapter, we saw that the work done by the force of gravity when moving a box along two different paths did not depend on the path chosen\footnote{At least for those two paths that we tried in the example.}.
 
 We call ``conservative forces'' those force for which the work done only depends on the initial and final positions and not on the path taken. ``Non-conservative'' forces are those for which the work done does depend on the path taken. The force of gravity is an example of a conservative force, whereas friction is an example of a non-conservative force.
 
@@ -33,7 +35,7 @@ The total work done by gravity on this particular closed path is easily shown to
 \begin{align*}
 W^{tot} = \vec F_g \cdot \vec d_1 + \vec F_g \cdot \vec d_2 = -mgd + mgd = 0 
 \end{align*}
-In order to write the path integral of the force over a closed path, we introduce a new notation to indicate the starting and ending position are the same (to avoid writing the integral sign with both limits being the same):
+In order to write the path integral of the force over a closed path, we introduce a new notation to indicate that the starting and ending position are the same (to avoid writing the integral sign with both limits being the same):
 \begin{align*}
 \int_A^A \vec F(\vec r) \cdot d\vec l = \oint \vec F(\vec r) \cdot d\vec l
 \end{align*}
@@ -60,12 +62,12 @@ In general:
 
 TODO: Checkpoint: Is the force exerted by a person when pushing a crate conservative?
 
-\begin{example}{Is the force of gravity on an object of mass $m$, given by:
+\begin{example}{\label{ex:potentialecons:gravity}Is the force of gravity on an object of mass $m$, near the surface of the Earth, given by:
 \begin{align*}
-\vec F(x,y,z) = -mg \hat z
+\vec F(x,y,z) =0\hat x + 0\hat y -mg \hat z
 \end{align*}
-conservative?}
-The force is expected to be conservative since it is constant in magnitude and position. We can verify this explicitly using the conditions in Equation \ref{eq:potentialecons:conservative}:
+conservative? Note that we have defined the $z$ axis to be vertical and positive upwards.}
+The force is expected to be conservative since it is constant in magnitude and direction. We can verify this explicitly using the conditions in Equation \ref{eq:potentialecons:conservative}:
 \begin{align*}
 \die{F_z}{y}-\die{F_y}{z} &= \die{}{y}(-mg) - 0 &= 0\\
 \die{F_x}{z}-\die{F_z}{x} &= 0 - \die{}{x}(-mg) &= 0\\
@@ -89,18 +91,43 @@ Since the force only depends on position, it could be conservative, so we must c
 \die{F_y}{x}-\die{F_x}{y} &= \die{}{x}\left(\frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{y}\left( \frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
 &=\frac{3ky(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kx(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
 \end{align*}
-where we used the Chain Rule to take the derivatives. Since all of the conditions are zero, the force is conservative. As we will see in a later chapter, the force represented here is similar mathematically to both the force that Newton introduced in his Universal Theory of Gravity, and the force introduced by Coulomb as the electric force, which are both conservative.
+where we used the Chain Rule to take the derivatives. Since all of the conditions are zero, the force is conservative. As we will see, the force represented here is similar mathematically to both the force that Newton introduced in his Universal Theory of Gravity, and the force introduced by Coulomb as the electric force, which are both conservative.
 \end{example}
 
 TODO: Make taking one of the above partial derivatives a problem in the Math section of the question library!
 
 \section{Potential energy}
-In this section, we introduce the concept of ``potential energy''. Potential energy, $U(\vec r)$, is a scalar function of position that can be defined for any conservative force. Potential energy is specifically defined in a way to make it easy to calculate the work done by a conservative force. Since the work done by a conservative force in going from position $A$ to position $B$ does not depend on the particular path taken, but only on the end points, we can write the work done by a conservative force in terms of a function that can be evaluated at the end points:
-\begin{align*}
--W = - \int_A^B \vec F(\vec r) \cdot d\vec l = U(\vec r_B) - U(\vec r_A) = \Delta U
-\end{align*}
+In this section, we introduce the concept of ``potential energy''. Potential energy is a scalar function of position that can be defined for any conservative force. Potential energy is specifically defined in a way to make it easy to calculate the work done by a conservative force. Since the work done by a conservative force in going from position $A$ to position $B$ does not depend on the particular path taken, but only on the end points, we can write the work done by a conservative force in terms of a function, $U(\vec r)$, that can be evaluated at the end points:
+\begin{align}
+\Aboxed{-W = - \int_A^B \vec F(\vec r) \cdot d\vec l = U(\vec r_B) - U(\vec r_A) = \Delta U}
+\end{align}
 where we have have chosen to define the function $U(\vec r)$ so that it relates to the negative of the work done for reasons that will be apparent in the next section. Figure \ref{fig:potentialecons:potentialpath} shows an example of an arbitrary path between two points $A$ and $B$ in two dimensions for which one could calculate the work done by a conservative force.
 \capfig{0.5\textwidth}{figures/PotentialECons/potentialpath.png}{\label{fig:potentialecons:potentialpath} Illustration of calculating the work of a conservative function along an arbitrary path.}
+Once we know the function for the potential energy, $U(\vec r)$, we can calculate the work done by the associated force along any path. In order to determine the function, $U(\vec r)$, we can calculate the work that is done along a path over which the integral for work is easy (usually, a straight line). 
+
+For example, near the surface of the Earth, the force of gravity on an object of mass, $m$, is given by:
+\begin{align*}
+\vec F_g = -mg \hat z
+\end{align*}
+where we have defined the $z$ axis to be vertical and positive upwards. We already showed in Example \ref{ex:potentialecons:gravity} that this force is conservative and that we can thus calculate a potential energy function. To do so, we can calculate the work done by the force of gravity over a straight vertical path, from position $A$ to position $B$, as shown in Figure \ref{fig:potentialecons:gravitydl}.
+\capfig{0.2\textwidth}{figures/PotentialECons/gravitydl.png}{\label{fig:potentialecons:gravitydl} A vertical path for calculating the work done by gravity.}
+The work done by gravity from position $A$ to position $B$ is:
+\begin{align*}
+W &= \int_A^B \vec F(\vec r) \cdot d\vec l\\
+&= \int_{z_A}^{z_B} ( -mg \hat z) \cdot (dz \hat z) \\
+&= -mg \int_{z_A}^{z_B} dz\\
+&= -mg(z_B-z_A) 
+\end{align*} 
+By inspection, we can now identify the functional form for the potential energy function, $U(\vec r)$. We require that:
+\begin{align*}
+-W &= U(\vec r_B) - U(\vec r_A) = U(z_B) - U(z_A)
+\end{align*}
+where we replaced the position vector $\vec r$, by the $z$ coordinate, since this is a one dimensional situation. Therefore:
+\begin{align*}
+-W=mg(z_B-z_A)&= U(z_B) - U(z_A)\\
+\therefore U(z) &= mgz + C
+\end{align*} 
+and we have found that, for the force of gravity near the surface of the Earth, one can define a potential energy function, $U(z)$, that has the desired property. It is important to note that, since it is only the \textbf{difference} in potential energy that matters when calculating the work done, the potential energy function can have an arbitrary constant added to it. Thus, \textbf{the value of the potential energy function is meaningless, and only differences in potential energy are meaningful and related to the work done on an object}. In other words, it does not matter where the potential energy is equal to zero, and we can therefore choose a convenient location for the potential function to be zero.
 
 
 \subsection{Recovering the force from potential energy}
