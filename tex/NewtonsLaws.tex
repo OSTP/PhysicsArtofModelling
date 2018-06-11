@@ -575,6 +575,8 @@ Hooke's Law for the compression force of a spring, is given by the following vec
 
 \capfig{0.5\textwidth}{figures/NewtonsLaws/katiesnowboarding.png}{\label{fig:newtonslaws:katiesnowboarding} Katie, snowboarding.}
 
+\textbf{Solution}
+
 Before trying to solve the problem, we should think of the strategy that will allow us to model the time that it takes to arrive at the bottom. We know that Newton's Second Law relates the forces on Katie to her acceleration. If we build a model of the forces on Katie, we can then determine her acceleration. Once we know her acceleration, we can use kinematics to determine how long it takes for her to cover the distance of $\SI{40}{m}$.
 
 The forces exerted on Katie are:
@@ -635,3 +637,80 @@ x(t)&=x_0+v_{0x}t+\frac{1}{2}at^2\\
 \end{align*}
 Katie has $\SI{7.82}{s}$ of gliding bliss before face-planting into the large pile of snow.
 \end{problem}
+
+ \vspace{0.25cm}
+\begin{problemParts}{Three boxes with masses, $m_1$, $m_2$ and $m_3$, respectively, are placed on top of one another. Between all of the boxes, the coefficient of static friction is $\mu_s=0.3$. The coefficient of static friction between box 3 and the ground is also $\mu_s=0.3$. Box 2 is pushed on with a constant force of 30N, when it is at rest.}
+\item Prove that in this particular system, box 1 must always stay stationary on the ground, with respect to boxes 2 and 3. 
+\item With information from part a), find the maximum force at which box 3 will stick to box 2 and slide with it. Assume that box 2 has a constant acceleration of $3.26 m/s^2$.
+\end{problemParts}
+
+\capfig{0.2\textwidth}{figures/NewtonsLaws/threeboxes.png}{\label{fig:newtonslaws:threeboxes} Three stacked boxes.}
+
+\textbf{Solution}
+
+In order to determine what happens to boxes 1 and 2, we first need to draw free body diagrams for all of the boxes.
+
+\capfig{0.6\textwidth}{figures/NewtonsLaws/FBD123.png}{\label{fig:newtonslaws:FBD123} Forces on boxes 1, 2 and 3.}
+
+Next, we must write the sum of the forces in the x and y directions for box 1 and box 2:
+
+\begin{align*}
+\sum F_x^{2}&=F-f_{3s}-f_{2s}
+\\ \sum F_y^{2}&=N_{2}-N_{3}-f_{g2}=0
+\\ \sum F_x^{1}&=f_{2s}-f_{1s}=\mu _sN_{2}-\mu_sN_1=m_1a
+\\ \sum F_y^{1}&=N_1-N_{2}-m_1g=0
+\end{align*}
+
+Analyzing the horizontal forces on box 1's free body diagram,
+\begin{align*}
+\mu _sN_{3}-\mu_sN_1&=m_1a
+\\ \mu _s(m_2+m_3)g-\mu _s(m_1+m_2+m_3)g&=(m_1+m_2+m_3)a
+\end{align*}
+
+We can see that in order for box 1 to stick to box 2, and glide with a positive acceleration in the direction of box 2, the force of static friction between box 1 and 2 must overcome the force of static friction between box 1 and the ground. As we know, the force of friction depends on the normal force. In this particular system, the masses of the boxes and the directions of the forces applied do not matter. Due to the positioning of the boxes, the normal forces will cause the force of static friction between box 1 and the ground to always be greater than the force of static friction between boxes 1 and 2 for this particular system. In the last equation, we see that no matter how light or heavy these boxes are, box 1 will always have a negative acceleration with respect to box 2. They can never stick together and move in the same direction.
+
+Therefore, box 1 will stay stationary on the ground.
+
+b) Knowing that box 1 must remain stationary, while box 2 is gliding on top of it, we should first look at the force diagrams for boxes 2 and 3.
+
+\capfig{0.6\textwidth}{figures/NewtonsLaws/FBD23.png}{\label{fig:newtonslaws:FBD23}}
+
+Writing out the horizontal and vertical forces for box 3 at rest (with respect to box 2), we can solve for the maximum force for the box 3 to stick to box 2.
+\begin{align*}
+\\ \sum F_x^{2}&=F-f_{s3}-f_{k2}=m_2a
+\\ \sum F_x^{2}&=N_2-N_3-m_2g=0
+\\ \sum F_x^{3}&=f_{s3}
+\\ \sum F_y^{3}&=N_3-m_3g=0
+\end{align*}
+
+We must first solve the horizontal forces on box 2 for the force:
+
+\begin{align*}
+\\ \sum F_x^{2}&=F-f_{s3}-f_{k2}=m_2a
+\\ F&=m_2a+f_{s3}+f_{k2}
+\\ F&=m_2a+\mu_{s3}N_3+\mu_{k2}N_2
+\end{align*}
+
+Before we can solve for the maximum force, we see that we need the normal force on boxes 2 and 3. We can proceed by evaluating the normal force on box 3:
+
+\begin{align*}
+\\ \sum F_y^{3}&=N_3-m_3g=0
+\\ \therefore N_3&=m_3g
+\\ \therefore N_3&=29.4N
+\end{align*}
+
+Next, we can evaluate the normal force on box 2: 
+\begin{align*}
+\\ \sum F_y^{2}&=N_2-N_3-m_2g=0
+\\ N_2&=N_3+m_2g
+\\ \therefore N_2&=78.4N
+\end{align*}
+
+Plugging these values into the horizontal force equation on box 2 from above, we can find the maximum force.
+
+\begin{align*}
+\\ F&=m_2a+\mu_{s3}N_3+\mu_{k2}N_2
+\\ \therefore F&=27.5N
+\end{align*}
+
+The maximum force that we can apply to box 2 in order for box 3 to stay stationary is 27.5N.
