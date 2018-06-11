@@ -97,12 +97,12 @@ where we used the Chain Rule to take the derivatives. Since all of the condition
 TODO: Make taking one of the above partial derivatives a problem in the Math section of the question library!
 
 \section{Potential energy}
-In this section, we introduce the concept of ``potential energy''. Potential energy is a scalar function of position that can be defined for any conservative force. Potential energy is specifically defined in a way to make it easy to calculate the work done by a conservative force. Since the work done by a conservative force in going from position $A$ to position $B$ does not depend on the particular path taken, but only on the end points, we can write the work done by a conservative force in terms of a function, $U(\vec r)$, that can be evaluated at the end points:
+In this section, we introduce the concept of ``potential energy''. Potential energy is a scalar function of position that can be defined for any conservative force in a way to make it easy to calculate the work done by that force over any path. Since the work done by a conservative force in going from position $A$ to position $B$ does not depend on the particular path taken, but only on the end points, we can write the work done by a conservative force in terms of a ``potential energy function'', $U(\vec r)$, that can be evaluated at the end points:
 \begin{align}
 \Aboxed{-W = - \int_A^B \vec F(\vec r) \cdot d\vec l = U(\vec r_B) - U(\vec r_A) = \Delta U}
 \end{align}
-where we have have chosen to define the function $U(\vec r)$ so that it relates to the negative of the work done for reasons that will be apparent in the next section. Figure \ref{fig:potentialecons:potentialpath} shows an example of an arbitrary path between two points $A$ and $B$ in two dimensions for which one could calculate the work done by a conservative force.
-\capfig{0.5\textwidth}{figures/PotentialECons/potentialpath.png}{\label{fig:potentialecons:potentialpath} Illustration of calculating the work of a conservative function along an arbitrary path.}
+where we have have chosen to define the function $U(\vec r)$ so that it relates to the \textbf{negative} of the work done for reasons that will be apparent in the next section. Figure \ref{fig:potentialecons:potentialpath} shows an example of an arbitrary path between two points $A$ and $B$ in two dimensions for which one could calculate the work done by a conservative force.
+\capfig{0.4\textwidth}{figures/PotentialECons/potentialpath.png}{\label{fig:potentialecons:potentialpath} Illustration of calculating the work of a conservative function along an arbitrary path.}
 Once we know the function for the potential energy, $U(\vec r)$, we can calculate the work done by the associated force along any path. In order to determine the function, $U(\vec r)$, we can calculate the work that is done along a path over which the integral for work is easy (usually, a straight line). 
 
 For example, near the surface of the Earth, the force of gravity on an object of mass, $m$, is given by:
@@ -127,7 +127,9 @@ where we replaced the position vector $\vec r$, by the $z$ coordinate, since thi
 -W=mg(z_B-z_A)&= U(z_B) - U(z_A)\\
 \therefore U(z) &= mgz + C
 \end{align*} 
-and we have found that, for the force of gravity near the surface of the Earth, one can define a potential energy function, $U(z)$, that has the desired property. It is important to note that, since it is only the \textbf{difference} in potential energy that matters when calculating the work done, the potential energy function can have an arbitrary constant added to it. Thus, \textbf{the value of the potential energy function is meaningless, and only differences in potential energy are meaningful and related to the work done on an object}. In other words, it does not matter where the potential energy is equal to zero, and we can therefore choose a convenient location for the potential function to be zero.
+and we have found that, for the force of gravity near the surface of the Earth, one can define a potential energy function, $U(z) mgz +C$.
+
+It is important to note that, since it is only the \textbf{difference} in potential energy that matters when calculating the work done, the potential energy function can have an arbitrary constant, $C$, added to it. Thus, \textbf{the value of the potential energy function is meaningless, and only differences in potential energy are meaningful and related to the work done on an object}. In other words, it does not matter where the potential energy is equal to zero, and by choosing $C$, we can therefore choose a convenient location where the potential function is zero.
 
 \begin{example}{\capfig{0.5\textwidth}{figures/PotentialECons/table.png}{\label{fig:potentialecons:table} A box moved from the ground up onto a table.}
 Calculate the work done \textbf{by gravity} when a box of mass, $m$, is moved from the ground up onto a table that is a distance $L$ away horizontally and $H$ vertically, as illustrated in Figure \ref{fig:potentialecons:table}. How much work must be done by a person moving the box?}
@@ -154,10 +156,145 @@ W^{net} = 0 &= W_g + W_p\\
 \textbf{Discussion:} We find that the person had to do positive work, which makes sense, since they had to exert a force with a component in the direction of motion (upwards). It is also interesting to note that it does not matter if the person exerted a constant force or whether they varied the force that they exerted on the box as they moved it: the amount of work done by the person is fixed to be the negative of the work done by gravity.
 \end{example}
 
+\begin{example}{\label{ex:potentialecons:springpotential}The force exerted by a spring that is extended or compressed by a distance, $x$, is given by Hookes' Law:
+\begin{align*}
+\vec F(x) = -k x\hat x
+\end{align*}
+where the $x$ axis is defined to be colinear with the spring with and the origin is located at the rest position of the spring. Show that: (a) the force exerted by the spring onto an object is conservative, and (b), determine the corresponding potential energy function. }
+Since the force depends on position, it could be conservative, which we can check with the conditions from Equation \ref{eq:potentialecons:conservative}:
+\begin{align*}
+\die{F_z}{y}-\die{F_y}{z} &= 0 - 0 &= 0\\
+\die{F_x}{z}-\die{F_z}{x} &= \die{}{z}(-kx)) - 0&= 0\\
+\die{F_y}{x}-\die{F_x}{y} &= 0 - \die{}{y}(-kx)) &=0
+\end{align*}
+and the force is indeed conservative. To determine the potential energy function, let us calculate the work done by the spring from position $x_A$ to position $x_B$:
+\begin{align*}
+W &=\int_A^B \vec F(\vec r) \cdot d\vec l\\
+&=\int_A^B (-kx\hat x) \cdot dx \hat x\\
+&=\int_{x_A}^{x_B} (-kx)dx=\left[-\frac{1}{2}kx^2  \right]_{x_A}^{x_B}\\
+&=-\left( \frac{1}{2}kx_B^2-\frac{1}{2}kx_A^2 \right)
+\end{align*}
+Again, comparing with:
+\begin{align*}
+-W &= U(\vec r_B) - U(\vec r_A) = U(x_B) - U(x_A)
+\end{align*}
+We can identify the potential energy for a spring:
+\begin{align*}
+U(x) = \frac{1}{2}kx^2 + C
+\end{align*}
+where, in general, the constant $C$ can take any value. If we choose $C=0$, then the potential energy is zero when the spring is at rest, although it is not important what choice is made.
+\end{example}
 
 \subsection{Recovering the force from potential energy}
+Given a (scalar) potential energy function, $U(\vec r)$, it is possible to determine the (vector) force that is associated with it. Take for example the potential energy from a spring (Example \ref{ex:potentialecons:springpotential}):
+\begin{align*}
+U(x) = \frac{1}{2}kx^2 + C
+\end{align*} 
+In one dimension, this is simply the negative of the anti-derivative of the $x$ component of the spring force:
+\begin{align*}
+F(x) &= -kx\\
+U(x) &= -\int F(x) dx = \int (kx) dx = \frac{1}{2}kx^2+C\\
+\therefore F(x) &= -\frac{d}{dx}U(x)
+\end{align*}
+Thus, the force can be obtained by taking the derivative with respect to position of the negative of potential energy function. 
+
+In three dimensions, the situation is similar, although the potential energy function (and the components of the force vector) will generally depend on all three position coordinates, $x$, $y$, and $z$. In three dimensions, the force is given by the gradient of the negative of potential energy function\footnote{As you may recall from Appendix \ref{app:calculus}, the gradient is a vector that points towards the direction of maximal increase in a multi-variate function.}:
+\begin{align}
+\vec F(\vec r) &= -\vec\nabla U(\vec r)=-\vec\nabla U(x,y,z)\nonumber\\
+\therefore F_x(x,y,z) &= -\die{}{x}U(x,y,z)\nonumber\\
+\therefore F_y(x,y,z) &= -\die{}{y}U(x,y,z)\nonumber\\
+\therefore F_z(x,y,z) &= -\die{}{z}U(x,y,z)
+\end{align}
 
 \section{Mechanical energy and conservation of energy}
+Recall the Work-Energy Theorem, relating the net work done on an object to its change in kinetic energy along a path:
+\begin{align*}
+W^{net}=\Delta K = K_B - K_A
+\end{align*}
+where $K_B$ ($K_A$) is the final (initial) kinetic energy of the object along some path from $A$ to $B$ over which the net work was done. Generally, the net work done is the sum of the work done by conservative forces, $W^C$, and the work done by none conservative forces, $W^{NC}$:
+\begin{align*}
+W^{net}=W^C+W^{NC}
+\end{align*}
+The work done by conservative forces can be expressed in terms of changes in potential energy functions. For example, suppose that two conservative forces, $\vec F_1$ and $\vec F_2$, are exerted on the object. The work done by those two forces in terms of the change in potential energy is:
+\begin{align*}
+W_1 &= -\Delta U_1\\
+W_2 &= -\Delta U_2
+\end{align*}
+where $U_1$ and $U_2$ are the change in potential energy associated with forces $\vec F_1$ and $\vec F_2$, respectively. We can re-arrange the Work-Energy Theorem as follows\footnote{This is why we defined potential energy as negative of the work; it becomes a positive term when we move it to the same side of the equation as the kinetic energy!}:
+\begin{align*}
+W^{net}=W^C+W^{NC}=-\Delta U_1 - \Delta U_2 +W^{NC} &= \Delta K\\
+\therefore W^{NC} = \Delta U_1 + \Delta U_2 + \Delta K
+\end{align*}
+That is, the work done by non-conservative forces is equal to the sum of the change in potential and kinetic energies. In general, if we write $\Delta U$ as the total change in potential energy of the object (the sum of the changes in potential energies associated with each conservative force), we can write this in a more general form:
+\begin{align}
+\Aboxed{W^{NC}=\Delta U + \Delta K}
+\end{align}
+This fundamental result is what we call the ``conservation of mechanical energy''. In particular, note that if there are no non-conservative forces doing work on the object:
+\begin{align}
+\Aboxed{\Delta K + \Delta U &= 0}\quad\text{if no non-conservative forces}\\
+-\Delta U &= \Delta K \nonumber
+\end{align}
+That is, the sume of the change in potential and kinetic energies of the object is always zero. If the potential energy of the object increases, then the kinetic energy of the object must decrease by the same amount, if there are no non-conservative forces doing work on the object.
+
+We can introduce the ``mechanical energy'', $E$, of an object as the sum of potential and kinetic energies of the object:
+\begin{align}
+\Aboxed{E = U+K}
+\end{align}
+If the object started at position $A$, with potential energy $U_A$ and kinetic energy $K_A$, and ended up at position $B$ with potential energy $U_B$ and kinetic energy $K_B$, then we can write the mechanical energy at both positions, and its change as:
+\begin{align*}
+E_A &= U_A + K_A\\
+E_B &= U_B + K_B\\
+\therefore \Delta E &= E_B - E_A = \Delta U + \Delta K
+\end{align*}
+Thus, the change in mechanical energy of the object is equal to the work done by none-conservative forces:
+\begin{align*}
+W^{NC} = \Delta U + \Delta K = \Delta E
+\end{align*}
+and if there is no work done by non-conservative forces on the object, then the mechanical energy of the object does not change:
+\begin{align*}
+\Delta E &= 0\quad\text{if no non-conservative forces}\\
+\therefore E &= \text{constant}
+\end{align*}
+The introduction of mechanical energy gives us a completely different way to think about mechanics. We can now think of an object as having ``energy'' (potential or kinetic), and we can think of forces as changing the energy of the object. 
+
+\begin{example}{\label{ex:potentialecons:blockI}
+\capfig{0.5\textwidth}{figures/PotentialEcons/blockI.png}{\label{fig:potentialecons:blockI} A block slides down an incline before sliding on a flat surface and stopping. }
+A block of mass $m$ is placed at rest on an incline that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:potentialecons:blockI}. The block is nudged slightly so that the force of static friction is overcome and the block starts to accelerate down the incline. At the bottom of the incline, the block slides on a horizontal surface. The coefficient of kinetic friction between the block and the incline is $\mu_{k1}$, and the coefficient of kinetic friction between the block and horizontal surface is $\mu_{k2}$. If one assumes that the block started at rest a distance $L$ from the horizontal surface, how far along the horizontal surface will the block slide before stopping?}
+This is the same problem that we solved in Chapter {ref:applyingnewtonslaws} Example \ref{ex:applyingnewtonslaws:blockI}. In that case, we solved for the acceleration of the block using Newton's Second Law and then used kinematics to find how far the block goes. We can solve this problem in a much easier way using conservation of energy. 
+
+It is still a good idea to think about what forces are applied on the object in order to determine if there are non-conservative forces doing work. In this case, the forces on the block are:
+\begin{enumerate}
+\item The normal force, which does no work, as it is always perpendicular to the motion.
+\item Weight, which does work when the height of the object changes, which we can model with a potential energy function.
+\item Friction, which is a non-conservative force, whose work we must determine. 
+\end{enumerate}
+Let us divide the motion into two segments: (1) a segment along the incline (positions $A$ to $B$ in Figure \ref{fig:potentialecons:blockI}, where gravitational potential energy changes, and (2), the horizontal segment from positions $B$ to position $C$ on the figure. We can then apply conservation of energy for each segment. 
+
+Starting with the first segment, we can choose the gravitational potential energy to be zero when the block is at the bottom of the incline. The block starts at a height $h=L\sin\theta$ above the  bottom of the incline. The gravitational potential energy for the beginning and end of the first segment are thus:
+\begin{align*}
+U_A &= mgL\sin\theta\\
+U_B &= 0\\
+\Delta U_1 &= U_B-U_A = -mgH
+\end{align*}
+Since the block starts at rest, its kinetic energy is zero at position $A$, and if the speed of the box is $v_B$ at position $B$, we can write its kinetic energy at both positions as:
+\begin{align*}
+K_A &=0\\
+K_B &= \frac{1}{2}mv_B^2\\
+\Delta K_1 &= \frac{1}{2}mv_B^2
+\end{align*}
+The mechanical energy of the object at positions $A$ and $B$ is thus:
+\begin{align*}
+E_A &= U_A+K_A = mgL\sin\theta\\
+E_B &= U_B+K_B = \frac{1}{2}mv_B^2\\
+\Delta E &= E_B - E_A = \frac{1}{2}mv_B^2 - mgL\sin\theta
+\end{align*}
+Finally, since we have a non-conservative force, the force of kinetic friction acting on the first segment, we need to calculate the work done by that force. We found in Example \ref{ex:applyingnewtonslaws:blockI} that the force of friction had magnitude $f_k=\mu_kN=\mu_kmg\cos\theta$. Since the force of friction is anti-parallel to the displacement vector of length $L$ down the incline, the work done by friction is:
+\begin{align*}
+W^{NC}=W_f = -f_kL=-\mu_kmg\cos\theta L
+\end{align*}
+Applying conservation of energy along the first segment
+
+\end{example}
 
 \section{Potential energy diagrams and equilibria}
 
