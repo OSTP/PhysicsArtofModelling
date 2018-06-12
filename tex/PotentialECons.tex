@@ -259,7 +259,38 @@ and if there is no work done by non-conservative forces on the object, then the 
 \end{align*}
 The introduction of mechanical energy gives us a completely different way to think about mechanics. We can now think of an object as having ``energy'' (potential and/or kinetic), and we can think of forces as changing the energy of the object. 
 
-TODO: An example without NC forces (e.g. redo the speed of the mass launched by the spring, again!).
+\begin{example}{\label{ex:potentialecons:blockspring}\capfig{0.4\textwidth}{figures/PotentialEcons/blockspring.png}{\label{fig:potentialecons:blockspring} A block is launched along a frictionless surface by compressing a spring by a distance $D$. The top panel shows the spring when at rest, and the bottom panel shows the spring compressed by a distance $D$ just before releasing the block.}
+A block of mass $m$ can slide freely along a frictionless surface. A horizontal spring, with spring constant, $k$, is attached to a wall on one end, while the other end can move freely, as shown in Figure \ref{fig:potentialecons:blockspring}. A coordinate system is defined such that the $x$ axis is horizontal and the free end of the spring is at $x=0$ when the spring is at rest. The block is pushed against the spring so that the spring is compressed by a distance $D$. The block is then released. What speed will the block have when it leaves the spring?}
+This is again the same example that we saw in Chapters \ref{chap:applyingnewtonslaws} and \ref{chap:workenergy}. We will show here that it is solved very easily with conservation of energy. The forces acting on the block are:
+\begin{enumerate}
+\item Weight, which does no work since it is perpendicular to the block's displacement.
+\item The normal force, which does no work since it is perpendicular to the block's displacement.
+\item The force from the spring, which is conservative and can be modelled with a potential energy $U(x)=\frac{1}{2}kx^2$, where $x$ is the position of the end of the spring.
+\end{enumerate}
+
+The block starts at rest at position $A$ ($x=-D$), where the spring is compressed by a distance $D$, and leaves the spring at position $B$ ($x=0$), where the spring is at its rest position. 
+
+At position $A$ the kinetic energy of the block is $K_A=0$, and the potential energy from the spring force of the block is $U_A=\frac{1}{2}kD^2$. The mechanical energy of the block at position $A$ is thus:
+\begin{align*}
+K_A&=0\\
+U_A&=\frac{1}{2}kD^2\\
+\therefore E_A &= U_A + K_A = \frac{1}{2}kD^2
+\end{align*}
+At position $B$, the spring potential energy of the block is zero (since the spring is at rest), and all of the energy is kinetic:
+\begin{align*}
+K_B&=\frac{1}{2}mv_B^2\\
+U_B&=0\\
+\therefore E_B &= U_B+K_B=\frac{1}{2}mv_B^2
+\end{align*}
+Since there are no non-conservative forces doing work on the block, the mechanical energies at $A$ and $B$ are the same:
+\begin{align*}
+W^{NC}&=\Delta E=E_B-E_A= 0\\
+\therefore E_B&=E_A\\
+\frac{1}{2}mv_B^2&= \frac{1}{2}kD^2\\
+ v_B &= \sqrt{\frac{kD^2}{m}}
+\end{align*}
+as we found previously.
+\end{example}
 
 \begin{example}{\label{ex:potentialecons:blockI}
 \capfig{0.5\textwidth}{figures/PotentialEcons/blockI.png}{\label{fig:potentialecons:blockI} A block slides down an incline before sliding on a flat surface and stopping. }
