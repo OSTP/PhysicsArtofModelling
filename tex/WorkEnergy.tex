@@ -1,5 +1,9 @@
 \chapter{Work and energy}
 \label{chap:workenergy}
+\begin{checkpoint}
+TODO: Two people pull two crates at the same angle and with the same force. The crates have the same displacement d but one is horizontal and one is up a ramp. Who does more work?
+\end{checkpoint}
+
 In this chapter, we introduce a new way to build models derived from Newton's Theory of Classical Physics. We will introduce the concepts of work and energy in order to allow us to model situations using scalar quantities, such as energy, instead of vector quantities, such as forces. It is important to remember that even if we use energy and work, these are tools that are derived from Newton's Laws; that is, we may not be using Newton's Second Law explicitly, but the models that we develop are still based on the same theory of Classical Physics. 
 
 \begin{learningObjectives}{
@@ -24,11 +28,20 @@ The work done by a force, $\vec F$, on an object over a displacement, $\vec d$, 
 \begin{align}
 \Aboxed{W = \vec F \cdot \vec d = Fd\cos\theta = F_xd_x+F_yd_y+F_zd_z}
 \end{align}
-where $\theta$ is the angle between the vectors when these are placed tail to tail. The dimension of work, force times displacement, is also called ``energy''. The S.I. unit for energy is the Joule (abbreviated $\si{J}$) which is equivalent to $\si{Nm}$ or $\si{kg m^2/s^2}$ in base units.
+where $\theta$ is the angle between the vectors when these are placed tail to tail, as in Figure \ref{fig:workenergy:fddotproduct}. The dimension of work, force times displacement, is also called ``energy''. The S.I. unit for energy is the Joule (abbreviated $\si{J}$) which is equivalent to $\si{Nm}$ or $\si{kg m^2/s^2}$ in base units.
+\capfig{0.4\textwidth}{figures/WorkEnergy/fddotproduct.png}{\label{fig:fddotproduct}When finding the dot product $Fd\cos\theta$, $\theta$ is the angle between the vectors when placed tail to tail.}
 
 The work done by the force is the scalar product of the force vector and the displacement vector of the object. That is, the force ``does work'' if it is exerted while the object moves (has a displacement vector) and in such a way that the scalar product of the force and displacement vectors is non-zero. A force that is perpendicular to the displacement vector of an object does no work (since the scalar product of two perpendicular vectors is zero).  A force exerted in the same direction as the displacement will do positive work ($\cos\theta$ positive), and a force in the opposite direction of the displacement will do negative work $\cos\theta$ negative). As we will see, positive work corresponds to increasing the speed of the object, whereas negative work corresponds to decreasing its speed.
 
-TODO: Checkpoint question: work done by tension in a pendulum (zero, since always perpendicular to motion)
+\begin{checkpoint}
+\capfig{0.2\textwidth}{figures/WorkEnergy/pendulumworktension.png}{\label{fig:workenergy:pendulumtension}A pendulum swings through an angle $\theta$.}
+\begin{MCquestion}
+{A pendulum of length $R$ consists of a mass connected to a string (Figure \ref{fig:workenergy:pendulumtension}). The string exerts a force of tension $\vec F_T$ on the mass. What is the work done by tension when the pendulum swings through an angle $\theta$?} 
+\item $W=F_TR\theta$
+\item $W=F_TR(1-\cos\theta)$
+\item Tension does no work on the pendulum. 
+\end{MCquestion}
+\end{checkpoint}
 
 TODO: Checkpoint question: work done by your arm in holding up a heavy book (no displacement, no work, even if it's tiring!)
 
@@ -44,13 +57,20 @@ W = \vec F \cdot \vec d = (F\hat x) \cdot ( d\hat x ) = Fd (\hat x\cdot\hat x)=F
 \end{align*}
 where $\hat x \cdot \hat x = 1$. Consider, for example, the work done by a force, $\vec F$, on a box, as the box moves along the $x$ axis from position $x=x_0$ to position $x=x_1$, as shown in Figure \ref{fig:workenergy:work1d}.
 \capfig{0.4\textwidth}{figures/WorkEnergy/work1d.png}{\label{fig:workenergy:work1d}A force, $\vec F$, exerted on an object as it moves from position $x=x_0$ to position $x=x_1$.}
-We can write the length of the displacement vector as $||\vec d|| =d= \Delta x = x_1-x_0$. The work done on the force is given by:
+We can write the length of the displacement vector as $||\vec d|| =d= \Delta x = x_1-x_0$. The work done by the force is given by:
 \begin{align*}
 W = \vec F \cdot \vec d = F\hat x\cdot \Delta x\hat x =F\Delta x =F(x_1-x_0) 
 \end{align*}
 which is a positive quantity, since $x_1 > x_0$, with our choice of coordinate system. 
 
-TODO: Checkpoint, refer to above diagram, same force, but is the work done by F in going from x1 to x0 the same? (it's negative). 
+\begin{checkpoint}
+\begin{MCquestion}
+{A constant force $\vec F$ acts on a box, as in Figure \ref{fig:workenergy:work1d}. Consider the work done by $\vec F$ as the box moves from $x_1$ to $x_0$. How does it compare to the work done by $\vec F$ when moving from $x_0$ to $x_1$, as we calculated above?}
+\item $\vec F$ does no work on the box when it moves from $x_0$ to $x_1$. 
+\item The work done by $\vec F$ is the negative of the work done by $\vec F$ when the box moved from $x_0$ to $x_1$. %correct
+\item The work done by $\vec F$ is the same in both cases.
+\end{MCquestion}
+\end{checkpoint}
 
 \subsection{Work in one dimension - varying force}
 Suppose that instead of a constant force, $\vec F$, we have a force that changes with position, $\vec F(x)$, and can take on three different values between $x=x_0$ and $x=x_1$:
@@ -122,7 +142,7 @@ W = \vec F \cdot \vec d &= Fd\cos\theta\\
 where we highlighted the fact that the scalar product ``picks out'' components of vectors that are parallel to each other. $F_{\parallel} = F\cos\theta$ is thus the component of $\vec F$ that is parallel to $\vec d$, and $d_{\parallel}=d\cos\theta$ is the component of $\vec d$ that is parallel to $\vec F$. These are also shown in Figure \ref{fig:workenergy:workangle}.
 
 In general, if an object is moving along an arbitrary path, we cannot choose the $x$ axis to be parallel to the displacement or to the force. If the path can be sub-divided into straight segments over which the force is constant, as in Figure \ref{fig:workenergy:workd2d}, we can calculate the work done by the force over each segment and add the work done in each segment together to obtain the total work done by the force. Note that, in general, the work done by a force as an object moves from one position to another depends on the particular path that was taken between the two positions.
-\capfig{0.3\textwidth}{figures/WorkEnergy/work2d.png}{\label{fig:workenergy:work2d}A arbitrary two dimension path of an object from $A$ to $B$ broken into three straight segments.}
+\capfig{0.3\textwidth}{figures/WorkEnergy/work2d.png}{\label{fig:workenergy:work2d}A arbitrary two dimensional path of an object from $A$ to $B$ broken into three straight segments.}
 
 \begin{example}{\label{ex:workenergy:workfriction}
 \capfig{0.3\textwidth}{figures/WorkEnergy/workfriction.png}{\label{fig:workenergy:workfriction}Two possible paths to slide a crate from position $A$ to position $B$, as seen from above.}
@@ -169,7 +189,7 @@ which is more work than was done along path 1. This makes sense because for both
 
 \begin{example}{\label{ex:workenergy:workgravity}\capfig{0.5\textwidth}{figures/WorkEnergy/workgravity.png}{\label{fig:workenergy:workgravity}Two possible paths to move a box from the floor onto a table. }
 A box of mass $m$ is moved from the floor onto a table using two different paths, as shown in Figure \ref{fig:workenergy:workgravity}. The table is a horizontal distance $L$ away from where the box starts and a height $H$ above the floor. Compare the work done by the weight of the box along the two possible paths.}
-We can use a coordinate system such that the origin coincides with the initial position of the box, $x$ is horizontal, and $y$ is vertical, as shown in Figure \ref{fig:workenergy:workgravity}. The weight of the box can be written as:
+We can use a coordinate system such that the origin coincides with the initial position of the box. $x$ is horizontal and $y$ is vertical, as shown in Figure \ref{fig:workenergy:workgravity}. The weight of the box can be written as:
 \begin{align*}
 \vec F_g = -mg \hat y
 \end{align*}
@@ -205,13 +225,25 @@ W^{tot} = W_1 + W_2 = -mgH
 which is the same as the work done along path 1. As we will see, when a force is constant in magnitude and direction, the work that it does on an object in going from one position to another is independent of the path taken. This was not the case in Example \ref{ex:workenergy:workfriction}, because the direction of the force of kinetic friction depends on the direction of the displacement. 
 \end{example} 
 
-The most general case in which one can calculate the work done by a force is the case when the force change continuously along a path where the displacement also changes direction continuously. This is illustrated in Figure \ref{fig:workenergy:workgeneral} which shows a force, $\vec F(\vec r)$, that depends on position ($\vec r$), and an arbitrary path between two points $A$ and $B$. In general, the work done by the force on an object that goes from $A$ to $B$ will depend on the actual path that was taken.
+\begin{checkpoint}
+Clare and Amelia go down two different slides, shown in Figure \ref{fig:workenergy:slidecheckpoint}. Clare and Amelia have the same mass and the slides have the same non-zero coefficients of friction. 
+\capfig{0.5\textwidth}{figures/WorkEnergy/slidecheckpoint.png}{\label{fig:workenergy:slidecheckpoint} Clare ($C$) and Amelia ($A$) go down two different slides of the same height.}
+For each of the following forces, decide whether the force: does more work on Clare, does more work on Amelia, or does the same amount of work on both.
+\begin{enumerate}
+\item The force of gravity... %Does the same amount of work on both
+\item The force of friction... %Does more work on Amelia
+\item The normal force... %Does the same amount of work on both
+\end{enumerate}
+\end{checkpoint}
+
+The most general case in which one can calculate the work done by a force is the case when the force changes continuously along a path where the displacement also changes direction continuously. This is illustrated in Figure \ref{fig:workenergy:workgeneral} which shows a force, $\vec F(\vec r)$, that depends on position ($\vec r$), and an arbitrary path between two points $A$ and $B$. In general, the work done by the force on an object that goes from $A$ to $B$ will depend on the actual path that was taken.
 \capfig{0.5\textwidth}{figures/WorkEnergy/workgeneral.png}{\label{fig:workenergy:workgeneral}An arbitrary path between two points $A$ and $B$ with a force that depends on position, $\vec F(\vec r)$. }
-The strategy for calculating the work in the general case is the same: we break up the path into small straight segments with displacement vectors $d\vec l$ where we assume that the force is constant over the segment. The total work is then sum of the work over each segment:
+The strategy for calculating the work in the general case is the same: we break up the path into small straight segments with displacement vectors $d\vec l$ (Figure \ref{fig:workenergy:dldiagram}) where we assume that the force is constant over the segment. The total work is then sum of the work over each segment:
 \begin{align}
 \Aboxed{W = \int_A^B \vec F(\vec r) \cdot d\vec l}
 \end{align}
 As usual, we use the integral symbol to indicate that you need to take an infinite number of infinitely small segments $d\vec l$ in order to calculate the sum. You should note that this is not an integral like any other that we have seen so far: the integral is not over a single integration variable (usually we use $x$), but it is the integral (the sum!) over the specific path that we have chosen in going from $A$ to $B$. This is called a ``path integral'', and is generally difficult to evaluate. 
+\capfig{0.3\textwidth}{figures/WorkEnergy/elementoflengthdl.png}{\label{fig:workenergy:dldiagram}We divide the path into infinitesimally small segments with displacement vectors $d\vec l$.}
 
 \begin{example}{\capfig{0.4\textwidth}{figures/WorkEnergy/workparabola.png}{\label{fig:workenergy:workparabola}A parabolic path between $A$ and $B$. }
 A force, $\vec F(\vec r) = \vec F(x,y) = F_x\hat x + F_y \hat y$, is exerted on an object. The object starts at position $A$ and ends at position $B$, along a parabolic path, $y(x) = a+bx^2$, as depicted in Figure \ref{fig:workenergy:workparabola}. What is the work done by the force, $\vec F$, along this trajectory?}
@@ -275,8 +307,8 @@ where $\vec F^{net} = \vec F_1 + \vec F_2 + \vec F_3$. The result is easily gene
 W^{net} = \int_A^B F^{net}(\vec r) \cdot d\vec l
 \end{align*} 
 
-\begin{example}{\capfig{0.3\textwidth}{figures/WorkEnergy/workincline.png}{\label{fig:workenergy:workincline} A crate being pushed up an incline.}
-You push with an unknown horizontal force, $\vec F$, against a crate of mass $m$ that is located on an inclined plane that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:workenergy:workincline}. The coefficient of kinetic friction between the crate and the incline is $\mu_k$. You push in such a way that that crates moves at constant speed up the incline. What is the net work done on the crate if it moves up the incline by a distance $d$?}
+\begin{example}{\label{ex:workenergy:networkram}p\capfig{0.3\textwidth}{figures/WorkEnergy/workincline.png}{\label{fig:workenergy:workincline} A crate being pushed up an incline.}
+You push with an unknown horizontal force, $\vec F$, against a crate of mass $m$ that is located on an inclined plane that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:workenergy:workincline}. The coefficient of kinetic friction between the crate and the incline is $\mu_k$. You push in such a way that that crates moves at a constant speed up the incline. What is the net work done on the crate if it moves up the incline by a distance $d$?}
 Although the answer may be obvious, let's go the long way about it and calculate the work done by each force, and then sum them together to get the total work done. We start by identifying the forces exerted on the crate:
 \begin{enumerate}
 \item $\vec F$, the applied force, of unknown magnitude, $\vec F$.
@@ -332,12 +364,29 @@ where we used the fact that $\cos^2\theta+\sin^2\theta=1$. Thus we find that the
 \textbf{Discussion:} Of course, this makes sense, because the net force on the crate is zero, since it is not accelerating, so the net work done is also zero. As a consequence, or rather, by construction, we have the condition that if the net work done on an object is zero, then that object does not accelerate. We thus have scalar quantity (work) that can tell us something about whether an object is changing speed. In the next section, we introduce a new quantity, ``kinetic energy'', to describe how an object's speed changes when the work done is not zero.
 \end{example}
 
-TODO: Recycle above example into the question library for Newton's Laws and ask for the magnitude of the force for the crate to move at constant speed. Can also ask to compare the magnitude of the normal force between the case when its constant speed and some given value of the acceleration.
+\newpage
+\begin{studentOpinion}{Olivia} Pay close attention to the words ``on'' and ``by.'' There are a few things about this that can be tricky:
+\begin{enumerate}
+\item In example \ref{ex:workenergy:networkramp}, we were asked to find the \textbf{net work} done \textbf{on} the crate. Sometimes the question won't specify that it wants you to find the net work, and will just say ``What is the work done \textbf{on} the crate?'' You need to know that when you are asked for the work done ``on'' an object, it is implicitly asking for the net work done on the object. \\
+
+\item Just because the net work done \textbf{on} an object is zero doesn't mean that the work done \textbf{by} each of the forces is zero. This may seem obvious, but it's easy to get tripped up on a test or exam. If you are reading a question about work and it says that the object is moving at a constant speed, it's tempting to just jump ahead and say that the work must be equal to zero. However, you can only say this if it's asking you for the net work done on the object. For instance, in example \ref{ex:workenergy:networkramp} we concluded that since the crate was moving at a constant speed, the net work was equal to zero. But if the question asked you to find the work done on the crate \textbf{by gravity}, that would mean something different. The work done \textbf{by} gravity in this case is not equal to zero (it's actually negative). \\
+
+\item The work done ``on'' an object is not the same as the net work done ``by'' that object. For example, say you are in a tug-of-war and you pull the other team towards you, but you yourself do not move. The net work done \textbf{on} you is zero, but the work done \textbf{by} you is not zero. So, when you are talking about work, you must always state explicitly whether the work is being done ``on'' the object or ``by'' the object. 
+\end{enumerate}
+\end{studentOpinion}
+
+\begin{checkpoint}
+\begin{MCquestion}{A \SI{2}{kg} box sits on a horizontal surface. A constant horizontal force of \SI{6}{N} is applied to the box. The box moves with a constant acceleration of \SI{2}{m/s^2}. Which of the following has the greatest magnitude?}
+\item The work done by the applied force. %correct
+\item The work done by friction.
+\item The net work done on the box.
+\end{MCquestion}
+\end{checkpoint}
 
 \section{Kinetic energy and the work energy theorem}
-At this point, you should be comfortable calculating the net work done on an object upon which several forces are exerted. In this section, we derive a new quantity, kinetic energy, which allows us to connect the work done on an object with its change in speed. As we saw in the previous section, the net work done on an object is connected to the objects acceleration; if the net force on the object is zero, then the net work done and acceleration are also zero. The following derivation also appears to ``come out of thin air'', but again, remember that theorists have tried all sorts of mathematical tricks to reformulate Newton's Theory, and this is the one that worked. 
+At this point, you should be comfortable calculating the net work done on an object upon which several forces are exerted. As we saw in the previous section, the net work done on an object is connected to the object's acceleration; if the net force on the object is zero, then the net work done and acceleration are also zero. In this section, we derive a new quantity, kinetic energy, which allows us to connect the work done on an object with its change in speed. Like the derivation for work, the following derivation appears to ``come out of thin air''. Remember, though, that theorists have tried all sorts of mathematical tricks to reformulate Newton's Theory, and this is the one that worked.
 
-Consider the most general case of an object of mass $m$ acted upon by a net force, $\vec F^{net}(\vec r)$, which can vary in magnitude and direction. We wish to calculate the  net work done on the object as it moves along an arbitrary path between two points, $A$ and $B$ in space, as show in Figure \ref{fig:workenergy:kepath}. The instantaneous acceleration of the object, $\vec a$, is shown along with an ``element of the path'', $d\vec l$. 
+Consider the most general case of an object of mass $m$ acted upon by a net force, $\vec F^{net}(\vec r)$, which can vary in magnitude and direction. We wish to calculate the  net work done on the object as it moves along an arbitrary path between two points, $A$ and $B$, in space, as shown in Figure \ref{fig:workenergy:kepath}. The instantaneous acceleration of the object, $\vec a$, is shown along with an ``element of the path'', $d\vec l$. 
 \capfig{0.4\textwidth}{figures/WorkEnergy/kepath.png}{\label{fig:workenergy:kepath} An object moving along an arbitrary path between points $A$ and $B$ that is acted upon by a net force $\vec F^{net}$.}
 The net work done on the object can be written:
 \begin{align*}
@@ -347,7 +396,7 @@ and is in general a difficult integral to evaluate for an arbitrary path. Our go
 \begin{align*}
 \int_A^B F^{net}(\vec r) \cdot d\vec l =K_B - K_A
 \end{align*}
-That is, the function $K$ is akin to an anti-derivative in the sense that it can be evaluated only at the end points of the path to determine the integral.
+That is, we will only have to evaluate $K$ at the end points of the path in order to determine the value of the integral. In this way, the function $K$ is akin to an anti-derivative.  
 
 In order to determine the form for the function $K$, we start by noting that, by using Newton's Second Law, we can write the integral for work in terms of the acceleration of the object:
 \begin{align*}
@@ -387,7 +436,7 @@ W^{net} &=m\int_A^B v_xdv_x +m\int_A^B  v_ydv_y + m\int_A^B v_zdv_z\\
 &=\frac{1}{2}m(v_{Bx}^2+v_{By}^2+v_{Bz}^2)-\frac{1}{2}m(v_{Ax}^2+v_{Ay}^2+v_{Az}^2)\\
 &=\frac{1}{2}mv_B^2 - \frac{1}{2}mv_A^2
 \end{align*}
-where we recognized that the magnitude (squared) of the velocity is given by $v_A^2 = v_{Ax}^2+v_{Ay}^2+v_{Az}^2$. We have thus arrived out our desired result, namely, we have found a function of speed, $K(v)$, that when evaluated at the endpoints of the path allows the net work done on the object to be calculated:
+where we recognized that the magnitude (squared) of the velocity is given by $v_A^2 = v_{Ax}^2+v_{Ay}^2+v_{Az}^2$. We have thus arrived out our desired result, namely, we have found a function of speed, $K(v)$, that when evaluated at the endpoints of the path allows us to calculate the net work done on the object:
 \begin{align}
 \Aboxed{K(v) = \frac{1}{2}mv^2}
 \end{align}
@@ -395,11 +444,11 @@ That is, if you know the speed at the start of the path, $v_A$, and the speed at
 \begin{align}
 \Aboxed{W^{net} = \Delta K = K(v_B) - K(v_a)}
 \end{align}
-We call $K(v)$ the ``kinetic energy'' of the object. We can say that the net work done on an object in going from $A$ to $B$ is equal to its change in kinetic energy (final kinetic energy minus initial kinetic energy). It is important to note that we defined kinetic energy in a way that it is equal to the net work done. You may have already heard of kinetic energy from past introductions to physics as a quantity that is just given; here, we instead derived a function that has the desired property of being equal to the net work done and called it ``kinetic energy''. Although we introduced the kinetic energy as a way to calculate the integral for the net work, if one knows the value of the net work done on an object, then the Work-Energy Theorem can be used to calculate the change in speed of the object.
+We call $K(v)$ the ``kinetic energy'' of the object. We can say that the net work done on an object in going from $A$ to $B$ is equal to its change in kinetic energy (final kinetic energy minus initial kinetic energy). It is important to note that we defined kinetic energy in a way that it is equal to the net work done. You may have already heard of kinetic energy from past introductions to physics as a quantity that is just given; here, we instead derived a function that has the desired property of being equal to the net work done and called it ``kinetic energy''. 
 
-The relation between the net work done and the change in kinetic energy is called the ``Work-Energy Theorem'' (or Work-Energy Principle). It is the connection that we were looking for between the dynamics (the forces from which we calculate work) and the kinematics (the change in kinetic energy). Unlike Newton's Second Law, which relates two vector quantities (the vector sum of the forces and the acceleration vector), the Work-Energy Theorem relates two scalar quantities to each other (work and kinetic energy).
+The relation between the net work done and the change in kinetic energy is called the ``Work-Energy Theorem'' (or Work-Energy Principle). It is the connection that we were looking for between the dynamics (the forces from which we calculate work) and the kinematics (the change in kinetic energy). Unlike Newton's Second Law, which relates two vector quantities (the vector sum of the forces and the acceleration vector), the Work-Energy Theorem relates two scalar quantities to each other (work and kinetic energy). Although we introduced the kinetic energy as a way to calculate the integral for the net work, if one knows the value of the net work done on an object, then the Work-Energy Theorem can be used to calculate the change in speed of the object.
 
-Most importantly, the Work-Energy theorem introduces the concept of ``energy''. As we will see in later chapters, there are other forms of energy in addition to work and kinetic energy. The Work-Energy Theorem is the starting point for the idea that one can convert one form of energy into another. The Work-Energy Theorem tells us how a force, by doing work, can provide (or remove) kinetic energy to (or from) an object. 
+Most importantly, the Work-Energy theorem introduces the concept of ``energy''. As we will see in later chapters, there are other forms of energy in addition to work and kinetic energy. The Work-Energy Theorem is the starting point for the idea that you can convert one form of energy into another. The Work-Energy Theorem tells us how a force, by doing work, can provide kinetic energy to an object or remove kinetic energy from an object.  
 
 \begin{example}{A net work of $W$ was done on an object of mass $m$ that started at rest. What is the speed of the object after the work has been done on the object?}
 Using the Work-Energy Theorem:
@@ -510,33 +559,24 @@ This is quite a general result for the rate at which a force does work when it i
 
 \newpage
 \section{Summary}
-
 \begin{chapterSummary}{
-\item Work is a scalar quantity that allows us to quantify how a force changes the speed of an object when that forces has been exerted over a certain distance.
-\item If the net work done on an object is zero, that object does not accelerate.
-\item The net work done on an object is equal to its change in kinetic energy.
-\item Power is the rate at which work is being done, or energy converted.
-}
-\end{chapterSummary}
-
-
-\begin{importantEquations}
 The work, $W$, done on an object by a force, $\vec F$, while the object has moved through a displacement $\vec d$ is defined as the scalar product:
 \begin{align*}
-W = \vec F \cdot \vec d = Fd\cos\theta = F_xd_x+F_yd_y+F_zd_z
+W = \vec F \cdot \vec d &= Fd\cos\theta\\
+&= F_xd_x+F_yd_y+F_zd_z
 \end{align*}
-
 If the force changes with position and/or the object moves along an arbitrary path in space, the work done by that force over the path is given by:
 \begin{align*}
 W =\int_A^B \vec F(\vec r) \cdot  d\vec l
 \end{align*}
-
+%Work allows us to quantify how a force acting on an object changes the speed of that object. 
 If multiple forces are exerted on an object, then one can calculate the net force on the object (the vector sum of the forces), and the total work done on the object will be equal to the work done by the net force:
 \begin{align*}
 W^{net} = \int_A^B \vec F^{net}(\vec r) \cdot d\vec l
 \end{align*}
+If the net work done on an object is zero, that object does not accelerate.
 
-One can define the kinetic energy, $K(v)$ of an object of mass $m$ that has speed $v$ as:
+We can define the kinetic energy, $K(v)$ of an object of mass $m$ that has speed $v$ as:
 \begin{align*}
 K(v) = \frac{1}{2} mv^2
 \end{align*}
@@ -551,12 +591,40 @@ The rate at which work is being done is called power and is defined as:
 \begin{align*}
 P = \frac{dW}{dt}
 \end{align*}
-
 If a constant force $\vec F$ is exerted on an object that has a constant velocity $\vec v$, then the power that corresponds to the work being done by that force is:
 \begin{align*}
-P = \frac{d}{dt} W =  \vec F \cdot \vec d = \vec F \cdot \frac{d}{dt}\vec d = \vec F \cdot \vec v
+P &= \frac{d}{dt} W = \frac{d}{dt}(\vec F \cdot \vec d)\\
+&= \vec F \cdot \frac{d}{dt}\vec d = \vec F \cdot \vec v
 \end{align*}
+}
+\end{chapterSummary}
 
+
+\begin{importantEquations}
+\begin{multicols}{2}
+\textbf{Work:}
+\begin{align*}
+W &= \vec F \cdot \vec d = Fd\cos\theta\\
+W &= F_xd_x+F_yd_y+F_zd_z\\
+W &=\int_A^B \vec F(\vec r) \cdot  d\vec l\\
+W^{net} &= \int_A^B \vec F^{net}(\vec r) \cdot d\vec l
+\end{align*}
+\textbf{Kinetic Energy:}
+\begin{align*}
+K(v) = \frac{1}{2} mv^2
+\end{align*}
+\columnbreak
+
+\textbf{Work-Energy Theorem:}
+\begin{align*}
+W^{net} = \Delta K = \frac{1}{2} mv_B^2 - \frac{1}{2} mv_A^2
+\end{align*}
+\textbf{Power:}
+\begin{align*}
+P &= \frac{dW}{dt}\\
+P &= \vec F \cdot \vec v
+\end{align*}
+\end{multicols}
 \end{importantEquations}
 
 
