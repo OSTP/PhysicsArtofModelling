@@ -185,6 +185,8 @@ U(x) = \frac{1}{2}kx^2 + C
 where, in general, the constant $C$ can take any value. If we choose $C=0$, then the potential energy is zero when the spring is at rest, although it is not important what choice is made.
 \end{example}
 
+TODO: Question library problem to find potential energy function for a non linear spring ($F=-k_1x-k_3x^3$) after showing that the force is conservative.
+
 \subsection{Recovering the force from potential energy}
 Given a (scalar) potential energy function, $U(\vec r)$, it is possible to determine the (vector) force that is associated with it. Take for example the potential energy from a spring (Example \ref{ex:potentialecons:springpotential}):
 \begin{align*}
@@ -234,7 +236,7 @@ This fundamental result is what we call the ``conservation of mechanical energy'
 \Aboxed{\Delta K + \Delta U &= 0}\quad\text{if no non-conservative forces}\\
 -\Delta U &= \Delta K \nonumber
 \end{align}
-That is, the sume of the change in potential and kinetic energies of the object is always zero. If the potential energy of the object increases, then the kinetic energy of the object must decrease by the same amount, if there are no non-conservative forces doing work on the object.
+That is, the sum of the change in potential and kinetic energies of the object is always zero. If the potential energy of the object increases, then the kinetic energy of the object must decrease by the same amount, if there are no non-conservative forces doing work on the object.
 
 We can introduce the ``mechanical energy'', $E$, of an object as the sum of potential and kinetic energies of the object:
 \begin{align}
@@ -244,7 +246,9 @@ If the object started at position $A$, with potential energy $U_A$ and kinetic e
 \begin{align*}
 E_A &= U_A + K_A\\
 E_B &= U_B + K_B\\
-\therefore \Delta E &= E_B - E_A = \Delta U + \Delta K
+\therefore \Delta E &= E_B - E_A \\
+&= U_B + K_B - U_A - K_A\\
+&= \Delta U + \Delta K
 \end{align*}
 Thus, the change in mechanical energy of the object is equal to the work done by none-conservative forces:
 \begin{align*}
@@ -255,9 +259,40 @@ and if there is no work done by non-conservative forces on the object, then the 
 \Delta E &= 0\quad\text{if no non-conservative forces}\\
 \therefore E &= \text{constant}
 \end{align*}
-The introduction of mechanical energy gives us a completely different way to think about mechanics. We can now think of an object as having ``energy'' (potential or kinetic), and we can think of forces as changing the energy of the object. 
+The introduction of mechanical energy gives us a completely different way to think about mechanics. We can now think of an object as having ``energy'' (potential and/or kinetic), and we can think of forces as changing the energy of the object. 
 
-TODO: An example without NC forces (e.g. redo the speed of the mass launched by the spring, again!).
+\begin{example}{\label{ex:potentialecons:blockspring}\capfig{0.4\textwidth}{figures/PotentialEcons/blockspring.png}{\label{fig:potentialecons:blockspring} A block is launched along a frictionless surface by compressing a spring by a distance $D$. The top panel shows the spring when at rest, and the bottom panel shows the spring compressed by a distance $D$ just before releasing the block.}
+A block of mass $m$ can slide freely along a frictionless surface. A horizontal spring, with spring constant, $k$, is attached to a wall on one end, while the other end can move freely, as shown in Figure \ref{fig:potentialecons:blockspring}. A coordinate system is defined such that the $x$ axis is horizontal and the free end of the spring is at $x=0$ when the spring is at rest. The block is pushed against the spring so that the spring is compressed by a distance $D$. The block is then released. What speed will the block have when it leaves the spring?}
+This is again the same example that we saw in Chapters \ref{chap:applyingnewtonslaws} and \ref{chap:workenergy}. We will show here that it is solved very easily with conservation of energy. The forces acting on the block are:
+\begin{enumerate}
+\item Weight, which does no work since it is perpendicular to the block's displacement.
+\item The normal force, which does no work since it is perpendicular to the block's displacement.
+\item The force from the spring, which is conservative and can be modelled with a potential energy $U(x)=\frac{1}{2}kx^2$, where $x$ is the position of the end of the spring.
+\end{enumerate}
+
+The block starts at rest at position $A$ ($x=-D$), where the spring is compressed by a distance $D$, and leaves the spring at position $B$ ($x=0$), where the spring is at its rest position. 
+
+At position $A$ the kinetic energy of the block is $K_A=0$, and the potential energy from the spring force of the block is $U_A=\frac{1}{2}kD^2$. The mechanical energy of the block at position $A$ is thus:
+\begin{align*}
+K_A&=0\\
+U_A&=\frac{1}{2}kD^2\\
+\therefore E_A &= U_A + K_A = \frac{1}{2}kD^2
+\end{align*}
+At position $B$, the spring potential energy of the block is zero (since the spring is at rest), and all of the energy is kinetic:
+\begin{align*}
+K_B&=\frac{1}{2}mv_B^2\\
+U_B&=0\\
+\therefore E_B &= U_B+K_B=\frac{1}{2}mv_B^2
+\end{align*}
+Since there are no non-conservative forces doing work on the block, the mechanical energies at $A$ and $B$ are the same:
+\begin{align*}
+W^{NC}&=\Delta E=E_B-E_A= 0\\
+\therefore E_B&=E_A\\
+\frac{1}{2}mv_B^2&= \frac{1}{2}kD^2\\
+ v_B &= \sqrt{\frac{kD^2}{m}}
+\end{align*}
+as we found previously.
+\end{example}
 
 \begin{example}{\label{ex:potentialecons:blockI}
 \capfig{0.5\textwidth}{figures/PotentialEcons/blockI.png}{\label{fig:potentialecons:blockI} A block slides down an incline before sliding on a flat surface and stopping. }
@@ -290,15 +325,15 @@ E_A &= U_A+K_A = mgL\sin\theta\\
 E_B &= U_B+K_B = \frac{1}{2}mv_B^2\\
 \Delta E &= E_B - E_A = \frac{1}{2}mv_B^2 - mgL\sin\theta
 \end{align*}
-Finally, since we have a non-conservative force, the force of kinetic friction acting on the first segment, we need to calculate the work done by that force. We found in Example \ref{ex:applyingnewtonslaws:blockI} that the force of friction had magnitude $f_k=\mu_kN=\mu_kmg\cos\theta$. Since the force of friction is anti-parallel to the displacement vector of length $L$ down the incline, the work done by friction is:
+Finally, since we have a non-conservative force, the force of kinetic friction acting on the first segment, we need to calculate the work done by that force. We found in Example \ref{ex:applyingnewtonslaws:blockI} that the force of friction had magnitude $f_k=\mu_{k1}N=\mu_{k1}mg\cos\theta$. Since the force of friction is anti-parallel to the displacement vector of length $L$ down the incline, the work done by friction is:
 \begin{align*}
-W^{NC}=W_f = -f_kL=-\mu_kmg\cos\theta L
+W^{NC}=W_f = -f_kL=-\mu_{k1}mg\cos\theta L
 \end{align*}
 Applying conservation of energy along the first segment, we have:
 \begin{align*}
 W^{NC} &= \Delta E\\
--\mu_kmg\cos\theta L &= \frac{1}{2}mv_B^2 - mgL\sin\theta\\
-\therefore \frac{1}{2}mv_B^2 &= mgL\sin\theta-\mu_kmg\cos\theta L 
+-\mu_{k1}mg\cos\theta L &= \frac{1}{2}mv_B^2 - mgL\sin\theta\\
+\therefore \frac{1}{2}mv_B^2 &= mgL\sin\theta-\mu_{k1}mg\cos\theta L 
 \end{align*}
 Note that the above equation, in words, could be read as ``the change in kinetic energy is equal to the change in potential energy minus the work done by friction''. In other words, the block had potential energy, which was converted into kinetic energy and heat (the work done by friction can be thought of as thermal energy). 
 
@@ -306,24 +341,40 @@ We now proceed in an analogous way for the second segment, from position $B$ to 
 \begin{align*}
 \Delta E &= E_C - E_B = K_B - K_C = K_B\\
 &=\frac{1}{2}mv_B^2\\
-&= mgL\sin\theta-\mu_kmg\cos\theta L 
+&= mgL\sin\theta-\mu_{k1}mg\cos\theta L 
 \end{align*}
 where, in the last line, we used the result from the first segment. The work done by the force of friction is:
 \begin{align*}
-W^{NC}=W_f = -f_kx = -\mu_k N x=-\mu_k mg x
+W^{NC}=W_f = -f_kx = -\mu_{k2} N x=-\mu_{k2} mg x
 \end{align*}
 Finally, applying conservation of energy, we can find $x$:
 \begin{align*}
 W^{NC} &= \Delta E\\
--\mu_k mg x &= mgL\sin\theta-\mu_kmg\cos\theta L \\
-\therefore x&= L\left(\frac{1}{\mu_k}\sin\theta - \cos\theta\right)
+-\mu_{k2} mg x &= mgL\sin\theta-\mu_{k1}mg\cos\theta L \\
+\therefore x&= L\frac{1}{\mu_{k2}}\left(\sin\theta - \mu_{k1}\cos\theta\right)
 \end{align*}
 which is the same result that we obtained in Example \ref{ex:applyingnewtonslaws:blockI}.
 
 \textbf{Discussion:} By using conservation of energy, we were able to model the motion of the block down the incline in a way that was much easier than what was done in Example \ref{ex:applyingnewtonslaws:blockI}. Furthermore, although we modelled friction as a non-conservative force doing work, we gained some insight into the idea that this could be thought of as an energy loss. In terms of energy, we would say that the block initially had gravitational potential energy, which was then converted into kinetic energy as well as thermal energy (in the heat generated by friction). 
 \end{example}
 
-\section{Potential energy diagrams and equilibria}
+\section{Energy diagrams and equilibria}
+We can write the mechanical energy of an object as:
+\begin{align*}
+E = K + U
+\end{align*}
+which will be a constant if there are no non-conservative forces doing work on the object. This means that if the potential energy of the object increases, then its kinetic energy must decrease by the same amount, and vice-versa. We can visualize this on an energy diagram, in which we can illustrate the potential energy as a function of position. 
+
+Consider a block that can slide on a frictionless horizontal surface and that is attached to a spring, as in the top panel of Figure \ref{fig:potentialecons:springE}. If one pushes on the block so as to compress the spring by a distance $D$ and then releases it, the block will initially accelerate until it reaches the rest position of the spring. At that point, the spring will exert a force in the opposite direction and the block will continue in the same direciton and decelerate until it stops and turns around. It will then accelerate again towards the spring rest position, and then decelerate once the spring starts being compressed again, until the block stops and the motion repeats. 
+
+Figure \ref{fig:potentialecons:springE} shows an energy diagram for an object attached to a spring, where the potential energy function is given by:
+\begin{align*}
+U(x)=\frac{1}{2}kx^2
+\end{align*}
+The $x$ axis is defined such that the origin is located where the spring is at rest. In the diagram, the object has a total energy of $E=\SI{25}{J}$, which is constant and shown by the horizontal line. Also illustrated are the potential energy function ($U(x)$ in blue), and the kinetic energy, ($K=E-U(x)$, in dotted black).
+\capfig{0.7\textwidth}{figures/PotentialEcons/springE.png}{\label{fig:potentialecons:springE} Energy diagram for a spring with spring constant $k=\SI{1}{N/m}$. }
+The energy diagram allows us to describe the motion of the object attached to the spring in terms of energy. Because the potential and kinetic energy must sum to $E$, we see that when the kinetic energy is zero, the potential energy is maximal. This corresponds to the spring being maximally compressed or extended, and is when the object will change direction of motion (the kinetic energy is zero, so the object is instantaneously at rest); we call these points ``turning points''. Conversely, when the potential energy is zero, the object has maximal kinetic energy, which corresponds to the object moving the fastest at the location where the spring is at rest. Furthermore, we can see that if the object has a larger total energy (which is equivalent to raising the horizontal line), then we see that the turning points will move further outwards, and the object will cover more distance as it oscillates back and forth.
+
 
 \section{The Lagrangian formulation of classical physics}
 
