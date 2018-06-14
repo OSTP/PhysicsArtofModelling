@@ -363,29 +363,111 @@ We can write the mechanical energy of an object as:
 \begin{align*}
 E = K + U
 \end{align*}
-which will be a constant if there are no non-conservative forces doing work on the object. This means that if the potential energy of the object increases, then its kinetic energy must decrease by the same amount, and vice-versa. We can visualize this on an energy diagram, in which we can illustrate the potential energy as a function of position. 
+which will be a constant if there are no non-conservative forces doing work on the object. This means that if the potential energy of the object increases, then its kinetic energy must decrease by the same amount, and vice-versa. 
 
-Consider a block that can slide on a frictionless horizontal surface and that is attached to a spring, as in the top panel of Figure \ref{fig:potentialecons:springE}. If one pushes on the block so as to compress the spring by a distance $D$ and then releases it, the block will initially accelerate until it reaches the rest position of the spring. At that point, the spring will exert a force in the opposite direction and the block will continue in the same direciton and decelerate until it stops and turns around. It will then accelerate again towards the spring rest position, and then decelerate once the spring starts being compressed again, until the block stops and the motion repeats. 
+Consider a block that can slide on a frictionless horizontal surface and that is attached to a spring, as in the top panel of Figure \ref{fig:potentialecons:springE}, where $x=0$ is chosen as the position corresponding to the rest length of the spring. If one pushes on the block so as to compress the spring by a distance $D$ and then releases it, the block will initially accelerate because of the spring force in the positive $x$ direction until the block reaches the rest position of the spring ($x=0$ on the diagram). At that point, the spring will exert a force in the opposite direction and the block will continue in the same direciton and decelerate until it stops and turns around. It will then accelerate again towards the spring rest position, and then decelerate once the spring starts being compressed again, until the block stops and the motion repeats. We can say that the block oscillates back and forth about the rest position of the spring.
 
-Figure \ref{fig:potentialecons:springE} shows an energy diagram for an object attached to a spring, where the potential energy function is given by:
+We can also use energy to describe the motion of the block in terms of its total mechanical energy, $E$, and its potential energy given by:
 \begin{align*}
 U(x)=\frac{1}{2}kx^2
 \end{align*}
-The $x$ axis is defined such that the origin is located where the spring is at rest. In the diagram, the object has a total energy of $E=\SI{25}{J}$, which is constant and shown by the horizontal line. Also illustrated are the potential energy function ($U(x)$ in blue), and the kinetic energy, ($K=E-U(x)$, in dotted black).
+The bottom panel of Figure \ref{fig:potentialecons:springE} shows an ``Energy Diagram'' for the block, which allows us to examine how the total energy, $E$, of the block is divided between kinetic and potential energy depending on the position of the block. The vertical axis corresponds to energy and the horizontal axis corresponds to the position of the block. 
+
+ The total mechanical energy, $E=\SI{25}{J}$, is shown by the horizontal red line. Also illustrated are the potential energy function ($U(x)$ in blue), and the kinetic energy, ($K=E-U(x)$, in dotted black).
 \capfig{0.7\textwidth}{figures/PotentialEcons/springE.png}{\label{fig:potentialecons:springE} Energy diagram for a spring with spring constant $k=\SI{1}{N/m}$. }
-The energy diagram allows us to describe the motion of the object attached to the spring in terms of energy. Because the potential and kinetic energy must sum to $E$, we see that when the kinetic energy is zero, the potential energy is maximal. This corresponds to the spring being maximally compressed or extended, and is when the object will change direction of motion (the kinetic energy is zero, so the object is instantaneously at rest); we call these points ``turning points''. Conversely, when the potential energy is zero, the object has maximal kinetic energy, which corresponds to the object moving the fastest at the location where the spring is at rest. Furthermore, we can see that if the object has a larger total energy (which is equivalent to raising the horizontal line), then we see that the turning points will move further outwards, and the object will cover more distance as it oscillates back and forth.
+The energy diagram allows us to describe the motion of the object attached to the spring in terms of energy. A few things to note:
+\begin{enumerate}
+\item At $x=\pm D$, the potential energy is equal to $E$, so the kinetic energy is zero. The block is thus instantaneously at rest at those positions.
+\item At $x=0$, the potential energy is zero, and the kinetic energy is maximal. This corresponds to where the block has the highest speed. 
+\item The kinetic energy of the block can never be negative, thus, the block cannot be located outside the range $[-D,+D]$, and we would say that the motion of the block is ``bound''. The points between which the motion is bound are called ``turning points''.
+\end{enumerate}
+An analysis of the energy diagram tells us that the block is bound between the two turning points, which themselves are equidistant from the origin. When we initially compress the spring, we are ``giving'' the block spring potential energy. As the block moves, the potential energy of the block is converted to kinetic energy as it accelerates and then back into potential energy as it decelerates.
 
+TODO: Checkpoint question, for $k=1$, total energy $E=\SI{25}{J}$, what are the positions of the turning points for a spring?
 
-\section{The Lagrangian formulation of classical physics}
+By looking at only the potential energy function, without knowing that it is related to a spring, we can come to the same conclusions; namely that the motion is bound as long as the total mechanical energy is not infinite. We call the point $x=0$ a ``stable equilibrium'', because it is a local minimum of the potential energy function. If the object is displaced from the equilibrium point, it will want to move back towards that point. This can also be understood in terms of the force associated with the potential energy function:
+\begin{align*}
+F = -\frac{d}{dx}U(x)
+\end{align*}
+The \textbf{equilibrium point is given by the condition that the force associated with the potential is zero} ($x=0$ in the case of the potential energy from a spring). The equilibrium is a stable equilibrium because the force associated with the potential energy function ($F(x)=-kx$ for the spring) points towards the equilibrium point.
 
+The potential energy function for an object with total mechanical energy, $E$, can be thought of as a little ``roller coaster'', on which you place a marble and watch it ``roll down'' the potential energy function. You can think of placing a marble where $U(x)=E$ and releasing it. The marble would then roll down the potential energy function, just as an actual marble would roll down a real slope, mimicking the motion of the object along the $x$ axis. This is illustrated in Figure \ref{fig:potentialecons:potential} which shows an arbitrary potential energy function and a marble being placed at a location where the potential energy is equal to $E$.
+\capfig{0.4\textwidth}{figures/PotentialEcons/potential.png}{\label{fig:potentialecons:potential} Arbitrary potential energy function and illustration of visualizing a marble rolling down the function.}
+The motion of the marble will be bound between the two points where the potential energy function is equal to $E$. When the marble is placed as shown, it will roll towards the left, just as if it were a real marble on a surface. Since the potential energy is increasing as a function of $x$ at the point where we placed the marble, the force is in the negative $x$ direction (remember, the force is the negative of the derivative of the potential energy function). With the given energy, the marble would never be able to make it to point $D$, as it does not have enough energy to ``climb up the hill''. It would roll down, through point $C$, up to point $B$, down to point $A$, and then turn around where $U(x)=E$ and return to where it started. 
+
+Locations $A$ and $C$ on the diagram are stable equilibria, because if a marble is placed in those location and nudged slightly, it will come back to the equilibrium point. Points $B$ and $D$ are ``unstable equilibria'', because if the marble is placed there and nudged, it will not come back to those points. Note that if the marble were placed at point $D$ and nudged towards the right, the motion of the marble would be unbond on the right, and it would keep going in that direction. 
+
+\section{Advanced Topic: The Lagrangian formulation of classical physics}
+So far, we have seen that based on Newton's Laws, one can formulate a description of motion that is based solely on the concept of energy. A lot of research was done in the 1800s (TODO: check date!) to reformulate a theory of mechanics that would be equivalent to Newton's Theory but whose starting point is the concept of energy instead of the concept of force. This ``modern'' approach to classical mechanics is primarily based on the research by Lagrange and Hamilton. 
+
+Although it is beyond the scope of this text to go into detail into this formulation, it is worth taking a quick look in order to get a better sense of how physicists seek to generalize theories. It is also worth noting that the Lagrangian formulation is the method by which theories are developed for quantum mechanics and modern physics. 
+
+The Lagrangian description of a ``system'' is based on a quantity, $L$, called the ``Lagrangian'', which is defined as:
+\begin{align*}
+L = K - U
+\end{align*}
+where $K$ is the kinetic energy of the system, and $U$ is its potential energy. A ``system'' can be a rather complex collection of objects, although we will illustrate how the Lagrangian formulation is implemented for a single object of mass $m$ moving in one dimension under the influence of gravity. Let $x$ be the direction of motion (which is vertical) such that the potential and kinetic energies of the object are given by:
+\begin{align*}
+U(x) &= mgx\\
+K(v_x) &= \frac{1}{2}mv_x^2\\
+\therefore L(x,v_x) &= \frac{1}{2}mv_x^2 - mgx
+\end{align*}
+where we chose the potential energy to be zero at $x=0$, and $v_x$ is the $x$ component of the speed of the object.
+
+In the modern formulation of classical mechanics, the motion of the system will be such that the following integral is minimized:
+\begin{align*}
+S = \int Ldt
+\end{align*}
+where $L$ can depend on time explicitly or implicitly (through the fact that position and velocity, on which the Lagrangian depends, are themselves time-dependent). The requirement that the above integral be minimized is called the ``Principle of Least Action''\footnote{The integral, $S$, is called the ``action of the system.}, and is thought to be the fundamental principle that describes all of the laws of physics. The condition of the action to be minimized is given by the Euler-Lagrange equation:
+\begin{align*}
+\frac{d}{dt}\left(\die{L}{v_x}\right)-\die{L}{x} = 0
+\end{align*}
+Thus, in the Lagrangian formulation, one first writes down the Lagrangian for the system, and then uses the Euler-Lagrange equation to obtain the ``equations of motion'' for the system (i.e. the kinematic quantities, such as acceleration, for the system). 
+
+Given the Lagrangian that we found above for a particle moving in one dimension under the influence of gravity, we can determine each term in the Euler-Lagrange equation:
+\begin{align*}
+\die{L}{v_x} &= \die{}{v_x}\left(\frac{1}{2}mv_x^2 - mgx \right)=mv_x\\
+\therefore\frac{d}{dt}\left(\die{L}{v_x}\right) &= \frac{d}{dt} (mv_x) = ma_x\\
+\therefore\die{L}{x}&= \die{}{x}\frac{1}{2}mv_x^2 - mgx = -mg\\
+\end{align*}
+Putting these into the Euler-Lagrange equation:
+\begin{align*}
+\frac{d}{dt}\left(\die{L}{v_x}\right)-\die{L}{x} &= 0\\
+(ma_x) - (-mg) &=0\\
+\therefore a_x = -g
+\end{align*}
+which is exactly equivalent to Newton's Second Law. In the Lagrangian formulation, we do not need the concept of force. Instead, we describe possible ``interactions'' by a potential energy function. That is why you may sometimes hear of physicists talking about the ``Weak interaction'' instead of the ``Weak force'' when they are talking about one of the four fundamental interactions (forces) of Nature. This is because, in the modern formulation of physics, one does not use the concept of force, and instead thinks of potential energy functions that can be added into the Lagrangian. 
+
+Emmy Noether, a mathematician in the late 1800s (TODO:check date!!!), derived a theorem that makes the Lagrangian formulation particularly aesthetic. Noether's theorem states that for any symmetry in the Lagrangian, there exist a quantity that is conserved. For example, if the Lagrangian does not depend explicitly on time, then a quantity, which we call energy, is conserved. The Lagrangian that we had above does not depend on time explicitly, and thus energy is conserved (gravitational potential energy is converted into kinetic energy). If Lagrangian did not depend on position, then ``momentum''\footnote{See chapter \ref{chap:momentum}} would be conserved (the Lagrangian that we used depends on $x$ through the potential energy, thus momentum in the $x$ direction is not conserved). 
 
 
 \newpage
 \section{Summary}
 
-\begin{chapterSummary}{
-\item Something that was learned
-}
+\begin{chapterSummary}
+A force is conservative if the work done by that force on a closed path is zero:
+\begin{align*}
+\oint \vec F(\vec r) \cdot d\vec l = 0
+\end{align*}
+Equivalently, the force is conservative if the work done by the force along a path from position $A$ to position $B$ does not depend on the path. The conditions for a force to be conservative are given by:
+\begin{align*}
+\die{F_z}{y}-\die{F_y}{z} &= 0 \nonumber\\
+\die{F_x}{z}-\die{F_z}{x} &= 0\nonumber\\
+\die{F_y}{x}-\die{F_x}{y} &= 0
+\end{align*}
+In particular, a force that is constant in magnitude and direction will be conservative. A force that depends on quantities other than position (e.g. speed, time) will not be conservative.
+
+For any conservative force, $\vec F(\vec r)$, we can define a potential energy function $U(\vec r)$ that can be used to calculate the work done by the force along any path between position $A$ and position $B$:
+\begin{align*}
+-W = - \int_A^B \vec F(\vec r) \cdot d\vec l = U(\vec r_B) - U(\vec r_A) = \Delta U
+\end{align*}
+where the change in potential energy function in going from $A$ to $B$ is equal to the negative of the work done in going from point $A$ to point $B$.
+
+The Work-Energy theorem states that the net work done on an object is equal to its change in kinetic energy. We can break up the net work done on an object as the sum of the work done by conservative and non-conservative forces:
+\begin{align*}
+W^{net}=W^{NC}+W^{C}
+\end{align*}
+
 \end{chapterSummary}
 
 \newpage
