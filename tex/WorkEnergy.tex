@@ -1,10 +1,6 @@
 \chapter{Work and energy}
 \label{chap:workenergy}
-\begin{checkpoint}
-TODO: Two people pull two crates at the same angle and with the same force. The crates have the same displacement d but one is horizontal and one is up a ramp. Who does more work?
-\end{checkpoint}
-
-In this chapter, we introduce a new way to build models derived from Newton's Theory of Classical Physics. We will introduce the concepts of work and energy in order to allow us to model situations using scalar quantities, such as energy, instead of vector quantities, such as forces. It is important to remember that even if we use energy and work, these are tools that are derived from Newton's Laws; that is, we may not be using Newton's Second Law explicitly, but the models that we develop are still based on the same theory of Classical Physics. 
+In this chapter, we introduce a new way to build models derived from Newton's theory of classical physics. We will introduce the concepts of work and energy in order to allow us to model situations using scalar quantities, such as energy, instead of vector quantities, such as forces. It is important to remember that even if we use energy and work, these are tools that are derived from Newton's Laws; that is, we may not be using Newton's Second Law explicitly, but the models that we develop are still based on the same theory of classical physics. 
 
 \begin{learningObjectives}{
  \item Understand the concept of work and how to calculate the work done by a force.
@@ -15,12 +11,11 @@ In this chapter, we introduce a new way to build models derived from Newton's Th
 \end{learningObjectives}
 
 \begin{opening}
-\begin{MCquestion}{A question}
-\item a choice
-\item another choice %correct
-\end{MCquestion}
+Julie is holding a heavy book. The book does not move, even though it is difficult for her to keep it from falling to the ground. Do Julie's arms do work on the book? How about if Julie starts walking to class while holding the book? 
+%Your arms do no work. (no displacement, no work, even if it's tiring!). If you are walking, since the displacement is perpendicular to the force, your arms do no work.
 \end{opening}
 
+\newpage
 \section{Work}
 We introduce the concept of work as the starting point for using energy instead of forces. Work is a scalar quantity that is meant to represent how a force that was exerted onto an object over a given distance has resulted in a change in the speed of the object. We will first introduce the concept of work done by a force on an object, and then look at how work can change the kinematics of the object. This is analogous to how we first defined the concept of force, and then looked at how force affects motion (by using Newton's Second Law, which connected the concept of force to the acceleration of the object).
 
@@ -29,7 +24,7 @@ The work done by a force, $\vec F$, on an object over a displacement, $\vec d$, 
 \Aboxed{W = \vec F \cdot \vec d = Fd\cos\theta = F_xd_x+F_yd_y+F_zd_z}
 \end{align}
 where $\theta$ is the angle between the vectors when these are placed tail to tail, as in Figure \ref{fig:workenergy:fddotproduct}. The dimension of work, force times displacement, is also called ``energy''. The S.I. unit for energy is the Joule (abbreviated $\si{J}$) which is equivalent to $\si{Nm}$ or $\si{kg m^2/s^2}$ in base units.
-\capfig{0.4\textwidth}{figures/WorkEnergy/fddotproduct.png}{\label{fig:fddotproduct}When finding the dot product $Fd\cos\theta$, $\theta$ is the angle between the vectors when placed tail to tail.}
+\capfig{0.4\textwidth}{figures/WorkEnergy/fddotproduct.png}{\label{fig:fddotproduct}When finding the dot product $Fd\cos\theta$, $\theta$ is the angle between the vectors when they are placed tail to tail.}
 
 The work done by the force is the scalar product of the force vector and the displacement vector of the object. That is, the force ``does work'' if it is exerted while the object moves (has a displacement vector) and in such a way that the scalar product of the force and displacement vectors is non-zero. A force that is perpendicular to the displacement vector of an object does no work (since the scalar product of two perpendicular vectors is zero).  A force exerted in the same direction as the displacement will do positive work ($\cos\theta$ positive), and a force in the opposite direction of the displacement will do negative work $\cos\theta$ negative). As we will see, positive work corresponds to increasing the speed of the object, whereas negative work corresponds to decreasing its speed.
 
@@ -42,8 +37,6 @@ The work done by the force is the scalar product of the force vector and the dis
 \item Tension does no work on the pendulum. 
 \end{MCquestion}
 \end{checkpoint}
-
-TODO: Checkpoint question: work done by your arm in holding up a heavy book (no displacement, no work, even if it's tiring!)
 
 You may be tempted, as you will be when we introduce other quantities, to ask, ``Why work? Why not something else? Why that scalar product in particular? How could we possible have thought of that?''. In general, it seems arbitrary that we introduce this quantity (work) and then find that it leads to a convenient way of building models. We did not just pull this quantity ``out of thin air''! Many theorists, over many years, defined all sorts of quantities, and tried different ways to rephrase Newton's Theory, that were not useful. The ones that make it into the textbooks are those that turned out to be useful! You should thus accept that, when we present quantities, like work, that seem to come out of nowhere, there was in fact a lot of work done to evaluate different ways to do things, and the one we chose to present is the one that turned out to be most useful! So let's talk about work, and see why it's useful!
 
@@ -89,9 +82,7 @@ The total work done by the force over the three separate displacements is the su
 W^{tot}&=W_1+W_2+W_3\\
 &=\vec F_1\cdot \vec d_2+\vec F_1\cdot \vec d_2+\vec F_3\cdot \vec d_3\\
 &= F_1\Delta x +F_2\Delta x + F_3\Delta x
-\end{align*}
-TODO: Question Library question to show that over a segment, using scalar product, that if F is constant, the work done over the whole displacement is equal to the sum of the work done over the displacement subdivided into $N$ segments (e.g. if $\vec d$ is the displacement, show that $W = \sum F d_i$ where $d_i$ is part of $d$.  
-
+\end{align*} 
 
 If instead of 3 segments we had $N$ segments and the $x$ component of the force had the $N$ corresponding values $F_i$ in the $N$ segments, the total work done by the force would be:
 \begin{align*}
@@ -140,6 +131,15 @@ W = \vec F \cdot \vec d &= Fd\cos\theta\\
 &= Fd_{\parallel}\\
 \end{align*}
 where we highlighted the fact that the scalar product ``picks out'' components of vectors that are parallel to each other. $F_{\parallel} = F\cos\theta$ is thus the component of $\vec F$ that is parallel to $\vec d$, and $d_{\parallel}=d\cos\theta$ is the component of $\vec d$ that is parallel to $\vec F$. These are also shown in Figure \ref{fig:workenergy:workangle}.
+
+\begin{checkpoint}
+\begin{MCquestion}{
+Brent and Dean pull two crates at the same angle above the horizontal and with the same force. The magnitude of the crates' displacement is the same, but Brent's crate moves horizontally on the ground and Dean's crate moves up a frictionless ramp. Who did more work on the crate?}
+\item Brent
+\item Dean %
+\item They did the same amount of work.
+\end{MCquestion}
+\end{checkpoint}
 
 In general, if an object is moving along an arbitrary path, we cannot choose the $x$ axis to be parallel to the displacement or to the force. If the path can be sub-divided into straight segments over which the force is constant, as in Figure \ref{fig:workenergy:workd2d}, we can calculate the work done by the force over each segment and add the work done in each segment together to obtain the total work done by the force. Note that, in general, the work done by a force as an object moves from one position to another depends on the particular path that was taken between the two positions.
 \capfig{0.3\textwidth}{figures/WorkEnergy/work2d.png}{\label{fig:workenergy:work2d}A arbitrary two dimensional path of an object from $A$ to $B$ broken into three straight segments.}
@@ -307,7 +307,7 @@ where $\vec F^{net} = \vec F_1 + \vec F_2 + \vec F_3$. The result is easily gene
 W^{net} = \int_A^B F^{net}(\vec r) \cdot d\vec l
 \end{align*} 
 
-\begin{example}{\label{ex:workenergy:networkram}p\capfig{0.3\textwidth}{figures/WorkEnergy/workincline.png}{\label{fig:workenergy:workincline} A crate being pushed up an incline.}
+\begin{example}{\label{ex:workenergy:networkramp}\capfig{0.3\textwidth}{figures/WorkEnergy/workincline.png}{\label{fig:workenergy:workincline} A crate being pushed up an incline.}
 You push with an unknown horizontal force, $\vec F$, against a crate of mass $m$ that is located on an inclined plane that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:workenergy:workincline}. The coefficient of kinetic friction between the crate and the incline is $\mu_k$. You push in such a way that that crates moves at a constant speed up the incline. What is the net work done on the crate if it moves up the incline by a distance $d$?}
 Although the answer may be obvious, let's go the long way about it and calculate the work done by each force, and then sum them together to get the total work done. We start by identifying the forces exerted on the crate:
 \begin{enumerate}
@@ -367,12 +367,13 @@ where we used the fact that $\cos^2\theta+\sin^2\theta=1$. Thus we find that the
 \newpage
 \begin{studentOpinion}{Olivia} Pay close attention to the words ``on'' and ``by.'' There are a few things about this that can be tricky:
 \begin{enumerate}
-\item In example \ref{ex:workenergy:networkramp}, we were asked to find the \textbf{net work} done \textbf{on} the crate. Sometimes the question won't specify that it wants you to find the net work, and will just say ``What is the work done \textbf{on} the crate?'' You need to know that when you are asked for the work done ``on'' an object, it is implicitly asking for the net work done on the object. \\
+\item In Example \ref{ex:workenergy:networkramp}, we were asked to find the \textbf{net work} done \textbf{on} the crate. Sometimes, the question won't specify that it wants you to find the net work, and will just say ``What is the work done \textbf{on} the crate?'' When you are just asked for the work done ``on'' an object, the question is implicitly asking for the net work done on the object. \\
 
-\item Just because the net work done \textbf{on} an object is zero doesn't mean that the work done \textbf{by} each of the forces is zero. This may seem obvious, but it's easy to get tripped up on a test or exam. If you are reading a question about work and it says that the object is moving at a constant speed, it's tempting to just jump ahead and say that the work must be equal to zero. However, you can only say this if it's asking you for the net work done on the object. For instance, in example \ref{ex:workenergy:networkramp} we concluded that since the crate was moving at a constant speed, the net work was equal to zero. But if the question asked you to find the work done on the crate \textbf{by gravity}, that would mean something different. The work done \textbf{by} gravity in this case is not equal to zero (it's actually negative). \\
+\item Just because the net work done \textbf{on} an object is zero doesn't mean that the work done \textbf{by} each of the forces is zero. This may seem obvious, but it's easy to get tripped up on a test or exam. If you are reading a question about work and it says that the object is moving at a constant speed, it's tempting to just jump ahead and say that the work must be equal to zero. However, you can only say this if it's asking you for the net work done on the object. For instance, in example \ref{ex:workenergy:networkramp}, we concluded that since the crate was moving at a constant speed, the net work was equal to zero. But if the question asked you to find the work done on the crate \textbf{by gravity}, that would mean something different. The work done \textbf{by gravity} in this case is not equal to zero (it's actually negative). \\
 
-\item The work done ``on'' an object is not the same as the net work done ``by'' that object. For example, say you are in a tug-of-war and you pull the other team towards you, but you yourself do not move. The net work done \textbf{on} you is zero, but the work done \textbf{by} you is not zero. So, when you are talking about work, you must always state explicitly whether the work is being done ``on'' the object or ``by'' the object. 
+\item The work done ``on'' an object is not the same as the net work done ``by'' that object. For example, say you are in a tug-of-war and you pull the other team towards you, but you yourself do not move. The net work done \textbf{on} you is zero, but the work done \textbf{by} you is not zero. So, when you are talking about work, you should always state explicitly whether the work is being done ``on'' the object or ``by'' the object. 
 \end{enumerate}
+\textbf{Note}: The wording won't always be like this - sometimes it will say ``How much work do you do on the box?'' instead of ``How much work is done \textbf{by} you on the box,'' so always be careful. Still, looking for key words like ``by'' and ``on'' is a good place to start. 
 \end{studentOpinion}
 
 \begin{checkpoint}
@@ -544,7 +545,7 @@ Pt &= \frac{1}{2}mv_f^2 \\
 \end{itemize}
 \end{example}
 
-\begin{example}{You are pushing a crate along a horizontal surface at constant speed, $v$. You find that you need to exert a force of $\vec F$ on the crate in order to overcome the friction between the crate and the ground. How much power are you expending by pushing on the crate?}
+\begin{example}{\label{ex:workenergy:powerconstantv}You are pushing a crate along a horizontal surface at constant speed, $v$. You find that you need to exert a force of $\vec F$ on the crate in order to overcome the friction between the crate and the ground. How much power are you expending by pushing on the crate?}
 We need to calculate the rate at which the force, $\vec F$, that you exert on the crate does work. If the crate is moving at constant speed, $v$, then in a time $\Delta t$, it will cover a distance, $d=v\Delta t$. Since you exert a force in the same direction as the motion of the crate, the work done over that distance $d$ is:
 \begin{align*}
 \Delta W = \vec F \cdot \vec d = Fd\cos(0) = Fv\Delta t
@@ -555,6 +556,13 @@ P = \frac{\Delta W}{\Delta t} = Fv
 \end{align*}
 This is quite a general result for the rate at which a force does work when it is exerted on an object moving at constant speed. 
 \end{example}
+
+\begin{studentOpinion}{Olivia} Example \ref{ex:workenergy:powerconstantv} ties into what I brought up earlier. If you think to yourself: ``The velocity is constant, so the work must be zero'', the formula,
+\begin{align*}
+P = \frac{\Delta W}{\Delta t} = Fv
+\end{align*}
+wouldn't make any sense. Since $v$ is a constant velocity, the power would always be equal to zero, which of course isn't right. Again, remember that when the velocity is constant, it is only the \textbf{net work} that is equal to zero. In Example \ref{ex:workenergy:powerconstantv}, it's asking for the power that \textbf{you} are expending by pushing on the crate (which is the same as asking for the rate of the work done \textbf{by} you \textbf{on} the crate). So, the formula does indeed make sense. 
+\end{studentOpinion}
 
 
 \newpage
@@ -644,14 +652,14 @@ P &= \vec F \cdot \vec v
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{A question\label{Q:chaptertitle:q1}}
-\item A part.
-\item Another part.
+\begin{problemParts}{A ski jump can be modelled by a ramp, inclined at an angle of $\theta$ above the horizontal so that it has a height $h$. A skier of mass $m$ is moving at a speed $v_0$ when they start going up the ramp. When the skiier lands the jump, they are moving at a speed $v_f$. \label{prob:workenergy:q1}}
+\item What is the speed of the skier the instant they leave the ski jump?
+\item What is the coefficient of friction between the skier and the snow?
 \end{problemParts}
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{\ref{Q:chaptertitle:q1}}
+\begin{solution}{\ref{prob:workenergy:q1}}
 {
 the solution
 }
