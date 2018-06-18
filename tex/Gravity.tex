@@ -160,8 +160,41 @@ which corresponds to an altitude of $h=R-R_\oplus=\SI{2640}{km}$, which is well 
 \end{example}
 
 \subsection{Weight and apparent weight}
-You have probably seen images of astronauts floating around the International Space Station (ISS) or other orbiting vessels, and heard of the term weightlessness. The ISS is in orbit at an altitude of approximately $\SI{400}{km}$ where the force of Earth's gravity is far from negligible (in Example \ref{ex:gravity:gofr} we showed that one needs to go to an altitude of $\SI{2640}{km}$ for the force to be reduced by half of that at the surface). The contradiction is resolved by understanding that the popular term ``weightless'' is in fact imprecise from a physics perspective, since the astronauts clearly still have a non-negligible weight from Earth's gravity.
+You have probably seen images of astronauts floating around the International Space Station (ISS) or other orbiting vessels, and heard of the term ``weightlessness''  to describe their motion. The ISS is in orbit at an altitude of approximately $\SI{400}{km}$ where the force of Earth's gravity is far from negligible (in Example \ref{ex:gravity:gofr} we showed that one needs to go to an altitude of $\SI{2640}{km}$ for the force to be reduced by half of that at the surface of the Earth). The contradiction is resolved by understanding that the popular term ``weightless'' is imprecise from a physics perspective, since the astronauts clearly still have a non-negligible weight from Earth's gravity.
 
+The correct term to use from a physics perspective is to say that the \textit{apparent weight} of the astronauts is zero when they are floating around. Weight is the magnitude of the force of gravity exerted by the Earth. Apparent weight is the force that one measures when standing on a spring scale, which is equal to the normal force exerted by the spring scale on the person. 
+
+Consider a person standing on a spring scale at the North pole of the Earth (top free-body diagram in Figure \ref{fig:gravity:apparentweight}). The only two forces exerted on the person are their weight, $\vec F_g$, and the normal force, $\vec N$, exerted by the spring scale. Since the person is not accelerating, the normal force and the weight have the same magnitude and opposite directions. The scale will thus read the actual weight of the person.
+
+\capfig{0.4\textwidth}{figures/Gravity/apparentweight.png}{\label{fig:gravity:apparentweight}The apparent weight, given by the normal force, is different at the Earth's equator because a person's acceleration is non-zero as they rotate with the Earth.}
+
+Consider, instead, a person standing on a spring scale at the equator of the Earth (Figure \ref{fig:gravity:apparentweight}). That person is accelerating, because they are rotating with the Earth in uniform circular motion. Again, the only forces exerted on the person are their weight and the normal force exerted by the scale. The sum of the forces must now be equal to the person's mass, $m$, times the radial acceleration, $a_r$, that is necessary for them to follow the surface of the Earth as the Earth rotates about its axis. Newton's Second Law for the person allows us to find the magnitude of the normal force:
+\begin{align*}
+\sum F &= F_g-N=ma_r=m\frac{v^2}{R}\\
+\therefore N &= F_g - m\frac{v^2}{R}\\
+&=G\frac{Mm}{R^2} -  m\frac{v^2}{R}\\
+&=m\left(G\frac{M}{R^2} - \frac{v^2}{R}  \right)\\
+&=m\left(g - \frac{v^2}{R}  \right)
+\end{align*}
+where $M$ is the mass of the Earth, $R$ is the radius of the Earth, $v$ is the speed at the surface of the Earth due to the Earth's rotation, and, in the last line, we used the result from Example \ref{ex:gravity:gofr} where we had determined the value of $g$ in terms of the mass and radius of the Earth. We see that the normal force is reduced compared to what it would be if the Earth were not rotating ($v=0$) or if one is standing at one of the poles. Your apparent weight, which you can measure by standing on a spring scale, is thus smaller at the equator than it is at the poles. The quantity in parenthesis can be thought of as a modified or ``effective'' value of $g$ at the equator. To an observer at the equator, unaware of the Earth's rotation, the acceleration of objects as they fall towards the ground is smaller than at the poles. 
+
+TODO: Checkpoint MC, what is the effective value of $g$ at the equator? (Need to figure out v...). 
+
+If you are circling the Earth a distance $R$ from the centre of the Earth at a constant speed $v$, it is possible for you apparent weight to be zero. Imagine standing on a scale in an aircraft that is circling the Earth and measuring your apparent weight with the spring scale. As the speed of the aircraft increases, your apparent weight decreases:
+\begin{align*}
+N=m\left(G\frac{M}{R^2} - \frac{v^2}{R}  \right)
+\end{align*}
+At a certain speed, $v$, you apparent weight is zero and you feel weightless:
+\begin{align*}
+G\frac{M}{R^2} &= \frac{v^2}{R}\\
+\therefore v&= \sqrt{G\frac{M}{R} }
+\end{align*}
+which is what we call being ``in circular orbit'' around the Earth. That is, your acceleration is exactly that which is due to gravity, since gravity is the only force that is acting on you. Another way to feel weightless is when you are in free-fall (e.g. the first few seconds of a parachute jump from an airplane). One can think of being in orbit as continuously falling towards the centre of the Earth, but with an initial velocity in a direction such that you never actually collide with the Earth. The feeling of weightlessness will occur any time that the only force exerted on you is the force of gravity, which does not require you to be in a circular orbit. If you are in a spacecraft and the only force on the spacecraft is from gravity (i.e. no rockets or wings are exerting any forces), then everything in the spacecraft will have the same acceleration, since gravity is the only force acting on anything in the spacecraft, and it will appear that everything is just floating in the spacecraft. To an outside observer, it would obviously be clear that the spacecraft and its contents are all accelerating.
+
+At any position that is not on the equator or the poles, the direction of the effective acceleration due to Earth's gravity is not directed towards the centre of the Earth. If you hang a mass from a string (creating a plumb line), the string will point slightly away from the centre of the Earth. This is illustrated in Figure \ref{fig:gravity:apparentweight2} which shows the forces of tension and gravity that are exerted on a mass hanging from a string located away from the equator or poles. The tension in the string cannot point towards the centre of the Earth, because the net force must point towards to centre of the circle about which that location on Earth is rotating. 
+\capfig{0.4\textwidth}{figures/Gravity/apparentweight2.png}{\label{fig:gravity:apparentweight2}Away from the equator and poles, a plumb line does not point towards the centre of the Earth.}
+
+TODO: Question library question about finding the angle between the plumbline and the true vertical at some location (give latitude so that they have to figure out how $\theta$ relates to latitude (it is latitude)
 
 \subsection{The gravitational field}
 
@@ -173,6 +206,8 @@ You have probably seen images of astronauts floating around the International Sp
 
 \subsection{Satellite orbits}
 discuss apparent weight.
+
+\subsection{Escapge velocity}
 
 \section{Einstein's Theory of General Relativity}
 
