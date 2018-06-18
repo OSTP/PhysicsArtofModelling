@@ -659,9 +659,9 @@ P &= \vec F \cdot \vec v
 
 \begin{enumerate}
 \item When was the concept of work first introduced?
-\item To construct the pyramids, the ancient Egyptians used simple machines, like levers, to accomplish tasks that would not be possible otherwise. Apply what we know about work to find out how levers enable people to lift incredibly heavy objects. 
+\item To construct the pyramids, the ancient Egyptians used simple machines, like levers, to accomplish tasks that would not be possible otherwise. Apply what we know about work to find out how levers help people lift incredibly heavy objects. 
 \item After an accident, investigators use skid marks to figure out how fast the cars were going before the crash. How do they do this?
-\item Something about cars and power
+\item ***Something about cars and power***
 \end{enumerate}
 \subsection{To try at home}
 
@@ -681,9 +681,10 @@ P &= \vec F \cdot \vec v
 
 %Based on Giancoli 7-86
 \begin{problemParts}{\label{prob:workenergy:swingwork}
-A child of mass $m$ sits on a swing of length $L$. You push the child with a horizontal force $\vec F$. You apply the force in such a way that the child moves at a constant speed (note that $\vec F$ will not have a constant magnitude).}
-\item How much work do you do to move the child from an angle 0 to an angle $\theta$? 
-\item Show that the work is equal to $mgh$, where $h$ is the change in height of the child. Hint: Set up your axes to take advantage of the fact that the child is moving along the $s$ axis. 
+A child of mass $m$ sits on a swing of length $L$, as in Figure \ref{fig:workenergy:swingprob}. You push the child with a horizontal force $\vec F$. You apply the force in such a way that the child moves at a constant speed (note that $\vec F$ will not have a constant magnitude).}
+\item How much work do you do to move the child from $\theta=0$ to $\theta=\theta_1$? 
+\item Use a detailed diagram to show that the work done by $\vec F$ is equal to $mgh$, where $h$ is the change in height of the child. 
+\capfig{0.4\textwidth}{figures/WorkEnergy/swingprob.png}{\label{fig:workenergy:swingprob}A child on a swing is pushed from $\theta=0$ to $\theta=\theta_1$}
 \end{problemParts}
 
 \newpage
@@ -726,7 +727,7 @@ W^{net}&=\frac{1}{2}mv_j^2-\frac{1}{2}mv_i^2\\
 &=\frac{1}{2}m(v_j^2-v_i^2)\\
 &=\frac{1}{2}m(v_f^2-v_i^2-2gh)
 \end{align*}
-The net work is the sum of the work done by each of the three forces acting on the skier. These forces are gravity, friction, and the normal force, as shown in Figure \ref{fig:workenergy:skijumpprobfbd}.
+The net work done is the sum of the work done by each of the three forces acting on the skier. These forces are gravity, friction, and the normal force, as shown in Figure \ref{fig:workenergy:skijumpprobfbd}.
 \capfig{0.2\textwidth}{figures/WorkEnergy/skijumpprobfbd.png}{\label{fig:workenergy:skijumpprobfbd} Free body diagram for the skier as they go up the jump.}
 The normal force is perpendicular to the skier's displacement, so it does no work on the skier. We then have:
 \begin{align*}
@@ -749,13 +750,61 @@ W^{friction}&=W^{net}-W^{gravity}\\
 \end{align*}
 $\therefore$ the work done by friction is equal to $\frac{1}{2}m(v_f^2-v_i^2)$. \\
 
-\textbf{Discussion}: This equation tells us that only friction is responsible for the difference between the skier's initial speed and their final speed. If the work done by friction were equal to zero, we would have $0=\frac{1}{2}m(v_f^2-v_i^2)$, so $v_f$ would have to be equal to $v_i$. Does this make sense? If there were no friction, the only force doing work on the skier would be gravity. We found that as the skier goes up the jump, the work done by gravity is equal to $-mgh$, and when the skier comes down from the jump, the work done by gravity is equal to $mgh$. So, the total work done by gravity is equal to zero ($-mgh+mgh=0$). It makes sense, then, that if there were no friction, the initial and final speeds would be the same. We can also see that the total work done by gravity is zero just by looking at the initial and final positions of the skier. The total vertical displacement is equal to zero, so the total work done by gravity must be zero. This problem leads into the next chapter, where we will discuss conservative and non-conservative forces. \\
+\textbf{Discussion}: This equation tells us that only friction is responsible for the difference between the skier's initial speed and their final speed. If the work done by friction were equal to zero, we would have $0=\frac{1}{2}m(v_f^2-v_i^2)$, so $v_f$ would have to be equal to $v_i$. Does this make sense? If there were no friction, the only force doing work on the skier would be gravity. We found that as the skier goes up the jump, the work done by gravity is equal to $-mgh$, and when the skier comes down from the jump, the work done by gravity is equal to $mgh$. So, the total work done by gravity is equal to zero ($-mgh+mgh=0$). It makes sense, then, that if there were no friction, the initial and final speeds (and the kinetic energy) would be the same. We can also see that the total work done by gravity is zero just by looking at the initial and final positions of the skier. The total vertical displacement is equal to zero, so the total work done by gravity must be zero. This problem leads into the next chapter, where we will discuss conservative and non-conservative forces. \\
 \end{enumerate}
 \end{solution}
 
 \begin{solution}{\ref{prob:workenergy:swingwork}}
 \begin{enumerate}[label=\alph*)]
-\item We want to find the work done by the applied force $F$. The magnitude of the force will change, so we first need to find an expression for the magnitude of the force that depends on $\theta$.
+\item We want to find the work done by the applied force $F$. We first need to find an expression for the magnitude of $\vec F$. Figure \ref{fig:workenergy:swingprobfbd} shows the forces acting on the child. 
+\capfig{0.3\textwidth}{figures/WorkEnergy/swingprobfbd.png}{\label{fig:workenergy:swingprobfbd}A free body diagram for the child on the swing}
+
+The child is moving at a constant speed, so the net force is equal to zero. We set the sum of the forces in the $x$ and $y$ directions equal to zero:
+\begin{align*}
+x: \quad F-F_T\sin\theta &=0\\
+y: \quad F_T\cos\theta -mg &= 0
+\end{align*} 
+Rearranging these equations gives:
+\begin{align*}
+F&=F_T\sin\theta\\
+mg&=F_T\cos\theta
+\end{align*}
+We want an expression for $F$ that does not depend on $F_T$ (since $F_T$ is unknown), so we divide the above equations then multiply each side by $mg$:
+\begin{align*}
+\frac{F}{mg}\cdot mg &= \frac{F_T\sin\theta}{F_T\cos\theta}\cdot mg\\
+F&=mg\tan\theta
+\end{align*}
+Now we have an expression for $F$. Since the force is not constant, we can calculate the work done by $\vec F$ using the formula:
+\begin{align*}
+W=\int_A^B\vec F(\vec r) \cdot d\vec l
+\end{align*} 
+Remember that $dl$ is the ``element of the path.'' We can take advantage of the fact that the child is moving along a circular path. Instead of using cartesian coordinates, it makes sense to describe the position of the child in terms of $s$ and $\theta$. An infinitesimally small section of the path can thus be written as $ds$, which is equal to $Ld\theta$. This gives us the expression:
+\begin{align*}
+W=\int_0^{\theta_1}\vec F \cdot Ld\theta
+\end{align*}
+Where we set the limits of integration to be $\theta=0$ and $\theta=\theta_1$. Now we can find the scalar product:
+\begin{align*}
+W&=\int_0^{\theta_1}(F\cos\theta)Ld\theta\\
+&=\int_0^{\theta_1}(mg\tan\theta)(\cos\theta)Ld\theta\\
+&=\int_0^{\theta_1}(mgL)\frac{\sin\theta}{\cos\theta}\cos\theta d\theta\\
+&=\int_0^{\theta_1}(mgL)\sin\theta d\theta\\
+\end{align*}
+Now we can pull $mgL$ in front of the integral (because they are constants) and integrate: 
+\begin{align*}
+W&=mgL\int_0^{\theta_1}\sin\theta d\theta\\
+&=mgL(-\cos\theta\vert_0^{\theta_1})\\
+W&=mgL(1-\cos\theta)
+\end{align*}
+$\therefore$ the work done by you on the child is equal to $mgL(1-\cos\theta)$. 
+\item We know that the work done by $\vec F$ is $W=mgL(1-\cos\theta)$. So, we want to prove that $L(1-\cos\theta)$ is equal to $h$. Expanding $L(1-\cos\theta)$ gives:
+\begin{align*}
+L(1-\cos\theta)&=L-L\cos\theta
+\end{align*}
+Your diagram will look like the one shown in Figure \ref{fig:workenergy:swingprobgeometry}. 
+\capfig{0.4\textwidth}{figures/WorkEnergy/swingprobgeometry.png}{\label{fig:workenergy:swingprobgeometry}A diagram showing the geometry of the problem}
+This clearly shows that $h$ is equal to $L-L\cos\theta$.\\
+
+\textbf{Discussion:} The net force acting on the mass is equal to zero, so the net work must be equal to zero. The two forces that do work on the mass are the applied force $\vec F$, and gravity. The work done by gravity is $-mgh$, so the work done by $\vec F$ is $mgh$. 
 \end{enumerate}
 \end{solution}
 
