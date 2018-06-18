@@ -4,7 +4,11 @@
 In previous chapters, we have so far learned about Newton's Theory of Classical Mechanics, which allowed us to model the motion of an object based on the forces acting on the object. In this chapter, we present the theories that describe the force of gravity itself. We will see several theories of gravity and focus primarily on Newton's Universal Theory of Gravity. 
 
 \begin{learningObjectives}{
- \item something to learn
+ \item Understand Kepler's Laws.
+ \item Understand Newton's Universal Theory of Gravity. 
+ \item Understand Gauss' Law and the gravitational field.
+ \item Understand how to use energy to describe orbits.
+ \item Understand how Einstein's General Theory of Relativity differs from Newton's theory of gravity.
  }
 \end{learningObjectives}
 
@@ -29,8 +33,11 @@ Kepler proposed three laws that described all of the data that Tycho Brahe had c
 \end{enumerate}
 
 \subsection{Kepler's First Law}
-Kepler noticed that the motion of all planets followed the path of an ellipse with the Sun located at one of its foci. Figure \ref{fig:gravity:ellipse} shows a diagram of an ellipse, along with its two foci, its semi-major axis, $s$, its semi-minor axis, $b$, and its eccentricity, $e$. The eccentricity is a measure of how ``flat'' the ellipse is; an eccentricity of zero corresponds to the special case of a circle. 
-\capfig{0.5\textwidth}{figures/Gravity/ellipse.png}{\label{fig:gravity:ellipse}A ellipse, showing its two foci, its semi-major axis, $s$, its semi-minor axis, $b$, and its eccentricity, $e$. A circle is a special case of an ellipse with both foci overlapping and an eccentricity of $e=0$.}
+Kepler noticed that the motion of all planets followed the path of an ellipse with the Sun located at one of its foci. Figure \ref{fig:gravity:ellipse} shows a diagram of an ellipse, along with its two foci, its semi-major axis, $s$, its semi-minor axis, $b$, and its eccentricity, $e$. The eccentricity is a measure of how far a focus is from the centre of the ellipse. A larger eccentricity thus corresponds to a ``flatter'' ellipse. Note that a circle is just a special case of an ellipse, with both foci located at the centre of the circle.
+
+\capfig{0.5\textwidth}{figures/Gravity/ellipse.png}{\label{fig:gravity:ellipse}A ellipse, showing its two foci, its semi-major axis, $s$, its semi-minor axis, $b$, and its eccentricity, $e$.}
+
+TODO: Checkpoint: Show two ellipses, determine which one has the largest eccentricity.
 
 \subsection{Kepler's Second Law}
 Kepler's Second Law relates to the speed of a planet in an elliptical orbit and states that the area swept by a line connecting the planet and the Sun in a given period of time is fixed. This is illustrated in Figure \ref{fig:gravity:ellipse2}, which shows the elliptical orbit of a planet around the Sun located at one of the foci, and the area swept out when the planet goes from $A$ to $B$ and from $C$ to $D$. 
@@ -40,7 +47,121 @@ In particular, Kepler's Second Law states that the two areas that are shown in t
 
 TODO: Checkpoint: At which point in the orbit is the speed of the planet the greatest?
 
+\subsection{Kepler's Third Law}
+Kepler's Third Law is quantitative and relates the orbital periods ($T$) and the semi-major axes ($s$) between any two planets in orbit around the Sun:
+\begin{align*}
+\left(\frac{T_1}{T_2}\right)^2=\left(\frac{s_1}{s_2}\right)^3
+\end{align*}
+We can re-arrange this relation so that all of the quantities related to one planet are on the same side of the equal sign:
+\begin{align*}
+\frac{T_1^2}{s_1^3}=\frac{T_2^2}{s_2^3}=\text{constant}
+\end{align*}
+In other words, the ratio between the orbital period squared and the semi-major axis cubed is a constant for all planets which cannot depend on the planet itself. Later in this chapter, we will use Newton's Universal Theory of Gravity to evaluate the constant, and we will find that it depends on properties of the Sun. 
+
+TODO: Checkpoint MC if you double the radius of a circular orbit, what happens to the orbital speed?
+
 \section{Newton's Universal Theory of Gravity}
+Newton supposedly gained insight into the gravitational force by observing an apple falling from a tree and concluding that if it is the same force that makes apples fall at sea level and at the top of the mountain, perhaps that force can be exerted all the way up to the moon. It is rather remarkable that Newton was able to make the connection between falling apples and the motion of the moon around the Earth to find a single theory to describe both situations.
+
+We should be clear that the theory of gravity is a different theory than Newton's ``Laws of Motion'' (Newton's Three Laws). The Laws of Motion introduce the concepts of force and inertial mass, and prescribe how to use those concepts in order to model motion using kinematics. Newton's Universal Theory of Gravity is a theory that describes the force of gravity that two bodies with (gravitational) mass exert on each other.
+
+Newton's Universal Theory of Gravity states that if two bodies with masses $M_1$ and $M_2$, located at positions $\vec r_1$ and $\vec r_2$, respectively, are separated by a distance, $r$, then $M_2$ will exert an attractive force on $M_1$, $\vec F_{12}$, given by:
+\begin{align}
+\vec F_{12}=-G\frac{M_1M_2}{r^2}\hat r_{21}
+\end{align}
+where $\hat r_{21}$ is the unit vector from $M_2$ to $M_1$:
+\begin{align*}
+\vec r_{21} &= \vec r_2 - \vec r_1\\
+\hat r_{21} &= \frac{1}{r} \vec r_{21}
+\end{align*}
+as shown in Figure \ref{fig:gravity:gvectors}. $\vec F_{12}$ should be read as ``the force on body 1 from body 2''. $G=\SI{6.67e-11}{Nm^2/kg^2}$ is Newton's Universal Constant of Gravity. It should be noted that Newton's theory for the force of gravity written in this form only applies to either point masses (separated by a distance $r$) or spherical bodies whose centres are separated by a distance $r$
+\capfig{0.4\textwidth}{figures/Gravity/gvectors.png}{\label{fig:gravity:gvectors}Illustration of the vectors involved in Newton's Universal Theory of Gravity.}
+
+Originally, Newton argued that the force of gravity would be proportional to the masses of the bodies, and inversely proportional to the square of the distance between them:
+\begin{align*}
+F_{12}\propto \frac{M_1M_2}{r^2}
+\end{align*}
+and $G$ is simply the constant of proportionality.
+
+Because of Newton's Third Law, body 1 exerts a force on body 2 that is equal in magnitude but opposite in direction:
+\begin{align*}
+\vec F_{12} = -\vec F_{21}
+\end{align*} 
+
+\begin{example}{Calculate the magnitude of the force of gravity between yourself and a person standing $\SI{50}{cm}$ from you and compare that to your weight at the surface of the Earth (the force of gravity exerted by the Earth on you).}
+If we assume that the two people have a mass of $\SI{50}{kg}$, the force of gravity exerted by one on the other, if they are separated by $\SI{50}{cm}$, is given by:
+\begin{align*}
+F=G\frac{M_1M_2}{r^2}=(\SI{6.67e-11}{Nm^2/kg^2})\frac{(\SI{50}{kg})(\SI{50}{kg})}{(\SI{0.5}{m})^2}=\SI{6.67e-7}{N}
+\end{align*}
+This is a very small force, compared to their weight, $F_g$:
+\begin{align*}
+F_g=M_1g=(\SI{50}{kg})(\SI{9.8}{kg/N})=\SI{490}{N}
+\end{align*}
+which is approximately 700 million times bigger. 
+
+\textbf{Discussion:} The force of gravity is a very weak force when compared to other forces in Nature, such as the electric force between two charges. Newton's Universal Constant of Gravity is very small, so the force of gravity between two objects is very small unless either of the masses involved are very large, or the distance between them is very small. In general, when modelling the motion of objects on the Earth, it is generally safe to ignore the forces of gravity between objects and only include their weight (the force of gravity from the Earth). 
+\end{example}
+
+TODO: Checkpoint question MC: Choose the order of magnitude that corresponds to the mass of the Earth.
+
+\begin{example}{Geosynchronous satellites are satellites that are placed in a circular orbit around the Earth in such a way that their orbital period is synchronized with the $\SI{24}{h}$ rotation of the Earth about the axis that goes through the poles. The advantage of geosynchronous satellites is that they are always above the same point on Earth, which makes them useful for establishing communication networks. At what altitude must geosynchronous satellites be placed?}
+When a satellite orbits the Earth, the only force on the satellite is the force of gravity from the Earth. Since the satellite is in a circular orbit, that force of gravity must point towards the centre of the Earth in such a way that the satellite has the correct radial acceleration, $a_R$, to stay in uniform circular motion:
+\begin{align*}
+a_r=\frac{v^2}{R}
+\end{align*}
+where $v$ is the speed of the satellite, and $R$ is the distance between the satellite and the centre of the Earth (i.e. the centre of the circle). The magnitude of the force of gravity on the satellite of mass $m$ is given by:
+\begin{align*}
+F = G\frac{Mm}{R^2}
+\end{align*}
+where $M$ is the mass of the Earth. The radial component\footnote{The force of gravity and the acceleration are both co-linear and along the line that joins the centre of the Earth to the satellite.} of Newton's Second Law written for the satellite is given by:
+\begin{align*}
+\sum F_r = F &= ma_r\\
+\therefore G\frac{Mm}{R^2}&=m\frac{v^2}{R}
+\end{align*}
+The speed of the satellite can be found from the fact that it must travel a distance of $2\pi r$ in a period $T=\SI{24}{h}$:
+\begin{align*}
+v=\frac{2\pi R}{T}
+\end{align*}
+which we can substitute into the equation from Newton's Second Law to find the distance $R$:
+\begin{align*}
+G\frac{Mm}{R^2}&=m\frac{v^2}{R}\\
+G\frac{M}{R^2}&=\frac{(2\pi R)^2}{T^2R}\\ 
+G\frac{M}{R^2}&=\frac{4\pi^2 R}{T^2}\\ 
+\therefore R&=\sqrt[3]{G\frac{MT^2}{4\pi^2}}\\
+&=\sqrt[3]{(\SI{6.67e-11}{Nm^2/kg^2})\frac{(\SI{5.97e24}{kg})(\SI{86400}{s})^2}{4\pi^2}}\\
+&=\SI{42.2e6}{m}
+\end{align*}
+which corresponds to the distance between the satellite and the centre of the Earth. To obtain the ``altitude'', $h$, namely the distance from the surface of the Earth to the satellite, we must subtract the radius of the Earth, $R_\oplus=\SI{6.371e6}{m}$ from this distance:
+\begin{align*}
+h = R-R_\oplus = \SI{35.9e6}{m}
+\end{align*}
+Thus, geosynchronous satellites are located at an altitude of approximately $\SI{36000}{km}$.
+\end{example}
+
+\begin{example}{\label{ex:gravity:gofr}The acceleration due to Earth's gravity depends on the force that the Earth exerts on an object. Using the Earth's mass and radius, determine the acceleration due to Earth gravity at the surface of the Earth. Also, determine the altitude where the acceleration due to Earth's gravity is half of that at the Earth's surface.}
+We can find the acceleration due to Earth gravity by determining the acceleration of a mass $m$ upon which gravity is the only acting force. In other words, we model an object that is in free-fall a distance $R$ away from the centre of the Earth. Newton's Second Law can be used in one dimension (corresponding to the direction that connects the falling mass to the centre of the Earth):
+\begin{align*}
+\sum F &= G\frac{Mm}{R^2}=ma\\
+\therefore a&=G\frac{M}{R^2}
+\end{align*}
+where $M=\SI{5.97e24}{kg}$ is the mass of the Earth. At the surface of the Earth, $R=R_\oplus=\SI{6.371e6}{m}$:
+\begin{align*}
+a&=G\frac{M}{R_\oplus^2}=(\SI{6.67e-11}{Nm^2/kg^2})\frac{(\SI{5.97e24}{kg})}{(\SI{6.371e6}{m})^2}\\
+&=\SI{9.81}{m/s^2}
+\end{align*}
+which, of course, is the value of $g$ that we have been using so far for the acceleration due to gravity near the surface of the Earth. To find the altitude at which this is reduced by half, we first find the value of $R$ that corresponds to this acceleration:
+\begin{align*}
+\frac{1}{2}G\frac{M}{R_\oplus^2}&=G\frac{M}{R^2}\\
+\therefore R &=\sqrt{2}R_\oplus = \SI{9.0e6}{m}
+\end{align*}
+which corresponds to an altitude of $h=R-R_\oplus=\SI{2640}{km}$, which is well above the Earth's atmosphere.
+
+\textbf{Discussion:} Very precise measurements of the acceleration due to Earth's gravity can be used to determine the shape of the Earth (which is not a perfect sphere). 
+\end{example}
+
+\subsection{Weight and apparent weight}
+You have probably seen images of astronauts floating around the International Space Station (ISS) or other orbiting vessels, and heard of the term weightlessness. The ISS is in orbit at an altitude of approximately $\SI{400}{km}$ where the force of Earth's gravity is far from negligible (in Example \ref{ex:gravity:gofr} we showed that one needs to go to an altitude of $\SI{2640}{km}$ for the force to be reduced by half of that at the surface). The contradiction is resolved by understanding that the popular term ``weightless'' is in fact imprecise from a physics perspective, since the astronauts clearly still have a non-negligible weight from Earth's gravity.
+
 
 \subsection{The gravitational field}
 
@@ -81,7 +202,7 @@ E = mc^2
 \item What was the relationship between Tycho Brahe and Johannes Kepler?
 \item How did Tycho Brahe collect all the data that Kepler used?
 \item How much time elapsed between Kepler publishing his laws and Newton publishing his Universal Theory of Gravity?
-\item What was Kepler's original intention when he was synthesized Tycho Brahe's observations? What was he hoping to show?
+\item What was Kepler's original intention when he synthesized Tycho Brahe's observations? What was he hoping to show?
 \item What was Ptolemy's theory of gravity based upon?
 \item Who was the first to suggest that planets revolved around the Sun instead of the Earth?
 \item Explain how the force of gravity from the moon results in tides on both sides of the Earth.
