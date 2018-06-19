@@ -26,11 +26,12 @@ Kepler proposed three laws that described all of the data that Tycho Brahe had c
 \begin{enumerate}
 \item The path of a planet around the Sun is described by an ellipse with the Sun at once of its foci.
 \item Planets move in such a way that the area swept by a line connecting the planet in the Sun in a given period of time is constant, independent of the location of the planet.
-\item The ratio between the orbital periods squared of two planets is equal to the ratio of the semi-major axes of their orbits cubed:
+\item The ratio between the orbital periods, $T$, squared of two planets is equal to the ratio of the semi-major axes, $s$, of their orbits cubed:
 \begin{align*}
 \left(\frac{T_1}{T_2}\right)^2=\left(\frac{s_1}{s_2}\right)^3
 \end{align*}
 \end{enumerate}
+We examine these three laws in more detail in the sections that follow.
 
 \subsection{Kepler's First Law}
 Kepler noticed that the motion of all planets followed the path of an ellipse with the Sun located at one of its foci. Figure \ref{fig:gravity:ellipse} shows a diagram of an ellipse, along with its two foci, its semi-major axis, $s$, its semi-minor axis, $b$, and its eccentricity, $e$. The eccentricity is a measure of how far a focus is from the centre of the ellipse. A larger eccentricity thus corresponds to a ``flatter'' ellipse. Note that a circle is just a special case of an ellipse, with both foci located at the centre of the circle.
@@ -40,10 +41,10 @@ Kepler noticed that the motion of all planets followed the path of an ellipse wi
 TODO: Checkpoint: Show two ellipses, determine which one has the largest eccentricity.
 
 \subsection{Kepler's Second Law}
-Kepler's Second Law relates to the speed of a planet in an elliptical orbit and states that the area swept by a line connecting the planet and the Sun in a given period of time is fixed. This is illustrated in Figure \ref{fig:gravity:ellipse2}, which shows the elliptical orbit of a planet around the Sun located at one of the foci, and the area swept out when the planet goes from $A$ to $B$ and from $C$ to $D$. 
+Kepler's Second Law is really a statement about the speed of a planet in an elliptical orbit. It states that the area swept by a line connecting the planet and the Sun in a given period of time is fixed. This is illustrated in Figure \ref{fig:gravity:ellipse2}, which shows the elliptical orbit of a planet around the Sun located at one of the foci, and the area swept out when the planet goes from $A$ to $B$ and from $C$ to $D$. 
 \capfig{0.5\textwidth}{figures/Gravity/ellipse2.png}{\label{fig:gravity:ellipse2}Illustration of Kepler's Second Law, showing the area that is ``swept'' by a planet in a fixed period of time. }
 
-In particular, Kepler's Second Law states that the two areas that are shown in the figure will have the same area if the planet took the same amount of time to travel between points $A$ and $B$ as it did to travel between points $C$ and $D$. Because the points $C$ and $D$ are further away from the Sun than points $A$ and $B$, the distance between points $C$ and $D$ must be smaller than the distance between points $A$ and $B$ for the two areas to be the same. This, in turn, implies that the planet must be moving slower between $C$ and $D$ than between points $A$ and $B$. As we will see in a later chapter, Kepler's Second Law is equivalent to the statement that the angular momentum of the planet is conserved. 
+Kepler's Second Law states that the two areas that are shown by the greyed out sections in the figure are the same if the planet took the same amount of time to travel between points $A$ and $B$ as it did to travel between points $C$ and $D$. Because the points $C$ and $D$ are further away from the Sun than points $A$ and $B$, the distance between points $C$ and $D$ must be smaller than the distance between points $A$ and $B$ for the two areas to be the same. This, in turn, implies that the planet must be moving slower between $C$ and $D$ than between points $A$ and $B$. As we will see in a later chapter, Kepler's Second Law is equivalent to the statement that the angular momentum of the planet is conserved. 
 
 TODO: Checkpoint: At which point in the orbit is the speed of the planet the greatest?
 
@@ -56,12 +57,12 @@ We can re-arrange this relation so that all of the quantities related to one pla
 \begin{align*}
 \frac{T_1^2}{s_1^3}=\frac{T_2^2}{s_2^3}=\text{constant}
 \end{align*}
-In other words, the ratio between the orbital period squared and the semi-major axis cubed is a constant for all planets which cannot depend on the planet itself. Later in this chapter, we will use Newton's Universal Theory of Gravity to evaluate the constant, and we will find that it depends on properties of the Sun. 
+In other words, the ratio between the orbital period squared and the semi-major axis cubed is a constant, independent of the particular planet. In Example \ref{ex:gravity:keplerconstant}, we will use Newton's Universal Theory of Gravity to evaluate the constant.
 
 TODO: Checkpoint MC if you double the radius of a circular orbit, what happens to the orbital speed?
 
 \section{Newton's Universal Theory of Gravity}
-Newton supposedly gained insight into the gravitational force by observing an apple falling from a tree and concluding that if it is the same force that makes apples fall at sea level and at the top of the mountain, perhaps that force can be exerted all the way up to the moon. It is rather remarkable that Newton was able to make the connection between falling apples and the motion of the moon around the Earth to find a single theory to describe both situations.
+Newton supposedly gained insight into the gravitational force by observing an apple falling from a tree and concluding that if it is the same force that makes apples fall at sea level and at the top of a mountain, perhaps that force can be exerted all the way up to the moon. It is rather remarkable that Newton was able to make the connection between falling apples and the motion of the moon around the Earth to find a single theory to describe both situations.
 
 We should be clear that the theory of gravity is a different theory than Newton's ``Laws of Motion'' (Newton's Three Laws). The Laws of Motion introduce the concepts of force and inertial mass, and prescribe how to use those concepts in order to model motion using kinematics. Newton's Universal Theory of Gravity is a theory that describes the force of gravity that two bodies with (gravitational) mass exert on each other.
 
@@ -74,7 +75,7 @@ where $\hat r_{21}$ is the unit vector from $M_2$ to $M_1$:
 \vec r_{21} &= \vec r_2 - \vec r_1\\
 \hat r_{21} &= \frac{1}{r} \vec r_{21}
 \end{align*}
-as shown in Figure \ref{fig:gravity:gvectors}. $\vec F_{12}$ should be read as ``the force on body 1 from body 2''. $G=\SI{6.67e-11}{Nm^2/kg^2}$ is Newton's Universal Constant of Gravity. It should be noted that Newton's theory for the force of gravity written in this form only applies to either point masses (separated by a distance $r$) or spherical bodies whose centres are separated by a distance $r$
+as shown in Figure \ref{fig:gravity:gvectors}. $\vec F_{12}$ should be read as ``the force on body 1 from body 2''. $G=\SI{6.67e-11}{Nm^2/kg^2}$ is Newton's Universal Constant of Gravity. It should be noted that Newton's theory for the force of gravity written in this form only applies to either point masses (separated by a distance $r$) or spherical bodies whose centres are separated by a distance $r$ that is larger than the radius of either sphere.
 \capfig{0.4\textwidth}{figures/Gravity/gvectors.png}{\label{fig:gravity:gvectors}Illustration of the vectors involved in Newton's Universal Theory of Gravity.}
 
 Originally, Newton argued that the force of gravity would be proportional to the masses of the bodies, and inversely proportional to the square of the distance between them:
@@ -95,7 +96,7 @@ F=G\frac{M_1M_2}{r^2}=(\SI{6.67e-11}{Nm^2/kg^2})\frac{(\SI{50}{kg})(\SI{50}{kg})
 \end{align*}
 This is a very small force, compared to their weight, $F_g$:
 \begin{align*}
-F_g=M_1g=(\SI{50}{kg})(\SI{9.8}{kg/N})=\SI{490}{N}
+F_g=M_1g=(\SI{50}{kg})(\SI{9.8}{N/kg})=\SI{490}{N}
 \end{align*}
 which is approximately 700 million times bigger. 
 
@@ -104,12 +105,45 @@ which is approximately 700 million times bigger.
 
 TODO: Checkpoint question MC: Choose the order of magnitude that corresponds to the mass of the Earth.
 
-\begin{example}{Geosynchronous satellites are satellites that are placed in a circular orbit around the Earth in such a way that their orbital period is synchronized with the $\SI{24}{h}$ rotation of the Earth about the axis that goes through the poles. The advantage of geosynchronous satellites is that they are always above the same point on Earth, which makes them useful for establishing communication networks. At what altitude must geosynchronous satellites be placed?}
+\begin{example}{\label{ex:gravity:keplerconstant}Determine the constant in Kepler's Third Law for planets orbiting the Sun, namely the value of the ratio:
+\begin{align*}
+\frac{s^3}{T^2}
+\end{align*}
+where $s$ is the semi-major axis and $T$ is the orbital period.
+}
+Since Kepler's Third Law holds for any body orbiting the sun, we can easily determine the ratio by considering a planet of mass $m$ in a circular orbit of radius $R$ centred about the Sun. The semi-major axis of the orbit is equal to the radius of the orbit for a circular orbit ($s=R$).
+
+If the planet is in a circular orbit about the Sun, its speed, $v$, will be constant, by Kepler's Second Law, and it will thus be executing uniform circular motion. The only force exerted on the planet is the force of gravity exerted by the Sun. Thus the force of gravity must be equal to the mass of the planet times its radial (centripetal) acceleration, $a_R$, which is given by:
+\begin{align*}
+a_R=\frac{v^2}{R}
+\end{align*}
+Newton's Second Law for the planet can be written as:
+\begin{align*}
+\sum F = F_g &= ma_R\\
+G\frac{Mm}{R^2}&=m\frac{v^2}{R}\\
+G\frac{M}{R}&=v^2
+\end{align*}
+where $M$ is the mass of the Sun. The speed of the planet is given by the circumference of the orbit divided by the orbital period $T$:
+\begin{align*}
+v=\frac{2\pi R}{T}
+\end{align*}
+Re-arranging the equation from Newton's Second Law:
+\begin{align*}
+G\frac{M}{R}&=v^2\\
+G\frac{M}{R}&=\frac{4\pi^2 R^2}{T^2}\\
+\therefore \frac{R^3}{T^2}&=G\frac{M}{4\pi^2}
+\end{align*}
+Thus, we find that the ratio of the cube of the radius orbit to the period squared is a constant that depends only on the mass of the Sun, which will then be the same for all planets (as it does not depend on, say, the mass of the planet that we considered).
+
+\textbf{Discussion}: The relation above can, for example, be used to determine the mass of the Sun, since we can use geometry to determine the semi-major axis for the orbit of a planet, as Kepler did with the data from Tycho Brahe.
+\end{example}
+
+\begin{example}{\label{ex:gravity:geosyncorbit}Geosynchronous satellites are satellites that are placed in a circular orbit around the Earth in such a way that their orbital period is synchronized with the $\SI{24}{h}$ rotation period of the Earth. The advantage of geosynchronous satellites is that they are always above the same point on Earth, which makes them useful for establishing communication networks. At what altitude must geosynchronous satellites be placed?}
 When a satellite orbits the Earth, the only force on the satellite is the force of gravity from the Earth. Since the satellite is in a circular orbit, that force of gravity must point towards the centre of the Earth in such a way that the satellite has the correct radial acceleration, $a_R$, to stay in uniform circular motion:
 \begin{align*}
 a_r=\frac{v^2}{R}
 \end{align*}
-where $v$ is the speed of the satellite, and $R$ is the distance between the satellite and the centre of the Earth (i.e. the centre of the circle). The magnitude of the force of gravity on the satellite of mass $m$ is given by:
+where $v$ is the speed of the satellite, and $R$ is the distance between the satellite and the centre of the Earth (i.e. the centre of the circular orbit). The magnitude of the force of gravity on the satellite of mass $m$ is given by:
 \begin{align*}
 F = G\frac{Mm}{R^2}
 \end{align*}
@@ -118,7 +152,7 @@ where $M$ is the mass of the Earth. The radial component\footnote{The force of g
 \sum F_r = F &= ma_r\\
 \therefore G\frac{Mm}{R^2}&=m\frac{v^2}{R}
 \end{align*}
-The speed of the satellite can be found from the fact that it must travel a distance of $2\pi r$ in a period $T=\SI{24}{h}$:
+The speed of the satellite can be found from the fact that it must travel a distance of $2\pi R$ (the circumference of the orbit) in a period $T=\SI{24}{h}$:
 \begin{align*}
 v=\frac{2\pi R}{T}
 \end{align*}
@@ -138,7 +172,7 @@ h = R-R_\oplus = \SI{35.9e6}{m}
 Thus, geosynchronous satellites are located at an altitude of approximately $\SI{36000}{km}$.
 \end{example}
 
-\begin{example}{\label{ex:gravity:gofr}The acceleration due to Earth's gravity depends on the force that the Earth exerts on an object. Using the Earth's mass and radius, determine the acceleration due to Earth gravity at the surface of the Earth. Also, determine the altitude where the acceleration due to Earth's gravity is half of that at the Earth's surface.}
+\begin{example}{\label{ex:gravity:gofr}The acceleration due to Earth's gravity depends on the force that the Earth exerts on an object. Using the Earth's mass and radius, determine the acceleration of falling objects due to Earth's gravity at the surface of the Earth. Also, determine the altitude where the acceleration due to Earth's gravity is half of that at the Earth's surface.}
 We can find the acceleration due to Earth gravity by determining the acceleration of a mass $m$ upon which gravity is the only acting force. In other words, we model an object that is in free-fall a distance $R$ away from the centre of the Earth. Newton's Second Law can be used in one dimension (corresponding to the direction that connects the falling mass to the centre of the Earth):
 \begin{align*}
 \sum F &= G\frac{Mm}{R^2}=ma\\
@@ -156,19 +190,19 @@ which, of course, is the value of $g$ that we have been using so far for the acc
 \end{align*}
 which corresponds to an altitude of $h=R-R_\oplus=\SI{2640}{km}$, which is well above the Earth's atmosphere.
 
-\textbf{Discussion:} Very precise measurements of the acceleration due to Earth's gravity can be used to determine the shape of the Earth (which is not a perfect sphere). 
+\textbf{Discussion:} The acceleration of falling objects depends on the distance to the centre of the Earth, and decreases as one moves further from the centre of the Earth. It is thus an approximation to assume the $g$ is a constant, although in most cases this is a very good approximation. In practice, the value of $g$ will depend both on the distance from the centre of the Earth and the composition (density) of the material in the Earth's crust below where $g$ is being measured. Precise measurements of $g$ can thus be used to search for mineral deposits in the Earth as well as oil.  
 \end{example}
 
 \subsection{Weight and apparent weight}
 You have probably seen images of astronauts floating around the International Space Station (ISS) or other orbiting vessels, and heard of the term ``weightlessness''  to describe their motion. The ISS is in orbit at an altitude of approximately $\SI{400}{km}$ where the force of Earth's gravity is far from negligible (in Example \ref{ex:gravity:gofr} we showed that one needs to go to an altitude of $\SI{2640}{km}$ for the force to be reduced by half of that at the surface of the Earth). The contradiction is resolved by understanding that the popular term ``weightless'' is imprecise from a physics perspective, since the astronauts clearly still have a non-negligible weight from Earth's gravity.
 
-The correct term to use from a physics perspective is to say that the \textit{apparent weight} of the astronauts is zero when they are floating around. Weight is the magnitude of the force of gravity exerted by the Earth. Apparent weight is the force that one measures when standing on a spring scale, which is equal to the normal force exerted by the spring scale on the person. 
+The correct term to use from a physics perspective is to say that the \textit{apparent weight} of the astronauts is zero when they are floating around. Weight is the magnitude of the force of gravity exerted by the Earth. Apparent weight is, for example, the force that one measures when standing on a spring scale, which is equal to the normal force exerted by the spring scale on the person. Apparent weight could also be determined as the tension in a string from which a person is suspended. The apparent weight is the sum of the forces exerted on a person minus the force of gravity.
 
 Consider a person standing on a spring scale at the North pole of the Earth (top free-body diagram in Figure \ref{fig:gravity:apparentweight}). The only two forces exerted on the person are their weight, $\vec F_g$, and the normal force, $\vec N$, exerted by the spring scale. Since the person is not accelerating, the normal force and the weight have the same magnitude and opposite directions. The scale will thus read the actual weight of the person.
 
 \capfig{0.4\textwidth}{figures/Gravity/apparentweight.png}{\label{fig:gravity:apparentweight}The apparent weight, given by the normal force, is different at the Earth's equator because a person's acceleration is non-zero as they rotate with the Earth.}
 
-Consider, instead, a person standing on a spring scale at the equator of the Earth (Figure \ref{fig:gravity:apparentweight}). That person is accelerating, because they are rotating with the Earth in uniform circular motion. Again, the only forces exerted on the person are their weight and the normal force exerted by the scale. The sum of the forces must now be equal to the person's mass, $m$, times the radial acceleration, $a_r$, that is necessary for them to follow the surface of the Earth as the Earth rotates about its axis. Newton's Second Law for the person allows us to find the magnitude of the normal force:
+Consider, instead, a person standing on a spring scale at the equator of the Earth (Figure \ref{fig:gravity:apparentweight}). That person is accelerating, because they are rotating with the Earth in uniform circular motion (since the Earth is rotating). Again, the only forces exerted on the person are their weight and the normal force exerted by the scale. The sum of the forces must now be equal to the person's mass, $m$, times the radial acceleration, $a_r$, that is necessary for them to follow the surface of the Earth as the Earth rotates about its axis. Newton's Second Law for the person allows us to find the magnitude of the normal force:
 \begin{align*}
 \sum F &= F_g-N=ma_r=m\frac{v^2}{R}\\
 \therefore N &= F_g - m\frac{v^2}{R}\\
@@ -176,11 +210,13 @@ Consider, instead, a person standing on a spring scale at the equator of the Ear
 &=m\left(G\frac{M}{R^2} - \frac{v^2}{R}  \right)\\
 &=m\left(g - \frac{v^2}{R}  \right)
 \end{align*}
-where $M$ is the mass of the Earth, $R$ is the radius of the Earth, $v$ is the speed at the surface of the Earth due to the Earth's rotation, and, in the last line, we used the result from Example \ref{ex:gravity:gofr} where we had determined the value of $g$ in terms of the mass and radius of the Earth. We see that the normal force is reduced compared to what it would be if the Earth were not rotating ($v=0$) or if one is standing at one of the poles. Your apparent weight, which you can measure by standing on a spring scale, is thus smaller at the equator than it is at the poles. The quantity in parenthesis can be thought of as a modified or ``effective'' value of $g$ at the equator. To an observer at the equator, unaware of the Earth's rotation, the acceleration of objects as they fall towards the ground is smaller than at the poles. 
+where $M$ is the mass of the Earth, $R$ is the radius of the Earth, $v$ is the speed at the surface of the Earth due to the Earth's rotation, and, in the last line, we used the result from Example \ref{ex:gravity:gofr} where we determined the value of $g$ in terms of the mass and radius of the Earth.
+
+We see that the normal force is reduced compared to what it would be if the Earth were not rotating ($v=0$) or if one is standing at one of the poles. Your apparent weight, which you can measure by standing on a spring scale, is thus smaller at the equator than it is at the poles. The quantity in parenthesis can be thought of as a modified or ``effective'' value of $g$ at the equator. To an observer at the equator, unaware of the Earth's rotation, the acceleration of objects as they fall towards the ground is smaller than at the poles. 
 
 TODO: Checkpoint MC, what is the effective value of $g$ at the equator? (Need to figure out v...). 
 
-If you are circling the Earth a distance $R$ from the centre of the Earth at a constant speed $v$, it is possible for you apparent weight to be zero. Imagine standing on a scale in an aircraft that is circling the Earth and measuring your apparent weight with the spring scale. As the speed of the aircraft increases, your apparent weight decreases:
+If you are circling the Earth a distance $R$ from the centre of the Earth at a constant speed $v$, it is possible for your apparent weight to be zero. Imagine standing on a scale in an aircraft that is circling the Earth and measuring your apparent weight with the spring scale. As the speed of the aircraft increases, your apparent weight, $N$, decreases according to the formula that we just found:
 \begin{align*}
 N=m\left(G\frac{M}{R^2} - \frac{v^2}{R}  \right)
 \end{align*}
@@ -189,25 +225,192 @@ At a certain speed, $v$, you apparent weight is zero and you feel weightless:
 G\frac{M}{R^2} &= \frac{v^2}{R}\\
 \therefore v&= \sqrt{G\frac{M}{R} }
 \end{align*}
-which is what we call being ``in circular orbit'' around the Earth. That is, your acceleration is exactly that which is due to gravity, since gravity is the only force that is acting on you. Another way to feel weightless is when you are in free-fall (e.g. the first few seconds of a parachute jump from an airplane). One can think of being in orbit as continuously falling towards the centre of the Earth, but with an initial velocity in a direction such that you never actually collide with the Earth. The feeling of weightlessness will occur any time that the only force exerted on you is the force of gravity, which does not require you to be in a circular orbit. If you are in a spacecraft and the only force on the spacecraft is from gravity (i.e. no rockets or wings are exerting any forces), then everything in the spacecraft will have the same acceleration, since gravity is the only force acting on anything in the spacecraft, and it will appear that everything is just floating in the spacecraft. To an outside observer, it would obviously be clear that the spacecraft and its contents are all accelerating.
+which is what we call being ``in circular orbit'' around the Earth. That is, your acceleration is exactly that which is due to gravity, since gravity is the only force that is acting on you (since the normal force is now zero).
+
+ Another way to feel weightless is when you are in free-fall (e.g. the first few seconds of a parachute jump from an airplane). One can think of being in orbit as continuously falling towards the centre of the Earth, but with an initial velocity in a direction such that you never actually collide with the Earth. The feeling of weightlessness will occur any time that the only force exerted on you is the force of gravity, which does not require you to be in a circular orbit. If you are in a spacecraft and the only force on the spacecraft is from gravity (i.e. no rockets or wings are exerting any forces), then everything in the spacecraft will have the same acceleration, since gravity is the only force acting on anything in the spacecraft, and it will appear that everything is just floating in the spacecraft. To an outside observer, it would obviously be clear that the spacecraft and its contents are all accelerating.
 
 At any position that is not on the equator or the poles, the direction of the effective acceleration due to Earth's gravity is not directed towards the centre of the Earth. If you hang a mass from a string (creating a plumb line), the string will point slightly away from the centre of the Earth. This is illustrated in Figure \ref{fig:gravity:apparentweight2} which shows the forces of tension and gravity that are exerted on a mass hanging from a string located away from the equator or poles. The tension in the string cannot point towards the centre of the Earth, because the net force must point towards to centre of the circle about which that location on Earth is rotating. 
-\capfig{0.4\textwidth}{figures/Gravity/apparentweight2.png}{\label{fig:gravity:apparentweight2}Away from the equator and poles, a plumb line does not point towards the centre of the Earth.}
+\capfig{0.6\textwidth}{figures/Gravity/apparentweight2.png}{\label{fig:gravity:apparentweight2}Away from the equator and poles, a plumb line (left) does not point towards the centre of the Earth, because a component of the tension must provide acceleration towards the centre of the circle (of radius $R\sin\theta$) about which the plumb line rotates due to the Earth's rotation.}
 
 TODO: Question library question about finding the angle between the plumbline and the true vertical at some location (give latitude so that they have to figure out how $\theta$ relates to latitude (it is latitude)
 
 \subsection{The gravitational field}
+Often, it is the case that only a few bodies in a system have masses large enough to result in a significant force of gravity. For example, at the surface of the Earth, we usually do not need to model the force of gravity between objects and can only consider the force of gravity that is due to the Earth. At the surface of the Earth, we model the force of gravity using the constant $g$, such that an object of mass $m$ will have a weight given by $F_g = mg$. 
+
+We can be a little more precise in our definition of $g$ by including the fact that it is a vector that points towards the centre of the Earth, $\vec g$. Finally, we can also include the fact that the magnitude of $\vec g$ is not constant and depends on the distance to the centre of the Earth. At some position, $\vec r$, relative to the centre of the Earth, we can precisely define the \textbf{gravitational field from the Earth} as:
+\begin{align}
+\Aboxed{\vec g(\vec r) = - \frac{GM}{r^2}\hat r}
+\end{align}
+where $M$ is the mass of the Earth and $\vec r$ is a vector from the centre of the Earth to where the gravitational field is evaluated. The word ``field'' is just a mathematical term for a function that depends on position. Since $\vec g(\vec r)$ is a vector, we would refer to it as a ``vector field''. We can, of course, define a gravitational field vector, $\vec g(\vec r)$, for any planet, not just the Earth. 
+
+Defining the gravitational field makes it easy to calculate the gravity force vector on any mass $m$:
+\begin{align*}
+\vec F_g = m\vec g(\vec r)
+\end{align*}
+
+Suppose that there are two large mass bodies, $M_1$ and $M_2$, and a smaller mass body, $m$. We can calculate the net gravitational force on $m$ by summing the gravitational force vectors from $M_1$ and $M_2$ separately. If the gravitational field from $M_1$ and $M_2$ are given by $\vec g_1(\vec r)$ and $\vec g_2(\vec r)$, respectively, then the total gravitational force on $m$ is given by:
+\begin{align*}
+\vec F &= m\vec g_1(\vec r) + m\vec g_2(\vec r)=m(\vec g_1(\vec r)+\vec g_2(\vec r))\\
+&=m \vec g(\vec r)
+\end{align*}
+where we have introduced the total gravitational field:
+\begin{align*}
+\vec g(\vec r) = \vec g_1(\vec r)\vec g_2(\vec r)
+\end{align*}
+In other words, if there are multiple bodies that result in a non-negligible force of gravity, we can calculate their gravitational fields independently and sum them together to define a net gravitational field, $\vec g(\vec r)$. The net gravitational force on a new body of mass $m'$ is then simply given by $m'\vec g(\vec r)$, and we do not need to add any more vectors together. When calculating the motion of satellites that can be influence by the force of gravity from both the Earth and the Moon, we simply need to calculate the net gravitational field from the two bodies, and the motion of any satellite can then be modelled using that net gravitational field.
+
+TODO: Question Library question to find L1 Lagrange point (it requires a binomial expansion), see e.g. example 6-10 in Giancolli
+
 
 \subsection{Gauss' Law}
+Newton's Universal Theory of Gravity postulates that the force of gravity between two bodies decreases as the squared of the distance between those two bodies. Using the terminology of a field, we would say that the strength of the gravitational field from an object decreases as the inverse of the square of the distance to that object. This is an example of a what we generally call an ``inverse-square law''. The electric force between two charges is also given by an inverse-square law, and we now understand that these forces behave as if they were ``transmitted'' by waves or particles.
+
+If a force is given by an inverse-square law, then Gauss' Law gives a way to determine the strength of the field that is associated with that force. In the case of gravity, Gauss' Law states that:
+\begin{align*}
+\oint \vec g(\vec r) \cdot d\vec A = 4\pi G M^{enc}
+\end{align*}
+where the integral on the left is an integral over a ``closed surface''. That is, imagine taking a closed surface, $S$, and then taking a small element of that surface and drawing a vector $d\vec A$ that points outwards from the interior of the closed surface and has a magnitude equal to that small surface. You can then take the scalar product of that vector with the gravitational field, $\vec g(\vec r)$, at that point on the surface. If you sum all of those scalar products, you get the value of the integral on the left. Gauss' Law states that the value of that integral is equal $4 pi G$ times the total mass that is enclosed by the surface. 
+
+We will go into more details about Gauss' Law when we cover electromagnetism, but it is worth seeing how to use it in a simple scenario. Figure \ref{fig:gravity:gauss} shows a spherical body of mass $M$ and radius $R$ for which we would like to determine the value of the gravitational field at a distance $r$ from the centre of the body.
+\capfig{0.3\textwidth}{figures/Gravity/gauss.png}{\label{fig:gravity:gauss}Example of a spherical Gaussian surface, $S$, of radius $r$ centred about a body of mass $M$ and radius $R$. An element of the surface, $d\vec A$ is also shown along with the gravitational field, $\vec g(\vec r)$ at that point.}
+To do so, we draw a ``Gaussian surface'', $S$, that is a spherical, with radius $r$, and centred about the body. At any point on the surface, the area element vector $d\vec A$ points away from the centre of the spherical surface. The gravitational field vector will always point towards the centre of the spherical surface. Furthermore, by symmetry, the magnitude of $\vec g(\vec r)$ is constant along the whole Gaussian surface. Thus, the scalar product $\vec g(\vec r) \cdot d\vec A=-g(r)dA$ everywhere along the surface (it is negative because the two vectors are anti-parallel). The integral is thus given by:
+\begin{align*}
+\oint \vec g(\vec r) \cdot d\vec A = -g(r)\oint dA 
+\end{align*}
+where we factored $g(r)$ out of the integral, since the magnitude of $\vec g(\vec r)$ is constant for all of the area elements $dA$ on the sphere. Remember that an integral is a sum. The integral $\oint dA$ thus means ``sum all of the area elements $dA$ over the entire surface $S$''. Thus, the integral is the total area of the spherical surface $S$:
+\begin{align*}
+\oint \vec g(\vec r) \cdot d\vec A = -g(r)\oint dA =-g(r)(4\pi r^2)
+\end{align*}
+Inserting this into Gauss' Law, we find:
+\begin{align*}
+\oint \vec g(\vec r) \cdot d\vec A &= 4\pi G M^{enc}\\
+-g(r)(4\pi r^2) &= 4\pi G M^{enc}\\
+\therefore g(r) &= - \frac{GM}{r^2}
+\end{align*}
+where $M^{enc}=M$ is the total mass enclosed by the Gaussian surface (in this case, the entire mass $M$ is enclosed). This is of course the result that we expected. Note that Gauss' Law is only easy to use if the system is highly symmetric (e.g. spherically symmetric), and that it does not give the direction of the field vector, which must be obtained from symmetry arguments. 
+
+We can use Gauss' Law to determine the gravitational field \textbf{inside} of the body of mass $M$ and radius $R$. This is illustrated in Figure \ref{fig:gravity:gauss2}, which shows a spherical Gaussian surface of radius $r$ that is \textbf{inside} of the body of mass $M$.
+\capfig{0.3\textwidth}{figures/Gravity/gauss2.png}{\label{fig:gravity:gauss2}Example of a spherical Gaussian surface, $S$, of radius $r$ centred inside a body of mass $M$ and radius $R$.}
+The gravitational field inside of the body of mass $M$ is also symmetric and constant in magnitude across the whole surface, so that the integral is the same as before:
+\begin{align*}
+\oint \vec g(\vec r) \cdot d\vec A=-g(r)(4\pi r^2)
+\end{align*}
+However, in order to use Gauss' Law, we need to determine the mass of the body that is enclosed within the spherical surface, which will be less than $M$. If we assume that the mass density, $\rho$, of the object is constant (the body is made of a uniform material), then the density is simply the mass of the object over its volume:
+\begin{align*}
+\rho = \frac{M}{\frac{4}{3}\pi R^3}
+\end{align*}
+The amount of mass enclosed by the spherical surface of radius $r$ is the density multiplied by the volume of a sphere of radius $r$:
+\begin{align*}
+M^{enc} = \rho \frac{4}{3}\pi r^3 = M\frac{r^3}{R^3}
+\end{align*}
+Applying Gauss' Law, we can now find the magnitude of the gravitational field inside of the spherical body at a distance $r$ from the centre:
+\begin{align*}
+\oint \vec g(\vec r) \cdot d\vec A &= 4\pi G M^{enc}\\
+-g(r)(4\pi r^2) &= 4\pi G M\frac{r^3}{R^3}\\
+\therefore g(r) &= - \frac{G M}{R^3}r
+\end{align*}
+And we find that inside a uniform  spherical body of mass $M$, the gravitational field increases linearly with radius as one moves out from the centre. At the centre of the body, the gravitational field is zero. 
 
 \section{Gravitational potential energy}
+Consider a large spherical body of mass $M$ with a coordinate system whose origin coincides with the centre of the spherical body (for example, the large body could be the Earth). The force, $\vec F(\vec r)$ on a body of mass $m$ (for example, a satellite), located at a position $\vec r$ is then given by:
+\begin{align*}
+\vec F(\vec r) = - G\frac{Mm}{r^2}\hat r=- G\frac{Mm}{r^3}\vec r
+\end{align*}
+where in the second equality, we use the fact that the unit vector in the direction of $\vec r$ is simply the vector $\vec r$, divided by its magnitude. We can write the force out in Cartesian coordinates:
+\begin{align*}
+\vec r &= x\hat x + y \hat y + z\hat z\\
+r &= \sqrt{x^2+y^2+z^2} =(x^2+y^2+z^2)^\frac{1}{2} \\
+\therefore \vec F(x,y,z) &= - G\frac{Mm}{(x^2+y^2+z^2)^\frac{3}{2} }(x\hat x + y \hat y + z\hat z)
+\end{align*}
+Mathematically, this is equivalent to the force that we considered in Example \ref{ex:potentialecons:gravitycons} of Chapter \ref{chap:potentialecons}, which we showed was a conservative force. The force of gravity in Newton's theory is thus a conservative force, for which we can determine a potential energy function.
+
+In order to determine a potential energy function for the mass $m$ in the presence of mass $M$, we calculate the work done by the force of gravity over a path where the integral for work will be ``easy'' to evaluate, namely a straight line. Figure \ref{fig:gravity:potential} shows such a path in the radial direction, $r$, over which it will be easy to calculate the work done by gravity when mass $m$ moves from being a distance $r_A$ to a distance $r_B$ from the centre of mass $M$.
+\capfig{0.6\textwidth}{figures/Gravity/potential.png}{\label{fig:gravity:potential}Calculating the work done on a mass $m$ by the force of gravity exerted by mass $M$ when mass $m$ moves from a distance $r_A$ to a distance $r_B$ from the center of mass $M$.}
+The work done by the force of gravity is given by:
+\begin{align*}
+W &= \int_{r_A}^{r_B}\vec F(r) \cdot d\vec r = \int_{r_A}^{r_B} \left(- G\frac{Mm}{r^2}\hat r \right)\cdot d\vec r =\int_{r_A}^{r_B} - G\frac{Mm}{r^2}dr\\
+&=\left[G\frac{Mm}{r} \right]_{r_A}^{r_B} =G\frac{Mm}{r_B} - G\frac{Mm}{r_A}
+\end{align*}
+The difference in potential energy in going from position $A$ to position $B$ is given by the negative of the work done by the force:
+\begin{align*}
+\Delta U = U(r_B) - U(r_A) = -W = G\frac{Mm}{r_A} - G\frac{Mm}{r_B}
+\end{align*}
+By inspection, we can identify the potential energy function for gravity:
+\begin{align}
+\Aboxed{U(r) = -G\frac{Mm}{r} + C}
+\end{align}
+which is determined only up to a constant, $C$. 
+
+A particularly useful choice of constant if $C=0$. This corresponds to choosing the potential energy to be zero only when $r$ goes to infinity. That is, the potential energy of mass $m$ is zero only when it is infinitely far away from mass $M$. The choice of constant $C$ corresponds the value of the potential energy when mass $m$ is infinitely far from mass $M$. When mass $m$ is not infinitely far away, it has \textbf{negative} potential energy (if $C=0$). This is not a problem! Remember, the only thing that is meaningful is a difference in potential energy, so the specific value of the potential energy has no meaning. The kinetic energy of an object, on the other hand, has to be positive.
+
+Recall that if there are no other forces acting on an object, that object will move in such a way to reduce its potential energy. If the object of mass $m$ is located at some distance $r$ from the object of mass $M$, the force of gravity will attract $m$ so that $r$ decreases. As $r$ decreases in magnitude, the potential energy becomes more negative (larger in magnitude, but further away from zero), and the potential energy will indeed decrease under the influence of gravity. The potential energy that we have found does have the correct properties.
 
 \subsection{Mechanical energy with gravity}
+Unless noted otherwise, we will continue our discussion of gravitational potential energy with the particular choice of constant $C=0$:
+\begin{align}
+\Aboxed{U(r) = -G\frac{Mm}{r}}
+\end{align}
+Furthermore, we will assume that $M$ is a large body, such as the Earth, which we can consider as fixed, and focus our discussion on describing the motion of mass $m$ (e.g. a satellite). If $M$ is much bigger than $m$, they will both experience a force of gravity from each other of the same magnitude (Newton's Third Law), but because $M$ is so much larger, its acceleration will be much smaller (Newton's Second Law). Thus, it is a good approximation to assume that $M$ is stationary and that only $m$ moves. 
 
-\subsection{Satellite orbits}
-discuss apparent weight.
+We can define the total mechanical energy of mass $m$ when it has a speed $v$ (relative to $M$) and is located at a distance $r$ from the centre of mass $M$:
+\begin{align*}
+E = U + K = -G\frac{Mm}{r}+\frac{1}{2}mv^2
+\end{align*}
+where the kinetic energy term is always positive. If gravity is the only force exerted on mass $m$, then the mechanical energy, $E$, as defined above will be a constant. The mechanical energy of an object can give us insight into the possible motion of the object.
 
-\subsection{Escapge velocity}
+Imagine ``launching'' a rocket upwards from the surface of the Earth; once all of the fuel has burnt up, the rocket's mechanical energy becomes constant as the rocket engine stops doing work on the rocket. As soon as the engine stops providing thrust, the rock will start to slow down as the force of gravity attracts the rocket back to Earth. If the rocket is going fast enough, it will be able to completely escape the Earth's gravitational pull and travel to infinity (we assume that there are no other planets or the Sun, just the Earth exists!). If, on the other hand, the rocket's speed is too low, it will eventually stop and fall back to Earth. This is the same thing that happens to you when you try to jump vertically. If you could jump hard enough, you would be able to escape the Earth's gravitational pull!
+
+In terms of mechanical energy, we can ask ourselves if the mechanical energy of the rocket is large enough to escape the Earth's gravitational pull. Specifically, we can ask ourselves what the value of the rocket's kinetic energy would be when it reaches infinity. The kinetic energy of the rocket is given by:
+\begin{align*}
+K = E - U
+\end{align*} 
+If the rocket is infinitely far from the Earth, then its potential energy is zero, and the kinetic energy is equal to $E$.
+
+If the mechanical energy, $E$, is negative, it is not possible for the rocket to ever make it to infinity because its kinetic energy would be zero. In other words, if the mechanical energy is negative, then the object of mass $m$ can never escape the gravitational pull of object $M$. 
+
+If the mechanical energy, $E$, is exactly zero, then the object's kinetic energy will become zero just as it reaches infinity. In other words, it will just barely be able to escape the gravitational pull from mass $M$. The condition for this to happen is:
+\begin{align*}
+E &= 0\\
+K & = -U\\
+\frac{1}{2}mv^2 &= G\frac{Mm}{r}\\
+\therefore v_{esc} &= \sqrt{\frac{2GM}{r}}
+\end{align*}
+which we can interpret as a condition for the speed of the rocket. If at some distance $r$ from $M$, the rocket has a speed given by the condition above, then it will have enough kinetic energy to escape the gravitational pull of $M$. We call this speed the ``escape velocity''. 
+
+Finally, if the mechanical energy is greater than zero, then the rocket will have enough energy to escape the gravitational pull of $M$ and have a non-zero speed when it reaches infinity. 
+
+\begin{example}{How much energy must be expended in order to place a satellite of mass $m=\SI{1000}{kg}$ in a geosynchronous circular orbit around the Earth, if the satellite is launched from the North Pole of the Earth? How much energy is this per kilogram of satellite placed in orbit?}
+We need to calculate how much work must be done for the satellite to go from being at rest at the surface of the Earth to be in a geosynchronous orbit. That work will be done by a non-conservative force (a rocket engine). The work done by the non-conservative force, $W$, is equal to the satellite's change in energy:
+\begin{align*}
+W = \Delta E = E_B -E_A
+\end{align*}
+The initial energy of the satellite, $E_A$, is given by:
+\begin{align*}
+E_A = K + U = 0 - G\frac{Mm}{R_\oplus}
+\end{align*}
+where $M=\SI{5.97e24}{kg}$ is the mass of the Earth, and $R_\oplus=\SI{6.731e6}{m}$ is the radius of the Earth. Initially, the rocket is at rest, and so all of the mechanical energy is potential energy. 
+
+In orbit, the energy of the rocket, $E_B$, is given by:
+\begin{align*}
+E_B = K + U = \frac{1}{2}mv^2 - G\frac{Mm}{R}
+\end{align*}
+where $R=\SI{42.2e6}{m}$ is the radius of the geosynchronous orbit (Example \ref{ex:gravity:geosyncorbit}) and $v$ is the speed of the satellite in orbit. The speed is given by:
+\begin{align*}
+v = \frac{2\pi R}{T}
+\end{align*}
+where $T=\SI{24}{h}$ is the orbital period. The net work that must be done to place the satellite in orbit is thus given by:
+\begin{align*}
+W &= E_B - E_A = \frac{1}{2}mv^2 - G\frac{Mm}{R} - \left(- G\frac{Mm}{R_\oplus}\right)\\
+&=\frac{1}{2}m\frac{4\pi^2 R^2}{T^2}+GMm\left(\frac{1}{R_\oplus}-\frac{1}{R}\right)\\
+&=\frac{1}{2}(\SI{1000}{kg})\frac{4\pi^2 (\SI{42.2e6}{m})^2}{(\SI{86400}{s})^2}\\
+&+(\SI{6.67e-11}{Nm^2/kg^2})(\SI{5.97e24}{kg})(\SI{1000}{kg})\left(\frac{1}{(\SI{6.731e6}{m})}-\frac{1}{(\SI{42.2e6}{m})}\right)\\
+&=\SI{5.78e10}{J}
+\end{align*}
+This corresponds to the energy that must be imparted to a $\SI{1000}{kg}$ satellite for it to end up in a geosynchronous orbit. This corresponds to $\SI{5.78e7}{J/kg}$ as the energy required per kilogram of payload placed in geosynchronous orbit. 
+
+\textbf{Discussion:} The energy that we found above is the minimum energy that one must provide to the satellite. In practice, in order to place a satellite in orbit, one will also need to provide enough energy to accelerate the rocket that carries the satellite up into orbit, which is typically much heavier than the satellite. If the satellite were instead launched from the equator of the Earth, the satellite would already have some kinetic energy from the rotation of the Earth. This is the reason that most rockets are launched from near the equator (think French Guyana, Florida, Kazakhstan) in a direction that is roughly parallel with the Earth's rotation.
+\end{example}
+
 
 \section{Einstein's Theory of General Relativity}
 
@@ -241,6 +444,7 @@ E = mc^2
 \item What was Ptolemy's theory of gravity based upon?
 \item Who was the first to suggest that planets revolved around the Sun instead of the Earth?
 \item Explain how the force of gravity from the moon results in tides on both sides of the Earth.
+\item Explain what an L1 Lagrange point is, and how it does not violate Kepler's Third Law.
 \end{enumerate}
 \subsection{To try at home}
 
@@ -248,6 +452,8 @@ E = mc^2
 
 \subsection{To try in the lab}
 Theory project: Prove, based on Newton's Universal Theory of Gravity, that the motion of orbiting bodies is given by a conical section. You may find the Lagrangian formulation to be easier for this task!
+
+Theory project: Determine the location of the Lagrange L1 point for Earth's orbit about the Sun.
 
 \newpage
 \section{Sample problems and solutions}
