@@ -30,17 +30,17 @@ where $\vec F(\vec r)$ is a force vector that, in general, is different in diffe
 
 The above integral is in general difficult to evaluate, as it depends on the specific path over which the object moved. In Example \ref{ex:workenergy:workfriction} of Chapter \ref{chap:workenergy}, we calculated the work done by friction on a crate that was slid across the floor along two different paths and indeed found that the work depended on the path that was taken. In Example \ref{ex:workenergy:workgravity} of the same chapter, we saw that the work done by the force of gravity when moving a box along two different paths did not depend on the path chosen\footnote{At least for those two paths that we tried in the example.}.
 
-We call ``conservative forces'' those force for which the work done only depends on the initial and final positions and not on the path taken between those two positions. ``Non-conservative'' forces are those for which the work done does depend on the path taken. The force of gravity is an example of a conservative force, whereas friction is an example of a non-conservative force.
+We call ``conservative forces'' those forces for which the work done only depends on the initial and final positions and not on the path taken between those two positions. ``Non-conservative'' forces are those for which the work done does depend on the path taken. The force of gravity is an example of a conservative force, whereas friction is an example of a non-conservative force.
 
-This means that the work done by a conservative force on a ``closed path'' is zero; that is, the \textbf{work done by a conservative force on a object that moves along a path that brings the object back to its starting position is zero}. Indeed, since the work done by a conservative force only depends on the location of the initial and final positions, and not the path taken between them, the work has to be zero if the object ends back where it started (as a possible path is for the object to not move at all).
+This means that the work done by a conservative force on a ``closed path'' is zero; that is, the \textbf{work done by a conservative force on a object that moves along a path that brings the object back to its starting position is zero}. Indeed, since the work done by a conservative force only depends on the location of the initial and final positions, and not the path taken between them, the work has to be zero if the object ends in the same place where it started (as a possible path is for the object to not move at all).
 
 Consider the work done by gravity in raising (displacement $\vec d_1$) and lowering (displacement $\vec d_2$) an object back to its starting position along a vertical path, as depicted in Figure \ref{fig:potentialecons:gravityvertical}.
 \capfig{0.2\textwidth}{figures/PotentialECons/gravityvertical.png}{\label{fig:potentialecons:gravityvertical} An object that has moved up and back down.}
-The total work done by gravity on this particular closed path is easily shown to be zero, as the work can be broken up into the negative work done as the object moves up (displacement vector $\vec d_1$) and the positive work done on the downwards path (displacement vector $\vec d_2$):
+The total work done by gravity on this particular closed path is easily shown to be zero, as the work can be broken up into the negative work done as the object moves up (displacement vector $\vec d_1$) and the positive work done on as the object moves down (displacement vector $\vec d_2$):
 \begin{align*}
 W^{tot} = \vec F_g \cdot \vec d_1 + \vec F_g \cdot \vec d_2 = -mgd + mgd = 0 
 \end{align*}
-In order to write the path integral of the force over a closed path, we introduce a new notation to indicate that the starting and ending position are the same (to avoid writing the integral sign with both limits being the same):
+In order to write the path integral of the force over a closed path, we introduce a new notation to indicate that the starting and ending position are the same (to avoid writing the integral sign with both limits being the same): %maybe change phrasing of brackets
 \begin{align*}
 \int_A^A \vec F(\vec r) \cdot d\vec l = \oint \vec F(\vec r) \cdot d\vec l
 \end{align*}
@@ -48,7 +48,8 @@ The condition for a force to be conservative is thus:
 \begin{align}
 \Aboxed{\oint \vec F(\vec r) \cdot d\vec l = 0}
 \end{align}
-since this means that the work done over a closed path is zero. The condition on the particular form for this integral to be zero can be found by Stokes' Theorem:
+since this means that the work done over a closed path is zero. The condition on the particular form for this integral to be zero can be found by Stokes' Theorem:%what is meant by "on the particular form?"
+
 \begin{align*}
 \oint \vec F(\vec r) \cdot d\vec l = \int_S \left[\left(\die{F_z}{y}-\die{F_y}{z}\right)\hat x+ \left(\die{F_x}{z}-\die{F_z}{x}\right)\hat y + \left(\die{F_y}{x}-\die{F_x}{y}\right)\hat z \right]\cdot d\vec A
 \end{align*}
@@ -65,14 +66,20 @@ In general:
 \item A force is conservative if it is constant in magnitude and direction.
 \end{enumerate}
 
-TODO: Checkpoint: Is the force exerted by a person when pushing a crate conservative?
+\begin{checkpoint}
+\begin{MCquestion}{You push a crate from point $A$ to point $B$ along a horizontal surface. You can take any path you want to get to point $B$. Is the force you exert a conservative force?}
+\item Yes
+\item No \correct
+\item Not enough information
+\end{MCquestion}
+\end{checkpoint}
 
 \begin{example}{\label{ex:potentialecons:gravity}Is the force of gravity on an object of mass $m$, near the surface of the Earth, given by:
 \begin{align*}
 \vec F(x,y,z) =0\hat x + 0\hat y -mg \hat z
 \end{align*}
 conservative? Note that we have defined the $z$ axis to be vertical and positive upwards.}
-The force is expected to be conservative since it is constant in magnitude and direction. We can verify this explicitly using the conditions in Equation \ref{eq:potentialecons:conservative}:
+The force is expected to be conservative since it is constant in magnitude and direction. We can verify this using the conditions in Equation \ref{eq:potentialecons:conservative}:
 \begin{align*}
 \die{F_z}{y}-\die{F_y}{z} &= \die{}{y}(-mg) - 0 &= 0\\
 \die{F_x}{z}-\die{F_z}{x} &= 0 - \die{}{x}(-mg) &= 0\\
@@ -87,19 +94,21 @@ and the force is indeed conservative since all three conditions are zero.
 \vec F(x,y,z) = \frac{-k}{r^3}\vec r = \frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\hat x + \frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\hat y + \frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\hat z
 \end{align*}
 conservative?}
-Since the force only depends on position, it could be conservative, so we must check using the conditions from Equation \ref{eq:potentialecons:conservative}:
+Since the force only depends on position, it \textit{could} be conservative, so we must check using the conditions from Equation \ref{eq:potentialecons:conservative}:
 \begin{align*}
 \die{F_z}{y}-\die{F_y}{z} &= \die{}{y}\left(\frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{z}\left( \frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
-&=\frac{3kz(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3ky(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0\\
+&=\frac{3kz(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3ky(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
+\end{align*}
+\begin{align*}
 \die{F_x}{z}-\die{F_z}{x} &= \die{}{z}\left(\frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{x}\left( \frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
-&=\frac{3kx(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kz(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0\\
+&=\frac{3kx(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kz(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
+\end{align*}
+\begin{align*}
 \die{F_y}{x}-\die{F_x}{y} &= \die{}{x}\left(\frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{y}\left( \frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
 &=\frac{3ky(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kx(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
 \end{align*}
 where we used the Chain Rule to take the derivatives. Since all of the conditions are zero, the force is conservative. As we will see, the force represented here is similar mathematically to both the force that Newton introduced in his Universal Theory of Gravity, and the force introduced by Coulomb as the electric force, which are both conservative.
 \end{example}
-
-TODO: Make taking one of the above partial derivatives a problem in the Math section of the question library!
 
 \section{Potential energy}
 In this section, we introduce the concept of ``potential energy''. Potential energy is a scalar function of position that can be defined for any conservative force in a way to make it easy to calculate the work done by that force over any path. Since the work done by a conservative force in going from position $A$ to position $B$ does not depend on the particular path taken, but only on the end points, we can write the work done by a conservative force in terms of a ``potential energy function'', $U(\vec r)$, that can be evaluated at the end points:
@@ -134,10 +143,24 @@ where we replaced the position vector $\vec r$, by the $z$ coordinate, since thi
 \end{align*} 
 and we have found that, for the force of gravity near the surface of the Earth, one can define a potential energy function, $U(z) = mgz +C$.
 
+\begin{checkpoint}
+\begin{MCquestion}{When we found the work done by gravity, we defined positive $z$ to be upwards. If we instead chose positive $z$ to be downwards, how would the potential energy function be defined?}
+\item The potential energy function would be the same, $U(z)=mgz+C$.
+\item The potential energy function would be the same but negative, $U(z)=-mgz+C$ \correct
+\end{MCquestion}
+\end{checkpoint}
+
 It is important to note that, since it is only the \textbf{difference} in potential energy that matters when calculating the work done, the potential energy function can have an arbitrary constant, $C$, added to it. Thus, \textbf{the value of the potential energy function is meaningless, and only differences in potential energy are meaningful and related to the work done on an object}. In other words, it does not matter where the potential energy is equal to zero, and by choosing $C$, we can therefore choose a convenient location where the potential energy is zero.
 
-\begin{example}{\capfig{0.5\textwidth}{figures/PotentialECons/table.png}{\label{fig:potentialecons:table} A box moved from the ground up onto a table.}
-Calculate the work done \textbf{by gravity} when a box of mass, $m$, is moved from the ground up onto a table that is a distance $L$ away horizontally and $H$ vertically, as illustrated in Figure \ref{fig:potentialecons:table}. How much work must be done by a person moving the box?}
+\begin{checkpoint}
+\begin{MCquestion}{Can an object have a negative potential energy?}
+\item Yes \correct %since C is arbitrary
+\item No
+\end{MCquestion}
+\end{checkpoint}
+
+\begin{example}{Calculate the work done \textbf{by gravity} when a box of mass, $m$, is moved from the ground up onto a table that is a distance $L$ away horizontally and $H$ vertically, as illustrated in Figure \ref{fig:potentialecons:table}. How much work must be done by a person moving the box?
+\capfig{0.5\textwidth}{figures/PotentialECons/table.png}{\label{fig:potentialecons:table} A box moved from the ground up onto a table.}}
 Since gravity is a conservative force, we can use the potential energy function $U(z)=mgz+C$ to calculate the work done by gravity when the box is moved. The work done by gravity will only depend on the change in height, $H$, as the potential energy function only depends on the $z$ coordinate of an object.  We can choose the origin of our coordinate system to be the ground and choose the constant $C=0$, so that the potential energy function at the starting position of the box is:
 \begin{align*}
 U(z_A=0) = mgz+C= 0
@@ -151,7 +174,7 @@ The change in potential energy, $\Delta U = U(z_B) - U(z_A)$ is equal to the neg
 -W_g &=  U(z_B) - U(z_A) = mgH - 0\\
 \therefore W &= -mgH
 \end{align*}
-which is the same that we found in Example \ref{ex:workenergy:workgravity} of Chapter \ref{chap:workenergy}. The work done by gravity is negative, as we found previously, which makes sense since gravity has a component in the opposite direction of motion. 
+which is the same as what we found in Example \ref{ex:workenergy:workgravity} of Chapter \ref{chap:workenergy}. The work done by gravity is negative, as we found previously. This makes sense because gravity has a component opposite to the direction of motion.  
 
 The work done by a person, $W_p$, to move the box can easily be found by considering the net work done on the box. While the box is moving, only the person and gravity are exerting forces on the box, so those are the only two forces performing work. Since the box starts and ends at rest, the net work done on the box must be zero (no change in kinetic energy, recall the Work-Energy Theorem):
 \begin{align*}
@@ -190,13 +213,13 @@ U(x) = \frac{1}{2}kx^2 + C
 where, in general, the constant $C$ can take any value. If we choose $C=0$, then the potential energy is zero when the spring is at rest, although it is not important what choice is made.
 \end{example}
 
-TODO: Question library problem to find potential energy function for a non linear spring ($F=-k_1x-k_3x^3$) after showing that the force is conservative.
-
-TODO: Checkpoint (MC): How would the potential energy function be defined for gravity if we choose positive $z$ to be downwards?
-
-TODO: Checkpoint: Can an object have negative potential energy? (yes... since C is arbitrary).
-
-TODO: Checkpoint: If an object is only exerted upon by conservative force, from rest, does the object want to move in such a way to increase or lower its potential energy?
+\begin{checkpoint}
+\begin{MCquestion}{A conservative force acts on an object that is initially at rest. No other forces act on the object. Does the object want to move in a way that increases its potential energy or decreases its potential energy?}
+\item Increases.
+\item Decreases. \correct
+\item It depends.
+\end{MCquestion}
+\end{checkpoint}
 
 \subsection{Recovering the force from potential energy}
 Given a (scalar) potential energy function, $U(\vec r)$, it is possible to determine the (vector) force that is associated with it. Take for example the potential energy from a spring (Example \ref{ex:potentialecons:springpotential}):
