@@ -325,7 +325,7 @@ r &= \sqrt{x^2+y^2+z^2} =(x^2+y^2+z^2)^\frac{1}{2} \\
 Mathematically, this is equivalent to the force that we considered in Example \ref{ex:potentialecons:gravitycons} of Chapter \ref{chap:potentialecons}, which we showed was a conservative force. The force of gravity in Newton's theory is thus a conservative force, for which we can determine a potential energy function.
 
 In order to determine a potential energy function for the mass $m$ in the presence of mass $M$, we calculate the work done by the force of gravity over a path where the integral for work will be ``easy'' to evaluate, namely a straight line. Figure \ref{fig:gravity:potential} shows such a path in the radial direction, $r$, over which it will be easy to calculate the work done by gravity when mass $m$ moves from being a distance $r_A$ to a distance $r_B$ from the centre of mass $M$.
-\capfig{0.6\textwidth}{figures/Gravity/potential.png}{\label{fig:gravity:potential}Calculating the work done on a mass $m$ by the force of gravity exerted by mass $M$ when mass $m$ moves from a distance $r_A$ to a distance $r_B$ from the center of mass $M$.}
+\capfig{0.5\textwidth}{figures/Gravity/potential.png}{\label{fig:gravity:potential}Calculating the work done on a mass $m$ by the force of gravity exerted by mass $M$ when mass $m$ moves from a distance $r_A$ to a distance $r_B$ from the center of mass $M$.}
 The work done by the force of gravity is given by:
 \begin{align*}
 W &= \int_{r_A}^{r_B}\vec F(r) \cdot d\vec r = \int_{r_A}^{r_B} \left(- G\frac{Mm}{r^2}\hat r \right)\cdot d\vec r =\int_{r_A}^{r_B} - G\frac{Mm}{r^2}dr\\
@@ -358,7 +358,7 @@ E = U + K = -G\frac{Mm}{r}+\frac{1}{2}mv^2
 \end{align*}
 where the kinetic energy term is always positive. If gravity is the only force exerted on mass $m$, then the mechanical energy, $E$, as defined above will be a constant. The mechanical energy of an object can give us insight into the possible motion of the object.
 
-Imagine ``launching'' a rocket upwards from the surface of the Earth; once all of the fuel has burnt up, the rocket's mechanical energy becomes constant as the rocket engine stops doing work on the rocket. As soon as the engine stops providing thrust, the rock will start to slow down as the force of gravity attracts the rocket back to Earth. If the rocket is going fast enough, it will be able to completely escape the Earth's gravitational pull and travel to infinity (we assume that there are no other planets or the Sun, just the Earth exists!). If, on the other hand, the rocket's speed is too low, it will eventually stop and fall back to Earth. This is the same thing that happens to you when you try to jump vertically. If you could jump hard enough, you would be able to escape the Earth's gravitational pull!
+Imagine launching a rocket upwards from the surface of the Earth; once all of the fuel has burnt up, the rocket's mechanical energy becomes constant as the rocket engine stops doing work on the rocket. As soon as the engine stops providing thrust, the rock will start to slow down as the force of gravity attracts the rocket back to Earth. If the rocket is going fast enough, it will be able to completely escape the Earth's gravitational pull and travel to infinity (we assume that there are no other planets or the Sun, just the Earth exists!). If, on the other hand, the rocket's speed is too low, it will eventually stop and fall back to Earth. This is the same thing that happens to you when you try to jump vertically. If you could jump hard enough, you would be able to escape the Earth's gravitational pull!
 
 In terms of mechanical energy, we can ask ourselves if the mechanical energy of the rocket is large enough to escape the Earth's gravitational pull. Specifically, we can ask ourselves what the value of the rocket's kinetic energy would be when it reaches infinity. The kinetic energy of the rocket is given by:
 \begin{align*}
@@ -366,7 +366,7 @@ K = E - U
 \end{align*} 
 If the rocket is infinitely far from the Earth, then its potential energy is zero, and the kinetic energy is equal to $E$.
 
-If the mechanical energy, $E$, is negative, it is not possible for the rocket to ever make it to infinity because its kinetic energy would be zero. In other words, if the mechanical energy is negative, then the object of mass $m$ can never escape the gravitational pull of object $M$. 
+If the mechanical energy, $E$, is negative, it is not possible for the rocket to ever make it to infinity because its kinetic energy would have to be negative. In other words, if the mechanical energy is negative, then the object of mass $m$ can never escape the gravitational pull of object $M$. 
 
 If the mechanical energy, $E$, is exactly zero, then the object's kinetic energy will become zero just as it reaches infinity. In other words, it will just barely be able to escape the gravitational pull from mass $M$. The condition for this to happen is:
 \begin{align*}
@@ -378,6 +378,8 @@ K & = -U\\
 which we can interpret as a condition for the speed of the rocket. If at some distance $r$ from $M$, the rocket has a speed given by the condition above, then it will have enough kinetic energy to escape the gravitational pull of $M$. We call this speed the ``escape velocity''. 
 
 Finally, if the mechanical energy is greater than zero, then the rocket will have enough energy to escape the gravitational pull of $M$ and have a non-zero speed when it reaches infinity. 
+
+TODO: Checkpoint MC question: What is the escape velocity from the surface of the Earth?
 
 \begin{example}{How much energy must be expended in order to place a satellite of mass $m=\SI{1000}{kg}$ in a geosynchronous circular orbit around the Earth, if the satellite is launched from the North Pole of the Earth? How much energy is this per kilogram of satellite placed in orbit?}
 We need to calculate how much work must be done for the satellite to go from being at rest at the surface of the Earth to be in a geosynchronous orbit. That work will be done by a non-conservative force (a rocket engine). The work done by the non-conservative force, $W$, is equal to the satellite's change in energy:
@@ -406,11 +408,27 @@ W &= E_B - E_A = \frac{1}{2}mv^2 - G\frac{Mm}{R} - \left(- G\frac{Mm}{R_\oplus}\
 &+(\SI{6.67e-11}{Nm^2/kg^2})(\SI{5.97e24}{kg})(\SI{1000}{kg})\left(\frac{1}{(\SI{6.731e6}{m})}-\frac{1}{(\SI{42.2e6}{m})}\right)\\
 &=\SI{5.78e10}{J}
 \end{align*}
-This corresponds to the energy that must be imparted to a $\SI{1000}{kg}$ satellite for it to end up in a geosynchronous orbit. This corresponds to $\SI{5.78e7}{J/kg}$ as the energy required per kilogram of payload placed in geosynchronous orbit. 
+This corresponds to the energy that must be imparted to a $\SI{1000}{kg}$ satellite for it to end up in a geosynchronous orbit. This corresponds to $\SI{5.78e7}{J/kg}$ as the energy required per kilogram of payload placed in geosynchronous orbit. Although we calculate work, we can think of this work coming from stored chemical potential energy in the fuel of the rocket carrying the satellite. 
 
 \textbf{Discussion:} The energy that we found above is the minimum energy that one must provide to the satellite. In practice, in order to place a satellite in orbit, one will also need to provide enough energy to accelerate the rocket that carries the satellite up into orbit, which is typically much heavier than the satellite. If the satellite were instead launched from the equator of the Earth, the satellite would already have some kinetic energy from the rotation of the Earth. This is the reason that most rockets are launched from near the equator (think French Guyana, Florida, Kazakhstan) in a direction that is roughly parallel with the Earth's rotation.
 \end{example}
 
+\subsubsection{Types of orbits}
+The mechanical energy of a body of mass $m$ will tell us if it is ``gravitationally bound'' (i.e. cannot escape) to the body of mass $M$. The path that $m$ will take depends on its velocity with respect to $M$. Clearly, if the velocity of $m$ is directed at the centre of $M$, then $m$ will just collide with $M$. In all other cases, the path (orbit) that $m$ will take depends on the mechanical energy of $m$ as well as the speed of $m$ at the point of closest approach to $M$. The velocity of $m$ at the point of closest approach will always be perpendicular to the line joining the centres of $m$ and $M$. The different possible orbits are:
+\begin{enumerate}
+\item A circular orbit of radius $R$ if the mechanical energy of $m$ is negative (i.e. it is bound) and the speed is exactly equal to the value necessary for the gravitational force to provide the required centripetal acceleration:
+\begin{align*}
+\sum F = G\frac{Mm}{R^2} &= m\frac{v^2}{R}\\
+\therefore v_{circ}=\sqrt{\frac{GM}{R}}
+\end{align*}
+\item An elliptical orbit if the mechanical energy is negative and the speed at the point of closest approach is different than that required for a circular orbit.
+\item A parabolic orbit if the mechanical energy is exactly zero.
+\item A hyperbolic orbit if the mechanical energy is bigger than zero.
+\end{enumerate}
+The possible orbits are illustrated in Figure, and are curves in the family of ``conical sections'', as they can be found by the intersection of a plane and a cone. All conical sections have at least one ``focus'' point (ellipses have two) that corresponds to the location of $M$. 
+\capfig{0.5\textwidth}{figures/Gravity/conical.png}{\label{fig:gravity:conical}The different possible orbits of $m$ due to the gravitational force of $M$ depend on the mechanical energy, $E$, of $m$. The orbits are drawn in a frame of reference where $M$ is at rest. }
+
+TODO: I think the figure with the orbits could be better. Note that I lifted the curves from actual conical curves with a common focus and traced out the unbound curves using powerpoint....
 
 \section{Einstein's Theory of General Relativity}
 
