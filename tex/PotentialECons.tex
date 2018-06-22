@@ -214,7 +214,7 @@ where, in general, the constant $C$ can take any value. If we choose $C=0$, then
 \end{example}
 
 \begin{checkpoint}
-\begin{MCquestion}{A conservative force acts on an object that is initially at rest. No other forces act on the object. Does the object want to move in a way that increases its potential energy or decreases its potential energy?}
+\begin{MCquestion}{A conservative force acts on an object that is initially at rest. No other forces act on the object. Does the object move in a way that increases its potential energy or decreases its potential energy?}
 \item Increases.
 \item Decreases. \correct
 \item It depends.
@@ -226,13 +226,13 @@ Given a (scalar) potential energy function, $U(\vec r)$, it is possible to deter
 \begin{align*}
 U(x) = \frac{1}{2}kx^2 + C
 \end{align*} 
-In one dimension, this is simply the negative of the anti-derivative of the $x$ component of the spring force:
+As you recall from Example \ref{ex:potentialecons:springpotential}, to find this function (in one dimension), we took the $x$ component of the spring force and found the negative of its anti-derivative:
 \begin{align*}
 F(x) &= -kx\\
 U(x) &= -\int F(x) dx = \int (kx) dx = \frac{1}{2}kx^2+C\\
 \therefore F(x) &= -\frac{d}{dx}U(x)
 \end{align*}
-Thus, the force can be obtained by taking the derivative with respect to position of the negative of the potential energy function. 
+Thus, the force can be obtained from the negative of the potential energy function, by taking its derivative with respect to position.
 
 In three dimensions, the situation is similar, although the potential energy function (and the components of the force vector) will generally depend on all three position coordinates, $x$, $y$, and $z$. In three dimensions, the the three components of the force vector are given by taking the gradient of the negative of the potential energy function\footnote{As you may recall from Appendix \ref{app:calculus}, the gradient is a vector that points towards the direction of maximal increase in a multi-variate function.}:
 \begin{align}
@@ -243,25 +243,25 @@ In three dimensions, the situation is similar, although the potential energy fun
 \end{align}
 
 \section{Mechanical energy and conservation of energy}
-Recall the Work-Energy Theorem, relating the net work done on an object to its change in kinetic energy along a path from point $A$ to point $B$:
+Recall the Work-Energy Theorem, which relates the net work done on an object to its change in kinetic energy, along a path from point $A$ to point $B$:
 \begin{align*}
 W^{net}=\Delta K = K_B - K_A
 \end{align*}
-where $K_B$ ($K_A$) is the final (initial) kinetic energy of the object. Generally, the net work done is the sum of the work done by conservative forces, $W^C$, and the work done by none conservative forces, $W^{NC}$:
+where $K_A$ is the object's initial kinetic energy and $K_B$ is its final kinetic energy. Generally, the net work done is the sum of the work done by conservative forces, $W^C$, and the work done by none conservative forces, $W^{NC}$:
 \begin{align*}
 W^{net}=W^C+W^{NC}
 \end{align*}
-The work done by conservative forces can be expressed in terms of changes in potential energy functions. For example, suppose that two conservative forces, $\vec F_1$ and $\vec F_2$, are exerted on the object. The work done by those two forces in terms of the change in potential energy is:
+The work done by conservative forces can be expressed in terms of changes in potential energy functions. For example, suppose that two conservative forces, $\vec F_1$ and $\vec F_2$, are exerted on the object. The work done by those two forces is given by:
 \begin{align*}
 W_1 &= -\Delta U_1\\
 W_2 &= -\Delta U_2
 \end{align*}
-where $U_1$ and $U_2$ are the change in potential energy associated with forces $\vec F_1$ and $\vec F_2$, respectively. We can re-arrange the Work-Energy Theorem as follows\footnote{This is why we defined potential energy as negative of the work; it becomes a positive term when we move it to the same side of the equation as the kinetic energy!}:
+where $U_1$ and $U_2$ are the changes in potential energy associated with forces $\vec F_1$ and $\vec F_2$, respectively. We can re-arrange the Work-Energy Theorem as follows\footnote{This is why we defined potential energy as negative of the work; it becomes a positive term when we move it to the same side of the equation as the kinetic energy!}:
 \begin{align*}
 W^{net}=W^C+W^{NC}=-\Delta U_1 - \Delta U_2 +W^{NC} &= \Delta K\\
 \therefore W^{NC} = \Delta U_1 + \Delta U_2 + \Delta K
 \end{align*}
-That is, the work done by non-conservative forces is equal to the sum of the change in potential and kinetic energies. In general, if we write $\Delta U$ as the change in the total potential energy of the object (the total potential energy being the sum of the potential energies associated with each conservative force exerted on the object), we can write this in a more general form:
+That is, the work done by non-conservative forces is equal to the sum of the changes in potential and kinetic energies. In general, we can use $\Delta U$ to represent the change in the total potential energy of the object. The total potential energy is the sum of the potential energies associated with each of the conservative forces acting on the object. The above expression can thus be written in a more general form:
 \begin{align}
 \Aboxed{W^{NC}=\Delta U + \Delta K}
 \end{align}
@@ -270,7 +270,7 @@ In particular, note that if there are no non-conservative forces doing work on t
 \Aboxed{\Delta K + \Delta U &= 0}\quad\text{if no non-conservative forces}\\
 -\Delta U &= \Delta K \nonumber
 \end{align}
-That is, the sum of the change in potential and kinetic energies of the object is always zero. If the potential energy of the object increases, then the kinetic energy of the object must decrease by the same amount, if there are no non-conservative forces doing work on the object.
+That is, the sum of the changes in potential and kinetic energies of the object is always zero. This means that if the potential energy of the object increases, then the kinetic energy of the object must decrease by the same amount.
 
 We can introduce the ``mechanical energy'', $E$, of an object as the sum of the potential and kinetic energies of the object:
 \begin{align}
@@ -297,19 +297,28 @@ This is what we generally call the ``conservation of mechanical energy''. If the
 
 The introduction of mechanical energy gives us a completely different way to think about mechanics. We can now think of an object as having ``energy'' (potential and/or kinetic), and we can think of forces as changing the energy of the object.
 
-TODO: Checkpoint: Is the value of the mechanical energy meaningful, or is it only the difference that is meaningful? (only the difference is meaningful, since in K+U, U is arbitrary...
+\begin{checkpoint}
+\begin{MCquestion}{Is the value of an an object's mechanical energy meaningful, or is it only the difference that is meaningful? Why? (For example, if I said that the mechanical energy of an object is equal to \SI{12}{J}, would that be a meaningful statement? What if I said that the mechanical energy \textit{increases} by \SI{12}{J}?)}
+\item Yes, the value of the mechanical energy is meaningful. At any given time, an object will have a quantifiable amount of mechanical energy.
+\item No, the value is not meaningful because the value of potential energy is arbitrary. \correct
+\item No, the value is not meaningful because both the potential and kinetic energies are arbitrary. Their values will change depending on where you set the energy to be zero.
+\item It depends on which conservative forces act on the object (and therefore what ``kind'' of potential energy the object has)
+\end{MCquestion}
+\end{checkpoint}
 
-We can also think of the work done by none-conservative forces as a type of change in energy. For example, the work done by friction can be thought of as a change in thermal energy (feel the burn as you rub your hand vigorously on the table!). If we have a way to model the work done by none conservative forces as a type of ``other'' energy, $-W^{NC}=\Delta E^{other}$, then we can state that:
+We can also think of the work done by non-conservative forces as a type of change in energy. For example, the work done by friction can be thought of as a change in thermal energy (feel the burn as you rub your hand vigorously on a table!). If we can model the work done by non-conservative forces as a type of ``other'' energy, $-W^{NC}=\Delta E^{other}$, then we can state that:
 \begin{align*}
 \Delta E^{other} + \Delta U + \Delta K =0
 \end{align*}
-which is what we usually refer to as ``conservation of energy''. That is, the total energy in a system, including kinetic, potential and any other form (e.g. thermal, electrical, etc.) is constant unless some external agent is acting on the system. We can always include that external agent into the system so that the total energy of the system is constant. The largest system that we can have is the Universe itself. Thus, the total energy in the Universe is constant and can only transform from one type into another, but no energy can ever be added or removed from the Universe.
+which is what we usually refer to as ``conservation of energy''. That is, the total energy in a system, including kinetic, potential and any other form (e.g. thermal, electrical, etc.) is constant unless some external agent is acting on the system. \\
 
+We can always include that external agent in the system so that the total energy of the system is constant. The largest system that we can have is the Universe itself. Thus, the total energy in the Universe is constant and can only transform from one type into another, but no energy can ever be added or removed from the Universe.
 
+TODO: student opinion giving an example of a system and external agent
 
 \begin{example}{\label{ex:potentialecons:blockspring}\capfig{0.4\textwidth}{figures/PotentialEcons/blockspring.png}{\label{fig:potentialecons:blockspring} A block is launched along a frictionless surface by compressing a spring by a distance $D$. The top panel shows the spring when at rest, and the bottom panel shows the spring compressed by a distance $D$ just before releasing the block.}
 A block of mass $m$ can slide along a horizontal frictionless surface. A horizontal spring, with spring constant, $k$, is attached to a wall on one end, while the other end can move, as shown in Figure \ref{fig:potentialecons:blockspring}. A coordinate system is defined such that the $x$ axis is horizontal and the free end of the spring is at $x=0$ when the spring is at rest. The block is pushed against the spring so that the spring is compressed by a distance $D$. The block is then released. What speed will the block have when it leaves the spring?}
-This is again the same example that we saw in Chapters \ref{chap:applyingnewtonslaws} and \ref{chap:workenergy}. We will show here that it is solved very easily with conservation of energy. The forces acting on the block are:
+This is again the same example that we saw in Chapters \ref{chap:applyingnewtonslaws} and \ref{chap:workenergy}. We will show here that it is solved very easily using conservation of energy. The forces acting on the block are:
 \begin{enumerate}
 \item Weight, which does no work since it is perpendicular to the block's displacement.
 \item The normal force, which does no work since it is perpendicular to the block's displacement.
@@ -341,9 +350,9 @@ as we found previously.
 \end{example}
 
 \begin{example}{\label{ex:potentialecons:blockI}
-\capfig{0.5\textwidth}{figures/PotentialEcons/blockI.png}{\label{fig:potentialecons:blockI} A block slides down an incline before sliding on a flat surface and stopping. }
-A block of mass $m$ is placed at rest on an incline that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:potentialecons:blockI}. The block is nudged slightly so that the force of static friction is overcome and the block starts to accelerate down the incline. At the bottom of the incline, the block slides on a horizontal surface. The coefficient of kinetic friction between the block and the incline is $\mu_{k1}$, and the coefficient of kinetic friction between the block and horizontal surface is $\mu_{k2}$. If one assumes that the block started at rest a distance $L$ from the horizontal surface, how far along the horizontal surface will the block slide before stopping?}
-This is the same problem that we solved in Chapter \ref{chap:applyingnewtonslaws} Example \ref{ex:applyingnewtonslaws:blockI}. In that case, we solved for the acceleration of the block using Newton's Second Law and then used kinematics to find how far the block goes. We can solve this problem in a much easier way using conservation of energy. 
+A block of mass $m$ is placed at rest on an incline that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:potentialecons:blockI}. The block is nudged slightly so that the force of static friction is overcome and the block starts to accelerate down the incline. At the bottom of the incline, the block slides on a horizontal surface. 
+\capfig{0.5\textwidth}{figures/PotentialEcons/blockI.png}{\label{fig:potentialecons:blockI} A block slides down an incline before sliding on a flat surface and stopping.}The coefficient of kinetic friction between the block and the incline is $\mu_{k1}$, and the coefficient of kinetic friction between the block and horizontal surface is $\mu_{k2}$. If one assumes that the block started at rest a distance $L$ from the horizontal surface, how far along the horizontal surface will the block slide before stopping?}
+This is the same problem we solved in Example \ref{ex:applyingnewtonslaws:blockI}. In that case, we solved for the acceleration of the block using Newton's Second Law and then used kinematics to find how far the block goes. We can solve this problem in a much easier way using conservation of energy. 
 
 It is still a good idea to think about what forces are applied on the object in order to determine if there are non-conservative forces doing work. In this case, the forces on the block are:
 \begin{enumerate}
@@ -371,7 +380,7 @@ E_A &= U_A+K_A = mgL\sin\theta\\
 E_B &= U_B+K_B = \frac{1}{2}mv_B^2\\
 \Delta E &= E_B - E_A = \Delta U_1+\Delta K_1= \frac{1}{2}mv_B^2 - mgL\sin\theta
 \end{align*}
-Finally, since we have a non-conservative force, the force of kinetic friction, acting on the first segment, we need to calculate the work done by that force. We found in Example \ref{ex:applyingnewtonslaws:blockI} that the force of friction had magnitude $f_k=\mu_{k1}N=\mu_{k1}mg\cos\theta$. Since the force of friction is anti-parallel to the displacement vector of length $L$ down the incline, the work done by friction is:
+Finally, since we have a non-conservative force, the force of kinetic friction, acting on the first segment, we need to calculate the work done by that force. We found in Example \ref{ex:applyingnewtonslaws:blockI} that the force of friction had magnitude $f_k=\mu_{k1}N=\mu_{k1}mg\cos\theta$. Since the force of friction is anti-parallel to the displacement vector, which points down the incline and has length $L$, the work done by friction is:
 \begin{align*}
 W^{NC}=W_f = -f_kL=-\mu_{k1}mg\cos\theta L
 \end{align*}
@@ -393,7 +402,7 @@ where, in the last line, we used the result from the first segment. The work don
 \begin{align*}
 W^{NC}=W_f = -f_kx = -\mu_{k2} N x=-\mu_{k2} mg x
 \end{align*}
-Finally, we can find $x$, by setting the work done by non-conservative forces to the change in mechanical energy:
+Finally, we can find $x$, by setting the work done by non-conservative forces equal to the change in mechanical energy:
 \begin{align*}
 W^{NC} &= \Delta E\\
 -\mu_{k2} mg x &= mgL\sin\theta-\mu_{k1}mg\cos\theta L \\
@@ -411,41 +420,50 @@ E = K + U
 \end{align*}
 which will be a constant if there are no non-conservative forces doing work on the object. This means that if the potential energy of the object increases, then its kinetic energy must decrease by the same amount, and vice-versa. 
 
-Consider a block that can slide on a frictionless horizontal surface and that is attached to a spring, as in the top panel of Figure \ref{fig:potentialecons:springE}, where $x=0$ is chosen as the position corresponding to the rest length of the spring. If one pushes on the block so as to compress the spring by a distance $D$ and then releases it, the block will initially accelerate because of the spring force in the positive $x$ direction until the block reaches the rest position of the spring ($x=0$ on the diagram). At that point, the spring will exert a force in the opposite direction and the block will continue in the same direciton and decelerate until it stops and turns around. It will then accelerate again towards the spring rest position, and then decelerate once the spring starts being compressed again, until the block stops and the motion repeats. We can say that the block oscillates back and forth about the rest position of the spring.
+Consider a block that can slide on a frictionless horizontal surface and that is attached to a spring, as is shown in Figure \ref{fig:potentialecons:springE} (left side), where $x=0$ is chosen as the position corresponding to the rest length of the spring. If you push on the block so as to compress the spring by a distance $D$ and then releases it, the block will initially accelerate because of the spring force in the positive $x$ direction until the block reaches the rest position of the spring ($x=0$ on the diagram). When it passes that point, the spring will exert a force in the opposite direction. The block will continue in the same direction and decelerate until it stops and turns around. It will then accelerate again towards the rest position of the spring, and then decelerate once the spring starts being compressed again, until the block stops and the motion repeats. We can say that the block oscillates back and forth about the rest position of the spring.
 
-We can also use energy to describe the motion of the block in terms of its total mechanical energy, $E$, and its potential energy given by:
+We can describe the motion of the block in terms of its total mechanical energy, $E$. Its potential energy is given by:
 \begin{align*}
 U(x)=\frac{1}{2}kx^2
 \end{align*}
-The bottom panel of Figure \ref{fig:potentialecons:springE} shows an ``Energy Diagram'' for the block, which allows us to examine how the total energy, $E$, of the block is divided between kinetic and potential energy depending on the position of the block. The vertical axis corresponds to energy and the horizontal axis corresponds to the position of the block. 
+On the right of Figure \ref{fig:potentialecons:springE} is an ``Energy Diagram'' for the block, which allows us to examine how the total energy, $E$, of the block is divided between kinetic and potential energy depending on the position of the block. The vertical axis corresponds to energy and the horizontal axis corresponds to the position of the block. 
 
- The total mechanical energy, $E=\SI{25}{J}$, is shown by the horizontal red line. Also illustrated are the potential energy function ($U(x)$ in blue), and the kinetic energy, ($K=E-U(x)$, in dotted black).
-\capfig{\textwidth}{figures/PotentialEcons/springE.png}{\label{fig:potentialecons:springE} Energy diagram for a spring with spring constant $k=\SI{1}{N/m}$. }
+The total mechanical energy, $E=\SI{25}{J}$, is shown by the horizontal red line. Also illustrated are the potential energy function ($U(x)$ in blue), and the kinetic energy, ($K=E-U(x)$, in dotted black).
+\capfig{\textwidth}{figures/PotentialEcons/springE.png}{\label{fig:potentialecons:springE} Left: The block oscillates about the rest position of the spring, between $x=-D$ and $x=D$. Right: The energy diagram for the block. This diagram is for a spring with spring constant $k=\SI{1}{N/m}$. }
 The energy diagram allows us to describe the motion of the object attached to the spring in terms of energy. A few things to note:
 \begin{enumerate}
 \item At $x=\pm D$, the potential energy is equal to $E$, so the kinetic energy is zero. The block is thus instantaneously at rest at those positions.
 \item At $x=0$, the potential energy is zero, and the kinetic energy is maximal. This corresponds to where the block has the highest speed. 
-\item The kinetic energy of the block can never be negative, thus, the block cannot be located outside the range $[-D,+D]$, and we would say that the motion of the block is ``bound''. The points between which the motion is bound are called ``turning points''.
+\item The kinetic energy of the block can never be negative\footnote{Remember, the kinetic energy is given by $K=\frac{1}{2}mv^2$. Since neither mass nor the value of $v^2$ can be negative, the kinetic energy of an object can never be negative.}, thus, the block cannot be located outside the range $[-D,+D]$, and we would say that the motion of the block is ``bound''. The points between which the motion is bound are called ``turning points''.
 \end{enumerate}
 An analysis of the energy diagram tells us that the block is bound between the two turning points, which themselves are equidistant from the origin. When we initially compress the spring, we are ``giving'' the block ``spring potential energy''. As the block starts to move, the potential energy of the block is converted into kinetic energy as it accelerates and then back into potential energy as it decelerates.
 
-TODO: Checkpoint question, for $k=1$, total energy $E=\SI{25}{J}$, what are the positions of the turning points for a spring?
+\begin{checkpoint}
+Calculate the positions of the turning points for the situation shown in Figure \ref{fig:potentialecons:springE}. The total energy is \SI{25}{J} and the spring constant is $k=\SI{1}{N/m}$.
+\begin{answer}
+\SI{7}{m}
+\end{answer}
+\end{checkpoint}
 
 By looking at only the potential energy function, without knowing that it is related to a spring, we can come to the same conclusions; namely that the motion is bound as long as the total mechanical energy is not infinite. We call the point $x=0$ a ``stable equilibrium'', because it is a local minimum of the potential energy function. If the object is displaced from the equilibrium point, it will want to move back towards that point. This can also be understood in terms of the force associated with the potential energy function:
 \begin{align*}
 F = -\frac{d}{dx}U(x)
 \end{align*}
-The \textbf{equilibrium point is given by the condition that the force associated with the potential is zero} ($x=0$ in the case of the potential energy from a spring). The equilibrium is a stable equilibrium because the force associated with the potential energy function ($F(x)=-kx$ for the spring) points towards the equilibrium point.
+The local minimum occurs where the derivative of the potential function is equal to zero. Thus, the \textbf{equilibrium point is given by the condition that the force associated with the potential is zero} ($x=0$ in the case of the potential energy from a spring). The equilibrium is a stable equilibrium because the force associated with the potential energy function ($F(x)=-kx$ for the spring) points towards the equilibrium point.
 
 The potential energy function for an object with total mechanical energy, $E$, can be thought of as a little ``roller coaster'', on which you place a marble and watch it ``roll down'' the potential energy function. You can think of placing a marble where $U(x)=E$ and releasing it. The marble would then roll down the potential energy function, just as an actual marble would roll down a real slope, mimicking the motion of the object along the $x$ axis. This is illustrated in Figure \ref{fig:potentialecons:potential} which shows an arbitrary potential energy function and a marble being placed at a location where the potential energy is equal to $E$.
 \capfig{0.6\textwidth}{figures/PotentialEcons/potential.png}{\label{fig:potentialecons:potential} Arbitrary potential energy function and illustration of visualizing a marble rolling down the function by placing the marble on the potential energy function at a point where $U(x)=E$.}
 The motion of the marble will be bound between the two points where the potential energy function is equal to $E$. When the marble is placed as shown, it will roll towards the left, just as if it were a real marble on a track. Since the potential energy is increasing as a function of $x$ at the point where we placed the marble, the force is in the negative $x$ direction (remember, the force is the negative of the derivative of the potential energy function). With the given energy, the marble would never be able to make it to point $D$, as it does not have enough energy to ``climb up the hill''. It would roll down, through point $C$, up to point $B$, down to point $A$, and then turn around where $U(x)=E$ and return to where it started. 
 
-Locations $A$ and $C$ on the diagram are stable equilibria, because if a marble is placed in those location and nudged slightly, it will come back to the equilibrium point (or oscillate about that point). Points $B$ and $D$ are ``unstable equilibria'', because if the marble is placed there and nudged, it will not immediately come back to those points. Note that if the marble were placed at point $D$ and nudged towards the right, the motion of the marble would be unbond on the right, and it would keep going in that direction. 
+Locations $A$ and $C$ on the diagram are stable equilibria, because if a marble is placed in one of those locations and nudged slightly, it will come back to the equilibrium point (or oscillate about that point). Points $B$ and $D$ are ``unstable equilibria'', because if the marble is placed there and nudged, it will not immediately come back to those points. Note that if the marble were placed at point $D$ and nudged towards the right, the motion of the marble would be unbound on the right, and it would keep going in that direction. 
 
-If an object's potential energy were described by the function in Figure \ref{fig:potentialecons:potential}, and the object had total energy $E$, its motion along the $x$ axis would be exactly the same as the motion of the marble when projected on the $x$ axis. 
 
-TODO: Checkpoint: show a potential energy diagram (U(x)), and ask in which direction the force associated with the potential energy on the object would be at some value of x (with drawing a marble). Perhaps it could be done just from a function U(x) without actually plotting it, so that they have to figure it out.
+Now, say an object's potential energy is described by the function in Figure \ref{fig:potentialecons:potential}, and the object has total energy $E$. The object's motion along the $x$ axis will be exactly the same as the projection of the marble's motion on the $x$ axis.
+
+\begin{checkpoint}
+A force, $F(x)$, acts on an object. The potential energy function, $U(x)$, associated with the force is given by $U(x)=((x-6)^2(x-1)(x-3)+20)$. $U(x)$ is plotted in Figure \ref{fig:potentialecons:potentialcheckpoint}. Use the ``marble'' method to determine the direction of the force at $x=5$. Confirm your answer by finding the value of the force function at $x=5$.
+\capfig{0.7\textwidth}{figures/PotentialEcons/potentialcheckpoint.png}{\label{fig:potentialecons:potentialcheckpoint} A potential energy function $U(x)$. The $x$-axis is the $x$ position and the $y$-axis is the energy.}
+\end{checkpoint}
 
 \section{Advanced Topic: The Lagrangian formulation of classical physics}
 So far, we have seen that based on Newton's Laws, one can formulate a description of motion that is based solely on the concept of energy. A lot of research was done in the eighteenth century to reformulate a theory of mechanics that would be equivalent to Newton's Theory but whose starting point is the concept of energy instead of the concept of force. This ``modern'' approach to classical mechanics is primarily based on the research by Lagrange and Hamilton. 
@@ -495,7 +513,6 @@ The Lagrangian that we had above for a particle moving under the influence of gr
 
 \newpage
 \section{Summary}
-
 \begin{chapterSummary}
 A force is conservative if the work done by that force on a closed path is zero:
 \begin{align*}
@@ -507,7 +524,7 @@ Equivalently, the force is conservative if the work done by the force on an obje
 \die{F_x}{z}-\die{F_z}{x} &= 0\nonumber\\
 \die{F_y}{x}-\die{F_x}{y} &= 0
 \end{align*}
-In particular, a force that is constant in magnitude and direction will be conservative. A force that depends on quantities other than position (e.g. speed, time) will not be conservative. The force exerted by gravity and the force exerted by a spring are conservative.
+In particular, a force that is constant in magnitude and direction will be conservative. A force that depends on quantities other than position (e.g. speed, time) will not be conservative. The force exerted by gravity and the force exerted by a spring are conservative.\\
 
 For any conservative force, $\vec F(\vec r)$, we can define a potential energy function, $U(\vec r)$, that can be used to calculate the work done by the force along any path between position $A$ and position $B$:
 \begin{align*}
