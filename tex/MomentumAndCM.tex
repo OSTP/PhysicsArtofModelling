@@ -1,11 +1,11 @@
 
 \chapter{Linear momentum and the centre of mass}
 \label{chapter:momentumandcm}
-In this chapter, we introduce the concepts of linear momentum and of centre of mass. Momentum is a quantity that, like energy, can be defined from Newton's Second Law, to facilitate building models for certain situations. Since momentum is often a conserved quantity within a system, it can make calculations much easier than using forces. The concept of centre of mass will allow us to apply Newton's Second Law to realistic object whose dimensions matter, as Newton's Second Law as we have seen it so far can only be used to model point masses or objects whose dimensions and orientation could be ignored.
+In this chapter, we introduce the concepts of linear momentum and of centre of mass. Momentum is a quantity that, like energy, can be defined from Newton's Second Law, to facilitate building models for certain situations. Since momentum is often a conserved quantity within a system, it can make calculations much easier than using forces. The concept of centre of mass will allow us to apply Newton's Second Law to realistic objects whose dimensions matter, as Newton's Second Law as we have seen it so far can only be used to model point masses or objects whose dimensions and orientation could be ignored.
 
 \begin{learningObjectives}{
- \item Understand how to calculate impulse.
  \item Understand how to calculate linear momentum.
+ \item Understand how to calculate impulse and that it corresponds to a change in momentum.
  \item Understand when and how to apply conservation of linear momentum to model situations.
  \item Understand the difference between elastic and inelastic collisions.
  \item Understand how to calculate the centre of mass of an object.
@@ -20,23 +20,23 @@ In this chapter, we introduce the concepts of linear momentum and of centre of m
 \end{opening}
 
 
-\section{Conservation of momentum}
+\section{Momentum}
 \subsection{Momentum of a point particle}
 We can define the momentum of a particle of mass $m$ and velocity $\vec v$ as the vector quantity:
 \begin{align}
 \Aboxed{\vec p = m\vec v}
 \end{align}
-where is should be noted that the numerical value for the momentum of a particle is arbitrary\footnote{Unlike, say, its mass, which is a property that does depend on reference frame, in Classical Mechanics.}, as it depends in which frame of reference the velocity of the particle is defined. That is, your velocity with respect to the surface of the Earth is zero, so your momentum relative to the surface of the Earth is zero. However, relative to the surface of the Sun, your velocity, and momentum, are not zero. As we will see, it is the change in momentum of a particle that tells us something about its motion.
+Since this is a vector equation, it really corresponds to three equations, one for each component of the momentum vector. It should be noted that the numerical value for the momentum of a particle is arbitrary\footnote{Unlike, say, its mass, which is a property that does depend on reference frame, in Classical Mechanics.}, as it depends in which frame of reference the velocity of the particle is defined. For example, your velocity with respect to the surface of the Earth is zero, so your momentum relative to the surface of the Earth is zero. However, relative to the surface of the Sun, your velocity, and momentum, are not zero. As we will see, forces are related to a \textit{changes} in momentum, just as they are related to a change in velocity (acceleration). 
 
-If the particle has a constant mass, then we can take the time derivative of its momentum:
+If the particle has a constant mass, then the time derivative of its momentum is given by:
 \begin{align*}
 \frac{d}{dt}\vec p = \frac{d}{dt}m\vec v = m\frac{d}{dt}\vec v=m\vec a
 \end{align*}
-and we can write this as Newton's Second Law, since $m\vec a$ must be equal to the vector sum of the forces on the mass:
+and we can write this as Newton's Second Law, since $m\vec a$ must be equal to the vector sum of the forces on the particle of mass $m$:
 \begin{align}
 \Aboxed{\frac{d}{dt}\vec p = \sum \vec F}
 \end{align}
-The equation above is the original form in which Newton first developed his theory. It says that the net force on an object is equal to the rate of change of its momentum. Note that the force relates to how momentum is changing, not its specific value, so again, it is the change in momentum that is meaningful. If the net force on the object is zero, then its momentum is constant (its derivative with respect to time is zero, so it does not change with time, i.e. it is constant). Remember that an equation written out with vectors is simply a shorthand notation for writing the equation out once for each component:
+The equation above is the original form in which Newton first developed his theory. It says that the net force on an object is equal to the rate of change of its momentum. Note that the force relates to how momentum is changing, not its specific value, so again, it is the change in momentum that is meaningful. \textbf{If the net force on the object is zero, then its momentum is constant, or ``conserved''} (its derivative with respect to time is zero, so it does not change with time, i.e. it is constant). Remember that an equation written out with vectors is simply a shorthand notation for writing the equation out once for each component:
 \begin{align*}
 \frac{dp_x}{dt} =& \sum F_x\\
 \frac{dp_y}{dt} =& \sum F_y\\
@@ -44,7 +44,7 @@ The equation above is the original form in which Newton first developed his theo
 \end{align*}
 
 \begin{example}{A particle of mass $m$ is released from rest and allowed to fall freely under the influence of gravity near the Earth's surface and the force of drag can be ignored. Is the mechanical energy of the particle conserved? Is the momentum of the particle conserved? If momentum is not conserved, how does momentum change with time? Do your answers change if the force of drag cannot be ignored?}
-First, we model the falling particle assuming that there is no force of drag. The only force exerted on the particle is thus from the gravity of the Earth. 
+First, we model the falling particle assuming that there is no force of drag. The only force exerted on the particle is thus its weight, from the gravity of the Earth. 
 
 The mechanical energy of the particle will be conserved only if there are no non-conservative forces doing work on the particle. Since the force of gravity is the only force acting on the particle, its mechanical energy is conserved.
 
@@ -61,21 +61,21 @@ p_z(T) - p_z(0) &= -mgT\\
 \end{align*}
 where the $z$ component of momentum, $p_z(T)$ at some time $T$, is given by its value at time $t=0$ plus $-mgT$. If the object started at rest ($\vec v=0$), then the magnitude of the momentum, as a function of time, is given by:
 \begin{align*}
-p(t) = p_z(T) = -mGt
+p(t) = p_z(t) = -mgt
 \end{align*}
 and indeed changes with time.
 
 If the force of drag were not negligible, there would be a non-conservative force acting on the particle, so its mechanical energy would no longer be conserved. The particle will accelerate until it reaches terminal velocity. During that phase of acceleration, the net force on the particle is not zero (it's accelerating), so its momentum is not conserved. Once the particle reaches terminal velocity, the net force on the particle is zero, and its momentum is conserved from then on.
 
-\textbf{Discussion:} This simple example highlights the fact that energy and momentum are conserved under different conditions. Just because one is conserved does not mean that the other is conserved. It also shows that Newton's Second Law is a statement about change in momentum, not momentum itself (just like it is a statement about acceleration, change in velocity, not velocity).
+\textbf{Discussion:} This simple example highlights the fact that mechanical energy and momentum are conserved under different conditions. Just because one is conserved does not mean that the other is conserved. It also shows that Newton's Second Law is a statement about change in momentum, not momentum itself (just like it is a statement about acceleration, change in velocity, not velocity).
 \end{example}
 
 \subsection{Impulse}
-When we introduced the concept of energy, we started by calculating the ``work'' done by a force exerted on an object over a specific path between two points:
+When we introduced the concept of energy, we started by calculating the ``work'', $W$, done by a force exerted on an object over a specific path between two points:
 \begin{align*}
 W = \int_A^B \vec F \cdot d\vec l
 \end{align*}
-We then introduced kinetic energy to be that quantity which is equal to the net work done on the particle
+We then introduced kinetic energy, $K$, to be that quantity whose change is equal to the net work done on the particle
 \begin{align*}
 W^{net} = \int_A^B \left(\sum \vec F\right) \cdot d\vec l = \Delta K
 \end{align*}
@@ -93,22 +93,24 @@ where $\Delta t$ is the amount of time over which the force was exerted. Althoug
 TODO: Checkpoint question: What is the SI unit for impulse (don't give Ns as an option, rather, kg m/s, so it's obviously the same as momentum)
 
 \begin{example}{Estimate the impulse that is given to someone's head when they are slapped in the face.}
-When we slap someone's face with our hand, our hand exerts a force on their face during the period of time, $\Delta t$, over which our hand is contact with their face. During that period of time, the force on their face goes from being 0, to some unpleasantly high value, and then back to zero, so the force cannot be considered constant. 
+When we slap someone's face with our hand, our hand exerts a force on their face during the period of time, $\Delta t$, over which our hand is in contact with their face. During that period of time, the force on their face goes from being 0, to some unpleasantly high value, and then back to zero, so the force cannot be considered constant. 
 
 Let us estimate the average magnitude of the slapping force by considering the deceleration of our slapping hand and modelling the motion as one-dimensional. Let us assume that our slapping hand has a mass $m=\SI{1}{kg}$ and that it is has a speed of $\SI{2}{m/s}$ just before it makes contact. Furthermore, let us assume that it is contact with the face for a period of time $\Delta t$. This allows us to find the average acceleration of our hand and thus the average force exerted by the face on our hand to stop it:
 \begin{align*}
 a &= \frac{\Delta v}{\Delta t}\\
 \therefore F &= ma = m  \frac{\Delta v}{\Delta t}
 \end{align*}
-By Newton's Third Law, this corresponds to the force that our hand exerts on the face, allowing us to calculate the impulse given to the person's head:
+By Newton's Third Law, the force decelerating our hand has the same magnitude as the force that our hand exerts on the face, allowing us to calculate the impulse given to the person's head:
 \begin{align*}
 J &= F\Delta t =  \left(m  \frac{\Delta v}{\Delta t}\right) \Delta t = m\Delta v\\
 &=(\SI{1}{kg})(\SI{2}{m/s})=\SI{2}{kgm/s}
 \end{align*}
-\textbf{Discussion:} Note that the impulse given to the head corresponds exactly to the change in momentum of the hand ($\Delta p=m\Delta b$).
+\textbf{Discussion:} Note that the impulse given to the head corresponds exactly to the change in momentum of the hand ($\Delta p=m\Delta v$).
 \end{example}
 
-So far, we calculated the impulse that is given by a single force. We can also consider the net impulse given to an object, if a net force is exerted on the object:
+TODO: Is the above example, slap in the face, "too much"?! I thought it was funny, but maybe inappropriate...
+
+So far, we calculated the impulse that is given by a single force. We can also consider the net impulse given to an object by the net force exerted on the object:
 \begin{align*}
 \vec J^{net} = \int_{t_A}^{t_B}\left(\sum\vec F\right) dt
 \end{align*}
@@ -123,20 +125,21 @@ and we find that the net impulse received by a particle is precisely equal to it
 \begin{align}
 \Aboxed{\Delta \vec p = \vec J^{net}}
 \end{align}
+This is similar to the statement that the net work done on an object corresponds to its change in kinetic energy, although one should keep in mind that momentum is a vector quantity, unlike kinetic energy.
 
-\begin{example}{A car moving with a speed of $\SI{100}{km/h}$ collides with a building and comes to a complete stop. The driver and passenger each have a mass of $\SI{80}{kg}$. The driver wore a seat belt that extended during the collision, so that the force exerted by the seatbelt on the driver acted for about $\SI{2.5}{s}$. The passenger did wear a seat belt and instead was slowed down by the force exerted by the dashboard, over a much smaller amount of time, $\SI{0.2}{s}$. Compare the average decelerating force experienced by the driver and the passenger.}
-We can calculate the change in momentum of both people, which will be equal to the impulse they received as they collided with the seatbelt or with the dashboard. Since we know the time duration of those collisions, we can calculate the average force involved in order to give the required impulse. We can assume that this all happens in one dimension, so we use scalar quantities instead of vectors.
+\begin{example}{A car moving with a speed of $\SI{100}{km/h}$ collides with a building and comes to a complete stop. The driver and passenger each have a mass of $\SI{80}{kg}$. The driver wore a seat belt that extended during the collision, so that the force exerted by the seatbelt on the driver acted for about $\SI{2.5}{s}$. The passenger did not wear a seat belt and instead was slowed down by the force exerted by the dashboard, over a much smaller amount of time, $\SI{0.2}{s}$. Compare the average decelerating force experienced by the driver and the passenger.}
+We can calculate the change in momentum of both people, which will be equal to the impulse they received as they collided with the seatbelt or with the dashboard. Since we know the duration in time that the forces were exerted, we can calculate the average force involved in order to give the required impulse. We can assume that this all happens in one dimension, so we use scalar quantities instead of vectors.
 
-The change in momentum for either the driver or passenger is given by:
+The change in momentum along the direction of motion for either the driver or passenger is given by:
 \begin{align*}
 \Delta p = p_B - p_A = (0)-p_A=-mv_A
 \end{align*}
-where $v_A$ is the initial speed of the car. 
+where $v_A$ is the initial speed of the car, and the final momentum of either person is zero. 
 
 The change in momentum is equal to the impulse received by either person during a period of time $\Delta t$:
 \begin{align*}
 J=F\Delta t &= \Delta p = -mv_A\\
-F&=-m frac{v_A}{\Delta t}
+F&=-m \frac{v_A}{\Delta t}
 \end{align*}
 For the driver, this corresponds:
 \begin{align*}
@@ -152,15 +155,15 @@ The force on the driver is thus comparable to their weight, whereas the passenge
 \end{example}
 
 \subsection{Systems of particles: internal and external forces}
-So far, we have only used Newton's Second Law in very specific situations where it is valid. Namely, we used it to describe the motion of a single point mass particle, or we used it to describe the motion of an object whose orientation we did not care about (e.g. a block sliding down a hill). In this section, we consider what happens when there are multiple point particles that form a ``system''.
+So far, we have only used Newton's Second Law to describe the motion of a single point mass particle or to describe the motion of an object whose orientation we did not need to describe (e.g. a block sliding down a hill). In this section, we consider what happens when there are multiple point particles that form a ``system''.
 
-In physics, we loosely define a system as the ensemble of objects/particles that we wish to describe. So far, we have only described systems made of one particle, so describing the motion of the particle was equivalent to describing the motion of that simple system. A  system of two particles could be, for example, two billiard balls on a pool table. To describe that system, we would need to provide functions that describe the positions, velocities, and forces exerted on both balls. We can also provide functions/quantities that describe the system as a whole, rather than the details. For example, we could say that two balls have a total kinetic energy, $K$, without specifying the individual kinetic energies of the two balls, or we could say that the system of two balls has a total momentum, $\vec P$, without specifying the individual momenta of the balls. 
+In physics, we loosely define a system as the ensemble of objects/particles that we wish to describe. So far, we have only described systems made of one particle, so describing the motion of the system was equivalent to describing the motion of that single particle. A  system of two particles could be, for example, two billiard balls on a pool table. To describe that system, we would need to provide functions that describe the positions, velocities, and forces exerted on both balls. We can also define functions/quantities that describe the system as a whole, rather than the details. For example, we can define the total kinetic energy of the system, $K$, corresponding to the sum of kinetic energies of the two balls. We can also define the total momentum of the system, $\vec P$, given by the vector sum of the momenta of the two balls.
 
 When considering a system of multiple particles, we distinguish between \textbf{internal} and \textbf{external} forces. Internal forces are those forces that the particles on the system exert on each other. For example, if the two billiard balls in the system collide with each other, they will each exert a force on the other during the collision; those forces are internal. External forces are all other forces exerted on the particles of the system, or on the system as a whole. For example, the force of gravity and the normal force from the pool table are both external forces exerted on the balls in the system (exerted by the Earth, or by the pool table, neither of which we considered to be part of the system). The force exerted by a person hitting one of the balls with a pool queue is similarly an external force. What we consider to be a system is arbitrary; we could consider the pool table and the Earth to be part of the system along with the two balls; in that case, the normal force and the weight of the balls would become internal forces. The classification of whether a force is internal or external to a system of course depends on what is considered part of the system.
 
 TODO: Checkpoint question: Is the (minuscule) force of gravity exerted on one ball from the other ball an internal force? (Yes, it's exerted by a particle in the system on another).
 
-The key property of internal forces is that \textbf{the sum over all internal forces in a system is zero}. Indeed, Newton's Third Law states that for every force exerted by object A on object B, there is a force that is equal in magnitude and opposite direction exerted by object B on object A. If we consider both objects to be in the same system, then the sum of the internal forces between objects A and B must sum to zero. It is worth noting that this is quite different than what we have discussed in the past with forces. The forces that cancel are exerted on \textit{different} objects. So far, we only ever considered summing forces on the same object, and never encountered a situation where ``action'' and ``reaction'' forces cancel each other. Again, action and reaction forces are exerted on different objects, so they never cancel when one considers the sum of the forces on a specific object.
+The key property of internal forces is that \textbf{the vector sum of the internal forces in a system is zero}. Indeed, Newton's Third Law states that for every force exerted by object A on object B, there is a force that is equal in magnitude and opposite direction exerted by object B on object A. If we consider both objects to be in the same system, then the sum of the internal forces between objects A and B must sum to zero. It is worth noting that this is quite different than what we have discussed in the past with forces. The forces that cancel are exerted on \textit{different} objects. So far, we only ever considered summing forces on the same object in order to apply Newton's Second Law, and we never encountered a situation where ``action'' and ``reaction'' forces cancel each other. Again, action and reaction forces are exerted on different objects, so they never cancel when one considers the sum of the forces on a specific object.
 
 \subsection{Conservation of momentum}
 Consider a system of two particles with momenta $\vec p_1$ and $\vec p_2$.  Newton's Second Law must hold for each particle:
@@ -184,7 +187,7 @@ The sum, over the system, of the internal forces is zero:
 \begin{align*}
 \sum \vec F^{int} = 0
 \end{align*}
-because for every force that particle 1 exerts on particle 2, there were be an equal and opposite force exerted by particle 2 on particle 1. We thus have:
+because for every force that particle 1 exerts on particle 2, there will be an equal and opposite force exerted by particle 2 on particle 1. We thus have:
 \begin{align*}
 \frac{d}{dt}(\vec p_1 + \vec p_2) = \sum \vec F^{ext}
 \end{align*}
@@ -192,7 +195,7 @@ Furthermore, if we introduce the ``total momentum of the system'', $\vec P=\vec 
 \begin{align*}
 \frac{d\vec P}{dt} &= \sum \vec F^{ext}
 \end{align*}
-which looks a lot like Newton's Second Law for a point particle, but in this case refers to the momentum of the system, and the sum of the external forces of the system.
+which looks a lot like Newton's Second Law for a point particle, \textbf{but}, $\vec P$ is the total momentum of the system, and the sum of the forces is only over external forces.
 
 Note that the derivation above easily extends to any number, $N$, of particles, even though we only did it with $N=2$. In general, for the ``ith particle'', with momentum $\vec p_i$, we can write Newton's Second Law:
 \begin{align*}
@@ -210,9 +213,9 @@ We can write an equation for the time-derivative of the total momentum of the sy
 \begin{align}
 \Aboxed{\frac{d\vec P}{dt} &= \sum \vec F^{ext}}
 \end{align}
-where the sum of the forces is the sum over all forces external to the system. Thus, if there are no external forces on a system, then the total momentum of that system is conserved (if the time-derivative of a quantity is zero then that quantity is constant).
+where the sum of the forces is the sum over all forces external to the system. Thus, \textbf{if there are no external forces on a system, then the total momentum of that system is conserve}d (if the time-derivative of a quantity is zero then that quantity is constant).
 
-We already argued in the previous section that we can make all forces internal if we choose our system to be large enough. If we make the system be the Universe, then there are no forces external to the universe, and the total momentum of the universe must be constant:
+We already argued in the previous section that we can make all forces internal if we choose our system to be large enough. If we make the system be the Universe, then there are no forces external to the Universe, and the total momentum of the Universe must be constant:
 \begin{align*}
 \frac{d\vec P^{Universe}}{dt} &= \sum_{Universe} \vec F^{ext} = 0 \\
 \therefore \vec P^{Universe}&=\text{constant}
@@ -220,28 +223,28 @@ We already argued in the previous section that we can make all forces internal i
 
 In summary, we saw that if no forces are exerted on a single particle, then the momentum of that particle is constant (conserved). In a system of particles, the total momentum of the system is conserved if there are no external forces on the system. Similarly, if there are no non-conservative forces exerted on a particle, that particle's mechanical energy is constant (conserved). In a system of multiple particles, the total mechanical energy of the system will be conserved if there are no non-conservative forces exerted on the system. When we refer to a force being ``exerted on a system'', we mean exerted on one or more of the particles in the system. In particular, the work done by internal forces is not necessarily zero, so energy and momentum are thus conserved under different conditions.
 
-\begin{example}{Consider a train made of $N$ cars of equal mass $m$ that is travelling at constant speed $v$ along a straight piece of track where friction and drag are negligible. An empty car of mass $m$ was left at rest on the track in front of the train. The train collides with the empty car which stays attached to the front of the train which then continues on. What is the speed of the train after the collision? Is the total mechanical energy of the system conserved?}
-When the train collides with the car, it will exert a ``collision'' force on the car, and the car will exert an opposite force on the train. If we consider both of the train and the car as being part of the same system, then those collision forces will be internal, and the momentum of the system (train + car) will be conserved. The train and car both experience external forces from Earth's gravity and the normal force from the train tracks. However, those two sets of forces cancel each other out, since neither the train nor the car have any acceleration in the vertical direction (the sum of the forces on each object has no net vertical component). 
+\begin{example}{Consider a train made of $N$ cars of equal mass $m$ that is travelling at constant speed $v$ along a straight piece of track where friction and drag are negligible. An empty car of mass $m$ was left at rest on the track in front of the train. The train collides with the empty car which stays attached to the front of the train. What is the speed of the train after the collision? Is the total mechanical energy of the system conserved?}
+When the train collides with the car, it will exert a ``collision'' force on the car, and the car will exert an opposite force on the train. If we consider both of the train and the car as being part of the same system, then those collision forces will be internal, and the momentum of the system (train + car) will be conserved. The train and car both experience external forces from Earth's gravity and the normal force from the train tracks. However, those two sets of forces cancel each other out, since neither the train nor the car have any acceleration in the vertical direction (the sum of the forces on each object has no net vertical component). Thus, there are no net external forces on the car+train system, and the total momentum of the system is conserved through the collision.
 
 We can model this system in one dimension (along the track), which we call the $x$ axis. We choose the ground as a frame of reference, the positive direction to correspond to the initial velocity of the train, and the origin to be located where the car initially starts. Before the collision, the $x$ component of the momenta of the train and car are:
 \begin{align*}
 p_{train}&=Nmv\\
 p_{car}&=0
 \end{align*}
-After the collision, the car is attached to the train (and thus has the same speed), so the momenta of the train and car are:
+After the collision, the car is attached to the train (and thus has the same speed, $v'$), so the momenta of the train and car are:
 \begin{align*}
 p'_{train}&=Nmv'\\
 p'_{car}&=mv'
 \end{align*}
-where the primes $'$ denote quantities after the collision. Applying conservation of momentum, the total momentum before and after the collision must be equal:
+where the primes $'$ denote quantities after the collision. Applying conservation of momentum to the system, the total momentum before and after the collision must be equal:
 \begin{align*}
 p_{train}+p_{car}&=p'_{train}+p'_{car}\\
 \therefore Nmv &= Nmv' +mv'\\
 \therefore v' &=\frac{N}{N+1}v
 \end{align*}
-and the speed of the train with the additional car attached is reduced by a factor $N/(N+1)$.
+and the speed of the train with the additional car attached is reduced by a factor $N/(N+1)$ compared to what it was before the collision.
 
-We can check to see if the mechanical energy of the system is conserved, since we know the speeds of the train and car before the collision. Since all of the motion is horizontal, gravity and the normal force do no work on either the train or car, so their mechanical energy can be taken as their kinetic energy (their gravitational potential energy does not change after the collision). The total mechanical energy before the collision is:
+We can check to see if the mechanical energy of the system is conserved, since we know the speeds of the train and car before and after the collision. Since all of the motion is horizontal, gravity and the normal force do no work on either the train or car, so their mechanical energy can be taken as their kinetic energy (their gravitational potential energy does not change after the collision). The total mechanical energy before the collision is the kinetic energy of the train:
 \begin{align*}
 E_A = \frac{1}{2}Nmv^2
 \end{align*}
@@ -255,20 +258,22 @@ and we see that $E_B<E_A$, and thus that the total mechanical energy of the syst
 
 \textbf{Discussion: }We could have solved this problem by carefully modelling the force exerted by the car on the train during the collision, which would have allowed us to find the speed of the train after the collision using its acceleration. This would have required a detailed model for that force, which we do not have. However, by realizing that the train and car could be considered as a system with no net external forces exert on it, we were able to easily find the speed of the train after the collision using conservation of momentum.
 
-We also found that mechanical energy was not conserved. This makes physical sense, because, for the car to remain attached to the train, there presumably had to be some significant forces in play that ``crushed'' the car into the train. Some of the initial kinetic energy of the train was used to deform the train and the car during the collision. We can also think of deforming a material as giving it energy. Sometimes that energy is recoverable (e.g. compressing a spring), sometimes, it is not (e.g. crushing a car).
+We also found that mechanical energy was not conserved. This makes physical sense because, for the car to remain attached to the train, there presumably had to be some significant forces in play that ``crushed'' the car into the train. Some of the initial kinetic energy of the train was used to deform the train and the car during the collision. We can also think of deforming a material as giving it energy. Sometimes that energy is recoverable (e.g. compressing a spring), sometimes, it is not (e.g. crushing a car). Whether or not the energy used to deform a material depends on whether the force exerted by the material is conservative (as is the case for a spring).
 
-If the car and train were equipped with large springs to absorb the energy of the impact, the collision could have conserved mechanical energy, as the springs compress and then expand back, but the speed of the car and train would then be different after the collision. It is a feature of collisions where the two bodies remain attached to each other that mechanical energy is not conserved.
+If the car and train were equipped with large springs to absorb the energy of the impact, the collision could have conserved mechanical energy, as the springs compress and then expand back. The speed of the car and train would then be different after the collision in this case (see example \ref{ex:momentumandcm:1delastic}). It is a feature of collisions where the two bodies remain attached to each other that mechanical energy is not conserved.
 \end{example}
+
+TODO: A figure for the example above, showing train and car before and after the collision, x axis. Refer to the figure in the question.
 
 \section{Collisions}
 In this section we go through a few examples of applying conservation of momentum to model collisions between objects. Collisions, can loosely be defined as events where the momenta of individual particles in a system are different before and after the event.
 
-We distinguish between two types of collisions: \textbf{elastic} and \textbf{inelastic} collisions. Elastic collisions are those for which the total mechanical energy of the system is conserved (i.e. it is the same before and after the collision). Inelastic collisions are those for which the total mechanical energy of the system is not conserved. In either case, to model the system, one chooses to define the system such that there are no external forces on the system and total momentum of the system is thus conserved.
+We distinguish between two types of collisions: \textbf{elastic} and \textbf{inelastic} collisions. Elastic collisions are those for which the total mechanical energy of the system is conserved (i.e. it is the same before and after the collision). Inelastic collisions are those for which the total mechanical energy of the system is not conserved. In either case, to model the system, one chooses to define the system such that there are no external forces on the system so total momentum is conserved.
 
-\begin{example}{You (mass $m_s$) and your friend (mass $m_f$) face each other on ice skates on a surface that is slippery enough that friction can be considered negligible. You shove your friend away from you so that he moves with velocity $\vec v_f$ away from you (the speed is measured relative to the ice). Is the collision elastic? What is your speed relative to the ice after you shoved your friend?} 
+\begin{example}{You (mass $m_s$) and your friend (mass $m_f$) face each other on ice skates on an ice surface that is slippery enough that friction can be considered negligible. You shove your friend away from you so that he moves with velocity $\vec v_f$ away from you (the velocity is measured relative to the ice). Is the collision elastic? What is your speed relative to the ice after you shoved your friend?} 
 TODO: A figure, female skater shoves male skater. 
 
-We can consider the system as being comprised of you and your friend. There are no net external forces on the system (gravity and normal forces cancel each other), so the momentum of the system will not be conserved. 
+We can consider the system as being comprised of you and your friend. There are no net external forces on the system (gravity and normal forces cancel each other), so the momentum of the system will be conserved. 
 
 The mechanical energy will not be conserved. You had to use chemical potential energy, stored in your muscles, to shove your friend. Thus, external energy (i.e. not mechanical energy from you or your friend) was injected into the system, and we would expect the total mechanical energy to be larger after the collision. 
 
@@ -284,15 +289,15 @@ E_B = \frac{1}{2}m_sv_s^2+\frac{1}{2}m_fv_f^2
 \end{align*}
 which is clearly bigger than the mechanical energy before the collision (i.e. 0), as we suspected it would be.
 
-\textbf{Discussion:} We find that you recoil in the opposite direction, which makes sense. If you push your friend in one direction, Newton's Third Law says that your friend pushes you in the opposite direction. Your speed furthermore depends on the ratio of your friend's mass to yours. This also makes sense, because if you both feel the same force, the person with the smallest mass will have the highest speed; if your mass is higher, then your speed after the collision will be smaller.
+\textbf{Discussion:} We find that you recoil in the opposite direction, which makes sense. If you push your friend in one direction, Newton's Third Law says that your friend pushes you in the opposite direction. Your speed furthermore depends on the ratio of your friend's mass to yours. This also makes sense, because if you both feel the same force, the person with the smallest mass will have the highest speed; if your mass is higher, then your speed after the collision will be smaller than your friend's.
 
 We also saw that mechanical energy was not conserved. In terms of energy, we can explain this by saying that you burned up chemical potential energy stored in your muscles in order to shove your friend. Because we included both you and your friend in the system, the shove was an internal force and momentum is conserved. Of course, if we had considered only you as the system, then your momentum would not have been conserved during the collision. 
 
 The type of collision that we described here is also sometimes called an ``explosion''. You can imagine all of the parts that make up a bomb as small particles. When the bomb explodes, chemical potential energy is converted into the kinetic energy of the bomb fragments. If you consider all of the particles/fragments of the bomb as a system, then the total momentum of all of the bomb fragments is conserved (and equal to zero if the bomb was initially at rest). Again, mechanical energy would not be conserved (and would increase) as the chemical potential energy is converted into mechanical energy.
 \end{example}
 
-\begin{example}{
-\capfig{0.6\textwidth}{figures/MomentumAndCM/1delastic.png}{\label{fig:momentumandcm:1delastic}Two block about to collide elastically.}
+\begin{example}{\label{ex:momentumandcm:1delastic}
+\capfig{0.6\textwidth}{figures/MomentumAndCM/1delastic.png}{\label{fig:momentumandcm:1delastic}Two blocks about to collide elastically.}
 A block of mass $M$ moves with velocity $\vec v_M$ in the $x$ direction, as shown in Figure \ref{fig:momentumandcm:1delastic}. A block of mass $m$ is moving with velocity $\vec v_m$ also in the $x$ direction and collides elastically with block $M$. Both blocks slide with no friction. What are the speeds of the two blocks after the collision?}
 Because this is an elastic collision, both the total momentum and total mechanical energy are conserved. Equating the total momentum before and after the collision, and considering only the $x$ component gives the following equation:
 \begin{align*}
