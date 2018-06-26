@@ -154,6 +154,8 @@ The force on the driver is thus comparable to their weight, whereas the passenge
 \textbf{Discussion:} Any mechanism that results in a longer collision time will help to reduce the forces that are involved. This is why cars are designed to crumple in head-on collisions. We can understand this in terms of the crumpling of the car absorbing some of the kinetic energy of the car, as well as lengthening the time of the collision so that the forces involved are smaller. Note that we did not need to use impulse to calculate the average force, since we could have just used kinematics to determine the acceleration and Newton's Second Law to calculate the corresponding force. Using impulse is equivalent by construction, but sometimes, it is easier mathematically.
 \end{example}
 
+TODO: Question Library question: Give a function F(t), calculate the change in momentum resulting from that force over a certain range of time (i.e. they need to take an integral). 
+
 \subsection{Systems of particles: internal and external forces}
 So far, we have only used Newton's Second Law to describe the motion of a single point mass particle or to describe the motion of an object whose orientation we did not need to describe (e.g. a block sliding down a hill). In this section, we consider what happens when there are multiple point particles that form a ``system''.
 
@@ -266,16 +268,17 @@ If the car and train were equipped with large springs to absorb the energy of th
 TODO: A figure for the example above, showing train and car before and after the collision, x axis. Refer to the figure in the question.
 
 \section{Collisions}
-In this section we go through a few examples of applying conservation of momentum to model collisions between objects. Collisions, can loosely be defined as events where the momenta of individual particles in a system are different before and after the event.
+In this section we go through a few examples of applying conservation of momentum to model collisions. Collisions can loosely be defined as events where the momenta of individual particles in a system are different before and after the event.
 
-We distinguish between two types of collisions: \textbf{elastic} and \textbf{inelastic} collisions. Elastic collisions are those for which the total mechanical energy of the system is conserved (i.e. it is the same before and after the collision). Inelastic collisions are those for which the total mechanical energy of the system is not conserved. In either case, to model the system, one chooses to define the system such that there are no external forces on the system so total momentum is conserved.
+We distinguish between two types of collisions: \textbf{elastic} and \textbf{inelastic} collisions. Elastic collisions are those for which the total mechanical energy of the system is conserved during the collision (i.e. it is the same before and after the collision). Inelastic collisions are those for which the total mechanical energy of the system is not conserved. In either case, to model the system, one chooses to define the system such that there are no external forces on the system so that total momentum is conserved.
 
-\begin{example}{You (mass $m_s$) and your friend (mass $m_f$) face each other on ice skates on an ice surface that is slippery enough that friction can be considered negligible. You shove your friend away from you so that he moves with velocity $\vec v_f$ away from you (the velocity is measured relative to the ice). Is the collision elastic? What is your speed relative to the ice after you shoved your friend?} 
-TODO: A figure, female skater shoves male skater. 
+\subsection{Inelastic collisions}
 
+TODO: A figure, female skater shoves male skater, for problem below
+\begin{example}{You (mass $m_s$) and your friend (mass $m_f$) face each other on ice skates on an ice surface that is slippery enough that friction can be considered negligible. You shove your friend away from you so that he moves with velocity $\vec v_f$ away from you (the velocity is measured relative to the ice). Is the collision elastic? What is your speed relative to the ice after you shoved your friend?}
 We can consider the system as being comprised of you and your friend. There are no net external forces on the system (gravity and normal forces cancel each other), so the momentum of the system will be conserved. 
 
-The mechanical energy will not be conserved. You had to use chemical potential energy, stored in your muscles, to shove your friend. Thus, external energy (i.e. not mechanical energy from you or your friend) was injected into the system, and we would expect the total mechanical energy to be larger after the collision. 
+The mechanical energy will not be conserved. You had to use chemical potential energy, stored in your muscles, to shove your friend. Thus, external energy (i.e. not mechanical energy from you or your friend) was injected into the system, and we should expect the total mechanical energy to be larger after the collision. 
 
 Before the collision, both you and your friend have zero speed, and thus zero kinetic energy and zero momentum. After the collision, your friend as a velocity $\vec v_f$. We can use conservation of momentum to determine your velocity, $\vec v_s$, after the collision. 
 \begin{align*}
@@ -296,23 +299,29 @@ We also saw that mechanical energy was not conserved. In terms of energy, we can
 The type of collision that we described here is also sometimes called an ``explosion''. You can imagine all of the parts that make up a bomb as small particles. When the bomb explodes, chemical potential energy is converted into the kinetic energy of the bomb fragments. If you consider all of the particles/fragments of the bomb as a system, then the total momentum of all of the bomb fragments is conserved (and equal to zero if the bomb was initially at rest). Again, mechanical energy would not be conserved (and would increase) as the chemical potential energy is converted into mechanical energy.
 \end{example}
 
+TODO: Example of a 2D inelastic collision.
+
+\subsection{Elastic collisions}
+
 \begin{example}{\label{ex:momentumandcm:1delastic}
 \capfig{0.6\textwidth}{figures/MomentumAndCM/1delastic.png}{\label{fig:momentumandcm:1delastic}Two blocks about to collide elastically.}
-A block of mass $M$ moves with velocity $\vec v_M$ in the $x$ direction, as shown in Figure \ref{fig:momentumandcm:1delastic}. A block of mass $m$ is moving with velocity $\vec v_m$ also in the $x$ direction and collides elastically with block $M$. Both blocks slide with no friction. What are the speeds of the two blocks after the collision?}
+A block of mass $M$ moves with velocity $\vec v_M$ in the $x$ direction, as shown in Figure \ref{fig:momentumandcm:1delastic}. A block of mass $m$ is moving with velocity $\vec v_m$ also in the $x$ direction and collides elastically with block $M$. Both blocks slide with no friction on the horizontal surface. What are the velocities of the two blocks after the collision?}
 Because this is an elastic collision, both the total momentum and total mechanical energy are conserved. Equating the total momentum before and after the collision, and considering only the $x$ component gives the following equation:
 \begin{align*}
 \vec P_{initial} &=\vec P_{final}\\
 Mv_M+mv_m&=Mv'_M+mv'_m\\
 \end{align*}
-where the primes ($'$) correspond to the velocity components of the blocks after the collision. Note that, in principle, the velocity components could be negative numbers if the corresponding block is moving in the negative $x$ direction.
+where the primes ($'$) correspond to the quantities after the collision. Note that, in principle, the $x$ components of the velocities ($v_M$, $v'_M$, $v_m$, $v'_m$) could be negative numbers if the corresponding block is moving in the negative $x$ direction.
 
-For the mechanical energy of the two blocks, we only need to consider their kinetic energy since their gravitational potential energies are the same before and after the collision.
+For the mechanical energy of the two blocks, we only need to consider their kinetic energy since their gravitational potential energies are the same before and after the collision on the horizontal surface.
 \begin{align*}
 E_{initial} &=E_{final}\\
 \frac{1}{2}Mv_M^2+\frac{1}{2}mv_m^2&=\frac{1}{2}Mv'^2_M+\frac{1}{2}mv'^2_m\\
 \therefore Mv_M^2+mv_m^2&=Mv'^2_M+mv'^2_m
 \end{align*}
-where we cancelled the factor of one half in the last line. This gives two equations (conservation of energy and momentum) and two unknowns (the two speeds after the collision). This is not a linear system of equations, because the equation from conservation of energy has the speeds squared in it. The following method allows many models for elastic collisions between two particles to be solved easily by converting the quadratic equation from energy conservation into an equation that is linear in the speeds. First, write both equations so that the quantities related to each particle are on opposite sides of the equation. For momentum, this gives:
+where we cancelled the factor of one half in the last line. This gives two equations (conservation of energy and momentum) and two unknowns (the two speeds after the collision). This is not a linear system of equations, because the equation from conservation of energy is quadratic in the speeds.
+
+The following method allows many models for elastic collisions between two particles to be solved easily by converting the quadratic equation from energy conservation into an equation that is linear in the speeds. First, write both equations so that the quantities related to each particle are on opposite sides of the equation. For momentum, this gives:
 \begin{align}
 \label{eq:momentumandcm:exptemp}
 Mv_M+mv_m&=Mv'_M+mv'_m\nonumber\\
@@ -337,7 +346,7 @@ which gives us an equation that is much easier to work with, since it is linear 
 \begin{align*}
 \Aboxed{v_M-v_m &= - (v'_M-v'_m)}
 \end{align*}
-we can see that the relative velocity between $M$ and $m$ before the collision is the negative of the relative velocity after an elastic collision. That is, if block $M$ ``saw'' block $m$ approaching with a speed of $\SI{3}{m/s}$ before the collision, it would ``see'' block $m$ moving \textit{away} with speed $\SI{3}{m/s}$ after the collision, regardless of the actual directions and velocities of the block.
+we can see that the relative speed between $M$ and $m$ is the same before and after the collision. That is, if block $M$ ``saw'' block $m$ approaching with a speed of $\SI{3}{m/s}$ before the collision, it would ``see'' block $m$ moving \textit{away} with speed $\SI{3}{m/s}$ after the collision, regardless of the actual directions and velocities of the block, if the collision was elastic.
 
 By using this equation with the original conservation of momentum equation, we now have two equations and two unknowns that are easy to solve:
 \begin{align*}
@@ -367,18 +376,26 @@ And writing these together:
 v'_M&=\frac{M-m}{M+m}v_M+\frac{2m}{M+m}v_m\\
 v'_m &= \frac{m-M}{M+m}v_m+\frac{2M}{M+m}v_M
 \end{align*}
+\textbf{Discussion:} The formulas that we obtained above are valid for any one dimensional elastic collision. 
 \end{example}
 
+TODO: Checkpoint question: Two trains of the same mass collide elastically on a track. If train $A$ was at rest and train $B$ has speed $v$, what are the speeds of the trains after the collision. (Based on the formulas above with M=m, the two trains exchange their speeds, thus B will be at rest and A will move away in with speed $v$).
 
+TODO: Example of ballistic pendulum.
 
+TODO: Example 2D elastic collision, show that the outgoing momenta are perpendicular if the masses are the same.
 
-  frames of reference - closest approach of the two masses
+\subsection{Frames of reference}
 
-
-\subsection{The rocket equation}
+TODO: Example with closest approach of the two masses with spring elastic collision
 
 
 \section{The centre of mass}
+
+
+
+\section{Advanced topic: the rocket equation}
+
 
 \newpage
 \section{Summary}
@@ -403,7 +420,7 @@ E = mc^2
 \subsection{Reflect and research}
 
 \begin{enumerate}
-\item Something to research more.
+\item Explain how Newton's Cradle illustrates the conservation of momentum. Are the collisions in Newton's Cradle elastic? Explain! 
 \end{enumerate}
 \subsection{To try at home}
 
