@@ -487,9 +487,11 @@ where the left hand side corresponds to the initial kinetic energy and the right
 \end{example}
 
 \subsection{Frames of reference}
-Because the momentum of a particle is defined using the velocity of the particle, its value depends on the reference frame that we use to measure the velocities. In some cases, it is useful to apply momentum conservation in a frame of reference where the total momentum of the system is zero. For example, consider two particles of mass $m_1$ and $m_2$, moving towards each other with velocities $\vec v_1$ and $\vec v_2$, respectively, as measured in a frame of reference $S$, as illustrated in Figure \ref{fig:momentumandcm:2particles}.
+TODO: Review box for transforming velocities.
+
+Because the momentum of a particle is defined using the velocity of the particle, its value depends on the reference frame that we chose to measure that velocity. In some cases, it is useful to apply momentum conservation in a frame of reference where the total momentum of the system is zero. For example, consider two particles of mass $m_1$ and $m_2$, moving towards each other with velocities $\vec v_1$ and $\vec v_2$, respectively, as measured in a frame of reference $S$, as illustrated in Figure \ref{fig:momentumandcm:2particles}.
 \capfig{0.3\textwidth}{figures/MomentumAndCM/2particles.png}{\label{fig:momentumandcm:2particles}Two particles moving towards each other.}
-In the frame of reference $S$, the total momentum of the two particles can be written:
+In the frame of reference $S$, the total momentum, $\vec P$, of the two particles can be written:
 \begin{align*}
 \vec P = m_1\vec v_1 + m_2\vec v_2
 \end{align*}
@@ -498,7 +500,7 @@ Consider a frame of reference, $S'$, that is moving with velocity $\vec v_{CM}$ 
 \pvec v'_1&=\vec v_1- \vec v_{CM}\\
 \pvec v'_2&=\vec v_2- \vec v_{CM}\\
 \end{align*}
-The total momentum in the frame of reference $S'$ is then given by:
+The total momentum, $\pvec P'$, in the frame of reference $S'$ is then given by:
 \begin{align*}
 \vec P' &= m_1\pvec v'_1 + m_2 \pvec v'_2\\
 &=m_1(\vec v_1- \vec v_{CM})+m_2(\vec v_2- \vec v_{CM})\\
@@ -508,20 +510,73 @@ We can choose the velocity of the frame, $\vec v_{CM}$ such that the total momen
 \begin{align*}
 \vec P' &= 0\\
 m_1\vec v_1 + m_2\vec v_2 - (m_1+m_2) \vec v_{CM} &=0\\
-\therefore \vec v_{CM} = \frac{m_1\vec v_1 + m_2\vec v_2 }{m_1+m_2}
+\therefore \vec v_{CM} &= \frac{m_1\vec v_1 + m_2\vec v_2 }{m_1+m_2}
 \end{align*}
-This ``special'' frame of reference, in which the total momentum of the system is zero, is called the ``centre of mass frame of reference''. The velocity for centre of mass frame of reference can easily be obtained if there are $N$ particles involved instead of two:
+This ``special'' frame of reference, in which the total momentum of the system is zero, is called the ``centre of mass frame of reference''. The velocity of centre of mass frame of reference can easily be obtained if there are $N$ particles involved instead of two:
+\begin{align}
+\Aboxed{\therefore \vec v_{CM} = \frac{m_1\vec v_1 + m_2\vec v_2 + m_3 \vec v_3 + \dots }{m_1+m_2+m_3+\dots}=\frac{\sum_i^N m_i\vec v_i}{\sum_i^N m_i}}
+\end{align}
+Again, you should note that because the above equation is a vector equation, it represents one equation per component of the vectors. For example, the $x$ component of the velocity of the centre of mass frame of reference is given by:
 \begin{align*}
-\therefore \vec v_{CM} = \frac{m_1\vec v_1 + m_2\vec v_2 + m_3 \vec v_3 + \dots }{m_1+m_2+m_3+\dots}=\frac{\sum_i^N m_i\vec v_i}{\sum_i^N m_i}
+\therefore  v_{CMx} = \frac{m_1 v_{1x} + m_2v_{2x} + m_3 v_{3x} + \dots }{m_1+m_2+m_3+\dots}=\frac{\sum_i^N m_i\vec v_i}{\sum_i^N m_i}
 \end{align*}
 
 
-TODO: Example with closest approach of the two masses with spring elastic collision
+\begin{example}{\capfig{0.4\textwidth}{figures/MomentumAndCM/labframe.png}{\label{fig:momentumandcm:labframe}One block approaching another identical block at rest, as seen in the lab frame of reference.} In the frame of reference of a lab, a block of mass $m$ has a velocity $\vec v_1$ directed along the positive $x$ axis and is approaching a second block of mass $m$ that is at rest ($\vec v_2=0$), as shown in Figure \ref{fig:momentumandcm:labframe}. What is the velocity of the centre of mass frame? What is the velocity of each block in the centre of mass frame? Verify that the total momentum is zero in the centre of mass frame.}
+Since this is a one dimensional situation, we only need to evaluate the $x$ component of the velocity of the centre of mass:
+\begin{align*}
+\vec v_{CM} &= \frac{m_1\vec v_1 + m_2\vec v_2 }{m_1+m_2}\\
+\therefore v_{CMx} &= \frac{m_1 v_{1x} + m_2 v_{2x}}{m_1+m_2}\\
+&=\frac{mv_1 + m(0) }{m+m}\\
+&=\frac{1}{2}v_1
+\end{align*}
+The centre of mass frame of reference is thus also moving along the positive direction of the $x$ axis, but with a speed that is half of that of the block that is moving in the lab frame. In that frame of reference, it appears that the block on the left is slower than in the lab frame and that the block on the right is moving in the negative $x$ direction. The velocities of the two blocks in the centre of mass frame of reference are given by:
+\begin{align*}
+v'_1&=v_1-v_{CMx}=\frac{1}{2}v_1\\
+v'_2&=(0)-v_{CMx}=-\frac{1}{2}v_1
+\end{align*}
+Thus, in the reference frame of the centre of mass, the two block are approaching each other with the same speed ($v_1/2$), which is only the case because the two blocks have the same mass. The blocks as viewed in the centre of mass frame of reference are shown in Figure \ref{fig:momentumandcm:cmframe}.
+\capfig{0.4\textwidth}{figures/MomentumAndCM/cmframe.png}{\label{fig:momentumandcm:cmframe}In the centre of mass frame of reference, the block approach each other with the same speed, because they have the same mass.} 
+Clearly, the total momentum is zero in the centre of mass frame of reference:
+\begin{align*}
+\vec P' = m\pvec v'_1+ m\pvec v'_2 = m (\frac{1}{2}\vec v_1 - \frac{1}{2}\vec v_1) = 0
+\end{align*}
+
+\textbf{Discussion:} As we have seen, in the centre of mass frame of reference the total momentum is zero. If there are only two particles, and they have the same mass, then, in the centre of mass frame of reference, all of the particles have the same speed. 
+\end{example}
+
+\begin{example}{\capfig{0.6\textwidth}{figures/MomentumAndCM/springcollision.png}{\label{fig:momentumandcm:springcollision}One block attached to a spring about to collide with another block.} A block of mass $M$ with a spring of spring constant $k$ attached to it is sliding on a frictionless surface with velocity $\vec v_M$ in the positive $x$ direction. A second block of mass $m$ has velocity $\vec v_m$ in the negative $x$ direction. During the collision between the blocks, what is the maximum amount by which the spring is compressed?
+}
+The collision is elastic because the energy used to compress the spring is ``given back'' when the spring extends again, since the spring force is conservative. 
+
+They key to modelling the compression of the spring is to identify the condition under which the spring is maximally compressed. This will occur at the point during the collision where the two masses will have exactly the same velocity, momentarily moving in unison as the spring is maximally compressed. Because, instantaneously, the masses have the same velocity, there is a frame of reference in which the two masses are at rest, and the moment is zero. Of course, that frame of reference is the centre of mass frame of reference. 
+
+Because the collision is one-dimensional, we can calculate the velocity of the centre of mass as:
+\begin{align*}
+v_{CM} = \frac{Mv_M+mv_m}{m+M}
+\end{align*}
+
+We can then use conservation of energy in the centre of mass frame to determine the maximal compression of the spring. Before the collision, the mechanical energy in the system is the kinetic energies of the two blocks (as the spring is not compressed):
+\begin{align*}
+E_A=\frac{1}{2}m(v_m-v_{CM})^2+\frac{1}{2}M(v_M-v_{CM})^2
+\end{align*}
+where we used the speeds of the two blocks in the centre of mass reference. When the spring is maximally compressed, the two blocks are at rest and the mechanical energy is all ``stored'' as spring potential energy:
+\begin{align*}
+E_B&=\frac{1}{2}kx^2
+\end{align*}
+where $x$ is the distance by which the spring is compressed. Equating the two allows us to determine the maximal compression of the spring:
+\begin{align*}
+E_A &= E_B \\
+\frac{1}{2}m(v_m-v_{CM})^2+\frac{1}{2}M(v_M-v_{CM})^2 &= \frac{1}{2}kx^2\\
+\therefore x &= \sqrt{\frac{1}{k}(m(v_m-v_{CM})^2+M(v_M-v_{CM})^2) }
+\end{align*}
+\end{example}
+
 
 
 \section{The centre of mass}
 
-
+\subsection{The centre of mass for a continuous object}
 
 \section{Advanced topic: the rocket equation}
 
