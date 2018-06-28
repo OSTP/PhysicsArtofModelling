@@ -575,6 +575,57 @@ E_A &= E_B \\
 
 
 \section{The centre of mass}
+In this section, we show how to generalize Newton's Second Law so that it may describe the motion of an object that is not a point particle. In the previous section, we saw how we could define a system comprised of particles and use the total momentum and the total mechanical energy of the system to describe the system as a whole. 
+
+Any object can be described as being made up of tiny point mass particles. For example, those particles could be atoms. We can thus use the same terminology as in the previous sections to describe a complicated object as a ``system'' comprised of many point particles, themselves described by Newton's Second Law. A system could thus be a rigid object where the point particles cannot move relative to each other, such as atoms in a solid\footnote{In reality, even atoms in a solid can move relative to each other, but they do not move by large amounts compared to the object.}. Or, the system could be a gas, made of many atoms moving around, or it could be a combination of many solid objects moving around. 
+
+In this section, we show that by introducing the ``centre of mass'' of a system, we can describe the motion of the system as a whole. The goal is to obtain the equivalent of Newton's Second Law, but for the system.
+
+Consider a system comprised of $N$ point particles. Each point particle $i$, of mass $m_i$, can be described by a position $\vec r_i$, a velocity, $\vec v_i$, and an acceleration, $\vec a_i$, relative to some coordinate system. Newton's Second Law can be applied to any of the particles in the system:
+\begin{align*}
+\sum_k \vec F_{ik} = m_i \vec a_i
+\end{align*}
+where $\vec F_{ik}$ is the k-th force exerted on particle $i$. We can write Newton's Second Law once for each of the $N$ particles, and we can sum those $N$ equations together:
+\begin{align*}
+\sum_k \vec F_{1k} + \sum_k \vec F_{2k} + \sum_k \vec F_{3k} +\dots &= m_1\vec a_1 + m_2 \vec a_2 + m_3 \vec a_3 + \dots\\
+\sum \vec F = \sum_i m_i \vec a_i 
+\end{align*}
+where the sum on the left is the sum of all of the forces exerted on all of the particles in the system. However, as we have already seen, the sum of all of the forces on the system can be divided into a sum over external and internal forces:
+\begin{align*}
+\sum \vec F = \sum \vec F^{ext} + \sum \vec F^{int} 
+\end{align*}
+and the sum over the internal forces is zero\footnote{Recall, the internal forces are those forces that particles in the system are exerting on one another. Because of Newton's Third Law, these will sum to zero.}. We can thus write that the sum of the forces exerted on the system is given by:
+\begin{align}
+\label{eqn:momentumandcm:cmtemp1}
+\sum \vec F^{ext}&= \sum_i m_i \vec a_i
+\end{align}
+We would like this equation to resemble Newton's Second Law, but for the system as a whole. Suppose that the system has a total mass, $M$:
+\begin{align*}
+M = m_1 + m_2 + m_3 +\dots = \sum_i m_i
+\end{align*}
+we would like to have an equation of the form:
+\begin{align}
+\label{eqn:momentumandcm:cmtemp2}
+\sum \vec F^{ext}&=M\vec a_{CM}
+\end{align}
+to describe the system as a whole. However, it is not clear what acceleration this refers to, since the particles in the system could be moving in all sorts of directions. Suppose that there is a point in the system, whose position is given by the vector, $\vec r_{CM}$, in such a way that the acceleration above is the second time-derivative of that position vector:
+\begin{align*}
+\vec a_{CM} = \frac{d^2 }{dt^2}\vec r_{CM}
+\end{align*}
+We can compare Equations \ref{eqn:momentumandcm:cmtemp1} and \ref{eqn:momentumandcm:cmtemp2} to determine what the position vector $\vec r_{CM}$ corresponds to:
+\begin{align*}
+\sum \vec F^{ext}&= \sum_i m_i \vec a_i = \sum_i m_i \frac{d^2 }{dt^2}\vec r_i \\
+\sum \vec F^{ext}&=M\vec a_{CM} = M \frac{d^2 }{dt^2}\vec r_{CM}\\
+\therefore M \frac{d^2 }{dt^2}\vec r_{CM}&= \sum_i m_i \frac{d^2 }{dt^2}\vec r_i\\
+\end{align*}
+Re-arranging, and noting that the masses are constant in time, and so they can be factored into the derivatives:
+\begin{align*}
+\frac{d^2 }{dt^2}\vec r_{CM} &= \frac{1}{M}\sum_i m_i \frac{d^2 }{dt^2}\vec r_i\\
+\frac{d^2 }{dt^2}\vec r_{CM} &= \frac{d^2 }{dt^2}\left(\frac{1}{M}\sum_i m_i\vec r_i \right)\\
+\therefore \vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i
+\end{align*}
+
+
 
 \subsection{The centre of mass for a continuous object}
 
