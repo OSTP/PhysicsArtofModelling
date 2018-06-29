@@ -1,13 +1,13 @@
 
 \chapter{Linear momentum and the centre of mass}
 \label{chapter:momentumandcm}
-In this chapter, we introduce the concepts of linear momentum and of centre of mass. Momentum is a quantity that, like energy, can be defined from Newton's Second Law, to facilitate building models for certain situations. Since momentum is often a conserved quantity within a system, it can make calculations much easier than using forces. The concept of centre of mass will allow us to apply Newton's Second Law to realistic objects whose dimensions matter, as Newton's Second Law as we have seen it so far can only be used to model point masses or objects whose dimensions and orientation could be ignored.
+In this chapter, we introduce the concepts of linear momentum and of centre of mass. Momentum is a quantity that, like energy, can be defined from Newton's Second Law, to facilitate building models for certain situations. Since momentum is often a conserved quantity within a system, it can make calculations much easier than using forces. The concepts of momentum and of centre of mass will allow us to apply Newton's Second Law to systems comprised of multiple particles including solid objects. 
 
 \begin{learningObjectives}{
  \item Understand how to calculate linear momentum.
  \item Understand how to calculate impulse and that it corresponds to a change in momentum.
  \item Understand when and how to apply conservation of linear momentum to model situations.
- \item Understand the difference between elastic and inelastic collisions.
+ \item Understand the difference between elastic and inelastic collisions, and when mechanical energy is conserved.
  \item Understand how to calculate the centre of mass of an object.
 }
 \end{learningObjectives}
@@ -40,7 +40,7 @@ The equation above is the original form in which Newton first developed his theo
 \begin{align*}
 \frac{dp_x}{dt} =& \sum F_x\\
 \frac{dp_y}{dt} =& \sum F_y\\
-\frac{dp_z}{dt} =& \sum F_z\\
+\frac{dp_z}{dt} =& \sum F_z
 \end{align*}
 
 \begin{example}{A particle of mass $m$ is released from rest and allowed to fall freely under the influence of gravity near the Earth's surface and the force of drag can be ignored. Is the mechanical energy of the particle conserved? Is the momentum of the particle conserved? If momentum is not conserved, how does momentum change with time? Do your answers change if the force of drag cannot be ignored?}
@@ -119,7 +119,7 @@ Compare this to Newton's Second Law written out using momentum:
 \frac{d}{dt}\vec p &= \sum \vec F\\
 \int_{\vec p_A}^{\vec p_B} d\vec p &=  \int_{t_A}^{t_B}\left(\sum\vec F\right) dt\\
 \vec p_B - \vec p_A &=  \int_{t_A}^{t_B}\left(\sum\vec F\right) dt\\
-\therefore \Delta \vec p &= \int_{t_A}^{t_B}\left(\sum\vec F\right) dt\\
+\therefore \Delta \vec p &= \int_{t_A}^{t_B}\left(\sum\vec F\right) dt
 \end{align*}
 and we find that the net impulse received by a particle is precisely equal to its change in momentum:
 \begin{align}
@@ -171,7 +171,7 @@ The key property of internal forces is that \textbf{the vector sum of the intern
 Consider a system of two particles with momenta $\vec p_1$ and $\vec p_2$.  Newton's Second Law must hold for each particle:
 \begin{align*}
 \frac{d\vec p_1}{dt}&=\sum_1 \vec F\\
-\frac{d\vec p_2}{dt}&=\sum_2 \vec F\\
+\frac{d\vec p_2}{dt}&=\sum_2 \vec F
 \end{align*}
 where the index in the sum indicates whether one is considering forces exerted on particle 1 or on particle 2. We can sum these two equations together:
 \begin{align*}
@@ -224,10 +224,8 @@ We already argued in the previous section that we can make all forces internal i
 \end{align*}
 
 In summary, we saw that if no forces are exerted on a single particle, then the momentum of that particle is constant (conserved). In a system of particles, the total momentum of the system is conserved if there are no external forces on the system. Similarly, if there are no non-conservative forces exerted on a particle, that particle's mechanical energy is constant (conserved). In a system of multiple particles, the total mechanical energy of the system will be conserved if there are no non-conservative forces exerted on the system. When we refer to a force being ``exerted on a system'', we mean exerted on one or more of the particles in the system. In particular, the work done by internal forces is not necessarily zero, so energy and momentum are thus conserved under different conditions.
-
 \begin{example}{
-\capfig{0.8\textwidth}{figures/MomentumAndCM/train.png}{\label{fig:momentumandcm:train}A train with $N$ cars of mass $m$ about to collide with a car of mass $m$ that is at rest on the track.}
-Consider a train made of $N$ cars of equal mass $m$ that is travelling at constant speed $v$ along a straight piece of track where friction and drag are negligible, as depicted in Figure \ref{fig:momentumandcm:train}. An empty car of mass $m$ was left at rest on the track in front of the train. The train collides with the empty car which stays attached to the front of the train. What is the speed of the train after the collision? Is the total mechanical energy of the system conserved?}
+\capfig{0.8\textwidth}{figures/MomentumAndCM/train.png}{\label{fig:momentumandcm:train}A train with $N$ cars of mass $m$ about to collide with a car of mass $m$ that is at rest on the track.} Consider a train made of $N$ cars of equal mass $m$ that is travelling at constant speed $v$ along a straight piece of track where friction and drag are negligible, as depicted in Figure \ref{fig:momentumandcm:train}. An empty car of mass $m$ was left at rest on the track in front of the train. The train collides with the empty car which stays attached to the front of the train. What is the speed of the train after the collision? Is the total mechanical energy of the system conserved?}
 When the train collides with the car, it will exert a ``collision'' force on the car, and the car will exert an opposite force on the train. If we consider both of the train and the car as being part of the same system, then those collision forces will be internal, and the momentum of the system (train + car) will be conserved. The train and car both experience external forces from Earth's gravity and the normal force from the train tracks. However, those two sets of forces cancel each other out, since neither the train nor the car have any acceleration in the vertical direction (the sum of the forces on each object has no net vertical component). Thus, there are no net external forces on the car+train system, and the total momentum of the system is conserved through the collision.
 
 We can model this system in one dimension (along the track), which we call the $x$ axis. We choose the ground as a frame of reference, the positive direction to correspond to the initial velocity of the train, and the origin to be located where the car initially starts. Before the collision, the $x$ component of the momenta of the train and car are:
@@ -266,7 +264,6 @@ We also found that mechanical energy was not conserved. This makes physical sens
 
 If the car and train were equipped with large springs to absorb the energy of the impact, the collision could have conserved mechanical energy, as the springs compress and then expand back. The speed of the car and train would then be different after the collision in this case (see example \ref{ex:momentumandcm:1delastic}). It is a feature of collisions where the two bodies remain attached to each other that mechanical energy is not conserved.
 \end{example}
-
 
 \section{Collisions}
 In this section we go through a few examples of applying conservation of momentum to model collisions. Collisions can loosely be defined as events where the momenta of individual particles in a system are different before and after the event.
@@ -308,7 +305,7 @@ As a system, we consider the proton and the nucleus together, so that the total 
 \begin{align*}
 \vec P &= \pvec P'\\
 \therefore P_x &= P'_x\\
-\therefore P_y &= P'_y\\
+\therefore P_y &= P'_y
 \end{align*}
 where, as usual, primes ($'$) denote quantities after the collision. After the collision, both particles will have velocity vectors that have $x$ and $y$ components. Let the final velocity vector of the nucleus, after the collision, be $\pvec v'_N$ and let $\phi$ be the angle that the final velocity of the nucleus makes with the $x$ axis, as shown in Figure \ref{fig:momentumandcm:protonnucleus}. 
 
@@ -395,7 +392,7 @@ A block of mass $M$ moves with velocity $\vec v_M$ in the $x$ direction, as show
 Because this is an elastic collision, both the total momentum and total mechanical energy are conserved. Equating the total momentum before and after the collision, and considering only the $x$ component gives the following equation:
 \begin{align*}
 \vec P_{initial} &=\vec P_{final}\\
-Mv_M+mv_m&=Mv'_M+mv'_m\\
+Mv_M+mv_m&=Mv'_M+mv'_m
 \end{align*}
 where the primes ($'$) correspond to the quantities after the collision. Note that, in principle, the $x$ components of the velocities ($v_M$, $v'_M$, $v_m$, $v'_m$) could be negative numbers if the corresponding block is moving in the negative $x$ direction.
 
@@ -421,7 +418,7 @@ Mv_M^2+mv_m^2&=Mv'^2_M+mv'^2_m\\
 which we can re-write as:
 \begin{align*}
 M(v_M^2-v'^2_M)&= M(v'^2_m-v^2_m)\\
-M(v_M-v'_M)(v_M+v'_M)&= M(v'_m-v_m)(v'_m+v_m)\\
+M(v_M-v'_M)(v_M+v'_M)&= M(v'_m-v_m)(v'_m+v_m)
 \end{align*}
 We can then divide this by the momentum equation (Equation \ref{eq:momentumandcm:exptemp}):
 \begin{align*}
@@ -444,7 +441,7 @@ Solving for $v'_m$ in both equations gives:
 v_M-v_m &= - (v'_M-v'_m)\\
 \therefore v'_m &= v_M+v'_M-v_m\\
 Mv_M+mv_m&=Mv'_M+mv'_m\\
-\therefore v'_m&=\frac{1}{m}(Mv_M+mv_m-Mv'_M)\\
+\therefore v'_m&=\frac{1}{m}(Mv_M+mv_m-Mv'_M)
 \end{align*}
 Equating the two expressions for $v'_m$ allows us to solve for $v'_M$:
 \begin{align*}
@@ -469,12 +466,12 @@ TODO: Checkpoint question: Two trains of the same mass collide elastically on a 
 
 
 \begin{example}{
-\capfig{0.4\textwidth}{figures/MomentumAndCM/protonproton.png}{\label{fig:momentumandcm:protonproton}A proton elastically collides with a proton at rest.}
+\capfig{0.5\textwidth}{figures/MomentumAndCM/protonproton.png}{\label{fig:momentumandcm:protonproton}A proton elastically collides with a proton at rest.}
  A proton of mass $m$ and initial velocity $\vec v_1$ collides elastically with a second proton that is at rest. After the collision, the two protons have velocities $\pvec v'_1$ and $\pvec v'_2$, as shown in Figure \ref{fig:momentumandcm:protonproton}. Show that the velocity vectors of the two protons are perpendicular after the collision.}
 This example highlights a particular feature of elastic collisions when the two objects have the same mass and one of the objects is initially at rest. The conservation of momentum for the system comprised of the two protons can be written as:
 \begin{align*}
 m\vec v_1 &= m\pvec v'_1 + m\pvec v'_2\\
-\vec v_1 &= \pvec v'_1 + \pvec v'_2\\
+\vec v_1 &= \pvec v'_1 + \pvec v'_2
 \end{align*}
 where the left hand side corresponds to the initial total momentum and the right hand side to the total momentum after the collision. In the second line, we cancelled out the mass, and obtained a vector relation between the velocity vectors. We can graphically illustrate the vector relation as in Figure \ref{fig:momentumandcm:vsum} which shows the triangle that is formed by adding the two outgoing velocity vectors to obtain the initial velocity vector.
 \capfig{0.2\textwidth}{figures/MomentumAndCM/vsum.png}{\label{fig:momentumandcm:vsum}Graphical illustration of the relation between the initial and final velocity vectors as a vector sum.}
@@ -498,7 +495,7 @@ In the frame of reference $S$, the total momentum, $\vec P$, of the two particle
 Consider a frame of reference, $S'$, that is moving with velocity $\vec v_{CM}$ relative to the frame of reference $S$. In that frame of reference, the velocities of the two particles are different and given by:
 \begin{align*}
 \pvec v'_1&=\vec v_1- \vec v_{CM}\\
-\pvec v'_2&=\vec v_2- \vec v_{CM}\\
+\pvec v'_2&=\vec v_2- \vec v_{CM}
 \end{align*}
 The total momentum, $\pvec P'$, in the frame of reference $S'$ is then given by:
 \begin{align*}
@@ -572,8 +569,6 @@ E_A &= E_B \\
 \end{align*}
 \end{example}
 
-
-
 \section{The centre of mass}
 In this section, we show how to generalize Newton's Second Law so that it may describe the motion of an object that is not a point particle. Any object can be described as being made up of point particles; for example, those particles could be the atoms that make up regular matter. We can thus use the same terminology as in the previous sections to describe a complicated object as a ``system'' comprised of many point particles, themselves described by Newton's Second Law. A system could be a rigid object where the point particles cannot move relative to each other, such as atoms in a solid\footnote{In reality, even atoms in a solid can move relative to each other, but they do not move by large amounts compared to the object.}. Or, the system could be a gas, made of many atoms moving around, or it could be a combination of many solid objects moving around. 
 
@@ -614,7 +609,7 @@ We can compare Equations \ref{eqn:momentumandcm:cmtemp1} and \ref{eqn:momentuman
 \begin{align*}
 \sum \vec F^{ext}&= \sum_i m_i \vec a_i = \sum_i m_i \frac{d^2 }{dt^2}\vec r_i \\
 \sum \vec F^{ext}&=M\vec a_{CM} = M \frac{d^2 }{dt^2}\vec r_{CM}\\
-\therefore M \frac{d^2 }{dt^2}\vec r_{CM}&= \sum_i m_i \frac{d^2 }{dt^2}\vec r_i\\
+\therefore M \frac{d^2 }{dt^2}\vec r_{CM}&= \sum_i m_i \frac{d^2 }{dt^2}\vec r_i
 \end{align*}
 Re-arranging, and noting that the masses are constant in time, and so they can be factored into the derivatives:
 \begin{align*}
@@ -622,7 +617,7 @@ Re-arranging, and noting that the masses are constant in time, and so they can b
 \frac{d^2 }{dt^2}\vec r_{CM} &= \frac{d^2 }{dt^2}\left(\frac{1}{M}\sum_i m_i\vec r_i \right)\\
 \therefore \vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i
 \end{align*}
-where in the last line we set the quantities that have the same time derivative equal to each other\footnote{Technically, the center of mass is described up to a constant, which we can set to zero.}. $\vec r_{CM}$ is the vector that describes the position of the ``Centre of Mass'' (CM). The position of the centre of mass is described by Newton's Second Law applied to the system as a whole:
+where in the last line we set the quantities that have the same time derivative equal to each other\footnote{Technically, the centre of mass is described up to a constant, which we can set to zero.}. $\vec r_{CM}$ is the vector that describes the position of the ``Centre of Mass'' (CM). The position of the centre of mass is described by Newton's Second Law applied to the system as a whole:
 \begin{align}
 \Aboxed{\sum \vec F^{ext}&=M\vec a_{CM}}
 \end{align}
@@ -637,12 +632,12 @@ The position of the centre of mass is a vector equation that is true for each co
 \vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i\nonumber\\
 \therefore x_{CM} &= \frac{1}{M}\sum_i m_i x_i\nonumber\\
 \therefore y_{CM} &= \frac{1}{M}\sum_i m_i y_i\nonumber\\
-\therefore z_{CM} &= \frac{1}{M}\sum_i m_i z_i\nonumber\\
+\therefore z_{CM} &= \frac{1}{M}\sum_i m_i z_i
 \end{align}
-The centre of mass is that \textbf{position in a system that is described by Newton's Second Law when it is applied to the system as whole}. The center of mass can be thought of as an average position for the system (it is the average of the positions of the particles in the system, weighted by their mass). By describing the position of the centre of mass, we are not worried about the detailed positions of the all of the particles in the system, but rather only the average position of the system as a whole. In other words, this is equivalent to viewing the whole system as a single particle of mass $M$ located at the position of the centre of mass. 
+The centre of mass is that \textbf{position in a system that is described by Newton's Second Law when it is applied to the system as whole}. The centre of mass can be thought of as an average position for the system (it is the average of the positions of the particles in the system, weighted by their mass). By describing the position of the centre of mass, we are not worried about the detailed positions of the all of the particles in the system, but rather only the average position of the system as a whole. In other words, this is equivalent to viewing the whole system as a single particle of mass $M$ located at the position of the centre of mass. 
 
-Consider, for example, a person throwing a dumbbell that is made from two spherical masses connected by a rod, as illustrated in Figure \ref{fig:momentumandcm:cmparabola}. The dumbbell will rotate in a complex manner as it moves through the air. However, the center of mass of the dumbbell will travel along a parabolic trajectory (projectile motion), because the only external force exerted on the dumbbell during its trajectory is gravity.
-\capfig{0.6\textwidth}{figures/MomentumAndCM/cmparabola.png}{\label{fig:momentumandcm:cmparabola} The motion of the center of mass of a dumbbell is described by Newton's Second Law, even if the motion of the rotating dumbbell is more complex.}
+Consider, for example, a person throwing a dumbbell that is made from two spherical masses connected by a rod, as illustrated in Figure \ref{fig:momentumandcm:cmparabola}. The dumbbell will rotate in a complex manner as it moves through the air. However, the centre of mass of the dumbbell will travel along a parabolic trajectory (projectile motion), because the only external force exerted on the dumbbell during its trajectory is gravity.
+\capfig{0.6\textwidth}{figures/MomentumAndCM/cmparabola.png}{\label{fig:momentumandcm:cmparabola} The motion of the centre of mass of a dumbbell is described by Newton's Second Law, even if the motion of the rotating dumbbell is more complex.}
 TODO: Obviously, update the figure! But also, make sure it's a real parabola and that the CM is actually highlighted. 
 
 
@@ -651,7 +646,7 @@ If we take the derivative with respect to time of the centre of mass position, w
 \vec v_{CM} &= \frac{d}{dt}\vec r_{CM} = \frac{1}{M}\sum_i m_i\frac{d}{dt}\vec r_i=  \frac{1}{M}\sum_i m_i\vec v_i\nonumber\\
 \therefore v_{CMx} &= \frac{1}{M}\sum_i m_i v_{ix}\nonumber\\
 \therefore v_{CMy} &= \frac{1}{M}\sum_i m_i v_{iy}\nonumber\\
-\therefore v_{CMz} &= \frac{1}{M}\sum_i m_i v_{iz}\nonumber\\
+\therefore v_{CMz} &= \frac{1}{M}\sum_i m_i v_{iz}
 \end{align}
 Note that this is the same velocity that we found earlier for the velocity of the centre of mass frame of reference. In the centre of mass frame of reference, the total momentum of the system is zero. This makes sense, because the centre of mass represents the average position of the system; if we move ``with the system'', then the system appears to have zero momentum. 
 
@@ -660,14 +655,14 @@ Finally, we can also define the acceleration of the centre of mass by taking the
 \vec a_{CM} &= \frac{d}{dt}\vec v_{CM} = \frac{1}{M}\sum_i m_i\frac{d}{dt}\vec v_i=  \frac{1}{M}\sum_i m_i\vec a_i\nonumber\\
 \therefore a_{CMx} &= \frac{1}{M}\sum_i m_i a_{ix}\nonumber\\
 \therefore a_{CMy} &= \frac{1}{M}\sum_i m_i a_{iy}\nonumber\\
-\therefore a_{CMz} &= \frac{1}{M}\sum_i m_i a_{iz}\nonumber\\
+\therefore a_{CMz} &= \frac{1}{M}\sum_i m_i a_{iz}
 \end{align}
 
 
 \begin{example}{
 \capfig{0.5\textwidth}{figures/MomentumAndCM/sunearthmars.png}{\label{fig:momentumandcm:sunearthmars} A syzygy between the Sun, Earth, and Mars.}
 In astronomy, a syzygy is defined as the event in which three bodies are all lined up along a straight line. For example, a syzygy occurs when the Sun (mass $M_S=\SI{2.00e30}{kg}$), Earth (mass $M_E=\SI{5.97e24}{kg}$), and Mars (mass $M_M=\SI{6.39e23}{kg}$) are all lined up, as in Figure \ref{fig:momentumandcm:sunearthmars}. How far from the centre of the Sun is the centre of mass of the Sun, Earth, Mars system during a syzygy?}
-Since this is a one-dimensional problem, we can define an $x$ axis that is co-linear with the three bodies, and find only the $x$ coordinate of the position of the center of mass. We are free to choose the origin of the coordinate system, so we choose the origin to be located at the centre of the Sun. This way, the position of the centre of mass along the $x$ axis will directly correspond to its distance from the centre of the Sun.
+Since this is a one-dimensional problem, we can define an $x$ axis that is co-linear with the three bodies, and find only the $x$ coordinate of the position of the centre of mass. We are free to choose the origin of the coordinate system, so we choose the origin to be located at the centre of the Sun. This way, the position of the centre of mass along the $x$ axis will directly correspond to its distance from the centre of the Sun.
 
 The Sun, Earth, and Mars are not point particles. However, because they are spherically symmetric, their centres of mass correspond to their geometric centres. We can thus model them as point particles with the mass of the body located at the corresponding geometric centre. If $r_E=\SI{1.50e11}{m}$ ($r_M=\SI{2.28e11}{m}$) is the distance from the centre of the Earth (Mars) to the centre of the Sun, then the position of the centre of mass is given by:
 \begin{align*}
@@ -678,7 +673,7 @@ x_{CM} &= \frac{1}{M}\sum_i m_i x_i\\
 \end{align*}
 The centre of mass of the Sun-Earth-Mars system during a syzygy is located approximately $\SI{500}{km}$ from the centre of the Sun.
 
-\textbf{Discussion:} The radius of the Sun is approximately $\SI{700000}{km}$, so the centre of mass of the system is well inside of the Sun. The Sun is so much more massive than the Earth and Mars that the two planets hardly contribute to shifting the centre of mass away from the centre of the Sun, and could be considered negligible if one wanted to model how the solar system itself moves around the Milky Way galaxy.
+\textbf{Discussion:} The radius of the Sun is approximately $\SI{700000}{km}$, so the centre of mass of the system is well inside of the Sun. The Sun is so much more massive than either of the Earth or Mars, so the two planets hardly contribute to shifting the centre of mass away from the centre of the Sun. We would generally consider the masses of the two planets to be negligible if one wanted to model how the solar system itself moves around the Milky Way galaxy.
 \end{example}
 
 \begin{example}{\capfig{0.5\textwidth}{figures/MomentumAndCM/cmraft.png}{\label{fig:momentumandcm:cmraft}Three people on rafts on a lake.}
@@ -689,7 +684,7 @@ We can define a coordinate system such that the origin is located where Alice is
 \begin{align*}
 \vec r_A &= 0\hat x + 0\hat y\\
 \vec r_B &= r_{AB}\hat x + 0\hat y\\
-\vec r_C &= 0\hat x + r_{AC}\hat y\\
+\vec r_C &= 0\hat x + r_{AC}\hat y
 \end{align*}
 respectively. The $x$ and $y$ coordinates of the centre of mass are thus:
 \begin{align*}
@@ -702,21 +697,171 @@ which corresponds to the position where the three rafts will meet, relative to t
 \end{example}
 TODO: Question library problem, projectile that splits in flight, where does it land? See Giancolli example 9-18.
 
-
-
-
-
-
 \subsection{The centre of mass for a continuous object}
+So far, we have considered the centre of mass for a system made of point particles. In this section, we show how one can determine the centre of mass for a ``continuous object''\footnote{In reality, there are of course no continuous objects since, at the atomic level, everything is made of particles.}. We previously argued that if an object is uniform and symmetric, its centre of mass will be located at the centre of the object. Let us show this explicitly for a uniform rod of total mass $M$ and length $L$, as depicted in Figure \ref{fig:momentumandcm:rod}.
+\capfig{0.5\textwidth}{figures/MomentumAndCM/rod.png}{\label{fig:momentumandcm:rod} A rod of length $L$ and mass $M$.}
+In order to determine the centre of mass of the rod, we first model the rod as being made of $N$ small ``mass elements'' each of equal mass, $\Delta m$, and of length $\Delta x$, as shown in Figure \ref{fig:momentumandcm:rod}. If we choose those mass elements to be small enough, we can model them as point particles, and use the same formula as above to determine the centre of mass of the mass elements.
 
-\section{Advanced topic: the rocket equation}
+We define the $x$ axis to be co-linear with the rod, such that the origin is located at one end of the rod. We can define the ``linear mass density'' of the rod, $\lambda$, as the mass per unit length of the rod:
+\begin{align*}
+\lambda = \frac{M}{L}.
+\end{align*}
 
+A small mass element of length $\Delta x$, will thus have a mass, $\Delta m$, given by:
+\begin{align*}
+\Delta m = \lambda \Delta x 
+\end{align*}
+
+If there are $N$ mass elements that make up the rod, the $x$ position of the centre of mass of the rod is given by:
+\begin{align*}
+x_{CM} &= \frac{1}{M}\sum_i^N m_i x_i = \frac{1}{M}\sum_i^N \Delta m x_i \\
+&=\frac{1}{M}\sum_i^N \lambda \Delta x x_i\\
+\end{align*}
+where $x_i$ is the $x$ coordinate of the $i$-th mass element. Of course, we can take the limit over which the length, $\Delta x$, of each mass element goes to zero to obtain an integral:
+\begin{align*}
+x_{CM} = \lim_{\Delta x \to 0} \frac{1}{M}\sum_i^N \lambda \Delta x x_i = \frac{1}{M} \int_0^L \lambda x dx
+\end{align*} 
+where the discrete variable $x_i$ became the continuous variable $x$, and $\Delta x$ was replaced by $dx$ (which is the same, but indicates that we are taking the limit of $\Delta x \to 0$). The integral is easily found:
+\begin{align*}
+x_{CM} &= \frac{1}{M} \int_0^L \lambda x dx = \frac{1}{M}\lambda \left[ \frac{1}{2} x^2\right]_0^L\\
+&=\frac{1}{M}\lambda \frac{1}{2} L^2 = \frac{1}{M}\left( \frac{M}{L}\right) \frac{1}{2} L^2\\
+&=\frac{1}{2}L
+\end{align*}
+where we substituted the definition of $\lambda$ back in to find, as expected, that the centre of mass of the rod is half its length away from one of the ends.
+
+Suppose that the rod was instead not uniform and that its linear density depended on the position $x$ along the rod:
+\begin{align*}
+\lambda(x) = 2a + 3bx
+\end{align*}
+
+We can still find the centre of mass by considering an infinitesimally small mass element of mass $dm$, and length $dx$. The mass $dm$ would be given, in terms of the linear mass density:
+\begin{align*}
+dm = \lambda(x) dx
+\end{align*}
+The $x$ position of the centre of mass is thus found the same way as before, except that the linear mass density is now a function of $x$:
+\begin{align*}
+x_{CM} &= \frac{1}{M} \int_0^L \lambda(x) x dx =\frac{1}{M} \int_0^L (2a + 3bx) x dx=\frac{1}{M} \int_0^L (2ax + 3bx^2) dx\\
+&=\frac{1}{M}  \left[  ax^2 + bx^3  \right]_0^L\\
+&=\frac{1}{M} (aL^2 + bL^3 )
+\end{align*}
+
+In general, for a continuous object, the position of the centre of mass is given by:
+\begin{align}
+\vec r_{CM} &=\frac{1}{M}\int \vec r dm\nonumber\\
+\therefore x_{CM} &= \frac{1}{M}\int x dm\nonumber\\
+\therefore y_{CM} &=  \frac{1}{M}\int y dm\nonumber\\
+\therefore z_{CM} &=  \frac{1}{M}\int z dm\\
+\end{align}
+where in general, one will need to write $dm$ in terms of something that depends on position (or a constant) so that the integrals can be evaluated over the spatial coordinates ($x$,$y$,$z$) over the range that describe the object.
+\begin{example}{\capfig{0.5\textwidth}{figures/MomentumAndCM/cmbowl.png}{\label{fig:momentumandcm:cmbowl} A symmetric bowl with parabolic sides is completely filled with water. The bowl has a height $h$ and a circular cross-section with a maximal radius $R$.}
+A bowl that has parabolic sides and a circular cross-section, as illustrated in Figure \ref{fig:momentumandcm:cmbowl}, is filled with water. The bowl itself has a negligible mass and thickness, so that the mass of the full bowl is dominated by the mass of the water. The bowl has a height $h$ and a maximum radius $R$, such that $h=\frac{1}{a^2}R^2$, where $a$ is some constant. Where is the centre of mass of the full bowl?}
+
+We can define a coordinate system such that the origin is located at the bottom of the bowl and the $z$ axis corresponds to the axis of symmetry of the bowl. Because the bowl is full of water, and the bowl itself has negligible mass, we can model the full bowl as a uniform body of water with the same shape as the bowl and (volume) mass density $\rho$. Furthermore, by symmetry, the centre of mass of the bowl will be on the $z$ axis. 
+
+Because the bowl has a circular cross-section, we can divide it up into disk-shaped mass elements, $dm$, that have an infinitesimally small height $dz$, and a radius $r(z)$, that depends on their $z$ coordinate. The centre of mass of each mass element will be located where the corresponding disk intersects the $z$ axis. The mass of one disk element is given by:
+\begin{align*}
+dm = \rho dV = \rho \pi r^2(z) dz
+\end{align*}
+where $dV = \pi r(z)^2 dz$ is the volume of the disk with radius $r(z)$ and thickness $dz$. The radius of the infinitesimal disk depends on its $z$ position, since the radii of the disk must describe a parabola:
+\begin{align*}
+z(r) &= \frac{1}{a^2}r^2\\
+r(z) &= a\sqrt z\\
+\therefore dm &= \rho \pi r^2(z) dz= \rho \pi a^2  z dz
+\end{align*}
+The $z$ coordinate of the centre of mass is thus given by:
+\begin{align*}
+z_{CM} &=  \frac{1}{M}\int z dm =\frac{1}{M}\int_0^h z  (\rho \pi a^2 z dz)=\frac{\rho \pi a^2}{M}\int_0^h z^2dz \\
+&=\frac{\rho \pi a^2}{M}\left[ \frac{1}{3}z^3 \right]_0^h\\
+&=\frac{\rho \pi a^2}{3M}h^3
+\end{align*}
+However, we are not quite done, since we do not know the total mass, $M$, of the water. To find the total mass of water, $M$, we proceed in analogous way, and determine the value of the sum (integral) of all of the mass elements:
+\begin{align*}
+M = \int dm = \int_0^h \rho \pi a^2 z dz = \rho \pi a^2 \left[ \frac{1}{2}z^2 \right]_0^h= \frac{1}{2}\rho \pi a^2 h^2
+\end{align*}
+Substituting this value for $M$, we can determine the $z$ coordinate of the centre of mass of the full bowl:
+\begin{align*}
+z_{CM} &=\frac{\rho \pi a^2}{3M}h^3 = \frac{2\rho \pi a^2}{3\rho \pi a^2 h^2}h^3=\frac{2}{3}h
+\end{align*}
+Regardless of the actual shape of the parabola (the parameter $a$), the centre of mass will always be two thirds of the way up from the bottom of the bowl.
+
+\textbf{Discussion: }In determining the centre of mass of a three dimensional object, we used symmetry to argue that the $x$ and $y$ coordinates would be zero. We then found the $z$ position of the centre of mass by dividing up the bowl into infinitesimally small mass elements (disks) along the direction in which we needed to find the centre of mass coordinate.
+\end{example}
+
+TODO: Question Library find the CM of a uniform half disk.
+
+TODO: Checkpoint question: The centre of mass of a continuous object is always located within the object? (False)
 
 \newpage
 \section{Summary}
 
 \begin{chapterSummary}{
-\item Something that was learned
+The momentum vector, $\vec p$, of a point particle of mass $m$ with velocity $\vec v$ is defined as:
+\begin{align*}
+\vec p = m\vec v
+\end{align*}
+We can write Newton's Second Law for a point particle in term of its momentum:
+\begin{align*}
+\frac{d}{dt}\vec p = \sum \vec F = \vec F^{net}
+\end{align*}
+where the net force on the particle determines the rate of change of its momentum. In particular, if there is no net force on a particle, its momentum will not change.
+
+The net impulse vector, $\vec J^{net}$, is defined as the integrated net force on a particle exerted from a time $t_A$ to a time $t_B$:
+\begin{align*}
+\vec J^{net} = \int_{t_A}^{tB} \vec F^{net} dt
+\end{align*}
+The net impulse vector is also equal to the change in momentum of the particle in that same period of time:
+\begin{align*}
+\vec J^{net} = \Delta \vec p = \vec p_B - \vec p_A
+\end{align*}
+
+When we define a system of particles, we can distinguish between internal and external forces. Internal forces are those forces exerted by the particles in the system on each other. External forces are those forces on the particles in the system that are not exerted by the particles on each other. The sum over all of the forces on all of the particles in the system will be equal to the sum over the external forces, because the sum over all internal forces on a system is always zero (Newton's Third Law).
+
+The total momentum of a system, $\vec P$, is the sum of the momenta, $\vec p_i$, of all of the particles in the system:
+\begin{align*}
+\vec P = \sum \vec p_i
+\end{align*}
+
+The rate of change of the momentum of a system is equal to the sum of the external forces on the system:
+\begin{align*}
+\frac{d}{dt}\vec P = \sum \vec F^{ext}
+\end{align*}
+which can be thought of as an equivalent description as Newton's Second Law, but for the system as a whole. If the net (external) force on a system is zero, then the total momentum of the system is conserved. 
+
+Collisions are those events when the particles in a system interact (e.g. by colliding) and change their momenta. When modelling collisions, it is usually beneficial to first define a system for which the total momentum is conserved before and after the collision. One can then write the total momentum of the system in terms of the momenta of the individual particles before and after the collision and equate them to determine the momenta of the individual particles.
+
+Collisions can be elastic or inelastic. Elastic collisions are those where, in addition to the total momentum, the total mechanical energy of the system is conserved. The total mechanical energy can usually be taken as the sum of the kinetic energies of the particles in the system.
+
+Inelastic collisions are those in which the total mechanical energy of the system is not conserved. One can usually identify if mechanical energy was introduced or removed from the system and determine if the collision is elastic. It is important to identify when momentum and mechanical energy are conserved. Momentum is conserved if no net force is exerted on the system, whereas mechanical energy is conserved if no net work was done on the system by non-conservative forces.
+
+We can always choose in which frame of reference to model a collision. In some cases, it is convenient to use the frame of reference of the centre of mass of the system, because in that frame of reference, the total momentum of the system is zero.
+
+If a system has a total mass $M$, then one can use Newton's Second Law to describe its motion:
+\begin{align*}
+\sum \vec F^{ext} = M \vec a_{CM}
+\end{align*}
+where the sum of the forces is over all of the external forces on the system. The acceleration vector, $\vec a_{CM}$, describes the motion of the ``centre of mass'' of the system.
+
+The centre of mass of a system is a mass-weighted average of the positions of all of the particles of mass $m_i$ and position $\vec r_i$ that comprise the system:
+\begin{align*}
+\vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i\\
+\end{align*}
+The vector equation can be broken into components to find the $x$, $y$, and $z$ component of the position of the centre of mass. Similarly, one can also define the velocity of the centre of mass of the system, in terms of the individual velocities, $\vec v_i$, of the particles in the system:
+\begin{align*}
+\vec v_{CM} &= \frac{1}{M}\sum_i m_i\vec v_i\\
+\end{align*}
+Finally, one can define the acceleration of the centre of mass of the system, in terms of the individual accelerations, $\vec a_i$, of the particles in the system:
+\begin{align*}
+\vec a_{CM} &=  \frac{1}{M}\sum_i m_i\vec a_i
+\end{align*}
+
+If the system is a continuous object, we can find its centre of mass using a sum (integral) of infinitesimally small mass elements, $dm$:
+\begin{align*}
+\vec r_{CM} &=\frac{1}{M}\int \vec r dm\\
+\therefore x_{CM} &= \frac{1}{M}\int x dm\\
+\therefore y_{CM} &=  \frac{1}{M}\int y dm\\
+\therefore z_{CM} &=  \frac{1}{M}\int z dm
+\end{align*}
+The strategy to set up the integrals above is usually to express the mass element, $dm$, in terms of the position, size, and density of the material. One can then integrate over position in the range defined by the dimensions of the object.
 }
 \end{chapterSummary}
 
