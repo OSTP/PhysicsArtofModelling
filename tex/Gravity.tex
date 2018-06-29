@@ -12,12 +12,21 @@ In previous chapters, we have so far learned about Newton's Theory of Classical 
  }
 \end{learningObjectives}
 
-\begin{opening}
-\begin{MCquestion}{A question}
-\item a choice
-\item another choice %correct
+\begin{opening}{A rocketship follows a circular orbit of radius $r$ around Earth. The rocket quickly accelerates to twice its initial speed (so it is essentially instantaneous).}
+
+\begin{MCquestion}{Assuming the rocket remains in orbit, what will be the shape of its new orbit?}
+\item A circle of radius $r$.
+\item A circle with a radius not equal to $r$.
+\item An ellipse centred around the Earth.
+\item An ellipse not centred around the Earth. \correct
+\end{MCquestion}
+\begin{MCquestion}{What will happen to the period of the rocket's orbit?}
+\item It will be the same as its initial period.
+\item It will be greater than its initial period. \correct
+\item It will be less than its initial period. 
 \end{MCquestion}
 \end{opening}
+
 
 \section{Kepler's Laws}
 Although humans have long been fascinated by the motion of objects in the sky, it was Johannes Kepler, in the early seventeenth century, that was the first to write down quantitative rules that described the motions of planets around the Sun. His theory was based on the extensive and detailed observations recorded by Tycho Brahe in the late sixteenth century. 
@@ -54,8 +63,8 @@ Kepler's Second Law is really a statement about the speed of a planet in an elli
 Kepler's Second Law states that the two areas that are shown by the greyed out sections in the figure are the same if the planet took the same amount of time to travel between points $A$ and $B$ as it did to travel between points $C$ and $D$. Because the points $C$ and $D$ are further away from the Sun than points $A$ and $B$, the distance between points $C$ and $D$ must be smaller than the distance between points $A$ and $B$ for the two areas to be the same. This, in turn, implies that the planet must be moving slower between $C$ and $D$ than between points $A$ and $B$. The speed of a planet is thus greatest at the perihelion and smallest at the aphelion. As we will see in a later chapter, Kepler's Second Law is equivalent to the statement that the angular momentum of the planet is conserved.
 
 \begin{checkpoint}
-Based on Kepler's second law, what can you say about the speed of a planet in a \textbf{circular} orbit? 
-\begin{answer} {The speed of the planet is constant.}
+Based on Kepler's second law, what can you say about the speed of a planet in a \textbf{circular} orbit? \\
+\begin{answer}{The speed of the planet is constant.}
 \end{answer}
 \end{checkpoint} 
 
@@ -71,12 +80,14 @@ We can re-arrange this relation so that all of the quantities related to one pla
 In other words, the ratio between the orbital period squared and the semi-major axis cubed is a constant, independent of the particular planet. In Example \ref{ex:gravity:keplerconstant}, we will use Newton's Universal Theory of Gravity to evaluate the constant.
 
 \begin{checkpoint}
-\begin{MCquestion}{If you double the radius of a circular orbit, what happens to the orbital speed?}
-\item It doubles.
-\item It increases by a factor of 8.
-\item It increases by a factor of $\sqrt{8}$.
-\item It decreases by a factor of $\sqrt{8}$.
-\item It decreases by a factor of $\frac{\sqrt{8}}{2}$. \correct
+\begin{MCquestion}{An object in a circular orbit, radius $r$, has an orbital speed $v$. 
+
+If you double the radius of the circular orbit, what will be the value of the orbital speed?}
+\item $2v$
+\item $8v$
+\item $\sqrt{8}$.
+\item $\frac{1}{\sqrt{8}}$.
+\item $\frac{2}{\sqrt{8}}$. \correct
 \end{MCquestion}
 \end{checkpoint}
 TODO: Check answer
@@ -166,41 +177,6 @@ Thus, we find that the ratio of the cube of the radius orbit to the period squar
 \textbf{Discussion}: The relation above can, for example, be used to determine the mass of the Sun, since we can use geometry to determine the semi-major axis for the orbit of a planet, as Kepler did with the data from Tycho Brahe.
 \end{example}
 
-\begin{example}{\label{ex:gravity:geosyncorbit}Geosynchronous satellites are satellites that are placed in a circular orbit around the Earth in such a way that their orbital period is synchronized with the $\SI{24}{h}$ rotation period of the Earth. The advantage of geosynchronous satellites is that they are always above the same point on Earth, which makes them useful for establishing communication networks. At what altitude must geosynchronous satellites be placed?}
-When a satellite orbits the Earth, the only force on the satellite is the force of gravity from the Earth. Since the satellite is in a circular orbit, that force of gravity must point towards the centre of the Earth in such a way that the satellite has the correct radial acceleration, $a_R$, to stay in uniform circular motion:
-\begin{align*}
-a_r=\frac{v^2}{R}
-\end{align*}
-where $v$ is the speed of the satellite, and $R$ is the distance between the satellite and the centre of the Earth (i.e. the centre of the circular orbit). The magnitude of the force of gravity on the satellite of mass $m$ is given by:
-\begin{align*}
-F = G\frac{Mm}{R^2}
-\end{align*}
-where $M$ is the mass of the Earth. Newton's Second Law applied to the satellite is:
-\begin{align*}
-\sum F_r = F &= ma_r\\
-\therefore G\frac{Mm}{R^2}&=m\frac{v^2}{R}
-\end{align*}
-The speed of the satellite can be found from the fact that it must travel a distance of $2\pi R$ (the circumference of the orbit) in a period $T=\SI{24}{h}$:
-\begin{align*}
-v=\frac{2\pi R}{T}
-\end{align*}
-which we can substitute into the equation from Newton's Second Law to find the distance $R$ (i.e. the radius of the circular orbit):
-\begin{align*}
-G\frac{Mm}{R^2}&=m\frac{v^2}{R}\\
-G\frac{M}{R^2}&=\frac{(2\pi R)^2}{T^2R}\\ 
-G\frac{M}{R^2}&=\frac{4\pi^2 R}{T^2}\\ 
-\therefore R&=\sqrt[3]{G\frac{MT^2}{4\pi^2}}\\
-&=\sqrt[3]{(\SI{6.67e-11}{Nm^2/kg^2})\frac{(\SI{5.97e24}{kg})(\SI{86400}{s})^2}{4\pi^2}}\\
-&=\SI{42.2e6}{m}
-\end{align*}
-which corresponds to the distance between the satellite and the centre of the Earth. To obtain the ``altitude'', $h$, namely the distance from the surface of the Earth to the satellite, we must subtract the radius of the Earth, $R_\oplus=\SI{6.371e6}{m}$ from this distance:
-\begin{align*}
-h = R-R_\oplus = \SI{35.9e6}{m}
-\end{align*}
-Thus, geosynchronous satellites are located at an altitude of approximately $\SI{36000}{km}$.
-
-\textbf{Discussion}: Note that we could have also easily used Kepler's Third Law to determine the radius of the orbit, since we already know the period ($\SI{24}{h}$), and we know the value of the constant for Kepler's Third Law from Example \ref{ex:gravity:keplerconstant}.
-\end{example}
 
 \begin{example}{\label{ex:gravity:gofr}The acceleration due to Earth's gravity depends on the force that the Earth exerts on an object. Using the Earth's mass and radius, determine the acceleration of falling objects due to Earth's gravity at the surface of the Earth. Also, determine the altitude where the acceleration due to Earth's gravity is half of that at the Earth's surface.}
 We can find the acceleration due to Earth gravity by determining the acceleration of a mass $m$ upon which gravity is the only acting force. In other words, we model an object that is in free-fall a distance $R$ away from the centre of the Earth. Newton's Second Law can be used in one dimension (corresponding to the direction that connects the falling mass to the centre of the Earth):
@@ -276,7 +252,7 @@ If the plumb line is located on Earth, some angle $\theta$ from the nearest pole
 \capfig{0.7\textwidth}{figures/Gravity/apparentweight2.png}{\label{fig:gravity:apparentweight2}Away from the equator and poles, a plumb line (right) does not point towards the centre of the Earth, because a component of the tension must provide acceleration towards the centre of the circle (of radius $R\sin\theta$) about which the plumb line rotates due to the Earth's rotation. Note that the deflection of the plumb line is exaggerated}
 
 \begin{checkpoint}
-\begin{MCquestion}{You cut the string of the plumb line. Where does the mass land?}
+\begin{MCquestion}{You cut the string of the plumb line. Where does the mass land relative to it's initial latitude?}
 \item At the same latitude.
 \item Closer to the nearest pole.
 \item Closer to the equator. \correct
@@ -316,6 +292,16 @@ m\vec g(R_\oplus)&= m\vec a\\
 \end{align*}
 but we see here why it more precise to refer to $g$ as the ``magnitude of the gravitational field at the surface of the Earth'' rather than ``the acceleration due to Earth's gravity''. It is also worth noting that the two are only equal if the gravitational mass (on the left of the equation in the second line) is the same as the inertial mass (on the right of the equation). The gravitational mass is the mass that appears in the gravitational force defined by Newton, whereas the inertial mass is the mass that appears with the acceleration in Newton's Second Law.
 
+TODO: Maybe take out
+\begin{checkpoint}
+\begin{MCquestion}{Two small objects with different masses, $m_1$ and $m_2$, are a located a distance $r$ from a nearby star. What can you say about the magnitude of the gravitational field and the magnitude of the gravitational force on $m_1$ and $m_2$?}
+\item The field is different and the forces are different. 
+\item The field is different but the forces are the same.
+\item The field is the same but the forces are different.
+\item The field is the same and the forces are the same. 
+\end{MCquestion}
+\end{checkpoint}
+
 Suppose that there are two large mass bodies, $M_1$ and $M_2$, and a smaller mass body, $m$. We can calculate the net gravitational force on $m$ by summing the gravitational force vectors from $M_1$ and $M_2$ separately. If the gravitational field from $M_1$ and $M_2$ are given by $\vec g_1(\vec r)$ and $\vec g_2(\vec r)$, respectively, then the total gravitational force on $m$ is given by:
 \begin{align*}
 \vec F &= m\vec g_1(\vec r) + m\vec g_2(\vec r)=m(\vec g_1(\vec r)+\vec g_2(\vec r))\\
@@ -327,8 +313,13 @@ where we have introduced the total gravitational field:
 \end{align*}
 In other words, if there are multiple bodies that result in a non-negligible force of gravity, we can calculate their gravitational fields independently and sum them together to define a net gravitational field, $\vec g(\vec r)$, that models the net force of gravity from all of the bodies. The net gravitational force on a new body of mass $m'$ is then simply given by $m'\vec g(\vec r)$, and we do not need to add any more vectors together. For example, when calculating the motion of satellites that can be influenced by the force of gravity from both the Earth and the Moon, we simply need to calculate the net gravitational field from the Earth and Moon, and the motion of any satellite can then be modelled using that net gravitational field.
 
-TODO: checkpoint?
-TODO: problem about the gravitational field between multiple bodies
+\begin{checkpoint}
+\begin{MCquestion}{There are two planets located a distance $d$ apart. Point A is located midway between the two planets. Point B is located a distance $d/2$ from one of the planets, at the location shown in Figure \ref{fig:gravity:fieldAB}. How does the field at A compare to the field at B?\capfig{0.7\textwidth}{figures/Gravity/fieldAB.png}{\label{fig:gravity:fieldAB}Two planets are a distance $d$ apart. We are considering the gravitational field at two points, A and B, located near the planets.}}
+\item The magnitude is the same at $A$ and $B$.
+\item The magnitude is greater at $A$ than at $B$.
+\item The magnitude is greater at $B$ than at $A$. \correct
+\end{MCquestion}
+\end{checkpoint}
 
 TODO: Question Library question to find L1 Lagrange point (it requires a binomial expansion), see e.g. example 6-10 in Giancolli
 
@@ -358,20 +349,17 @@ Inserting this into Gauss' Law, we find:
 -g(r)(4\pi r^2) &= 4\pi G M^{enc}\\
 \therefore g(r) &= - \frac{GM}{r^2}
 \end{align*}
-where $M^{enc}=M$ is the total mass enclosed by the Gaussian surface (in this case, the entire mass $M$ is enclosed). This is of course the result that we expected. Note that Gauss' Law is only easy to use if the system is highly symmetric (e.g. spherically symmetric), and that it does not give the direction of the field vector, which must be obtained from symmetry arguments. 
+where $M^{enc}=M$ is the total mass enclosed by the Gaussian surface (in this case, the entire mass $M$ is enclosed). This is of course the result that we expected. Note that Gauss' Law is only easy to use if the system is highly symmetric (e.g. spherically symmetric), and that it does not give the direction of the field vector, which must be obtained from symmetry arguments. \\
 
-\begin{studentOpinion}{Olivia}
-Here's an analogy to describe Gauss's Law for gravity: A famous celebrity is doing an event, and they attract a certain number of fans. The fans will try to get as close to the celebrity as possible, so you have to put up a barricade around the celebrity. The gravitational field is represented by how crowded it is somewhere along the barricade. If a second celebrity is at the event, they will attract their own fans, so there will be more people around the barricade. The number of celebrities (or how famous they are) is kind of like the enclosed mass $M^{enc}$; the more mass that is enclosed, the stronger the field will be. 
+\begin{studentOpinion}{Olivia} Here's an analogy to describe Gauss's Law for gravity: A famous celebrity is doing an event, and they attract a certain number of fans. The fans will try to get as close to the celebrity as possible, so you have to put up a barricade around the celebrity. The gravitational field is represented by how crowded it is somewhere along the barricade. If a second celebrity is at the event, they will attract their own fans, so there will be more people around the barricade. The number of celebrities (or how famous they are) is kind of like the enclosed mass $M^{enc}$.
 
-Now imagine that you haven't put up a barricade yet. A photographer is coming to the event, and you told him to stand at some location that is a distance $r$ from one of the celebrities. The photographer wants to know how crowded it will be when he is standing behind the barricade at that location. Gauss's law gives us a way to figure this out. If you know which celebrities are at the event ($M^{enc}$), you can determine how many people will be there (this is like finding $4\pi GM^{enc}$). Then, if you can build a barricade such that the fans are evenly distributed around it, and you know how long that barricade is ($\oint dA$), you can easily calculate how crowded it will be at some point along the barricade (you can just divide the number of people by the length of the barricade). 
+Now imagine that you haven't put up a barricade yet. A photographer is coming to the event, and you told him to stand at some location that is a distance $r$ from the celebrities. The photographer wants to know how crowded it will be when he is standing behind the barricade at that location. Gauss's law gives us a way to figure this out. If you know which celebrities are at the event ($M^{enc}$), you can determine how many people will be there (this is like finding $4\pi GM^{enc}$). Then, if you can build a barricade such that the fans are evenly distributed around it, and you know how long that barricade is ($\oint dA$), you can easily calculate how crowded it will be at some point along the barricade (you can just divide the number of people by the length of the barricade). \\
 
-The barricade represents our Gaussian surface and, like a Gaussian surface, it can be whatever shape we want as long as it encloses the celebrities and passes through the point we are interested in. If we want to make sure the people are spread out evenly, the shape of the barricade is going to depend on the specific case. It will depend on how many celebrities there are, how famous each one is, and their locations. For example, consider the case shown in Figure \ref{fig:gravity:barricadeanalogy}, which depicts two celebrities that are far apart from each other, who attract the same number of fans (this is analogous to having two spherical bodies of the same mass).
+The barricade represents our Gaussian surface and, like a Gaussian surface, it can be whatever shape we want as long as it encloses the celebrities and passes through the point we are interested in. If we want to make sure the people are spread out evenly, the shape of the barricade is going to depend on the specific case. Let's take the example of our single spherical body. This is analagous to having one celebrity at the event. The figure below shows two possible barricades we could build. Although we can technically build the barricade on the left, it doesn't help us because the areas closer to the celebrity will be more crowded. Instead, we want to build the barricade on the right, which is a circle of radius $r$, because the fans are evenly spread out. This is why we use a spherical Gaussian surface when we're considering the field due to a spherical body - at any point a distance $r$ from the body, the field will be the same. 
 
-\capfig{0.7\textwidth}{figures/Gravity/barricadeanalogy.png}{\label{fig:gravity:barricadeanalogy}There are two celebrities (two dots) enclosed by a barricade. They each have fans that want to be as close to them as possible, and a photographer located at $P$. We want to build a barricade so that the fans are spread out evenly. We can technically make the barricade on the left, but it isn't useful to us. The barricade on the right is useful because all of the fans are spread out evenly.}
+\capfig{0.7\textwidth}{figures/Gravity/barricadeanalogy.png}{\label{fig:gravity:barricadeanalogy}A celebrity (black dot) attracts fans (grey dots). A photographer (P) stands behind the barricade a distance $r$ away. This shows two possible barricades we could build around the celebrity. The barricade on the left doesn't help us. We want to build a barricade so the fans are evenly spread out, like the one on the right. }
 
-In this section, we used Gauss's law to find the gravitational field due to a spherical body. This is the simplest case, and in our analogy it's like having just one celebrity at the event the photographer is attending. In this case, the gravitational field is the same so long as the distance to the centre of the sphere is the same. This means that if we built a circular barricade with a radius $r$, all the fans would be evenly spread out, which makes sense. This is analogous to using a sphere of radius $r$ as our Gaussian surface to find the gravitational field due to the spherical body at a distance $r$.
-
-(Remember that the Gaussian surface isn't a physical thing, so it won't affect the gravitational field. Its' just a mathematical tool we use where we take advantage of the field's geometry.)
+Remember that the Gaussian surface isn't a physical thing, so it won't affect the gravitational field. Its' just a mathematical tool we use where we take advantage of the field's geometry.
 \end{studentOpinion}
 
 We can also use Gauss' Law to determine the gravitational field \textbf{inside} of the body of mass $M$ and radius $R$. This is illustrated in Figure \ref{fig:gravity:gauss2}, which shows a spherical Gaussian surface of radius $r$ that is \textbf{inside} of the body of mass $M$.
@@ -633,16 +621,45 @@ Theory project: Prove, based on Newton's Universal Theory of Gravity, that the m
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{A question\label{Q:chaptertitle:q1}}
-\item How close can he get to the hurdle before he has to jump?
-\item What maximum height does he reach?
-\end{problemParts}
+\begin{problem}{\label{prob:gravity:geosyncorbit}Geosynchronous satellites are satellites that are placed in a circular orbit around the Earth in such a way that their orbital period is synchronized with the $\SI{24}{h}$ rotation period of the Earth. The advantage of geosynchronous satellites is that they are always above the same point on Earth, which makes them useful for establishing communication networks. At what altitude must geosynchronous satellites be placed?}
+\end{problem}
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{\ref{Q:chaptertitle:q1}}
-{
-the solution
+\begin{solution}{\ref{prob:gravity:geosyncorbit}}
+{When a satellite orbits the Earth, the only force on the satellite is the force of gravity from the Earth. Since the satellite is in a circular orbit, that force of gravity must point towards the centre of the Earth in such a way that the satellite has the correct radial acceleration, $a_R$, to stay in uniform circular motion:
+\begin{align*}
+a_r=\frac{v^2}{R}
+\end{align*}
+where $v$ is the speed of the satellite, and $R$ is the distance between the satellite and the centre of the Earth (i.e. the centre of the circular orbit). The magnitude of the force of gravity on the satellite of mass $m$ is given by:
+\begin{align*}
+F = G\frac{Mm}{R^2}
+\end{align*}
+where $M$ is the mass of the Earth. Newton's Second Law applied to the satellite is:
+\begin{align*}
+\sum F_r = F &= ma_r\\
+\therefore G\frac{Mm}{R^2}&=m\frac{v^2}{R}
+\end{align*}
+The speed of the satellite can be found from the fact that it must travel a distance of $2\pi R$ (the circumference of the orbit) in a period $T=\SI{24}{h}$:
+\begin{align*}
+v=\frac{2\pi R}{T}
+\end{align*}
+which we can substitute into the equation from Newton's Second Law to find the distance $R$ (i.e. the radius of the circular orbit):
+\begin{align*}
+G\frac{Mm}{R^2}&=m\frac{v^2}{R}\\
+G\frac{M}{R^2}&=\frac{(2\pi R)^2}{T^2R}\\ 
+G\frac{M}{R^2}&=\frac{4\pi^2 R}{T^2}\\ 
+\therefore R&=\sqrt[3]{G\frac{MT^2}{4\pi^2}}\\
+&=\sqrt[3]{(\SI{6.67e-11}{Nm^2/kg^2})\frac{(\SI{5.97e24}{kg})(\SI{86400}{s})^2}{4\pi^2}}\\
+&=\SI{42.2e6}{m}
+\end{align*}
+which corresponds to the distance between the satellite and the centre of the Earth. To obtain the ``altitude'', $h$, namely the distance from the surface of the Earth to the satellite, we must subtract the radius of the Earth, $R_\oplus=\SI{6.371e6}{m}$ from this distance:
+\begin{align*}
+h = R-R_\oplus = \SI{35.9e6}{m}
+\end{align*}
+Thus, geosynchronous satellites are located at an altitude of approximately $\SI{36000}{km}$.
+
+\textbf{Discussion}: Note that we could have also easily used Kepler's Third Law to determine the radius of the orbit, since we already know the period ($\SI{24}{h}$), and we know the value of the constant for Kepler's Third Law from Example \ref{ex:gravity:keplerconstant}.
 }
 \end{solution}
 
