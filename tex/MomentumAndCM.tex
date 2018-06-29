@@ -575,11 +575,9 @@ E_A &= E_B \\
 
 
 \section{The centre of mass}
-In this section, we show how to generalize Newton's Second Law so that it may describe the motion of an object that is not a point particle. In the previous section, we saw how we could define a system comprised of particles and use the total momentum and the total mechanical energy of the system to describe the system as a whole. 
+In this section, we show how to generalize Newton's Second Law so that it may describe the motion of an object that is not a point particle. Any object can be described as being made up of point particles; for example, those particles could be the atoms that make up regular matter. We can thus use the same terminology as in the previous sections to describe a complicated object as a ``system'' comprised of many point particles, themselves described by Newton's Second Law. A system could be a rigid object where the point particles cannot move relative to each other, such as atoms in a solid\footnote{In reality, even atoms in a solid can move relative to each other, but they do not move by large amounts compared to the object.}. Or, the system could be a gas, made of many atoms moving around, or it could be a combination of many solid objects moving around. 
 
-Any object can be described as being made up of tiny point mass particles. For example, those particles could be atoms. We can thus use the same terminology as in the previous sections to describe a complicated object as a ``system'' comprised of many point particles, themselves described by Newton's Second Law. A system could thus be a rigid object where the point particles cannot move relative to each other, such as atoms in a solid\footnote{In reality, even atoms in a solid can move relative to each other, but they do not move by large amounts compared to the object.}. Or, the system could be a gas, made of many atoms moving around, or it could be a combination of many solid objects moving around. 
-
-In this section, we show that by introducing the ``centre of mass'' of a system, we can describe the motion of the system as a whole. The goal is to obtain the equivalent of Newton's Second Law, but for the system.
+In the previous section, we saw how the total momentum and the total mechanical energy of the system could be used to describe the system as a whole. In this section, we will define the centre of mass which will allow us to describe the position of the system as a whole.
 
 Consider a system comprised of $N$ point particles. Each point particle $i$, of mass $m_i$, can be described by a position $\vec r_i$, a velocity, $\vec v_i$, and an acceleration, $\vec a_i$, relative to some coordinate system. Newton's Second Law can be applied to any of the particles in the system:
 \begin{align*}
@@ -590,7 +588,7 @@ where $\vec F_{ik}$ is the k-th force exerted on particle $i$. We can write Newt
 \sum_k \vec F_{1k} + \sum_k \vec F_{2k} + \sum_k \vec F_{3k} +\dots &= m_1\vec a_1 + m_2 \vec a_2 + m_3 \vec a_3 + \dots\\
 \sum \vec F = \sum_i m_i \vec a_i 
 \end{align*}
-where the sum on the left is the sum of all of the forces exerted on all of the particles in the system. However, as we have already seen, the sum of all of the forces on the system can be divided into a sum over external and internal forces:
+where the sum on the left is the sum of all of the forces exerted on all of the particles in the system\footnote{Again, we are summing together forces that are acting on \textbf{different} particles} and the sum over $i$ on the right is over all of the $N$ particles in the system. However, as we have already seen, the sum of all of the forces on the system can be divided into a sum over external and internal forces:
 \begin{align*}
 \sum \vec F = \sum \vec F^{ext} + \sum \vec F^{int} 
 \end{align*}
@@ -608,7 +606,7 @@ we would like to have an equation of the form:
 \label{eqn:momentumandcm:cmtemp2}
 \sum \vec F^{ext}&=M\vec a_{CM}
 \end{align}
-to describe the system as a whole. However, it is not clear what acceleration this refers to, since the particles in the system could be moving in all sorts of directions. Suppose that there is a point in the system, whose position is given by the vector, $\vec r_{CM}$, in such a way that the acceleration above is the second time-derivative of that position vector:
+to describe the system as a whole. However, it is not clear what the acceleration, $\vec a_{CM}$ refers to, since the particles in the system could all be moving in different directions. Suppose that there is a point in the system, whose position is given by the vector, $\vec r_{CM}$, in such a way that the acceleration above is the second time-derivative of that position vector:
 \begin{align*}
 \vec a_{CM} = \frac{d^2 }{dt^2}\vec r_{CM}
 \end{align*}
@@ -624,6 +622,88 @@ Re-arranging, and noting that the masses are constant in time, and so they can b
 \frac{d^2 }{dt^2}\vec r_{CM} &= \frac{d^2 }{dt^2}\left(\frac{1}{M}\sum_i m_i\vec r_i \right)\\
 \therefore \vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i
 \end{align*}
+where in the last line we set the quantities that have the same time derivative equal to each other\footnote{Technically, the center of mass is described up to a constant, which we can set to zero.}. $\vec r_{CM}$ is the vector that describes the position of the ``Centre of Mass'' (CM). The position of the centre of mass is described by Newton's Second Law applied to the system as a whole:
+\begin{align}
+\Aboxed{\sum \vec F^{ext}&=M\vec a_{CM}}
+\end{align}
+where $M$ is the total mass of the system, and the sum of the forces is the sum over only external forces on the system. Although we have formally derived Newton's Second Law for a system of particles, we really have been using this result throughout the text. For example, when we modelled a block sliding down an incline, we never worried that the block was made of many atoms all interacting with each other and the surroundings. Instead, we only considered the external forces on the block, namely, the normal force from the incline, any frictional forces, and the total weight of the object (the force exerted by gravity). Technically, the force of gravity is not exerted on the block as a whole, but on each of the atoms. However, when we sum the force of gravity from each atom:
+\begin{align*}
+m_1\vec g+ m_2 \vec g + m_3\vec g + \dots = (m_1+m_2+m_3+\dots)\vec g = M\vec g
+\end{align*}
+we find that can be modelled by considering the block as a single particle of mass $M$ upon which gravity is exerted. The centre of mass is sometimes described as the ``centre of gravity'', because is \textbf{corresponds to the location where we can model the total force of gravity, $M\vec g$, as being exerted}. When we applied Newton's Second Law to the block, we then described the motion of the block as a whole (and not the motion of the individual atoms). 
+
+The position of the centre of mass is a vector equation that is true for each coordinate:
+\begin{align}
+\vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i\nonumber\\
+\therefore x_{CM} &= \frac{1}{M}\sum_i m_i x_i\nonumber\\
+\therefore y_{CM} &= \frac{1}{M}\sum_i m_i y_i\nonumber\\
+\therefore z_{CM} &= \frac{1}{M}\sum_i m_i z_i\nonumber\\
+\end{align}
+The centre of mass is that \textbf{position in a system that is described by Newton's Second Law when it is applied to the system as whole}. The center of mass can be thought of as an average position for the system (it is the average of the positions of the particles in the system, weighted by their mass). By describing the position of the centre of mass, we are not worried about the detailed positions of the all of the particles in the system, but rather only the average position of the system as a whole. In other words, this is equivalent to viewing the whole system as a single particle of mass $M$ located at the position of the centre of mass. 
+
+Consider, for example, a person throwing a dumbbell that is made from two spherical masses connected by a rod, as illustrated in Figure \ref{fig:momentumandcm:cmparabola}. The dumbbell will rotate in a complex manner as it moves through the air. However, the center of mass of the dumbbell will travel along a parabolic trajectory (projectile motion), because the only external force exerted on the dumbbell during its trajectory is gravity.
+\capfig{0.6\textwidth}{figures/MomentumAndCM/cmparabola.png}{\label{fig:momentumandcm:cmparabola} The motion of the center of mass of a dumbbell is described by Newton's Second Law, even if the motion of the rotating dumbbell is more complex.}
+TODO: Obviously, update the figure! But also, make sure it's a real parabola and that the CM is actually highlighted. 
+
+
+If we take the derivative with respect to time of the centre of mass position, we obtain the velocity of the centre of mass, and its components, which allow us to describe how the system is moving as a whole:
+\begin{align}
+\vec v_{CM} &= \frac{d}{dt}\vec r_{CM} = \frac{1}{M}\sum_i m_i\frac{d}{dt}\vec r_i=  \frac{1}{M}\sum_i m_i\vec v_i\nonumber\\
+\therefore v_{CMx} &= \frac{1}{M}\sum_i m_i v_{ix}\nonumber\\
+\therefore v_{CMy} &= \frac{1}{M}\sum_i m_i v_{iy}\nonumber\\
+\therefore v_{CMz} &= \frac{1}{M}\sum_i m_i v_{iz}\nonumber\\
+\end{align}
+Note that this is the same velocity that we found earlier for the velocity of the centre of mass frame of reference. In the centre of mass frame of reference, the total momentum of the system is zero. This makes sense, because the centre of mass represents the average position of the system; if we move ``with the system'', then the system appears to have zero momentum. 
+
+Finally, we can also define the acceleration of the centre of mass by taking the time derivative of the velocity:
+\begin{align}
+\vec a_{CM} &= \frac{d}{dt}\vec v_{CM} = \frac{1}{M}\sum_i m_i\frac{d}{dt}\vec v_i=  \frac{1}{M}\sum_i m_i\vec a_i\nonumber\\
+\therefore a_{CMx} &= \frac{1}{M}\sum_i m_i a_{ix}\nonumber\\
+\therefore a_{CMy} &= \frac{1}{M}\sum_i m_i a_{iy}\nonumber\\
+\therefore a_{CMz} &= \frac{1}{M}\sum_i m_i a_{iz}\nonumber\\
+\end{align}
+
+
+\begin{example}{
+\capfig{0.5\textwidth}{figures/MomentumAndCM/sunearthmars.png}{\label{fig:momentumandcm:sunearthmars} A syzygy between the Sun, Earth, and Mars.}
+In astronomy, a syzygy is defined as the event in which three bodies are all lined up along a straight line. For example, a syzygy occurs when the Sun (mass $M_S=\SI{2.00e30}{kg}$), Earth (mass $M_E=\SI{5.97e24}{kg}$), and Mars (mass $M_M=\SI{6.39e23}{kg}$) are all lined up, as in Figure \ref{fig:momentumandcm:sunearthmars}. How far from the centre of the Sun is the centre of mass of the Sun, Earth, Mars system during a syzygy?}
+Since this is a one-dimensional problem, we can define an $x$ axis that is co-linear with the three bodies, and find only the $x$ coordinate of the position of the center of mass. We are free to choose the origin of the coordinate system, so we choose the origin to be located at the centre of the Sun. This way, the position of the centre of mass along the $x$ axis will directly correspond to its distance from the centre of the Sun.
+
+The Sun, Earth, and Mars are not point particles. However, because they are spherically symmetric, their centres of mass correspond to their geometric centres. We can thus model them as point particles with the mass of the body located at the corresponding geometric centre. If $r_E=\SI{1.50e11}{m}$ ($r_M=\SI{2.28e11}{m}$) is the distance from the centre of the Earth (Mars) to the centre of the Sun, then the position of the centre of mass is given by:
+\begin{align*}
+x_{CM} &= \frac{1}{M}\sum_i m_i x_i\\
+&=\frac{M_S(0)+M_Er_E+M_Mr_M}{M_S+M_E+M_M}\\
+&=\frac{(\SI{2.00e30}{kg})(0)+(\SI{5.97e24}{kg})(\SI{1.50e11}{m})+(\SI{6.39e23}{kg})(\SI{2.28e11}{m})}{(\SI{2.00e30}{kg})+(\SI{5.97e24}{kg})+(\SI{6.39e23}{kg})}\\
+&=\SI{5.21e5}{m}
+\end{align*}
+The centre of mass of the Sun-Earth-Mars system during a syzygy is located approximately $\SI{500}{km}$ from the centre of the Sun.
+
+\textbf{Discussion:} The radius of the Sun is approximately $\SI{700000}{km}$, so the centre of mass of the system is well inside of the Sun. The Sun is so much more massive than the Earth and Mars that the two planets hardly contribute to shifting the centre of mass away from the centre of the Sun, and could be considered negligible if one wanted to model how the solar system itself moves around the Milky Way galaxy.
+\end{example}
+
+\begin{example}{\capfig{0.5\textwidth}{figures/MomentumAndCM/cmraft.png}{\label{fig:momentumandcm:cmraft}Three people on rafts on a lake.}
+Alice (mass $m_A$), Brice (mass $m_B$), and \chloe (mass $m_C$) are stranded on individual rafts of negligible mass on a lake, off of the coast of Nyon. The rafts are located at the corners of a right-angle triangle, as illustrated in Figure \ref{fig:momentumandcm:cmraft}, and are connected by ropes. The distance between Alice and Brice is $r_{AB}$ and the distance between Alice and \chloe is $r_{AC}$, as illustrated. Alice decides to pull on the rope that connects her to \chloe, while Brice decide to pull on the rope that connects him to Alice. Where will the three rafts meet?}
+We consider the system comprised of the three people and their rafts and model each person and their raft as a point particle with the mass concentrated at the centre of the raft. The forces exerted by pulling on the ropes are internal forces (one particle on the other), and will thus have no impact on the motion of the centre of mass of the system. There are no net external forces exerted on the system (the forces of gravity are balanced out by the forces of buoyancy from the rafts). The centre of mass of the system does not move when the people are pulling on the ropes, so they must ultimately meet at the centre of mass.
+
+We can define a coordinate system such that the origin is located where Alice is initially located, the $x$ axis is in the direction from Alice to Brice, and the $y$ axis is in the direction from Alice to Chlo\"e. The initial positions of Alice, Brice, and \chloe are thus:
+\begin{align*}
+\vec r_A &= 0\hat x + 0\hat y\\
+\vec r_B &= r_{AB}\hat x + 0\hat y\\
+\vec r_C &= 0\hat x + r_{AC}\hat y\\
+\end{align*}
+respectively. The $x$ and $y$ coordinates of the centre of mass are thus:
+\begin{align*}
+x_{CM} &= \frac{1}{M}\sum_i m_i x_i = \frac{m_A(0) + m_Br_{AB} + m_C(0)}{m_A + m_B + m_C}=\left(\frac{m_B}{m_A + m_B + m_C}\right)r_{AB}\\
+y_{CM} &= \frac{1}{M}\sum_i m_i y_i = \frac{m_A(0) + m_B(0) + m_Cr_{AC}}{m_A + m_B + m_C}=\left(\frac{m_C}{m_A + m_B + m_C}\right)r_{AC}\\
+\end{align*}
+which corresponds to the position where the three rafts will meet, relative to the initial position of Alice.
+
+\textbf{Discussion: }By using the centre of mass, we easily found where the three rafts would meet. If we had used Newton's Second Law on the three rafts individually, the model would have been complicated by the fact that the forces exerted by Alice and Brice on the ropes change direction as the rafts begin to move, which would have required the use of integrals to determine the motion of each person.
+\end{example}
+TODO: Question library problem, projectile that splits in flight, where does it land? See Giancolli example 9-18.
+
+
+
 
 
 
