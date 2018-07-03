@@ -1,0 +1,131 @@
+
+\chapter{Rotational dynamics}
+\label{chapter:rotationaldynamics}
+In this Chapter, we introduce the concepts of torque and moment of inertia. These will allow us to apply Newton's Second Law to rotating systems. 
+
+\begin{learningObjectives}{
+ \item Understand how to use vector quantities for describing the kinematics of rotations.
+ \item Understand how to use torque to determine angular acceleration.
+ \item Understand the moment of inertia and to calculate it.
+ \item Understand conditions for static and dynamic equilibrium.
+ }
+\end{learningObjectives}
+
+\begin{opening}
+\begin{MCquestion}{A question}
+\item a choice
+\item another choice %correct
+\end{MCquestion}
+\end{opening}
+
+\section{Rotational kinematic vectors}
+TODO: Review box to rotational kinematics, and vector product
+
+\subsection{Scalar rotational kinematic quantities}
+Recall that we can describe the motion of a particle along a circle of radius $R$ by using its angular position, $\theta$, its angular velocity, $\omega$, and its angular acceleration, $\alpha$. The angular position can be defined as the angle made by the position vector of the particles, $\vec r$, and the $x$ axis of a coordinate system whose origin is the centre of the circle, as shown in Figure \ref{fig:rotationaldynamics:vcircle}. 
+\capfig{0.4\textwidth}{figures/RotationalDynamics/vcircle.png}{\label{fig:rotationaldynamics:vcircle} Angular position for a particle moving along a circle of radius $R$.}
+
+The angular velocity is the rate of the change of the angular position, and the angular acceleration is the rate of change of the angular velocity:
+\begin{align*}
+\omega &= \frac{d}{dt}\theta \\
+\alpha &= \frac{d}{dt}\omega
+\end{align*}
+In particular, if the angular acceleration is constant, then angular velocity and position are given by:
+\begin{align*}
+\omega(t) = \omega_0+\alpha t\\
+\theta(t) = \theta_0+\omega_0 t+\frac{1}{2}\alpha t^2
+\end{align*}
+where $\theta_0$ and $\omega_0$ are the angular position and velocity, respectively, at $t=0$.
+
+We can also describe the motion of the particle in terms of ``linear'' quantities (as opposed to ``angular'') along a one dimensional axis that is curved along the circle. If $s$ is the distance along the circumference of the circle, measured counter-clockwise from where the circle intersects the $x$ axis, then it is related to the angular displacement:
+\begin{align*}
+s = R\theta
+\end{align*}
+if $\theta$ is expressed in radians. Similarly, the linear velocity, $v_s$, and acceleration, $a_s$ are given by:
+\begin{align*}
+v_s &= \frac{ds}{dt} =\frac{d}{dt}R\theta = R\omega\\
+a_s&= \frac{dv}{dt} =\frac{d}{dt}R\omega = R\alpha
+\end{align*}
+where the radius of the circle, $R$, is a constant that can be taken out of the time derivatives. It should be noted that for motion along a circle, the velocity of the particle is always tangent to the circle, so $v_s$ corresponds to the speed of the particle. The acceleration vector is in general not tangent to the circle; $a_s$ represents the component of the acceleration vector that is tangent to the circle. If $a_s=0$, then $\alpha=0$, and the particle is moving with a constant speed (uniform circular motion).
+\subsection{Vector rotational kinematic quantities}
+In the previous section, we defined the scalar quantities to describe the motion of a particle along a circle of radius $R$. We can define the same angular quantities without requiring that the particle move along a circle, \textbf{as long as we define a point of rotation}. In general, we choose that point of rotation to be the origin of a coordinate system. 
+
+If a particle has a position vector, $\vec r$, and a velocity vector, $\vec v$, its angular velocity vector, $\vec \omega$, \textbf{about the origin} is defined as:
+\begin{align}
+\Aboxed{\vec \omega = \frac{1}{r^2} \vec r \times \vec v}
+\end{align}
+The angular velocity vector is perpendicular to both the velocity vector and the position vector, since it is defined as their cross-product. \textbf{For a particle rotating about a circle of radius $R$} centred at the origin, as in Figure \ref{fig:rotationaldynamics:vcircle}, the magnitude of the angular velocity vector is:
+\begin{align*}
+||\vec\omega|| &=\frac{1}{r^2} || \vec r \times \vec v||= \frac{1}{r^2}||\vec r|| ||\vec v||\sin\phi= \frac{v}{R}\\
+\therefore v &= R\omega
+\end{align*}
+where $\phi$ is the angle between the position and velocity vectors, which is $\SI{90}{\degree}$ for motion along a circle. The magnitude of the position vector is $r=R$, the radius of the circle. Thus, we find that the \textbf{magnitude of the angular velocity} vector corresponds to the angular velocity for circular motion that we defined previously.
+
+Again, referring to Figure \ref{fig:rotationaldynamics:vcircle} for motion along a circle, the \textbf{direction of the angular velocity} vector is in the positive $z$ direction (out of the page). The \textbf{angular velocity vector is thus co-linear with the axis of rotation (the $z$ axis)} in such a way that the direction of the rotation is given by the right hand rule for rotational quantities\footnote{This is in contrast to the right-hand rule for taking a vector product.}. 
+
+The right hand rule for rotational quantities allows us to use a vector (e.g. angular velocity) to \textbf{describe both an axis of rotation and a direction of rotation about that axis}. Given a rotational vector (technically called a pseudo-vector), the corresponding axis of rotation is co-linear with the vector and the direction of rotation is that obtained by curling the fingers of the right-hand when the thumb points in the same direction as the vector. This is illustrated in Figure \ref{}
+\capfig{0.4\textwidth}{figures/RotationalDynamics/hand.png}{\label{fig:rotationaldynamics:hand} The right-hand rule for rotational quantities.}
+TODO: Need to update the figure to correspond to what we need here, and likely update the Vectors appendix to talk about this. We should perhaps also find a better name than "right hand rule for rotational quantities" - is there an official name, so that we distinguish it from the rule for taking cross-products? I'm not a fan of Right hand rule 1 and 2.
+
+In general, the particle does not need to be moving along the circumference of a circle, for its angular velocity to be defined. For example, the particle in Figure \ref{fig:rotationaldynamics:vline} is moving in a straight line, and we can still define its angular velocity vector relative to the origin in the same way as we did before. 
+\capfig{0.4\textwidth}{figures/RotationalDynamics/vline.png}{\label{fig:rotationaldynamics:vline} Angular position for a particle moving in a straight line.}
+The angular velocity describes the motion of the particle as if it were instantaneously moving a long a circle of radius $r$. If the vector $\vec r$ and $\vec v$ are not perpendicular, then the angular velocity is related to the component of $\vec v$, $v_\perp$, that is perpendicular to $\vec r$ (which is the component tangent to the circle of radius $r$):
+\begin{align*}
+||\vec \omega|| = \frac{v_\perp}{r}=\frac{v\sin\phi}{r}
+\end{align*}
+where $\phi$ is the angle between $\vec r$ and $\vec v$.
+
+
+
+\section{Torque}
+
+\section{Moment of inertia}
+
+
+\newpage
+\section{Summary}
+
+\begin{chapterSummary}{
+\item Something that was learned
+}
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+This is an important equation
+\begin{align*}
+E = mc^2
+\end{align*}
+
+\end{importantEquations}
+
+
+\newpage
+\section{Thinking about the material}
+\subsection{Reflect and research}
+
+\begin{enumerate}
+\item Something to research more.
+\end{enumerate}
+\subsection{To try at home}
+
+\begin{tQuestion}Try doing this \end{tQuestion}
+
+\subsection{To try in the lab}
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+\begin{problemParts}{A question\label{Q:chaptertitle:q1}}
+\item How close can he get to the hurdle before he has to jump?
+\item What maximum height does he reach?
+\end{problemParts}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{\ref{Q:chaptertitle:q1}}
+{
+the solution
+}
+\end{solution}
+
