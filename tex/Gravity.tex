@@ -12,18 +12,11 @@ In previous chapters, we have so far learned about Newton's Theory of Classical 
  }
 \end{learningObjectives}
 
-\begin{opening}{A rocketship follows a circular orbit of radius $r$ around Earth. The rocket quickly accelerates to twice its initial speed (so it is essentially instantaneous).}
-
-\begin{MCquestion}{Assuming the rocket remains in orbit, what will be the shape of its new orbit?}
-\item A circle of radius $r$.
-\item A circle with a radius not equal to $r$.
-\item An ellipse centred around the Earth.
-\item An ellipse not centred around the Earth. \correct
-\end{MCquestion}
-\begin{MCquestion}{What will happen to the period of the rocket's orbit?}
-\item It will be the same as its initial period.
-\item It will be greater than its initial period. \correct
-\item It will be less than its initial period. 
+\begin{opening}
+\begin{MCquestion}{A person stands on a scale at the top of Mount Logan, the tallest mountain in Canada. How will her measured weight compare to her weight at sea level?}
+\item It will be slightly less than her weight at sea level. \correct
+\item It will be equal to her weight at sea level.
+\item It will be slightly more than her weight at sea level.
 \end{MCquestion}
 \end{opening}
 
@@ -63,8 +56,9 @@ Kepler's Second Law is really a statement about the speed of a planet in an elli
 Kepler's Second Law states that the two areas that are shown by the greyed out sections in the figure are the same if the planet took the same amount of time to travel between points $A$ and $B$ as it did to travel between points $C$ and $D$. Because the points $C$ and $D$ are further away from the Sun than points $A$ and $B$, the distance between points $C$ and $D$ must be smaller than the distance between points $A$ and $B$ for the two areas to be the same. This, in turn, implies that the planet must be moving slower between $C$ and $D$ than between points $A$ and $B$. The speed of a planet is thus greatest at the perihelion and smallest at the aphelion. As we will see in a later chapter, Kepler's Second Law is equivalent to the statement that the angular momentum of the planet is conserved.
 
 \begin{checkpoint}
-Based on Kepler's second law, what can you say about the speed of a planet in a \textbf{circular} orbit? \\
-\begin{answer}{The speed of the planet is constant.}
+Based on Kepler's second law, what can you say about the speed of a planet in a \textbf{circular} orbit? 
+\begin{answer}
+The speed of the planet is constant.
 \end{answer}
 \end{checkpoint} 
 
@@ -80,17 +74,13 @@ We can re-arrange this relation so that all of the quantities related to one pla
 In other words, the ratio between the orbital period squared and the semi-major axis cubed is a constant, independent of the particular planet. In Example \ref{ex:gravity:keplerconstant}, we will use Newton's Universal Theory of Gravity to evaluate the constant.
 
 \begin{checkpoint}
-\begin{MCquestion}{An object in a circular orbit, radius $r$, has an orbital speed $v$. 
-
-If you double the radius of the circular orbit, what will be the value of the orbital speed?}
+\begin{MCquestion}{An object in a circular orbit, radius $r$, has an orbital speed $v$. If you double the radius of the circular orbit, what will be the value of the orbital speed?}
 \item $2v$
 \item $8v$
-\item $\sqrt{8}$.
-\item $\frac{1}{\sqrt{8}}$.
-\item $\frac{2}{\sqrt{8}}$. \correct
+\item $\sqrt{8}v$.
+\item $\frac{1}{\sqrt{2}}v$ \correct
 \end{MCquestion}
 \end{checkpoint}
-TODO: Check answer
 
 \section{Newton's Universal Theory of Gravity}
 Newton supposedly gained insight into the gravitational force by observing an apple falling from a tree and concluding that if it is the same force that makes apples fall at sea level and at the top of a mountain, perhaps that force can be exerted all the way up to the moon. It is rather remarkable that Newton was able to make the connection between falling apples and the motion of the moon around the Earth to find a single theory to describe both situations.
@@ -353,7 +343,7 @@ where $M^{enc}=M$ is the total mass enclosed by the Gaussian surface (in this ca
 
 \begin{studentOpinion}{Olivia} Here's an analogy to describe Gauss's Law for gravity: A famous celebrity is doing an event, and they attract a certain number of fans. The fans will try to get as close to the celebrity as possible, so you have to put up a barricade around the celebrity. The gravitational field is represented by how crowded it is somewhere along the barricade. If a second celebrity is at the event, they will attract their own fans, so there will be more people around the barricade. The number of celebrities (or how famous they are) is kind of like the enclosed mass $M^{enc}$.
 
-Now imagine that you haven't put up a barricade yet. A photographer is coming to the event, and you told him to stand at some location that is a distance $r$ from the celebrities. The photographer wants to know how crowded it will be when he is standing behind the barricade at that location. Gauss's law gives us a way to figure this out. If you know which celebrities are at the event ($M^{enc}$), you can determine how many people will be there (this is like finding $4\pi GM^{enc}$). Then, if you can build a barricade such that the fans are evenly distributed around it, and you know how long that barricade is ($\oint dA$), you can easily calculate how crowded it will be at some point along the barricade (you can just divide the number of people by the length of the barricade). \\
+Now imagine that you haven't put up a barricade yet. A photographer is coming to the event, and you told him to stand at some location that is a distance $r$ from the celebrities. The photographer wants to know how crowded it will be when he is standing behind the barricade at that location. Gauss's law gives us a way to figure this out. If you know which celebrities are at the event ($M^{enc}$), you can determine how many people will be there (this is like finding $4\pi GM^{enc}$). Then, if you can build a barricade such that the fans are evenly distributed around it, and you know how long that barricade is ($\oint dA$), you can easily calculate how crowded it will be at some point along the barricade (you can just divide the number of people by the length of the barricade). 
 
 The barricade represents our Gaussian surface and, like a Gaussian surface, it can be whatever shape we want as long as it encloses the celebrities and passes through the point we are interested in. If we want to make sure the people are spread out evenly, the shape of the barricade is going to depend on the specific case. Let's take the example of our single spherical body. This is analagous to having one celebrity at the event. The figure below shows two possible barricades we could build. Although we can technically build the barricade on the left, it doesn't help us because the areas closer to the celebrity will be more crowded. Instead, we want to build the barricade on the right, which is a circle of radius $r$, because the fans are evenly spread out. This is why we use a spherical Gaussian surface when we're considering the field due to a spherical body - at any point a distance $r$ from the body, the field will be the same. 
 
@@ -364,7 +354,12 @@ Remember that the Gaussian surface isn't a physical thing, so it won't affect th
 
 We can also use Gauss' Law to determine the gravitational field \textbf{inside} of the body of mass $M$ and radius $R$. This is illustrated in Figure \ref{fig:gravity:gauss2}, which shows a spherical Gaussian surface of radius $r$ that is \textbf{inside} of the body of mass $M$.
 \capfig{0.3\textwidth}{figures/Gravity/gauss2.png}{\label{fig:gravity:gauss2}Example of a spherical Gaussian surface, $S$, of radius $r$ centred inside a body of mass $M$ and radius $R$.}
-The gravitational field inside of the body of mass $M$ is also symmetric and constant in magnitude across the whole surface, so that the integral is the same as before:
+
+TODO: maybe another diagram?
+
+The gravitational field inside of the body of mass $M$ is also symmetric 
+and  constant in magnitude across the whole surface, %?
+so that the integral is the same as before:
 \begin{align*}
 \oint \vec g(\vec r) \cdot d\vec A=-g(r)(4\pi r^2)
 \end{align*}
@@ -383,6 +378,15 @@ Applying Gauss' Law, we can now find the magnitude of the gravitational field in
 \therefore g(r) &= - \frac{G M}{R^3}r
 \end{align*}
 And we find that, inside a uniform spherical body of mass $M$, the gravitational field increases linearly with radius as one moves out from the centre. At the centre of the body, the gravitational field is zero. 
+
+\begin{checkpoint}
+\begin{MCquestion}{What can you say about the magnitude of the gravitational field \textit{inside} a spherical shell of mass $M$?}
+\item It increases as you move out from the centre of the spherical shell. 
+\item It decreases as you move out from the centre of the spherical shell. 
+\item It is equal to zero. \correct
+\item It is nonzero and constant in magnitude.
+\end{MCquestion}
+\end{checkpoint}
 
 \section{Gravitational potential energy}
 Consider a large spherical body of mass $M$ with a coordinate system whose origin coincides with the centre of the spherical body (for example, the large body could be the Earth). The force, $\vec F(\vec r)$ on a body of mass $m$ (for example, a satellite), located at a position $\vec r$ is then given by:
