@@ -47,6 +47,10 @@ v_s &= \frac{ds}{dt} =\frac{d}{dt}R\theta = R\omega\\
 a_s&= \frac{dv}{dt} =\frac{d}{dt}R\omega = R\alpha
 \end{align*}
 where the radius of the circle, $R$, is a constant that can be taken out of the time derivatives. It should be noted that for motion along a circle, the velocity of the particle is always tangent to the circle, so $v_s$ corresponds to the speed of the particle. The acceleration vector is in general not tangent to the circle; $a_s$ represents the component of the acceleration vector that is tangent to the circle. If $a_s=0$, then $\alpha=0$, and the particle is moving with a constant speed (uniform circular motion).
+
+
+
+
 \subsection{Vector rotational kinematic quantities}
 In the previous section, we defined the scalar quantities to describe the motion of a particle along a circle of radius $R$. We can define the same angular quantities without requiring that the particle move along a circle, \textbf{as long as we define a point of rotation}. In general, we choose that point of rotation to be the origin of a coordinate system. 
 
@@ -63,7 +67,7 @@ where $\phi$ is the angle between the position and velocity vectors, which is $\
 
 Again, referring to Figure \ref{fig:rotationaldynamics:vcircle} for motion along a circle, the \textbf{direction of the angular velocity} vector is in the positive $z$ direction (out of the page). The \textbf{angular velocity vector is thus co-linear with the axis of rotation (the $z$ axis)} in such a way that the direction of the rotation is given by the right hand rule for rotational quantities\footnote{This is in contrast to the right-hand rule for taking a vector product.}. 
 
-The right hand rule for rotational quantities allows us to use a vector (e.g. angular velocity) to \textbf{describe both an axis of rotation and a direction of rotation about that axis}. Given a rotational vector (technically called a pseudo-vector), the corresponding axis of rotation is co-linear with the vector and the direction of rotation is that obtained by curling the fingers of the right-hand when the thumb points in the same direction as the vector. This is illustrated in Figure \ref{}
+The right hand rule for rotational quantities allows us to use a vector (e.g. angular velocity) to \textbf{describe both an axis of rotation and a direction of rotation about that axis}. Given a rotational vector (technically called a pseudo-vector), the corresponding axis of rotation is co-linear with the vector and the direction of rotation is that obtained by curling the fingers of the right-hand when the thumb points in the same direction as the vector. This is illustrated in Figure \ref{fig:rotationaldynamics:hand}.
 \capfig{0.4\textwidth}{figures/RotationalDynamics/hand.png}{\label{fig:rotationaldynamics:hand} The right-hand rule for rotational quantities.}
 TODO: Need to update the figure to correspond to what we need here, and likely update the Vectors appendix to talk about this. We should perhaps also find a better name than "right hand rule for rotational quantities" - is there an official name, so that we distinguish it from the rule for taking cross-products? I'm not a fan of Right hand rule 1 and 2.
 
@@ -73,13 +77,59 @@ The angular velocity describes the motion of the particle as if it were instanta
 \begin{align*}
 ||\vec \omega|| = \frac{v_\perp}{r}=\frac{v\sin\phi}{r}
 \end{align*}
-where $\phi$ is the angle between $\vec r$ and $\vec v$.
+where $\phi$ is the angle between $\vec r$ and $\vec v$. As you recall, the cross product between vectors selects the components of the vectors that are perpendicular to each other and multiplies them. The scalar product, instead, selects the components of vectors that are parallel to each other. In most cases, we will however consider situations when the particle is moving in a circle.
 
+Similarly, we can define the angular acceleration vector, $\vec \alpha$, about the a rotation point centred at the origin of a coordinate system:
+\begin{align}
+\vec \alpha = \frac{1}{r^2}\vec r \times \vec a
+\end{align}
+where $\vec r$ is the position vector of the particle relative to the origin and $\vec a$ is the particle's acceleration vector. If the particle is rotating around a circle centred at the origin, then the magnitude of the acceleration vector is the angular acceleration that we defined above. If the particle is moving along some arbitrary trajectory, then the magnitude of the angular acceleration vector corresponds to the angular acceleration of the particle as if it were instantaneously rotating about a circle of radius $r$ centred at the origin. 
 
+\section{Newton's Second Law for rotational dynamics}
+Suppose that a single force, $\vec F$, is acting on a particle of mass $m$.  Newton's Second Law for the particle is then given by:
+\begin{align*}
+\vec F = m \vec a
+\end{align*}
+We define a coordinate system such that $\vec r$ is the position vector of the particle, and take the cross-product of $vec r$ with Newton's Second Law:
+\begin{align*}
+\vec r \times \vec F &= m \vec r \times \vec a
+\end{align*}
+The left hand-side of the equation is called ``the torque of $\vec F$ relative to the origin'', and usually denoted by $\vec tau$:
+\begin{align}
+\Aboxed{\vec \tau = \vec r \times \vec F}
+\end{align}
+The right-hand side of the equation is related to the angular acceleration vector, $\vec \alpha$, that we described in the previous section:
+\begin{align*}
+ m \vec r \times \vec a = mr^2\vec\alpha
+\end{align*}
+Putting this altogether, we get:
+\begin{align*}
+\vec\tau = mr^2 \vec\alpha
+\end{align*}
+
+If there are more than one forces acting on the particle, it easy to show that the torque from the net force on the particle is equal to the sum of the torques on the particle:
+\begin{align*}
+\vec r \times (\vec F_1 + \vec F_2 + \vec F_3 + \dots) &=  (\vec r \times \vec F_1 + \vec r \times \vec F_2 + \vec r \times \vec F_3 + \dots) \\
+\therefore \vec r \times \sum \vec F &= \sum \tau = \pvec \tau^{net}
+\end{align*}
+
+We can write Newton's Second Law for the rotational dynamics of a particle:
+\begin{align}
+\sum \vec \tau = \pvec \tau ^{net} = mr^2 \vec \alpha
+\end{align}
+The left-hand side of the equation corresponds to the ``causes of motion'' (much like the sum of the forces in Newton's Second Law), and the right-hand side of the equation to the inertia and kinematics. A few things to note when comparing to Newton's Second Law:
+\begin{enumerate}
+\item The rotational quantities, torque and angular acceleration, \textbf{are only defined with respect to a point of rotation} (the origin of the coordinate system, which determines the vector $\vec r$).
+\item The angular acceleration of a particle is proportional to the net torque exerted on it, much like the linear acceleration is proportional to the net force exerted on the particle.
+\item Torque about a point can be thought of as a force that makes things rotate about that point.
+\item Instead of mass, it is mass times $r^2$ that plays the role of inertia and determines how large of an acceleration the particle will experience for a given torque.  
+\end{enumerate}
+
+\section{Moment of inertia}
 
 \section{Torque}
 
-\section{Moment of inertia}
+
 
 
 \newpage
