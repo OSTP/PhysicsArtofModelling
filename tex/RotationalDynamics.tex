@@ -68,12 +68,12 @@ where $\phi$ is the angle between the position and velocity vectors, which is $\
 Again, referring to Figure \ref{fig:rotationaldynamics:vcircle} for motion along a circle, the \textbf{direction of the angular velocity} vector is in the positive $z$ direction (out of the page). The \textbf{angular velocity vector is thus co-linear with the axis of rotation (the $z$ axis)} in such a way that the direction of the rotation is given by the right hand rule for rotational quantities\footnote{This is in contrast to the right-hand rule for taking a vector product.}. 
 
 The right hand rule for rotational quantities allows us to use a vector (e.g. angular velocity) to \textbf{describe both an axis of rotation and a direction of rotation about that axis}. Given a rotational vector (technically called a pseudo-vector or axial vector), the corresponding axis of rotation is co-linear with the vector and the direction of rotation is that obtained by curling the fingers of the right-hand when the thumb points in the same direction as the vector. This is illustrated in Figure \ref{fig:rotationaldynamics:hand}.
-\capfig{0.4\textwidth}{figures/RotationalDynamics/hand.png}{\label{fig:rotationaldynamics:hand} The right-hand rule for rotational quantities.}
+\capfig{0.5\textwidth}{figures/RotationalDynamics/hand.png}{\label{fig:rotationaldynamics:hand} The right-hand rule for rotational quantities.}
 TODO: Need to update the figure to correspond to what we need here, and likely update the Vectors appendix to talk about this. We should perhaps also find a better name than "right hand rule for rotational quantities" - is there an official name, so that we distinguish it from the rule for taking cross-products? I'm not a fan of Right hand rule 1 and 2.
 
-In general, the particle does not need to be moving along the circumference of a circle, for its angular velocity to be defined. For example, the particle in Figure \ref{fig:rotationaldynamics:vline} is moving in a straight line, and we can still define its angular velocity vector relative to the origin in the same way as we did before. 
+In general, the particle does not need to be moving along the circumference of a circle, for its angular velocity about a point to be defined. For example, the particle in Figure \ref{fig:rotationaldynamics:vline} is moving in a straight line, and we can still define its angular velocity vector relative to the origin in the same way as we did before. 
 \capfig{0.4\textwidth}{figures/RotationalDynamics/vline.png}{\label{fig:rotationaldynamics:vline} Angular position for a particle moving in a straight line.}
-The angular velocity describes the motion of the particle as if it were instantaneously moving along a circle of radius $r$ centred about the origin. If the vectors $\vec r$ and $\vec v$ are not perpendicular, then the angular velocity is related to the component of $\vec v$, $v_\perp$, that is perpendicular to $\vec r$ (which is the component tangent to the circle of radius $r$):
+The angular velocity describes the motion of the particle as if it were \textbf{instantaneously moving along a circle of radius $r$ centred about the origin}. If the vectors $\vec r$ and $\vec v$ are not perpendicular, then the angular velocity is related to the component of $\vec v$, $v_\perp$, that is perpendicular to $\vec r$ (which is the component tangent to the circle of radius $r$, as in Figure \ref{fig:rotationaldynamics:vline}):
 \begin{align}
 ||\vec \omega|| = \frac{1}{r^2} || \vec r \times \vec v||=\frac{v\sin\phi}{r}= \frac{v_\perp}{r}
 \end{align}
@@ -87,8 +87,7 @@ where $\vec a$ is the particle's acceleration vector. If the particle is rotatin
 
 TODO: Checkpoint question: An ant on a disk that is rotating slower and slower as illustrated. MC: the angular velocity vector is into the page and the angular acceleration is out of the page, etc... (they will be in opposite directions) 
 
-\section{Newton's Second Law for rotational dynamics}
-\subsection{Rotational dynamics for a single particle}
+\section{Rotational dynamics for a single particle}
 Suppose that a single force, $\vec F$, is acting on a particle of mass $m$.  Newton's Second Law for the particle is then given by:
 \begin{align*}
 \vec F = m \vec a
@@ -110,7 +109,7 @@ Putting this altogether, we get:
 \vec\tau = mr^2 \vec\alpha
 \end{align*}
 
-If there are more than one forces acting on the particle, it easy to show that the net torque from the net force on the particle is equal to the sum of the torques on the particle:
+If more than one force is exerted on the particle, it is easy to show that the \textbf{net torque} from the net force on the particle \textbf{is equal to the sum of the torques on the particle}:
 \begin{align*}
 \vec r \times (\vec F_1 + \vec F_2 + \vec F_3 + \dots) &=  (\vec r \times \vec F_1 + \vec r \times \vec F_2 + \vec r \times \vec F_3 + \dots) \\
 \therefore \vec r \times \sum \vec F &= \sum \vec \tau = \pvec \tau^{net}
@@ -120,30 +119,49 @@ We can write ``Newton's Second Law for the rotational dynamics of a particle'':
 \begin{align}
 \Aboxed{\sum \vec \tau = \pvec \tau ^{net} = mr^2 \vec \alpha}
 \end{align}
-The left-hand side of the equation corresponds to the ``causes of motion'' (much like the sum of the forces in Newton's Second Law), and the right-hand side of the equation to the inertia and the kinematics. A few things to note when comparing to Newton's Second Law:
+This equation provides us an alternate to Newton's Second Law that is useful for describing the motion of particles that are rotating. The left-hand side of the equation corresponds to the ``causes of motion'' (much like the sum of the forces in Newton's Second Law), and the right-hand side of the equation to the inertia and the kinematics. A few things to note when comparing to Newton's Second Law:
 \begin{enumerate}
-\item The rotational quantities, torque and angular acceleration, \textbf{are only defined with respect to a centre of rotation} (as this determines the vector $\vec r$). If one chooses a different point as the centre of rotation, then the torque and angular acceleration will be different.
+\item The rotational quantities, torque and angular acceleration, \textbf{are only defined with respect to a centre or axis of rotation} (as this determines the vector $\vec r$). If one chooses a different point as the centre of rotation, then the torque and angular acceleration will be different.
 \item The angular acceleration of a particle is proportional to the net torque exerted on it, much like the linear acceleration is proportional to the net force exerted on the particle.
-\item Torque about a centre of rotation can be thought of as the equivalent of a force that causes things rotate about an axis that goes through the centre of rotation and is parallel to the torque.
-\item Instead of mass, it is mass times $r^2$ that plays the role of inertia and determines how large of an angular acceleration the particle will experience for a given net torque.  
+\item Torque about a centre of rotation can be thought of as the equivalent of a force that causes things rotate about an axis that goes through the centre of rotation and is parallel to the torque/angular acceleration vectors.
+\item Instead of mass, it is mass times $r^2$ that plays the role of inertia and determines how large of an angular acceleration a particle will experience for a given net torque.  
 \end{enumerate}
 
 \begin{example}{\capfig{0.4\textwidth}{figures/RotationalDynamics/rocket.png}{\label{fig:rotationaldynamics:rocket} A toy rocket accelerating around a circle of radius $R$, as seen from above.} A toy rocket is attached to a string on a horizontal frictionless table, as shown in Figure \ref{fig:rotationaldynamics:rocket}. The rocket has a mass $m$ and produces a constant force of thrust with a magnitude $F$ that accelerates the rocket along a circle of radius $R$ (the length of the string). If the rocket starts at rest, what distance along the circumference of the circle will the rocket have travelled after a time, $t$?}
-We can model the rocket as a point particle of mass $m$, with a net force equal to the thrust exerted on it (gravity and the normal force exerted by the table cancel each other). We define a centre of rotation as the centre of the circle. The thrust will result in a net torque about the centre of rotation, which will lead to the rocket having an angular acceleration. By determining the angular acceleration, we can then model the displacement at some time, $t$, using kinematics.
+We can model the rocket as a point particle of mass $m$ with the following forces exerted on it:
+\begin{enumerate}
+\item $\vec F$, the thrust of the rocket, always acting tangent to the circle.
+\item $\vec T$, the force of tension in the string, always acting towards the centre of the circle.
+\item $\vec F_g$, the weight, acting into the page, with magnitude $mg$.
+\item $\vec N$, a normal force exerted by the table, out of the page, with magnitude $mg$, since the particle has no acceleration in or out of the page.
+\end{enumerate}
+Because the normal force and the weight are equal in magnitude and opposite in direction, the net force will be the sum of the force of thrust and the force of tension, which are always perpendicular to each other. Thinking about this with Newton's Second Law, we could model the force of thrust as increasing the speed of the particle, while the force of tension keeps the rocket moving in a circle (it can do no work to increase the speed, since it is always perpendicular to the motion).
 
-We introduce a coordinate system whose origin coincides with the centre of the circle, as shown in Figure \ref{fig:rotationaldynamics:rocket_fbd}, so that $\vec r$ corresponds to the position of the rocket relative to the origin.
+We can also think about this in terms of torques and angular acceleration about the centre of the circle. The thrust will result in a net torque about the centre of rotation, which will lead to the rocket having an angular acceleration. By determining the angular acceleration, we can then model the displacement at some time, $t$, using kinematics. The force of tension will create no torque about the centre of the circle because the force of tension is always co-linear with the position vector, $\vec r$ (the cross-product of co-linear vectors is always zero).
+
+We introduce a coordinate system whose origin coincides with the centre of the circle, as shown in Figure \ref{fig:rotationaldynamics:rocket_fbd}, so that $\vec r$ corresponds to the position of the rocket relative to the origin. We have not shown the weight and normal forces on the diagram. 
 \capfig{0.4\textwidth}{figures/RotationalDynamics/rocket_fbd.png}{\label{fig:rotationaldynamics:rocket_fbd} Coordinate system to describe the motion of the rocket.}
 
-The net torque on the rocket about the centre of rotation is given by the cross product between the net force, $\vec F$, and the position vector, $\vec r$. Because the two vectors are perpendicular, the magnitude of the net torque is given by:
+The net torque on the rocket about the centre of rotation is given by the cross product between the thrust force, $\vec F$, and the position vector, $\vec r$:
 \begin{align*}
-\tau^{net} = ||\vec r|| ||\vec F|| = RF
+\vec\tau^{net} = \vec r\times\vec F
 \end{align*}
-where $R$ is the magnitude of $\vec r$. Applying the rotational version of Newton's Second Law allows us to determine the magnitude of the angular acceleration:
+and will point in the positive $z$ direction (as given by the right hand rule). $\vec r$ and $\vec F$ are perpendicular, so the magnitude of the net torque is given by:
 \begin{align*}
-\tau ^{net} &= mr^2\alpha\\
-RF &= mR^2\alpha\\
-\therefore \alpha &= \frac{F}{mR}
+\tau^{net} = ||\vec r|| ||\vec F|| \sin(\SI{90}{\degree}) = RF
 \end{align*}
+where $R$ is the magnitude of $\vec r$. The net torque vector is thus:
+\begin{align*}
+\vec\tau^{net} = RF \hat z
+\end{align*}
+Applying the rotational version of Newton's Second Law allows us to determine the angular acceleration:
+\begin{align*}
+\vec \tau ^{net} &= mr^2\vec\alpha\\
+RF \hat z&= mR^2\vec\alpha\\
+\therefore \vec \alpha &= \frac{F}{mR}\hat z
+\end{align*}
+The angular acceleration vector points in the positive $z$ direction (as does the net torque), and indicates that the rocket is accelerating in the counter-clockwise direction about the $z$ axis. 
+
 After a period of time $t$, the rocket will have covered an angular displacement, $\Delta \theta$, given by:
 \begin{align*}
 \Delta \theta &= \theta(t)-\theta_0 = \omega_0t + \frac{1}{2}\alpha t^2\\
@@ -156,16 +174,97 @@ The linear displacement, $\Delta s$, that corresponds to this angular displaceme
 \textbf{Discussion:} The formula that we found for the total linear displacement is the same that we would have found if the particle were moving in a straight line with a net force $F$ applied to it (as the particle would have a constant acceleration given by $F/m$).
 \end{example}
 
-\subsection{Rotational dynamics for a solid object}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Torque}
+The torque associated with a force is a mathematical tool to describe how much a particular force will cause a particle (or solid) object to rotate about a given point or a given axis of rotation. A torque is \textbf{only defined relative to an axis or point of rotation}. It never makes sense to say ``the torque is ...'', and one should always say ``the torque about this axis/center of rotation is ... ''. Angular quantities (torque, angular velocity, angular displacement, etc) are only ever defined relative to a specific axis or point of rotation.
+
+Mathematically, the torque vector from a force $\vec F$ exerted at a position $\vec r$ relative to the axis or centre of rotation is defined as:
+\begin{align*}
+\vec \tau = \vec r \times \vec F
+\end{align*}
+Note that the torque from a given force increases if that force is further from the axis of rotation (if $\vec r$ has a bigger magnitude). 
+
+Consider the solid disk of radius $\vec r$ depicted in Figure \ref{fig:rotationaldynamics:disk}. The disk can rotate about an axis that passes through the centre of the disk and that is perpendicular to the plane of the disk. A force, $\vec F$ is exerted on the edge of the disk as shown.
+\capfig{0.7\textwidth}{figures/RotationalDynamics/disk.png}{\label{fig:rotationaldynamics:disk} A force exerted on the perimeter of a disk that can rotate about an axis that is perpendicular to the disk and passes through its centre. We can determine the resulting torque by considering either the component of $\vec F$ that is perpendicular to $\vec r$ (left panel) or the component of $\vec r$ that is perpendicular to $\vec F$ (right panel).}
+Intuitively, that force will cause the disk to rotate in the counter clock-wise direction. The torque from the force $\vec F$ about the axis as rotation is given by:
+\begin{align*}
+\vec \tau = \vec r \times \vec F
+\end{align*}
+where the vector $\vec r$ is perpendicular to the axis of rotation and goes from the axis of rotation to the point where $\vec F$ is exerted. The direction of the torque vector is out of the page (right hand rule, see Figure \ref{fig:rotationaldynamics:disk}), and will thus lead to an angular acceleration that is also out of the page, which corresponds to the counter-clockwise direction, as anticipated. 
+
+We can break up the force into components that are parallel ($F_\parallel$) and perpendicular ($F_\perp$) to the vector $\vec r$, as shown on the left panel of Figure \ref{fig:rotationaldynamics:disk}. Only the component of the force that is perpendicular will contribute to rotating the disk. Imagine that the force is from a string that you have attached to the perimeter of the disk; if you pull on the string such that the force is parallel to $\vec r$, the disk would not rotate. The magnitude of the torque is given by:
+\begin{align}
+\label{eq:rotationaldynamics:taumag}
+\tau = rF\sin\phi
+\end{align}
+where $\phi$ is the angle between $\vec r$ and $\vec F$ when these are placed ``tail to tail'', as shown in Figure \ref{fig:rotationaldynamics:disk}. $F \sin phi$ is precisely the component of $\vec F$ that is perpendicular to $\vec r$, so we could also write the magnitude of the torque as:
+\begin{align*}
+\tau =rF_\perp
+\end{align*}
+which highlights that only the component of the force that is perpendicular to $\vec r$ contributes to the torque. Instead of combining the $\sin \phi$ with $F$ to obtain $F_\perp$, the component of $\vec F$ perpendicular to $\vec r$, we can combine the $\sin \phi$ with $r$ in Equation \ref{eq:rotationaldynamics:taumag} to obtain $r_\perp$, the component of $\vec r$ that is perpendicular to $\vec F$. This is illustrated in the right panel of Figure \ref{fig:rotationaldynamics:disk}. The magnitude of the torque is thus also given by:
+\begin{align*}
+\tau =r_\perp F
+\end{align*}
+The quantity $r_\perp$ is called the ``lever arm'' of the force about a specific axis of rotation. 
+
+\begin{checkpoint}\label{cp:rotationaldynamics:door}
+\begin{MCquestion}{Why is the handle of a door placed on the side of the door that is opposite to the hinges?}
+\item Because it increases the lever arm of a force used to rotate the door about the handle.
+\item Because it increases the perpendicular component of force used to rotate the door about the hinges.
+\item \label{correct:rotationaldynamics:door}  Because it increases the lever arm of a force used to rotate the door about the hinges.
+\item Because it would be inconvenient if the handle were next to the hinges.
+\end{MCquestion}
+\end{checkpoint}
+
+\section{Rotation about an axis versus rotation about a point}
+When defining angular quantities (torque, angular acceleration, etc.), it is important to identify whether these should be defined relative to an axis of rotation or relative to a centre of rotation. It is thus important to identify how to define the vector $\vec r$ that is involved in determining the angular quantities as well as to identify the components of the forces that should be used in calculating torques.
+
+Consider a disk of radius $r$ with a force, $\vec F$ exerted on its perimeter, as illustrated in Figure \ref{fig:rotationaldynamics:fplane}. The disk can only rotate about an axis that is perpendicular to the disk and that goes through the centre of the disk, like a wheel mounted on an axle. The force is has a component, $\vec F_{plane}$, that lies in the plane perpendicular to the axis of rotation, and a component, $\vec F_{axis}$, that is parallel to axis of rotation.
+\capfig{0.6\textwidth}{figures/RotationalDynamics/fplane.png}{\label{fig:rotationaldynamics:fplane} A force exerted on disk that can only rotate about an axis through its centre and perpendicular to its plane. Only the component of $\vec F$ that is in the plane perpendicular to the axis of rotation, $\vec F_{plane}$, will contribute to the torque about the axis of rotation.}
+
+The vector $\vec r$ is  \textbf{always defined to be perpendicular to the axis of rotation and to go from the axis of rotation to the point where the force $\vec F$ is exerted}, as illustrated. The torque obtained by taking the cross product:
+\begin{align*}
+\vec \tau = \vec r \times \vec F
+\end{align*}
+will be perpendicular to both $\vec r$ and $\vec F$, and will thus not be parallel to the axis of rotation. \textbf{Only the component of the torque that is parallel to the axis of rotation} will contribute to rotating the disk about the axis. This definition of torque is thus not ideal for describing how the disk will rotate due to the torque from the force $\vec F$. Only the component of the force that lies in the plane perpendicular to the axis of rotation, $\vec F_{plane}$, will contribute to the torque about that axis of rotation. Thus, when we need to determine the torque about an axis of rotation, it is important to \textbf{consider vectors $\vec r$ and $\vec F$ that lie in the plane perpendicular to the axis of rotation}. The torque of $\vec F$ relative to the axis of rotation is thus:
+\begin{align*}
+\vec \tau = \vec r \times \vec F_{plane}
+\end{align*}
+Furthermore, only the component of $\vec F_{plane}$ that is perpendicular to $\vec r$ will contribute to the torque, as we saw in the previous section. 
+
+In general, solid objects such as a disk can only rotate about an axis. In that case, one needs to consider only the components of forces that lie in the plane perpendicular to the axis of rotation in order to calculate the torque about that axis.
+
+
+On the other hand, a point particle may be able to rotate about any axis that goes through a centre of rotation. If the origin of a coordinate system is defined to be the centre of rotation, the net torque vector on the particle will indicate the direction of the axis through the coordinate system about which the particle would rotate. This is illustrated in the left panel of Figure \ref{fig:rotationaldynamics:pointaxis}.
+
+Instead, if the particle were constrained to rotate about the $z$ axis (e.g. if the particle is on a track), then we would use the component of the torque vector that is parallel to the $z$ axis to describe its motion, as illustrated in the right panel. The $z$ component of the torque would be determined by using only the components of the forces that lie in the plane perpendicular to the axis.
+
+\capfig{0.7\textwidth}{figures/RotationalDynamics/pointaxis.png}{\label{fig:rotationaldynamics:pointaxis} Left panel: a particle rotating about a circle centred at the origin with an axis determined from the net torque vector. Right panel: a particle that is constrained to rotate about the $z$ axis.}
+
+\begin{example}{A force given by $\vec F=F_x\hat x + F_y \hat y + F_z \hat z$ is exerted at a position $\vec r=r_x \hat x + r_y \hat y + r_z\hat z$. Calculate the torque about the $z$ axis as well as the torque about the origin.}
+To calculate the torque about the $z$ axis, we need to take the components of the vectors $\vec r$ and $\vec F$ that lie in the $x-y$ plane, since that is the plane perpendicular to the axis of rotation (the $z$ axis). This gives:
+\begin{align*}
+\vec\tau_z =(r_x \hat x + r_y \hat y) \times (F_x\hat x + F_y \hat y) =(r_xF_y-r_yF_y)\hat z
+\end{align*}
+If instead we want to calculate the torque about the origin, we take the cross-product between the two vectors:
+\begin{align*}
+\vec\tau &=(r_x \hat x + r_y \hat y+ r_z\hat z) \times (F_x\hat x + F_y \hat y+ F_z \hat z)\\
+&=(r_yF_z-r_zF_y)\hat x+(r_zF_x-r_xF_z)\hat y+(r_xF_y-r_yF_y)\hat z
+\end{align*}
+If a particle were located at the given position, the force would cause the particle to (instantaneously) rotate about an axis that goes through the origin and is parallel to the torque vector. 
+
+\textbf{Discussion:} This example highlights the difference between calculating the torque about an axis of rotation that goes through the origin and determining the torque about the origin. When calculating the torque about an axis that goes through the origin, we only consider the components of the vectors $\vec r$ and $\vec F$ that are in the plane perpendicular to the axis of rotation. This assumes that the particle is constrained to move in the plane that is perpendicular to the axis of rotation. Instead, if we calculate the torque about the origin, then we determine the axis of rotation about which the particle would rotate. 
+\end{example}
+
+
+\section{Rotational dynamics for a solid object}
 We now consider the rotational dynamics for a solid object about a specific axis of rotation. Just as we did in Chapter \ref{chap:momentumandcm}, we model a solid object as a system made of many particles of mass $m_i$. Because all of the points in a solid must move in unison, they all \textbf{rotate about an axis of rotation instead of a point}. We describe the position of each particle $i$ by a vector $\vec r_i$ that is \textbf{perpendicular to the axis of rotation and goes from the axis to the corresponding particle}, as shown in Figure \ref{fig:rotationaldynamics:blob}.
 \capfig{0.3\textwidth}{figures/RotationalDynamics/blob.png}{\label{fig:rotationaldynamics:blob} Two point particles that are part of a large solid object and their position vectors relative to an axis of rotation.}
 
-Any force that lies in the plane perpendicular to the axis of rotation will result in a torque that is parallel to axis of rotation. If a force has a component that is not in the plane perpendicular to the axis of rotation, then only the component that is in the plane will contribute to a torque that is aligned with the axis of rotation. This is illustrated in Figure \ref{fig:rotationaldynamics:fplane} which shows a force $\vec F$ exerted on a particle a distance $\vec r$ from the axis of rotation; only the component of $\vec F$ that is in the plane perpendicular to the axis of rotation will contribute a torque about that axis.
-\capfig{0.4\textwidth}{figures/RotationalDynamics/fplane.png}{\label{fig:rotationaldynamics:fplane} A force exerted on particle. Only the component of $\vec F$ that is in the plane perpendicular to the axis of rotation, $\vec F_\perp$, will contribute to the component of torque about that axis of rotation.}
-
 We wish to model the motion of the object as it rotates about a specific axis. Thus, when considering the net torque on any particle $i$, we only consider the component of the particle's net torque that is parallel to the axis of rotation (that component of torque that comes from forces that are in the plane perpendicular to the rotation axis).
 
-We can write the rotational version of Newton's Second Law for particle, $i$, with mass $m_i$, with vector $\vec r_i$:
+We can write the rotational version of Newton's Second Law for particle, $i$, with mass $m_i$, and position vector $\vec r_i$ relative to the rotation axis:
 \begin{align*}
 \pvec\tau_i^{net} &= m_ir_i^2\vec\alpha_i
 \end{align*}
@@ -174,7 +273,7 @@ where $\pvec\tau_i^{net}$ is the net torque on the particle \textbf{in the direc
 \pvec\tau_1^{net} + \pvec\tau_2^{net} +\pvec\tau_3^{net} + \dots &= m_1r_1^2\vec\alpha_1 + m_2r_2^2\vec\alpha_2 +m_3r_3^2\vec\alpha_3 +\dots\\
 \sum_i \pvec\tau_i^{net} &= \sum_i  m_ir_i^2\vec\alpha_i
 \end{align*}
-However, all of the particles are part of the same rigid body, and cannot move relative to each other. They must thus all have the same angular acceleration\footnote{They will have different linear accelerations, but the angular acceleration (and velocity) will be the same for all particles if they are moving in unison.}, $\vec\alpha_i = \vec \alpha_1 = \vec \alpha_2 =\dots=\vec\alpha$. We can thus factor the angular acceleration, $\vec \alpha$, out of the sum.
+All of the particles are part of the same rigid body, and cannot move relative to each other. All of the particles move on circles that are centred about the axis of rotation and in a plane perpendicular to that axis. They must thus all have the same angular acceleration\footnote{They will have different linear accelerations, but the angular acceleration (and velocity) will be the same for all particles if they are moving in unison.}, $\vec\alpha_i = \vec \alpha_1 = \vec \alpha_2 =\dots=\vec\alpha$. We can thus factor the angular acceleration, $\vec \alpha$, out of the sum.
 
 The sum of the net torques on all of the particles can be thought of as the net torque, $\pvec \tau^{net}$, on the object. We can thus write Newton's Second Law for rotational dynamics of a solid object as:
 \begin{align*}
@@ -182,9 +281,9 @@ The sum of the net torques on all of the particles can be thought of as the net 
 \therefore \pvec \tau^{net}&= \left(\sum_i  m_ir_i^2\right)\vec\alpha
 \end{align*}
 The term in parentheses describes how the various masses are distributed relative to the axis of rotation. The term in parenthesis is called the \textbf{moment of inertia of the object}, and usually denoted with the letter, $I$:
-\begin{align*}
-I = \sum_i  m_ir_i^2
-\end{align*}
+\begin{align}
+\Aboxed{I = \sum_i  m_ir_i^2}
+\end{align}
 The moment of inertia is a property of the object \textbf{relative to a specific axis of rotation}. Re-writing Newton's Second Law for the rotational dynamics of solid objects using the moment of inertia:
 \begin{align}
 \Aboxed{\pvec \tau^{net}&= I\vec\alpha}
@@ -236,40 +335,20 @@ We find that the angular acceleration is smaller about an axis that goes through
 
 \textbf{Discussion: }This simple example illustrates several key features about rotational dynamics:
 \begin{itemize}
-\item If the sum of the forces on an object is zero, it does not mean that the entire object is stationary; it only implies that the centre of mass is stationary (or rather, moving with a constant velocity, we can always choose to model the system in a frame of reference where the centre of mass is stationary).
-\item If the sum of the forces on an object is zero, and the sum of the torques is non-zero, the object will rotate about an axis that goes through the centre of mass. That is, all points on the object will move along circles that are centred on the centre of mass. 
+\item If the sum of the forces on an object is zero, it does not mean that the entire object is stationary; it only implies that the centre of mass is stationary (or rather, moving with a constant velocity; we can always choose to model the system in a frame of reference where the centre of mass is stationary).
+\item If the sum of the forces on an object is zero, and the sum of the torques is non-zero, the object will rotate about an axis that goes through the centre of mass. That is, all points on the object will move along circles that are centred on an axis that goes through the centre of mass. 
 \item We can model the rotating object about any axis that we choose. In general, the net torque and the moment of inertia will depend on the choice of axis, as will the resulting angular acceleration. 
 \item When determining the motion of the centre of mass, we can draw a free-body diagram, and the location of where the forces are exerted do not matter.
 \item When determining how the object rotates, we cannot use a free-body diagram, because it matters where the forces are applied (as the torque from a given force depends on the location where the force is applied relative to the axis of rotation).
 \end{itemize}
 \end{example}
 
-\section{Torque}
-In this section, we describe torque in more detail and show how to use torques to model objects that are in static and dynamic equilibrium. A torque is \textbf{only defined relative to an axis of rotation (solid object or point particle) or relative to a centre of rotation (point particle)}. The torque corresponding to a force exerted on an object describes how strongly that force will cause the object to rotate. Mathematically, the torque vector from a force $\vec F$ exerted at a position $\vec r$ relative to the axis/centre of rotation is defined as:
-\begin{align*}
-\vec \tau = \vec r \times \vec F
-\end{align*}
-If we have chosen an axis of rotation about which to calculate rotational quantities, then, only the component of the force that is in the plane perpendicular to the axis of rotation that we have chosen ($\vec F_\perp$ in Figure \ref{fig:rotationaldynamics:fplane}) will have a torque along the axis of rotation. If we have only chosen a centre of rotation (for a point particle), then the particle will rotate about the vector defined by the torque vector.
-\begin{example}{A force given by $\vec F=F_x\hat x + F_y \hat y + F_z \hat z$ is exerted at a position $\vec r=r_x \hat x + r_y \hat y + r_z\hat z$. Calculate the torque about the $z$ axis as well as the torque about the origin.}
-To calculate the torque about the $z$ axis, we need to take the components of the vectors $\vec r$ and $\vec F$ that lie in the $x-y$ plane, since that is the plane perpendicular to the axis of rotation (the $z$ axis). This gives:
-\begin{align*}
-\vec\tau_z =(r_x \hat x + r_y \hat y) \times (F_x\hat x + F_y \hat y) =(r_xF_y-r_yF_y)\hat z
-\end{align*}
-If instead we want to calculate the torque about the origin, we take the cross-product between the two vectors:
-\begin{align*}
-\vec\tau &=(r_x \hat x + r_y \hat y+ r_z\hat z) \times (F_x\hat x + F_y \hat y+ F_z \hat z)\\
-&=(r_yF_z-r_zF_y)\hat x+(r_zF_x-r_xF_z)\hat y+(r_xF_y-r_yF_y)\hat z
-\end{align*}
-If a particle were located at the given position, the force would cause the particle to (instantaneously) rotate about an axis that goes through the origin and is parallel to the torque vector. The $z$ component of the torque vector, of course, corresponds to that component of torque that is co-linear with the $z$ axis.
-
-\textbf{Discussion: }This example highlights the difference between calculating the torque about an axis of rotation through the origin and about the origin. When calculating the torque about an axis that goes through the origin, we only consider the components of the vectors $\vec r$ and $\vec F$ that are in the plane perpendicular to the axis of rotation. That torque corresponds to the component of the torque about the origin that is co-linear with the axis of rotation. In practice, we usually choose our coordinate system so that the axis of rotation is co-linear with one of our axes. 
-\end{example}
-
-TODO: Checkpoint question (SA). Why are door handles on the side of the door opposite of the hinges? (show a drawing of door) 
-
+\section{Equilibrium}
+In this section, we consider the conditions under which an object is in static or dynamic equilibrium.
 \subsection{Static equilibrium}
 An object is in static equilibrium, if \textbf{both the sum of the forces exerted on the object and the sum of the torques (about any axis) are zero}. If the object is in static equilibrium the centre of mass will have no acceleration and the object will have no angular acceleration. In the centre of mass frame of reference, the object is immobile. 
-\begin{example}{\capfig{0.6\textwidth}{figures/RotationalDynamics/scale.png}{\label{fig:rotationaldynamics:scale} Two masses on a balance.} Two masses, $m_1$ and $m_2$ are placed on a balance as shown in Figure \ref{fig:rotationaldynamics:scale}. The balance is made of a plank of mass $M$ and length $L$ that is placed on a fulcrum that is a distance $d$ from the edge of the plank. If mass $m_1$ is placed at a distance $r_1$ from the fulcrum, how far should mass $m_2$ be placed in order for the balance to be in equilibrium?}
+
+\begin{example}{\capfig{0.6\textwidth}{figures/RotationalDynamics/scale.png}{\label{fig:rotationaldynamics:scale} Two masses on a balance.} Two masses, $m_1$ and $m_2$ are placed on a balance as shown in Figure \ref{fig:rotationaldynamics:scale}. The balance is made of a plank of mass $M$ and length $L$ that is placed on a fulcrum that is a distance $d$ from one of the edges of the plank. If mass $m_1$ is placed at a distance $r_1$ from the fulcrum, how far should mass $m_2$ be placed on the other side of the plank in order for the balance to be in equilibrium?}
 We can consider the plank as the object that is in static equilibrium. Thus, the sum of the forces and the sum of the torques on the plank must be zero. We first start by identifying the forces that are exerted on the plank; these are:
 \begin{enumerate}
 \item $\vec F_g$, the weight of the plank, exerted at the centre of mass of the plank.
@@ -277,45 +356,244 @@ We can consider the plank as the object that is in static equilibrium. Thus, the
 \item $\vec F_2$, a force equal to the weight of mass $m_2$, exerted at the location of $m_2$.
 \item $\vec N$, a normal force exerted by the fulcrum.
 \end{enumerate} 
-The forces are illustrated in Figure \ref{fig:rotationaldynamics:scale_fbd} along with our choice of coordinate system. 
+The forces are illustrated in Figure \ref{fig:rotationaldynamics:scale_fbd} along with our choice of coordinate system. The $z$ axis is not illustrated, and comes out of the page. 
 \capfig{0.6\textwidth}{figures/RotationalDynamics/scale_fbd.png}{\label{fig:rotationaldynamics:scale_fbd} Forces exerted on the plank.}
 
-All of the forces are in the $y$ direction, so we only need to write the $y$ component of Newton's Second Law (with zero acceleration):
+All of the forces are in the $y$ direction, so we only write the $y$ component of Newton's Second Law (with zero acceleration), which allows us to determine the magnitude of the normal force:
 \begin{align*}
 \sum F_y = N - Mg -m_1g - m_2 g &=0\\
 \therefore N &= (M+m_1+m_2) g
 \end{align*}
 
-Because the plank is in static equilibrium, the sum of the torques must also be zero. We can choose the axis of rotation about which to calculate the torques, so we choose an axis that is perpendicular to the page and goes through the fulcrum. In general, since we can choose the axis of rotation, it is usually convenient to choose a point where a force is being exerted, because the torque from that force will be zero.
+Because the plank is in static equilibrium, the sum of the torques must also be zero. We can choose the axis of rotation about which to calculate the torques, so we choose an axis that is parallel to the $z$ axis (out of the page) and goes through the fulcrum. In general, since we can choose the axis of rotation, it is usually convenient to choose an axis that goes through a point where a force is being exerted, because the torque from that force will be zero (its lever arm will be zero). 
 
-We can also choose a direction in which torques are positive; let us choose torques that make the plank rotate clockwise about the fulcrum to be positive. The torques from the weight of the plank and from mass $m_2$ are thus in the positive direction, and the torque from mass $m_1$ will be negative. The normal force will not result in any torque, because it is exerted at the axis of rotation. 
+The torques from the weight of the plank and from the force exerted by mass $m_2$ will be in the negative $z$ direction, and the torque from the force exerted by mass $m_1$ will be in the positive $z$ direction. The normal force will not result in any torque, because it is exerted at the axis of rotation and has a lever arm of zero. 
 
-The magnitude of the torque from mass $m_1$, $\tau 1$, is given by:
+The torque from the force exerted by mass $m_1$, $\vec \tau_1$, is given by:
 \begin{align*}
-\tau_1 =||\vec r_1 \times \vec F_1||= -F_1 r_1 =-m_1 g r_1
+\vec \tau_1 &= \vec r_1 \times \vec F_1 = (-r_1 \hat x) \times (-F_1 \hat y) \\
+&= r_1F_1(\hat x \times \hat y) = r_1F_1\hat z=r_1m_1g\hat z
 \end{align*}
-where we used the fact that the magnitude of $\vec F_1$ is $m_1 g$, and the vector $\vec r_1$ is perpendicular to $\vec F_1$. Similarly, the magnitudes of the torques from the force exerted by $m_2$, $\tau_2$, and by the weight, $\tau_g$, are given by:
+where we used the fact that the magnitude of $\vec F_1$ is $m_1 g$. Similarly, the torques from the force exerted by $m_2$, $\tau_2$, and by the weight, $\tau_g$, are given by:
 \begin{align*}
-\tau_2 &=||\vec r_2 \times \vec F_2||= F_2 r_2 =m_2 g r_2\\
-\tau_g &= ||\vec r \times \vec F_g||=rMg = \left(\frac{L}{2}-d\right)Mg
+\vec \tau_2 &=\vec r_2 \times \vec F_2 = -m_2 g r_2 \hat z\\
+\vec \tau_g &=\vec r \times \vec F_g=-rMg\hat z = -\left(\frac{L}{2}-d\right)Mg\hat z
 \end{align*}
-where $\frac{L}{2}-d$ is the distance between the fulcrum and where the weight of the plank is exerted. Putting this altogether and requiring that the net torque on the plan is zero give:
+where $\frac{L}{2}-d$ is the distance between the fulcrum and where the weight of the plank is exerted. Putting this altogether and requiring that the net torque in the $z$ direction on the plank is zero gives:
 \begin{align*}
-\tau_1 + \tau_2 + \tau_g = -m_1 g r_1 +m_2 g r_2 +\left(\frac{L}{2}-d\right)Mg &=0\\
+\sum \tau_z = \tau_{1z} + \tau_{2z} + \tau_{gz} &=0\\
+m_1 g r_1 -m_2 g r_2 -\left(\frac{L}{2}-d\right)Mg &=0\\
 \therefore r_2 = \frac{1}{m_2} \left(m_1r_1-\left(\frac{L}{2}-d\right)M\right)
 \end{align*}
-Note that, because we chose to calculate the torques about a point that goes through the fulcrum, in this case, we did not need to determine the value of the normal force which we could otherwise obtain from Newton's Second Law.
+Note that, because we chose to calculate the torques about a point that goes through the fulcrum, in this case, we did not need to determine the value of the normal force which we obtained from Newton's Second Law.
+
+\textbf{Discussion: }This example highlights the fact that when an object is in static equilibrium, we can choose a convenient axis about which to calculate the torques. In this case, by calculating the torques about the fulcrum, we did not need to consider the torque from the normal force. If we had chosen a different point, then the torque from the normal force would have been non-zero, and we would have used Newton's Second Law to express the normal force in terms of the other quantities. Physically, if we had placed the fulcrum at the centre of the plank $d = L/2$, then we would have found that $m_1r_1 = m_2r_2$, the well known equation for a balance. This equation, of course, comes from requiring that the torques from the forces exerted by $m_1$ and $m_2$ are equal in magnitude and opposite in direction.
 \end{example}
 
- 
+\begin{example}{\capfig{0.4\textwidth}{figures/RotationalDynamics/sign.png}{\label{fig:rotationaldynamics:sign} A sign made using a horizontal bar of mass $M$ and length $L$.} A bar of mass $M$ and length $L$ is attached to a wall by using a hinge and then used to suspend a sign of mass $m$ on the end of it. The bar is held up by a rope that is attached to the wall on one end and to the bar on the other end, two thirds of the length of the bar, as illustrated in Figure \ref{fig:rotationaldynamics:sign}. The rope makes an angle $\theta$ with respect to the horizontal bar. Find the tension in the rope and the magnitude of the force exerted by the hinge onto the bar.}
+The whole system does not move and so it is in static equilibrium. In order to determine the forces exerted on the bar by the rope and the hinge, we model the bar as being in static equilibrium. The forces exerted on the bar are:
+\begin{enumerate}
+\item $\vec F_g$, the weight of the bar with magnitude $Mg$, exerted at the bar's centre of mass.
+\item $\vec F_m$, a downwards forced exerted by the sign at the end of the bar, with magnitude $mg$.
+\item $\vec T$, a force of tension exerted by the rope at a distance $2/3 L$ from the wall.
+\item $\vec R$, a force exerted by the hinge on the bar at the wall\footnote{We chose the letter R for ``Reaction'', as this is the force of reaction from the hinge as the bar pushes against the hinge.}. We expect that the force from the hinge will have both a horizontal component, $R_x$, and a vertical component, $R_y$, in order for the net force on the bar to be zero.
+\end{enumerate}
+The forces are illustrated in Figure \ref{fig:rotationaldynamics:sign_fbd} along with our choice of coordinate system (and the $z$ axis, not shown, points out of the page).
+\capfig{0.4\textwidth}{figures/RotationalDynamics/sign_fbd.png}{\label{fig:rotationaldynamics:sign_fbd} Forces on the bar that is holding the sign of mass $m$.}
+We start by writing out the $x$ and $y$ components of Newton's Second Law:
+\begin{align*}
+\sum F_x &= R_x - T\cos\theta =0\\
+\sum F_y &= R_y + T\sin\theta - Mg - mg=0
+\end{align*}
+We can choose the axis about which to calculate the torques. We choose to calculate the torques about an axis parallel to the $z$ axis that goes through the hinge on the wall, so that the force from the hinge, $\vec R$, will have a torque of zero (since it has a lever arm of zero). The torque from each force about the hinge is given by:
+\begin{align*}
+\vec \tau_M &= \vec r_M \times \vec F_g = \left(\frac{L}{2}\hat x\right) \times (-Mg \hat y) =-Mg\frac{L}{2} \hat z\\
+\vec \tau_T &= \vec r_T \times \vec T = \left(\frac{L}{3}\hat x\right) \times (-T\cos\theta \hat x + T\sin\theta \hat y) =T\sin\theta\frac{L}{3} \hat z\\
+\vec \tau_m &= \vec r_m \times \vec F_m = (L\hat x) \times (-mg \hat y) =-mgL\hat z\\
+\end{align*}
+The sum of the torques in the $z$ direction must be zero for static equilibrium:
+\begin{align*}
+\sum \tau_z = \tau_{Mz} + \tau_{Tz}+ \tau_{mz} &=0\\
+-Mg\frac{L}{2} + T\sin\theta\frac{L}{3} -mgL &=0\\
+-Mg\frac{1}{2} + T\sin\theta\frac{1}{3} -mg &=0\\
+\therefore T&= \frac{3g}{\sin\theta} \left( m + \frac{M}{2}\right)
+\end{align*}
+Using the $x$ and $y$ components of Newton's Second Law, we can determine the $x$ and $y$ components of the force exerted by the hinge:
+\begin{align*}
+R_x &= T\cos\theta = \frac{3g}{\tan\theta} \left( m + \frac{M}{2}\right)\\
+R_y &= (M+m)g - T\sin\theta = (M+m)g - 3g \left( m + \frac{M}{2}\right)=  -\left( 2m + \frac{M}{2}\right)g
+\end{align*}
+We find that the $y$ component from the hinge is actually in the negative $y$ direction, so \textbf{our diagram in Figure \ref{fig:rotationaldynamics:sign_fbd} is wrong}! If you removed the hinge on the wall and instead held that end of the bar with your hand, you would feel that the end of the bar is trying to go into the wall and upwards, as the bar tries to rotate with the opposite end moving downwards due to the weight of the sign. You would have to push in the positive $x$ and negative $y$ direction to keep the bar from moving. 
+
+\textbf{Discussion: }In this example, we saw that we needed to use both the sum of the forces and the sum of the torques in order to determine the forces on the bar. 
+\end{example}
 
 \subsection{Dynamic equilibrium}
+TODO: Review box on inertial forces
 
+In dynamic equilibrium, the sum of the forces is not zero, so the centre of mass is accelerating. The sum of the torques, about an axis that passes through the centre of mass is zero. Thus, in dynamic equilibrium, an object is accelerating, but not rotating. 
+
+Consider, for example, a speed skater going around a circular track or radius $R$, and leaning into the centre making an angle $\theta$ with the ice, as depicted in Figure \ref{fig:rotationaldynamics:skater}.
+\capfig{0.3\textwidth}{figures/RotationalDynamics/skater.png}{\label{fig:rotationaldynamics:skater} A speed skater leaning in as she goes around a circle.}
+
+The forces on the skater are:
+\begin{enumerate}
+\item $\vec F_g$, her weight, exerted at her centre of mass with magnitude $Mg$.
+\item $\vec N$, a normal force, exerted by the ice upwards on her skates.
+\item $\vec f_s$, a force of static friction, exerted towards the centre of the circle, by the ice on her skates.
+\end{enumerate}
+The forces are illustrated in Figure \ref{fig:rotationaldynamics:skater_fbd} as well as our choice of coordinate system.
+\capfig{0.3\textwidth}{figures/RotationalDynamics/skater_fbd.png}{\label{fig:rotationaldynamics:skater_fbd} Forces on the speed skater from Figure \ref{fig:rotationaldynamics:skater}.}
+
+If the skater is moving with speed $v$ in uniform circular motion, then the sum of the forces must be towards the centre of the circle and equal to the mass of the skater times their centripetal acceleration (or rather, the acceleration of their centre of mass, $\vec a_{CM}$). The $x$ and $y$ components of Newton's Second Law are thus given by:
+\begin{align*}
+\sum F_x &= -f_s = -ma_{CM}- m\frac{v^2}{R}\\
+\sum F_y &= N-mg = 0
+\end{align*}
+
+If we consider the torques from the forces in Figure \ref{fig:rotationaldynamics:skater_fbd} taken about an axis that is co-linear with the $z$ axis and goes through the point of contact between the skates and the ice, we find that there is a net torque in the counter-clockwise direction that should make the skater fall down. Indeed, the only force that contributes a torque about that axis is the weight, since the lever arm of the normal force and the force of friction is zero. However, this must not be a correct model for the skater, since we know that it is possible for them to lean in without falling. 
+
+Consider, instead, the sum of the forces about an axis parallel to the $z$ axis that goes through the centre of mass. If the skater has a length $L$ and the centre of mass is in the middle of the skater, the sum of the torques in the $z$ direction is given by:
+\begin{align*}
+\sum \tau = \tau_{Nz} + \tau_{f_sz} = \frac{L}{2}\cos\theta N - \frac{L}{2}\sin\theta f_s
+\end{align*}
+About the centre of mass, the torques must be zero, so we can find, for example, the magnitude of the normal force:
+\begin{align*}
+\frac{L}{2}\cos\theta N - \frac{L}{2}\sin\theta f_s &=0\\
+\therefore N &= f_s \frac{\sin\theta}{\cos\theta}=f_s\tan\theta\\
+&=m\frac{v^2}{R}\tan\theta
+\end{align*}
+
+Why do we get an incorrect model when we take the torques about the point of contact between the ice and the skater? In order to determine if the skater is rotating, we need to be in the same reference frame as the skater. However, the frame of reference of the skater is not an inertial frame of reference, since the skater is accelerating. We can still model the forces on the skater in the non-accelerating frame of reference, \textbf{as long as we include the inertial force $-m\vec a_{CM}$} in that frame of reference. In the frame of reference of the skater, there is an additional inertial force $-m\vec a_{CM}$ in order for the sum of the forces to be zero (in the frame of reference of the skater, the sum of the forces must be zero since the skater is not accelerating in that frame of reference). The additional inertial force is exerted at the centre of mass, as illustrated in Figure \ref{fig:rotationaldynamics:skater_fbdcm}.
+\capfig{0.3\textwidth}{figures/RotationalDynamics/skater_fbdcm.png}{\label{fig:rotationaldynamics:skater_fbdcm} Forces on the speed skater from Figure \ref{fig:rotationaldynamics:skater} as seen in the accelerating frame of reference of the centre of mass.}
+
+The reason that our model worked when taking the torques about the centre of mass is that the inertial force, exerted at the centre of mass, does not result in a torque (since it has a lever arm of zero). Our model was technically wrong, but if we take the torques about the centre of mass, then we do not need to worry about the inertial force. With this additional inertial force, we can take the torques about the point of contact between the skater and the ice and would find the same value for the normal force as before. 
 
 \section{Moment of inertia}
+In order to model how an object rotates about an axis, we can use Newton's Second Law for rotational dynamics:
+\begin{align*}
+\pvec\tau^{net} = I \vec \alpha
+\end{align*}
+where $\pvec\tau^{net}$ is the net torque exerted on the object about the axis of rotation, $\vec \alpha$ is the angular acceleration of the object, and $I$ is the moment of inertia of the object (about the axis). If we consider the object as being made of many particles of mass $m_i$ each located at a position $\vec r_i$ relative to the axis of rotation, we saw that the moment of inertia is given by:
+\begin{align*}
+I = \sum_i m_i r_i^2
+\end{align*}
+Consider, for example, the moment of inertia of a uniform rod of mass $M$ and length $L$ that is rotated about an axis perpendicular to the rod that pass through one of the ends of the rod, as depicted in Figure \ref{fig:rotationaldynamics:rod}.
+\capfig{0.5\textwidth}{figures/RotationalDynamics/rod.png}{\label{fig:rotationaldynamics:rod} A rod of length $L$ and mass $M$ being rotated about an axis perpendicular to the rod that goes through one of its ends.}
+We introduce the linear mass density of the rod, $\lambda$, as the mass per unit length:
+\begin{align*}
+\lambda = \frac{M}{L}
+\end{align*}
+Consider a small mass element of mass $\Delta m$, of length $\Delta r$, at a location $r_i$, as illustrated. In terms of the linear mass density, the mass element as a mass of:
+\begin{align*}
+\Delta m = \lambda \Delta r
+\end{align*}
+The rod is made of many such mass elements, and the moment of inertia of the rod is thus given by:
+\begin{align*}
+I &= \sum_i \Delta m r_i^2 &=\sum_i \lambda \Delta r r_i^2
+\end{align*}
+If we take the limit in which the length of the mass element is infinitesimally small ($\Delta r \to dr$) the sum can be written as an integral over the dimension of the rod:
+\begin{align*}
+I &= \int_0^L\lambda r_i^2dr = \frac{1}{3}\lambda L^3 = \frac{1}{3}\left( \frac{M}{L} \right)L^3 \\
+&=\frac{1}{3} ML^2
+\end{align*}
+In general, we can write the moment of inertia of a continuous object as:
+\begin{align*}
+I = \int dm r^2
+\end{align*}
+where $dm$ is a small mass element that makes up the object, $r$ is the distance from that mass element to the axis of rotation, and the integral is over the dimension of the object. As we did above, we would usually set up this integral so that $dm$ is expressed in terms of $r$ so that we can take an integral over $r$. 
 
-\subsection{Parallel axis theorem}
+\begin{example}{Calculate the moment of inertia of a uniform thin ring of mass $M$ and radius $R$, rotated about an axis that goes through its centre and is perpendicular to the disk.}
+We take a small mass element $dm$ of the ring, as shown in Figure \ref{fig:rotationaldynamics:ring}. 
+\capfig{0.3\textwidth}{figures/RotationalDynamics/ring.png}{\label{fig:rotationaldynamics:ring} A small mass element on a ring.}
+The moment of inertia is given by:
+\begin{align*}
+I = \int dm r^2
+\end{align*}
+In this case, each mass element around the ring will be the same distance away from the axis of rotation. The value $r^2$ in the integral is a constant over the whole ring, and so can be taken out of the integral:
+\begin{align*}
+I = \int dm r^2 = R^2\int dm
+\end{align*}
+where we used the fact that the ring has a radius $R$, so the distance $r$ of each mass element to the axis of rotation is $R$. The integral:
+\begin{align*}
+\int dm
+\end{align*}
+just means ``sum all of the mass elements, $dm$'', and is thus equal to $M$, the total mass of the ring. The moment of inertia of the ring is thus:
+\begin{align*}
+I = R^2\int dm = MR^2
+\end{align*}
+\end{example}
 
+\begin{example}{Calculate the moment of inertia of a uniform disk of mass $M$ and radius $R$, rotated about an axis that goes through its centre and is perpendicular to the disk.}
+We need to split up the disk into mass elements, $dm$, that we can sum together to obtain the moment of inertia of the disk. We can choose a ring of radius $r$ and radial thickness $dr$ for the shape of our mass element, as depicted in Figure \ref{fig:rotationaldynamics:diskI}.
+\capfig{0.3\textwidth}{figures/RotationalDynamics/diskI.png}{\label{fig:rotationaldynamics:diskI} A mass element $dm$ in the shape of a ring of radius $r$ and radial thickness $dr$.}
+We can define a surface mass density, $\sigma$, equal to the mass per unit area of the disk:
+\begin{align*}
+\sigma = \frac{M}{\pi R^2}
+\end{align*}
+The mass of the ring shaped element is thus given by:
+\begin{align*}
+dm = \sigma 2\pi r dr
+\end{align*}
+where $2\pi r dr$ is the area of the mass element. Because $dr$ is infinitesimally small, you can imagine unfolding the mass element into a rectangle of height $dr$ and of length $2\pi r$. Now that we have expressed the mass element in terms of $r$, we can proceed to calculate the moment of inertia.
+
+The moment of inertia is given by:
+\begin{align*}
+I &= \int dm r^2 = \int_0^R \sigma 2\pi r dr r^2 =2\pi \sigma \int_0^R  r^3 dr \\
+&=2 \pi \sigma \frac{1}{4}R^4 = 2\pi \left( \frac{M}{\pi R^2} \right) \frac{1}{4}R^4\\
+&=\frac{1}{2}MR^2
+\end{align*}
+\textbf{Discussion:} The moment of inertia of a disk of mass $M$ and radius $R$ is half of that of a ring of radius $R$ and mass $M$. It is thus easier to rotate the disk than the ring. This makes sense because the moment of inertia is such that object are more difficult to rotate if the mass is further away from the axis of rotation. In the disk, some of the mass is close to the axis of rotation, so the moment of inertia is smaller than that of a ring. 
+\end{example}
+
+\subsection{The parallel axis theorem}
+The moment of inertia of a solid object can be difficult to calculate, especially if the object is not symmetric. The parallel axis theorem allows us to determine the moment of inertia of an object about an axis, if we already know the moment of inertia of the object about an axis that is parallel and goes through the centre of mass of the object.
+
+Consider an object for which we know the moment of inertia about an axis that goes through the object's centre of mass. We define a coordinate system such that the origin is located at the centre of mass, and the $z$ axis is parallel to the axis about which we know the centre of mass, as illustrated in Figure \ref{fig:rotationaldynamics:parallel}. 
+\capfig{0.3\textwidth}{figures/RotationalDynamics/parallel.png}{\label{fig:rotationaldynamics:parallel} An object with a coordinate system whose origin is at the object's centre of mass. A mass element, $m_i$, is also shown.}
+We wish to determine the moment of inertia for the object for an axis that is parallel to the $z$ axis, but goes through a point with coordinates $(x_0,y_0)$ located a distance $h$ away from the centre of mass. The moment of inertia about an axis parallel to the $z$ axis and that goes through that point, $I_h$ is given by:
+\begin{align*}
+I_h = \sum_i m_i r_i^2
+\end{align*}
+where $m_i$ is a mass element of the object located at a distance $r_i$ from the axis of rotation. If the mass element is located at a position $(x_i,y_i)$ relative to the centre of mass, we can write the distance $r_i$ in terms of the position of the mass element, and of the position of the axis of rotation:
+\begin{align*}
+r_i^2 = (x_i-x_0)^2+(y_i-y_0)^2 = x_i^2-2x_ix_0+x_0^2+y_i^2-2y_iy_0+y_0^2
+\end{align*}
+Note that:
+\begin{align*}
+x_0^2 + y_0^2 = h^2
+\end{align*}
+The moment of inertia, $I_h$, can thus be written as:
+\begin{align*}
+I_h &= \sum_i m_i r_i^2 =\sum_i (m_i(x_i^2+ y_i^2)-2x_0m_ix_i-2y_0m_iy_i+m_ih^2)\\
+&=\sum_i m_i(x_i^2+ y_i^2) + h^2\sum_i m_i - 2x_0 \sum_im_ix_i- 2y_0 \sum_im_iy_i
+\end{align*}
+where we broke the sum up into several sums, and factored constant terms ($h$, $x_0$, $y_0$) out of the smaller sums, since these terms do not depend on which mass element we are considering. The first term is moment of inertia about the centre of mass, since $x_i^+y_i^2$ is the distance to the centre of mass. The second term is $h^2$ times the total mass of the object, since the sum of all the $m_i$ is just the mass, $M$, of the object. Now consider the term:
+\begin{align*}
+2x_0 \sum_im_ix_i
+\end{align*}
+The sum, $\sum m_i x_i$ is precisely the definition of the $x$ coordinate of the centre of mass! By construction, this is zero, because we choose the origin to be located at the centre of mass. The last two terms are thus identically zero, because the sums correspond to the $x$ and $y$ coordinates of the centre of mass!
+
+We can thus write the parallel axis theorem:
+\begin{align}
+\Aboxed{I_h = I_{CM} + Mh^2}
+\end{align}
+where $I_{CM}$ is the moment of inertia of an object of mass $M$ about an axis that goes through the centre of mass and $I_h$ is the moment of inertia about a second axis that is parallel to the first and distance $h$ away.
+\begin{example}{In the previous section, we calculate the moment of inertia of a rod of length $L$ and mass $M$ through an axis that is perpendicular to the rod and through one of its ends, and found that it was given by:
+\begin{align*}
+I=\frac{1}{3}ML^2
+\end{align*}
+What is the moment of inertia of the rod about a an axis that is perpendicular to the rod and goes through its centre of mass?}
+In this case, we know the moment of inertia through an axis that is not going through the centre of mass. The centre of mass is located a distance $h=L/2$ away from the point about which we know the moment of inertial, $I_h$. 
+
+Using the parallel axis theorem, we can find the moment of inertia through the centre of mass:
+\begin{align*}
+I_{CM} &= I_h - Mh^2\\
+&=\frac{1}{3}ML^2 - M \left( \frac{L}{2}\right)^2 = \frac{1}{12}ML^2
+\end{align*}
+
+\textbf{Discussion: }We find that the moment of inertia about the centre of mass is smaller than when the rod is rotated about its end. This makes sense because when rotating about the end, more of the mass is further away from the axis of rotation, which results in a larger moment of inertia.
+\end{example}
 
 
 
@@ -348,6 +626,9 @@ E = mc^2
 \subsection{To try at home}
 
 \begin{tQuestion}Take a large textbook and consider the 3 axes that are parallel to the sides of the textbook and go through the centre of mass. By rotating the book along the three axes successively, determine the axis about which the moment of inertia of the textbook is the largest.\end{tQuestion}
+
+\begin{tQuestion}Confirm that the moment of inertia of a rod is smaller if the rod is rotated about its centre of mass than if it is rotated by one of its ends.\end{tQuestion}
+
 
 \subsection{To try in the lab}
 
