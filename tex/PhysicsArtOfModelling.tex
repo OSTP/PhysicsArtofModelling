@@ -44,12 +44,6 @@
 \usepackage{multicol}
 %\lstset{language=Python,showstringspaces=false,commentstyle=} 
 
-
-%%TODO:
-%Chapter reference are out of whack
-%Padding around wrapfigures
-
-
 %%Some math and other shortcuts
 \newcommand{\chloe}{Chlo\"e~}
 \newcommand{\die}[2]{\frac{\partial #1}{\partial #2}}
@@ -275,6 +269,22 @@
 \begin{mdframed}[]\relax #1 \leavevmode \\ \newline { \color{TBred}\textsf{\large Solution}} \\ {\color{TBred}\rule[10pt]{\textwidth}{1pt}} \\ #2}{%
 \end{mdframed}}
 
+%Review Box
+\newenvironment{review}[1]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBorange, minimum width=5cm,rounded corners=0.2cm]
+        {\strut Review Topics};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBorange,backgroundcolor=TBorange!5,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}[nobreak=true]\relax #1}{%
+\end{mdframed}}
+
 %%Checkpoint question in a box, with counter:
 \newcounter{checkpoint}[chapter]
 \def\thecheckpoint{\thechapter-\arabic{checkpoint}}
@@ -322,7 +332,7 @@
         \node[anchor=west,rectangle,fill=TBblue, minimum width=5cm,rounded corners=0.2cm]
         {\strut Important Equations};},
     frametitlefont=\color{white}\sffamily\bfseries,
-    innertopmargin=0pt,linecolor=TBblue,backgroundcolor=TBblue!5,%
+    innertopmargin=0pt,linecolor=TBblue,%
     linewidth=1pt,topline=true,%
     frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
 }
@@ -338,7 +348,7 @@
         \node[anchor=west,rectangle,fill=TBblue, minimum width=5cm,rounded corners=0.2cm]
         {\strut Key Takeaways};},
     frametitlefont=\color{white}\sffamily\bfseries,
-    innertopmargin=0pt,linecolor=TBblue,%
+    innertopmargin=0pt,linecolor=TBblue,backgroundcolor=TBblue!5,%
     linewidth=1pt,topline=true,%
     frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
 }
@@ -357,77 +367,6 @@
 
 \newenvironment{tQuestion}[1]{\refstepcounter{tQuestion}%
     \textbf{Activity~\therQuestion: }#1}
-
-%%Environments to be deleted once we transfer to new environments
-%%MC checkpoint
-\newenvironment{checkpointMC}[1]{\refstepcounter{checkpoint}%
-    \textbf{Checkpoint \thecheckpoint: }#1 %
-    \begin{enumerate}[label=\Alph*),topsep=-10pt]}%
-   {\end{enumerate}}
-\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{checkpointMC}
-
-%%Short Answer checkpoint
-\newenvironment{checkpointSA}[1]{\refstepcounter{checkpoint}%
-    \textbf{Checkpoint \thecheckpoint: }#1\\}{}
-\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{checkpointSA}
-
-%%MC Opener
-\newenvironment{openingMC}[1]{
-    \textbf{Think about it: }#1 %
-    \begin{enumerate}[label=\Alph*),topsep=-10pt]}%
-   {\end{enumerate}}
-\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{openingMC}
-
-%%Short Answer Opening Question
-\newenvironment{openingSA}[1]{
-    \textbf{Think about it: }#1}{}
-\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=green!10, roundcorner=10pt,nobreak=true]{openingSA}
-
-%%Student opinion EN
-\newenvironment{studentopinion}[1]{\refstepcounter{checkpoint}%
-    \textbf{Emma's Thoughts \thecheckpoint: }#1\\}{}
-\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=orange!10, roundcorner=10pt,nobreak=true]{studentopinion}
-
-%%Student opinion OW
-\newenvironment{studentopinionOW}[1]{\refstepcounter{checkpoint}%
-    \textbf{Olivia's Thoughts \thecheckpoint: }#1\\}{}
-\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=orange!10, roundcorner=10pt,nobreak=true]{studentopinionOW}
-
-%%Reflect and Research
-\newenvironment{reflectresearch}[1]{\refstepcounter{checkpoint}%
-    \textbf{Reflect and Research \thecheckpoint: }#1\\}{}
-\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=blue!10, roundcorner=10pt,nobreak=true]{reflectresearch}
-
-%%Checkpoint question in a box, with counter:
-%\newcounter{ncheckpoint}[chapter]
-%\def\thecheckpoint{\thechapter-\arabic{ncheckpoint}}
-
-
-
-
-%%Environments that can be deleted now (probably)
-%%Learning objectives box:
-%\newenvironment{learningObjectives}{\textbf{Learning Objectives:} \begin{itemize}[topsep=-10pt]}{\end{itemize}}
-%\surroundwithmdframed[linewidth=2pt, backgroundcolor=blue!10, roundcorner=10pt,nobreak=true]{learningObjectives}
-
-%%End of chapter summary box:
-%\newenvironment{chapterSummary}{\begin{itemize}[topsep=-10pt]}{\end{itemize}}
-%\surroundwithmdframed[linewidth=2pt, backgroundcolor=yellow!10, roundcorner=10pt]{chapterSummary}
-
-%%Worked out example box with a counter
-%\newcounter{example}[chapter]
-%\def\theexample{\thechapter-\arabic{example}}
-
-%\newenvironment{example}[2]
-%{\refstepcounter{example} \textbf{Example \theexample:} #1\\ \\ \itshape #2}{}
-%\surroundwithmdframed[skipabove=10pt,linewidth=2pt, backgroundcolor=red!10, roundcorner=10pt]{example}
-
-
-
-
-
-    
-  
           
 \usepackage[paper=letterpaper,
             %includefoot, % Uncomment to put page number above margin
