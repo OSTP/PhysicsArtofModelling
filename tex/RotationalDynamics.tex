@@ -89,8 +89,35 @@ Similarly, we can define the angular acceleration vector, $\vec \alpha$, about a
 \end{align}
 where $\vec a_\perp$ is the component of the particle's acceleration vector that is tangent to the circle (perpendicular to $\vec r$),  and $\vec r$ is the vector from the axis of rotation to the particle. The direction of the angular acceleration is co-linear with the axis of rotation and the right-hand rule gives the rotational direction of the angular acceleration. We can also define the angular acceleration about a point; in that case, the direction of the vector will define an instantaneous axis of rotation about a circle of radius $r$ centred at the point as well as the direction of the angular acceleration about that axis.
 
+Finally, we can also define an angular displacement vector, $\vec \theta$, relative to an axis of rotation. The direction of the angular displacement vector will be co-linear with the axis of rotation, its direction will indicate the direction of rotation about that axis, and its magnitude (in radians) will correspond to the angular displacement (as shown in Figure \ref{fig:rotationaldynamics:axis}).
 
 TODO: Checkpoint question: An ant on a disk that is rotating slower and slower as illustrated. MC: the angular velocity vector is into the page and the angular acceleration is out of the page, etc... (they will be in opposite directions) 
+
+
+The angular velocity vector is the rate of change of the angular displacement vector:
+\begin{align*}
+\vec\omega = \frac{d}{dt} \vec \theta
+\end{align*}
+where $d\vec\theta$ can be thought of as the angular displacement associated with a small displacement, $d\vec s$, along the circumference of a circle of radius $r$:
+\begin{align*}
+d\vec \theta &= \frac{1}{r^2} \vec r \times d\vec s\\
+\vec\omega &= \frac{d\vec \theta}{dt}  = \frac{d}{dt} \frac{1}{r^2} \vec r \times d\vec s = \frac{1}{r} \frac{d\vec s}{dt} = \frac{1}{r}\vec v_s\\
+\therefore v_s &= r\omega
+\end{align*}
+where $\vec v_s$ is the (instantaneous) tangential velocity around the circle. The angular acceleration vector is the rate of change of the angular velocity vector:
+\begin{align*}
+\vec\alpha = \frac{d}{dt} \vec \omega
+\end{align*}
+
+Given the angular kinematic quantities, the related linear quantities at a position $\vec r$ from the axis of rotation are given by:
+\begin{align}
+d\vec s &= d\vec\theta \times \vec r\nonumber\\
+\vec v_s &= \vec \omega \times \vec r\nonumber\\
+\vec a_\perp&= \vec \alpha \times \vec r
+\end{align}
+where the linear quantities are always in the direction perpendicular to $\vec r$ (tangent to the circle, for motion around a circle). 
+
+TODO: Checkpoint MC: A particle has an angular velocity in the negative $z$ direction. In which way is the particle's velocity vector at a point in its trajectory when it is on the positive $y$ axis? (positive x direction)
 
 \section{Rotational dynamics for a single particle}
 Suppose that a single force, $\vec F$, is acting on a particle of mass $m$.  Newton's Second Law for the particle is then given by:
@@ -616,6 +643,7 @@ If a particle moving around a circle has a tangential acceleration, $\vec a_\per
 \begin{align*}
 \vec\alpha = \frac{1}{r^2}\vec r \times \vec a_\perp
 \end{align*}
+
 
 The torque from a force, $\vec F$, exerted at a position $\vec r$, relative to an axis (or point) of rotation is defined as:
 \begin{align*}
