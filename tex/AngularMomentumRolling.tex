@@ -1,0 +1,192 @@
+
+\chapter{Angular momentum, rotational energy, and rolling motion}
+\label{chapter:angularmomentumrolling}
+In this chapter, we extend our description of rotational dynamics to include the rotational equivalents of kinetic energy and angular momentum. We also develop the framework for describing the motion of rolling objects.  
+
+\begin{learningObjectives}{
+ \item Understand how to define the rotational kinetic energy of an object as well as its total kinetic energy.
+ \item Understand how to define the angular momentum of an object and when it is conserved.
+ \item Understand how to model rolling motion, and what slipping means in the context of rolling motion.
+ }
+\end{learningObjectives}
+
+\begin{opening}
+\begin{MCquestion}{A question}
+\item a choice
+\item another choice %correct
+\end{MCquestion}
+\end{opening}
+
+\section{Rotational kinetic energy of an object}
+In this section, we show how to define the rotational kinetic energy of an object about its centre of mass. Even if the centre of mass of an object is at rest, it makes sense that the object has some sort of kinetic energy if it rotating, which we examine here. Consider a solid object whose centre of mass is stationary and that is rotating about an axis that passes through its centre of mass with angular velocity $\omega$, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/rotE.png}{\label{fig:angularmomentumrolling:rotE}An object rotating about an axis that passes through its centre of mass.}
+We can model the object as being composed of many point particles, each with a mass $m_i$, located at a position $\vec r_i$ relative to the centre of mass, with velocity $\vec v_i$. We choose a coordinate system whose origin is at the centre of mass and whose $z$ axis is co-linear with the axis of rotation, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
+
+Each particle in the object has a kinetic energy, $K_i$:
+\begin{align*}
+K_i = \frac{1}{2}mv_i^2
+\end{align*} 
+We can sum the kinetic energy of each particle together to get the total rotational kinetic energy, $K_{rot}$, of the object:
+\begin{align*}
+K_{rot} = \sum_i \frac{1}{2}mv_i^2
+\end{align*}
+Although each particle will have a different velocity, $\vec v_i$, they will all have the same angular velocity, $\vec\omega$. For any particle, located a distance $r_i$ from the axis of rotation, their velocity is related to the angular velocity of the object by:
+\begin{align*}
+\vec v_i &= \vec \omega \times \vec r\\
+v_i &= \omega r_i
+\end{align*}
+We can thus write the total rotational kinetic energy of the object, about an axis through its centre of mass, as:
+\begin{align*}
+K_{rot} &= \sum_i \frac{1}{2}mv_i^2 = \sum_i \frac{1}{2}mr_i^2\omega^2= \frac{1}{2} \omega^2 \sum_i mr_i^2\\
+&=\frac{1}{2}I_{CM}\omega^2
+\end{align*}
+where we factored out $\omega$ and the one half, as these are constant. We then recognized that the remaining sum is simply the definition of the object's moment of inertia through its centre of mass:
+\begin{align*}
+I_{CM} = \sum_i mr_i^2
+\end{align*}
+
+Thus, the rotational kinetic energy of an object for an axis that passes through its centre of mass is given by:
+\begin{align}
+\Aboxed{K_{rot}=\frac{1}{2}I_{CM}\omega^2}
+\end{align}
+where $I_{CM}$ is the object's moment of inertia about that axis.
+
+\subsection{Work on a rotating object}
+We can calculate the work done by a force exerted on an object rotating about an axis through its centre of mass. Let $\vec F$ be a force exerted at position $\vec r$ relative to the axis of rotation at some instant in time, and let the force be exerted in the plane perpendicular to the axis of rotation. Because the object is rotating about the given axis, only the component of the force that is tangent to the circle about which the point where the force is exerted rotates can do work (only the component of force parallel to the displacement can do work). 
+
+The work done by the force as the object rotates by a certain angle is given by:
+\begin{align*}
+W = \int \vec F \cdot d\vec l
+\end{align*}
+where $d\vec l$ is a small displacement along the (circular) path followed by the point where the force is exerted, as illustrated in Figure \ref{fig:angularmomentumrolling:work}.
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/work.png}{\label{fig:angularmomentumrolling:work}Calculating the work done by a force on a rotating object.}
+At some instant in time, when the force is exerted at position, $\vec r$, consider the scalar product between the torque from the force, $\vec \tau$, and an infinitesimal angular displacement, $d\vec \theta$, about the axis of rotation:
+\begin{align*}
+\vec\tau \cdot d\vec\theta = (\vec r \times \vec F) \cdot (\frac{1}{r^2} \vec r\times d\vec l)
+\end{align*}
+The vectors $\vec \tau$ and $d\vec \theta$ are parallel to the axis of rotation (because $\vec F$ and $d\vec l$ are in the plane perpendicular to the axis of rotation), so their scalar product will be equal to the product of their magnitudes. The vector $\vec r \times \vec F$ has a magnitude of:
+\begin{align*}
+\vec r \times \vec F = rF_\perp
+\end{align*} 
+where $F_\perp$ is the component of the force tangent to the vector. The vector $\vec r\times d\vec l$ has a magnitude:
+\begin{align*}
+\vec r\times d\vec l = rdl
+\end{align*}
+since $\vec r$ and $d\vec l$ are always perpendicular. The scalar product $\vec\tau \cdot d\vec\theta$ is thus equal to:
+\begin{align*}
+\vec\tau \cdot d\vec\theta = rF_\perp \frac{1}{r^2} rdl = F_\perp dl
+\end{align*}
+which is equal to $\vec F \cdot d\vec l$.
+
+The work done by a force when an object rotates about an axis can thus be written in terms of its torque about that axis and the corresponding angular displacement from $\theta_1$ to $\theta_2$:
+\begin{align}
+W = \int_{\theta_1}^{\theta_2}\vec\tau\cdot d\vec \theta
+\end{align}
+
+The net work done on an object through an angular displacement from $\theta_1$ to $\theta_2$ can thus be written using the net torque $\pvec \tau^{net}$ exerted on the object:
+\begin{align*}
+W^{net} = \int_{\theta_1}^{\theta_2}\pvec\tau^{net}\cdot d\vec \theta
+\end{align*}
+We can re-arrange this using Newton's Second Law for rotational dynamics:
+\begin{align*}
+\pvec\tau^{net} &= I \vec\alpha\\
+&= I \frac{d\vec\omega}{dt} =  I \frac{d\omega}{d\theta}\frac{d\vec\theta}{dt}=I \frac{d\omega}{d\theta} \vec\omega
+\end{align*}
+which allows us to write the integral over a change in angular velocity instead of angular displacement:
+\begin{align*}
+W^{net} &= \int_{\theta_1}^{\theta_2}\pvec\tau^{net}\cdot d\vec \theta =  \int_{\theta_1}^{\theta_2}I \frac{d\omega}{d\theta} \vec\omega \cdot d\vec \theta\\
+&=\int_{\omega_1}^{\omega_2}I \omega d\omega = \frac{1}{2}I\omega_2^2 - \frac{1}{2}I\omega_1^2
+\end{align*}
+And we find that the Work-Energy Theorem can also be applied to find the change in rotational kinetic energy resulting from the net work done by a torque.
+
+If a constant torque, $\tau$, is exerted on an object that is rotating at constant angular velocity, $\omega$, then the rate at which that work  is being done is given by:
+\begin{align*}
+P = \frac{dW}{dt} = \frac{d}{dt} \vec \tau \cdot \vec d\vec\theta = \tau\omega
+\end{align*}
+which corresponds to the power associated with that torque.
+
+\subsection{Total kinetic energy of an object}
+In the frame of reference of the centre of mass, an object rotating about an axis through its centre of mass with angular velocity, $\vec \omega$, will have rotational kinetic energy, $K_{rot}$, given by:
+\begin{align*}
+K_{rot}=\frac{1}{2}I_{CM}\omega^2
+\end{align*}
+where $I_{CM}$ is the moment of inertia of the object about the axis through its centre of mass. 
+
+We with to determine the kinetic energy of the object in a frame of reference where the object's  centre of mass is moving with a velocity $\vec v_{cm}$. We model the object as being composed of particles of mass $m_i$, each located at position $\vec r_i$, relative to the centre of mass. The velocity, $\vec v_i$, of a particle $i$, in this frame of reference, is given by:
+\begin{align*}
+\vec v_i = \vec\omega \times \vec r_i + \vec v_{CM}
+\end{align*}
+where $\vec\omega \times \vec r$ is the velocity of the particle (due to rotation) in the frame of the centre of mass. The kinetic energy of a particle, $K_i$, is given by:
+\begin{align*}
+K_i = \frac{1}{2}m_iv_i^2 = \frac{1}{2}m_i(\vec v_i\cdot \vec v_i)
+\end{align*}
+where we expressed the speed of the particle squared using a dot product of the speed with itself. The total kinetic energy of the object is found by summing the kinetic energies of all of the particles:
+\begin{align*}
+K_{tot} &= \sum \frac{1}{2}m_i(\vec v_i\cdot \vec v_i) \\
+&=\frac{1}{2} \sum_i m_i (\vec\omega \times \vec r_i + \vec v_{CM}) \cdot (\vec\omega \times \vec r_i + \vec v_{CM})\\
+&=\frac{1}{2} \sum_i m_i (\vec\omega \times \vec r_i)\cdot(\vec\omega \times \vec r_i ) + \frac{1}{2} \sum_i m_i (\vec v_{CM}) \cdot (\vec v_{CM}) + \sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})\\
+&=\frac{1}{2}  \sum_i m_i \omega^2r_i^2 + \frac{1}{2} \sum_i m_i v_{CM}^2 + \sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})\\
+&=\frac{1}{2} I_{CM}\omega ^2 + \frac{1}{2}M v_{CM}^2+\sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})
+\end{align*} 
+where the first term is the rotational kinetic energy that we found earlier. The second term, called the ``translational kinetic energy'', can be thought of as a kinetic energy of the whole system $M=\sum m_i$, due to the motion of the centre of mass. The last term is identically zero:
+\begin{align*}
+\sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM}) &= (\vec v_{CM}) \cdot \sum_i m_i (\vec\omega \times \vec r_i)\\
+&=(\vec v_{CM}) \cdot \sum_i m_i \pvec v'_{i}
+\end{align*}
+since $v'_{i} = \vec\omega \times \vec r_i$ is the velocity of particle $i$ in the center of mass frame of reference. But the sum:
+\begin{align*}
+\sum_i m_i \pvec v'_{i}
+\end{align*}
+is the numerator for the definition of the velocity of the centre of mass, which, in the centre of mass frame of reference is identically zero!
+
+Thus, the total kinetic energy of an object of mass $M$ that is rotating about an axis through its centre of mass and whose centre of mass is moving with velocity $\vec v_{CM}$ is given by:
+\begin{align}
+\Aboxed{K_{tot}=K_{rot}+K_{trans}=\frac{1}{2} I_{CM}\omega ^2 + \frac{1}{2}M v_{CM}^2} 
+\end{align}
+\newpage
+\section{Summary}
+
+\begin{chapterSummary}{
+\item Something that was learned
+}
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+This is an important equation
+\begin{align*}
+E = mc^2
+\end{align*}
+
+\end{importantEquations}
+
+
+\newpage
+\section{Thinking about the material}
+\subsection{Reflect and research}
+
+\begin{enumerate}
+\item Something to research more.
+\end{enumerate}
+\subsection{To try at home}
+
+\begin{tQuestion}Try doing this \end{tQuestion}
+
+\subsection{To try in the lab}
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+\begin{problemParts}{A question\label{Q:chaptertitle:q1}}
+\item How close can he get to the hurdle before he has to jump?
+\item What maximum height does he reach?
+\end{problemParts}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{\ref{Q:chaptertitle:q1}}
+{
+the solution
+}
+\end{solution}
+
