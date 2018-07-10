@@ -297,19 +297,29 @@ We wish to model the motion of the object as it rotates about a specific axis. T
 
 We can write the rotational version of Newton's Second Law for particle, $i$, with mass $m_i$, and position vector $\vec r_i$ relative to the rotation axis:
 \begin{align*}
-\pvec\tau_i^{net} &= m_ir_i^2\vec\alpha_i
+\sum_k \vec\tau_{ik} = \pvec\tau_i^{net} &= m_ir_i^2\vec\alpha_i
 \end{align*}
-where $\pvec\tau_i^{net}$ is the net torque on the particle \textbf{in the direction of the rotation axis} and $\vec\alpha_i$ is the particle's angular acceleration about that axis. We can sum together the equations for each particle $i$:
+where $\vec\tau_{ik}$ is the $k$-th torque on particle $i$. $\pvec\tau_i^{net}$ is the net torque on the particle \textbf{about the axis of rotation} and $\vec\alpha_i$ is the particle's angular acceleration about that axis.
+
+We can divide the torques exerted on a particle into internal and external torques. Internal torques are those exerted by another particle in the system, whereas external torques are exerted by something external to the system. If particle 1 exerts a torque $\vec tau$ on particle 2, particle 2 will exert an equal and opposite torque, $-\vec\tau$ on particle 1. 
+
+We can sum together the equations for each particle $i$:
 \begin{align*}
 \pvec\tau_1^{net} + \pvec\tau_2^{net} +\pvec\tau_3^{net} + \dots &= m_1r_1^2\vec\alpha_1 + m_2r_2^2\vec\alpha_2 +m_3r_3^2\vec\alpha_3 +\dots\\
 \sum_i \pvec\tau_i^{net} &= \sum_i  m_ir_i^2\vec\alpha_i
 \end{align*}
+where the sum over all of the torques exerted on each particle will be equal to the net external torque exerted on all of the particles, since the sum of the internal torques, $\pvec\tau_i^{int}$, will be zero:
+\begin{align*}
+\sum_i \pvec\tau_i^{net} = \sum_i \pvec\tau_i^{int} + \sum_i \pvec\tau_i^{ext} = \sum_i \pvec\tau_i^{ext} = \pvec\tau^{ext}
+\end{align*}
+where $ \pvec\tau^{ext}$ is the net external torque on the system.
+
 All of the particles are part of the same rigid body, and cannot move relative to each other. Furthermore, they must all move around circles that are centred about the axis of rotation and in a plane perpendicular to that axis. They must thus all have the same angular acceleration\footnote{They will have different linear accelerations, but the angular acceleration (and velocity) will be the same for all particles if they are moving in unison.}, $\vec\alpha_i = \vec \alpha_1 = \vec \alpha_2 =\dots=\vec\alpha$. We can thus factor the angular acceleration, $\vec \alpha$, out of the sum.
 
-The sum of the net torques on all of the particles can be thought of as the net torque, $\pvec \tau^{net}$, on the object. We can thus write Newton's Second Law for rotational dynamics of a solid object as:
+We can thus write Newton's Second Law for rotational dynamics of a solid object as:
 \begin{align*}
 \sum_i \pvec\tau_i^{net} &= \sum_i  m_ir_i^2\vec\alpha_i\\
-\therefore \pvec \tau^{net}&= \left(\sum_i  m_ir_i^2\right)\vec\alpha
+\therefore \pvec\tau^{ext}&= \left(\sum_i  m_ir_i^2\right)\vec\alpha
 \end{align*}
 The term in parentheses describes how the various masses are distributed relative to the axis of rotation. The term in parenthesis is called the \textbf{moment of inertia of the object}, and usually denoted with the letter, $I$:
 \begin{align}
@@ -317,7 +327,7 @@ The term in parentheses describes how the various masses are distributed relativ
 \end{align}
 The moment of inertia is a property of the object \textbf{relative to a specific axis of rotation}. Re-writing Newton's Second Law for the rotational dynamics of solid objects using the moment of inertia:
 \begin{align}
-\Aboxed{\pvec \tau^{net}&= I\vec\alpha}
+\Aboxed{\pvec\tau^{ext}&= I\vec\alpha}
 \end{align}
 The net torque exerted on an object in the direction of the axis of rotation is thus equal to its moment of inertia about that axis multiplied by its angular acceleration about that axis. In other words, the moment of inertia describes how the object will resist rotational motion given a net torque. An object with a smaller moment of inertia will have a larger angular acceleration for a given torque. Again, this is analogous to the linear case, where the acceleration of an object given a net force is determined by its inertial mass.
 \begin{example}{\capfig{0.3\textwidth}{figures/RotationalDynamics/dumbbell.png}{\label{fig:rotationaldynamics:dumbbell} A dumbbell made of two small identical masses separated by a distance $L$.} Two small point masses, $m$, are connected by a mass-less rod of length $L$ to form a dumbbell, as illustrated in Figure \ref{fig:rotationaldynamics:dumbbell}. A net force of magnitude $F$ is exerted on each mass, in opposite directions, as illustrated in the Figure. What is the linear acceleration of the centre of mass of the dumbbell? What is the angular acceleration of the dumbbell relative to an axis that goes through its centre of mass and is perpendicular to the page? What is the angular acceleration of the dumbbell relative to an axis that goes through one of the masses and is perpendicular to the page? }
@@ -325,9 +335,9 @@ We model the dumbbell as a rigid body made of two point masses held at a fixed d
 
 First, we calculate the angular acceleration relative to an axis that is perpendicular the page and goes through the centre of mass. The centre of mass is located midway between the two masses, as illustrated in Figure \ref{fig:rotationaldynamics:dumbbell_CM}. We also define a coordinate system as shown, such that the $z$ axis is out of the page.
 \capfig{0.3\textwidth}{figures/RotationalDynamics/dumbbell_CM.png}{\label{fig:rotationaldynamics:dumbbell_CM} The dumbbell rotating about the centre of mass.}
-The vector from the axis of rotation to each mass will have the same magnitude, $r$, but different directions. The net torque on the dumbbell relative to the axis that goes through the centre of mass, $\pvec\tau^{net}$, which is equal to the sum of the torques from each force:
+The vector from the axis of rotation to each mass will have the same magnitude, $r$, but different directions. The net external torque on the dumbbell relative to the axis that goes through the centre of mass, $\pvec\tau^{ext}$, which is equal to the sum of the torques from each force:
 \begin{align*}
-\pvec\tau^{net}&= \vec r \times \vec F + (-\vec r) \times (-\vec F) \\
+\pvec\tau^{ext}&= \vec r \times \vec F + (-\vec r) \times (-\vec F) \\
 &= 2 (\vec r \times \vec F)=2 (r\hat x \times F\hat y) = 2rF (\hat x \times \hat y)=2rF\hat z\\
 &=LF\hat z
 \end{align*}
@@ -339,7 +349,7 @@ I = \sum_i  m_ir_i^2 = mr^2 +mr^2 = 2mr^2 = \frac{1}{2}mL^2
 \end{align*}
 Using Newton's Second Law for rotational dynamics, we find the angular acceleration to be:
 \begin{align*}
-\pvec \tau^{net}&= I\vec\alpha\\
+\pvec\tau^{ext}&= I\vec\alpha\\
 LF\hat z&=\frac{1}{2}mL^2\vec\alpha\\
 \therefore \vec\alpha &= \frac{2F}{mL}\hat z
 \end{align*}
@@ -350,7 +360,7 @@ Let us now calculate the angular acceleration of the dumbbell about an axis that
 
 We first calculate the net torque on the dumbbell. The vector that goes from the axis of rotation to the force exerted on the mass that coincides with the rotation axis is zero. Thus, only the force exerted on the mass that is not at the rotation axis contributes to the net torque:
 \begin{align*}
-\pvec\tau^{net}&= \vec r \times \vec F = LF\hat z
+\pvec\tau^{ext}&= \vec r \times \vec F = LF\hat z
 \end{align*}
 The moment of inertia of the dumbbell about this axis is:
 \begin{align*}
@@ -358,7 +368,7 @@ I = \sum_i  m_ir_i^2 = m(0)^2 + m(r^2) = mL^2
 \end{align*}
 which is larger than it was about the centre of mass. Again, the angular acceleration is found using Newton's Second Law for rotational dynamics:
 \begin{align*}
-\pvec \tau^{net}&= I\vec\alpha\\
+\pvec\tau^{ext}&= I\vec\alpha\\
 LF\hat z&=mL^2\vec\alpha\\
 \therefore \vec\alpha &= \frac{F}{mL}\hat z
 \end{align*}
@@ -367,8 +377,8 @@ We find that the angular acceleration is smaller about an axis that goes through
 \textbf{Discussion: }This simple example illustrates several key features about rotational dynamics:
 \begin{itemize}
 \item If the sum of the forces on an object is zero, it does not mean that the entire object is stationary; it only implies that the centre of mass is stationary (or rather, moving with a constant velocity, but we can always choose to model the system in a frame of reference where the centre of mass is stationary).
-\item If the sum of the forces on an object is zero, and the sum of the torques is non-zero, the object will rotate about an axis that goes through the centre of mass. That is, all points on the object will move along circles that are centred on an axis that goes through the centre of mass. 
-\item We can model the rotating object about any axis that we choose. In general, the net torque and the moment of inertia will depend on the choice of axis, as will the resulting angular acceleration. 
+\item If the sum of the forces on an object is zero, and the sum of the external torques is non-zero, the object will rotate about an axis that goes through the centre of mass. That is, all points on the object will move along circles that are centred on an axis that goes through the centre of mass. 
+\item We can model the rotating object about any axis that we choose. In general, the net external torque and the moment of inertia will depend on the choice of axis, as will the resulting angular acceleration. 
 \item When determining the motion of the centre of mass, we can draw a free-body diagram, and the location of where the forces are exerted do not matter.
 \item When determining how the object rotates, we cannot use a free-body diagram, because it matters where the forces are applied (as the torque from a given force depends on the location where the force is applied relative to the axis of rotation).
 \end{itemize}
@@ -377,7 +387,7 @@ We find that the angular acceleration is smaller about an axis that goes through
 \section{Equilibrium}
 In this section, we consider the conditions under which an object is in static or dynamic equilibrium. An object is in equilibrium if it does not rotate when viewed in a frame of reference where the object's centre of mass is stationary (or moving at constant velocity).
 \subsection{Static equilibrium}
-An object is in static equilibrium, if \textbf{both the sum of the forces exerted on the object and the sum of the torques (about any axis) are zero}. If the object is in static equilibrium the centre of mass will have no acceleration and the object will have no angular acceleration. In the centre of mass frame of reference, the object is immobile. 
+An object is in static equilibrium, if \textbf{both the sum of the external forces exerted on the object and the sum of the external torques (about any axis) are zero}. If the object is in static equilibrium the centre of mass will have no acceleration and the object will have no angular acceleration. In the centre of mass frame of reference, the object is immobile. 
 \begin{example}{\capfig{0.6\textwidth}{figures/RotationalDynamics/scale.png}{\label{fig:rotationaldynamics:scale} Two masses on a balance.}
  Two masses, $m_1$ and $m_2$ are placed on a balance as shown in Figure \ref{fig:rotationaldynamics:scale}. The balance is made of a plank of mass $M$ and length $L$ that is placed on a fulcrum that is a distance $d$ from one of the edges of the plank. If mass $m_1$ is placed at a distance $r_1$ from the fulcrum, how far should mass $m_2$ be placed on the other side of the plank in order for the balance to be in equilibrium?}
 We can consider the plank as the object that is in static equilibrium. Thus, the sum of the forces and the sum of the torques on the plank must be zero. We first start by identifying the forces that are exerted on the plank; these are:
@@ -462,7 +472,7 @@ We find that the $y$ component from the hinge is in the negative $y$ direction, 
 \subsection{Dynamic equilibrium}
 TODO: Review box on inertial forces
 
-When an object is in dynamic equilibrium, its centre of mass is accelerating, but the object is not rotating when viewed from its centre of mass frame of reference. Thus, the sum of the forces exerted on the object is not zero, while the net torque exerted on the object is zero, in the frame of reference of the centre of mass.
+When an object is in dynamic equilibrium, its centre of mass is accelerating, but the object is not rotating when viewed from its centre of mass frame of reference. Thus, the sum of the external forces exerted on the object is not zero, while the net external torque exerted on the object is zero, in the frame of reference of the centre of mass.
 
 
 Consider, for example, a speed skater going around a circular track or radius $R$, and leaning into the centre making an angle $\theta$ with the ice, as depicted in Figure \ref{fig:rotationaldynamics:skater}. The skater's centre of mass is accelerating, because she is going around a circle, so the net force on the skater is not zero. However, in the reference frame of the skater, the skater is not rotating; she is thus in dynamic equilibrium.
@@ -499,9 +509,9 @@ The reason that our model worked when taking the torques about the centre of mas
 \section{Moment of inertia}
 In order to model how an object rotates about an axis, we can use Newton's Second Law for rotational dynamics:
 \begin{align*}
-\pvec\tau^{net} = I \vec \alpha
+\pvec\tau^{ext} = I \vec \alpha
 \end{align*}
-where $\pvec\tau^{net}$ is the net torque exerted on the object about the axis of rotation, $\vec \alpha$ is the angular acceleration of the object, and $I$ is the moment of inertia of the object (about the axis). If we consider the object as being made of many particles of mass $m_i$ each located at a position $\vec r_i$ relative to the axis of rotation, the moment of inertia is defined as:
+where $\pvec\tau^{ext}$ is the net external torque exerted on the object about the axis of rotation, $\vec \alpha$ is the angular acceleration of the object, and $I$ is the moment of inertia of the object (about the axis). If we consider the object as being made of many particles of mass $m_i$ each located at a position $\vec r_i$ relative to the axis of rotation, the moment of inertia is defined as:
 \begin{align*}
 I = \sum_i m_i r_i^2
 \end{align*}
