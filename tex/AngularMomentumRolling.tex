@@ -1,7 +1,7 @@
 
-\chapter{Angular momentum, rotational energy, and rolling motion}
+\chapter{Rotational energy and momentum}
 \label{chapter:angularmomentumrolling}
-In this chapter, we extend our description of rotational dynamics to include the rotational equivalents of kinetic energy and angular momentum. We also develop the framework for describing the motion of rolling objects.  
+In this chapter, we extend our description of rotational dynamics to include the rotational equivalents of kinetic energy and angular momentum. We also develop the framework for describing the motion of rolling objects. We will see that many of the relations that hold for linear quantities also hold for angular quantities. 
 
 \begin{learningObjectives}{
  \item Understand how to define the rotational kinetic energy of an object as well as its total kinetic energy.
@@ -18,41 +18,41 @@ In this chapter, we extend our description of rotational dynamics to include the
 \end{opening}
 
 \section{Rotational kinetic energy of an object}
-In this section, we show how to define the rotational kinetic energy of an object about its centre of mass. Even if the centre of mass of an object is at rest, it makes sense that the object has some sort of kinetic energy if it rotating, which we examine here. Consider a solid object whose centre of mass is stationary and that is rotating about an axis that passes through its centre of mass with angular velocity $\omega$, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
+In this section, we show how to define the rotational kinetic energy of an object that is rotating about a stationary axis in an inertial frame of reference. Consider a solid object that is rotating about an axis with angular velocity $\omega$, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
 \capfig{0.4\textwidth}{figures/AngularMomentumRolling/rotE.png}{\label{fig:angularmomentumrolling:rotE}An object rotating about an axis that passes through its centre of mass.}
-We can model the object as being composed of many point particles, each with a mass $m_i$, located at a position $\vec r_i$ relative to the centre of mass, with velocity $\vec v_i$. We choose a coordinate system whose origin is at the centre of mass and whose $z$ axis is co-linear with the axis of rotation, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
+We can model the object as being composed of many point particles, each with a mass $m_i$, located at a position $\vec r_i$, with velocity $\vec v_i$ relative to the axis of rotation. We choose a coordinate system whose origin is on the axis of rotation and whose $z$ axis is co-linear with the axis of rotation, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
 
-Each particle in the object has a kinetic energy, $K_i$:
+Each particle of mass $m_i$ in the object has a kinetic energy, $K_i$:
 \begin{align*}
-K_i = \frac{1}{2}mv_i^2
+K_i = \frac{1}{2}m_iv_i^2
 \end{align*} 
 We can sum the kinetic energy of each particle together to get the total rotational kinetic energy, $K_{rot}$, of the object:
 \begin{align*}
-K_{rot} = \sum_i \frac{1}{2}mv_i^2
+K_{rot} = \sum_i \frac{1}{2}m_iv_i^2
 \end{align*}
 Although each particle will have a different velocity, $\vec v_i$, they will all have the same angular velocity, $\vec\omega$. For any particle, located a distance $r_i$ from the axis of rotation, their velocity is related to the angular velocity of the object by:
 \begin{align*}
 \vec v_i &= \vec \omega \times \vec r\\
 v_i &= \omega r_i
 \end{align*}
-We can thus write the total rotational kinetic energy of the object, about an axis through its centre of mass, as:
+We can thus write the total rotational kinetic energy of the object, about the axis of rotation, as:
 \begin{align*}
-K_{rot} &= \sum_i \frac{1}{2}mv_i^2 = \sum_i \frac{1}{2}mr_i^2\omega^2= \frac{1}{2} \omega^2 \sum_i mr_i^2\\
-&=\frac{1}{2}I_{CM}\omega^2
+K_{rot} &= \sum_i \frac{1}{2}m_iv_i^2 = \sum_i \frac{1}{2}m_ir_i^2\omega^2= \frac{1}{2} \omega^2 \sum_i m_ir_i^2\\
+&=\frac{1}{2}I\omega^2
 \end{align*}
-where we factored out $\omega$ and the one half, as these are constant. We then recognized that the remaining sum is simply the definition of the object's moment of inertia through its centre of mass:
+where we factored out $\omega$ and the one half, as these are constant. We then recognized that the remaining sum is simply the definition of the object's moment of inertia about the axis:
 \begin{align*}
-I_{CM} = \sum_i mr_i^2
+I = \sum_i mr_i^2
 \end{align*}
 
-Thus, the rotational kinetic energy of an object for an axis that passes through its centre of mass is given by:
+Thus, the rotational kinetic energy of an object for an axis that is fixed in space is given by:
 \begin{align}
-\Aboxed{K_{rot}=\frac{1}{2}I_{CM}\omega^2}
+\Aboxed{K_{rot}=\frac{1}{2}I\omega^2}
 \end{align}
-where $I_{CM}$ is the object's moment of inertia about that axis.
+where $I$ is the object's moment of inertia about that axis. The rotational kinetic energy is functionally very similar to the linear kinetic energy; instead of mass, we have the moment of inertia, and instead of speed squared, we have angular velocity squared. 
 
 \subsection{Work on a rotating object}
-We can calculate the work done by a force exerted on an object rotating about an axis through its centre of mass. Let $\vec F$ be a force exerted at position $\vec r$ relative to the axis of rotation at some instant in time, and let the force be exerted in the plane perpendicular to the axis of rotation. Because the object is rotating about the given axis, only the component of the force that is tangent to the circle about which the point where the force is exerted rotates can do work (only the component of force parallel to the displacement can do work). 
+We can calculate the work done by a force exerted on an object rotating about an axis through its centre of mass. Let $\vec F$ be a force exerted at position $\vec r$ relative to the axis of rotation at some instant in time, and let the force be exerted in the plane perpendicular to the axis of rotation, as illustrated in Figure \ref{fig:angularmomentumrolling:work}. Because the object is rotating about the given axis, only the component of the force that is tangent to the circle about which the point where the force is exerted can do work (only the component of the force that is parallel to the displacement can do work). 
 
 The work done by the force as the object rotates by a certain angle is given by:
 \begin{align*}
@@ -62,13 +62,13 @@ where $d\vec l$ is a small displacement along the (circular) path followed by th
 \capfig{0.4\textwidth}{figures/AngularMomentumRolling/work.png}{\label{fig:angularmomentumrolling:work}Calculating the work done by a force on a rotating object.}
 At some instant in time, when the force is exerted at position, $\vec r$, consider the scalar product between the torque from the force, $\vec \tau$, and an infinitesimal angular displacement, $d\vec \theta$, about the axis of rotation:
 \begin{align*}
-\vec\tau \cdot d\vec\theta = (\vec r \times \vec F) \cdot (\frac{1}{r^2} \vec r\times d\vec l)
+\vec\tau \cdot d\vec\theta = (\vec r \times \vec F) \cdot \left(\frac{1}{r^2} \vec r\times d\vec l\right)
 \end{align*}
 The vectors $\vec \tau$ and $d\vec \theta$ are parallel to the axis of rotation (because $\vec F$ and $d\vec l$ are in the plane perpendicular to the axis of rotation), so their scalar product will be equal to the product of their magnitudes. The vector $\vec r \times \vec F$ has a magnitude of:
 \begin{align*}
 \vec r \times \vec F = rF_\perp
 \end{align*} 
-where $F_\perp$ is the component of the force tangent to the vector. The vector $\vec r\times d\vec l$ has a magnitude:
+where $F_\perp$ is the component of the force tangent to the circle. The vector $\vec r\times d\vec l$ has a magnitude:
 \begin{align*}
 \vec r\times d\vec l = rdl
 \end{align*}
@@ -76,7 +76,7 @@ since $\vec r$ and $d\vec l$ are always perpendicular. The scalar product $\vec\
 \begin{align*}
 \vec\tau \cdot d\vec\theta = rF_\perp \frac{1}{r^2} rdl = F_\perp dl
 \end{align*}
-which is equal to $\vec F \cdot d\vec l$.
+which is equal to $\vec F \cdot d\vec l$, since that scalar product also selects the component of $\vec F$ that is tangent to the circle. 
 
 The work done by a force when an object rotates about an axis can thus be written in terms of its torque about that axis and the corresponding angular displacement from $\theta_1$ to $\theta_2$:
 \begin{align}
@@ -101,9 +101,9 @@ And we find that the Work-Energy Theorem can also be applied to find the change 
 
 If a constant torque, $\tau$, is exerted on an object that is rotating at constant angular velocity, $\omega$, then the rate at which that work  is being done is given by:
 \begin{align*}
-P = \frac{dW}{dt} = \frac{d}{dt} \vec \tau \cdot \vec d\vec\theta = \tau\omega
+P = \frac{dW}{dt} = \frac{d}{dt} \vec \tau \cdot d\vec\theta = \vec \tau \cdot \vec\omega
 \end{align*}
-which corresponds to the power associated with that torque.
+which corresponds to the power with which that torque does work on the object. This is very similar to the power, $P=\vec F\cdot \vec v$, with which a force does work on an object moving with constant velocity, except that instead of force we use torque, and instead of velocity, we use angular velocity. 
 
 \subsection{Total kinetic energy of an object}
 In the frame of reference of the centre of mass, an object rotating about an axis through its centre of mass with angular velocity, $\vec \omega$, will have rotational kinetic energy, $K_{rot}$, given by:
@@ -112,15 +112,15 @@ K_{rot}=\frac{1}{2}I_{CM}\omega^2
 \end{align*}
 where $I_{CM}$ is the moment of inertia of the object about the axis through its centre of mass. 
 
-We with to determine the kinetic energy of the object in a frame of reference where the object's  centre of mass is moving with a velocity $\vec v_{cm}$. We model the object as being composed of particles of mass $m_i$, each located at position $\vec r_i$, relative to the centre of mass. The velocity, $\vec v_i$, of a particle $i$, in this frame of reference, is given by:
+We wish to determine the kinetic energy of the object in a frame of reference where the object's  centre of mass is moving with a velocity $\vec v_{cm}$; that is, in a frame where the axis of rotation is moving with the velocity of the centre of mass. We model the object as being composed of particles of mass $m_i$, each located at position $\vec r_i$, relative to the centre of mass. The velocity, $\vec v_i$, of a particle $i$, in this frame of reference, is given by:
 \begin{align*}
 \vec v_i = \vec\omega \times \vec r_i + \vec v_{CM}
 \end{align*}
-where $\vec\omega \times \vec r$ is the velocity of the particle (due to rotation) in the frame of the centre of mass. The kinetic energy of a particle, $K_i$, is given by:
+where $\vec\omega \times \vec r_i$ is the velocity of the particle as seen in the centre of mass. The kinetic energy of a particle, $K_i$, is given by:
 \begin{align*}
 K_i = \frac{1}{2}m_iv_i^2 = \frac{1}{2}m_i(\vec v_i\cdot \vec v_i)
 \end{align*}
-where we expressed the speed of the particle squared using a dot product of the speed with itself. The total kinetic energy of the object is found by summing the kinetic energies of all of the particles:
+where we expressed the speed of the particle squared using a dot product of the velocity of the particle with itself. The total kinetic energy of the object is found by summing the kinetic energies of all of the particles:
 \begin{align*}
 K_{tot} &= \sum \frac{1}{2}m_i(\vec v_i\cdot \vec v_i) \\
 &=\frac{1}{2} \sum_i m_i (\vec\omega \times \vec r_i + \vec v_{CM}) \cdot (\vec\omega \times \vec r_i + \vec v_{CM})\\
@@ -128,21 +128,244 @@ K_{tot} &= \sum \frac{1}{2}m_i(\vec v_i\cdot \vec v_i) \\
 &=\frac{1}{2}  \sum_i m_i \omega^2r_i^2 + \frac{1}{2} \sum_i m_i v_{CM}^2 + \sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})\\
 &=\frac{1}{2} I_{CM}\omega ^2 + \frac{1}{2}M v_{CM}^2+\sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})
 \end{align*} 
-where the first term is the rotational kinetic energy that we found earlier. The second term, called the ``translational kinetic energy'', can be thought of as a kinetic energy of the whole system $M=\sum m_i$, due to the motion of the centre of mass. The last term is identically zero:
+where the first term is the rotational kinetic energy that we found earlier. The second term, called the ``translational kinetic energy'', can be thought of as the kinetic energy of the whole system with mass $M=\sum m_i$, due to the translational motion of the centre of mass. The last term is identically zero; we can re-order the scalar product and factor $\vec v_{CM}$ out of the sum:
 \begin{align*}
 \sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM}) &= (\vec v_{CM}) \cdot \sum_i m_i (\vec\omega \times \vec r_i)\\
 &=(\vec v_{CM}) \cdot \sum_i m_i \pvec v'_{i}
 \end{align*}
-since $v'_{i} = \vec\omega \times \vec r_i$ is the velocity of particle $i$ in the center of mass frame of reference. But the sum:
+where $v'_{i} = \vec\omega \times \vec r_i$ is the velocity of particle $i$ in the center of mass frame of reference. But the sum:
 \begin{align*}
 \sum_i m_i \pvec v'_{i}
 \end{align*}
 is the numerator for the definition of the velocity of the centre of mass, which, in the centre of mass frame of reference is identically zero!
 
-Thus, the total kinetic energy of an object of mass $M$ that is rotating about an axis through its centre of mass and whose centre of mass is moving with velocity $\vec v_{CM}$ is given by:
+Thus, the total kinetic energy of an object of mass $M$ that is rotating about an axis through its centre of mass with angular velocity $\omega$ and whose centre of mass is moving with velocity $\vec v_{CM}$ is given by:
 \begin{align}
 \Aboxed{K_{tot}=K_{rot}+K_{trans}=\frac{1}{2} I_{CM}\omega ^2 + \frac{1}{2}M v_{CM}^2} 
 \end{align}
+
+\section{Angular momentum}
+In this section, we show that we can define a quantity called ``angular momentum'' as the rotational equivalent of the linear momentum.
+\subsection{Angular momentum of a particle}
+The angular momentum, $\vec L$, of a particle with linear momentum $\vec p$, relative to point of rotation which we take as the origin is defined as:
+\begin{align}
+\Aboxed{\vec L = \vec r\times \vec p}
+\end{align}
+where $\vec r$ is the vector from the point of rotation to the particle, and the linear momentum, $\vec p$, is defined relative to an inertial frame of reference in which the point of rotation is at rest.
+
+Consider the time-derivative of angular momentum (where we have to use the product rule for derivatives):
+\begin{align*}
+\frac{d\vec L}{dt}  &= \frac{d}{dt} (\vec r\times \vec p)\\
+&=\frac{d\vec r}{dt}\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
+&=\vec v\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
+\end{align*}
+The first term is zero, since $\vec v$ is parallel to $\vec p$ by definition. Recall Newton's Second Law written using linear momentum:
+\begin{align*}
+\frac{d\vec p}{dt} = \pvec F^{net}
+\end{align*}
+where $\pvec F^{net}$ is the net force on the particle. The rate of change of angular momentum is thus given by:
+\begin{align*}
+\frac{d\vec L }{dt} &= \vec r\times\frac{d\vec p}{dt}\\
+&=\vec r\times\pvec F^{net}
+\end{align*}
+where the term on the right is the net torque on the particle. Thus, the rate of change of angular momentum is given by:
+\begin{align}
+\Aboxed{\frac{d\vec L}{dt}   = \pvec \tau^{net}}
+\end{align}
+which is analogous to the linear case, but we used angular momentum instead of linear momentum and net torque instead of net force. The torque on a particle is thus equal to the rate of change of its angular momentum. In particular, the angular momentum of a particle will remain constant (not change with time) if the net torque on the particle is zero. Again, one should note that unlike in the linear case, the angular quantities are defined relative to a point of rotation (that is in an inertial frame of reference). 
+
+We can also define the angular momentum of a particle using only angular quantities:
+\begin{align*}
+\vec L = \vec r \times \vec p =  m \vec r \times \vec v = mr^2 \vec\omega
+\end{align*}
+where we factored the mass $m$ out of the momentum and used the definition $\vec \omega = 1/r^2(\vec r \times \vec v)$. We can think of $mr^2$ as the moment of inertia, $I$, of the particle and write:
+\begin{align}
+\label{eq:angularmomentumrolling:liw}
+\Aboxed{\vec L  = mr^2 \vec\omega = I \vec\omega}
+\end{align}
+which is a close analogue to the linear momentum, but we use moment of inertia instead of mass and angular velocity instead of velocity. 
+
+The angular momentum is thus parallel to the angular velocity of the particle about the point of rotation. If no net torque is exerted on the particle about that point, then the particle's angular momentum about that point will remain constant. We can also consider the torque and angular momentum about an axis instead of a point; in that case, we would simply take the components of torque and angular momentum that are parallel to that axis. 
+
+\begin{example}{\capfig{0.3\textwidth}{figures/AngularMomentumRolling/circle.png}{\label{fig:angularmomentumrolling:circle}A particle attached to a mass-less string moving in a horizontal circle on a table.}
+A particle of mass $m$ attached to a mass-less string is moving along a circle of radius $R$ on a table, as depicted from above in Figure \ref{fig:angularmomentumrolling:circle}. If the table is frictionless: are the particle's linear and/or angular momentum with respect to the axis of rotation conserved? If there is friction between the table and the particle, are the particle's linear and/or angular momentum with respect to the axis of rotation conserved? What can you say about the kinetic energy of the particle in the two cases?}
+If there is no friction, then the forces exerted on the particle are:
+\begin{enumerate}
+\item $\vec F_g$, the particle's weight, exerted downwards, with magnitude $mg$.
+\item $\vec N$, a normal force, exerted upwards, with magnitude $mg$.
+\item $\vec T$, a force of tension, exerted towards the centre of the circle.
+\end{enumerate}
+All of these forces are perpendicular to the (tangential) displacement of the particle along the circle. Thus, there can be no work done on the particle and its speed, $v$, must remain constant. The kinetic energy of the particle must thus remain constant.
+
+The sum of the forces on the particle must be towards the centre of the circle, since the particle is in uniform circular motion. The linear momentum of the particle cannot be conserved if there is a net force on the particle (and clearly, the particle's velocity vector changes direction). 
+
+The forces of weight and the normal force are both outside of the plane of motion, and thus cannot exert a torque along the axis of rotation. They are also equal and opposite in magnitude so the net torque from those two forces is always zero (since the net force from those forces is zero). The force of tension is always anti-parallel to the vector $\vec r$, from the axis of rotation to the particle, and cannot result in a torque about the rotation axis. Thus, the net torque on the particle is zero and its angular momentum must be conserved. 
+
+If there is kinetic friction exerted by the table on the particle, then there is an additional force, $\vec f_s$, exerted on the particle in the direction opposite of motion (tangent to the circle, in the opposite direction from the particle's velocity). 
+
+The force of friction will do negative work on the particle, slowing it down and reducing its kinetic energy, which is no longer conserved. The net force on the particle is non-zero, so its linear momentum is still not conserved. Finally, the force of friction, which is always perpendicular to $\vec r$, will result in a torque that reduces the angular velocity of the particle. The particle's angular momentum is thus no longer conserved.
+
+\textbf{Discussion: }In this example, we saw that kinetic energy, linear momentum, and angular momentum are all conserved under different conditions. Kinetic energy is conserved if no net work is done on the particle. Linear momentum is conserved if the net force on the particle is zero. Angular momentum is conserved if the net torque on the particle is zero. By introducing angular momentum, we are able to use a new conserved quantity to help us model rotational dynamics.
+\end{example} 
+
+\begin{example}{\capfig{0.3\textwidth}{figures/AngularMomentumRolling/line.png}{\label{fig:angularmomentumrolling:line}A particle moving in a straight line.} A particle is moving with constant velocity $\vec v$ relative to a coordinate system as shown in Figure \ref{fig:angularmomentumrolling:line}. Show that its angular momentum about the origin is conserved. }
+In this case, the particle is moving in a straight line, but we can still define its angular momentum relative to the origin. If $\vec r$ is the position vector of the particle relative to the origin, its angular momentum is:
+\begin{align*}
+\vec L = \vec r \times \vec p
+\end{align*}
+We can take the time derivative of the angular momentum to see if it changes with time:
+\begin{align*}
+\frac{d\vec L}{dt} = &= \frac{d}{dt} (\vec r\times \vec p)\\
+&=\frac{d\vec r}{dt}\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
+&=\vec v\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
+\end{align*}
+The first term is zero because $\vec v$ and $\vec p$ are parallel (so their cross-product must be zero). The second term is zero because the particle's momentum is constant in time (since its velocity is constant). Because the angular momentum does not change with time, it is conserved.  
+
+\textbf{Discussion:} Of course, we expected this result since no net torque is exerted on the particle. It is however worth highlighting that a particle does not need to be rotating for its angular momentum about a given axis to be defined or conserved; all that matters is that there is no net torque on the particle relative to that axis.
+\end{example} 
+ 
+\subsection{Angular momentum of an object or system}
+Consider a system made of many particles of mass $m_i$, each with a position $\vec r_i$ and velocity $\vec v_i$, relative to a point of rotation that is fixed in an inertial frame of reference. 
+
+We can write Newton's Second Law using the angular momentum, $\vec L_i$, for particle $i$:
+\begin{align*}
+\frac{d\vec L_i}{dt} = \pvec \tau_i^{net}
+\end{align*}
+where $\pvec \tau_i^{net}$ is the net torque exerted on particle $i$. We can sum each side of this equation for all of the particles in the system:
+\begin{align*}
+\frac{d\vec L_1}{dt} + \frac{d\vec L_2}{dt} + \frac{d\vec L_3}{dt} + \dots &= \pvec \tau_1^{net} + \pvec \tau_2^{net} +\pvec \tau_3^{net} + \dots\\
+\therefore \frac{d}{dt} \sum_i\vec L_i &= \sum_i \pvec \tau_i^{net}
+\end{align*}
+The sum of all of the torques on all of the particles will include a sum over torques that are internal to the system and torques that are external to the system. The sum over internal torques is zero:
+\begin{align*}
+\sum_i \pvec\tau_i^{net} = \sum_i \pvec\tau_i^{int} + \sum_i \pvec\tau_i^{ext} = \sum_i \pvec\tau_i^{ext} = \pvec\tau^{ext}
+\end{align*}
+We also introduce the total angular momentum of the system, $\vec L$:
+\begin{align*}
+\vec L = \sum_i\vec L_i
+\end{align*}
+so that the rate of change of the total angular momentum of the system is given by:
+\begin{align}
+\Aboxed{\frac{d\vec L}{dt} = \pvec \tau^{ext}}
+\end{align}
+
+Up to this point, we did not require that the system be a solid object, so the particles in the system can move relative to each other. Consider, instead, a solid object that is modelled as a system of many particles of mass $m_i$, and position $\vec r_i$ and velocity $\vec v_i$ relative to a fixed axis of rotation. We can define the angular momentum of a single particle as (Equation \ref{eq:angularmomentumrolling:liw}):
+\begin{align*}
+\vec L_i = m_i r_i^2 \vec \omega_i^2
+\end{align*}
+The total momentum of the system is the sum of the angular momenta of the individual particles:
+\begin{align*}
+\vec L &= \sum_i\vec L_i = \sum_i  m_i r_i^2 \vec \omega_i^2
+\end{align*}
+Because all of the particles are part of the same object, they must all move in unison and have the same angular velocity, $\vec\omega$, relative to the axis of rotation. We can thus write the total angular momentum for a solid object as:
+\begin{align}
+\Aboxed{\vec L &= \left(\sum_i  m_i r_i^2\right) \vec \omega = I\vec\omega}
+\end{align}
+where we recognized that the sum in parentheses is simply the moment of inertia of the object relative to the axis of rotation. Again, it should be emphasized that this is the total angular momentum of the object about an axis of rotation, and not about a point. 
+
+Visualizing the torque and angular momentum of a system can be challenging because it almost always requires visualizing something in three dimensions. Consider a wheel (e.g. a bicycle wheel) that is spinning about horizontal axle which you hold, as illustrated in the left panel of Figure \ref{fig:angularmomentumrolling:deltal}. Imagine that you are holding onto the axle so that the wheel is front of you, your right hand is to the right of the wheel and your left hand is to the left of the wheel.
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/deltal.png}{\label{fig:angularmomentumrolling:deltal}A wheel rotating on an axle, with a horizontal angular velocity (left). If you try to tilt the axle as shown in the right panel, changing the angular momentum of the wheel, you will also need to exert a torque in the vertical direction. }
+
+We define a coordinate system as shown so that the wheel is spinning as shown in the right panel, with angular velocity (and angular momentum) in the positive $x$ direction (the top of the wheel is coming towards you).
+
+You then try to lift your right hand while lowering your left hand in order to tilt the rotation axis, as shown in the left panel. In doing so, you change the direction of the angular momentum (and velocity) such that the angular momentum now has a vertical component, $\Delta \vec L$, as shown. The torque that is required in order to change the angular momentum is given by:
+\begin{align*}
+\vec \tau = \frac{d\vec L}{dt} \sim \frac{\Delta \vec L}{\Delta t}
+\end{align*}
+where $\Delta t$ is the time that it takes to change the axis of rotation. The torque required in order to change the axis of rotation is directed in the same direction as $\Delta \vec L$ (the positive $y$ direction). That is, you will not be able to simply tilt the axle as shown; if you want to tilt the axle, you will also need to push forward with you right hand and pull backwards with your left hand to exert the required torque! If you simply try to tilt the rotation axis, your right hand will be pushed towards you and your left hand away from you, as a reaction to the torque that would otherwise be required to tilt the axis!
+
+\subsection{Conservation of angular momentum}
+In the previous section, we saw that the net external torque that is exerted on an object (or system) is equal to the rate of change of its angular momentum:
+\begin{align*}
+\frac{d\vec L}{dt} = \pvec \tau^{ext}
+\end{align*}
+where the angular momentum and torque are measured about the same axis or point of rotation.
+
+The total angular momentum of a system about a point of rotation is conserved (i.e. does not change with time) if there is no net external torque exerted on the system about that point. If one makes the system large enough, then all of the torques can be taken to be internal, and the angular momentum of the system is conserved. The angular momentum of the Universe about a fixed point is thus conserved. Similarly, the angular momentum of all of the planets and matter that make up the solar system is also conserved.
+
+Conservation of angular momentum is another conservation law that we derived from Newton's Second Law. In the modern formulation of physics, we understand that the conservation of angular momentum is associated with rotational symmetry of Newton's Second Law; it does not matter from which ``angle'' we model a system, we can always use Newton's Second Law. Similarly, conservation of linear momentum is associated with translational symmetry and conservation of energy is associated with the fact that Newton's Second Law does not change with time. Angular momentum is fundamentally different than linear momentum and energy, and is conserved under difference conditions. The angular momentum of a system about a given axis/point is conserved if there is no net torque on the system about that axis/point.
+
+
+\begin{example}{During a spin, a figure skater brings his arms close to his body and increases his angular velocity from $\omega_1$ to $\omega_2$. By what fraction did his moment of inertia decrease in doing so?}
+We can consider the rotation axis to be vertical through the centre of the skater. When the figure skater is spinning, there is no net external torque on him. Thus, his angular momentum is conserved as he bring his arms in. As he bring his arms in, his moment of inertia decreases, since he is bringing the mass of his arms closer to the axis of rotation. If $I_1$ and $I_2$ are the moments of inertia of the skater before and after brining his arms in, respectively, we can write the angular momentum about his axis of rotation as:
+\begin{align*}
+L_1 &= I_1\omega_1\\
+L_2 &= I_2\omega_2
+\end{align*}
+Since there is no external torque, the angular momentum is the same before and after he changes his moment of inertia:
+\begin{align*}
+L_1 &= L_2\\
+I_1\omega_1 &= I_2\omega_2\\
+\therefore \frac{I_1}{I_2} = \frac{\omega_2}{\omega_1}
+\end{align*}
+\textbf{Discussion:} A spinning figure skater is a good example of the conservation of angular momentum. By changing their shape, they can change their moment of inertia and thus their angular velocity. 
+\end{example}
+
+\begin{example}{\capfig{0.3\textwidth}{figures/AngularMomentumRolling/balldisk.png}{\label{fig:angularmomentumrolling:balldisk}A projectile of mass $m$ is about to collide with a disk that can spin about its axis of symmetry. View from above.}
+A projectile of mass $m$ is fired towards a stationary disk of radius $R$ and mass $M$ that lies on a horizontal table, as depicted in Figure \ref{fig:angularmomentumrolling:balldisk}. The disk is in the horizontal plane and can rotate about a vertical axis through its centre. The axle about which the disk rotates is attached to the table and cannot move. The projectile's velocity, $\vec v$, is horizontal and such that the projectile embeds itself at the edge of the disk.  What is the angular velocity of the disk, about its centre, after the projectile has embedded itself into the disk? Was the collision elastic? Was linear momentum conserved during the collision?}
+We consider the projectile and disk as a system, and a rotation axis that passes through the centre of disk. There are no external torques exerted on the system about the rotation axis, so the angular momentum of the system must be conserved through the collision. Before the collision, only the projectile has angular momentum about the axis of rotation, so the magnitude of the angular momentum before the collision is:
+\begin{align*}
+L = rp\sin\phi
+\end{align*}
+where $\phi$ is the angle between the particle's momentum, $\vec p=m\vec v$, and a vector $\vec r$ from the axis of rotation to the particle. We can calculate the particles angular momentum just before the collision, so that $\vec r$ is the vector from the centre of the circle to the point where the particle collides (with magnitude $R$). The initial angular momentum of the system is thus:
+\begin{align*}
+L=rp=Rmv
+\end{align*}
+After the collision, the projectile is embedded in the disk. The resulting object has a moment of inertia given by:
+\begin{align*}
+I = I_{disk}+mR^2 = \frac{1}{2}MR^2+mR^2
+\end{align*}
+The angular momentum of the disk with the embedded projectile is given by:
+\begin{align*}
+L'=I\omega = \left(\frac{1}{2}M+m\right)R^2\omega
+\end{align*}
+Using conservation of angular momentum, the angular velocity of the disk after the collision is:
+\begin{align*}
+L &= L'\\
+Rmv &= \left(\frac{1}{2}M+m\right)R^2\omega\\
+\therefore \omega &= \frac{mv}{\left(\frac{1}{2}M+m\right)R}
+\end{align*}
+We do not expect that mechanical energy is conserved during the collision, since the projectile embeds itself, which must cost energy. The mechanical energy before the collision is given by the kinetic energy of the projectile:
+\begin{align*}
+E = \frac{1}{2}mv^2
+\end{align*}
+After the collision, the kinetic energy is the rotational kinetic energy about the axis of rotation:
+\begin{align*}
+E' &= \frac{1}{2}I\omega^2 = \frac{1}{2} \left(\frac{1}{2}M+m\right)R^2 \left( \frac{mv}{\left(\frac{1}{2}M+m\right)R}\right)^2\\
+&= \frac{1}{2} \frac{m^2}{\left(\frac{1}{2}M+m\right)} v^2
+\end{align*}
+which is smaller than the initial kinetic energy (the ratio $E/E'$ is bigger than 1). 
+
+Linear momentum is clearly not conserved since the final linear momentum is zero. The centre of mass of the disk+projectile system moves before the collision and not after. There must thus be a net external force that is exerted on the system. That force is exerted by the axle of disk, as the disk would otherwise recoil when hit with the projectile.
+
+\textbf{Discussion:} In this example, we used conservation of angular momentum to model a collision. The collision is inelastic, because the projectile embeds itself into the disk. The linear momentum is not conserved through the collision because the axle about which the disk rotates must exert a force on the disk to prevent it from recoiling. 
+\end{example}
+
+\begin{example}{Show that Kepler's Second Law is equivalent to a statement about conservation of the angular momentum of a planet orbiting the Sun.}
+Kepler's Second Law states that in a period of time $\Delta t$, the area that is swept out by a planet is constant, regardless of where it is its orbit. Figure \ref{fig:angularmomentumrolling:kepler} shows a planet in an elliptical orbit around the sun. \capfig{0.5\textwidth}{figures/AngularMomentumRolling/kepler.png}{\label{fig:angularmomentumrolling:kepler}The area swept out by a planet in a period of time $dt$. }
+At some point in time, the planet has a velocity vector $\vec v$ and position vector $\vec r$ relative to the sun. In a small period of time $dt$, the planet will move along a short distance $vdt$, which we can take as a straight line if $dt$ is small enough. The velocity and position vectors make an angle $\phi$ when these are tail to tail. 
+
+The small amount of area, $dA$, swept out by the planet in a period of time $dt$, is given by\footnote{This is only exact in the limit of $dt\to 0$, when the small area from the extra piece outside of the ellipse vanishes.}:
+\begin{align*}
+dA = \frac{1}{2} r vdt\sin\phi
+\end{align*}
+The rate at which the area is swept out is thus:
+\begin{align*}
+\frac{dA}{dt} =  \frac{1}{2} r v\sin\phi
+\end{align*}
+Consider now the magnitude of the planet's angular momentum about the Sun:
+\begin{align*}
+L = rp\sin\phi = rmv\sin\phi
+\end{align*}
+where the mass of the planet is $m$. The rate at which the planet sweeps out the area can be written in terms of the angular momentum of the planet:
+\begin{align*}
+\frac{dA}{dt} &=  \frac{1}{2} r v\sin\phi = \frac{L}{2m}
+\end{align*}
+The only force exerted on the planet is the gravitational force from the Sun. That force is always anti-parallel to the vector $\vec r$ from the Sun to the planet, and cannot result in a torque on the planet about the Sun. Thus, the angular momentum of the planet must be conserved, and $L$ must be a constant. Since $L$ is proportional to the rate at which the planet sweeps out area, if $L$ is constant, so is the rate at which area is swept out, and vice versa. Thus, Kepler's Second Law is equivalent to saying that the angular momentum of a planet relative to the Sun is constant. 
+\end{example}
+
+\section{Rolling motion}
+
 \newpage
 \section{Summary}
 
