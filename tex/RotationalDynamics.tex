@@ -85,23 +85,21 @@ where $\phi$ is the angle between $\vec r$ and $\vec v$.
 
 Similarly, we can define the angular acceleration vector, $\vec \alpha$, about an axis of rotation:
 \begin{align}
-\vec \alpha = \frac{1}{r^2}\vec r \times \vec a_\perp
+\vec \alpha = \frac{1}{r^2}\vec r \times \vec a
 \end{align}
-where $\vec a_\perp$ is the component of the particle's acceleration vector that is tangent to the circle (perpendicular to $\vec r$),  and $\vec r$ is the vector from the axis of rotation to the particle. The direction of the angular acceleration is co-linear with the axis of rotation and the right-hand rule gives the rotational direction of the angular acceleration. We can also define the angular acceleration about a point; in that case, the direction of the vector will define an instantaneous axis of rotation about a circle of radius $r$ centred at the point as well as the direction of the angular acceleration about that axis.
+where $\vec a$ is the particle's acceleration vector,  and $\vec r$ is the vector from the axis of rotation to the particle. The direction of the angular acceleration is co-linear with the axis of rotation and the right-hand rule gives the rotational direction of the angular acceleration. We can also define the angular acceleration about a point; in that case, the direction of the vector will define an instantaneous axis of rotation about a circle of radius $r$ centred at the point as well as the direction of the angular acceleration about that axis.
 
-Finally, we can also define an angular displacement vector, $\vec \theta$, relative to an axis of rotation. The direction of the angular displacement vector will be co-linear with the axis of rotation, its direction will indicate the direction of rotation about that axis, and its magnitude (in radians) will correspond to the angular displacement (as shown in Figure \ref{fig:rotationaldynamics:axis}).
+Finally, we can define an angular displacement vector, $\vec \theta$, relative to an axis of rotation. The direction of the angular displacement vector will be co-linear with the axis of rotation, its direction will indicate the direction of rotation about that axis, and its magnitude (in radians) will correspond to the angular displacement (as shown in Figure \ref{fig:rotationaldynamics:axis}). We can only relate the angular displacement vector to an infinitesimal linear displacement vector, $d\vec s$, since the position vector $\vec r$ from the axis of rotation will be different at each end of the displacement vector, if the displacement is large:
+\begin{align*}
+d\vec \theta &= \frac{1}{r^2} \vec r \times d\vec s\\
+\end{align*}
 
 TODO: Checkpoint question: An ant on a disk that is rotating slower and slower as illustrated. MC: the angular velocity vector is into the page and the angular acceleration is out of the page, etc... (they will be in opposite directions) 
 
 
 The angular velocity vector is the rate of change of the angular displacement vector:
 \begin{align*}
-\vec\omega = \frac{d}{dt} \vec \theta
-\end{align*}
-where $d\vec\theta$ can be thought of as the angular displacement associated with a small displacement, $d\vec s$, along the circumference of a circle of radius $r$:
-\begin{align*}
-d\vec \theta &= \frac{1}{r^2} \vec r \times d\vec s\\
-\vec\omega &= \frac{d\vec \theta}{dt}  = \frac{d}{dt} \frac{1}{r^2} \vec r \times d\vec s = \frac{1}{r} \frac{d\vec s}{dt} = \frac{1}{r}\vec v_s\\
+\vec\omega &= \frac{d\vec \theta}{dt} = \frac{d}{dt} \frac{1}{r^2} \vec r \times d\vec s = \frac{1}{r} \frac{d\vec s}{dt} = \frac{1}{r}\vec v_s\\
 \therefore v_s &= r\omega
 \end{align*}
 where $\vec v_s$ is the (instantaneous) tangential velocity around the circle. The angular acceleration vector is the rate of change of the angular velocity vector:
@@ -113,9 +111,9 @@ Given the angular kinematic quantities, the related linear quantities at a posit
 \begin{align}
 d\vec s &= d\vec\theta \times \vec r\nonumber\\
 \vec v_s &= \vec \omega \times \vec r\nonumber\\
-\vec a_\perp&= \vec \alpha \times \vec r
+\vec a_s&= \vec \alpha \times \vec r
 \end{align}
-where the linear quantities are always in the direction perpendicular to $\vec r$ (tangent to the circle, for motion around a circle). 
+where the linear quantities are always in the direction perpendicular to $\vec r$ (tangent to the circle, for motion around a circle). In other words, one cannot, say, take the acceleration vector, obtain the angular acceleration vector, and then get back the original acceleration vector - one will only get back the component of the acceleration vector that is perpendicular to $\vec r$.  
 
 TODO: Checkpoint MC: A particle has an angular velocity in the negative $z$ direction. In which way is the particle's velocity vector at a point in its trajectory when it is on the positive $y$ axis? (positive x direction)
 
@@ -250,7 +248,7 @@ The quantity $r_\perp$ is called the ``lever arm'' of the force about a specific
 \end{checkpoint}
 
 \section{Rotation about an axis versus rotation about a point}
-When defining angular quantities (torque, angular acceleration, etc.), it is important to identify whether these are defined relative to an axis or to a point of rotation. This, in turn, determines the vector $\vec r$ that is involved in definition of the angular quantities.
+When defining angular quantities (torque, angular acceleration, etc.), it is important to identify whether these are defined relative to an axis or to a point of rotation. This, in turn, determines the vector $\vec r$ that is involved in the definition of the angular quantities.
 
 Consider a disk of radius $r$ with a force, $\vec F$ exerted on its perimeter, as illustrated in Figure \ref{fig:rotationaldynamics:fplane}. The disk can only rotate about an axis that is perpendicular to the disk and that goes through the centre of the disk, like a wheel mounted on an axle. The force has a component, $\vec F_{plane}$, that lies in the plane perpendicular to the axis of rotation, and a component, $\vec F_{axis}$, that is parallel to axis of rotation.
 \capfig{0.6\textwidth}{figures/RotationalDynamics/fplane.png}{\label{fig:rotationaldynamics:fplane} A force exerted on disk that can only rotate about an axis through its centre and perpendicular to its plane. Only the component of $\vec F$ that is in the plane perpendicular to the axis of rotation, $\vec F_{plane}$, will contribute to the torque about the axis of rotation.}
@@ -259,17 +257,17 @@ The vector $\vec r$ is  \textbf{always defined to be perpendicular to the axis o
 \begin{align*}
 \vec \tau = \vec r \times \vec F
 \end{align*}
-will be perpendicular to both $\vec r$ and $\vec F$, and will thus not be parallel to the axis of rotation. \textbf{Only the component of the torque that is parallel to the axis of rotation} will contribute to rotating the disk about the axis. This definition of torque is thus not ideal for describing how the disk will rotate due to the torque from the force $\vec F$. Only the component of the force that lies in the plane perpendicular to the axis of rotation, $\vec F_{plane}$, will contribute to the torque about that axis of rotation. Thus, when we need to determine the torque about an axis of rotation, it is important to \textbf{consider vectors $\vec r$ and $\vec F$ that lie in the plane perpendicular to the axis of rotation}. The torque of $\vec F$ relative to the axis of rotation is thus:
+will be perpendicular to both $\vec r$ and $\vec F$, and will thus not be parallel to the axis of rotation. \textbf{Only the component of the torque that is parallel to the axis of rotation} will contribute to rotating the disk about the axis. Only the component of the force that lies in the plane perpendicular to the axis of rotation, $\vec F_{plane}$, will contribute to the component of the torque about that axis of rotation. Thus, when we need to determine the torque about an axis of rotation, we can \textbf{consider vectors $\vec r$ and $\vec F$ that lie in the plane perpendicular to the axis of rotation}. The torque of $\vec F$ relative to the axis of rotation is thus:
 \begin{align*}
-\vec \tau = \vec r \times \vec F_{plane}
+\vec \tau_{axis} = \vec r \times \vec F_{plane}
 \end{align*}
-Furthermore, only the component of $\vec F_{plane}$ that is perpendicular to $\vec r$ will contribute to the torque, as we saw in the previous section. 
+Furthermore, only the component of $\vec F_{plane}$ that is perpendicular to $\vec r$ will contribute to that torque, as we saw in the previous section. 
 
-In general, solid objects such as a disk can only rotate about an axis. In that case, one needs to consider only the components of forces that lie in the plane perpendicular to the axis of rotation in order to calculate the torques about that axis.
+In general, solid objects such as a disk can only rotate about an axis. In that case, one can consider only the components of forces that lie in the plane perpendicular to the axis of rotation in order to calculate the components of the torques about that axis that are parallel to that axis. 
 
-On the other hand, a point particle may be able to rotate about any axis that goes through a point of rotation. If the origin of a coordinate system is defined to be the point of rotation, the net torque vector on the particle about that point will indicate the direction of the axis about which the particle would rotate. This is illustrated in the left panel of Figure \ref{fig:rotationaldynamics:pointaxis}.
+A point particle may be able to rotate about any axis that goes through a point of rotation. The net torque vector on the particle about that point will indicate the direction of the axis about which the particle would rotate. This is illustrated in the left panel of Figure \ref{fig:rotationaldynamics:pointaxis}.
 
-Instead, if the particle were constrained to rotate about the $z$ axis (e.g. if the particle is on a track), then we would use the component of the torque vector that is parallel to the $z$ axis to describe its motion, as illustrated in the right panel. The $z$ component of the torque would be determined by using only the components of the forces that lie in the plane perpendicular to the axis, and the vector $\vec r$ would be defined from the axis to the particle rather than from the point of rotation to the particle.
+Instead, if the particle were constrained to rotate about the $z$ axis (e.g. if the particle is on a track), then we would use the component of the torque vector that is parallel to the $z$ axis to describe its motion, as illustrated in the right panel. The $z$ component of the torque could be determined by using only the components of the forces that lie in the plane perpendicular to the axis, and defining the vector $\vec r$ from the axis to the particle rather than from the point of rotation to the particle.
 
 \capfig{0.7\textwidth}{figures/RotationalDynamics/pointaxis.png}{\label{fig:rotationaldynamics:pointaxis} Left panel: a particle rotating about a circle centred at the origin with an axis determined from the net torque vector. Right panel: a particle that is constrained to rotate about the $z$ axis.}
 
