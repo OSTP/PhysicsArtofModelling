@@ -27,7 +27,7 @@ We can model a school bus as a box, say $\SI{20}{\meter}\times \SI{2}{\meter}\ti
 \end{align*}
 Thus, we expect to be able to fit about three million ping pong balls in a school bus. 
 
-\capfig{0.6\textwidth}{figures/ModelAndExperiment/schoolbusestimate.png}{\label{fig:ModelAndExperiment:schoolbusestimate}A school bus and ping pong balls modelled as boxes.}
+\capfig{0.6\textwidth}{figures/ModelAndExperiment/schoolbusestimate.png}{\label{fig:modelandexperiment:schoolbusestimate}A school bus and ping pong balls modelled as boxes.}
 
 \end{example}
 
@@ -76,7 +76,7 @@ When we compare two numbers, for example a prediction from a model and a measure
 \subsection{Base dimensions and their SI units}
 In order to facilitate communication of scientific information, the International System of units (SI for the french, Syst\`eme International d'unit\'es) was developed. This allows us to use a well-defined convention for which units to use when expressing quantities. For example, the SI unit for the dimension of length is the meter and the SI unit for the dimension of time is the second.
 
-In order to simplify the SI unit system, a fundamental (base) set of dimensions was chosen and the SI units were defined for those dimensions. Any other dimension can always be re-expressed in terms of the base dimensions shown in table \ref{tab:ModelAndExperiment:SIunits} and thus in terms of the corresponding base SI units.
+In order to simplify the SI unit system, a fundamental (base) set of dimensions was chosen and the SI units were defined for those dimensions. Any other dimension can always be re-expressed in terms of the base dimensions shown in table \ref{tab:modelandexperiment:SIunits} and thus in terms of the corresponding base SI units.
 
 \begin{table}[!h]
 \centering
@@ -93,10 +93,10 @@ Amount of substance [N]& mole [mol] \\ \hline
 Luminous intensity [J]& candela [cd] \\ \hline
 Dimensionless [0]& unitless [] \\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:SIunits} Base dimensions and their SI units with abbreviations.}
+\caption{\label{tab:modelmndexperiment:SIunits} Base dimensions and their SI units with abbreviations.}
 \end{table}
 
-From the base dimensions, one can obtain ``derived'' dimensions such as ``speed'' which is a measure of how fast an object is moving. The dimension of speed is $\frac{L}{T}$ (length over time) and the corresponding SI unit is m/s (meters per second)\footnote{Note that we can also write meters per second as m$\cdot$s$^{-1}$, but we often use a divide by sign if the power of the unit in the denominator is 1.} and corresponds to a measure of how much distance an object can cover per unit time (the higher the speed, the larger the distance covered per unit time). Table \ref{tab:ModelAndExperiment:DerivedSIunits} shows a few derived dimensions and their corresponding SI units.
+From the base dimensions, one can obtain ``derived'' dimensions such as ``speed'' which is a measure of how fast an object is moving. The dimension of speed is $\frac{L}{T}$ (length over time) and the corresponding SI unit is m/s (meters per second)\footnote{Note that we can also write meters per second as m$\cdot$s$^{-1}$, but we often use a divide by sign if the power of the unit in the denominator is 1.} and corresponds to a measure of how much distance an object can cover per unit time (the higher the speed, the larger the distance covered per unit time). Table \ref{tab:modelandexperiment:derivedSIunits} shows a few derived dimensions and their corresponding SI units.
 
 \begin{table}[!h]
 \centering
@@ -112,10 +112,10 @@ Power [M$\cdot$L$^2\cdot$T$^{-3}$]& watt [W]&[J/s=kg$\cdot$m$^2\cdot$s$^{-3}$]\\
 Electric Charge [I$\cdot$ T]& coulomb [C]&[A$\cdot$ s] \\ \hline
 Voltage [M$\cdot$L$^2\cdot$T$^{-3}\cdot$I$^{-1}$]& volt [V]&[J/C=kg$\cdot$m$^2\cdot$s$^{-3}\cdot$A$^{-1}$] \\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:DerivedSIunits} Example of derived dimensions and their SI units with abbreviations.}
+\caption{\label{tab:modelandexperiment:derivedSIunits} Example of derived dimensions and their SI units with abbreviations.}
 \end{table}
 
-By convention, we can indicate the dimension of a quantity, $X$, by writing it in square brackets, $[X]$. For example, $[X]=I$, would mean that the quantity $X$ has the dimension $I$, so it has the dimension of electric current. Similarly, we can indicate the SI units of $X$ with $SI[X]$. Referring to Table \ref{tab:ModelAndExperiment:SIunits}, since $X$ has the dimension of current, $SI[X]=A$.
+By convention, we can indicate the dimension of a quantity, $X$, by writing it in square brackets, $[X]$. For example, $[X]=I$, would mean that the quantity $X$ has the dimension $I$, so it has the dimension of electric current. Similarly, we can indicate the SI units of $X$ with $SI[X]$. Referring to Table \ref{tab:modelandexperiment:SIunits}, since $X$ has the dimension of current, $SI[X]=A$.
 
 \subsection{Dimensional analysis}
 We call ``dimensional analysis'' the process of working out the dimensions of a quantity in terms of the base dimensions. A few simple rules allow us to easily work out the dimensions of a derived quantity. Suppose that we have two quantities, $X$ and $Y$, both with dimensions. We then have the following rules to find the dimension of a quantity that depends on $X$ and $Y$:
@@ -144,8 +144,8 @@ SI[force] = \frac{kg \cdot m}{s^2}
 Force is such a common dimension that it, like many other derived dimensions, has its own derived SI unit, the Newton [N].
 \end{example}
 
-\begin{example}{Use Table \ref{tab:ModelAndExperiment:DerivedSIunits} to show that voltage has the same dimension as force multiplied by speed and divided by electric current.}
-According to Table \ref{tab:ModelAndExperiment:DerivedSIunits}, voltage has the dimension:
+\begin{example}{Use Table \ref{tab:modelandexperiment:derivedSIunits} to show that voltage has the same dimension as force multiplied by speed and divided by electric current.}
+According to Table \ref{tab:modelandexperiment:derivedSIunits}, voltage has the dimension:
 \begin{align*}
 [voltage]=M\cdot L^2 \cdot T^{-3}\cdot I^{-1}
 \end{align*}
@@ -179,7 +179,7 @@ There are some basic steps you can follow when you are trying to find the SI uni
 \end{studentOpinion}
 
 \begin{checkpoint}
-\begin{MCquestion}{In Chlo\"e's theory of falling objects from Chapter \ref{Introduction}, the time, $t$, for an object to fall a distance, $x$, was given by $t=k\sqrt{x}$. What must the SI units of Chlo\"e's constant, $k$, be?}
+\begin{MCquestion}{In Chlo\"e's theory of falling objects from Chapter \ref{chap:introduction}, the time, $t$, for an object to fall a distance, $x$, was given by $t=k\sqrt{x}$. What must the SI units of Chlo\"e's constant, $k$, be?}
 \item \si{T.L^{\frac{1}{2}}}
 \item \si{T.L^{-\frac{1}{2}}}
 \item \si{s.m^{\frac{1}{2}}}
@@ -187,16 +187,53 @@ There are some basic steps you can follow when you are trying to find the SI uni
 \end{MCquestion}
 \end{checkpoint}
 
+Dimensional analysis can also be used to determine formulas. One famous example of this is when a British physicist named G.I. Taylor was able to determine a formula that showed how the blast radius of an atomic bomb scaled with time. Using pictures of the first atomic bomb explosion, he was able to determine the energy of the explosion, which was classified information at the time. 
+
+\begin{example}
+{Find a formula that shows how the blast radius, $r$, scales with time, $t$, where the radius also depends on the energy of the explosion, $E$, and the density of the medium into which the bomb explodes, $\rho$.} 
+We want to find out how the blast radius scales with time, so we want an expression that relates $r$ to some combination of $E$, $\rho$, and $t$:
+\begin{align*}
+r \sim E^x\rho^y t^z
+\end{align*} 
+where $x$, $y$, and $z$ are our unknown exponents, since we don't know yet how we will combine $E$, $\rho$, and $t$. However, we do know that when we combine these quantities, we have to get the correct dimension for the radius:
+\begin{align*}
+[r]=[E]^x[\rho]^y[t]^z
+\end{align*}
+We know the dimensions for radius and time, and the dimension for $E$ can be found in Table \ref{tab:modelandexperiment:derivedSIunits}. Density is mass divided by volume, so its dimension is $M/L^3$. Our equation then becomes:
+\begin{align*}
+L=(ML^2T^{-2})^x(ML^{-3})^y(T)^z\\
+L=(M^xL^{2x}T^{-2x})(M^yL^{-3y})(T^z)\\
+\end{align*}
+We have three unknowns, so we need three equations. We can recognize that the left hand side ($L$) is equivalent to $L^1\cdot M^0\cdot T^0$. We can then separate the above expression into three equations, one for each of $M$, $L$, and $T$: 
+\begin{align*}
+M^0&=M^xM^y \rightarrow 0 = x+y\\
+L^1&=L^{2x}L^{-3y} \rightarrow 1=2x-3y\\
+T^0&=T^{-2x}T^{z} \rightarrow 0=z-2x
+\end{align*}
+Solving the sytem of equations, we find that $x=1/5$, $y=-1/5$, and $z=2/5$. 
+So, the combination of $E$, $\rho$, and $t$ that gives us the dimension of length is:
+\begin{align*}
+r\sim E^{1/5}\rho^{-1/5}t^{2/5}\\
+\therefore r\propto t^{2/5}
+\end{align*}
+You can also write this equation as:
+\begin{align*}
+r\sim \sqrt[5]{\frac{Et^2}{\rho}}\\
+\end{align*}
+
+
+\end{example}
+
 \section{Making measurements}
 Having introduced some tools for the modelling aspect of physics, we now address the other side of physics, namely performing experiments. Since the goal of developing theories and models is to describe the real world, we need to understand how to make meaningful measurements that test our theories and models.
 
-Suppose that we wish to test Chlo\"e's theory of falling objects from Chapter \ref{Introduction}:
+Suppose that we wish to test Chlo\"e's theory of falling objects from Chapter \ref{chap:introduction}:
 \begin{align*}
 t=k\sqrt{x}
 \end{align*}
 which states that the time, $t$, for any object to fall a distance, $x$, from the surface of the Earth is given by the above relation. The theory assumes that Chlo\"e's constant, $k$, is the same for any object falling any distance on the surface of the Earth.
 
-One possible way to test Chlo\"e's theory of falling objects is to measure $k$ for different drop heights to see if we always obtain the same value. Results of such an experiment are presented in Table \ref{tab:ModelAndExperiment:kmes}, where the time, $t$, was measured for a bowling ball to fall distances of $x$ between \SI{1}{\meter} and \SI{5}{\meter}. The table also shows the values computed for $\sqrt x$ and the corresponding value of $k=\frac{t}{\sqrt x}$:
+One possible way to test Chlo\"e's theory of falling objects is to measure $k$ for different drop heights to see if we always obtain the same value. Results of such an experiment are presented in Table \ref{tab:modelandexperiment:kmes}, where the time, $t$, was measured for a bowling ball to fall distances of $x$ between \SI{1}{\meter} and \SI{5}{\meter}. The table also shows the values computed for $\sqrt x$ and the corresponding value of $k=\frac{t}{\sqrt x}$:
 
 \begin{table}[!h]
 \centering
@@ -210,10 +247,10 @@ One possible way to test Chlo\"e's theory of falling objects is to measure $k$ f
 4.00 &1.07 &2.00 &0.54 \\ \hline
 5.00 &1.10 &2.24 &0.49 \\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:kmes} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
+\caption{\label{tab:modelandexperiment:kmes} Measurements of the drop times, $t$, for a bowling ball to fall different distances, $x$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
 \end{table}
 
-When looking at Table \ref{tab:ModelAndExperiment:kmes}, it is clear that each drop height gave a different value of $k$, so at face value, we would claim that Chlo\"e's theory is incorrect, as there does not seem to be a value of $k$ that applies to all situations. However, we would be incorrect in doing so unless we understood \textit{the precision of the measurements} that we made. Suppose that we repeated the measurement multiple times at a fixed drop height of $x=\SI{3}{m}$, and obtained the values in Table \ref{tab:ModelAndExperiment:kmes_3m}.
+When looking at Table \ref{tab:modelandexperiment:kmes}, it is clear that each drop height gave a different value of $k$, so at face value, we would claim that Chlo\"e's theory is incorrect, as there does not seem to be a value of $k$ that applies to all situations. However, we would be incorrect in doing so unless we understood \textit{the precision of the measurements} that we made. Suppose that we repeated the measurement multiple times at a fixed drop height of $x=\SI{3}{m}$, and obtained the values in Table \ref{tab:modelandexperiment:kmes_3m}.
 
 \begin{table}[!h]
 \centering
@@ -227,13 +264,13 @@ When looking at Table \ref{tab:ModelAndExperiment:kmes}, it is clear that each d
 3.00 &0.73 &1.73 &0.42 \\ \hline
 3.00 &0.66 &1.73 &0.38 \\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:kmes_3m} Repeated measurements of the drop time, $t$, for a bowling ball to fall a distance $x=\SI{3}{m}$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
+\caption{\label{tab:modelandexperiment:kmes_3m} Repeated measurements of the drop time, $t$, for a bowling ball to fall a distance $x=\SI{3}{m}$. We have also computed $\sqrt x$ and the corresponding value of $k$. }
 \end{table}
 
-This simple example highlights the critical aspect of making any measurement: it is impossible to make a measurement with infinite precision. The values in Table \ref{tab:ModelAndExperiment:kmes_3m} show that if we repeat the exact same experiment, we are likely to measure different values for a single quantity. In this case, for a fixed drop height, $x=\SI{3}{m}$, we obtained a spread in values of the drop time, $t$, between roughly \SI{0.6}{s} and \SI{1.0}{s}. Does this mean that it is hopeless to do science, since we can never repeat measurements? Thankfully, no! It does however require that we deal with the inherent imprecision of measurements in a formal manner.
+This simple example highlights the critical aspect of making any measurement: it is impossible to make a measurement with infinite precision. The values in Table \ref{tab:modelandexperiment:kmes_3m} show that if we repeat the exact same experiment, we are likely to measure different values for a single quantity. In this case, for a fixed drop height, $x=\SI{3}{m}$, we obtained a spread in values of the drop time, $t$, between roughly \SI{0.6}{s} and \SI{1.0}{s}. Does this mean that it is hopeless to do science, since we can never repeat measurements? Thankfully, no! It does however require that we deal with the inherent imprecision of measurements in a formal manner.
 
 \subsection{Measurement uncertainties}
-The values in Table \ref{tab:ModelAndExperiment:kmes_3m} show that for a fixed experimental setup (a drop height of \SI{3}{m}), we are likely to measure a spread in the values of a quantity (the time to drop). We can quantify this ``uncertainty'' in the value of the measured time by quoting the measured value of $t$ by providing a ``central value'' and an ``uncertainty'':
+The values in Table \ref{tab:modelandexperiment:kmes_3m} show that for a fixed experimental setup (a drop height of \SI{3}{m}), we are likely to measure a spread in the values of a quantity (the time to drop). We can quantify this ``uncertainty'' in the value of the measured time by quoting the measured value of $t$ by providing a ``central value'' and an ``uncertainty'':
 \begin{align*}
 t = \SI{0.76 \pm 0.15}{s}
 \end{align*}
@@ -262,9 +299,9 @@ is an estimate of the amount that a measurement will differ from a true value. I
 
 
 \subsubsection{Determining the central value and uncertainty}
-The tricky part when performing a measurement is to decide how to assign a central value and an uncertainty. For example, how did we come up with $t=\SI{0.76 \pm 0.15}{s}$ from the values in Table \ref{tab:ModelAndExperiment:kmes_3m}? 
+The tricky part when performing a measurement is to decide how to assign a central value and an uncertainty. For example, how did we come up with $t=\SI{0.76 \pm 0.15}{s}$ from the values in Table \ref{tab:modelandexperiment:kmes_3m}? 
 
-Determining the uncertainty and central value on a measurement is greatly simplified when one can repeat the same measurement multiple times, as we did in Table \ref{tab:ModelAndExperiment:kmes_3m}. With repeatable measurements, a reasonable choice for the central value and uncertainty is to use the mean and standard deviation of the measurements, respectively.
+Determining the uncertainty and central value on a measurement is greatly simplified when one can repeat the same measurement multiple times, as we did in Table \ref{tab:modelandexperiment:kmes_3m}. With repeatable measurements, a reasonable choice for the central value and uncertainty is to use the mean and standard deviation of the measurements, respectively.
 
 If we have $N$ measurements of some quantity $t$, $\{t_1, t_2, t_3, \dots t_N\}$, then the mean, $\bar t$, and standard deviation, $\sigma_t$, are defined as:
 \begin{align}
@@ -274,7 +311,7 @@ If we have $N$ measurements of some quantity $t$, $\{t_1, t_2, t_3, \dots t_N\}$
 \end{align}
 The mean is just the arithmetic average of the values, and the standard deviation, $\sigma_t$, requires one to first calculate the mean, then the variance ($\sigma^2_t$, the square of the standard deviation). You should also note that for the variance, we divide by $N-1$ instead of $N$. The standard deviation and variance are quantities that come from statistics and are a good measure of how spread out the values of $t$ are about their mean.
 
-\begin{example}{Calculate the mean and standard deviation of the values for $k$ from Table \ref{tab:ModelAndExperiment:kmes_3m}.}
+\begin{example}{Calculate the mean and standard deviation of the values for $k$ from Table \ref{tab:modelandexperiment:kmes_3m}.}
 \label{ex:modelandexperiment:stdcalc}
 In order to calculate the standard deviation, we first need to calculate the mean of the $N=5$ values of $k$: $\{0.58, 0.44, 0.37, 0.42, 0.38 \}$. The mean is given by:
 \begin{align*}
@@ -295,7 +332,7 @@ k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}
 \end{align*}
 
 \end{example}
-Any value that we measure should always have an uncertainty. In the case where we can easily repeat the measurement, we should do so to evaluate how reproducible it is, and the standard deviation of those values is usually a good first estimate of the uncertainty in a value\footnote{In practice, the standard deviation is an overly conservative estimate of the error and we would use the error on the mean, which is the standard deviation divided by the square root of the number of measurements.}. Sometimes, the measurements cannot easily be reproduced; in that case, it is still important to determine a reasonable uncertainty, but in this case, it usually has to be estimated. Table \ref{tab:ModelAndExperiment:uncertainties} shows a few common types of measurements and how to determine the uncertainties in those measurements. 
+Any value that we measure should always have an uncertainty. In the case where we can easily repeat the measurement, we should do so to evaluate how reproducible it is, and the standard deviation of those values is usually a good first estimate of the uncertainty in a value\footnote{In practice, the standard deviation is an overly conservative estimate of the error and we would use the error on the mean, which is the standard deviation divided by the square root of the number of measurements.}. Sometimes, the measurements cannot easily be reproduced; in that case, it is still important to determine a reasonable uncertainty, but in this case, it usually has to be estimated. Table \ref{tab:modelandexperiment:uncertainties} shows a few common types of measurements and how to determine the uncertainties in those measurements. 
 
 \begin{table}[!h]
 \centering
@@ -307,10 +344,10 @@ Repeated measurements & Mean and standard deviation \\ \hline
 Single measurement with a graduated scale (e.g. ruler, digital scale, analogue meter) & Closest value and half of the smallest division\\ \hline
 Counted quantity & Counted value and square root of the value \\ \hline
 \end{tabular}
-\caption{\label{tab:chap2:uncertainties} Different types of measurements and how to assign central values uncertainties.}
+\caption{\label{tab:modelandexperiment:uncertainties} Different types of measurements and how to assign central values uncertainties.}
 \end{table}
-\capfig{0.4\textwidth}{figures/ModelAndExperiment/ruler.png}{\label{fig:ModelAndExperiment:ruler}The length of the grey rectangle would be quoted as $L=\SI{2.8\pm0.05}{cm}$ using the rule of ``half the smallest division''.}
-For example, we would quote the length of the grey object in Figure \ref{fig:ModelAndExperiment:ruler} to be $L=\SI{2.8\pm0.05}{cm}$ based on the rules in Table \ref{tab:ModelAndExperiment:uncertainties}, since \SI{2.8}{cm} is the closest value on the ruler that matches the length of the object and \SI{0.5}{mm} is half of the smallest division on the ruler. Using half of the smallest division of the ruler means that our uncertainty range covers one full division. Note that it is usually better to reproduce a measurement to evaluate the uncertainty instead of using half of the smallest division, although half of the smallest division should be the lower limit on the uncertainty. That is, by repeating the measurements and obtaining the standard deviation, you should see if the uncertainty is \textit{larger} than half of the of the smallest division, not smaller.
+\capfig{0.4\textwidth}{figures/ModelAndExperiment/ruler.png}{\label{fig:modelandexperiment:ruler}The length of the grey rectangle would be quoted as $L=\SI{2.8\pm0.05}{cm}$ using the rule of ``half the smallest division''.}
+For example, we would quote the length of the grey object in Figure \ref{fig:modelandexperiment:ruler} to be $L=\SI{2.8\pm0.05}{cm}$ based on the rules in Table \ref{tab:modelandexperiment:uncertainties}, since \SI{2.8}{cm} is the closest value on the ruler that matches the length of the object and \SI{0.5}{mm} is half of the smallest division on the ruler. Using half of the smallest division of the ruler means that our uncertainty range covers one full division. Note that it is usually better to reproduce a measurement to evaluate the uncertainty instead of using half of the smallest division, although half of the smallest division should be the lower limit on the uncertainty. That is, by repeating the measurements and obtaining the standard deviation, you should see if the uncertainty is \textit{larger} than half of the of the smallest division, not smaller.
 
 
 The \textbf{relative uncertainty} in a measured value is given by dividing the uncertainty by the central value, and expressing the result as a percent. For example, the relative uncertainty in $t=\SI{0.76\pm 0.15}{s}$ is given by $\frac{0.15}{0.76}=20\%$. The relative uncertainty gives an idea of how precisely a value was determined. Typically, a value above 10\% means that it was not a very precise measurement, and we would generally consider a value smaller than 1\% to correspond to quite a precise measurement. 
@@ -322,7 +359,7 @@ The other source of uncertainty is called ``systematic''. Systematic uncertainti
 
 In this section, we want to further emphasize the difference between ``error'' and ``mistake''. ``Uncertainty'' or ``error'' in a measurement comes from an unavoidable source that affects experimental results. A ``mistake'' also affects experimental results, but is preventable. If a ``mistake'' occurs in physics, the experiment is generally re-done and the previous data are discarded. The broad term ``human error'' may refer to a variety of errors or mistakes, so it is best to avoid this term in experimental physics (especially in your lab reports), as it means that you know you made a mistake! Instead, if you think that you measured time imprecisely, refer to human reaction time, rather than ``human error''.
 
-Table \ref{tab:ModelAndExperiment:uncertainties} shows examples of sources of error that students often call ``human error'' but that should be instead described more precisely.
+Table \ref{tab:modelandexperiment:uncertainties} shows examples of sources of error that students often call ``human error'' but that should be instead described more precisely.
 
 \begin{table}[H]
 \centering
@@ -336,11 +373,11 @@ A draft of wind in the lab slightly altered the direction of your ball rolling d
 Your hand slipped while holding the ruler - the object was measured to be twice its original size! & Mistake! Redo this experiment and discard the data.\\ \hline
 When timing an experiment, you don't hit the ''STOP'' button exactly when the experiment stops. & Reaction time error - usually a systematic error (time is usally measured longer than it is).\\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:uncertainties} Don't use the term ``human error'', instead, use these.}
+\caption{\label{tab:modelandexperiment:uncertainties} Don't use the term ``human error'', instead, use these.}
 \end{table}
 
 \subsubsection{Propagating uncertainties}
-Going back to the data in Table \ref{tab:ModelAndExperiment:kmes_3m}, we found that for a known drop height of $x=\SI{3}{m}$, we measured different values of the drop time, which we found to be $t=\SI{0.76 \pm 0.15}{s}$ (using the mean and standard deviation). We also calculated a value of $k$ corresponding to each value of $t$, and found $k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$ (Example \ref{ex:modelandexperiment:stdcalc}).
+Going back to the data in Table \ref{tab:modelandexperiment:kmes_3m}, we found that for a known drop height of $x=\SI{3}{m}$, we measured different values of the drop time, which we found to be $t=\SI{0.76 \pm 0.15}{s}$ (using the mean and standard deviation). We also calculated a value of $k$ corresponding to each value of $t$, and found $k=\SI{0.44 \pm 0.09}{s.m^{-\frac{1}{2}}}$ (Example \ref{ex:modelandexperiment:stdcalc}).
 
 Suppose that we did not have access to the individual values of $t$, but only to the value of $t=\SI{0.76 \pm 0.15}{s}$ with uncertainty. How do we calculate a value for $k$ with uncertainty? In order to answer this question, we need to know how to ``propagate'' the uncertainties in a measured value to the uncertainty in a value derived from the measurements. We briefly present different methods for propagating uncertainties, before advocating for the use of computers to do the calculations for you.
 
@@ -353,7 +390,7 @@ Since we expect the relative uncertainty in $k$ to be approximately 20\%, then t
 \begin{align*}
 \sigma_k = (0.2) k=\SI{0.09}{s.m^{-\frac{1}{2}}}
 \end{align*}
-which is close to the value obtained by averaging the five values of $k$ in Table \ref{tab:ModelAndExperiment:kmes_3m}.
+which is close to the value obtained by averaging the five values of $k$ in Table \ref{tab:modelandexperiment:kmes_3m}.
 
 \textbf{2. The Min-Max method}\\
 A pedagogical way to determine $k$ and its uncertainty is to use the ``Min-Max method''. Since $k=\frac{t}{\sqrt x}$, $k$ will be the biggest when $t$ is the biggest, and the smallest when $t$ is the smallest. We can thus determine ``minimum'' and ``maximum'' values of $k$ corresponding to the minimum value of $t$, $t^{min}=\SI{0.61}{s}$ and the maximum value of $t$, $t^{max}=\SI{0.91}{s}$:
@@ -382,7 +419,7 @@ That is, the central value of the function $F$ is found by evaluating the functi
 In appendix \ref{app:python}, we will show you how to calculate this easily with a computer, so do not worry about getting comfortable with partial derivatives (yet!). Note that the partial derivative, $\die{F}{x}$, is simply the derivative of $F(x,y)$ relative to $x$ evaluated as if $y$ were a constant. Also, when we say ``add in quadrature'', we mean square the quantities, add them, and then take the square root (same as you would do to calculate the hypotenuse of a right-angle triangle).
 
 \begin{example}{Use the derivative method to evaluate $k=\frac{t}{\sqrt{x}}$ for $x=\SI{3.00 \pm 0.01}{m}$ and $t=\SI{0.76\pm0.15}{s}$.}
-\label{ex:ModelAndExperiment:derivprop}
+\label{ex:modelandexperiment:derivprop}
 Here, $k=k(x,t)$ is a function of both $x$ and $t$. The central value is easily found:
 \begin{align*}
 \bar k = \frac{t}{\sqrt{x}} = \frac{(\SI{0.76}{s})}{\sqrt{(\SI{3}{m})}}=\SI{0.44}{s.m^{-\frac{1}{2}}}\end{align*}
@@ -406,7 +443,7 @@ which is consistent with what we found with the other two methods.
 \textbf{Discussion:} We should ask ourselves if the value we found is reasonable, since we also included an uncertainty in $x$ and would expect a bigger uncertainty than in the previous calculations where we only had an uncertainty in $t$. The reason that the uncertainty in $k$ has remained the same is that the relative uncertainty in $x$ is very small, $\frac{0.01}{3.00}\sim 0.3\%$, so it contributes very little compared to the 20\% uncertainty from $t$. 
 \end{example}
 
-The derivative method leads to a few simple short cuts when propagating the uncertainties for simple operations, as shown in Table \ref{tab:ModelAndExperiment:prop_uncertainties}. A few rules to note:
+The derivative method leads to a few simple short cuts when propagating the uncertainties for simple operations, as shown in Table \ref{tab:modelandexperiment:prop_uncertainties}. A few rules to note:
 \begin{enumerate}
 \item Uncertainties should be combined in quadrature
 \item For addition and subtraction, add the absolute uncertainties in quadrature
@@ -425,7 +462,7 @@ $z=xy$ (multiplication) & $\sigma_z=xy\sqrt{\left(\frac{\sigma_x}{x}\right)^2+\l
 $z=\frac{x}{y}$ (division) & $\sigma_z=\frac{x}{y}\sqrt{\left(\frac{\sigma_x}{x}\right)^2+\left(\frac{\sigma_y}{y}\right)^2}$ \\ \hline
 $z=f(x)$ (a function of 1 variable) &$\sigma_z=\left|\frac{df}{dx}\sigma_x \right|$ \\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:prop_uncertainties} How to propagate uncertainties from measured values $x\pm\sigma_x$ and $y\pm\sigma_y$ to a quantity $z(x,y)$ for common operations.}
+\caption{\label{tab:modelandexperiment:prop_uncertainties} How to propagate uncertainties from measured values $x\pm\sigma_x$ and $y\pm\sigma_y$ to a quantity $z(x,y)$ for common operations.}
 \end{table}
 
 \begin{checkpoint}{We have measured that a llama can cover a distance of \SI{20.0 \pm 0.5}{m} in \SI{4.0\pm 0.5}{s}. What is the speed (with uncertainty) of the llama?}
@@ -556,7 +593,7 @@ $z=xy$ (multiplication) & $\sigma_z=xy\sqrt{\left(\frac{\sigma_x}{x}\right)^2+\l
 $z=\frac{x}{y}$ (division) & $\sigma_z=\frac{x}{y}\sqrt{\left(\frac{\sigma_x}{x}\right)^2+\left(\frac{\sigma_y}{y}\right)^2}$ \\ \hline
 $z=f(x)$ (a function of 1 variable) &$\sigma_z=\left|\frac{df}{dx}\sigma_x \right|$ \\ \hline
 \end{tabular}
-\caption{\label{tab:ModelAndExperiment:prop_uncertainties} How to propagate uncertainties from measured values $x\pm\sigma_x$ and $y\pm\sigma_y$ to a quantity $z(x,y)$ for common operations.}
+\caption{\label{tab:modelandexperiment:prop_uncertainties} How to propagate uncertainties from measured values $x\pm\sigma_x$ and $y\pm\sigma_y$ to a quantity $z(x,y)$ for common operations.}
 \end{table}
 \end{importantEquations}
 
