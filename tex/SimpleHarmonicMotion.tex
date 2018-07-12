@@ -1,10 +1,12 @@
 
-\chapter{Simple Harmonic Motion}
+\chapter{Simple harmonic motion}
 \label{chapter:simpleharmonicmotion}
-
+In this chapter, we look at oscillating systems that undergo ``simple harmonic motion'', such as the motion of a mass attached to a spring. Many systems in the physical world, such as an oscillating pendulum, can be described by the same mathematical formalism that describes the motion of a mass attached to a spring. 
 
 \begin{learningObjectives}{
- \item something to learn
+ \item Understand how to model the position, velocity, and acceleration of a mass attached to a spring.
+ \item Understand the conditions for which a system undergoes simple harmonic motion.
+ \item Understand how to model the motion of a pendulum when it undergoes simple harmonic motion.
  }
 \end{learningObjectives}
 
@@ -15,7 +17,82 @@
 \end{MCquestion}
 \end{opening}
 
-\section{A section}
+\section{The motion of a spring-mass system}
+As an example of simple harmonic motion, we first consider the motion of a block of mass $m$ that can slide without friction along a horizontal surface. The mass is is attached to a spring with spring constant $k$ which is attached to a wall on the other end. We introduce a one-dimensional coordinate system, such that the $x$ axis is co-linear with the motion of the mass, the origin is located where the spring is neither compressed nor extended, and the positive direction corresponds to the spring being extended. This ``spring-mass system'' is illustrated in Figure \ref{fig:simpleharmonicmotion:spring}.
+\capfig{0.5\textwidth}{figures/SimpleHarmonicMotion/spring.png}{\label{fig:simpleharmonicmotion:spring}A horizontal spring-mass system oscillating about the origin with an amplitude $A$.}
+
+We assume that the force exerted by the spring on the mass is given by Hooke's Law:
+\begin{align*}
+\vec F = -kx \hat x
+\end{align*}
+where $x$ is the distance by which the spring is compressed or extended, and corresponds to the position on the $x$ axis that we defined in Figure \ref{fig:simpleharmonicmotion:spring}. The only other forces exerted on the mass are its weight and the normal force from the horizontal surface, which are equal in magnitude and opposite in direction. The net force on the mass is thus that from the spring. 
+
+As we saw in Section \ref{sec:potentialecons:ediagrams}, if the spring is compressed  (or extended) by a distance $A$ relative to the rest position, and the mass is then released, the mass will oscillate back and forth between $x=-A$ and $x=+A$\footnote{As long as there is no friction to result in a mechanical energy loss.}, which is illustrated in Figure \ref{fig:simpleharmonicmotion:spring}. We call $A$ the ``amplitude of the motion''. When the mass is at $x=\pm A$, its speed is zero, as these points correspond to the location where the mass ``turns around''.
+
+We can describe the motion of the mass using energy, since mechanical energy is conserved. At any position, $x$, the mass will have potential energy from the spring and kinetic energy:
+\begin{align*}
+E = \frac{1}{2}kx^2 + \frac{1}{2}mv^2
+\end{align*}
+The mechanical energy is equal to the potential energy of the mass when it is located at one of the turning points ($E=1/2kA^2$), where its kinetic energy is zero. We can thus always know the speed, $v$, of the mass at any position, $x$, if we know the amplitude $A$:
+\begin{align*}
+E &= \frac{1}{2}kA^2\\
+\frac{1}{2}kx^2 + \frac{1}{2}mv^2&= \frac{1}{2}kA^2
+\end{align*}
+We can also use Newton's Second Law to describe the motion of the mass:
+\begin{align*}
+\sum F_x = -kx = ma
+\end{align*}
+Suppose that we would like to know the position of the mass as a function of time, $x(t)$. The acceleration in Newton's Second Law is the second derivative of position with respect to time. Newton's Second Law for the mass attached to the spring is really a differential equation for the function $x(t)$:
+\begin{align*}
+ma &= -kx\\
+m\frac{d^2x}{dt^2} &= -kx\\
+\therefore \frac{d^2x}{dt^2} &= -\frac{k}{m}x
+\end{align*}
+The equation says that the second derivative of $x(t)$ with respect to time is equal to the negative of the function multiplied by a constant. Without having taken a course on differential equations, it might not be obvious what the function $x(t)$ could be. Several, equivalent functions, can actually satisfy this equation. One possible choice, which we present here as a guess, is\footnote{Other possible guesses that work are $A \sin(\omega t + \phi)$, and $x(t) = A\cos(\omega t) + B\sin(\omega t)$,}:
+\begin{align}
+\Aboxed{x(t) = A \cos(\omega t + \phi)}
+\end{align}
+where $A$, $\omega$, and $\phi$ are constants that we need to determine. We can take the second order derivative with respect to time of the function above to see if it solves the differential equation:
+\begin{align*}
+\frac{d}{dt}x(t) &= -A\omega\sin(\omega t + \phi)\\
+\frac{d^2}{dt^2}x(t) &=\frac{d}{dt}-A\omega\sin(\omega t + \phi) = -A\omega^2\cos(\omega t + \phi)\\
+\therefore \frac{d^2}{dt^2}x(t) &= - \omega^2 x(t)
+\end{align*}
+which is exactly the same equation that we obtained from Newton's Second Law, if we choose:
+\begin{align}
+\Aboxed{\omega = \sqrt{\frac{k}{m}}}
+\end{align}
+which we call the ``angular frequency'' of the mass. 
+
+TODO: Checkpoint question: What is the SI unit for angular frequency (Hertz, rad/s, 1/s are all correct - make it an all of the above!)
+
+We still need to identify what the constants $A$ and $\phi$ have to do with the motion of the mass. The constant $A$ is the maximal value that $x(t)$ can take (when the cosine is equal to 1). This corresponds to the amplitude of the motion of the mass, which we already had labelled $A$. The constant $\phi$ is called the ``phase'' and depends on our choice of the instant when $t=0$. Suppose that we define time $t=0$ to be when the mass is at $x=A$; in that case:
+\begin{align*}
+x(t=0) &= A\\
+A \cos(\omega (0) + \phi) &= A\\
+\cos(\phi) &= 1
+\therefore \phi = 0
+\end{align*}
+If we define $t=0$ to be when the mass is at $x=A$, then the phase is zero. In general, the value of $\phi$ can take any value between $-pi$ and $+\pi$\footnote{The argument to the cosine function is in radians, since the angular frequency is usually defined in radians per second. The value of $\phi$ is constrained to be within that range, since the cosine function is periodic with a period $2\pi$.} and, physically, corresponds to our choice of when $t=0$.
+
+TODO: Checkpoint question: What is $\phi$ if we choose $t=0$ when the mass is at $x=0$ and the particle is moving in the positive direction? (correct: $- \pi/2$) 
+
+Since we have determine the position as a function of time of the mass, we can also determine its velocity and acceleration as a function of time:
+\begin{align*}
+v(t) &= \frac{d}{dt}x(t) &= -A\omega\sin(\omega t + \phi)\\
+a(t)&= \frac{d}{dt}v(t) &= -A\omega^2\cos(\omega t + \phi)\\
+\end{align*}
+
+
+
+
+\section{Simple harmonic motion}
+
+\section{Energy in simple harmonic motion}
+
+\section{The motion of a pendulum}
+
+\section{Damped harmonic motion}
 
 
 
