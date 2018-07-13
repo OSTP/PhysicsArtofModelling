@@ -18,51 +18,51 @@ In this chapter, we look at oscillating systems that undergo ``simple harmonic m
 \end{opening}
 
 \section{The motion of a spring-mass system}
-As an example of simple harmonic motion, we first consider the motion of a block of mass $m$ that can slide without friction along a horizontal surface. The mass is is attached to a spring with spring constant $k$ which is attached to a wall on the other end. We introduce a one-dimensional coordinate system, such that the $x$ axis is co-linear with the motion of the mass, the origin is located where the spring is neither compressed nor extended, and the positive direction corresponds to the spring being extended. This ``spring-mass system'' is illustrated in Figure \ref{fig:simpleharmonicmotion:spring}.
-\capfig{0.5\textwidth}{figures/SimpleHarmonicMotion/spring.png}{\label{fig:simpleharmonicmotion:spring}A horizontal spring-mass system oscillating about the origin with an amplitude $A$.}
+As an example of simple harmonic motion, we first consider the motion of a block of mass $m$ that can slide without friction along a horizontal surface. The mass is is attached to a spring with spring constant $k$ which is attached to a wall on the other end. We introduce a one-dimensional coordinate system to described the position of the mass, such that the $x$ axis is co-linear with the motion, the origin is located where the spring is at rest, and the positive direction corresponds to the spring being extended. This ``spring-mass system'' is illustrated in Figure \ref{fig:simpleharmonicmotion:spring}.
+\capfig{0.45\textwidth}{figures/SimpleHarmonicMotion/spring.png}{\label{fig:simpleharmonicmotion:spring}A horizontal spring-mass system oscillating about the origin with an amplitude $A$.}
 
 We assume that the force exerted by the spring on the mass is given by Hooke's Law:
 \begin{align*}
 \vec F = -kx \hat x
 \end{align*}
-where $x$ is the distance by which the spring is compressed or extended, and corresponds to the position on the $x$ axis that we defined in Figure \ref{fig:simpleharmonicmotion:spring}. The only other forces exerted on the mass are its weight and the normal force from the horizontal surface, which are equal in magnitude and opposite in direction. The net force on the mass is thus that from the spring. 
+where $x$ is the position of the mass. The only other forces exerted on the mass are its weight and the normal force from the horizontal surface, which are equal in magnitude and opposite in direction. The net force on the mass is thus that from the spring. 
 
-As we saw in Section \ref{sec:potentialecons:ediagrams}, if the spring is compressed  (or extended) by a distance $A$ relative to the rest position, and the mass is then released, the mass will oscillate back and forth between $x=-A$ and $x=+A$\footnote{As long as there is no friction to result in a mechanical energy loss.}, which is illustrated in Figure \ref{fig:simpleharmonicmotion:spring}. We call $A$ the ``amplitude of the motion''. When the mass is at $x=\pm A$, its speed is zero, as these points correspond to the location where the mass ``turns around''.
+As we saw in Section \ref{sec:potentialecons:ediagrams}, if the spring is compressed  (or extended) by a distance $A$ relative to the rest position, and the mass is then released, the mass will oscillate back and forth between $x=-A$ and $x=+A$\footnote{As long as there is no friction to reduce the mechanical energy of the mass.}, which is illustrated in Figure \ref{fig:simpleharmonicmotion:spring}. We call $A$ the ``amplitude of the motion''. When the mass is at $x=\pm A$, its speed is zero, as these points correspond to the location where the mass ``turns around''.
 
-We can describe the motion of the mass using energy, since mechanical energy is conserved. At any position, $x$, the mass will have potential energy from the spring and kinetic energy:
+We can describe the motion of the mass using energy, since the mechanical energy of the mass is conserved. At any position, $x$, the mass will have potential energy from the spring and kinetic energy:
 \begin{align*}
-E = \frac{1}{2}kx^2 + \frac{1}{2}mv^2
+E = U + K =\frac{1}{2}kx^2 + \frac{1}{2}mv^2
 \end{align*}
-The mechanical energy is equal to the potential energy of the mass when it is located at one of the turning points ($E=1/2kA^2$), where its kinetic energy is zero. We can thus always know the speed, $v$, of the mass at any position, $x$, if we know the amplitude $A$:
-\begin{align*}
-E &= \frac{1}{2}kA^2\\
-\frac{1}{2}kx^2 + \frac{1}{2}mv^2&= \frac{1}{2}kA^2
-\end{align*}
+The mechanical energy can be evaluated when the mass is located at one of the turning points ($E=1/2kA^2$), where its kinetic energy is zero. We can thus always know the speed, $v$, of the mass at any position, $x$, if we know the amplitude $A$:
+\begin{align}
+\Aboxed{\frac{1}{2}kx^2 + \frac{1}{2}mv^2&= \frac{1}{2}kA^2}
+\end{align}
 We can also use Newton's Second Law to describe the motion of the mass:
 \begin{align*}
 \sum F_x = -kx = ma
 \end{align*}
 Suppose that we would like to know the position of the mass as a function of time, $x(t)$. The acceleration in Newton's Second Law is the second derivative of position with respect to time. Newton's Second Law for the mass attached to the spring is really a differential equation for the function $x(t)$:
-\begin{align*}
-ma &= -kx\\
-m\frac{d^2x}{dt^2} &= -kx\\
+\begin{align}
+\label{eq:simpleharmonicmotion:shmspring}
+ma &= -kx\nonumber\\
+m\frac{d^2x}{dt^2} &= -kx\nonumber\\
 \therefore \frac{d^2x}{dt^2} &= -\frac{k}{m}x
-\end{align*}
-The equation says that the second derivative of $x(t)$ with respect to time is equal to the negative of the function multiplied by a constant. Without having taken a course on differential equations, it might not be obvious what the function $x(t)$ could be. Several, equivalent functions, can actually satisfy this equation. One possible choice, which we present here as a guess, is\footnote{Other possible guesses that work are $A \sin(\omega t + \phi)$, and $x(t) = A\cos(\omega t) + B\sin(\omega t)$,}:
+\end{align}
+The second derivative of $x(t)$ with respect to time must equal the negative of the function multiplied by a constant. Without having taken a course on differential equations, it might not be obvious what the function $x(t)$ could be. Several, equivalent, functions can satisfy this equation. One possible choice, which we present here as a guess, is\footnote{Other possible guesses that work are $A \sin(\omega t + \phi)$, and $x(t) = A\cos(\omega t) + B\sin(\omega t)$,}:
 \begin{align}
 \Aboxed{x(t) = A \cos(\omega t + \phi)}
 \end{align}
 where $A$, $\omega$, and $\phi$ are constants that we need to determine. We can take the second order derivative with respect to time of the function above to see if it solves the differential equation:
 \begin{align*}
 \frac{d}{dt}x(t) &= -A\omega\sin(\omega t + \phi)\\
-\frac{d^2}{dt^2}x(t) &=\frac{d}{dt}-A\omega\sin(\omega t + \phi) = -A\omega^2\cos(\omega t + \phi)\\
+\frac{d^2}{dt^2}x(t) &=\frac{d}{dt}\left( -A\omega\sin(\omega t + \phi)\right)= -A\omega^2\cos(\omega t + \phi)\\
 \therefore \frac{d^2}{dt^2}x(t) &= - \omega^2 x(t)
 \end{align*}
-which is exactly the same equation that we obtained from Newton's Second Law, if we choose:
+which is exactly the same equation that we obtained from Newton's Second Law, if we define, $\omega$, as:
 \begin{align}
 \Aboxed{\omega = \sqrt{\frac{k}{m}}}
 \end{align}
-which we call the ``angular frequency'' of the mass. 
+We call $\omega$ the ``angular frequency'' of the spring-mass system. 
 
 TODO: Checkpoint question: What is the SI unit for angular frequency (Hertz, rad/s, 1/s are all correct - make it an all of the above!)
 
@@ -70,27 +70,212 @@ We still need to identify what the constants $A$ and $\phi$ have to do with the 
 \begin{align*}
 x(t=0) &= A\\
 A \cos(\omega (0) + \phi) &= A\\
-\cos(\phi) &= 1
+\cos(\phi) &= 1\\
 \therefore \phi = 0
 \end{align*}
-If we define $t=0$ to be when the mass is at $x=A$, then the phase is zero. In general, the value of $\phi$ can take any value between $-pi$ and $+\pi$\footnote{The argument to the cosine function is in radians, since the angular frequency is usually defined in radians per second. The value of $\phi$ is constrained to be within that range, since the cosine function is periodic with a period $2\pi$.} and, physically, corresponds to our choice of when $t=0$.
+If we define $t=0$ to be when the mass is at $x=A$, then the phase, $\phi$, is zero. In general, the value of $\phi$ can take any value between $-\pi$ and $+\pi$\footnote{The argument to the cosine function is in radians, since the angular frequency is usually defined in radians per second. The value of $\phi$ is constrained to be within that range, since the cosine function is periodic with a period $2\pi$.} and, physically, corresponds to our choice of when $t=0$.
 
 TODO: Checkpoint question: What is $\phi$ if we choose $t=0$ when the mass is at $x=0$ and the particle is moving in the positive direction? (correct: $- \pi/2$) 
 
-Since we have determine the position as a function of time of the mass, we can also determine its velocity and acceleration as a function of time:
+Since we have determined the position as a function of time of the mass, its velocity and acceleration as a function of time are easily found by taking the corresponding time derivatives:
 \begin{align*}
-v(t) &= \frac{d}{dt}x(t) &= -A\omega\sin(\omega t + \phi)\\
-a(t)&= \frac{d}{dt}v(t) &= -A\omega^2\cos(\omega t + \phi)\\
+v(t) &= \frac{d}{dt}x(t) = -A\omega\sin(\omega t + \phi)\\
+a(t)&= \frac{d}{dt}v(t) = -A\omega^2\cos(\omega t + \phi)\\
+\end{align*}
+
+The position of the mass is described by a sinusoidal function of time; we call this type of motion ``simple harmonic motion''. The position and velocity as a function of time for a spring-mass system with $m=\SI{1}{kg}$, $k=\SI{4}{N/m}$, $A=\SI{10}{m}$ are shown in Figure \ref{fig:simpleharmonicmotion:xvtshm} for two different choices of the phase, $\phi=0$ and $\phi=\pi/2$.
+\capfig{0.9\textwidth}{figures/SimpleHarmonicMotion/xvtshm.png}{\label{fig:simpleharmonicmotion:xvtshm}Position and velocity as a function of time for a mass-spring system for two different values of the phase, $\phi$.}
+We can make a few observations about the position and velocity illustrated in Figure \ref{fig:simpleharmonicmotion:xvtshm}:
+\begin{itemize}
+\item Changing the phase, $\phi$, results in an horizontal shift of the functions. A positive phase results in a shift of the functions to the left.
+\item The highest speed corresponds to a position of $x=0$ and the largest position, $x=\pm A$, corresponds to a speed of zero.
+\item $\phi = 0$ corresponds to the ``initial condition'' at $t=0$ where the position of the mass is $x=A$ and its speed is $v=0$.
+\item $\phi = \pi/2$ corresponds to the ``initial condition'' at $t=0$ where the position of the mass is $x=0$ and its velocity is in the negative direction, and with maximal amplitude.
+\item The position is always between $x=\pm A$, and the velocity is always between $v=\pm A\omega$.
+\end{itemize}
+
+The motion of the spring is clearly periodic. The period of the motion, $T$, is easily found:
+\begin{align*}
+x(t) &= x(t+T)\\
+A \cos(\omega t + \phi) &= A \cos(\omega (t+T) + \phi)\\
+\therefore \omega t + \phi  +2\pi &= \omega (t+T) + \phi\\
+2\pi &= \omega T\\
+\end{align*}
+where we used the fact that the cosine function has a period of $2\pi$. The period of the motion is thus given by:
+\begin{align}
+\Aboxed{T&=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}}
+\end{align}
+And the corresponding frequency is given by:
+\begin{align}
+\Aboxed{f = \frac{1}{T}=\frac{\omega}{2\pi}=\frac{1}{2\pi}\sqrt{\frac{k}{m}}}
+\end{align}
+It should now be clear why $\omega$ is called the angular frequency, since it is related to the frequency of the motion.
+
+We can make an analogy between the motion of a spring-mass system and uniform circular motion. Consider a particle that is moving along a circle of radius $A$, with constant angular speed $\omega$, as illustrated in Figure \ref{fig:simpleharmonicmotion:circleshm}.
+\capfig{0.4\textwidth}{figures/SimpleHarmonicMotion/circleshm.png}{\label{fig:simpleharmonicmotion:circleshm}Uniform circular motion of a particle along a circle of radius $A$ with constant angular speed $\omega$.}
+The angular position, $\theta(t)$, of the particle is given by:
+\begin{align*}
+\theta(t) = \theta_0 + \omega t
+\end{align*}
+if the particle was located at an angular position $\theta_0$ at $t=0$ ($\theta_0=0$ in Figure \ref{fig:simpleharmonicmotion:circleshm}). The $x$ coordinate of the particle is given by:
+\begin{align*}
+x(t) = A\cos(\theta(t)) = A\cos(\theta_0 + \omega t)
+\end{align*}
+The magnitude of the particle's velocity is given by:
+\begin{align*}
+v = \omega A
+\end{align*}
+The $x$ component of the particle's velocity is easily found from the figure and is given by:
+\begin{align*}
+v_x(t) = -v\sin(\theta(t)) = -\omega A\sin(\theta_0 + \omega t)
+\end{align*}
+Thus, the $x$ coordinate of the particle, and the $x$ component of its velocity have the same functional form as the position and velocity for simple harmonic motion. We can thus visualize simple harmonic motion as if it were the projection onto the $x$ axis of uniform circular motion with angular speed $\omega$ about a circle with radius $A$. The phase $\phi$ corresponds to the initial angular position of the particle around the circle, $\theta_0$. When the particle crosses the $y$ axis ($x=0$), its velocity is in the $x$ direction, so the $x$ component of the velocity is maximal. When the particle crosses the $x$ axis ($x=\pm A$), the $x$ component of the velocity is zero.
+
+\subsection{Vertical spring-mass system}
+Consider the vertical spring-mass system illustrated in Figure \ref{fig:simpleharmonicmotion:vertspring}.
+\capfig{0.6\textwidth}{figures/SimpleHarmonicMotion/vertspring.png}{\label{fig:simpleharmonicmotion:vertspring}A vertical spring-mass system.}
+When no mass is attached to the spring, the spring is at rest (we assume that the spring has no mass). We choose the origin of a one-dimensional vertical coordinate system ($y$ axis) to be located at the rest length of the spring (left panel most panel of Figure \ref{fig:simpleharmonicmotion:vertspring}). When we hang a mass $m$ from the spring, the spring will extend to a new equilibrium position, $y_0$, given by the condition that the net force on the mass $m$ is zero. The only forces exerted on the mass are the force from the spring and its weight. The condition for the equilibrium is thus:
+\begin{align*}
+\sum F_y = F_g - F(y_0) &=0\\
+ mg - ky_0 &= 0 \\
+ \therefore mg &= ky_0
+\end{align*}
+Now, consider the forces on the mass at some position $y$, and Newton's Second Law at that position (right panel of Figure \ref{fig:simpleharmonicmotion:vertspring})
+\begin{align*}
+\sum F_y = mg - ky &= ma\\
+mg - ky &= m \frac{d^2y}{dt^2}
+\end{align*}
+Note that the net force on the mass, will always be in the direction so as to ``restore'' the position of the mass back to the equilibrium position, $y_0$. 
+
+If we use the equilibrium condition, $mg = ky_0$, we can write Newton's Second Law as:
+\begin{align*}
+m \frac{d^2y}{dt^2}&= ky_0 - ky\\
+m \frac{d^2y}{dt^2}&=-k(y-y_0) \\
+\therefore \frac{d^2y}{dt^2} &= \frac{k}{m}(y-y_0)
+\end{align*}
+Consider a new variable, $y'=y-y_0$. This is the same as defining a new $y$ axis that is shifted downwards by $y_0$; in other words, this the same as defining a new $y$ axis whose origin is at $y_0$ (the equilibrium position) rather than at the position where the spring is at rest. In terms of $y'$, Newton's Second Law for the mass is:
+\begin{align*}
+\frac{d^2y}{dt^2} &= \frac{d^2}{dt^2} (y' + y_0) = \frac{d^2y'}{dt^2}
+\therefore \frac{d^2y'}{dt^2} &= \frac{k}{m}y'
+\end{align*}
+which is the same equation as that for the simple harmonic motion of a horizontal spring-mass system (Equation \ref{eq:simpleharmonicmotion:shmspring}), but with the origin located at the equilibrium position of the spring instead of at the rest length of the spring. In other words, a vertical spring-mass system will undergo simple harmonic motion in the vertical direction about the equilibrium position. In general, a spring-mass system will undergo simple harmonic motion if a constant force that is co-linear with the spring force is exerted on the mass. That motion will be centred about a point of equilibrium where the net force on the mass is zero rather than where the spring is at its rest position.
+\subsection{Two-spring-mass system}
+Consider a horizontal spring-mass system composed a single mass attached to two different springs, with spring constants, $k_1$ and $k_2$, as shown in Figure \ref{fig:simpleharmonicmotion:2springs}.
+\capfig{0.8\textwidth}{figures/SimpleHarmonicMotion/2springs.png}{\label{fig:simpleharmonicmotion:2springs}A mass attached to two different springs.}
+We introduce a horizontal coordinate system, such that the end of the spring with spring constant $k_1$ is at position $x_1$ when it is at rest, and the end of the $k_2$ spring is at $x_2$ when it is as rest, as shown in the top panel. A mass $m$ is then attached to the two springs, and $x_0$ corresponds to the position of the mass when the net force from the two springs is zero. We will assume that the length of the mass is negligible, so that the ends of both springs are also at position $x_0$ at equilibrium. In the middle panel of Figure \ref{fig:simpleharmonicmotion:2springs}, we showed the equilibrium position corresponding to both spring being in extension. It is possible to have an equilibrium where both springs are in compression (if both springs are long enough to extend past $x_0$ when they are at rest). 
+
+If we assume that both springs are in extension at equilibrium, as shown in the figure, then the condition for equilibrium is given by requiring that the sum of the forces on the mass is zero:
+\begin{align*}
+\sum F_x = -k_1(x_0-x_1) + k_2 (x_2 - x_0) &= 0\\
+-k_1x_0+k_1x_1+k_2x_2-k_2x_0 &=0\\
+-(k_1+k_2)x_0 +k_1x_1+k_2x_2 &=0\\
+\therefore k_1x_1+k_2x_2 &=(k_1+k_2)x_0
+\end{align*}
+Note that if the mass is displaced from $x_0$, the net force on the mass will be in the direction of the equilibrium position, and will act to ``restore'' the position of the mass back to $x_0$. 
+
+When the mass is at some position $x$, as shown in the bottom panel (for the $k_1$ spring in compression and the $k_2$ spring in extension), Newton's Second Law for the mass is:
+\begin{align*}
+-k_1(x-x_1) + k_2 (x_2 - x) &= m a \\
+-k_1x +k_1x_1 + k_2 x_2 - k_2 x &= m \frac{d^2x}{dt^2}\\
+-(k_1+k_2)x  + k_1x_1 + k_2 x_2&= m \frac{d^2x}{dt^2}
+\end{align*} 
+Note that, mathematically, this equation is of the form $-kx + C =ma$, which is the same form of the equation that we had for the vertical spring-mass system (with $C=mg$), so we expect that this will also lead to simple harmonic motion. We can use the equilibrium condition ($k_1x_1+k_2x_2 =(k_1+k_2)x_0$) to re-write this equation:
+\begin{align*}
+-(k_1+k_2)x  + k_1x_1 + k_2 x_2&= m \frac{d^2x}{dt^2}\\
+-(k_1+k_2)x  + (k_1+k_2)x_0&= m \frac{d^2x}{dt^2}\\
+\therefore -(k_1+k_2) (x-x_0) &= m \frac{d^2x}{dt^2}
+\end{align*} 
+Let us define $k=k_1+k_2$ as the ``effective'' spring constant from the two springs combined. We can also define a new coordinate, $x' = x-x_0$, which simply corresponds to a new $x$ axis whose origin is located at the equilibrium position (in a way that is exactly analogous to what we did in the vertical spring-mass system). We can thus write Newton's Second Law as:
+\begin{align*}
+-(k_1+k_2) (x-x_0) &= m \frac{d^2x}{dt^2}\\
+ -kx' &= m \frac{d^2x'}{dt^2}\\
+ \therefore \frac{d^2x'}{dt^2} &= -\frac{k}{m}x'
+\end{align*}
+and we find that the motion of the mass attached to two springs is described by the same formula for simple harmonic motion as that of a mass attached to a single spring. In this case, the mass will oscillate about the equilibrium position, $x_0$, with a an effective spring constant $k_1+k_2$. Combining the two springs in this way is thus equivalent to have a single spring, but with spring constant $k=k_1+k_2$. The angular frequency of the oscillations is given by:
+\begin{align*}
+\omega = \sqrt{\frac{k}{m}}=\sqrt{\frac{k_1+k_2}{m}}
+\end{align*}
+
+\section{Simple harmonic motion}
+In the previous section, we modelled the motion of a mass attached to a spring and found that its position, $x(t)$, was described by the following differential equation:
+\begin{align}
+\label{eq:simpleharmonicmotion:shm}
+\Aboxed{\frac{d^2x}{dt} &= -\omega^2x}
+\end{align}
+A possible solution to that equation was given by:
+\begin{align*}
+x(t) = A\cos(\omega t+ \phi)
+\end{align*}
+We then saw that the motion of a vertical spring-mass system, as well as that of a mass attached to two springs, could also be described by the same equation. Any physical system that can described by Equation \ref{eq:simpleharmonicmotion:shm} is said to undergo ``simple harmonic motion'', or to be a ``simple harmonic oscillator''. If we find that the physical model of a system leads to Equation \ref{eq:simpleharmonicmotion:shm}, then we immediately know that the system can be described by the solution above.
+
+The key physical characteristic of a simple harmonic oscillator is that there is a ``restoring force'' that is linear with displacement. A restoring force is a force that acts to place the system back in equilibrium, and is thus always in the direction that is opposite of the displacement relative to an equilibrium position.
+
+Many systems in nature are well modelled as simple harmonic oscillators. Some examples are: the motion of a pendulum as it oscillates, the motion of a buoy bobbing up and down in the sea, the motion of electrons in a shorted capacitor, the vibrations of atoms in a molecule
+
+\section{The motion of a pendulum}
+In this section, we show how and when the motion of a pendulum can be described as simple harmonic motion. Consider the simple pendulum that is constructed from a mass-less string of length, $L$, attached to a fixed point on one end and to a point mass $m$ on the other, as illustrated in Figure \ref{fig:simpleharmonicmotion:simplep}.
+\capfig{0.3\textwidth}{figures/SimpleHarmonicMotion/simplep.png}{\label{fig:simpleharmonicmotion:simplep}A simple pendulum which oscillates in a vertical plane.}
+The pendulum can swing in the vertical plane, and we have shown our choice of coordinate system (the $z$ axis, not shown, is out of the page). The only two forces on the mass are the tension from the string and its weight. We can describe the position of the mass by the angle, $\theta(t)$, that the string makes with the vertical. We can model the dynamics of the simple pendulum by considering the net torque about the axis of rotation that is perpendicular to the plane of the page and goes through the point on the string that is fixed. 
+
+The force of tension cannot create a torque on the mass about the axis of rotation, as it is parallel to the vector from the point of rotation to the mass. The net torque is thus the torque from the force of gravity:
+\begin{align*}
+\pvec\tau^{net} &=\vec \tau_g \\
+&=\vec r \times \vec F_g = (L\sin\theta \hat x - L\cos\theta \hat y) \times (-mg\hat y)\\
+&=-mgL\sin\theta \hat z
+\end{align*}
+where $L$ is the magnitude of the vector, $\vec r$, from the axis of rotation to where the force of gravity is exerted. The net torque is equal to the angular acceleration, $\alpha$, multiplied by the moment of inertia of the, $I$, of the mass:
+\begin{align*}
+\pvec\tau^{net} &= I\vec\alpha\\
+-mgL\sin\theta \hat z&= mL^2 \vec\alpha\\
+-g\sin\theta \hat z&= L \vec\alpha
+\end{align*}
+where $I=ML^2$ is the moment of inertia for a point mass a distance $L$ away from the axis of rotation. For the position illustrated in Figure \ref{fig:simpleharmonicmotion:simplep}, the angular acceleration of the pendulum is in the negative $z$ direction (into the page) and corresponds to clockwise motion for the pendulum, as we would expect. The angular acceleration is the second time derivative of the angle, $\theta$:
+\begin{align*}
+\alpha = \frac{d^2\theta}{dt^2}
+\end{align*}
+We can thus re-write the equation that we obtained from the rotational dynamics version of Newton's Second Law as:
+\begin{align*}
+-g\sin\theta \hat z&= L \vec\alpha\\
+\frac{d^2\theta}{dt^2} = -\frac{g}{L}\sin\theta
+\end{align*}
+which almost looks like the equation for simple harmonic oscillation for the angle $\theta$ (except that we have $\sin\theta$ instead of $\theta$). However, consider the ``the small angle approximation''\footnote{Look up the Maclaurin/Taylor series for the sine function!} for the sine function:
+\begin{align*}
+\sin\theta \approx \theta 
+\end{align*}
+If the oscillations of the pendulum are ``small'', such that the small angle approximation is valid, then the equation of motion for the pendulum is:
+\begin{align*}
+\frac{d^2\theta}{dt^2} &= -\frac{g}{L}\sin\theta \approx -\frac{g}{L}\theta \\
+\therefore \frac{d^2\theta}{dt^2} &=-\frac{g}{L}\theta \quad (\text{for small }\theta)
+\end{align*}
+and the angle that the pendulum makes with the vertical is described by the equation for simple harmonic oscillation with angular frequency:
+\begin{align*}
+\omega = \sqrt{\frac{g}{L}}
+\end{align*}
+The angle, $\theta$, as a function of time is thus described by the function:
+\begin{align*}
+\theta(t) = \theta_{max}\cos(\omega t +\phi)
+\end{align*}
+where $\theta_{max}$ is the maximal amplitude of the oscillations and $\phi$ is a phase that depends on when we choose to define $t=0$.
+
+\subsection{The physical pendulum}
+A physical pendulum is defined as any object that is allowed to rotate in the vertical plane about some axis, as illustrated in Figure \ref{fig:simpleharmonicmotion:physicalp}.
+\capfig{0.2\textwidth}{figures/SimpleHarmonicMotion/physicalp.png}{\label{fig:simpleharmonicmotion:physicalp}A physical pendulum which oscillates in a vertical plane.}
+The only forces exerted on the pendulum are its weight and a force exerted at the axis of rotation. The physical pendulum can be modelled in exactly the same way as the simple pendulum, except that we use the moment of inertia of the object about the axis of rotation:
+\begin{align*}
+\tau^{net} &= I\alpha\\
+\tau_g &= I \alpha\\
+-mgh\sin\theta &= I\alpha = I \frac{d^2\theta}{dt^2}
+\end{align*}
+where $h$ is the distance from the axis of rotation to the centre of mass. In the small angle approximation, this becomes:
+\begin{align*}
+\frac{d^2\theta}{dt^2} &=-\frac{mgh}{I}\theta \quad (\text{for small }\theta)
+\end{align*}
+and we find that the physical pendulum oscillates with an angular frequency:
+\begin{align*}
+\omega = \sqrt{\frac{mgh}{I}}
 \end{align*}
 
 
-
-
-\section{Simple harmonic motion}
-
-\section{Energy in simple harmonic motion}
-
-\section{The motion of a pendulum}
 
 \section{Damped harmonic motion}
 
@@ -119,7 +304,7 @@ E = mc^2
 \subsection{Reflect and research}
 
 \begin{enumerate}
-\item Something to research more.
+\item What is an example of a system that is a simple harmonic oscillator (not covered in this this chapter)? What is the restoring force for that system?
 \end{enumerate}
 \subsection{To try at home}
 
