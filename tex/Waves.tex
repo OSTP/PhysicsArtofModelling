@@ -1,10 +1,9 @@
 
 \chapter{Waves}
 \label{chapter:waves}
-
-
+In this chapter we introduce the tools to describe waves. Waves arise in many different physical systems (the ocean, a string, electromagnetism), but can be described by a common mathematical framework. 
 \begin{learningObjectives}{
- \item something to learn
+ \item Understand 
  }
 \end{learningObjectives}
 
@@ -15,7 +14,108 @@
 \end{MCquestion}
 \end{opening}
 
-\section{A section}
+\section{Characteristics of a wave}
+\subsection{Definition and types of waves}
+A wave is a \textbf{disturbance that travels through} a medium. Consider the waves made by fans at a soccer game, as in Figure \ref{fig:waves:soccer}. As the wave travels horizontally through the stands, the fans only travel a short distance up and down, but they do not travel with the wave. The fans can be thought of as the medium in which the wave propagates. The elements of the medium may oscillate about an equilibrium position (fans moving up and down), but they do not travel with the wave. 
+\capfig{0.6\textwidth}{figures/Waves/soccer.png}{\label{fig:waves:soccer}A transverse wave made by soccer fans moving up and down.}
+
+When you look at the ripples made by a rock dropped in a pond (Figure \ref{fig:waves:water}), those ripples travel away from where the rock entered the water, but there is no motion of water outwards. Individual water molecules will move in little circles about an equilibrium position, but they do not move along with the wave.
+\capfig{0.6\textwidth}{figures/Waves/water.png}{\label{fig:waves:water}A transverse wave travelling through water. The left panel shows the view from above as ripples move outwards. The right panel shows the motion of an individual water molecule as the wave is viewed from the side.}
+
+If you attach a horizontal rope to a wall and move the other end up and down (Figure \ref{fig:waves:rope}), you can create a disturbance (a wave) that travels horizontally along the rope, but the parts of the rope do not move horizontally; they only move up and down, about some equilibrium position. 
+\capfig{0.6\textwidth}{figures/Waves/rope.png}{\label{fig:waves:rope}A transverse wave travelling through a rope. The wave is created by moving one end of the rope up and down.}
+
+If you clap your hands, you will create a pressure disturbance in the air that will move; this is what we call sound (a sound wave). Again, it is not air molecules that move, it is the disturbance that moves through the air. 
+\capfig{0.6\textwidth}{figures/Waves/sound.png}{\label{fig:waves:sound}A longitudinal sound wave travelling through the air. The air molecules move back and forth in the same direction as the wave, but they oscillate about an equilibrium position instead of moving with the wave.}
+
+We can distinguish between two types of waves, based on the motion of the medium through which it propagates. \textbf{Transverse waves} are those for which the elements of the medium oscillate back and forth in a direction perpendicular to the motion of the wave. \textbf{Longitudinal waves} are those for which the elements of the medium oscillate back and forth in the same direction as the motion of the wave.
+
+Physically, a wave can only propagate through a medium if the medium can be deformed. When a particle in the medium is disturbed from its equilibrium position, it will experience a restoring force that tries to bring it back to equilibrium. Often, if the displacement of the particle from the equilibrium is small, the magnitude of that force is proportional to the displacement. Thus, the particles in the medium act as small simple harmonic oscillators, and a wave can be viewed as the superposition of many little harmonic oscillators moving back and forth in the medium. 
+
+\subsection{Description of a wave}
+We can use several quantities to describe a wave, which are illustrated in Figure \ref{fig:waves:wavelength}:
+\begin{itemize}
+\item The \textbf{wavelength}, $\lambda$, is the distance between two points along the wave that have the same displacement from their equilibrium position. For example, it can be the distance between two successive maxima (``peaks'') or minima (``troughs'') in the wave.
+\item The \textbf{amplitude}, is the maximal distance that a particle in the medium is displaced from its equilibrium position.
+\item The \textbf{velocity}, $\vec v$, is the velocity with which the disturbance propagates through the medium.
+\item The \textbf{period}, $T$, is the amount of time that goes by for two successive maxima (or minima) of the wave to pass through a point in the medium.
+\item The \textbf{frequency}, $f$, is the inverse of the period ($f=1/T$).
+\end{itemize}
+\capfig{0.6\textwidth}{figures/Waves/wavelength.png}{\label{fig:waves:wavelength}Wavelength, velocity, and amplitude for a transverse wave on a rope.}
+The wavelength, speed, and period of the wave are related, since the amount of time that it takes for two successive maxima of the wave to pass through a given point will depend on the speed of the wave and the distance between maxima, $\lambda$. Since it takes a time, $T$, for two maxima a distance $\lambda$ apart to pass through a given point in the medium, the speed of the wave is given by:
+\begin{align}
+\label{eq:waves:speed}
+\Aboxed{v = \frac{\lambda}{T}=\lambda f}
+\end{align}
+Thus, only two of the speed, period (frequency) and wavelength are independent. \textbf{The speed of a wave generally depends on the properties of the medium through which it is propagating and not on what is creating the wave}. For example, the speed of sound waves depends on the pressure, density, and temperature of the air through which they propagate. Thus, given the frequency of a sound wave, its wavelength is determined from the speed of sound and Equation \ref{eq:waves:speed}.
+
+TODO: Checkpoint MC question: You shake the end of a rope up and down to send waves down the rope. Which property of the wave are you controlling? (the speed, the wavelength of the frequency (correct))?
+
+\section{Mathematical description of a wave}
+In order to describe the motion of a wave through a medium, we can describe the motion of the individual particles (or elements) of the medium as the wave passes through. Specifically, we describe the position of each particle using its displacement, $D$, from its equilibrium position. Consider a wave that is propagating through a medium in the positive $x$ direction, as depicted in Figure \ref{fig:waves:sinewave}.
+
+\capfig{0.8\textwidth}{figures/Waves/sinewave.png}{\label{fig:waves:sinewave}Displacement as a function of position for particles in a medium as a wave passes through. The dotted line shows the dipsplacement as a function of time $\SI{1}{s}$ after the solid line, and corresponds to a wave travelling towards the right.}
+The displacement of each point, $D$, is shown on the $y$ axis. The solid black line corresponds to a snapshot of the wave at time $t=0$, which has an amplitude of $A=\SI{5}{m}$, a velocity $v=\SI{1}{m/s}$ and a wavelength $\lambda=\SI{4}{m}$. The dotted line corresponds to a snapshot of the wave one second later, at $t=\SI{1}{s}$, when the wave has moved to the right by a distance $vt=\SI{1}{m}$.
+
+At time $t=0$, we can model the displacement of each point in the medium, $D(x, t=0)$, as function of their distance from the origin, $x$:
+\begin{align*}
+D(x,t=0) = A\sin\left( \frac{2\pi}{\lambda}x \right)
+\end{align*}
+which corresponds to the displacement being 0 at the origin and at and distance $x$ which is a multiple of the wavelength, $\lambda$. If the wave moves with velocity $v$, then after a certain amount of time, $t$, all of the points that are a distance $vt$ to the right will have the same displacement as those for the wave at time $t=0$. We can state this condition as:
+\begin{align*}
+D(x,t=0) = D(x-vt)
+\end{align*} 
+That is, at some time $t$, the displacement of a point at position $x$ is found by subtracting $vt$ from $x$ and taking the displacement of the wave at $t=0$. We can thus write a function for the displacement of a point at position $x$ and a time $t$, as:
+\begin{align*}
+D(x,t) = A\sin\left( \frac{2\pi}{\lambda}(x-vt) \right)
+\end{align*}
+Noting that $v/\lambda= 1/T$, we can write this as:
+\begin{align*}
+D(x,t) = A\sin\left( \frac{2\pi x}{\lambda}- \frac{2\pi x}{T} \right)
+\end{align*}
+In the above derivation, we assumed that at time $t=0$, the displacement at $x=0$ was $D(x=0, t=0)=0$. In general, the displacement could have any value at $x=0$ and $t=0$, so we can allow the wave to shift left or right by including a phase, $\phi$, which depends on the value on displacement at $x=0$ and $t=0$:
+\begin{align}
+\Aboxed{D(x,t) = A\sin\left( \frac{2\pi x}{\lambda}- \frac{2\pi x}{T} + \phi \right)}
+\end{align}
+where $\phi=0$ corresponds to the displacement being zero at $x=0$ and $t=0$.
+
+TODO: MC Checkpoint: what is the value of $\phi$ if the wave as an amplitude $A/2$ at $x=0$ and $t=0$?
+
+The equation above is written in terms of the wavelength, $\lambda$, and period, $T$, of the wave. Often, one uses the ``wave number'', $k$, and the ``angular frequency'', $\omega$, to express the displacement of a particle at position $x$ and time $t$. These are defined as:
+\begin{align}
+k &= \frac{2\pi}{\lambda}\\
+\omega &= \frac{2\pi}{T}
+\end{align} 
+and essentially remove the factors of $2\pi$ in the expression for $D(x,t)$, which can be written as:
+\begin{align}
+\Aboxed{D(x,t) = A\sin\left( kx -\omega t + \phi \right)}
+\end{align}
+It is important to note that the wave number, $k$, has no relation to the spring constant that we used for springs. 
+
+\subsection{A wave as being made of simple harmonic oscillators}
+We can picture the motion of one of the particles in the medium as if it were the motion of a simple harmonic oscillator\footnote{If the medium has a linear restoring force or if the amplitude of the oscillations is small.}. This is illustrated in Figure \ref{fig:waves:sinewavetimeshm}, which shows the displacement as a function of time for a point on in the medium located at the origin. The displacement of that point, at $x=0$, if we choose $\phi=0$, is given by:
+\begin{align*}
+D(x=0,t) = A\sin(-\omega t)
+\end{align*}
+\capfig{0.8\textwidth}{figures/Waves/sinewavetimeshm.png}{\label{fig:waves:sinewavetimeshm}The displacement as a function of time for one particle in the medium is identical to the motion of a simple harmonic oscillator.}
+The displacement of the particle in the medium is described by the same equation as the position of a simple harmonic oscillator, with angular frequency $\omega$. 
+
+We can also view a snapshot of the wave in time, and model the \textbf{different} points in the medium as different oscillators that all have different displacements. This is shown in Figure \ref{fig:waves:sinewavepositionshm}.
+\capfig{0.8\textwidth}{figures/Waves/sinewavepositionshm.png}{\label{fig:waves:sinewavepositionshm}The displacement as a function of position for point in a medium. Each point in the medium can be modelled a simple harmonic oscillator.}
+
+\subsection{The wave equation}
+
+\section{Waves on a string}
+
+\subsection{Reflection and transmisision}
+
+\section{Energy transported by a wave}
+
+\section{Superposition of waves}
+
+\subsection{The principle of superposition}
+
+\subsection{Standing waves}
 
 
 
