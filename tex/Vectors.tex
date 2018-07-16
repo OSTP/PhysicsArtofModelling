@@ -2,29 +2,29 @@
 \label{app:vectors}
 This appendix gives a very brief introduction to coordinate systems and vectors.
  \vspace{1cm}
-\begin{learningObjectives}
+\begin{learningObjectives}{
 \item Understand the definition of a coordinate system
 \item Understand the definition of a vector and of a scalar
-\item Be able to perform algebra with vectors (addition, scalar products, vector products)
+\item Be able to perform algebra with vectors (addition, scalar products, vector products)}
 \end{learningObjectives}
 
 \section{Coordinate systems}
-Coordinate systems are used in order to be able to describe the position of an object in space. A coordinate system is an artificial mathematical tool that we construct in order to describe the position of a real object. 
+Coordinate systems are used to describe the position of an object in space. A coordinate system is an artificial mathematical tool that we construct in order to describe the position of a real object. 
 
 \subsection{1D Coordinate systems} 
-The easiest coordinate system to construct is one where we need to describe the location of objects in one dimensional space. For example, we may wish to describe the location of a train along a straight section of track that runs in the East-West direction. In order to do so, we must first define an ``origin'', which is the reference point of our coordinate system. For example, the origin for our train track may be the Kingston train station. We can describe the position of the train by specifying how far it is from the train station (the origin), using a single real number, say $x_T$. If the train is at position $x_T=0$, then we know that it is at the Kingston station. If the object is not at the origin, then we need to be able to specify on which side (East or West in our train example) of the origin the object is located. We do this by choosing a direction for our one dimensional coordinate $x$. For example, we may choose that the East side of the track corresponds to positive values of $x_T$ and that the West side of the track correspond to the negative values of $x_T$. Thus, in order to fully specify a coordinate system we need to choose:
+The easiest coordinate system to construct is one where we need to describe the location of objects in one dimensional space. For example, we may wish to describe the location of a train along a straight section of track that runs in the East-West direction. In order to do so, we must first define an ``origin'', which is the reference point of our coordinate system. For example, the origin for our train track may be the Kingston train station (Figure \ref{fig:Vectors:1daxistrain}). We can describe the position of the train by specifying how far it is from the train station (the origin), using a single real number, say $x_T$. If the train is at position $x_T=0$, then we know that it is at the Kingston station. If the object is not at the origin, then we need to be able to specify on which side (East or West in our train example) of the origin the object is located. We do this by choosing a direction for our one dimensional coordinate $x$. For example, we may choose that the East side of the track corresponds to positive values of $x_T$ and that the West side of the track correspond to the negative values of $x_T$. Thus, in order to fully specify a coordinate system we need to choose:
 \begin{itemize}
 \item the location of the origin
 \item the direction in which the coordinate, $x$, increases
 \item the units in which we wish to express $x$
 \end{itemize} 
 
-TODO: make figure to illustrate 1D x-axis
-
 In one dimension, it is common to use the variable $x$ to define the position along the ``$x$-axis''. The $x$-axis \textit{is} our coordinate system in one dimension, and we represent it by drawing a line with an arrow in the direction of increasing $x$ and indicate where the origin is located.
+
+\capfig{0.85\textwidth}{figures/Vectors/1daxistrain.png}{\label{fig:Vectors:1daxistrain}A 1d coordinate system describing the position of a train. The Kingston train station is the origin and the East side of the track corresponds to positive values of $x$. The train is located at position $x_1$.}
  
 \subsection{2D Coordinate systems}
-\rwcapfig[14]{0.35\textwidth}{figures/Vectors/xyp.png}{\label{fig:Vectors:xyp}Example of Cartesian coordinate system and a point $P$ with coordinates $(x_p,y_p)$.}
+\capfig{0.35\textwidth}{figures/Vectors/xyp.png}{\label{fig:Vectors:xyp}Example of Cartesian coordinate system and a point $P$ with coordinates $(x_p,y_p)$.}
 To describe the position of an object in two dimensions (e.g. a marble rolling on a table), we need to specify two numbers. The easiest way to do this is to define two axes, $x$ and $y$, whose origin and direction we must define. Figure \ref{fig:Vectors:xyp} shows an example of such a coordinate system. Although it is not necessary to do so, we chose $x$ and $y$ axes that are perpendicular to each other. The origin of the coordinate system is where the two axes intersect. One is free to choose any two directions for the axes (as long as they are not parallel). However, choosing axes that are perpendicular (a ``Cartesian'' coordinate system) is usually the most convenient.
 
 To fully describe the position of an object, we must specify both its position along the $x$ and $y$ axes. For example, point $P$ in Figure \ref{fig:Vectors:xyp} has two \textbf{coordinates}, $x_p$ and $y_p$ that define its position. The $x$ coordinate is found by drawing a line through $P$ that is parallel to the $y$ axis and is given by the intersection of that line with the $x$ axis. The $y$ coordinate is found by drawing a line through point $P$ that is parallel to the $x$ axis and is given by the intersection of that line with the $y$ axis.
@@ -33,7 +33,7 @@ To fully describe the position of an object, we must specify both its position a
 \begin{checkpoint}
 \begin{MCquestion}{Figure \ref{fig:Vectors:xyslant} shows a coordinate system that is not orthogonal (where the $x$ and $y$ axes are not perpendicular). Which value on the figure correctly indicates the $y$ coordinate of point $P$?
 \capfig{0.35\textwidth}{figures/Vectors/xyslant.png}{\label{fig:Vectors:xyslant}A non-orthogonal coordinate system (the $x$ and $y$ axes are not perpendicular).}}
-\item $y_1$ %correct
+\item $y_1$ \correct
 \item $y_2$
 \item $y_3$
 \end{MCquestion}
@@ -42,9 +42,9 @@ To fully describe the position of an object, we must specify both its position a
 
 The most common choice of coordinate system in two dimensions is the Cartesian coordinate system that we just described, where the $x$ and $y$ axes are perpendicular and share a common origin, as shown in Figure \ref{fig:DescribingMotionInND:xyp}. When applicable, by convention, we usually choose the $y$ axis to correspond to the vertical direction.
 
-Another common choice is a ``polar'' coordinate system where the position of an object is specified by a distance to the origin, $r$, and an angle, $\theta$, relative to a specified direction, as shown in Figure \ref{fig:DescribingMotionInND:polarp}. Often, a polar coordinate system is defined alongside a Cartesian system, so that $r$ is the distance to the origin of the Cartesian system and $\theta$ is the angle with respect to the $x$ axis.
+Another common choice is a ``polar'' coordinate system where the position of an object is specified by a distance to the origin, $r$, and an angle, $\theta$, relative to a specified direction, as shown in Figure \ref{fig:describingmotioninnd:polarp}. Often, a polar coordinate system is defined alongside a Cartesian system, so that $r$ is the distance to the origin of the Cartesian system and $\theta$ is the angle with respect to the $x$ axis.
 
-One can easily convert between the two Cartesian coordinates, $x,y$, and the two corresponding polar coordinates, $r,\theta$:
+One can easily convert between the two Cartesian coordinates, $x$ and $y$, and the two corresponding polar coordinates, $r$ and $\theta$:
 \begin{align*}
 x&=r\cos(\theta)\\
 y&=r\sin(\theta)\\
@@ -54,18 +54,27 @@ r&=\sqrt(x^2+y^2)\\
 Polar coordinates are often used to describe the motion of an object moving around a circle, as this means that only one of the coordinates ($\theta$) changes with time (if the origin of the coordinate system is chosen to coincide with the centre of the circle).
 
 \subsection{3D Coordinate systems}
-In three dimensions, we need to specify three numbers to describe the position of an object (e.g. a bird flying in the air). In a three dimensional Cartesian coordinate system, we simply add a third axis, $z$, that is mutually perpendicular to both $x$ and $y$. The position of an object can then specified using the three coordinates, $x$, $y$, and $z$. 
+In three dimensions, we need to specify three numbers to describe the position of an object (e.g. a bird flying in the air). In a three dimensional Cartesian coordinate system, we simply add a third axis, $z$, that is mutually perpendicular to both $x$ and $y$. The position of an object can then be specified using the three coordinates, $x$, $y$, and $z$. 
 
-Two additional coordinate systems are common in three dimensions: ``cylindrical'' and ``spherical coordinates''. All three systems are illustrated in Figure \ref{fig:Vectors:3dcoords} superimposed onto the Cartesian system.
+Two additional coordinate systems are common in three dimensions: ``cylindrical'' and ``spherical'' coordinates. All three systems are illustrated in Figure \ref{fig:Vectors:3dcoords} superimposed onto the Cartesian system.
 \capfig{0.85\textwidth}{figures/Vectors/3dcoords.png}{\label{fig:Vectors:3dcoords} Cartesian (left), cylindrical (centre) and spherical (right) coordinate systems used in three dimensions. The $y$ and $z$ axes are in the plane of the page, whereas the $x$ axis comes out of the page.}
 
-By convention, we use the $z$ axis to be the vertical direction in three dimensions. In cylindrical coordinates, we keep the same Cartesian coordinate $z$ to indicate the height above the $xy$ plane. However, we use the \textit{azimuthal angle}, $\phi$, and the radius, $\rho$, to describe the position of the projection of a point onto the $xy$ plane. $\phi$ is the angle that the projected point makes with the $x$ axis and $\rho$ is the distance of that projected point to the origin. Thus, cylindrical coordinates are very similar to the polar coordinate system introduced in two dimensions, except with the addition of the $z$ coordinate. Cylindrical coordinates are useful for describing situations with azimuthal symmetry, such as motion along the surface of a cylinder. The cylindrical coordinates are related to the Cartesian coordinates by:
+By convention, we use the $z$ axis to be the vertical direction in three dimensions. In cylindrical coordinates, we keep the same Cartesian coordinate $z$ to indicate the height above the $xy$ plane. However, we use the \textit{azimuthal angle}, $\phi$, and the radius, $\rho$, to describe the position of the projection of a point onto the $xy$ plane. $\phi$ is the angle that the projected point makes with the $x$ axis and $\rho$ is the distance of that projected point to the origin. Thus, cylindrical coordinates are very similar to the polar coordinate system introduced in two dimensions, except with the addition of the $z$ coordinate. Cylindrical coordinates are useful for describing situations with azimuthal symmetry, such as motion along the surface of a cylinder. For example, consider point $P$ in figure \ref{fig:Vectors:cylindrcialcoordinates}. Point $P$ is located a distance $\rho$ from the origin, as it is located on the surface of the cylinder (the circular end of the cylinder has a radius $\rho$). Point $P$ is a height $z$ above the $xy$ plane and an angle $\phi$ from the $xz$ plane.
+\capfig{0.4\textwidth}{figures/Vectors/cylindricalcoordinates.png}{\label{fig:Vectors:cylindricalcoordinates} Describing the position of $P$, located on the surface of a cylinder, in cylindrical coordinates.}
+
+ The cylindrical coordinates are related to the Cartesian coordinates by:
 \begin{align*}
 \rho &= \sqrt{x^2+y^2}\\
 \tan(\phi) &= \frac{y}{x}\\
 z&=z
 \end{align*}
-In spherical coordinates, a point $P$ is described by the radius, $r$, the \textit{polar angle} $\theta$, and the \textit{azimuthal angle}, $\phi$. The radius is the distance between the point and the origin. The polar angle is the angle with the $z$ axis that is made by the line from the origin to the point. The azimuthal angle is defined in the same way as in polar coordinates. Spherical coordinates are useful for describing situations that have spherical symmetry, such as a person walking on the surface of the Earth. The spherical coordinates are related to the Cartesian coordinates by:
+In spherical coordinates, a point $P$ is described by the radius, $r$, the \textit{polar angle} $\theta$, and the \textit{azimuthal angle}, $\phi$. The radius is the distance between the point and the origin. The polar angle is the angle with the $z$ axis that is made by the line from the origin to the point. The azimuthal angle is defined in the same way as in polar coordinates. Note that the value of $\phi$ must be between $0$ and $2\pi$, whereas the value of $\theta$ must be between $0$ and $\pi$. 
+
+Spherical coordinates are useful for describing situations that have spherical symmetry, such as a person walking on the surface of the Earth. For example, take Point $P$ in Figure \ref{fig:Vectors:sphericalcoordinates}, located on the surface of a sphere of radius $r$. Point $P$ is an angle $\theta$ from the $z$ axis and an angle $\phi$ from the $xz$ plane. 
+{\label{fig:Vectors:cylindricalcoordinates} Describing the position of $P$, located on the surface of a cylinder, in cylindrical coordinates.}
+\capfig{0.4\textwidth}{figures/Vectors/sphericalcoordinates.png}{\label{fig:Vectors:sphericalcoordinates} Describing the position of $P$, located on the surface of a sphere, in spherical coordinates.}
+
+ The spherical coordinates are related to the Cartesian coordinates by:
 \begin{align*}
 r &= \sqrt{x^2+y^2+z^2}\\
 \tan(\theta) &= \frac{z}{r}=\frac{z}{\sqrt{x^2+y^2+z^2}}\\
@@ -94,10 +103,10 @@ A special category of vectors is ``unit vectors'', which are simply vectors that
 \therefore ||\hat d||&=\sqrt{(\hat d)_x^2+(\hat d)_y^2}=\sqrt{\frac{d_x^2}{d_x^2+d_y^2}+\frac{d_y^2}{d_x^2+d_y^2}}=1
 \end{align*}
 
-A specific type of unit vectors are those units vectors that are parallel to the axes of the coordinate system. Those vectors are denoted $\hat x$, $\hat y$, $\hat z$ (and sometimes $\hat i$, $\hat j$, $\hat k$ or $\hat e_x$, $\hat e_y$, $\hat e_z$) for the $x$, $y$, and $z$ axes, respectively. 
+A specific type of unit vector is the units vectors that are parallel to the axes of the coordinate system. Those vectors are denoted $\hat x$, $\hat y$, $\hat z$ (and sometimes $\hat i$, $\hat j$, $\hat k$ or $\hat e_x$, $\hat e_y$, $\hat e_z$) for the $x$, $y$, and $z$ axes, respectively. Thus, the vector $d\hat{x}$, is the vector of length $d$ that points in the positive $x$ direction. 
 
 \subsection{Notations and representation of vectors}
-There are multiple notations for describing a vector using its components. The following, are all equivalent ways to write down the vector $\vec d$ in terms of its components $d_x$ and $d_y$:
+There are multiple notations for describing a vector using its components. The following are all equivalent ways to write down the vector $\vec d$ in terms of its components $d_x$ and $d_y$:
 \begin{align*}
 \vec d &= (d_x,d_y)\quad&\text{row vector}\\
        &=\begin{pmatrix}
@@ -107,18 +116,18 @@ There are multiple notations for describing a vector using its components. The f
          &= d_x\hat x +d_y \hat y\quad&\text{using }\hat x,\;\hat y\\
          &=d_x\hat i +d_y \hat j \quad&\text{using }\hat i,\;\hat j
 \end{align*}
-For example, the unit vector $\hat y$ can be written down as (0,1,0) in three dimensions. 
+For example, the unit vector $\hat y$ can be written down as (0,1) in two dimensions or (0,1,0) in three dimensions. 
 
 \begin{checkpoint}
 \begin{MCquestion}{What is the magnitude (the length) of the vector $5\hat x-2\hat y$?}
 \item 3.0
-\item 5.4% correct
+\item 5.4 \correct
 \item 7.0
 \item 10.0
 \end{MCquestion}
 \end{checkpoint}
 
-Illustrating a vector graphically in two dimensions is straightforward, but difficult in three dimensions. To help remedy this, a notation is introduced in order to draw vectors that point in or out of the page (perpendicular to the plane of the page). The notation comes from imagining that the vector is an arrow. If the vector is coming out of the page (at you!), then you would see the head of the arrow, which we represent as a circle with a dot (the dot is the point of the arrow, the circle is the base of the conically shaped arrowhead). If instead, the vector points into the page, then you would see the back of the arrow, which we represent as a cross (the cross being the feathers in the tail of the arrow). This is illustrated in Figure \ref{fig:Vectors:vector3d}.
+Illustrating a vector graphically in two dimensions is straightforward, but difficult in three dimensions. To help remedy this, a notation is introduced in order to draw vectors that point in or out of the page (perpendicular to the plane of the page). The notation comes from imagining that the vector is an archery arrow. If the vector is coming out of the page (at you!), then you would see the head of the arrow, which we represent as a circle with a dot (the dot is the point of the arrow, the circle is the base of the conically shaped arrowhead). If instead, the vector points into the page, then you would see the back of the arrow, which we represent as a cross (the cross being the feathers in the tail of the arrow). This is illustrated in Figure \ref{fig:Vectors:vector3d}.
 
 \capfig{0.25\textwidth}{figures/Vectors/vector3d.png}{\label{fig:Vectors:vector3d}Geometric representation of three vectors. The vector $\vec a$ lies in the plane of the page, the vector $\vec b$ is pointing out of the page, and the vector $\vec c$ is pointing into the page.}
 
@@ -137,7 +146,7 @@ Similarly, the division of a vector by a scalar is defined analogously:
 \begin{checkpoint}
 \begin{MCquestion}
 {What happens to the length of a vector if the vector is multiplied by 2?}
-\item The length doubles% correct
+\item The length doubles \correct
 \item The length is halved
 \item The length is quadrupled
 \item It depends on the direction of the vector
@@ -151,7 +160,7 @@ In particular, this makes it easy to determine the unit vector, $\hat v$, that p
 where $v$ is the magnitude of $\vec v$. 
 
 \subsection{Addition/subtraction of two vectors}
-The addition (subtraction) of two vectors, $\vec a$ and $\vec b$, is found by adding (subtracting) the components of the two vectors. For example, if $\vec c=\vec a+\vec b$, the components of $\vec c$ are given by:
+The sum of two vectors, $\vec a$ and $\vec b$, is found by adding the components of the two vectors. Similarly, the difference between two vectors is found by subtracting the components. For example, if $\vec c=\vec a+\vec b$, the components of $\vec c$ are given by:
 \begin{align*}
 \vec c &= \vec a + \vec b = \begin{pmatrix}
            a_x \\
@@ -185,12 +194,12 @@ c_y&=2a_y-3b_y=12
 Geometrically, one can easily visualize the addition and subtraction of vectors. This is illustrated in Figure \ref{fig:Vectors:aplusbvec} for the case of adding vectors $\vec a$ and $\vec b$ to get the vector $\vec c$. Geometrically, the sum of the vectors $\vec a$ and $\vec b$ (sometimes also called the ``resultant'') can be found by:
 \begin{enumerate}
 \item Placing the ``tail'' of vector $\vec b$ at the ``head'' of $\vec a$ (think of an arrow, the pointy part is the head and the feathery part is the tail)
-\item Drawing the vector goes from the tail of vector $\vec a$ to the head of vector $\vec b$.
+\item Drawing the vector that goes from the tail of vector $\vec a$ to the head of vector $\vec b$.
 \end{enumerate}
 
 \capfig{0.55\textwidth}{figures/Vectors/aplusbvec.png}{\label{fig:Vectors:aplusbvec}Geometric addition of the vectors $\vec a$ and $\vec b$ by placing them ``head to tail''.}
 
-Subtracting two vectors geometrically is done in the same way as addition. For example, the vector $vec c$, given by $\vec c=\vec a -\vec b$ can also be expressed as $\vec c = \vec a + (-1) \vec b$. That is, first multiply the vector $\vec b$ by minus 1 (which just reverses its direction), then add that vector, ``head to tail'', to the vector $\vec a$. 
+Subtracting two vectors geometrically is done in the same way as addition. For example, the vector $\vec c$, given by $\vec c=\vec a -\vec b$ can also be expressed as $\vec c = \vec a + (-1) \vec b$. That is, first multiply the vector $\vec b$ by minus 1 (which just reverses its direction), then add that vector, ``head to tail'', to the vector $\vec a$. 
 
 Now that we know how to add vectors, we can better understand the notation $\vec a = a_x \hat x+ a_y\hat y$. This is not simply a notation, but is in fact algebraically correct. It means: ``multiply the vector $\hat x$ by $a_x$ (thus giving it a length of $a_x$) and then add $a_y$ times the vector $\hat y$''. This is illustrated in Figure \ref{fig:Vectors:acomponents}.
 
@@ -198,13 +207,13 @@ Now that we know how to add vectors, we can better understand the notation $\vec
 
 
 \subsection{The scalar product}
-There are two ways to ``multiply'' vectors: the ``scalar product'' and the ``vector product''. The scalar product (or ``dot product'') takes two vectors and results in a scalar (a number). The vector product (or ``cros product'') takes two vectors and results in a third vector. 
+There are two ways to ``multiply'' vectors: the ``scalar product'' and the ``vector product''. The scalar product (or ``dot product'') takes two vectors and results in a scalar (a number). The vector product (or ``cross product'') takes two vectors and results in a third vector. 
 
 The scalar product, $\vec a \cdot \vec b$, of two vectors $\vec a$ and $\vec b$, is defined as the following:
 \begin{align*}
 \vec a \cdot \vec b=a_xb_x +a_yb_y
 \end{align*}
-That is, one multiplies the individual components of the two vectors and then adds those products for each component. This is easily extended to the three dimensional case by adding a term $a_zb_z$ to the sum. One can easily show that the scalar product is also related to the angle between the two vectors when these are placed ``tail to tail'', as in Figure \ref{fig:Vectors:scalarproduct}
+That is, one multiplies the individual components of the two vectors and then adds those products for each component. This is easily extended to the three dimensional case by adding a term $a_zb_z$ to the sum. The scalar product is also related to the angle between the two vectors when the vectors are placed ``tail to tail'', as in Figure \ref{fig:Vectors:scalarproduct}
 \begin{align*}
 \vec a \cdot \vec b= ab\cos\theta
 \end{align*}
@@ -213,9 +222,18 @@ That is, one multiplies the individual components of the two vectors and then ad
 
 The scalar product between two vectors of a fixed length will be maximal when the two vectors are parallel ($\cos\theta=1$) and zero when the vectors are perpendicular ($\cos\theta =0$). The scalar product is thus useful when we want to calculate quantities that are maximal when two vectors are parallel. 
 
+\begin{checkpoint}
+Order the following from the scalar product ($\vec a \cdot \vec b$) with the smallest magnitude to the scalar product with the largest magnitude. Note that $||\vec a||=||\vec b||$
+\capfig{0.7\textwidth}{figures/Vectors/vectororder.png}{\label{fig:Vectors:scalarproductorder}Put these in order of the magnitude of their scalar product.}
+
+\begin{answer}
+$3<1<2$
+\end{answer}
+\end{checkpoint}
+
 
 \subsection{The vector product}
-The vector (or cross) product takes two vectors to produce a third vector that is \textbf{mutually perpendicular} to both vectors. The vector product only has meaning in three dimensions. Two vectors that are not co-linear can always be used to define a plane in three dimensions. The cross product of those two vectors will give a third vector that is thus perpendicular to the plane (thus making it perpendicular to both vectors). 
+The vector (or cross) product takes two vectors to produce a third vector that is \textbf{mutually perpendicular} to both vectors. The vector product only has meaning in three dimensions. Two vectors that are not co-linear, meaning they can not be arranged so that they lie along the same line, can always be used to define a plane in three dimensions. The cross product of those two vectors will give a third vector that is perpendicular to the plane (making it perpendicular to both vectors). 
 
 Algebraically, the three components of the vector product, $\vec a\times \vec b$, of vectors $\vec a$ and $\vec b$ are found as follows:
 \begin{align}
@@ -232,9 +250,9 @@ One important property to note is that $\vec a \times \vec b = -\vec b \times \v
 \label{eqn:Vectors:crossproductmag}
 ||\vec a \times \vec b ||=ab\sin\theta
 \end{align}
-where $\theta$ is the angle between the vectors $\vec a$ and $\vec b$ when these are placed tail to tail (Figure \ref{fig:Vectors:scalarproduct}). The vector resulting from a cross product will be null (have a zero length) if the vectors $\vec a$ and $\vec b$ are parallel, and will have a maximal length when these are perpendicular. The cross product is thus useful to determine quantities that are maximal when two vectors are perpendicular (the opposite use case from the scalar product). 
+where $\theta$ is the angle between the vectors $\vec a$ and $\vec b$ when these are placed tail to tail (Figure \ref{fig:Vectors:scalarproduct}). The vector resulting from a cross product will be null (have a zero length) if the vectors $\vec a$ and $\vec b$ are parallel, and will have a maximal length when these are perpendicular. The cross product is useful to determine quantities that are maximal when two vectors are perpendicular. 
 
-Geometrically, one can determine the direction of the cross product of two vectors by using the ``right hand rule''. This is done by using your right hand, aligning your thumb with the first vector, your index with the second vector, and the cross product will point in the direction of your middle finger (when you hold your middle finger perpendicular to the other two fingers). This is illustrated in Figure \ref{fig:Vectors:righthandrule}. Thus, you can often avoid using equation \ref{eqn:Vectors:crossproduct} and instead use the right hand rule and equation \ref{eqn:Vectors:crossproductmag} to find the vector resulting from a cross product.
+Geometrically, one can determine the direction of the cross product of two vectors by using a ``right hand rule''. To distinguish it from another right hand (TODO: reference to section), we will call it ``the right hand rule for the cross product). This is done by using your right hand, aligning your thumb with the first vector and your index with the second vector. The cross product will point in the direction of your middle finger (when you hold your middle finger perpendicular to the other two fingers). This is illustrated in Figure \ref{fig:Vectors:righthandrule}. Thus, you can often avoid using equation \ref{eqn:Vectors:crossproduct} and instead use the right hand rule and equation \ref{eqn:Vectors:crossproductmag} to find the vector resulting from a cross product.
 
 \capfig{0.7\textwidth}{figures/Vectors/righthandrule.png}{\label{fig:Vectors:righthandrule}Using the right hand rule to find the direction of the cross product.}
 
@@ -249,9 +267,9 @@ For these properties to be correct, it should be noted that the direction of the
 \section{Example uses of vectors in physics}
 This section gives a quick overview of some applications of vectors in physics.
 \subsection{Kinematics and vector equations}
-Kinematics is the description of the position and motion of an object (TODO: Chapter reference). The laws of physics are the principles that ultimately allow us to determine how the position of an object changes with time. For example, Newton's Laws are a mathematical framework that introduce the concepts of force and mass in order to model and determine how an object will move through space.
+Kinematics is the description of the position and motion of an object (Chapter \ref{chap:describingmotionin1d}). The laws of physics are the principles that ultimately allow us to determine how the position of an object changes with time. For example, Newton's Laws are a mathematical framework that introduce the concepts of force and mass in order to model and determine how an object will move through space.
 
-We often use a \textbf{position vector}, $\vec r(t)$, to describe the position of an object as a function of time. Because the object can move, that vector is a function of time. A position vector is a special vector in the sense that it should be considered to be fixed in space; the position vector for an object points from the origin of a coordinate system to the location of the object. 
+We often use a \textbf{position vector}, $\vec r(t)$, to describe the position of an object as a function of time. Because the object can move, the position vector is a function of time. A position vector is a special vector in the sense that it should be considered to be fixed in space; the position vector for an object points from the origin of a coordinate system to the location of the object. 
 
 The three components of the position vector in Cartesian coordinates, are the $x$, $y$, and $z$ coordinates of the object:
 \begin{align*}
@@ -261,7 +279,7 @@ The three components of the position vector in Cartesian coordinates, are the $x
            z(t) \\
          \end{pmatrix}
 \end{align*}  
-where the three coordinates of the object are functions of time in general if the object is moving relative to the origin of the coordinate system. Suppose that the object was initially at position $\vec r_1=(x_1, y_1, z_1)$ at some time $t=t_1$, and that later, at time $t=t_2$, the object was at as second position, $\vec r_2=(x_1, y_1, z_1)$. We can define the \textbf{displacement vector}, $\vec  d$:
+where the three coordinates of the object are functions of time, in general, if the object is moving relative to the origin of the coordinate system. Suppose that the object was initially at position $\vec r_1=(x_1, y_1, z_1)$ at some time $t=t_1$, and that later, at time $t=t_2$, the object was at as second position, $\vec r_2=(x_1, y_1, z_1)$. We can define the \textbf{displacement vector}, $\vec  d$:
 \begin{align*}
  \vec d = \vec r_2 - \vec r_1 =\begin{pmatrix}
            x_2-x_1 \\
@@ -319,11 +337,11 @@ F_y &= ma_y\\
 F_z &= ma_z\\
 \end{align*}
 \subsection{Work and scalar products}
-As we will see, work is a scalar quantity that allows us to determine the change in the speed (squared) of an object that results from a force exerted over a particular displacement. Both force and the displacement are vector quantities (a force has a magnitude and is exerted in a particular direction). The work, $W$, done by a force, $\vec F$, over a displacements, $\vec d$, is defined as:
+As we will see, work is a scalar quantity that allows us to determine the change in the speed (squared) of an object that results from a force exerted over a particular displacement (Chapter \ref{chap:workenergy}). Both force and the displacement are vector quantities (a force has a magnitude and is exerted in a particular direction). The work, $W$, done by a force, $\vec F$, over a displacements, $\vec d$, is defined as:
 \begin{align*}
 W = \vec F \cdot \vec d
 \end{align*}
-The work energy theorem (TODO: chapter reference) tells us that this work is related to the change in speed squared of the object as it moves along the displacement vector $d$. If the work is zero, the object has the same speed at the beginning and end of the displacement. If the work is positive, the object is moving faster at the end of the displacement (and slower if the work is negative). A one dimensional example is shown in Figure \ref{fig:Vectors:work_scalarprod}, which shows a force $\vec F$ being applied to a block as it slides along the ground over a distance $d$ (represented by the displacement vector $\vec d$).  
+The work energy theorem tells us that this work is related to the change in speed squared of the object as it moves along the displacement vector $d$. If the work is zero, the object has the same speed at the beginning and end of the displacement. If the work is positive, the object is moving faster at the end of the displacement (and slower if the work is negative). A one dimensional example is shown in Figure \ref{fig:Vectors:work_scalarprod}, which shows a force $\vec F$ being applied to a block as it slides along the ground over a distance $d$ (represented by the displacement vector $\vec d$).  
 
 \capfig{0.3\textwidth}{figures/Vectors/work_scalarprod.png}{\label{fig:Vectors:work_scalarprod}Example of a force $\vec F$ being applied on an object as it moves along the displacement vector $\vec d$.}
 
@@ -340,11 +358,14 @@ Often, we need to describe rotational motion in physics. If an object is rotatin
 \item The direction around that axis in which the object is rotating (e.g. clockwise or counter-clockwise)
 \item How fast the object is rotating
 \end{enumerate}
-We can also use a vector to describe this type of rotational motion. We choose the direction of the vector to be co-linear with the axis of rotation and the magnitude of the vector to represent the speed with which the object is rotating. We are thus left with two choices for the direction of the vector (it is co-linear with the axis of rotation, but the specific choice of direction has not been made). We choose the direction of the vector by using our right hand in such a way that the vector points in the direction of your thumb when curling your fingers corresponds to the rotational direction, as illustrated in Figure TODO: Figure for rotational right hand rule.
+We can also use a vector to describe this type of rotational motion. We choose the direction of the vector to be co-linear with the axis of rotation and the magnitude of the vector to represent the speed with which the object is rotating. We are thus left with two choices for the direction of the vector (it is co-linear with the axis of rotation, but the specific choice of direction has not been made). We choose the direction of the vector by using another right hand rule. We will refer to this as ``the right hand rule for axial vectors'' to distinguish it from the right hand rule for the cross product. When using the right hand rule for axial vectors, the vector points in the direction of your thumb when you curl your fingers in the direction of rotation, as in Figure \ref{fig:Vectors:righthandruleaxial}.
 
+\capfig{0.3\textwidth}{figures/Vectors/righthandruleaxial.png}{\label{fig:Vectors:righthandruleaxial}Using the right hand rule for axial quantities. In this case, the direction of rotation is counter clockwise when looking at the page (the direction that the fingers curl), so the rotation vector points out of the page (the direction of the thumb).}
+
+The term ``axial vector'' refers to the types of vectors that we use when talking about rotational motion. Like ``true'' vectors, axial vectors have a magnitude and direction. However, because we define the direction of the vector by the direction of rotation, axial vectors behave differently from true vectors when they undergo reflection. Because they do not behave like true vectors in all cases, axial vectors are commonly called ``pseudovectors.'' 
 
 \subsection{Torque and vector products}
-We will introduce the concept of a torque in order to describe how a force can cause an object to rotate. Consider the disk illustrated in Figure \ref{fig:Vectors:torque_vectorprod} that is free to rotate about an axis that goes through its centre and that is perpendicular to the plane of the page. A force $\vec F$ is applied at the edge of the disk, as a position that is displaced from the axis of rotation by the vector $\vec r$. The torque, $\vec \tau$, of the force about the centre of the disk is defined to be:
+We will introduce the concept of a torque in order to describe how a force can cause an object to rotate. Consider the disk illustrated in Figure \ref{fig:Vectors:torque_vectorprod} that is free to rotate about an axis that goes through its centre and that is perpendicular to the plane of the page. A force $\vec F$ is applied at the edge of the disk, at a position that is displaced from the axis of rotation by the vector $\vec r$. The torque, $\vec \tau$, of the force about the centre of the disk is defined to be:
 \begin{align*}
 \vec\tau=\vec r\times \vec F
 \end{align*}
@@ -352,7 +373,7 @@ and represents how much the force $\vec F$ will contribute to making the disk ro
 \begin{align*}
 \tau =rF\sin\theta=F_{\perp}r=Fr_\perp
 \end{align*}
-where $\theta$ is the angle between vectors when placed tail to tail, as in the right side of Figure \ref{fig:Vectors:torque_vectorprod}. In the last two equalities, we have defined $F_\perp=F\sin\theta$ or $r_\perp=r\sin\theta$ to refer to the part of the vector $\vec F$ that is perpendicular to the vector $\vec r$ or the part of the vector $\vec r$ that is perpendicular to the vector $\vec F$. That is, the vector product ``picks out'' the part of a vector that is perpendicular to the other, which is exactly the property that we need for the physical quantity of torque.
+where $\theta$ is the angle between the vectors when placed tail to tail, as in the right side of Figure \ref{fig:Vectors:torque_vectorprod}. In the last two equalities, we have defined $F_\perp=F\sin\theta$ or $r_\perp=r\sin\theta$ to refer to the part of the vector $\vec F$ that is perpendicular to the vector $\vec r$ or the part of the vector $\vec r$ that is perpendicular to the vector $\vec F$. That is, the vector product ``picks out'' the part of a vector that is perpendicular to the other, which is exactly the property that we need for the physical quantity of torque.
 
 \capfig{0.3\textwidth}{figures/Vectors/torque_vectorprod.png}{\label{fig:Vectors:torque_vectorprod}A force, $\vec F$, is exerted in the plane of a disk at a position given by the vector $\vec r$ relative to the centre of the disk.}
 
@@ -360,7 +381,7 @@ where $\theta$ is the angle between vectors when placed tail to tail, as in the 
 \begin{MCquestion}{Referring to Figure \ref{fig:Vectors:torque_vectorprod}, in which direction does the torque vector point?}
 \item to the right
 \item to the left
-\item out of the page %correct
-\item into the page
+\item out of the page 
+\item into the page \correct
 \end{MCquestion}
 \end{checkpoint}
