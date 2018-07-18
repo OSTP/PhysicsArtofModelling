@@ -1,9 +1,14 @@
 
 \chapter{Waves}
 \label{chapter:waves}
-In this chapter we introduce the tools to describe waves. Waves arise in many different physical systems (the ocean, a string, electromagnetism), but can be described by a common mathematical framework. 
+In this chapter we introduce the tools to describe waves. Waves arise in many different physical systems (the ocean, a string, electromagnetism, etc.), but can be described by a common mathematical framework. 
 \begin{learningObjectives}{
- \item Understand 
+ \item Understand the definition of different types of waves.
+ \item Understand how to mathematically describe travelling and standing waves.
+ \item Understand how to model the propagation of a pulse on a rope.
+ \item Understand how to model the energy transported by a wave.
+ \item Understand how to model the interference of waves.
+ \item Understand how standing waves form and how to model them.
  }
 \end{learningObjectives}
 
@@ -16,7 +21,7 @@ In this chapter we introduce the tools to describe waves. Waves arise in many di
 
 \section{Characteristics of a wave}
 \subsection{Definition and types of waves}
-A travelling wave is a \textbf{disturbance that travels through} a medium. Consider the waves made by fans at a soccer game, as in Figure \ref{fig:waves:soccer}. As the wave travels horizontally through the stands, the fans only travel a short distance up and down, but they do not travel with the wave. The fans can be thought of as the medium in which the wave propagates. The elements of the medium may oscillate about an equilibrium position (fans moving up and down), but they do not travel with the wave. 
+A travelling wave is a \textbf{disturbance that travels through} a medium. Consider the waves made by fans at a soccer game, as in Figure \ref{fig:waves:soccer}. As the wave travels horizontally through the stands, the fans only travel a short distance up and down, but they do not travel with the wave. The fans can be thought of as the medium through which the wave propagates. The elements of the medium may oscillate about an equilibrium position (fans moving up and down), but they do not travel with the wave. 
 \capfig{0.6\textwidth}{figures/Waves/soccer.png}{\label{fig:waves:soccer}A transverse wave made by soccer fans moving up and down.}
 
 When you look at the ripples made by a rock dropped in a pond (Figure \ref{fig:waves:water}), those ripples travel away from where the rock entered the water, but there is no motion of water outwards. Individual water molecules will move in little circles about an equilibrium position, but they do not move along with the wave.
@@ -28,12 +33,20 @@ If you attach a horizontal rope to a wall and move the other end up and down (Fi
 If you clap your hands, you will create a pressure disturbance in the air that will move; this is what we call sound (a sound wave). Again, it is not air molecules that move, it is the disturbance that moves through the air. 
 \capfig{0.6\textwidth}{figures/Waves/sound.png}{\label{fig:waves:sound}A longitudinal sound wave travelling through the air. The air molecules move back and forth in the same direction as the wave, but they oscillate about an equilibrium position instead of moving with the wave.}
 
-We can distinguish between two types of waves, based on the motion of the medium through which it propagates. \textbf{Transverse waves} are those for which the elements of the medium oscillate back and forth in a direction perpendicular to the motion of the wave. \textbf{Longitudinal waves} are those for which the elements of the medium oscillate back and forth in the same direction as the motion of the wave.
+We can distinguish between two classes of waves, based on the motion of the medium through which it propagates. \textbf{Transverse waves} are those for which the elements of the medium oscillate back and forth in a direction perpendicular to the motion of the wave. \textbf{Longitudinal waves} are those for which the elements of the medium oscillate back and forth in the same direction as the motion of the wave. Furthermore, we can distinguish between ``travelling waves'', in which a disturbance propagates through a medium, and ``standing waves'', which do not transport energy through the medium (for example, a vibrating string on a violin). 
 
-Physically, a wave can only propagate through a medium if the medium can be deformed. When a particle in the medium is disturbed from its equilibrium position, it will experience a restoring force that tries to bring it back to equilibrium. Often, if the displacement of the particle from the equilibrium is small, the magnitude of that force is proportional to the displacement. Thus, the particles in the medium act as small simple harmonic oscillators, and a wave can be viewed as the superposition of many little harmonic oscillators moving back and forth in the medium. 
+TODO: Checkpoint MC: Are the waves propagating through a slinky when you compress and elongate it transverse or longitudinal? (longitudinal)
+
+TODO: Need a figure to show the longitudinal wave in a slinky!
+
+Physically, a wave can only propagate through a medium if the medium can be deformed. When a particle in the medium is disturbed from its equilibrium position, it will experience a restoring force that tries to bring it back to its equilibrium position. Often, if the displacement of the particle from the equilibrium is small, the magnitude of that force is proportional to the displacement. Thus, the particles in the medium act as small simple harmonic oscillators, which can be used to model the propagation of a wave, as will see.
+
+A source of energy is required in order to deform the medium and generate a wave. For example, that source of energy could be a speaker creating sound waves by pushing a membrane back and forth; speakers require energy, and are often rated by the electrical power that they convert into sound waves (e.g. a $\SI{50}{W}$ speaker consumes $\SI{50}{W}$ of electrical power to produce sound).
+
+TODO: Figure of a speaker membrane vibrating and creating sound waves
 
 \subsection{Description of a wave}
-We can use several quantities to describe a wave, which are illustrated in Figure \ref{fig:waves:wavelength}:
+We can use several quantities to describe a travelling wave, which are illustrated in Figure \ref{fig:waves:wavelength}:
 \begin{itemize}
 \item The \textbf{wavelength}, $\lambda$, is the distance between two points along the wave that have the same displacement from their equilibrium position. For example, it can be the distance between two successive maxima (``peaks'') or minima (``troughs'') in the wave.
 \item The \textbf{amplitude}, is the maximal distance that a particle in the medium is displaced from its equilibrium position.
@@ -47,52 +60,55 @@ The wavelength, speed, and period of the wave are related, since the amount of t
 \label{eq:waves:speed}
 \Aboxed{v = \frac{\lambda}{T}=\lambda f}
 \end{align}
-Thus, only two of the speed, period (frequency) and wavelength are independent. \textbf{The speed of a wave generally depends on the properties of the medium through which it is propagating and not on what is creating the wave}. For example, the speed of sound waves depends on the pressure, density, and temperature of the air through which they propagate. Thus, given the frequency of a sound wave, its wavelength is determined from the speed of sound and Equation \ref{eq:waves:speed}.
+Thus, only two quantities out of the speed, period (frequency) and wavelength are independent. \textbf{The speed of a wave depends on the properties of the medium through which the wave propagates and not on the mechanism that is generating the wave}. For example, the speed of sound waves depends on the pressure, density, and temperature of the air through which they propagate, and not on what is making the sound. When a mechanism generates a wave, that mechanism usually determines the frequency of the wave (e.g. frequency with which the hand in Figure \ref{fig:waves:wavelength} moves up and down), the speed is determined by the medium, and the wavelength can be determined from Equation \ref{eq:waves:speed}.
 
-TODO: Checkpoint MC question: You shake the end of a rope up and down to send waves down the rope. Which property of the wave are you controlling? (the speed, the wavelength of the frequency (correct))?
 
 \section{Mathematical description of a wave}
 In order to describe the motion of a wave through a medium, we can describe the motion of the individual particles (or elements) of the medium as the wave passes through. Specifically, we describe the position of each particle using its displacement, $D$, from its equilibrium position. Consider a wave that is propagating through a medium in the positive $x$ direction, as depicted in Figure \ref{fig:waves:sinewave}.
 
 \capfig{0.8\textwidth}{figures/Waves/sinewave.png}{\label{fig:waves:sinewave}Displacement as a function of position for particles in a medium as a wave passes through. The dotted line shows the dipsplacement as a function of time $\SI{1}{s}$ after the solid line, and corresponds to a wave travelling towards the right.}
-The displacement of each point, $D$, is shown on the $y$ axis. The solid black line corresponds to a snapshot of the wave at time $t=0$, which has an amplitude of $A=\SI{5}{m}$, a velocity $v=\SI{1}{m/s}$ and a wavelength $\lambda=\SI{4}{m}$. The dotted line corresponds to a snapshot of the wave one second later, at $t=\SI{1}{s}$, when the wave has moved to the right by a distance $vt=\SI{1}{m}$.
+The displacement, $D$, of each point at position, $x$, in the medium is shown on the vertical axis. The solid black line corresponds to a snapshot of the wave at time $t=0$. The wave has an amplitude, $A=\SI{5}{m}$, a velocity, $v=\SI{1}{m/s}$, and a wavelength, $\lambda=\SI{4}{m}$. The dotted line corresponds to a snapshot of the wave one second later, at $t=\SI{1}{s}$, when the wave has moved to the right by a distance $vt=\SI{1}{m}$.
 
-At time $t=0$, we can model the displacement of each point in the medium, $D(x, t=0)$, as function of their distance from the origin, $x$:
+It is important to note that this model is not restricted to transverse waves, even if the illustration in Figure \ref{fig:waves:sinewave} suggests that the particle's displacement (vertical axis) are perpendicular to the direction of propagation of the wave (horizontal). The quantity, $D$, that is plotted on the vertical axis corresponds to the displacement of a particle from its equilibrium position. That displacement could correspond to the longitudinal displacement of a particle in a longitudinal wave.
+
+At time $t=0$ (solid line), we can model the displacement of each point in the medium, $D(x, t=0)$, as a function of their distance from the origin, $x$:
 \begin{align*}
 D(x,t=0) = A\sin\left( \frac{2\pi}{\lambda}x \right)
 \end{align*}
-which corresponds to the displacement being 0 at the origin and at and distance $x$ which is a multiple of the wavelength, $\lambda$. If the wave moves with velocity $v$, then after a certain amount of time, $t$, all of the points that are a distance $vt$ to the right will have the same displacement as those for the wave at time $t=0$. We can state this condition as:
+which corresponds to the displacement being 0 at the origin and at any and position, $x$, which is a multiple of the wavelength, $\lambda$. If the wave moves with velocity $v$ in the positive $x$ direction, then, at time, $t$, all of the points in Figure \ref{fig:waves:sinewave} will have shifted to the right by an amount $vt$. The displacement of a point located at position $x$ at time $t$, will be the same as the displacement of the point at position $x-vt$ at time $t=0$.  We can state this condition as:
 \begin{align*}
-D(x,t=0) = D(x-vt)
+D(x,t) = D(x-vt, t=0)
 \end{align*} 
-That is, at some time $t$, the displacement of a point at position $x$ is found by subtracting $vt$ from $x$ and taking the displacement of the wave at $t=0$. We can thus write a function for the displacement of a point at position $x$ and a time $t$, as:
+That is, at some time $t$, the displacement of a point at position $x$ is found by subtracting $vt$ from $x$ and taking the displacement of that point at $t=0$. We can write a function for the displacement of a point at position $x$ and a time $t$, as:
 \begin{align*}
 D(x,t) = A\sin\left( \frac{2\pi}{\lambda}(x-vt) \right)
 \end{align*}
 Noting that $v/\lambda= 1/T$, we can write this as:
 \begin{align*}
-D(x,t) = A\sin\left( \frac{2\pi x}{\lambda}- \frac{2\pi x}{T} \right)
+D(x,t) = A\sin\left( \frac{2\pi x}{\lambda}- \frac{2\pi t}{T} \right)
 \end{align*}
-In the above derivation, we assumed that at time $t=0$, the displacement at $x=0$ was $D(x=0, t=0)=0$. In general, the displacement could have any value at $x=0$ and $t=0$, so we can allow the wave to shift left or right by including a phase, $\phi$, which depends on the value on displacement at $x=0$ and $t=0$:
+In the above derivation, we assumed that at time $t=0$, the displacement at $x=0$ was $D(x=0, t=0)=0$. In general, the displacement could have any value at $x=0$ and $t=0$, so we can allow the wave to shift left or right by including a phase, $\phi$, which can be determined from the displacement at $x=0$ and $t=0$:
 \begin{align}
-\Aboxed{D(x,t) = A\sin\left( \frac{2\pi x}{\lambda}- \frac{2\pi x}{T} + \phi \right)}
+\Aboxed{D(x,t) = A\sin\left( \frac{2\pi x}{\lambda}- \frac{2\pi t}{T} + \phi \right)}
 \end{align}
 where $\phi=0$ corresponds to the displacement being zero at $x=0$ and $t=0$.
 
 TODO: MC Checkpoint: what is the value of $\phi$ if the wave as an amplitude $A/2$ at $x=0$ and $t=0$?
 
-The equation above is written in terms of the wavelength, $\lambda$, and period, $T$, of the wave. Often, one uses the ``wave number'', $k$, and the ``angular frequency'', $\omega$, to express the displacement of a particle at position $x$ and time $t$. These are defined as:
+The equation above is written in terms of the wavelength, $\lambda$, and period, $T$, of the wave. Often, one uses the ``wave number'', $k$, and the ``angular frequency'', $\omega$, to describe the wave. These are defined as:
 \begin{align}
 k &= \frac{2\pi}{\lambda}\\
 \omega &= \frac{2\pi}{T}
 \end{align} 
-and essentially remove the factors of $2\pi$ in the expression for $D(x,t)$, which can be written as:
+Using the wave number and the angular frequency removes the factors of $2\pi$ in the expression for $D(x,t)$, which can now be written as:
 \begin{align}
 \Aboxed{D(x,t) = A\sin\left( kx -\omega t + \phi \right)}
 \end{align}
-It is important to note that the wave number, $k$, has no relation to the spring constant that we used for springs. Since the wavelength and period of the wave are related to the speed of the wave, so are the wave number and angular frequency:
+It is important to note that the wave number, $k$, has no relation to the spring constant that we used for springs.
+
+Using Equation \ref{eq:waves:speed}, we can also relate the wave number and angular frequency to the speed of the wave:
 \begin{align*}
-v = \frac{\lambda}{T}=\frac{\frac{2\pi}{k}}{\frac{2\pi}{T}}=\frac{\omega}{k}
+v = \frac{\lambda}{T}=\frac{\frac{2\pi}{k}}{\frac{2\pi}{\omega}}=\frac{\omega}{k}
 \end{align*}
 
 \subsection{The wave equation}
@@ -100,7 +116,7 @@ In Chapter \ref{chapter:simpleharmonicmotion}, we saw that any physical system w
 \begin{align*}
 \frac{d^2x}{dt^2}=-\omega^2 x
 \end{align*}
-will undergo simple harmonic motion with angular frequency $\omega$, and that $x(t)$ is given by:
+will undergo simple harmonic motion with angular frequency $\omega$, and that $x(t)$ can be modelled as:
 \begin{align*}
 x(t) = A\cos(\omega t + \phi)
 \end{align*}
@@ -109,15 +125,19 @@ Similarly, any system, where the displacement of a particle as a function of pos
 \begin{align}
 \die{^2D}{x^2}=\frac{1}{v^2}\die{^2D}{t^2}
 \end{align}
-is described by a wave that propagates with a speed $v$. The equation above is called the ``one-dimensional wave equation'' and would be obtained from modelling the dynamics of the system, just as the equation of motion for a simple harmonic oscillator. Just like the angular velocity of simple harmonic oscillator is a property of the system, so to is the propagation speed of a wave. The amplitude of a simple harmonic oscillator, or of a wave, have no impact on the angular frequency, or the propagation speed of the wave, respectively. We use partial derivatives in the wave equation instead of total derivatives because $D(x,t)$ is multi-variate. A possible solution to the one-dimensional wave equation is:
+is described by a wave that propagates with a speed $v$. The equation above is called the ``one-dimensional wave equation'' and would be obtained from modelling the dynamics of the system, just as the equation of motion for a simple harmonic oscillator can be obtained from Newton's Second Law. For the harmonic oscillator, the properties of the system (e.g. mass and spring constant) determine the angular frequency, $\omega$. For a wave, the properties of the medium determine the speed of the wave, $v$. 
+
+We use partial derivatives in the wave equation instead of total derivatives because $D(x,t)$ is multi-variate. A possible solution to the one-dimensional wave equation is:
 \begin{align*}
 D(x,t) = A\sin\left( kx -\omega t + \phi \right)
 \end{align*}
-Furthermore, if there exists multiple solutions, $D_1(x,t)$, $D_2(x,t)$, etc, then any linear combination, $D(x,t)$, of the solutions will also be a solution to the wave equation:
+which is the function that we determined in the previous section for a ``sine wave''.
+
+Furthermore, if there exists multiple solutions to the wave equation, $D_1(x,t)$, $D_2(x,t)$, etc, then any linear combination, $D(x,t)$, of the solutions will also be a solution to the wave equation:
 \begin{align*}
 D(x,t) = a_1D_1(x,t)+a_2D_2(x,t)+a_3D_3(x,t)+\dots
 \end{align*}
-This last property is called ``the superposition principle'', and is the result of the wave equation being linear in $D$ (it does not depend on $D^2$, for example). It easy to check that if $D_1(x,t)$ and $D_2(x,t)$ satisfy the wave equation, so does their sum. 
+This last property is called ``the superposition principle'', and is the result of the wave equation being linear in $D$ (it does not depend on $D^2$, for example). It is easy to check, for example, that if $D_1(x,t)$ and $D_2(x,t)$ satisfy the wave equation, so does their sum. 
 
 TODO: Question Library question, show that if $D_1(x,t)$ and $D_2(x,t)$ satisfy the 1d wave equation, so does $a_1D_1(x,t)+a_2D_2(x,t)$, where $a_i$ are constants.
 
@@ -128,11 +148,12 @@ In three dimensions, the displacement of a particle in the medium depends on its
 There are many functions that can satisfy this equation, and the best choice will depend on the physical system being modelled. 
 
 \section{Waves on a rope}
-In this section, we model the motion of transverse waves on a rope, as an example of to illustrate how one can obtain the wave equation from Newton's Second Law as well as to gain insight into what determines the speed of a wave. 
+In this section, we model the motion of transverse waves on a rope, as this provides insight into many properties of waves that extend to other types of waves. 
+
 \subsection{A pulse on a rope}
-We start by modelling how a single pulse propagates down a horizontal rope that is under a tension, $F_T$\footnote{We do not use $T$ for tension, so as to not confuse with the period of the wave.}. A wave is simply a series of pulses propagating down the rope. Figure \ref{fig:waves:pulse} shows how one can generate a pulse in a taught horizontal rope.
-\capfig{0.8\textwidth}{figures/Waves/pulse.png}{\label{fig:waves:pulse}(Left:) Pulling upwards on a horizontal rope causes a pulse to form and propagate. After a small period of time, a pulse is seen propagating down the rope (right).}
-We can model the propagation speed of a pulse by considering the speed, $v$, of point $B$ that is shown in Figure \ref{fig:waves:pulse}. Note that point $B$ is not a particle of the rope, and is instead, the location of the front of the disturbance that the pulse causes on the rope. We model the rope as being under a horizontal force of tension, $\vec F_T$, and the pulse is started by exerting a vertical force, $\vec F$, to move the end (point $A$) of the rope upwards with a speed, $v'$. Thus, by pulling upwards on the rope with a force, $\vec F$, at a speed $v'$, we can start a disturbance in the rope that will propagate with speed $v$. 
+We start by modelling how a single pulse propagates down a horizontal rope that is under a tension, $F_T$\footnote{We do not use $T$ for tension, so as to not confuse with the period of the wave.}. A wave is generally considered to be a regular series of alternating upwards and downwards pulses propagating down the rope. Figure \ref{fig:waves:pulse} shows how one can generate a pulse in a taught horizontal rope by raising (and then lowering) one end of the rope.
+\capfig{0.8\textwidth}{figures/Waves/pulse.png}{\label{fig:waves:pulse}(Left:) Pulling upwards and then downwards on a horizontal rope causes a pulse to form and propagate. After a small period of time, a pulse is seen propagating down the rope (right).}
+We can model the propagation speed of the pulse by considering the speed, $v$, of point $B$ that is shown in the left panel of Figure \ref{fig:waves:pulse}. Note that point $B$ is not a particle of the rope, and is instead, the location of the ``front'' of the disturbance that the pulse causes on the rope. We model the rope as being under a horizontal force of tension, $\vec F_T$, and the pulse is started by exerting a vertical force, $\vec F$, to move the end (point $A$) of the rope upwards with a speed, $v'$. Thus, by pulling upwards on the rope with a force, $\vec F$, at a speed $v'$, we can start a disturbance in the rope that will propagate with speed $v$. 
 
 In a small amount of time, $t$, the point $A$ of the rope will have moved up by a distance $v't$, whereas point $B$ will have moved to the right by a distance $vt$. If $t$ is small enough, we can consider the points $A$, $B$, and $C$ to form the corners of a triangle. That triangle is similar to the triangle that is made by vectorially summing the applied force $\vec F$ and the tension $\vec F_T$, as shown in the top right of Figure \ref{fig:waves:pulse}. We can thus write:
 \begin{align*}
@@ -143,7 +164,7 @@ Consider the section of rope with length $vt$ that we have raised by applying th
 \begin{align*}
 m = \mu vt
 \end{align*}
-The momentum of that section of rope, with vertical speed given by $v'$, is thus:
+The vertical component of the momentum of that section of rope, with vertical speed given by $v'$, is thus:
 \begin{align*}
 p = mv' = \mu vt v'
 \end{align*}
@@ -166,27 +187,28 @@ If the tension in the rope is higher, the pulse will propagate faster. If the li
 
 \subsection{Reflection and transmission}
 In this section, we examine what happens when a pulse travelling down a rope arrives at the end of the rope. First, consider the case illustrated in Figure \ref{fig:waves:reflectionfixed} where the end of the rope is fixed to a wall.
-\capfig{0.7\textwidth}{figures/Waves/reflectionfixed.png}{\label{fig:waves:reflectionfixed}When a the end of the rope is held fixed, the reflected pulse will be inverted.}
+\capfig{0.7\textwidth}{figures/Waves/reflectionfixed.png}{\label{fig:waves:reflectionfixed}When the end of the rope is held fixed, the reflected pulse will be inverted.}
 When the pulse arrives at the wall, the rope will exert an upwards force on the wall, $\vec F_{from\; rope}$. By Newton's Third Law, the wall will then exert a downwards force on the rope, $\vec F_{from\; wall}$. The downwards force exerted on the rope will cause a downwards pulse to form, and the reflected pulse will be inverted compared to the initial pulse that arrived at the wall.
 
 Now, consider the case when the end of the rope has a ring attached to it, so that it can slide freely up and down a post, as illustrated in Figure \ref{fig:waves:reflectionfree}.
-\capfig{0.7\textwidth}{figures/Waves/reflectionfree.png}{\label{fig:waves:reflectionfree}When a the end of the rope is free, the reflected pulse will be in the same direction.}
+\capfig{0.7\textwidth}{figures/Waves/reflectionfree.png}{\label{fig:waves:reflectionfree}When the end of the rope is free, the reflected pulse will be upright.}
 In this case, the end of the rope will move up as the pulse arrives, which will then create a reflected pulse that is in the same direction as the incoming pulse.
 
 Finally, consider a pulse that propagates down a rope that is tied to a second, heavier, rope, as illustrated in Figure \ref{fig:waves:transmission}. 
 \capfig{0.55\textwidth}{figures/Waves/transmission.png}{\label{fig:waves:transmission}A pulse can be both reflected and transmitted as changes medium.}
-When the pulse arrives at the interface between the two media (the two rope), part of the pulse will be reflected back (and stay upright), and part will be transmitted into the second medium. Note that in the second rope, the pulse will travel with a different speed.
+When the pulse arrives at the interface between the two media (the two ropes), part of the pulse will be reflected back (and stay upright), and part will be transmitted into the second medium. Note that in the second rope, the pulse will travel with a different speed.
 
-\subsection{Deriving the wave equation}
-In this section, we show how to use Newton's Second Law to derive the wave equation for transverse waves travelling down a rope with tension $F_T$ in it. Consider a small mass element of a rope, with mass $dm$, and length $dx$, as a wave pass through that point, as illustrated in Figure \ref{fig:waves:weqn}.
+
+\subsection{The wave equation for a rope}
+In this section, we show how to use Newton's Second Law to derive the wave equation for transverse waves travelling down a rope with linear mass density, $\mu$, under a tension, $F_T$. Consider a small section of the rope, with mass $dm$, and length $dx$, as a wave passes through that section of the rope, as illustrated in Figure \ref{fig:waves:weqn}.
 \capfig{0.55\textwidth}{figures/Waves/weqn.png}{\label{fig:waves:weqn}A small section of rope under tension as a wave passes through.}
-We assume that the weight of the mass element is negligible compared to the force of tension that is in the rope. The only forces exerted on the mass element are from the tension in the rope, pulling on the mass element from each side. In general, the forces from tension on either side of the mass element will make different angles, $\theta$, with the horizontal, although their magnitude is the same. Let $D(x,t)$ be the vertical displacement of the mass element located at position $x$. We can write the $y$ (vertical) component of Newton's Second Law for the mass element, $dm$, as:
+We assume that the weight of the mass element is negligible compared to the force of tension that is in the rope. Thus, the only forces exerted on the mass element are those from the tension in the rope, pulling on the mass element from each side, with forces, $\vec F_{T1}$ and $\vec F_{T2}$. In general, the forces from tension on either side of the mass element will have different directions and make different angles, $\theta$, with the horizontal, although their magnitude is the same. Let $D(x,t)$ be the vertical displacement of the mass element located at position $x$. We can write the $y$ (vertical) component of Newton's Second Law for the mass element, $dm$, as:
 \begin{align*}
 \sum F_y = F_{T2} - F_{T1} &= (dm)a\\
 F_T\sin\theta_2 - F_T\sin\theta_1 &= dm \die{^2D}{t^2}\\
 F_T(\sin\theta_2 - \sin\theta_1) &= dm \die{^2D}{t^2}
 \end{align*}
-where we used the fact that the force of tension has a magnitude $F_T$ on either side of the mass element, and that the acceleration of the mass in the vertical direction is the second time-derivative of $D(x,t)$. We now make the small angle approximation:
+where we used the fact that the force of tension has a magnitude, $F_T$, on either side of the mass element, and that the acceleration of the mass in the vertical direction is the second time-derivative of $D(x,t)$, since for a transverse wave, this corresponds to the $y$ position of a particle. We now make the small angle approximation:
 \begin{align*}
 \sin\theta\approx \tan\theta = \die{D}{x}
 \end{align*}
@@ -244,9 +266,9 @@ v=\sqrt{\frac{B}{\rho}}
 where $B$ is the bulk modulus of the liquid, and $\rho$ its density. 
 
 \section{Energy transported by a wave}
-In this section, we examine how energy is transported by waves. Although no material moves along with a wave, mechanical energy can be transported by a wave, as evidenced by the damage that the waves from an earthquake can make.  
+In this section, we examine how to model the energy that is transported by waves. Although no material moves along with a wave, mechanical energy can be transported by a wave, as evidenced by the damage that the waves from an earthquake can make.  
 \subsection{A wave as being made of simple harmonic oscillators}
-Consider a wave that is propagating through a medium, as the individual particles in the medium are displaced about their equilibrium position. We can picture the motion of one of the particles in the medium as if it were the motion of a simple harmonic oscillator\footnote{If the medium has a linear restoring force or if the amplitude of the oscillations is small.}. This is illustrated in Figure \ref{fig:waves:sinewavetimeshm}, which shows the displacement as a function of time for a point in the medium located at the origin. The displacement of that point, at $x=0$, if we choose $\phi=0$, is given by:
+Consider a wave that is propagating through a medium. We can model the motion of one of the particles in the medium as if it were the motion of a simple harmonic oscillator\footnote{If the medium has a linear restoring force or if the amplitude of the oscillations is small.}. This is illustrated in Figure \ref{fig:waves:sinewavetimeshm}, which shows the displacement as a function of time for a point in the medium located at the origin. The displacement of that point, at $x=0$, if we choose $\phi=0$, is given by:
 \begin{align*}
 D(x=0,t) = A\sin(-\omega t)
 \end{align*}
@@ -257,7 +279,7 @@ We can also view a snapshot of the wave in time, and model the \textbf{different
 \capfig{0.8\textwidth}{figures/Waves/sinewavepositionshm.png}{\label{fig:waves:sinewavepositionshm}The displacement as a function of position for different points in a medium. Each point in the medium can be modelled as a simple harmonic oscillator.}
 
 \subsection{Energy transported in a one dimensional wave}
-In this section, we show how to describe the energy transported by a one-dimensional wave along a rope. We can model each particle in the rope through which the wave propagates as a small simple harmonic oscillator with mass $m$, attached to a spring with spring constant $k_s$\footnote{We use $k_s$ for the spring constant, to distinguish it from $k$, the wave number.}.
+In this section, we show how to describe the energy transported by a one-dimensional wave along a rope. We can model each particle in the rope through which the wave propagates as a small simple harmonic oscillator with mass $m$, attached to a spring with an effective spring constant, $k_s$\footnote{We use $k_s$ for the spring constant, to distinguish it from $k$, the wave number.}.
 
 Of course, there is no actual spring, but we can still determine an effective spring constant, $k_s$, from the angular velocity:
 \begin{align*}
@@ -271,7 +293,7 @@ The total mechanical energy of one oscillator, $E_m$, can be evaluated when the 
 E_m = \frac{1}{2}k_s A^2 = \frac{1}{2}\omega^2 m A^2
 \end{align*}
 
-If the rope is infinitely long, and carries a continuous wave, it will have an infinite amount of energy, as it will corresponds to an infinite number of oscillators. Instead, let us calculate how much energy, $E_\lambda$ is stored in a wave, over one wavelength, $\lambda$. To do so, we need to evaluate how many effective oscillators are contained in the rope, over a distance $\lambda$, so that we can sum all of their energies together to obtain the energy stored in one wavelength:
+If the rope is infinitely long, and carries a continuous wave, it will have an infinite amount of energy, as it will corresponds to an infinite number of oscillators. Instead, let us calculate how much energy, $E_\lambda$, is stored in the wave over one wavelength, $\lambda$. To do so, we need to evaluate how many effective oscillators are contained in the rope, over a distance $\lambda$, so that we can sum all of their energies together to obtain the energy stored in one wavelength:
 \begin{align*}
 E_\lambda = \sum \frac{1}{2}\omega^2 m A^2
 \end{align*} 
@@ -279,9 +301,9 @@ where the sum is over the number of oscillators in one wavelength. Of course, th
 \begin{align*}
 E_\lambda = \int_0^\lambda \frac{1}{2}\omega^2 \mu A^2 dx =  \frac{1}{2}\omega^2 \mu A^2 \lambda
 \end{align*}
-The energy stored in one wavelength is not a very useful property of a wave, since the total energy in the wave depends on the length of the wave. We can describe the rate at which energy is transmitted by the wave (its power), since we know how long, $T$, it will take the wave to travel one wavelength. The average power with which energy is transported by a wave is given by:
+The energy stored in one wavelength is not a very useful property of a wave, since the total energy in the wave depends on the length of the wave. We can describe the rate at which energy is transmitted by the wave (its power), since we know how long, $T$, it will take the wave to travel one wavelength, and we know the energy stored in one wavelength. The average power with which energy is transported by a wave is given by:
 \begin{align*}
-P = \frac{E}{T} = \frac{\frac{1}{2}\omega^2 \mu A^2 \lambda}{T}=\frac{1}{2}\omega^2 \mu A^2 v
+P = \frac{E_\lambda}{T} = \frac{\frac{1}{2}\omega^2 \mu A^2 \lambda}{T}=\frac{1}{2}\omega^2 \mu A^2 v
 \end{align*}
 where $T$ is the period of the wave, and $v=\lambda/T$ is the speed of the wave. The power transmitted by a wave on a string (and any one-dimensional wave), is thus given by:
 \begin{align}
@@ -290,7 +312,7 @@ where $T$ is the period of the wave, and $v=\lambda/T$ is the speed of the wave.
 We can see that the power transmitted by a wave goes as the amplitude, $A$, of the wave squared. It thus takes four times more energy to double the amplitude of waves that are sent down a string. 
 
 \subsection{Energy transported in a spherical three-dimensional wave}
-In this section, we show how to model the rate at which energy is transported in spherical three-dimensional wave, such as the sound wave that is generated when you clap your hands. A spherical sound wave is a pressure disturbance in the air that propagates spherically outwards from a point of emission. We can think of thin spherical shells containing air that expand and contract about their equilibrium position as the wave moves through. The motion of each shell is similar to that of a simple harmonic oscillator of mass $dm$.
+In this section, we show how to model the rate at which energy is transported in spherical three-dimensional waves, such as the sound waves that are generated when you clap your hands. A spherical sound wave is a pressure disturbance in the air that propagates spherically outwards from a point of emission. We can think of thin spherical shells containing air that expand and contract about their equilibrium position as the wave moves through. The motion of each shell is similar to that of a simple harmonic oscillator of mass $dm$, where $dm$ is the mass of air in the oscillating shell.
 
 TODO: This needs some sort of figure!
 
@@ -298,11 +320,11 @@ Consider a shell at a radial position, $r$, with thickness $dr$, and mass $dm$. 
 \begin{align*}
 dm = \rho dV = \rho 4\pi r^2 dr
 \end{align*}
-where $dV = 4\pi r^2 dr$ is the volume of the shell. Again, if we model each shell as a simple harmonic oscillator with mass $dm$, then the energy, $dE$, stored in that oscillator is given by:
+where $dV = 4\pi r^2 dr$ is the volume of the shell. Again, if we model each shell as a simple harmonic oscillator with mass $dm$, then the energy, $dE$, stored in that oscillating shell is given by:
 \begin{align*}
 dE = \frac{1}{2}k_s A^2 =  \frac{1}{2}\omega^2 dm A^2 = \frac{1}{2}\omega^2 A^2 \rho 4\pi r^2 dr=2\pi\rho  \omega^2 A^2  r^2 dr
 \end{align*}
-where $\omega$ is the angular frequency of the wave, and $A$ is the amplitude of the wave. We expressed the effective spring constant, $k_s$, in terms of the angular frequency of the simple harmonic oscillator and its mass, as we did in the previous section. It makes less sense now to calculate the energy stored in one wavelength of the wave, because since the energy $dE$ stored in one shell, also depends on the location, $r$, of that shell.
+where $\omega$ is the angular frequency of the wave, and $A$ is the amplitude of the wave. We expressed the effective spring constant, $k_s$, in terms of the angular frequency of the simple harmonic oscillator and its mass, as we did in the previous section. It makes less sense now to calculate the energy stored in one wavelength of the wave, because since the energy $dE$ stored in one shell, also depends on the location, $r$, of that shell. This was not the case for a one-dimensional wave, where the energy stored in one oscillator did not depend on the position of that oscillator.
 
 The rate at which energy is transported by the wave is given by:
 \begin{align*}
@@ -323,6 +345,8 @@ Suppose that you have a $\SI{50}{W}$ speaker emitting sound; each radial shell e
 P& = \text{constant}\\
 \therefore A&=\frac{1}{r}\sqrt{\frac{P}{2\pi\rho \omega^2 v}}
 \end{align*}
+This is very different from the propagation of a one-dimensional wave, in which the amplitude does not change with distance. In practice, if there are energy losses due to, say, friction, then the amplitude of a one-dimensional wave would also decrease with distance from the source. 
+
 
 The ``intensity of a wave'', $I$, is defined as the power per unit area that is transmitted by the wave. For a spherical wave at radial position $r$, with area $4\pi r^2$, the intensity of the wave is given by:
 \begin{align*}
@@ -350,7 +374,7 @@ Your friend, at the other end of the rope shakes the rope with a different frequ
 \begin{align*}
 D_2(x,t) = A_2\sin(k_2x+\omega_2t+\phi_2)
 \end{align*}
-The superposition principle states that the net displacement at any position $x$ at some time $t$ is found by summing these two waves together:
+The superposition principle states that the net displacement at any position $x$ at some time $t$ is found by summing the displacement from the two waves together:
 \begin{align*}
 D(x,t) = A_1\sin(k_1x-\omega_1t+\phi_1) + A_2\sin(k_2x+\omega_2t+\phi_2)
 \end{align*}
@@ -358,11 +382,11 @@ D(x,t) = A_1\sin(k_1x-\omega_1t+\phi_1) + A_2\sin(k_2x+\omega_2t+\phi_2)
 The superposition of waves is illustrated in Figure \ref{fig:waves:superposition}, which shows three waves, and their resulting sum in the bottom most panel.
 \capfig{0.7\textwidth}{figures/Waves/superposition.png}{\label{fig:waves:superposition}The superposition of three waves to create a resulting wave shown in the bottom panel. The waves are shown at an instant in time.}
 
-The resulting wave is created by the ``interference'' of the three waves, and mathematically is simply a sum of the three individual waves at each position (and instant in time). The resulting wave in this example has a rather complicated shape, that is no longer described by a sine function. However, by the superposition principle, it is a valid solution to the wave equation.
+The resulting wave is created by the ``interference'' of the three waves, and mathematically is simply a sum of the three individual waves at each position (and instant in time). The resulting wave in this example has a rather complicated shape, that is no longer described by a sine function. However, by the superposition principle, it is a valid solution to the wave equation\footnote{Fourier's Theorem states that any periodic function can be described as the as the linear combination of sine (or cosine) functions. This is the reason why we focused on using a sine function to describe a wave. Any complicated wave can always be modelled as the resulting wave formed by combining different sine waves.}.
 
 The individual waves in the top three panels of Figure \ref{fig:waves:superposition} all have an amplitude of $\SI{5}{m}$. The resulting wave, at some points (e.g. at $x=\SI{2}{m}$), has an amplitude that is larger than any of the individual waves; we say that, at those positions, the individual waves have ``constructively interfered''. In other locations (e.g. at $x=\SI{6}{m}$), the resulting wave has a smaller amplitude than the individual waves, and we say that the individual waves have ``destructively interfered''. The interference between waves can be observed easily on a water surface, for example by observing the constructive and destructive interference pattern of waves that originate from two pebbles being dropped at the same time a certain distance apart. Constructive interference between waves is also thought to be behind some reports of gigantic waves observed out at sea.
 
-If two waves have the same wavelength and amplitude, it is possible for them to completely interfere destructively, resulting in no net wave. Similarly, they can also completely constructively interfere, resulting in a wave with a much larger amplitude. Complete destructive and constructive interference is illustrated in the left and right panel of Figure \ref{fig:waves:interference}, respectively.
+If two waves have the same wavelength and amplitude, it is possible for them to completely destructively interfere, resulting in no net wave. Similarly, they can also completely constructively interfere, resulting in a wave with a much larger amplitude. Complete destructive and constructive interference are illustrated in the left and right panel of Figure \ref{fig:waves:interference}, respectively.
 \capfig{0.7\textwidth}{figures/Waves/interference.png}{\label{fig:waves:interference}Destructive (left) and constructive (right) interference of waves.}
 
 \section{Standing waves}
@@ -373,7 +397,7 @@ Three standing waves of different frequencies (wavelengths) are illustrated in F
 
 The solid line in each of the three panels corresponds to one particular snapshot of the standing wave at a particular instant in time. The dashed lines correspond to snapshots at different times. In particular, there is a time where the displacement of all points on the string is zero. Each point on the string vibrates with a different amplitude, which corresponds to the solid line (and the opposite dashed line). Certain points do not oscillate at all; these are called ``nodes''. The points at the end of the string are always nodes. Certain points vibrate with a maximal amplitude; these are called ``anti-nodes''.
 
-In general, if you pluck a taught string (such as a guitar string), you will create many waves, with many different frequencies, that propagate outwards from the point where the string was plucked. Those waves will be reflected by the ends of the string and interfere with each other. Most of the waves will interfere in a complicated way and decay away. Those waves that have the correct frequency to create standing waves will persist on the string for a longer period of time. The string will eventually vibrate as a superposition of the fundamental frequency (the standing wave with one anti-node, also called the first harmonic), and the higher ``harmonics'' (those standing waves with more anti-nodes).
+In general, if you pluck a taught string (such as a guitar string), you will create a complicated wave, equivalent to many sine waves with different frequencies, that propagate outwards from the point where the string was plucked. Those sine waves will be reflected by the ends of the string and interfere with each other. Most of the waves will interfere in a complicated way and decay away. Those waves that have the correct frequency to create standing waves will persist on the string for a longer period of time. The string will eventually vibrate as a superposition of the fundamental frequency (the standing wave with one anti-node, also called the first harmonic), and the higher ``harmonics'' (those standing waves with more anti-nodes).
 
 The wavelength of the fundamental standing wave for a string of length, $L$, is given by the condition:
 \begin{align*}
@@ -404,7 +428,7 @@ These two waves are identical, but travel in opposite directions (due to the sig
 D(x,t) &= D_1(x,t) + D_2(x,t)\\
 &=A\Bigr(\sin(kx-\omega t)+\sin(kx+\omega t)\Bigl)
 \end{align*}
-We can use the following trigonometric identity to combine these into single term:
+We can use the following trigonometric identity to combine these into a single term:
 \begin{align*}
 \sin\theta_1+\sin\theta_2 = 2\sin\left(\frac{\theta_1+\theta_2}{2} \right) \cos\left( \frac{\theta_1-\theta_2}{2}\right)
 \end{align*}
@@ -424,11 +448,11 @@ and $kL$ must be a multiple of $2\pi$. In terms of the wavelength, $\lambda$, th
 \frac{2\pi}{\lambda}L &= n\pi\\
 \therefore \lambda&= \frac{2L}{n}
 \end{align*}
-as we argued before. The standing wave for the $n$-th harmonic is thus described by
+as we argued before, for the wavelength of the $n$-th harmonic. The standing wave for the $n$-th harmonic is thus described by
 \begin{align}
 \Aboxed{D(x,t)=2A\sin\left(\frac{n\pi}{L}x\right)\cos(\omega t) }
 \end{align}
-The point at position $x$, will behave like a simple harmonic oscillator and oscillate with an amplitude given by:
+A point at position, $x$, will behave like a simple harmonic oscillator and oscillate with an amplitude given by:
 \begin{align*}
 A(x) = 2A\sin\left(\frac{n\pi}{L}x\right)
 \end{align*}
@@ -448,16 +472,16 @@ where, for example, the first anti-node of the first harmonic is located at $x=L
 \section{Summary}
 
 \begin{chapterSummary}
-A travelling wave is the propagation of a disturbance with a speed, $v$, through a medium. Particles in the medium oscillate back and forth, about an equilibrium position, as a wave passes through the medium, but no matter moves in the direction of the wave. Only mechanical energy is transmitted by a wave.
+A travelling wave is the propagation of a disturbance with a speed, $v$, through a medium. Particles in the medium oscillate back and forth, about an equilibrium position, as a wave passes through the medium, but they are not carried with the wave. Only mechanical energy is transmitted by a wave.
 
-In a transverse wave, the particles in the medium oscillate in a direction that is perpendicular to the velocity of the wave. In a longitudinal wave, the particles of the medium oscillated in a direction that is co-linear with the velocity of the wave.
+In a transverse wave, the particles in the medium oscillate in a direction that is perpendicular to the velocity of the wave. In a longitudinal wave, the particles of the medium oscillate in a direction that is co-linear with the velocity of the wave.
 
 A wave is described by it frequency, $f$, its wavelength, $\lambda$, its amplitude, $A$, and its speed, $v$. We can also use the period of the wave, $T$, in lieu of the frequency. The frequency and wavelength of a wave are related to each other by the speed of the wave:
 \begin{align*}
 v = \lambda f
 \end{align*}
 
-Mathematically, a one-dimensional travelling wave moving in the positive $x$ direction can be described by:
+Mathematically, a one-dimensional travelling sine wave moving in the positive $x$ direction can be described by:
 \begin{align*}
 D(x,t) = A \sin(kx-\omega t + \phi)
 \end{align*}
@@ -466,40 +490,37 @@ where $D(x,t)$ is the displacement of the particle in the medium at position $x$
 k &= \frac{2\pi}{\lambda}\\
 \omega &= 2\pi f = \frac{2\pi}{T}
 \end{align*}
-
-If the a dynamical model (e.g. Newton's Second Law) of a system leads to an equation with the following form:
+If a dynamical model (e.g. Newton's Second Law) of a system/medium leads to an equation with the following form:
 \begin{align*}
 \die{^2D}{x^2}=\frac{1}{v^2}\die{^2D}{t^2}
 \end{align*}
-then waves with a speed of $v$ can propagate in the medium, if there is a disturbance.
+then waves with a speed of $v$ can propagate through the system/medium.
 
 The speed of a wave on a rope of linear mass density $\mu$ under a tension $F_T$, is given by:
 \begin{align*}
 v=\sqrt{\frac{F_T}{\mu}}
 \end{align*}
 
-Generally, the speed of a wave in medium is related to the elasticity of the medium when it is deformed and the inertia of the particles in the medium. In order for a wave to propagate through a medium, the particles in the medium must be able to be displaced from their equilibrium position.
+Generally, the speed of a wave in a medium depends on the elasticity of the medium when it is deformed and the inertia of the particles in the medium. In order for a wave to propagate through a medium, the particles in the medium must be able to be displaced from their equilibrium position.
 
-A pulse travelling through a rope will get reflected at the end of the rope and travel back in the opposite direction. If the end of the rope is fixed, the reflected pulse will be inverted. If the end of the rope can move, the reflected pulse will be in the same direction as the incoming pulse.
+A pulse travelling through a rope will get reflected at the end of the rope and travel back in the opposite direction. If the end of the rope is fixed, the reflected pulse will be inverted. If the end of the rope can move, the reflected pulse will be in the same orientation as the incoming pulse.
 
 A one-dimensional wave will transfer energy at an average rate:
 \begin{align*}
 P = \frac{1}{2}\omega^2\mu A^2 v 
 \end{align*}
-
 A three dimensional spherical wave through a medium with density $\rho$ will transfer energy at an average rate:
 \begin{align*}
 P = 2\pi\rho\omega^2r^2 v
 \end{align*}
 at a distance $r$ from the source of the wave. The amplitude of a spherical wave will decrease as the distance away from the source increases:
 \begin{align*}
-A =  A&=\frac{1}{r}\sqrt{\frac{P}{2\pi\rho \omega^2 v}}
+A =\frac{1}{r}\sqrt{\frac{P}{2\pi\rho \omega^2 v}}
 \end{align*}
 The intensity of a spherical wave is defined as the power per unit area transferred by the wave, and is given by:
 \begin{align*}
-P=\frac{P}{4\pi r^2}=\frac{1}{2}\rho\omega^2A^2v
+I=\frac{P}{4\pi r^2}=\frac{1}{2}\rho\omega^2A^2v
 \end{align*}
-
 The superposition principle states that if $D_1(x,t)$, $D_2(x,t)$, $\dots$, are functions that satisfy the wave equation, then any linear combination of these functions, $D(x,t)$:
 \begin{align*}
 D(x,t) = a_1D_1(x,t)+a_2D_2(x,t)+a_3D_3(x,t)+\dots
@@ -516,7 +537,7 @@ where $n$ is the number of the harmonic and $L$ is the length of the string. In 
 \begin{align*}
 A(x) = 2A\sin\left(\frac{n\pi}{L}x\right)
 \end{align*}
-The condition for a standing wave on a string is that the length of the string must be equal to a multiple of half the wavelength:
+The condition for a standing wave to exist on a string is that the length of the string must be equal to a multiple of half of the wavelength of the standing wave:
 \begin{align*}
 L &= n\frac{\lambda}{2}\quad\quad n=1,2,3,\dots\\
 \lambda &= \frac{2L}{n}\\
