@@ -1,7 +1,7 @@
 
 \chapter{Fluid mechanics}
 \label{chapter:fluidmechanics}
-
+In this chapter, we introduce the tools required to model the dynamics of fluids, such as water. This will allow us to model how objects can float, how water flows through a pipe, and how air plane wings create lift. We will start by introducing the concept of pressure and by modelling static fluids before developing models for fluids that flow. Fluids are generally defined as the phase of matter in which atoms (or molecules) are only loosely bound to each other, such as in gases or liquids.
 
 \begin{learningObjectives}{
  \item something to learn
@@ -15,7 +15,146 @@
 \end{MCquestion}
 \end{opening}
 
-\section{A section}
+\section{Pressure}
+The pressure exerted by a force, $F$, over an area, $A$, is a scalar quantity, $p$, defined as:
+\begin{align*}
+P=\frac{F}{A}
+\end{align*}
+The SI unit for pressure is the Pascal ($\si{Pa}$). Pressure is only defined relative to the area, $A$, over which the force is exerted, and can be thought of as a measure of how concentrated that force is. For example, a force of $\SI{10}{N}$ exerted through a needle (with a small area, $A$) will result in a much larger pressure than if that same force is exerted by a flat hand. 
+
+Pressure is a useful concept for modelling fluids, as the pressure in a fluid can be used to model whether the fluid will move or not. When a force (e.g. gravity) is exerted on a fluid, we can model the fluid as having pressure everywhere in the fluid (the pressure need not be the same everywhere in the fluid). The pressure in a fluid results in a force that is exerted by the fluid in \textbf{all directions}. If we consider a small cubic volume of fluid, as depicted in Figure \ref{fig:fluidmechanics:pressure}, that element of fluid will experience forces in all directions from the surrounding fluid (as long as the element is small enough so that the pressure of the fluid around it is the same). If there is no net force on the element of fluid because of the pressure, then we say that the fluid is in hydrostatic equilibrium.
+\capfig{0.2\textwidth}{figures/FluidMechanics/pressure.png}{\label{fig:fluidmechanics:pressure}A small element inside of a fluid will experience no net force from the pressure in the fluid, since the force from the pressure is exerted in all directions.}
+
+Consider, instead, an element of fluid that is at the edge of a container with the fluid in it (e.g. a cup of water), as depicted in Figure \ref{fig:fluidmechanics:pressure_edge}.
+\capfig{0.3\textwidth}{figures/FluidMechanics/pressure_edge.png}{\label{fig:fluidmechanics:pressure_edge}At the edge of a container, a small element of fluid will exert an outwards force on the container, and the container will exert an inwards force on the element of fluid.}
+In this case, there is no fluid on the right hand side of the fluid to exert a force to the left. If the fluid element is in equilibrium, it must then be the container that exerts that force, $\vec F_{container}$ on the fluid. By Newton's Third Law, the element of fluid exerts an outwards force on the container. This is true at all points on the container. If a container is to hold a fluid that is under a high pressure, the container will need to be very strong or it will explode under the pressure of the fluid. 
+
+If you place an empty sealed tin can under water, the water will exert a pressure on all of the surfaces of the tin can that leads to a net inwards force on all surfaces of the tin can. If the water pressure is high enough, the tin can will get crushed. If, on the other hand, the tin can is allowed to fill with water, it will not get crushed, as the water inside the tin can will have the same pressure as the water outside the tin can and will exert an equal net outwards force on all surfaces of the tin can. The net force on each surface of the can will be zero, and the tin can will not get crushed, no matter how high the water pressure is. 
+
+In general, if there is an interface with a fluid on either side at a different pressure, it is the \textbf{difference in pressure} on either side of the interface that determines the net force exerted on the interface, rather than the absolute pressure.
+
+\begin{checkpoint}
+\begin{MCquestion}{You use a pump to create a vacuum inside of a tin can and observe that the tin can gets crushed. Which explanation is correct?}
+\item By sucking the air out of the can, you also suck in on the walls of the can. 
+\item You lower the pressure inside the can so that the air outside the can exerts a larger inwards force on the can than the outwards force from the air inside the can. \correct
+\item You lower the pressure inside the can so that the air inside the can exerts a pulling force on the walls of the can.
+\item All of the above. 
+\end{MCquestion}
+\end{checkpoint}
+
+\subsection{The effect of gravity}
+When discussing Figure \ref{fig:fluidmechanics:pressure}, we argued that the fluid exerts an equal force, from all directions, on the fluid element, so that the net force on the fluid element is zero. This is not quite correct in the presence of gravity, where the fluid element will have a weight. Thus, if the fluid element is to be in equilibrium, the upwards force (and pressure) from the fluid below must be higher than that from the fluid above the fluid element. 
+
+Figure \ref{fig:fluidmechanics:pressure_gravity} shows an element of fluid that has a height $h$ and a surface area $A$ in the horizontal direction.
+\capfig{0.4\textwidth}{figures/FluidMechanics/pressure_gravity.png}{\label{fig:fluidmechanics:pressure_gravity}In the presence of gravity, the pressure below an element of fluid must be larger if the fluid element is to remain in equilibrium.}
+The element of fluid has a total mass, $m$, given by:
+\begin{align*}
+m = \rho V = \rho Ah
+\end{align*}
+where $V=Ah$ is the volume of the fluid, and $\rho$, its density.
+
+The net force exerted by the external fluid on the fluid element is zero along the vertical surfaces. Let $P_1$ be the pressure in the fluid above the fluid element, and $P_2$ be the pressure below the fluid element. If we choose a $y$ axis that is positive upwards, then the $y$ component of Newton's Second Law, written for the fluid element, is:
+\begin{align*}
+\sum F_y = F_2 - F_1 -mg &= 0\\
+P_2A - P_1A-mg &=0\\
+P_2A - P_1A-\rho Ahg &=0\\
+\therefore P_2 - P_1 = \rho gh
+\end{align*}
+where we used the fact that the force resulting from a pressure is given by the pressure multiplied by the area over which it is exerted. We thus find that the difference in pressure due to gravity in a fluid between two positions, $y_2$ and $y_1$, is given by:
+\begin{align}
+\label{eq:fluidmechanics:pgrav}
+\Aboxed{P(y_2) - P(y_1) = -\rho g (y_2 - y_1)}
+\end{align}
+where the $y$ axis is defined to increase in the upwards direction. Since the pressure in the fluid increases as we move through the fluid, we say that there is a pressure gradient in the fluid.
+
+We have assumed that the density of the fluid, $\rho$, is constant, and that the fluid cannot be compressed. This is a very good approximation for a liquid such as water, but not for a gas, whose density will depend on its pressure. If the fluid were a gas (e.g. a column of air in our atmosphere), both the density and the pressure will change as a function of height. We can easily take this into account into our model, if we consider the fluid element to have a very small heigh, $dy$, instead of the finite height, $h$, in the derivation above. In the very small height, $dy$, the density of the fluid, $rho$, can be taken to be constant, and the infinitesimal element of fluid will have a mass $dm$:
+\begin{align*}
+dm = \rho A dy
+\end{align*}
+We can model the pressure experted by the fluid above the fluid element as $P+dP$, and the pressure exerted by the fluid below as $p$, where $dP$ is a small (negative) change in pressure\footnote{We placed the $dP$ on the top part of the fluid, even though the pressure is higher on the bottom part of the fluid, because the $y$ axis increases upwards. We are really interested in the change in pressure, $dP$, that corresponds to a change in height along the positive $y$ direction, $dy$. }. The $y$ component of Newton's Second Law written for the infinitesimal fluid element is thus:
+\begin{align*}
+\sum F_y = PA - (P+dP)A -dm g &=0\\
+PA -PA -dPA - \rho A dy g &=0\\
+\therefore -dP -\rho gdy &=0
+\end{align*}
+We can thus determine how pressure changes with height, $y$:
+\begin{align}
+\Aboxed{\frac{dP}{dy} &= -\rho g}
+\end{align}
+This tells us that the rate of change of pressure with increasing $y$ is negative; in other words, the pressure decreases as the elevation increases, as we had already concluded. We can integrate the equation to obtain the change in pressure in going from $y_1$ to $y_2$:
+\begin{align*}
+dP &= -\rho g dy\\
+\int_{P_1}^{P_2} dp&=-\int_{y_1}^{y_2}\rho gdy\\
+\therefore P_2-P_1 &=-\int_{y_1}^{y_2}\rho gdy
+\end{align*}
+If the density, $\rho$, is constant, then the difference in pressure is given by Equation \ref{eq:fluidmechanics:pgrav}.
+
+\begin{example}{If we assume that the density of air is proportional to its pressure, how does the density of air change with altitude?}
+We know that the rate of change of pressure with altitude (position $y$, where positive $y$ is defined to be upwards) is given by:
+\begin{align*}
+\frac{dP}{dy} &= -\rho g
+\end{align*}
+Since we can assume that the density is proportional to the pressure, we can introduce an arbitrary constant, $a$, and state that:
+\begin{align*}
+\rho &=aP\\
+\therefore \frac{dP}{dy} &=  \frac{1}{a}  \frac{d\rho}{dy}
+\end{align*}
+where the constant $a$ can be evaluated if we know the pressure and density at some point. We can thus write that the rate of change of the density with position $y$ is given by:
+\begin{align*}
+ \frac{1}{a} \frac{d\rho}{dy} &= -\rho g\\
+ \therefore \frac{d\rho}{dy} &= -ag \rho
+\end{align*}
+This is a separable differential equation for $\rho$, allowing us to separate the variables and integrate from, say, an altitude of $y=0$ to an altitude $y$:
+\begin{align*}
+\frac{d\rho}{\rho} &= - ag dy\\
+\int_{\rho_0}^{\rho}\frac{d\rho}{\rho} &= -\int_{0}^{y}agdy\\
+\ln(\rho)-\ln(\rho_0)&= -agy\\
+\ln\left( \frac{\rho}{\rho_0} \right)&= -agy
+\end{align*}
+where $\rho_0$ is the density at $y=0$, and $\rho$, is the density at $y$. We can take the exponential on each side of the equation:
+\begin{align*}
+\frac{\rho}{\rho_0} &= e^{-agy}\\
+\therefore \rho(y) &= \rho_0e^{-agy}
+\end{align*}
+We thus find that the density of the air decreases exponentially with altitude. This is why it is more difficult to breathe at high altitude. 
+\textbf{Discussion:} Since we assumed that the density of the air is proportional to its pressure, then air pressure also decreases exponentially with increasing altitude. If we applied this model to the Earth's atmosphere, our model would only provide qualitative agreement, as the density of the air also depends on its temperature and other factors. Nonetheless, it is interesting that based on the simple requirement that an element of air be in hydrostatic equilibrium, we are able to obtain a reasonable description of how pressure and density change with altitude in the Earth's atmosphere.
+\end{example}
+
+\subsection{Pascal's Principle}
+Pascal's Principle states that \textbf{if an external pressure is exerted on a fluid, the pressure everywhere in the fluid increases by that amount}. For example, if a fluid is contained in a piston with a cross-section area, $A$, and a force, $F$, is exerted on the piston, then the pressure in the whole fluid increase by $F/A$. This is illustrated in Figure \ref{fig:fluidmechanics:piston}.
+\capfig{0.4\textwidth}{figures/FluidMechanics/piston.png}{\label{fig:fluidmechanics:piston}A force exerted on the piston will increase the pressure everywhere in the fluid.}
+
+If we want to determine the pressure in the water at some depth, $h$, in the ocean, we thus need to include the fact that the Earth's atmosphere exerts a net downwards force on the surface of the ocean as well as the change in pressure due to the weight of the water. If the atmospheric pressure is $P_0$ at the surface of the ocean, then the pressure at some depth, $h$, is given by:
+\begin{align*}
+P(h) = P_0 + \rho g h
+\end{align*}
+where $\rho$ is the density of water. 
+
+\begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/lift.png}{\label{fig:fluidmechanics:lift}A force exerted on the piston of a hydraulic lift in order to lift a mass $M$.}
+A hydraulic lift exploits Pascal's principle in order to use a small force to exert a large force. The hydraulic lift in Figure \ref{fig:fluidmechanics:lift} shows a lift that is constructed by having a fluid between two vertical movable pistons. The piston are cylindrical and the diameter of their cross-sections are $D$ and $D/2$. A mass $M$ is placed on the piston with the larger diameter. What is the magnitude of the force, $\vec F$, that must be applied on the smaller piston in order to lift the mass $M$?}
+If a force $\vec F$ is applied to the small piston, then the pressure in the fluid will increase by:
+\begin{align*}
+\Delta P = \frac{F}{A}=\frac{F}{\pi \frac{D^2}{4}}=\frac{4F}{\pi D^2}
+\end{align*}
+This will result in a net upwards force on the large piston, with a magnitude:
+\begin{align*}
+F' = \Delta P A' = \Delta P \pi D^2 = \frac{4F}{\pi D^2} \pi D^2 = 4F
+\end{align*}
+Thus the force on the large piston will be four times that exerted on the small piston. One only needs to exert a force of $Mg/4$ in order to lift the mass $M$.
+\end{example}
+
+\subsection{Measuring pressure}
+discuss atmospheric pressure
+
+
+\section{Buoyancy}
+
+\section{Continuity of flow}
+
+\section{Bernoulli's Principle}
+
+\section{Poiseuille flow}
+
 
 
 
@@ -45,7 +184,7 @@ E = mc^2
 \item Something to research more.
 \end{enumerate}
 \subsection{To try at home}
-
+Place your hand in a plastic bag, and immerse your hand with the bag in water. The deeper the column of water, the better. Describe what you feel on your hand in terms of the direction of the force exerted by the water pressure.
 
 \subsection{To try in the lab}
 
