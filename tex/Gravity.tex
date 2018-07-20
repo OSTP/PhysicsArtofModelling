@@ -657,8 +657,8 @@ Theory project: Prove, based on Newton's Universal Theory of Gravity, that the m
 \begin{problem}{soln:gravity:geosyncenergy}{\label{prob:gravity:geosyncenergy}How much energy must be expended in order to place a satellite of mass $m=\SI{1000}{kg}$ in a geosynchronous circular orbit around the Earth, if the satellite is launched from the North Pole of the Earth? How much energy is this per kilogram of satellite placed in orbit?}
 \end{problem}
 
-\begin{problem}{soln:gravity:fieldrod}{\label{prob:gravity:fieldrod}What is the field due to a thin uniform rod of mass $M$ at point $P$, which is a distance $d$ above the midsection of the rod (Figure \ref{fig:gravity:rodfield})
-Hint: TODO
+\begin{problem}{soln:gravity:fieldrod}{\label{prob:gravity:fieldrod}Find an integral for the gravitational field due to a thin uniform rod of mass $M$ at point $P$, which is a distance $d$ above the midsection of the rod (Figure \ref{fig:gravity:rodfield}). You do not need to solve the integral!
+
 \capfig{0.5\textwidth}{figures/Gravity/rodfield.png}{\label{fig:gravity:rodfield}A thin rod of mass $M$ and length $L$ produces a gravitational field at a point $P$ located above the midsection of the rod.}}
 \end{problem}
 
@@ -774,45 +774,11 @@ g(x)=\int_{x_1}^{x_2} &=\frac{G\lambda d}{(x^2+d^2)^{3/2}}dx
 \end{align*}
 We will integrate over the length of the rod. The way we have set up our axes, this means that our limits of integration will be $x=-L/2$ and $x=L/2$:
 \begin{align*}
-g(x)=\int_{x=-L/2}^{x=L/2} &=\frac{G\lambda d}{(x^2+d^2)^{3/2}}dx
+g(x)=\int_{x=-L/2}^{x=L/2}\frac{G\lambda d}{(x^2+d^2)^{3/2}}dx\\
+&=\int_{x=-L/2}^{x=L/2}\frac{GM d}{L(x^2+d^2)^{3/2}}dx\\
+g(x)&=\frac{GMd}{L}\int_{x=-L/2}^{x=L/2}\frac{1}{(x^2+d^2)^{3/2}}dx
 \end{align*}
-
-
-The challenge is integrating this. We will have to use a substitution. When we use substitution, the goal is to find a way that we can write $dx$ so that something in our integral cancels, and often involves some trial an error. We know that part of our integral came from $\cos\theta$, so let's start there. For $\cos\theta$ to cancel out, we need a $\sec\theta$ term. Looking at a list of trig derivatives, we see that $\frac{d}{dx}(\tan\theta)=\sec^2\theta$. We rewrite $x$ as $x=d\tan\theta$ so that:
-\begin{align*}
-\frac{dx}{d\theta}=d\sec^2\theta\\
-\therefore dx=d\sec^2\theta d\theta
-\end{align*} 
-Substituting in for $dx$, we get:
-\begin{align*}
-g(x)&=\int_{-L/2}^{L/2} \frac{G\lambda d}{(x^2+d^2)^{3/2}}(d\sec^2\theta) d\theta\\
-&=\int_{-L/2}^{L/2} \frac{G\lambda d^2}{(x^2+d^2)^{3/2}}(\sec^2\theta) d\theta
-\end{align*}
-We decided to use $\sec^2\theta$ so that we could cancel a $\cos^2\theta$. In this problem, we have:
-\begin{align*}
-\cos^2\theta=\frac{d^2}{x^2+d^2}
-\end{align*}
-Substituting this into our integral, we get:
-\begin{align*}
-g(x)&=\int_{-L/2}^{L/2} \frac{G\lambda \cos^2\theta}{(x^2+d^2)^{1/2}}(\sec^2\theta) d\theta\\
-&=G\lambda\int_{-L/2}^{L/2} \frac{1}{(x^2+d^2)^{1/2}}d\theta\\
-&=\frac{G\lambda}{d}\int_{-L/2}^{L/2} \frac{d}{(x^2+d^2)^{1/2}}d\theta\\
-&=\frac{G\lambda}{d}\int_{-L/2}^{L/2} \cos\theta d\theta\\
-\end{align*}
-where in the second last line, we multiplied the numerator and denominator by $d$. Now we have an easy integral to solve:
-\begin{align*}
-g(x)&=\frac{G\lambda}{d}\int_{-L/2}^{L/2} \cos\theta d\theta\\
-&=\frac{G\lambda}{d}\left[\sin\theta\right]_{-L/2}^{L/2}\\
-&=\frac{G\lambda}{d}\left[\frac{x}{(x^2+d^2)^{1/2}}\right]_{-L/2}^{L/2}\\
-&=\frac{G\lambda}{d}\left[\frac{L/2}{((L/2)^2+d^2)^{1/2}}+\frac{L/2}{((L/2)^2+d^2)^{1/2}}\right]\\
-g(x)&=\frac{G\lambda}{d}\left[\frac{L}{\sqrt{(L^2/4)+d^2)}}\right]
-\end{align*}
-
-Remembering that we set $\lambda=M/L$, we get:
-\begin{align*}
-g(x)&=\frac{GM}{d}\left[\frac{1}{\sqrt{(L^2/4)+d^2)}}\right]\\
-\therefore \vec g(\vec x)&=-\frac{2GM}{d\sqrt{L^2+d^2}}\hat{y}
-\end{align*}
+Where we substituted in $\lambda=M/L$. Our integral is now complete. We have the limits of integration and the expression is in terms of our known values.
 \end{solution}
 
 
