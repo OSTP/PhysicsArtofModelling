@@ -16,11 +16,11 @@ In this chapter, we introduce the tools required to model the dynamics of fluids
 \end{opening}
 
 \section{Pressure}
-The pressure exerted by a force, $F$, over an area, $A$, is a scalar quantity, $P$, defined as:
+The pressure exerted by a force, $\vec F$, over a surface with area, $A$, is a scalar quantity, $P$, defined as:
 \begin{align*}
-P=\frac{F}{A}
+P=\frac{F_\perp}{A}
 \end{align*}
-The SI unit for pressure is the Pascal ($\si{Pa}$). Pressure is related to the area, $A$, over which a force is exerted, and can be thought of as a measure of how concentrated that force is. For example, a force of $\SI{10}{N}$ exerted through a needle (with a small area, $A$) will result in a much larger pressure than if that same force is exerted by a flat hand. 
+where $F_perp$ is the component of the force perpendicular to the surface. The SI unit for pressure is the Pascal ($\si{Pa}$). Pressure is related to the area, $A$, over which a force is exerted, and can be thought of as a measure of how concentrated that force is. For example, a force of $\SI{10}{N}$ exerted through a needle (with a small area, $A$) will result in a much larger pressure than if that same force is exerted by a flat hand. 
 
 Pressure is a useful concept for modelling fluids, as the pressure in a fluid can be used to model whether the fluid will move or not. When a force is exerted on a fluid, we can model the fluid as having pressure everywhere in the fluid. The pressure in a fluid results in a force that is exerted by the fluid on any element of the fluid in \textbf{all directions}. This is analogous to the tension that exists everywhere in a rope, where each element of the rope experiences forces that try to pull it apart. Pressure can be thought of as a ``negative'' tension, in that the material under pressure is trying to collapse on itself, rather than be pulled apart. In order to create a tension, one exerts a force on a rope that is outwards (trying to stretch the rope), so that the rope exerts an inwards force in reaction. In order to create pressure in a fluid, one must exert an inwards force on the fluid, which itself then exerts an outwards force, in reaction.
 
@@ -68,6 +68,18 @@ where we used the fact that the force resulting from a pressure is given by the 
 \Aboxed{P(y_2) - P(y_1) = -\rho g (y_2 - y_1)}
 \end{align}
 where the $y$ axis is defined to increase in the upwards direction. Since the pressure in the fluid increases as we move through the fluid, we say that there is a pressure gradient in the fluid.
+
+\begin{checkpoint}
+\capfig{0.15\textwidth}{figures/FluidMechanics/straw.png}{\label{fig:fluidmechanics:straw}Holding water in a vertical straw.}
+\begin{MCquestion}{You use your finger to block off the top end of a straw and then remove the straw from a glass of water. You notice that there is water in the straw (Figure \ref{fig:fluidmechanics:straw}) that flows out when you release your finger. What is the most correct description of why the water stays in the straw before you release your finger?}
+\item The straw cannot have vacuum inside of it; unless the finger is removed to let air in to replace the water, the water will remain in the straw.
+\item There is a small amount of vacuum above the water that sucks the water upwards and prevents it from dropping. 
+\item The pressure of the air below the water in the straw is higher than the pressure above the water, which pushes the water upwards. \correct
+\item The pressure of the air below the water in the straw is lower than the pressure above the water, which pushes the water upwards.
+\item All of the above. 
+\end{MCquestion}
+\end{checkpoint}
+
 
 We have assumed that the density of the fluid, $\rho$, is constant, and that the fluid cannot be compressed. This is a very good approximation for a liquid such as water, but not for a gas, whose density will depend on its pressure. If the fluid were a gas (e.g. a column of air in our atmosphere), both the density and the pressure will change as a function of height. We can easily take this into account into our model, if we consider the fluid element to have a very small heigh, $dy$, instead of the finite height, $h$, in the derivation above, as illustrated in Figure \ref{fig:fluidmechanics:pressure_gravity2}.
 \capfig{0.4\textwidth}{figures/FluidMechanics/pressure_gravity2.png}{\label{fig:fluidmechanics:pressure_gravity2}Pressure gradient from gravity on an infinitesimal fluid element.}
@@ -346,22 +358,183 @@ P_1 +\frac{1}{2}\rho v_1^2 = P_2 + \frac{1}{2}\rho v_2^2
 \end{align*}
 If a fluid is flowing at constant height such that $v_2 > v_1$ (as in Figure \ref{fig:fluidmechanics:continuous}), then $P_2<P_1$; that is, the \textbf{pressure in the fluid is lower if the fluid is flowing faster}. Note that $P$ is the pressure inside the fluid and is not related to the force that would be exerted by the fluid if it were to collide with an object. It makes sense that the fluid has a lower pressure where it is moving faster, because the net force exerted on the fluid is related to the difference in pressure on either side of the fluid. The fluid will accelerate in the direction where pressure decreases, thus it will be moving faster when it is in a region of low pressure.
 
-Bernoulli's principle can be used to describe many phenomena. For example, an air plane wing (technically, an ``air foil'') creates lift because because the pressure of the air above the wing is lower than the pressure above the wing. This is illustrated in Figure \ref{fig:fluidmechanics:airfoil}, which shows that the laminar flow of the air creates a low pressure area above the wing. As the stream lines of air encounter the wing, those that are above the wing get compressed together, which leads to a faster speed of the air above the wing because of the equation of continuity. The resulting difference in air pressure above and below the air foil results in a net upwards force on the wing. This is also the principle that describes how the wind passing by the sail of a sail boat can results in a force on the boat that move the boat upwind.
-\capfig{0.4\textwidth}{figures/FluidMechanics/airfoil.png}{\label{fig:fluidmechanics:airfoil}Laminar flow of air around a wing. The path above the wing is longer, so the air moves faster, creating a region of low pressure. }
+Bernoulli's principle can be used to describe many phenomena. For example, an air plane wing (technically, an ``air foil'') creates lift because because the pressure of the air above the wing is lower than the pressure above the wing. This is illustrated in Figure \ref{fig:fluidmechanics:airfoil}, which shows that the laminar flow of the air creates a low pressure area above the wing. As the stream lines of air encounter the wing, those that are above the wing get compressed together, which leads to a faster speed of the air above the wing because of the equation of continuity. The resulting difference in air pressure above and below the air foil results in a net upwards force on the wing. This is also the principle that describes how the wind passing by the sail of a sail boat can result in a force on the boat with a component that can move the boat upwind.
+\capfig{0.4\textwidth}{figures/FluidMechanics/airfoil.png}{\label{fig:fluidmechanics:airfoil}Laminar flow of air around a wing. The curvature of the asymmetric wing forces the streamlines above the wing together, increasing the speed of the air due to the continuity equation, and resulting in a low pressure area.}
 
-Bernoulli's principle also describes why the roof can be lifted off a house in high winds. It is not the force of the wind agains the roof that blows the roof off of a house; it is the difference in air pressure in the house (high) and the pressure above the roof (low, due to the flowing wind), the results in a net upwards force on a roof.
+Bernoulli's principle also describes why the roof can be lifted off a house in high winds (Figure \ref{fig:fluidmechanics:roof}, left panel). It is not the force of the wind against the roof that blows the roof off of a house; it is the difference in air pressure in the house (normal) and the pressure above the roof (low, due to the flowing wind), that results in a net upwards force on a roof. Bernoulli's principle is also used to construct atomizers which allow liquid in a bottle to be sprayed (Figure \ref{fig:fluidmechanics:roof}, right panel). By compressing a bulb, fast flowing air creates a low pressure in the vertical segment of the spout. The liquid is forced up by the pressure in the bottle; once the liquid arrives in the fast flowing air, it is sprayed out along with the air.
+\capfig{0.8\textwidth}{figures/FluidMechanics/roof.png}{\label{fig:fluidmechanics:roof}(Left:) the wind flowing above a roof creates a low pressure zone above the roof. (Right:) air flowing above a vertical spout in the atomizer creates a low pressure zone; the air pressure in the bottle forces the liquid up the spout.}
+
+\begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/watertower.png}{\label{fig:fluidmechanics:watertower}Water leaking out of a horizontal hole in a water tank.} A water tower is constructed so that the bottom of the water tank is a height $h_2$ above the ground, as illustrated in Figure \ref{fig:fluidmechanics:watertower}. The water in the tank is at a height $h_1$ from the bottom of the tank. A leak from a horizontal hole is found at the base of the tank. What is the horizontal distance, $d$, from the bottom of the tower to where the water from the leak hits the ground? Assume that the water level in the tank is constant and that atmospheric pressure does not change appreciably over the height of the tower.}
+The pressure in the water tank leads to the water exiting the bottom of the tank with a horizontal velocity, with magnitude $v$. That water then undergoes projectile motion on its way to the ground. We can first determine the speed of the water exiting the tank, and then use the kinematics for projectile motion to model the distance, $d$. 
+
+We model the flow of the water using a two-dimensional coordinate system with a horizontal $x$ axis (positive to the right), and a vertical $y$ axis (positive upwards). We place the origin at the bottom of the water tower, on the ground, below the hole, as shown in Figure \ref{fig:fluidmechanics:watertower}.
+ 
+At the top of tank, at a height $y = h_1+h_2$, the water has a speed of zero and is at atmospheric pressure, $P_0$. At the exit of the hole at the bottom of the tank, at a height $y = h_2$, the water has a speed $v$, and is also at atmospheric pressure. Using Bernoulli's equation, we have:
+\begin{align*}
+P_1 +\frac{1}{2}\rho v_1^2+ \rho g y_1&= P_2 + \frac{1}{2}\rho v_2^2 + \rho g y_2\\
+P_0 + (0) + \rho g (h_1+h_2) &= P_0 +  \frac{1}{2}\rho v^2 + \rho g h_2\\
+\therefore v &= \sqrt{2gh_1}
+\end{align*}
+which is exactly the speed that any object falling a distance $h_1$ would have. 
+
+Using kinematics, we can find the time that it would take the water to fall a distance $h_2$:
+\begin{align*}
+h_2 &= \frac{1}{2}gt^2\\
+\therefore t &= \sqrt{\frac{2h_2}{g}}
+\end{align*}
+The distance $d$ covered by the water is thus given by:
+\begin{align*}
+d &= vt = \sqrt{2gh_1}\sqrt{\frac{2h_2}{g}} = \sqrt{4h_1h_2}
+\end{align*}
+\textbf{Discussion:} We find that the water coming out of the bottom of the tank, when there is a heigh $h_1$ of water above it providing pressure, will have the same speed as that of a particle has fallen a distance $h_1$. This is because there is no net pressure difference between the top of the water tank and where the water has exited the hole, so gravity is the only force doing work on the water. Gravity will do work at the same rate on particles of water as on any other particle, so the speed of the water particles at the bottom of the tank is the same as if they had fallen a distance $h_1$. Again, once the water particles are falling through the air, gravity is the only net force exerted on those particles, so they undergo projectile motion, just as any other particle would.
+\end{example}
+
+\begin{example}{You measure that water comes out of your kitchen faucet at a rate of $\SI{6}{l/min}$. The faucet has a diameter of $\SI{2}{cm}$. At what rate will water flow out of your basement faucet, which has a diameter of $\SI{1}{cm}$ and is located a height $h=\SI{3}{m}$ below your kitchen faucet? Assume that atmospheric pressure, $P_0$, does not change appreciable between your kitchen and basement.}
+\label{ex:fluidmechanics:kitchen}
+The water flows out of the kitchen faucet at a speed $v_1$, where the pressure is atmospheric. If the area of the kitchen faucet is $A_1$, we can determine the speed $v_1$ using the given flow rate, $Q_1=\SI{6}{l/min}=\SI{1e-4}{m^2/s}$:
+\begin{align*}
+Q_1 &= A_1 v_1\\
+v_1 = \frac{Q_1}{A_1}=\frac{(\SI{1e-4}{m^2/s})}{\pi (\SI{0.01}{cm})^2}=\SI{0.318}{m/s}
+\end{align*}
+The water will flow out of the basement faucet with a speed, $v_2$, where the pressure is also atmospheric. We can use Bernoulli's equation to relate the flow out of the basement faucet to that at the kitchen faucet. We choose the $y$ axis of a vertical coordinate system such that the basement is located at $y_2=0$ and the kitchen faucet is located at $y_1=\SI{3}{m}$:
+\begin{align*}
+P_1 +\frac{1}{2}\rho v_1^2+ \rho g y_1&= P_2 + \frac{1}{2}\rho v_2^2 + \rho g y_2\\
+P_0+\frac{1}{2}\rho v_1^2+ \rho g y_1&= P_0 + \frac{1}{2}\rho v_2^2 \\
+\frac{1}{2} v_1^2+  y_1&=  \frac{1}{2} v_2^2 \\
+\therefore v_2 &= \sqrt{v_1^2 + 2y_1} =\sqrt{(\SI{0.318}{m/s})^2+2(\SI{3}{m})}=\SI{2.47}{m/s}
+\end{align*}
+The corresponding flow rate at the basement faucet will be:
+\begin{align*}
+Q_2 &= A_2 v_2 = \pi(\SI{0.005}{m})^2(\SI{2.47}{m/s})=\SI{1.94e-4}{m^3/s}=\SI{11.64}{l/min}
+\end{align*}
+\textbf{Discussion:} We find that the flow rate out of the basement faucet is almost twice that at the kitchen faucet. The speed of the water coming out of the basement faucet is almost ten times the speed of the water at the kitchen faucet, due to the change in height. This is however un-realistic and a poor model of water flow in your pipes, since you can easily verify that the speed of the water in different levels of your house does not vary by a factor near 10 for a $\SI{3}{m}$ change in height (you could compare the flow rate for two faucets with the same diameter). This is because our model neglects the effect of friction as water flows in the pipes; in reality, there is much greater pressure in the pipes than that due to gravity, as well as a gradient in the pressure in your pipes, that will lead to the flow rates being similar in your kitchen and basement.
+\end{example}
+
+\subsection{Viscosity}
+So far, we have assumed that fluids flow with no friction. In reality, fluids contain an amount of internal friction, called ``viscosity'', which can be modelled as the friction between different layers of fluid in a laminar flow. For example, you may notice that the water that flows in a river flows much faster in the middle of the river than near the river banks, as shown in Figure \ref{fig:fluidmechanics:river}. For very wide rivers, the water near the river banks is practically still, while the water in the middle of the river flows quite fast. 
+\capfig{0.3\textwidth}{figures/FluidMechanics/river.png}{\label{fig:fluidmechanics:river}Water flowing in a river; the water near the banks is almost immobile due to the viscosity of the water.}
+
+One can define a viscosity coefficient, $\eta$, based on measuring the force required to pull a plate past another plate when there is a fluid between them. Consider two plates that have an area, $A$, that are a distance $l$ apart, and contain the fluid of interest between them, as illustrated in Figure \ref{fig:fluidmechanics:viscosity}.
+\capfig{0.3\textwidth}{figures/FluidMechanics/viscosity.png}{\label{fig:fluidmechanics:viscosity}A fluid placed between a moving plate and fixed plate in order to measure its viscosity.}
+The viscosity of the fluid is defined based on the force that is required to pull the top plate while the bottom plate remains immobile. The layer of fluid directly below the moving plate will move with the plate at a speed $v$, while the layer of fluid immediately in contact will the stationary plate will also be stationary. Moving one plate will thus lead to a gradient (a change) in the speed of the fluid between the two plates. The magnitude of the force, $\vec F$,  required to move one plate with speed $v$, was empirically determined to be proportional to the area of the plates and $v$, while being inversely proportional to the distance, $l$, between the two plates:
+\begin{align*}
+F \propto A\frac{v}{l}
+\end{align*}
+The constant of proportionality is defined as the viscosity, $\eta$, of the fluid:
+\begin{align}
+\Aboxed{F = \eta A\frac{v}{l}}
+\end{align}
+The presence of viscosity means that any fluid that flows will lose mechanical energy due to internal friction (which will heat up the fluid). Thus, Bernoulli's equation is not correct if the fluid has viscosity, as a fluid cannot flow through a horizontal pipe without a change in pressure to overcome the losses due to friction.
 
 \subsection{Poiseuille flow}
+For the flow of an incompressible viscous fluid through a pipe, one can postulate that the flow rate, $Q$, is proportional to the change in pressure, $\Delta P$, across the pipe:
+\begin{align*}
+Q \propto \Delta P
+\end{align*}
+where $\Delta P$ is taken as the positive difference between the pressure at either end of the pipe. The fluid flows from high pressure to low pressure. We can introduce a constant of proportionality, $R$, to be the ``resistance of the pipe'', so that we can write:
+\begin{align*}
+Q = \frac{\Delta P}{R} 
+\end{align*}
+where we wrote the constant of proportionality as $1/R$, so that a larger value of $R$ corresponds to a pipe with a higher resistance to flow. That is, for a given pressure difference, is one increases the resistance of the pipe, one decreases the flow rate through that pipe. The relationship above can be used to empirically determine the resistance of a pipe.
 
+The flow through a pipe with a given resistance will be zero if there is no pressure gradient in the fluid along the pipe. Conversely, if there is no flow of fluid in the pipe, the pressure is the same everywhere in the pipe. We can thus also view a drop in pressure in a pipe to be the result of flow of liquid through the pipe. The pressure cannot drop across a horizontal pipe if there is no flow.
 
+When you close the tap on your kitchen faucet, the pressure inside inside the faucet is close to the pressure in the main water line that supplies your house. As soon as you open the tap and allow water to flow, the pressure in your faucet drops to atmospheric pressure, and the resulting pressure gradient from the main supply forces water to flow out of the faucet. If you try to plug your kitchen faucet with your thumb and stop the flow of water, you will need to exert a force large enough to overcome the pressure that exists in the main water supply. You will find that it is practically impossible to stop the flow of water with your thumb, as the pressure in the main supply needs to be high enough to lead to a high enough flow through the pipes' resistances for people to have a nice shower.  
+
+Poiseuille first developed a model for the \textbf{laminar flow of a liquid through a uniform horizontal cylindrical pipe} of length, $L$, with a circular cross-section with radius $r$. He found that the resistance of such a pipe to a fluid of viscosity, $\eta $, is given by:
+\begin{align*}
+R = \frac{8\eta L}{\pi r^4}
+\end{align*}
+This makes some intuitive sense, as we expect more resistance (more impedance to flow), if the pipe is longer and if the fluid is more viscous (the resistance is zero if there is no viscosity). We further expect less resistance if the pipe has a larger radius. The resistance found by Poiseuille goes down as the fourth power of the radius. Thus, a pipe that is twice as wide will let $2^4=16$ times more fluid through. 
+
+Thus, the laminar flow rate, $Q$, of a viscous fluid through a pipe of length $L$ and radius $R$, when there is a pressure difference $Delta P$, is given by:
+\begin{align}
+\Aboxed{Q =  \frac{\pi r^4}{8\eta L}\Delta P}
+\end{align}
+This is usually referred to as ``Poiseuille's Equation''.
+
+\begin{example}{\capfig{0.5\textwidth}{figures/FluidMechanics/parallel.png}{\label{fig:fluidmechanics:parallel}Flow of water being separated into two parallel paths that join up again.}
+You are modelling the flow of water for a city. Two houses are connected in parallel to the main water supply, so that water from the main supply flows into either house 1 or house 2, and the flow out of each house then join up again at the main supply. The difference in pressure, $\Delta P$, between the entry and exit point of water is the same for each house, and each house can be modelled as having a net resistance, $R_{1,2}$, to the flow of water, as illustrated in Figure \ref{fig:fluidmechanics:parallel}. If you model the two houses as being the equivalent of single ``effective'' house with effective resistance $R$, what is the value of $R$?}
+The water from the main will have to flow through either house 1 or house 2. If the flow rate through the main is, $Q$, then we require that this be equal to the sum of the flow rates through each house:
+\begin{align*}
+Q = Q_1 + Q_2
+\end{align*}
+The flow through each house is related to the pressure difference, $\Delta P$, across each house (which is the same), as well as the resistance of that house:
+\begin{align*}
+Q_1 &= \frac{\Delta P}{R_1}\\
+Q_2 &= \frac{\Delta P}{R_2}
+\end{align*}
+The total flow rate is thus:
+\begin{align*}
+Q = Q_1 + Q_2&=\frac{\Delta P}{R_1}+\frac{\Delta P}{R_2}\\
+&=\Delta P \left(\frac{1}{R_1}+\frac{1}{R2}\right)
+\end{align*}
+We can write this as the flow through an effective resistance, $R$, with a pressure difference $\Delta P$:
+\begin{align*}
+Q &= \frac{\Delta P}{R}\\
+\therefore R&= \frac{1}{\frac{1}{R_1}+\frac{1}{R2}}
+\end{align*}
+\textbf{Discussion: }By requiring that the total flow of water through both houses be the same as the flow rate through the main pipe, we were able to model the two houses as a single effective house with resistance, $R$. You may notice that this is the same relation as the equivalent resistance for two electrical resistors combined in parallel. This is because the flow of electrical current in a resistor can be modelled using similar tools to those required for modelling the flow of a viscous fluid in a pipe. 
+\end{example}
 
 
 \newpage
 \section{Summary}
 
-\begin{chapterSummary}{
-\item Something that was learned
-}
+\begin{chapterSummary}
+The pressure from a force, $\vec F$, exerted over a surface with area, $A$, is a scalar quantity defined as:
+\begin{align*}
+P = \frac{F_\perp}{A}
+\end{align*}
+where $F_\perp$ is the component of the force perpendicular to the surface.
+
+If a force is exerted on the particles in a fluid (e.g. gravity), a pressure will exist everywhere in the fluid. If the fluid is placed in a container, that pressure leads to an external force on all surfaces of the container. 
+
+If two fluids at different pressures exist on either side of an interface/object, the net force on that interface/object will be proportional to the difference in pressure on either side.
+
+A fluid is in hydrostatic equilibrium if the sum of the forces on any fluid element is zero. In the presence of gravity, this always leads to a vertical pressure gradient
+\begin{align*}
+\frac{dP}{dy}=-\rho g
+\end{align*}
+where $\rho$ is the density of the fluid, $g$ is the magnitude of the Earth's gravitational field, and the $y$ axis is positive upwards. 
+
+If the fluid is incompressible, then the difference in pressure between two points at heights $y_1$ and $y_2$ is given by:
+\begin{align*}
+P(y_2)-P(y_1) =-\rho g (y_2-y_1)
+\end{align*}
+Pascal's principle states that if an external pressure, $P$, is applied to one location in a fluid, then the pressure everywhere in the fluid increases by $P$.
+
+If an object is immersed in a fluid, it will experience a force of buoyancy that is in the opposite direction to the gravitational field in that fluid. The magnitude of the buoyancy force is given by Archimedes' principle:
+\begin{align*}
+F_B = \rho Vg
+\end{align*}
+where, $\rho$, is the density of the fluid and, $V$, is the volume of the fluid displaced by the object (e.g. the volume of the part of the object that is immersed in the fluid). 
+
+We can distinguish between laminar and turbulent flow of fluids. In laminar flow, individual particles in the fluid follow well-defined streamlines. In turbulent flow, individual particle follow complicated paths that usually involve Eddy currents. In general, it is much easier to model the laminar flow of fluids.
+
+The equation of continuity states that the mass flow rate of a fluid through a closed system must be the same everywhere in the system (no fluid can appear or disappear). For laminar flow of a fluid with density, $\rho$, flowing at speed, $v$, through a pipe with cross section, $A$, the following quantity is a constant:
+\begin{align*}
+\rho A v= \text{constant}
+\end{align*}
+A fluid is said to be incompressible if it has constant density. For a fluid of constant density, the volume flow rate, $Q$, must be constant everywhere in a closed system:
+\begin{align*}
+Q = Av = \text{constant}
+\end{align*}
+Bernoulli's Principle, which is based on the conservation of mechanical energy, states that the following quantity is a constant:
+\begin{align*}
+P + \frac{1}{2}\rho v^2 + \rho g y= \text{constant}
+\end{align*}
+for the laminar flow of a fluid with no viscosity. $P$ is the internal pressure of the fluid, $v$ its speed, and $y$ the height of the fluid relative to a fixed coordinate system. In particular, Bernoulli's Principle implies that, for a constant height, the internal pressure of a fluid must decrease if its speed increases.
+
+Viscosity, $\eta$, for the laminar flow of a fluid can be modelled as the result of the internal friction force between layers of the fluid. Because of viscosity, a fluid cannot flow in a horizontal pipe unless there is a difference in pressure across the pipe. Similarly, there will be no horizontal pressure gradient through a fluid unless the fluid is flowing. In general, the volume flow rate, $Q$, of an incompressible fluid through a pipe with resistance, $R$, is given by:
+\begin{align*}
+Q = \frac{\Delta P}{R} 
+\end{align*}
+For the laminar flow of a fluid with viscosity, $\eta$, through a horizontal cylindrical pipe of length, $L$, and radius, $r$, the flow rate is given by Poiseuille's equation:
+\begin{align*}
+Q =  \frac{\pi r^4}{8\eta L}\Delta P
+\end{align*}
+
 \end{chapterSummary}
 
 \newpage
@@ -387,10 +560,18 @@ E = mc^2
 \subsection{To try at home}
 Place your hand in a plastic bag, and immerse your hand with the bag in water. The deeper the column of water, the better. Describe what you feel on your hand in terms of the direction of the force exerted by the water pressure.
 
+If you assume that the water that comes out of your bathroom faucet is gravity-fed from a water tank, determine the height of the corresponding water tower relative to your bathroom faucet. Measure the flow rate of water from the faucet to determine the height and discuss whether it makes sense. 
+
+Try plugging the faucet in your bathroom tap with your thumb. Are you able to completely prevent water from coming out when the tap is open? Estimate the pressure of the water coming our of your bathroom faucet.
+
+In your house/building, measure the flow rate between similar faucets at different heights, and compare with what one would expect from the model from Example \ref{ex:fluidmechanics:kitchen}.
+
 \subsection{To try in the lab}
 Build a barometer and track the changes in atmospheric pressure as a function of time. Compare your measurements to those from a weather station. 
 
-Demonstrate how one can have a fluid with a negative pressure.
+Characterize how liquid flows in a sponge. Is there a maximum height to which a sponge can draw liquid? How is energy conserved if water is drawn upwards in a sponge?
+
+Measure the resistance of a pipe to the flow of water and compare with the result expected from Poiseuille's equation.
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
