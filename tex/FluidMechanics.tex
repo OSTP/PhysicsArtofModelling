@@ -160,7 +160,18 @@ If we wish to determine the absolute pressure in the water at some depth, $h$, i
 \begin{align*}
 P(h) = P_0 + \rho g h
 \end{align*}
-where $\rho$ is the density of water. As a consequence, the pressure at any depth, $h$, in a fluid is always the same. 
+where $\rho$ is the density of water. As a consequence, the pressure at any depth, $h$, in a fluid is the same everywhere at that depth in the fluid. 
+
+\begin{checkpoint}
+\capfig{0.4\textwidth}{figures/FluidMechanics/glasses.png}{\label{fig:fluidmechanics:glasses}Three glasses with different shapes.}
+\begin{MCquestion}{You fill the three glasses in Figure \ref{fig:fluidmechanics:glasses} such that the liquid reaches a height $h$ above the bottom of the glass. What can you say about the pressure of the liquid at the bottom of each glass?}
+\item It is highest for glass $A$.
+\item It is highest for glass $B$.
+\item It is highest for glass $C$.
+\item It is the same for all glasses. \correct
+\item It is only the same for all glasses if we can neglect atmospheric pressure. 
+\end{MCquestion}
+\end{checkpoint}
 
 \begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/lift.png}{\label{fig:fluidmechanics:lift}A force exerted on the piston of a hydraulic lift in order to lift a mass $M$.}
 A hydraulic lift exploits Pascal's principle in order to use a small force to exert a large force. The hydraulic lift in Figure \ref{fig:fluidmechanics:lift} shows a lift that is constructed by having a fluid between two vertical movable pistons. The pistons are cylindrical and the diameter of their cross-sections are, $D$, and, $D/2$. A mass, $M$, is placed on the piston with the larger diameter. What is the magnitude of the force, $\vec F$, that must be applied on the smaller piston in order to lift the mass, $M$?}
@@ -215,6 +226,16 @@ h=\frac{P_1}{\rho g}=\frac{(\SI{1.013e5}{Pa})}{(\SI{1000}{kg/m^3})(\SI{9.8}{m/s^
 \textbf{Discussion: }The difference in height is about $\SI{10}{m}$ when the atmospheric pressure is nominal. This means that the manometer needs to be at least this tall to measure absolute atmospheric pressure, which is not practical to construct! If, instead, one uses a liquid with a higher density than that of water, then this height can be reduced substantially. Traditionally, barometers have been built using mercury, which has a density of ($\rho_{Hg}=\SI{13.6e3}{kg/m^3}$), so that the height difference at nominal atmospheric pressure is $\SI{760}{mm}$. This is a much easier instrument to build (apart from the safety concerns of using mercury). For this reason, an often-used unit of pressure is ``mm of mercury'', which corresponds to the height difference in a manometer that is built using mercury. 
 \end{example}
 
+\begin{checkpoint}
+\capfig{0.3\textwidth}{figures/FluidMechanics/barometer2.png}{\label{fig:fluidmechanics:barometer2}A Torricelli barometer.}
+\begin{MCquestion}{You build a Torricelli barometer, as illustrated in Figure \ref{fig:fluidmechanics:barometer2}, to measure the absolute atmospheric pressure. The sealed vertical tube has a space at the top that is evacuated (a pressure of zero), so that atmospheric pressure on the container of liquid forces the liquid up the tube to a height, $h$, which is proportional to atmospheric pressure. If you use olive oil as the liquid, what can you say about the height, $h$, for nominal atmospheric pressure?}
+\item It is greater than $\SI{10.3}{m}$.\correct
+\item It is equal to $\SI{10.3}{m}$.
+\item It is less than $\SI{10.3}{m}$.
+\item Not enough information to tell.
+\end{MCquestion}
+\end{checkpoint}
+
 \section{Buoyancy}
 In this section, we examine how the pressure gradient in a fluid leads to a force of buoyancy on an object that is immersed in the fluid.
 \capfig{0.7\textwidth}{figures/FluidMechanics/buoyant.png}{\label{fig:fluidmechanics:buoyant}(Left:) The weight of a fluid element, $\vec F_g$, is supported by the net upwards force from the pressure, $\vec F_B$, of the fluid below it. (Right:) If the fluid element is removed and replaced with an object, there will still be the same net upwards force, $\vec F_B$, from the pressure of the fluid, which is now exerted on the object.}
@@ -238,6 +259,13 @@ This ``principle'' was originally discovered by Archimedes, who stated that the 
 \begin{MCquestion}{Does the force of buoyancy on a fully submerged object increase with the depth at which the object is submerged (ignoring any change from the varying value of $\vec g$)?}
 \item Yes, because the force of buoyancy comes from the pressure in the fluid, which increases with depth. 
 \item No, because the force of buoyancy comes from the difference in pressure above and below the object, which does not increase with depth. \correct
+\end{MCquestion}
+\end{checkpoint}
+
+\begin{checkpoint}
+\begin{MCquestion}{You observe that if you pour olive oil slowly into your glass of water, the oil floats above the water. What can you conclude?}
+\item The mass of a given volume of oil is less than the mass of the same volume of water. \correct
+\item The mass of a given volume of oil is more than the mass of the same volume of water.  
 \end{MCquestion}
 \end{checkpoint}
 
@@ -308,7 +336,26 @@ Q=Av
 \end{align*}
 where $A$ is the cross-sectional area of the surface through which a fluid with speed, $v$, flows\footnote{If the velocity of the fluid is not perpendicular to the surface, then $v$ is the component of the velocity perpendicular to the surface.}. $Q$ has the dimension of volume per time, and corresponds to the volume of fluid passing through the cross section $A$ per unit time. For an incompressible fluid, the equation of continuity is thus equivalent to stating that the volumetric flow, $Q$, of the fluid is a constant. 
 
-TODO: Example of continuity, maybe increase speed on airfoil?
+\begin{checkpoint}
+\capfig{0.1\textwidth}{figures/FluidMechanics/necking.png}{\label{fig:fluidmechanics:necking}Water flowing out of a faucet.}
+\begin{MCquestion}{When water flows out of your faucet, you observe that the stream of water gets narrower as the water moves down, as shown in Figure \ref{fig:fluidmechanics:necking}. Why is this?}
+\item The atmospheric pressure increases as the waters moves downwards, so the stream of water is more and more compressed.
+\item As the water accelerates due to gravity, the cross-sectional area of the flowing water must reduce in order to preserve a constant flow rate. \correct    
+\end{MCquestion}
+\end{checkpoint}
+
+\begin{example}{Your garden hose has a diameter of $D=\SI{2}{cm}$. How fast must water flow out of the hose if you are to fill a $\SI{5}{l}$ bucket in one minute?}
+We need the volume flow rate from the hose to be $Q=\SI{5}{l/min}$. We can convert this to SI units:
+\begin{align*}
+Q=(\SI{5}{l/min})\left(\frac{1}{1000}\si{m^3/l}\right) \left(\frac{1}{60}\si{min/s}\right)=\frac{5}{\num{6e4}}\si{m^3/s}=\SI{8.3e-5}{m^3/s}
+\end{align*}
+Since we know the area of the hose, we can determine the speed of the water to achieve the given flow rate:
+\begin{align*}
+Q &= Av=\pi \left(\frac{D}{2}\right)^2v \\
+\therefore v&=\frac{Q}{\pi \left(\frac{D}{2}\right)^2}=\frac{(\SI{8.3e-5}{m^3/s})}{\pi(\SI{0.01}{m})^2}=\SI{0.265}{m/s}
+\end{align*}
+\end{example}
+
 
 \subsection{Bernoulli's Principle}
 In this section we examine how the pressure and speed of a fluid change as a the fluid flows. We will restrict ourselves to discussing the \textbf{laminar} flow of an \textbf{incompressible} fluid with no friction. Bernoulli was the first to quantitatively describe the flow of incompressible fluids, and we will show in this section how to derive ``Bernoulli's Principle''. 
@@ -382,6 +429,14 @@ Bernoulli's principle can be used to describe many phenomena. For example, an ai
 
 Bernoulli's principle also describes why the roof can be lifted off of a house in high winds (Figure \ref{fig:fluidmechanics:roof}, left panel). It is not the force of the wind against the roof that blows the roof off of a house; it is the difference in air pressure in the house (normal) and the pressure above the roof (low, due to the flowing wind), that results in a net upwards force on the roof. Bernoulli's principle is also used to construct atomizers which allow liquid in a bottle to be sprayed (Figure \ref{fig:fluidmechanics:roof}, right panel). By compressing a bulb, fast flowing air creates a low pressure in the vertical segment of the spout. The liquid is forced up by the pressure in the bottle; once the liquid arrives in the fast flowing air, it is sprayed out along with the air.
 \capfig{0.8\textwidth}{figures/FluidMechanics/roof.png}{\label{fig:fluidmechanics:roof}(Left:) the wind flowing above a roof creates a low pressure zone above the roof. (Right:) air flowing above a vertical spout in the atomizer creates a low pressure zone; the air pressure in the bottle forces the liquid up the spout.}
+
+\begin{checkpoint}
+\begin{MCquestion}{When a high speed train is travelling at constant speed, is there a net force on the windows from air pressure?}
+\item No, since the windows are stationary relative to the train, there is no net force on them from air pressure.
+\item Yes, there is a net outwards force on the windows from air pressure. \correct
+\item Yes, there is a net inwards force on the windows from air pressure.
+\end{MCquestion}
+\end{checkpoint}
 
 \begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/watertower.png}{\label{fig:fluidmechanics:watertower}Water leaking out of a horizontal hole in a water tank.} A water tower is constructed so that the bottom of the water tank is a height $h_2$ above the ground, as illustrated in Figure \ref{fig:fluidmechanics:watertower}. The water in the tank is at a height $h_1$ from the bottom of the tank. A leak from a horizontal hole is found at the base of the tank. What is the horizontal distance, $d$, from the bottom of the tower to where the water from the leak hits the ground? Assume that the water level in the tank is constant and that atmospheric pressure does not change appreciably over the height of the tower.}
 The pressure in the water tank leads to the water exiting the bottom of the tank with a horizontal velocity, with magnitude $v$. That water then undergoes projectile motion on its way to the ground. We can first determine the speed of the water exiting the tank and then use the kinematics for projectile motion to model the distance, $d$. 
@@ -478,6 +533,13 @@ The laminar flow rate, $Q$, of a viscous fluid through a pipe of length $L$ and 
 \Aboxed{Q =  \frac{\pi r^4}{8\eta L}\Delta P}
 \end{align}
 This is usually referred to as ``Poiseuille's Equation''.
+
+\begin{checkpoint}
+\begin{MCquestion}{Does the flow rate of water out of a garden hose depend on the length of the hose?}
+\item No, since the volume of water entering the hose must also exit the hose, it does not matter how long the hose is. 
+\item Yes, the resistance of the hose depends on its length, so the pressure drop across the hose will change, and so will the flow rate. \correct
+\end{MCquestion}
+\end{checkpoint}
 
 \begin{example}{\capfig{0.5\textwidth}{figures/FluidMechanics/parallel.png}{\label{fig:fluidmechanics:parallel}Flow of water being separated into two parallel paths that join up again.}
 You are modelling the flow of water for a city. Two houses are connected in parallel to the main water supply, so that water from the main supply flows into either house 1 or house 2, and the flows out of each house then join up again at the main supply. The difference in pressure, $\Delta P$, between the entry and exit point of water is the same for each house, and each house can be modelled as having a net resistance, $R_{1}$ or $R_2$, to the flow of water, as illustrated in Figure \ref{fig:fluidmechanics:parallel}. If you model the two houses as being the equivalent of a single ``effective'' house with an effective resistance $R$, what is the value of $R$ in terms of $R_1$ and $R_2$?}
