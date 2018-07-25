@@ -458,9 +458,69 @@ Theory lab: what is the function $x(t)$ if there is a frictional force, proporti
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-
+\begin{problemParts}{soln:simpleharmonicmotion:torsional}{
+\label{prob:simpleharmonicmotion:torsional} A torsional pendulum consists of a mass suspended from a wire. When the mass is rotated so that it is displaced an angle $\theta$ from equilibrium, the wire (which is now twisted) provides a restoring torque given by:
+\begin{align*}
+\tau=-\kappa\theta
+\end{align*}
+where $\kappa$ is the torsion coefficient, which depends on the stiffness of the wire. You may notice that this formula closely resembles Hooke's law.}
+\item  You construct a torsional pendulum by attaching two spherical masses (each of mass $m$) to the ends of a thin rod of length $L$ (assume that the mass of the rod is negligible) and attaching a wire to the centre of the rod. When you displace one of the masses by an angle $\theta$ and release it, you find that it takes $T$ seconds for it to return to this position. Find the torsion coefficient $\kappa$. 
+\item You place two very large spheres, each of mass $M$, near each of the small spheres (as shown in Figure TODO), so that the small spheres experience a gravitational force. The pendulum is at equilibrium when it is deflected an angle $\beta$ from its original equilibrium position. At the new equilibrium, the large and small spheres are a distance $d$ apart. Find an expression for the universal gravitational constant $G$.
+\end{problemParts}
 
 \newpage
 \subsection{Solutions}
+
+\begin{solution}{prob:simpleharmonicmotion:torsional}\label{soln:simpleharmonicmotion:torsional}
+\begin{enumerate}[(a)]
+\item The only force that creates a torque on the masses is the restoring force from the twisting of the wire. The net torque, using the rotational dynamics version of Newton's law, is then:
+\begin{align*}
+I\alpha=-\kappa\theta
+\end{align*}
+Rewriting $\alpha$ more explicitly as the second time derivative of the angle, we get:
+\begin{align*}
+I\frac{d^2\theta}{dt^2}&=-\kappa\theta\\
+\frac{d^2\theta}{dt^2}&=-\frac{\kappa}{I}\theta\\
+\end{align*}
+By inspection, we can see that the torsional pendulum is a simple harmonic oscillator, where $\omega=\sqrt{\kappa/I}$. The period of the motion is therefore:
+\begin{align*}
+T=2\pi\sqrt{\frac{I}{\kappa}}
+\end{align*}
+We can rearrange this expression to get $\kappa$:
+\begin{align*}
+T^2&=\frac{4\pi^2I}{\kappa}\\
+\kappa&=\frac{4\pi^2I}{T^2}
+\end{align*}
+The moment of inertia for one of the masses is $m(L/2)^2$, where $L/2$ is the distance from the mass to the axis of rotation. The moment of inertia for two masses is then:
+\begin{align*}
+I&=2m(\frac{L}{2})^2\\
+I&=\frac{2mL^2}{4}\\
+I&=\frac{mL^2}{2}\\
+\end{align*}
+Putting this into our expression for $\kappa$ results in:
+\begin{align*}
+\kappa=\frac{2\pi^2mL^2}{T^2}
+\end{align*}
+\item The two forces that provide torques for the small spheres are gravity and the force exerted by the twisting wire. Each of the small spheres will experience a force due to gravity from the nearest large sphere (the force from the further large sphere is negligible). At equilibrium, the force due to gravity on one of the small spheres is therefore:
+\begin{align*}
+F_g=\frac{GMm}{d^2}
+\end{align*}
+Assuming that the force vector is perpendicular to the bar, the torque from one of the large spheres is just the force multiplied by the distance to the axis of rotation, $F_g\cdot(L/2)$. Since there are two large spheres, each of which creates a torque on the pendulum, the total torque due to gravity is: 
+\begin{align*}
+\tau_g&=2F_g\frac{L}{2}\\
+\tau_g&=F_gL
+\end{align*}
+At equilibrium, the net torque is equal to zero:
+\begin{align*}
+\tau_{net}&=\tau_{wire}-\tau_g\\
+0&=\tau_{wire}-\tau_g\\
+\tau_g&=\tau_{wire}\\
+\frac{GMm}{d^2}L&=\kappa\beta\\
+\therefore G&=\frac{\kappa\beta d^2}{LMm}
+\end{align*}
+\end{enumerate}
+TODO: Give them values or get them to figure out the order of magnitude of $\kappa$ if you wanted to do this reasonably in a lab space
+\end{solution}
+
 
 
