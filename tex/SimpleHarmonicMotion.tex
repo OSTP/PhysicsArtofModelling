@@ -204,7 +204,7 @@ We can substitute the equilibrium condition, $mg = ky_0$, into the equation that
  m \frac{d^2y}{dt^2}& = mg - ky \\
 m \frac{d^2y}{dt^2}&= ky_0 - ky\\
 m \frac{d^2y}{dt^2}&=-k(y-y_0) \\
-\therefore \frac{d^2y}{dt^2} &= \frac{k}{m}(y-y_0)
+\therefore \frac{d^2y}{dt^2} &= -\frac{k}{m}(y-y_0)
 \end{align*}
 Consider a new variable, $y'=y-y_0$. This is the same as defining a new $y'$ axis that is shifted downwards by $y_0$; in other words, this the same as defining a new $y'$ axis whose origin is at $y_0$ (the equilibrium position) rather than at the position where the spring is at rest. Noting that the second time derivative of $y'(t)$ is the same as that for $y(t)$:
 \begin{align*}
@@ -445,7 +445,6 @@ E =U+K=\frac{1}{2}kx^2+\frac{1}{2}mv^2= \frac{1}{2}kA^2
 \newpage
 \section{Thinking about the material}
 \subsection{Reflect and research}
-
 \begin{enumerate}
 \item What is an example of a system that is a simple harmonic oscillator (not covered in this this chapter)? What is the restoring force for that system?
 \end{enumerate}
@@ -458,18 +457,88 @@ Theory lab: what is the function $x(t)$ if there is a frictional force, proporti
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
+\begin{problem}{soln:simpleharmonicmotion:playground}{\label{prob:simpleharmonicmotion:playground} Ty ($m=\SI{30}{kg}$) is trying out a new piece of equipment at his local playground. The equipment consists of a platform that is connected to two springs. The top spring ($k_1=\SI{2400}{Nm}$) connects the platform to the playground structure and the bottom spring ($k_2=\SI{3480}{Nm}$) (Figure \ref{fig:simpleharmonicmotion:playground}). When no one is standing on the platform, the springs are unstretched and the platform is \SI{50}{cm} off the ground. When Ty is standing on the platform, the lowest the platform goes is $\SI{35}{cm}$ off the ground.
+Show that this is simple harmonic motion and determine what  Ty's maximum speed will be.}
+\capfig{0.3\textwidth}{figures/SimpleHarmonicMotion/playground1.png}{\label{fig:simpleharmonicmotion:playground}Playground equipment made of a platform connected to two vertical springs.}
+\end{problem}
 \begin{problemParts}{soln:simpleharmonicmotion:torsional}{
 \label{prob:simpleharmonicmotion:torsional} A torsional pendulum consists of a mass suspended from a wire. When the mass is rotated so that it is displaced an angle $\theta$ from equilibrium, the wire (which is now twisted) provides a restoring torque given by:
 \begin{align*}
 \tau=-\kappa\theta
 \end{align*}
 where $\kappa$ is the torsion coefficient, which depends on the stiffness of the wire. You may notice that this formula closely resembles Hooke's law.}
-\item  You construct a torsional pendulum by attaching two spherical masses (each of mass $m$) to the ends of a thin rod of length $L$ (assume that the mass of the rod is negligible) and attaching a wire to the centre of the rod. When you displace one of the masses by an angle $\theta$ and release it, you find that it takes $T$ seconds for it to return to this position. Find the torsion coefficient $\kappa$. 
-\item You place two very large spheres, each of mass $M$, near each of the small spheres (as shown in Figure TODO), so that the small spheres experience a gravitational force. The pendulum is at equilibrium when it is deflected an angle $\beta$ from its original equilibrium position. At the new equilibrium, the large and small spheres are a distance $d$ apart. Find an expression for the universal gravitational constant $G$.
+\item  You construct a torsional pendulum by attaching two spherical masses (each of mass $m$) to the ends of a thin rod of length $L$ (assume that the mass of the rod is negligible) and attaching a wire to the centre of the rod (Figure \ref{fig:simpleharmonicmotion:torsional}). When you displace one of the masses by an angle $\theta$ and release it, you find that it takes $T$ seconds for it to return to this position. Find the torsion coefficient $\kappa$. 
+\capfig{0.7\textwidth}{figures/SimpleHarmonicMotion/torsionalpendulum1.png}{\label{fig:simpleharmonicmotion:torsional1}A torsional pendulum. The right side shows a top view.}
+\item You place two very large spheres, each of mass $M$, near each of the small spheres (as shown in Figure \ref{fig:simpleharmonicmotion:torsional2}), so that the small spheres experience a gravitational force. The pendulum is at equilibrium when it is deflected an angle $\beta$ from its original equilibrium position. At the new equilibrium, the large and small spheres are a distance $d$ apart. Find an expression for the universal gravitational constant $G$.
+\capfig{0.5\textwidth}{figures/SimpleHarmonicMotion/torsionalpendulum2.png}{\label{fig:simpleharmonicmotion:torsional2}Two large masses near a torsional pendulum.}
 \end{problemParts}
 
 \newpage
 \subsection{Solutions}
+\begin{solution}{prob:simpleharmonicmotion:playground}\label{soln:simpleharmonicmotion:playground}
+First, we need to solve for the new equilibrium position of the platform, $x_0$. We set up our $x$ axis so that the origin is \SI{50}{cm} above the ground (the equilibrium position when no one is standing on the platform) and set down to be the positive direction (Figure \ref{fig:simpleharmonicmotion:playground2})
+\capfig{0.4\textwidth}{figures/SimpleHarmonicMotion/playground2.png}{\label{fig:simpleharmonicmotion:playground2}The pendulum when no one is standing on it.}
+When Ty is standing on the platform, the sum of the forces is:
+\begin{align*}
+\sum F=mg-k_1x-k_2x
+\end{align*}
+where we noted that when the platform moves down, both the top and bottom spring will exert a force upwards (Figure \ref{fig:simpleharmonicmotion:playgroundfbd}) We can solve for the displacement at equilibrium:
+\begin{align*}
+0&=mg-k_1x_0-k_2x_0\\
+(k_1+k_2)x_0&=mg\\
+x_0&=\frac{mg}{k_1+k_2}\\
+x_0&=\frac{(\SI{30}{kg})(\SI{9.8}{m/s^2})}{\SI{2400}{Nm}\SI{3480}{Nm}}\\
+x_0&=\SI{0.05}{m}
+\end{align*}
+For some position $x$ below equilibrium, we can rewrite Newton's second law as:
+\begin{align*}
+ma&=mg-k_1x-k_2x\\
+ma&=mg-(k_1+k_2)x\\
+ma&=mg-(k_1+k_2)x\\
+m\frac{d^2x}{dt^2}&=mg-(k_1+k_2)x
+\end{align*}
+In order to show that this is simple harmonic motion, we need to combine right hand side of the equation into one term. We found earlier that $mg=(k_1+k_2)x_0$, which we can use here:
+\begin{align*}
+m\frac{d^2x}{dt^2}&=(k_1+k_2)x_0-(k_1+k_2)x\\
+\frac{d^2x}{dt^2}&=\frac{(k_1+k_2)}{m}(x_0-x)\\
+\frac{d^2x}{dt^2}&=-\frac{(k_1+k_2)}{m}(x-x_0)\\
+\end{align*}
+Now we define an $x'$ axis such that $x'=x-x_0$. This means that the origin of the $x'$ axis is at the new equilibrium position:
+\capfig{0.7\textwidth}{figures/SimpleHarmonicMotion/playgroundfbd.png}{\label{fig:simpleharmonicmotion:playgroundfbd}The forces acting on the platform and our new coordinate system.}
+We can now write our expression as:
+\begin{align*}
+\frac{d^2x}{dt^2}&=-\frac{(k_1+k_2)}{m}x'
+\end{align*}
+So, this is simple harmonic motion about the new equilibrium point where $\omega=\sqrt{(k_1+k_2)/m}$. We know that lowest point that the platform reaches is \SI{35}{cm} above the ground, which, on our $x'$ axis corresponds to $x'=\SI{10}{cm}$ (Figure TODO). So, the amplitude of the oscillation is $A=\SI{0.1}{m}$. Because this is simple harmonic motion, we know that the position of the platform can be described by the following function:
+\begin{align*}
+x'(t)&= A \cos(\omega t + \phi)
+\end{align*}
+We set $t=0$ to be when the platform is at its lowest point ($x=A$). The value of $\phi$ is thus:
+\begin{align*}
+x'(0)&= A \cos(\omega (0) + \phi)\\
+A&= A \cos(\phi)\\
+1&=\cos(\phi)\\
+\therefore \phi&=0
+\end{align*}
+The velocity is given by:
+\begin{align*}
+v(t)=\frac{d}{dt}x(t) &= -A\omega\sin(\omega t + \phi)\\
+&=-A\omega\sin(\omega t)
+\end{align*}
+The speed will be maximized when $\sin(\omega t)=1\quad \textrm{or} -1$ . So, the maximum speed will be:
+\begin{align*}
+|v|&=A\omega\\
+|v|&=A\sqrt{\frac{(k_1+k_2)}{m}}\\
+|v|&=(\SI{0.1}{m})\sqrt{\frac{(\SI{2400}{Nm}+\SI{3480}{Nm})}{\SI{30}{kg}}}\\
+|v|&=\SI{1.4}{m/s}
+\end{align*}
+We expect that the speed will be maximized when $x'=0$ (when the platform is at equilibrium). Let's prove this. The function $\sin(\omega t)$ will be maximized when $\omega t=\pi/2, 3\pi/2,...$. Setting $\omega t=\pi/2$ in our position function gives:
+\begin{align*}
+x'(\pi/2)&= A \cos(\pi/2)\\
+x'(\pi/2)&= 0
+\end{align*}
+proving that the speed is maximized at $x'=0$
+\end{solution}
 
 \begin{solution}{prob:simpleharmonicmotion:torsional}\label{soln:simpleharmonicmotion:torsional}
 \begin{enumerate}[(a)]
@@ -519,7 +588,6 @@ At equilibrium, the net torque is equal to zero:
 \therefore G&=\frac{\kappa\beta d^2}{LMm}
 \end{align*}
 \end{enumerate}
-TODO: Give them values or get them to figure out the order of magnitude of $\kappa$ if you wanted to do this reasonably in a lab space
 \end{solution}
 
 
