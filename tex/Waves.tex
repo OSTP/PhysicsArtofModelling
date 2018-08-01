@@ -50,13 +50,14 @@ Physically, a wave can only propagate through a medium if the medium can be defo
 
 A source of energy is required in order to deform the medium and generate a wave. For example, that source of energy could be a speaker creating sound waves by pushing a membrane back and forth; speakers require energy, and are often rated by the electrical power that they convert into sound waves (e.g. a $\SI{50}{W}$ speaker consumes $\SI{50}{W}$ of electrical power to produce sound).
 
-TODO: Figure of a speaker membrane vibrating and creating sound waves
+\capfig{0.6\textwidth}{figures/Waves/speaker.png}{\label{fig:waves:speaker}A speaker creating sound sound waves. The membrane vibrates back and forth which deforms the air to create sound waves that propagate through the air.}
+
 
 \subsection{Description of a wave}
 In this chapter, we will mostly discuss how to describe sinusoidal waves; those for which the displacement of particles in the medium can be described by a sinusoidally-varying function of position. As we will see, more complicated waves can always be described as if they are the combination of multiple sine waves. We can use several quantities to describe a travelling wave, which are illustrated in Figure \ref{fig:waves:wavelength}:
 \begin{itemize}
-\item The \textbf{wavelength}, $\lambda$, is the distance between two points along the wave that have the same displacement from their equilibrium position. For example, it can be the distance between two successive maxima (``peaks'') or minima (``troughs'') in the wave. TODO: I thought it was just 2 maxima or minima - if its two sucessive points at equilibrium it would only be half a wavelength.
-\item The \textbf{amplitude}, is the maximal distance that a particle in the medium is displaced from its equilibrium position.
+\item The \textbf{wavelength}, $\lambda$, is the distance between two  successive maxima (``peaks'') or minima (``troughs'') in the wave.
+\item The \textbf{amplitude}, $A$, is the maximal distance that a particle in the medium is displaced from its equilibrium position.
 \item The \textbf{velocity}, $\vec v$, is the velocity with which the disturbance propagates through the medium.
 \item The \textbf{period}, $T$, is the time it takes for two successive maxima (or minima) to pass through the same point in the medium.
 \item The \textbf{frequency}, $f$, is the inverse of the period ($f=1/T$).
@@ -251,10 +252,27 @@ Now, consider the case when the end of the rope has a ring attached to it, so th
 \capfig{0.7\textwidth}{figures/Waves/reflectionfree.png}{\label{fig:waves:reflectionfree}When the end of the rope is free, the reflected pulse will be upright.}
 In this case, the end of the rope will move up as the pulse arrives, which will then create a reflected pulse that is in the same orientation as the incoming pulse.
 
-Finally, consider a pulse that propagates down a rope that is tied to a second, heavier, rope, as illustrated in Figure \ref{fig:waves:transmission}. 
-\capfig{0.55\textwidth}{figures/Waves/transmission.png}{\label{fig:waves:transmission}A pulse can be both reflected and transmitted as changes medium.}
-When the pulse arrives at the interface between the two media (the two ropes), part of the pulse will be reflected back (and stay upright), and part will be transmitted into the second medium. Note that in the second rope, the pulse will travel with a different speed.
-TODO: Why isnt the pulse reflected?
+Finally, consider a pulse that propagates down a rope of mass per unit length $\mu_1$ that is tied to a second rope with mass per unit length $\mu_2$. When the pulse arrives at the interface between the two media (the two ropes), part of the pulse will be reflected back, and part will be transmitted into the second medium (Figure \ref{fig:waves:transmission}). 
+
+\capfig{0.8\textwidth}{figures/Waves/transmission.png}{\label{fig:waves:transmission}A pulse can be both reflected and transmitted as it changes medium. Left panel: The pulse is transmitted from a lighter rope to a heavier rope. Right panel: The pulse is transmitted from a heavier rope to a lighter rope}
+
+By considering the boundary conditions, one can derive the coefficient of reflection, $R$. This coefficient is the ratio of the amplitude of the reflected pulse to the amplitude of initial pulse. The ratio is found to be:
+\begin{align*}
+R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
+\end{align*}
+When the pulse moves from a lighter rope to a heavier rope ($\mu_1<\mu_2$), the reflected pulse will be inverted ($R<0$). When the pulse moves from a heavier rope to a lighter rope ($\mu_1>\mu_2$), the reflected pulse will stay upright ($R>0$). 
+
+When the end of the rope is fixed to a wall (as in Figure \ref{fig:waves:reflectionfixed}), this represents a limiting case in which the linear mass density of the second material approaches infinity ($\mu_2 \rightarrow \infty$):
+\begin{align*}
+\lim_{\mu_2\to \infty}\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}=\frac{-\sqrt{\mu_2}}{\sqrt{\mu_2}}=-1
+\end{align*}
+which means that the amplitude of the reflected pulse will have the same magnitude as the initial pulse but will be in the opposite direction. When the end of the rope is free (Figure \ref{fig:waves:reflectionfree}), this represents another limiting case, where $\mu_2\rightarrow 0$:
+\begin{align*}
+\lim_{\mu_2\to 0}\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}=\frac{\sqrt{\mu_1}}{\sqrt{\mu_1}}=1
+\end{align*}
+which means that the amplitude of the reflected pulse will be in the same direction  and have the same amplitude as the initial pulse. 
+
+
 \begin{checkpoint}
 \begin{MCquestion}{A wave propagates from a light rope to a heavier rope that is attached to the light rope (as the pulse illustrated in Figure \ref{fig:waves:transmission}. What can you say about the wavelength of the wave on either side of the interface?}
 \item It is the same in both sections of rope.
@@ -321,7 +339,7 @@ For example, the speed of longitudinal pressure waves in a solid is given by:
 \begin{align*}
 v=\sqrt{\frac{E}{\rho}}
 \end{align*}
-where $E$ is the ``elastic (or Young's) modulus'' for the material, and $\rho$ is the density of the material. The elastic modulus of a solid is a measure of how much the solid deforms when a force (or pressure) is exerted on the material, and the density is a measure of the mass of the particles that make up the solid.
+where $E$ is the ``elastic (or Young's) modulus'' for the material, and $\rho$ is the density of the material. The elastic modulus of a solid is a measure of the material's resistance to being deformed when a force (or pressure) is exerted on it. The more easily it is deformed, the lower its elastic modulus will be. 
 
 For the propagation of longitudinal pressure waves through a fluid, the speed is given by:
 \begin{align*}
@@ -330,7 +348,7 @@ v=\sqrt{\frac{B}{\rho}}
 where $B$ is the bulk modulus of the liquid, and $\rho$ its density. 
 
 \begin{checkpoint}
-\begin{MCquestion}{Will a wave propagate faster through}
+\begin{MCquestion}{A wave will propagate faster through...}
 \item ice.\correct
 \item water.
 \end{MCquestion}
@@ -365,11 +383,11 @@ The total mechanical energy of one oscillator, $E_m$, can be evaluated when the 
 E_m = \frac{1}{2}k_s A^2 = \frac{1}{2}\omega^2 m A^2
 \end{align*}
 
-If the rope is infinitely long, and carries a continuous wave, it will have an infinite amount of energy, as it will corresponds to an infinite number of oscillators. Instead, let us calculate how much energy, $E_\lambda$, is stored in the wave over one wavelength, $\lambda$. To do so, we need to evaluate how many effective oscillators are contained in the rope, over a distance $\lambda$, so that we can sum all of their energies together to obtain the energy stored in one wavelength:
+If the rope is infinitely long, and carries a continuous wave, it will have an infinite amount of energy, as it will correspond to an infinite number of oscillators. Instead, let us calculate how much energy, $E_\lambda$, is stored in the wave over one wavelength, $\lambda$. To do so, we need to evaluate how many effective oscillators are contained in the rope, over a distance $\lambda$, so that we can sum all of their energies together to obtain the energy stored in one wavelength:
 \begin{align*}
 E_\lambda = \sum \frac{1}{2}\omega^2 m A^2
 \end{align*} 
-where the sum is over the number of oscillators in one wavelength. Of course, the rope is note actually made of oscillators, but we can model each section of rope of length $dx$ has being an oscillator of mass $dm=\mu dx$, where $\mu$ is the linear mass density of the rope. The sum (integral) of the energy of the oscillators over one wavelength can thus be written as:
+where the sum is over the number of oscillators in one wavelength. Of course, the rope is not actually made of oscillators, but we can model each section of rope of length $dx$ has being an oscillator of mass $dm=\mu dx$, where $\mu$ is the linear mass density of the rope. The sum (integral) of the energy of the oscillators over one wavelength can thus be written as:
 \begin{align*}
 E_\lambda = \int_0^\lambda \frac{1}{2}\omega^2 \mu A^2 dx =  \frac{1}{2}\omega^2 \mu A^2 \lambda
 \end{align*}
@@ -386,9 +404,12 @@ We can see that the power transmitted by a wave goes as the amplitude, $A$, of t
 \subsection{Energy transported in a spherical, three-dimensional, wave}
 In this section, we show how to model the rate at which energy is transported in spherical three-dimensional waves, such as the sound waves that are generated when you clap your hands. A spherical sound wave is a pressure disturbance in the air that propagates spherically outwards from a point of emission. We can think of thin spherical shells containing air that expand and contract about their equilibrium position as the wave moves through the shells. The motion of each shell is similar to that of a simple harmonic oscillator of mass $dm$, where $dm$ is the mass of air in the oscillating shell.
 
-TODO: This needs some sort of figure!
+\capfig{0.7\textwidth}{figures/Waves/sphericalwave.png}{\label{fig:waves:sphericalwave}Left: Before you start clapping, the air molecules are evenly distributed. We divide the air up into thin spherical shells. They are in their equilibrium position and all have the same density. Right: When you start clapping, these shells alternately expand and contract about their equilibrium positions. The mass of each shell stays the same.}
 
-Consider a shell at a radial position, $r$, from the source, with thickness $dr$, and mass $dm$. If the medium has a density, $\rho$, then the mass of the shell is given by:
+Consider a shell at a radial position, $r$, from the source, with thickness $dr$, and mass $dm$:
+\capfig{0.3\textwidth}{figures/Waves/sphericalshell.png}{\label{fig:waves:sphericalshell}A spherical shell at radial position $r$ with thickness $dr$}
+
+ If the medium has a density, $\rho$, then the mass of the shell is given by:
 \begin{align*}
 dm = \rho dV = \rho 4\pi r^2 dr
 \end{align*}
@@ -430,7 +451,7 @@ Usually, the intensity of a wave is something that you can measure, as it corres
 The intensity is a measure of how much energy is delivered per unit area by a wave and goes down as the square of the distance from the source. If the source of the wave is an earthquake, then your house will have four times less damage than your friend's, if your house is located only twice as far from the epicentre as your friend's. You will cause four times less damage to your ears if you move only twice as far away from the stage at a rock concert.
 
 \section{Superposition of waves and interference}
-In this section, we consider what happens when two (or more) different waves propagate in a medium and interfere with each other. The superposition principle states that if $D_1(x,t)$, $D_2(x,t)$, $\dots$, are functions that satisfy the wave equation, then any linear combination of these functions, $D(x,t)$:
+In this section, we consider what happens when two (or more) different waves propagate in a medium and interfere with each other. The superposition principle states that if $D_1(x,t)$, $D_2(x,t)$, etc, are functions that satisfy the wave equation, then any linear combination of these functions, $D(x,t)$:
 \begin{align*}
 D(x,t) = a_1D_1(x,t)+a_2D_2(x,t)+a_3D_3(x,t)+\dots
 \end{align*}
@@ -483,9 +504,26 @@ The corresponding frequency is give by:
 \end{align}
 where $v=f\lambda$ is the speed of the waves on the string.
 
-A standing wave is the result of two waves of the same frequency and amplitude travelling in opposite directions. Thus, there is no energy that is transmitted by a standing wave (e.g. through the nodes at the end of the string). Although we described standing waves for a string, these are not restricted to one dimensional waves. For example, the membrane of a drum can also support standing waves.
+A standing wave is the result of two waves of the same frequency and amplitude travelling in opposite directions. Thus, there is no energy that is transmitted by a standing wave (e.g. through the nodes at the end of the string), although there is energy contained within the nodes. Although we described standing waves for a string, these are not restricted to one dimensional waves. For example, the membrane of a drum can also support standing waves.
 
-In general, most object can be characterized by a harmonic (or ``resonant'') frequency that corresponds to the standing waves that can exist in the object. If that object is, say, shaken, many waves will propagate through the object and cancel out, except those that have the resonant frequency. Relatively small vibrations, if at the correct frequency, can lead to large standing waves that can result in damage to the object. 
+\begin{checkpoint}
+\begin{MCquestion}{A standing wave (composed of two travelling waves) has an amplitude $A$. What must the amplitude $A_0$ of each travelling wave be? }
+\item $A_0=1/4 A$
+\item $A_0=1/2 A$ \correct
+\item $A_0=A$
+\item $A_0=2A$
+\end{checkpoint}
+
+\begin{checkpoint}
+\begin{MCquestion}{How does the energy in one wavelength of a standing wave, $E_s$, compare to the energy in one wavelength of a travelling wave, $E_T$, if both waves have the same amplitude?}
+\item $E_s=1/4 E_T$
+\item $E_s=1/2 E_T$ \correct
+\item $E_s=E_T$
+\item $E_s=2E_T$
+\item $E_s=4E_T$
+\end{checkpoint}
+
+In general, most objects can be characterized by a harmonic (or ``resonant'') frequency that corresponds to the standing waves that can exist in the object. If that object is, say, shaken, many waves will propagate through the object and cancel out, except those that have the resonant frequency. Relatively small vibrations, if at the correct frequency, can lead to large standing waves that can result in damage to the object. 
 
 \subsection{Mathematical description of a standing wave}
 A standing wave is the result of two identical waves, travelling in opposite directions, interfering. Consider the waves described by $D_1(x,t)$ and $D_2(x,t)$ that are modelled as follows:
@@ -522,7 +560,7 @@ as we argued before, for the wavelength of the $n$-th harmonic. The standing wav
 \begin{align}
 \Aboxed{D(x,t)=2A\sin\left(\frac{n\pi}{L}x\right)\cos(\omega t) }
 \end{align}
-A point at position, $x$, will behave like a simple harmonic oscillator and oscillate with an amplitude given by:
+A point at position $x$ will behave like a simple harmonic oscillator and oscillate with an amplitude given by:
 \begin{align*}
 A(x) = 2A\sin\left(\frac{n\pi}{L}x\right)
 \end{align*}
@@ -538,6 +576,8 @@ Thus, for example, the second node ($m=2$) of the third harmonic ($n=3$), is loc
 \therefore x&=m\frac{L}{2n}
 \end{align*}
 where, for example, the first anti-node of the first harmonic is located at $x=L/2$, as can be seen in the top panel of Figure \ref{fig:waves:standing}.
+
+TODO: What about when one end/neither end is fixed. Maybe a checkpoint question?
 \newpage
 \section{Summary}
 
