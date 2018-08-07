@@ -244,7 +244,7 @@ The speed of a pulse (and wave) propagating through a rope with linear mass dens
 If the tension in the rope is higher, the pulse will propagate faster. If the linear mass density of the rope is higher, then the pulse will propagate slower. 
 
 
-\subsection{Reflection and transmission}
+\subsection{\label{subsec:waves:reflection}Reflection and transmission}
 In this section, we examine what happens when a pulse travelling down a rope arrives at the end of the rope. First, consider the case illustrated in Figure \ref{fig:waves:reflectionfixed} where the end of the rope is fixed to a wall.
 \capfig{0.7\textwidth}{figures/Waves/reflectionfixed.png}{\label{fig:waves:reflectionfixed}When the end of the rope is held fixed, the reflected pulse will be inverted.}
 When the pulse arrives at the wall, the rope will exert an upwards force on the wall, $\vec F_{from\; rope}$. By Newton's Third Law, the wall will then exert a downwards force on the rope, $\vec F_{from\; wall}$. The downwards force exerted on the rope will cause a downwards pulse to form, and the reflected pulse will be inverted compared to the initial pulse that arrived at the wall.
@@ -441,6 +441,9 @@ P& = \text{constant}\\
 \end{align*}
 This is very different from the propagation of a one-dimensional wave, in which the amplitude does not change with distance. In practice, if there are energy losses due to, say, friction, then the amplitude of a one-dimensional wave would also decrease with distance from the source, but this is a different effect.
 
+\begin{studentOpinion}{Olivia}
+Here's one way to remember that the amplitude decreases as a function of distance from the source: The further a shell is from the centre, the more particles it contains (since the density of the medium is constant). When the energy is transferred from one shell to the next, the total energy stays the same. Since the energy must be split between a greater number of particles, each particle gets less energy, and therefore oscillates with a smaller amplitude than the particles in the previous shell did.
+\end{studentOpinion}
 
 The ``intensity of a wave'', $I$, is defined as the power per unit area that is transmitted by the wave. For a spherical wave front at radial position $r$, with area $4\pi r^2$, the intensity of the wave is defined as:
 \begin{align*}
@@ -508,21 +511,11 @@ where $v=f\lambda$ is the speed of the waves on the string.
 A standing wave is the result of two waves of the same frequency and amplitude travelling in opposite directions. Thus, there is no energy that is transmitted by a standing wave (e.g. through the nodes at the end of the string), although there is energy contained within the nodes. Although we described standing waves for a string, these are not restricted to one dimensional waves. For example, the membrane of a drum can also support standing waves.
 
 \begin{checkpoint}
-\begin{MCquestion}{A standing wave (composed of two travelling waves) has an amplitude $A$. What must the amplitude $A_0$ of each travelling wave be? }
+\begin{MCquestion}{A standing wave (composed of two travelling waves) has a maximum amplitude $A$. What must the amplitude $A_0$ of each travelling wave be? }
 \item $A_0=1/4 A$
 \item $A_0=1/2 A$ \correct
 \item $A_0=A$
 \item $A_0=2A$
-\end{MCquestion}
-\end{checkpoint}
-
-\begin{checkpoint}
-\begin{MCquestion}{How does the energy in one wavelength of a standing wave, $E_s$, compare to the energy in one wavelength of a travelling wave, $E_T$, if both waves have the same amplitude?}
-\item $E_s=1/4 E_T$
-\item $E_s=1/2 E_T$ \correct
-\item $E_s=E_T$
-\item $E_s=2E_T$
-\item $E_s=4E_T$
 \end{MCquestion}
 \end{checkpoint}
 
@@ -585,10 +578,29 @@ where, for example, the first anti-node of the first harmonic is located at $x=L
 \item double the length. \correct
 \item triple the length. 
 \item quadruple the length. \correct
-
-
 \end{MCquestion}
 \end{checkpoint}
+
+\begin{studentOpinion}{Olivia}
+Let's take another look at the equation for a standing wave. In this section, we saw that the equation for a standing wave is given by:
+\begin{align*}
+D(x,t)=2A\sin(kx)\cos(\omega t)
+\end{align*}
+We can rearrange this equation to get:
+\begin{align*}
+D(x,t)=\underbrace{2A\cos(\omega t)}_{\textrm{amplitude}}\sin(kx)
+\end{align*}
+This looks like the equation for a stationary wave (the displacement is a function of $x$) with an amplitude $2A\cos(\omega t)$. We know that $\cos(\omega t)$ will give a value that ranges between -1 and 1, so we can just think of it as a scaling term that modifies the amplitude of the wave. 
+
+When we look at a standing wave, this is exactly what we see - a wave whose amplitude is always changing but that does not travel one way or the other. Figure \ref{fig:waves:standingwavetime} shows a few snapshots of what the wave looks like at different times.
+
+\capfig{0.7\textwidth}{figures/Waves/standingwavetime.png}{\label{fig:waves:standingwavetime}A standing wave as a stationary wave whose amplitude changes over time}
+
+We can see from the equation that the maximum amplitude will be $2A$. This makes sense when we remember that the standing wave is made of two travelling waves of amplitude $A$. As these waves move, there will be moments when they completely constructively interfere, which is when the amplitude of the standing wave is maximized. When they completely destructively interfere, the amplitude is zero.
+\end{studentOpinion}
+
+
+
 
 \newpage
 \section{Summary}
@@ -671,11 +683,53 @@ f &= \frac{nv}{2L}
 
 \newpage
 \begin{importantEquations}
-This is an important equation
+\begin{multicols}{2}
+\textbf{Travelling 1d waves:}
 \begin{align*}
-E = mc^2
+D(x,t) &= A \sin(kx-\omega t + \phi)\\
+k &= \frac{2\pi}{\lambda}\\
+\omega &= 2\pi f = \frac{2\pi}{T}\\
+v &= \lambda f
 \end{align*}
 
+\textbf{Wave equation:}
+\begin{align*}
+\die{^2D}{x^2}=\frac{1}{v^2}\die{^2D}{t^2}
+\end{align*}
+
+\textbf{Wave velocity:}
+\begin{align*}
+v=\sqrt{\frac{F_T}{\mu}} \quad v=\sqrt{\frac{E}{\rho}} \quad v=\sqrt{\frac{B}{\rho}}
+\end{align*}
+
+
+\textbf{Power (1d wave in a rope):}
+\begin{align*}
+P = \frac{1}{2}\omega^2\mu A^2 v 
+\end{align*}
+
+\columnbreak
+
+\textbf{Spherical waves:}
+\begin{align*}
+P &= 2\pi\rho\omega^2r^2 v\\
+A &=\frac{1}{r}\sqrt{\frac{P}{2\pi\rho \omega^2 v}}\\
+I&=\frac{P}{4\pi r^2}=\frac{1}{2}\rho\omega^2A^2v
+\end{align*}
+
+\textbf{Standing waves:}
+\begin{align*}
+D(x,t)&=2A\sin\left(\frac{n\pi}{L}x\right)\cos(\omega t)\\
+A(x) &= 2A\sin\left(\frac{n\pi}{L}x\right)
+\end{align*}
+
+\textbf{Standing waves on a string (both ends fixed):}
+\begin{align*}
+L &= n\frac{\lambda}{2}\quad\quad n=1,2,3,\dots\\
+\lambda &= \frac{2L}{n}\\
+f &= \frac{nv}{2L}
+\end{align*}
+\end{multicols}
 \end{importantEquations}
 
 
@@ -685,9 +739,15 @@ E = mc^2
 
 \begin{enumerate}
 \item Look up a video of the Tacoma Narrows bridge failing, and explain what happened.
+\item Why do airlines ask you to turn off your electronic devices during take-off?
+\item Is it true that there is no sound in space?
+\item What type of wave was first observed in 2015?
 \end{enumerate}
 \subsection{To try at home}
-Confirm that the reflected pulse from a rope on a string is inverted when the end of the rope is fixed.
+\begin{enumerate}
+\item Confirm that the reflected pulse from a rope on a string is inverted when the end of the rope is fixed.
+\item Think of different ways you could create a standing wave at home and try one of them out. How many harmonics can you create? How can you modify your set-up to create more harmonics?
+\end{enumerate}
 \subsection{To try in the lab}
 
 \newpage
