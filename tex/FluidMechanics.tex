@@ -16,9 +16,13 @@ In this chapter, we introduce the tools required to model the dynamics of fluids
 \end{learningObjectives}
 
 \begin{opening}
-\begin{MCquestion}{A question shower curtain?}
-\item a choice
-\item another choice %correct
+\begin{MCquestion}{You are sailing, and the wind is blowing from the north. You want to travel upwind (north). In what direction should you point your boat/sail?
+\capfig{0.4\textwidth}{figures/FluidMechanics/sailboat.png}{\label{fig:fluidmechanics:sailboat}Possible directions you can point your sailboat.}}
+\item North
+\item South
+\item Point either East or West
+\item Alternate between North-east and North-west \correct
+\item You cannot go upwind.
 \end{MCquestion}
 \end{opening}
 
@@ -81,15 +85,13 @@ where we used the fact that the force resulting from a pressure is given by the 
 \Aboxed{P(y_2) - P(y_1) = -\rho g (y_2 - y_1)}
 \end{align}
 where the $y$ axis is defined to increase in the upwards direction. Since the pressure in the fluid depends on the location in the fluid, we say that there is a ``pressure gradient'' in the fluid.
-
 \begin{checkpoint}
-\capfig{0.3\textwidth}{figures/FluidMechanics/straw.png}{\label{fig:fluidmechanics:straw}Holding water in a vertical straw.}
-\begin{MCquestion}{You use your finger to block off the top end of a straw and then remove the straw from a glass of water. You notice that there is water in the straw (Figure \ref{fig:fluidmechanics:straw}) that flows out when you release your finger. What is the most correct description of why the water stays in the straw before you release your finger?}
+\capfig{0.2\textwidth}{figures/FluidMechanics/straw.png}{\label{fig:fluidmechanics:straw}Holding water in a vertical straw.}
+\begin{MCquestion}{You use your finger to block off the top end of a straw and then remove the straw from a glass of water. What is the most correct description of why the water stays in the straw (Figure \ref{fig:fluidmechanics:straw}) before you release your finger?}
 \item The straw cannot have vacuum inside of it; unless the finger is removed to let air in to replace the water, the water will remain in the straw.
 \item There is a small amount of vacuum above the water that sucks the water upwards and prevents it from dropping. 
 \item The pressure of the air below the water in the straw is higher than the pressure of the air above the water. \correct
 \item The pressure of the air below the water in the straw is lower than the pressure of the air above the water.
-\item All of the above. 
 \end{MCquestion}
 \end{checkpoint}
 
@@ -162,12 +164,11 @@ a = \frac{\rho_0}{P_0}
 Pascal's Principle states that \textbf{if an external pressure is exerted on a fluid, the pressure everywhere in the fluid increases by that amount}. For example, if a fluid is contained in a piston with a cross-section area, $A$, and a force, $F$, is exerted on the piston (Figure \ref{fig:fluidmechanics:piston}), then the pressure everywhere in the fluid increase by $F/A$. 
 \capfig{0.4\textwidth}{figures/FluidMechanics/piston.png}{\label{fig:fluidmechanics:piston}A force exerted on the piston will increase the pressure everywhere in the fluid.}
 
-If we wish to determine the absolute pressure in the water at some depth, $h$, in the ocean, we need to include the fact that the Earth's atmosphere exerts a net downwards force on the surface of the ocean in addition to the fact that the pressure changes with depth due to gravity. The pressure from the air in the Earth's atmosphere is called ``atmospheric pressure'', and depends on a variety of conditions, such as the weather. The average pressure from the atmosphere is $P_0=\SI{1.013e5}{Pa}$. If the atmospheric pressure is $P_0$ at the surface of the ocean, then the pressure at some depth, $h$, is given by:
+If we wish to determine the absolute pressure in the water at some depth, $h$, in the ocean, we need to include the fact that the Earth's atmosphere exerts a net downwards force on the surface of the ocean in addition to the fact that the pressure changes with depth due to gravity. The pressure from the air in the Earth's atmosphere is called ``atmospheric pressure'', and depends on a variety of conditions, such as the weather. The average pressure from the atmosphere is $P_0=\SI{1.013e5}{Pa}$. If the atmofspheric pressure is $P_0$ at the surface of the ocean, then the pressure at some depth, $h$, is given by:
 \begin{align*}
 P(h) = P_0 + \rho g h
 \end{align*}
 where $\rho$ is the density of water. As a consequence, the pressure at any depth, $h$, in a fluid is the same everywhere at that depth in the fluid. 
-
 \begin{checkpoint}
 \capfig{0.4\textwidth}{figures/FluidMechanics/glasses.png}{\label{fig:fluidmechanics:glasses}Three glasses with different shapes.}
 \begin{MCquestion}{You fill the three glasses in Figure \ref{fig:fluidmechanics:glasses} such that the liquid reaches a height $h$ above the bottom of the glass. What can you say about the pressure of the liquid at the bottom of each glass?}
@@ -178,7 +179,7 @@ where $\rho$ is the density of water. As a consequence, the pressure at any dept
 \item It is only the same for all glasses if we can neglect atmospheric pressure. 
 \end{MCquestion}
 \end{checkpoint}
-
+\newpage
 \begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/lift.png}{\label{fig:fluidmechanics:lift}A force exerted on the piston of a hydraulic lift in order to lift a mass $M$.}
 A hydraulic lift exploits Pascal's principle in order to use a small force to exert a large force. The hydraulic lift in Figure \ref{fig:fluidmechanics:lift} shows a lift that is constructed by having a fluid between two vertical movable pistons. The pistons are cylindrical and the diameter of their cross-sections are $D$ and $D/2$. A mass, $M$, is placed on the piston with the larger diameter. What is the magnitude of the force, $\vec F$, that must be applied on the smaller piston in order to lift the mass, $M$?}
 If a force $\vec F$ is applied to the small piston, then the pressure in the fluid will increase by:
@@ -384,9 +385,7 @@ Gravity will also do (negative) work on the fluid as it changes height. In a per
 \end{align*}
 Because of the equation of continuity, this is also equal to the mass of fluid that moves a distance, $l_2$, on the left side of the pipe:
 \begin{align*}
-\Delta m = V_2 \rho = A_2 l_2 \rho = A_2 v_2 \Delta t \rho \begin{flushright}
-•
-\end{flushright}
+\Delta m = V_2 \rho = A_2 l_2 \rho = A_2 v_2 \Delta t \rho 
 \end{align*}
 since $A_1v_1 = A_2 v_2$.
 
@@ -434,7 +433,6 @@ If a fluid is flowing at constant height such that $v_2 > v_1$ (as in Figure \re
 
 Bernoulli's principle can be used to describe many phenomena. For example, an airplane wing (technically, an ``airfoil'') creates lift because because the pressure of the air above the wing is lower than the pressure above the wing. This is illustrated in Figure \ref{fig:fluidmechanics:airfoil}, which shows that the laminar flow of the air creates a low pressure area above the wing. As the stream lines of air encounter the wing, those that are above the wing get compressed together, which leads to a faster speed of the air above the wing (equation of continuity). The resulting difference in air pressure above and below the wing results in a net upwards force on the wing. 
 
-TODO: This is also the principle that describes how the wind passing by the sail of a sail boat can result in a force on the boat with a component that can move the boat upwind.
 \capfig{0.4\textwidth}{figures/FluidMechanics/airfoil.png}{\label{fig:fluidmechanics:airfoil}Laminar flow of air around a airfoil. The curvature of the asymmetric airfoil forces the streamlines above the airfoil together, increasing the speed of the air due to the continuity equation, and resulting in a low pressure area.}
 
 Bernoulli's principle also describes why the roof can be lifted off of a house in high winds (Figure \ref{fig:fluidmechanics:roof}, left panel). It is not the force of the wind against the roof that blows the roof off of a house; it is the difference in air pressure in the house (normal) and the pressure above the roof (low, due to the flowing wind), that results in a net upwards force on the roof. Bernoulli's principle is also used to construct atomizers which allow liquid in a bottle to be sprayed (Figure \ref{fig:fluidmechanics:roof}, right panel). For example, perfume bottles often have a bulb connected to a tube/spout. When you squeeze the bulb, it causes the air in the tube to flow quickly, creating a low pressure in the vertical segment of the spout. The liquid is forced up by the pressure in the bottle; once the liquid arrives in the fast flowing air, it is sprayed out along with the air.
@@ -447,7 +445,7 @@ Bernoulli's principle also describes why the roof can be lifted off of a house i
 \item Yes, there is a net inwards force on the windows from air pressure.
 \end{MCquestion}
 \end{checkpoint}
-
+\newpage
 \begin{example}{\capfig{0.5\textwidth}{figures/FluidMechanics/watertower.png}{\label{fig:fluidmechanics:watertower}Water leaking out of a horizontal hole in a water tank.} A water tower is constructed so that the bottom of the water tank is a height $h_2$ above the ground, as illustrated in Figure \ref{fig:fluidmechanics:watertower}. The water in the tank is at a height $h_1$ from the bottom of the tank. A leak from a horizontal hole is found at the base of the tank. What is the horizontal distance, $d$, from the bottom of the tower to where the water from the leak hits the ground? Assume that the water level in the tank is constant and that atmospheric pressure does not change appreciably over the height of the tower.}
 The pressure in the water tank leads to the water exiting the bottom of the tank with a horizontal velocity of magnitude $v$. That water then undergoes projectile motion on its way to the ground. We can first determine the speed of the water exiting the tank and then use the kinematics for projectile motion to model the distance, $d$. 
 
@@ -472,7 +470,7 @@ d &= vt = \sqrt{2gh_1}\sqrt{\frac{2h_2}{g}} = \sqrt{4h_1h_2}
 \end{align*}
 \textbf{Discussion:} We find that the water coming out of the bottom of the tank, when there is a height $h_1$ of water above it providing pressure, will have the same speed as that of a particle which has fallen a distance $h_1$. This is because there is no net pressure difference between the top of the water tank and where the water has exited the hole, so gravity is the only force doing work on the water. Gravity will do work at the same rate on particles of water as on any other particle, so the speed of the water particles at the bottom of the tank is the same as if they had fallen a distance $h_1$. Again, once the water particles are falling through the air, gravity is the only net force exerted on those particles, so they undergo projectile motion, just as any other particle would.
 \end{example}
-
+\newpage
 \begin{example}{You measure that water comes out of your kitchen faucet at a rate of $\SI{6}{l/min}$. The faucet has a diameter of $\SI{2}{cm}$. At what rate will water flow out of your basement faucet, which has a diameter of $\SI{1}{cm}$ and is located a height $h=\SI{3}{m}$ below your kitchen faucet? Assume that atmospheric pressure, $P_0$, does not change appreciably between your kitchen and basement.}
 \label{ex:fluidmechanics:kitchen}
 The water flows out of the kitchen faucet at a speed, $v_1$, where the pressure is atmospheric. If the area of the kitchen faucet is $A_1$ we can determine the speed, $v_1$, from the given flow rate, $Q_1=\SI{6}{l/min}=\SI{1e-4}{m^3/s}$:
@@ -637,11 +635,30 @@ Q =  \frac{\pi r^4}{8\eta L}\Delta P
 
 \newpage
 \begin{importantEquations}
-This is an important equation
+\begin{multicols}{2}
+\textbf{In the presence of gravity:}
 \begin{align*}
-E = mc^2
+\frac{dP}{dy}&=-\rho g\\
+P(y_2)-P(y_1)&=-\rho g(y_2-y_1)\\
+F_B&=\rho Vg
 \end{align*}
+\textbf{Equation of continuity:}
+\begin{align*}
+\rho Av&=\textrm{constant}\\
+Q&=Av=\textrm{constant}\quad \textrm{(if incompressible)}
+\end{align*}
+\columnbreak
 
+\textbf{Bernoulli:}
+\begin{align*}
+P+\frac{1}{2}\rho v^2+\rho gy=\textrm{constant}
+\end{align*}
+\textbf{Viscosity:}
+\begin{align*}
+Q&=\frac{\Delta P}{R}\\
+Q&= \frac{\pi r^4}{8\eta L}\Delta P \quad \textrm{(Poiseuille)}
+\end{align*}
+\end{multicols}
 \end{importantEquations}
 
 
@@ -675,9 +692,76 @@ Measure the viscosity of maple syrup.
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
+\begin{problemParts}{soln:fluids:shipwreck}{\label{prob:fluids:shipwreck}A man and a woman, let's call them Rebeka (\SI{57}{kg})and Josh (\SI{63}{kg}), are on a cruise when their ship tragically sinks. They are thrust into the freezing cold ocean ($\rho_w=\SI{1027}{kg/m^3}$). They see a large door floating on the surface of the water, and wonder if they could both survive if they both lay on top of the door. They estimate that the door measures about $\SI{2}{m}\times\SI{1}{m}\times\SI{0.12}{m}$.}
+\item What does the density of the wood have to be in order for them to stay above the surface of the water? 
+\item If the door is made of oak ($\rho_d=\SI{750}{kg/m^3}$), will they survive? Can one of them survive?
+\end{problemParts}
 
+\begin{problemParts}{soln:fluids:iv}{\label{prob:fluids:iv} A doctor prescribes an IV drip to a dehydrated patient. She asks a nurse, Lily, to administer \SI{2}{L} of saline solution ($\eta=\SI{1.0e-3}{\pascal\second}$)to the patient over 2 hours. An IV drip works by inserting a needle into a vein in a patient's arm. The needle is connected to an IV bag by a tube. Lily uses a needle that has a diameter of \SI{0.60}{mm} and a length of \SI{32}{mm}. The blood pressure in the patient's veins is $\SI{7}{mm Hg}\approx \SI{933}{Pa}$ above atmospheric pressure.} 
+\item What must the pressure be at the entrance of the needle? Assume the needle is essentially horizontal.
+\item How high above the patient's arm should Lily put the IV bag?
+\item Why might it be a problem if Lily accidentally inserted the needle into an artery instead of a vein?
+\end{problemParts}
 
 \newpage
 \subsection{Solutions}
+\begin{solution}{prob:fluids:shipwreck}\label{soln:fluids:shipwreck}
+\begin{enumerate}[(a)]
+\item For an object to stay afloat, the buoyant force must be at least equal to the weight of the object. We can express this using Newton's Second Law:
+\begin{align*}
+F_g&=F_B\\
+(m_R+m_J+m_d)g&=\rho_wV_wg\\
+m_R+m_J+m_d&=\rho_wV_w
+\end{align*}
+where the weight depended on the mass of Rebeka (R), Josh (J) and the door (d). We added the subscript $W$ to right side of the equation to remind ourselves that the buoyant force depends on the density and volume \textbf{of the displaced water}. We want to find the maximum density of the wood in order for Rebeka and Josh to stay above the water's surface. This means that the maximum volume of water that can be displaced is the volume of the door, $V_w=V_d$ (so that the surface of the door is level with the surface of the water). We can rewrite the mass of the door in terms of its volume and density, and apply our condition that $V_w=V_d$ :
+\begin{align*}
+m_R+m_J+\rho_dV_d&=\rho_wV_d\\
+\rho_d&=\frac{\rho_wV_d-m_R-m_J}{V_d}
+\end{align*}
+A quick calculation tells us that the volume of the door is $(\SI{2}{m})(\SI{1}{m})(\SI{0.12}{m})=\SI{0.24}{m^3}$. We can now calculate the desired density of the wood:
+\begin{align*}
+\rho_d&=\frac{\rho_wV_d-m_R-m_J}{V_d}\\
+\rho_d&=\frac{(\SI{1027}{kg/m^3})(\SI{0.24}{m^3})-\SI{57}{kg}-\SI{63}{kg}}{\SI{0.24}{m^3}}\\
+\rho_d&=\SI{527}{kg/m^3}
+\end{align*}
+\item No, they could not both stay on the raft because the density of oak is greater than the maximum density of \SI{427}{kg/m^3}. We can solve for the maximum additional mass on the door ($m_A$) if the door is made of oak:
+\begin{align*}
+F_g&=F_B\\
+(m_A+m_d)g&=\rho_wV_wg\\
+m_A+\rho_dV_d&=\rho_wV_w\\
+m_A+\rho_dV_d&=\rho_wV_d\\
+m_A&=V_d(\rho_w-\rho_d)
+\end{align*}
+where we again used the condition that $V_w=V_d$. We can plug in the appropriate values and solve:
+\begin{align*}
+m_A&=V_d(\rho_w-\rho_d)\\
+m_A&=(\SI{0.24}{m^3})(\SI{1027}{kg/m^3}-\SI{750}{kg/m^3})\\
+m_A&=\SI{66}{kg}
+\end{align*}
+The door can support an additional mass of \SI{66}{kg}, so either Rebeka or Josh can survive if the other does not get on the door.  
+\end{enumerate}
+\end{solution}
 
+\begin{solution}{prob:fluids:iv}\label{soln:fluids:iv}
+\begin{enumerate}[(a)]
+\item We assume that the saline solution exhibits laminar flow and we model the needle as a horizontal cylindrical pipe. We can therefore use Poiseuille's equation:
+\begin{align*}
+Q=\frac{\pi r^4}{8\eta L}(P_2-P_1)
+\end{align*}
+We want to find the pressure at the entrance of the needle, $P_2$:
+\begin{align*}
+P_2&=Q\frac{8\eta L}{\pi r^4}+P_1\\
+\end{align*}
+The pressure at the exit of the needle, $P_1$, is just the blood pressure (\SI{933}{Pa}). The radius of the needle is $\SI{0.60}{mm}/2=\SI{0.30}{mm}$. You can confirm that the flow rate has to be in units of $m^3/s$. We can calculate the flow rate in the appropriate units:
+\begin{align*}
+Q=\frac{\SI{2}{L}}{\SI{2}{hr}}\cdot \frac{\SI{1}{hr}}{\SI{3600}{s}}\cdot \frac{\SI{0.001}{m^3}}{\SI{1}{L}}=\SI{2.8e-7}{m^3/s}
+\end{align*}
+Using the given values, we can calculate $P_1$:
+\begin{align*}
+P_2&=(\SI{2.8e-7}{m^3/s})\frac{8(\SI{1.0e-3}{\pascal\second}) (\SI{0.032}{m})}{\pi (\SI{3e-4}{m})^4}+\SI{933}{Pa}\\
+P_2&=\SI{3.75e3}{Pa}
+\end{align*}
+\item We can use Bernoulli's principle to find the appropriate height of the IV bag. We set up our coordinate system so that the height is zero where the needle is. At the top of the solution in the IV bag (at height $h_1$), the solution has a speed of zero and is at atmospheric pressure, $P_0$. The velocity at the needle is also 0, and the pressure is \SI{3.75e3}{Pa}.? How does the atmospheric pressure factor in? I think that the blood pressure is that above atmospheric pressr
+\end{enumerate}
+\end{solution}
 
