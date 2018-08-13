@@ -697,8 +697,8 @@ Measure the viscosity of maple syrup.
 \item If the door is made of oak ($\rho_d=\SI{750}{kg/m^3}$), will they survive? Can one of them survive?
 \end{problemParts}
 
-\begin{problemParts}{soln:fluids:iv}{\label{prob:fluids:iv} A doctor prescribes an IV drip to a dehydrated patient. She asks a nurse, Lily, to administer \SI{2}{L} of saline solution ($\eta=\SI{1.0e-3}{\pascal\second}$)to the patient over 2 hours. An IV drip works by inserting a needle into a vein in a patient's arm. The needle is connected to an IV bag by a tube. Lily uses a needle that has a diameter of \SI{0.60}{mm} and a length of \SI{32}{mm}. The blood pressure in the patient's veins is $\SI{7}{mm Hg}\approx \SI{933}{Pa}$ above atmospheric pressure.} 
-\item What must the pressure be at the entrance of the needle? Assume the needle is essentially horizontal.
+\begin{problemParts}{soln:fluids:iv}{\label{prob:fluids:iv} A doctor prescribes an IV drip to a dehydrated patient. She asks a nurse, Lily, to administer \SI{2}{L} of saline solution ($\eta=\SI{1.0e-3}{\pascal\second}$)to the patient over 2 hours. An IV drip works by inserting a needle into a vein in a patient's arm. The needle is connected to an IV bag by a tube. Lily uses a needle that has a diameter of \SI{0.60}{mm} and a length of \SI{32}{mm}. The blood pressure in the patient's veins is $\SI{80}{mm Hg}$ above atmospheric pressure. Note: $\SI{1}{mm Hg}\approx \SI{133}{Pa}$} 
+\item What must the pressure be at the entrance of the needle? Assume the needle is essentially horizontal. Write your answer in Pascals above atmospheric pressure.
 \item How high above the patient's arm should Lily put the IV bag?
 \item Why might it be a problem if Lily accidentally inserted the needle into an artery instead of a vein?
 \end{problemParts}
@@ -752,16 +752,31 @@ We want to find the pressure at the entrance of the needle, $P_2$:
 \begin{align*}
 P_2&=Q\frac{8\eta L}{\pi r^4}+P_1\\
 \end{align*}
-The pressure at the exit of the needle, $P_1$, is just the blood pressure (\SI{933}{Pa}). The radius of the needle is $\SI{0.60}{mm}/2=\SI{0.30}{mm}$. You can confirm that the flow rate has to be in units of $m^3/s$. We can calculate the flow rate in the appropriate units:
+The pressure at the exit of the needle, $P_1$, is just the blood pressure (\SI{80}{mm Hg}). The radius of the needle is $\SI{0.60}{mm}/2=\SI{0.30}{mm}$. You can confirm that the flow rate has to be in units of $m^3/s$. We can calculate the flow rate in the appropriate units:
 \begin{align*}
 Q=\frac{\SI{2}{L}}{\SI{2}{hr}}\cdot \frac{\SI{1}{hr}}{\SI{3600}{s}}\cdot \frac{\SI{0.001}{m^3}}{\SI{1}{L}}=\SI{2.8e-7}{m^3/s}
 \end{align*}
 Using the given values, we can calculate $P_1$:
 \begin{align*}
-P_2&=(\SI{2.8e-7}{m^3/s})\frac{8(\SI{1.0e-3}{\pascal\second}) (\SI{0.032}{m})}{\pi (\SI{3e-4}{m})^4}+\SI{933}{Pa}\\
-P_2&=\SI{3.75e3}{Pa}
+P_2&=(\SI{2.8e-7}{m^3/s})\frac{8(\SI{1.0e-3}{\pascal\second}) (\SI{0.032}{m})}{\pi (\SI{3e-4}{m})^4}+\SI{80}{mm Hg}\cdot \frac{\SI{133}{Pa}}{\SI{1}{mm Hg}}\\
+P_2&=\SI{2817}{Pa}+\SI{10640}{Pa}
 \end{align*}
-\item We can use Bernoulli's principle to find the appropriate height of the IV bag. We set up our coordinate system so that the height is zero where the needle is. At the top of the solution in the IV bag (at height $h_1$), the solution has a speed of zero and is at atmospheric pressure, $P_0$. The velocity at the needle is also 0, and the pressure is \SI{3.75e3}{Pa}.? How does the atmospheric pressure factor in? I think that the blood pressure is that above atmospheric pressr
+$\therefore P_2=\SI{13457}{Pa}$ above atmospheric pressure.
+\item We can use Bernoulli's principle to find the appropriate height of the IV bag. We set up our coordinate system so that the height is zero where the needle is. At the top of the solution in the IV bag (at height $h_1$), the solution has a speed of zero and is at atmospheric pressure, $P_0=\SI{1}{atm}$. The minimum velocity at the needle is 0, and the pressure is $\SI{13457}{Pa}+\SI{1}{atm}$. Bernoulli's principle therefore states that:
+\begin{align*}
+P_0+\frac{1}{2}\rho v_0^2+\rho gy_0=P_1+\frac{1}{2}\rho v_1^2+\rho gy_1\\
+\end{align*}
+Using our values and the density of water ($\rho=\SI{997}{kg/m^3}$) to solve for $y_0$, we get:
+\begin{align*}
+P_0+\rho gy_0=P_0\\
+y_0=\frac{P_1-P_0}{\rho g}\\
+y_0=\frac{\SI{13457}{Pa}+\SI{1}{atm}-\SI{1}{atm}}{(\SI{997}{kg/m^3})(\SI{9.8}{m/s^2})}\\
+y_0=\frac{\SI{13457}{Pa}}{(\SI{997}{kg/m^3})(\SI{9.8}{m/s^2})}\\
+y_0=\SI{1.4}{m}
+\end{align*}
+\therefore the IV bag must be placed at least $\SI{1.4}{m}$ above the patient's arm. 
+
+  
 \end{enumerate}
 \end{solution}
 
