@@ -5,7 +5,7 @@
 
 %Decide whether to show answers:
 %Hides the answers to short answer questions
-%\excludecomment{answer}
+\excludecomment{answer}
 %Shows multiple choice answers
 \newcommand{\correct}{\textbf{(Correct)}}
 %Hides multiple choice answers
@@ -28,7 +28,7 @@
 \usepackage{comment}
 \usepackage{ifthen}
 \usepackage{color}
-\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 \usepackage[explicit]{titlesec}
 \usepackage{lmodern}
 \usepackage{listings}
@@ -98,7 +98,7 @@
 %Environments for writing code
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
-
+  
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
 \renewcommand{\lstlistingname}{Python Example}
 \renewcommand{\lstlistlistingname}{List of \lstlistingname s}
@@ -288,19 +288,19 @@
 \end{mdframed}}
 
 %Reflect and Research
-\newenvironment{reflectresearch}[1]{%
+\newenvironment{chapteractivity}[2]{%
 \mdfsetup{%
     frametitle={%
         \tikz[baseline=(current bounding box.east),outer sep=0pt]
         \node[anchor=west,rectangle,fill=TBgreen!80, minimum width=5cm,rounded corners=0.2cm]
-        {\strut Reflect and Research};},
+        {\strut #1};},
     frametitlefont=\color{white}\sffamily\bfseries,
     innertopmargin=0pt,linecolor=TBgreen!80,backgroundcolor=TBgreen!5,%
     linewidth=1pt,topline=true,%
     frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
 }
 \vspace{10pt}
-\begin{mdframed}\begin{enumerate}[itemsep=1ex] #1
+\begin{mdframed}\begin{enumerate}[itemsep=1ex] #2
    \end{enumerate}}
 {\end{mdframed}}
 
@@ -411,7 +411,7 @@
 
 
 %\include{Introduction}
-%\include{ModelAndExperiment}
+\include{ModelAndExperiment}
 %\include{DescribingMotionIn1D}
 %\include{DescribingMotionInND}
 %\include{NewtonsLaws}
@@ -441,7 +441,7 @@
 %
 %\appendix
 %\renewcommand\chaptername{Appendix}
-%\include{Calculus}
+\include{Calculus}
 %\include{Vectors}
 %\include{Labs}
 %\include{Python}
