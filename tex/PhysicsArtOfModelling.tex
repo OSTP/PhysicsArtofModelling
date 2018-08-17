@@ -383,6 +383,12 @@
 \newenvironment{solution}[2]{\refstepcounter{solution}\textbf{Solution to problem \ref{#1}:} #2}
 {\vspace{2ex}}
 
+\newenvironment{solutionParts}[2]{\refstepcounter{solution}\textbf{Solution to problem \ref{#1}:}
+  \begin{enumerate}[label=\alph*),topsep=-10pt] 
+   #2
+  \end{enumerate}}
+  {\vspace{2ex}}
+  
 %%Reflect and Research Questions with Counter
 \newcounter{tQuestion}[chapter]
 \def\therQuestion{\thechapter-\arabic{tQuestion}}
@@ -441,8 +447,8 @@
 %
 %\appendix
 %\renewcommand\chaptername{Appendix}
-%\include{Vectors}
-\include{Calculus}
+\include{Vectors}
+%\include{Calculus}
 %\include{Labs}
 %\include{Python}
 \end{document}
