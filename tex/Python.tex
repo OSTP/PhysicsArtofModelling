@@ -3,11 +3,13 @@
 This appendix gives a very brief introduction to programming in python and is primarily aimed at introducing tools that are useful for the experimental side of physics. 
  \vspace{1cm}
 \begin{learningObjectives}
-\item Be able to perform simple algebra using python
-\item Be able to plot a function in python
-\item Be able to propagate uncertainties in python
-\item Be able to plot and fit data to a straight line
-\item Understand how to use Python to numerically calculate any integral
+{
+\item Be able to perform simple algebra using python.
+\item Be able to plot a function in python.
+\item Be able to propagate uncertainties in python.
+\item Be able to plot and fit data to a straight line.
+\item Understand how to use Python to numerically calculate \textit{any} integral.
+}
 \end{learningObjectives}
 
 In this textbook, we will encourage you to use computers to facilitate making calculations and displaying data. We will make use of a popular programming language called Python, as well as several ``modules'' from Python that facilitate working with numbers and data. Do not worry if you do not have any programming experience; we assume that you have none and hope that by the end of this book, you will have some capability to decrease your workload by using computer programming.
@@ -21,7 +23,7 @@ In Python, as in other programming language, the equal sign is called the \textb
 \item \textit{assigns} the values of \code{2*a} to the variable \code{b}
 \item prints out the value of the variable \code{b}
 \end{itemize}
-
+\vspace{0.25cm}
 \begin{python}[caption=Declaring variables in Python] 
 #This is a comment, and is ignored by Python
 a = 2 
@@ -70,7 +72,7 @@ position = [0,1,4,9,16,25]
 time = [0,1,2,3,4,5]
 
 #make the plot showing points and the line (.-)
-pl.plot(time, position)
+pl.plot(time, position, '.-')
 #add some labels:
 pl.xlabel("time") #label for x-axis
 pl.ylabel("position") #label for y-axis
@@ -79,33 +81,35 @@ pl.show()
 
 \end{python}
 \begin{poutput}
-(*  \capfig{0.6\textwidth}{figures/Python/positiontime.png}{Plotting two arrays.} *)
+(*  \capfig{0.6\textwidth}{figures/Python/positiontime.png}{Using two arrays and plotting them.} *)
 \end{poutput}
 
 \begin{checkpoint}{How would you modify the Python code above to show only the points, and not the line?}
+\begin{answer}
+Modify the line of code from \code{pl.plot(time, position, '.-')} to \code{pl.plot(time, position, '.')}
+\end{answer}
 \end{checkpoint}
 
 We can use Python to plot any mathematical function that we like. It is important to realize that computers do not have a representation of a continuous function. Thus, if we would like to plot a continuous function, we first need to evaluate that function at many points, and then plot those points. The \code{numpy} module provides many useful features for working with arrays of numbers and applying functions directly to those arrays. 
 
-Suppose that we would like to plot the function $f(x) = cos(x^2)$ between $x=-3$ and $x=5$. In order to do this in Python, we will first generate an array of many values of $x$ between $-10$ and $25$ using the \code{numpy} package and the function \code{linspace(min,max,N)} which generates $N$ linearly spaced points between $min$ and $max$. We will then evaluate the function at all of those points to create a second array. Finally, we will plot the two arrays against each other:
+Suppose that we would like to plot the function $f(x) = cos(x^2)$ between $x=-3$ and $x=5$. In order to do this in Python, we will first generate an array of many values of $x$ between $-3$ and $5$ using the \code{numpy} package and the function \code{linspace(min,max,N)} which generates $N$ linearly spaced points between $min$ and $max$. We will then evaluate the function at all of those points to create a second array. Finally, we will plot the two arrays against each other:
 \begin{python}[caption=Plotting a function of 1 variable]
 #import the pylab and numpy modules
 import pylab as pl
 import numpy as np
 
-#Use numpy to generate 1000 values of x between -3 and 5:
-xvals =np.linspace(-3,5,1000)
+#Use numpy to generate 1000 values of x between -3 and 5.
+#xvals is an array with 1000 values in it:
+xvals =np.linspace(-3,5,1000) 
 
 #Now, evaluate the function for all of those values of x.
 #We use the numpy version of cos, since it allows us to take the cos 
-#of all values in the array
+#of all values in the array.
+#fvals will be an array with the 1000 corresponding cosines of the xvals squared
 fvals = np.cos(xvals**2)
 
 #make the plot showing only a line, and color it
 pl.plot(xvals, fvals, color='red')
-#add some labels:
-pl.xlabel("time") #label for x-axis
-pl.ylabel("position") #label for y-axis
 #show the plot
 pl.show()
 
@@ -185,16 +189,19 @@ import qexpy as q
 #Use matplotlib as the plot engine (try using 'bokeh' instead of 'mpl')
 q.plot_engine = 'mpl'
 
-#Then we enter the data in arrays for the x and y axes.
-#The values for the square root of height (x axis):
+#Set the number of significant figures to 2:
+q.set_sigfigs(2)
+
+#Then we enter the data:
+#start with the values for the square root of height:
 sqx = [1. , 1.41, 1.73, 2., 2.24]
-#and then, the corresponding times (y-axis):
+#and then, the corresponding times:
 t = [ 0.33,  0.74,  0.67,  1.07,  1.1 ]
 
 #Let us attribute an uncertainty of 0.15 to each measured values of t:
 terr = 0.15
 
-#We now make the plot. First, we create the plot object with the data.
+#We now make the plot. First, we create the plot object with the data
 #Note that x and y refer to the x and y axes
 fig = q.MakePlot( xdata = sqx, xname = "sqrt(distance) [m^0.5]",
                   ydata = t, yerr = terr, yname = "time [s]",
@@ -204,14 +211,14 @@ fig = q.MakePlot( xdata = sqx, xname = "sqrt(distance) [m^0.5]",
 fig.fit("linear")
                   
 #Then, we show it:
-fig.show()          
+fig.show()           
 \end{python}
 \begin{poutput}
 -----------------Fit results-------------------
 Fit of  My data  to  linear
 Fit parameters:
-My data_linear_fit0_fitpars_intercept = -0.2 +/- 0.2,
-My data_linear_fit0_fitpars_slope = 0.6 +/- 0.1
+My data_linear_fit0_fitpars_intercept = -0.24 +/- 0.22,
+My data_linear_fit0_fitpars_slope = 0.61 +/- 0.13
 
 Correlation matrix: 
 [[ 1.    -0.968]
@@ -224,7 +231,7 @@ chi2/ndof = 2.04/2
 The plot in Figure \ref{fig:Python:tvssqx} shows that the data points are consistent with falling on a straight line, when their error bars are taken into account. We've also asked QExpy to show us the line of best fit to the data, represented by the line with the shaded area. When we asked for the line of best fit, QExpy not only drew the line, but also gave us the values and uncertainties for the slope and the intercept of the line. The shaded area around the line corresponds to other possible lines that one would obtain using different values of the slope and intercept within their corresponding uncertainties. The output also provides a line that tells us that \code{chi2/ndof = 2.04/2}; although you do not need to understand the details, this is a measure of how well the data are described by the line of best fit. Generally, the fit is assumed to be ``good'' if this ratio is close to 1 (the ratio is called ``the reduced chi-squared'').  The ``correlation matrix'' tells us how the best fit value of the slope is linked to the best fit value of the intercept, which you do not need to worry about here.
 
 
-Since we expect the slope of the data to be $k$, this provides us a method to determine $k$ from the data as \SI{0.61\pm 0.13}{s.m^{-\frac{1}{2}}}. \textbf{Performing a linear fit of the data is the best way to determine a constant of proportionality between the measurements}. Finally, we expect the intercept to be equal to zero according to our model. The best fit line from QExpy has an intercept of \SI{-0.24\pm 0.22}{s}, which is slightly below, but consistent, with zero. From these data, we would conclude that our measurements are consistent with Chlo\"e's Theory. Again, remember that we can never confirm a theory, we can only exclude it; in this case, we cannot exclude Chlo\"e's Theory.
+Since we expect the slope of the data to be $k$, this provides us a method to determine $k$ from the data as \SI{0.61\pm 0.13}{s.m^{-\frac{1}{2}}}. \textbf{Performing a linear fit of the data is the best way to determine a constant of proportionality between the measurements}. Finally, we expect the intercept to be equal to zero according to our model. The best fit line from QExpy has an intercept of \SI{-0.24\pm 0.22}{s}, which is slightly below, but consistent, with zero. From these data, we would conclude that the measurements are consistent with Chlo\"e's Theory. 
 
 \section{Advanced topics}
 This section introduces a few more advanced topics that allow you to use computer programming to simplifying many tasks. In this section, we will show you how you can write your own program to numerically estimate the value of an integral of any function.
@@ -256,7 +263,7 @@ A few things to note about the code above:
 \end{itemize}
 In the example above, we wrote a Python function to represent a mathematical function. However, one can write a function to execute any set of tasks, not just to apply a mathematical function. Python functions are very useful in order to avoid having to repeatedly type the same code. 
 
-Recall that the numpy module allows us to apply functions to arrays of numbers, instead of a single number. We can modify the code above slight so that, if the argument to the function, \code{x}, is an array, the function will gracefully return an array of numbers to which the function has been applied. This is done by simply replacing the call to the \code{math} version of the \code{cos} function by using the \code{numpy} version:
+Recall that the \code{numpy} module allows us to apply functions to arrays of numbers, instead of a single number. We can modify the code above slightly so that, if the argument to the function, \code{x}, is an array, the function will gracefully return an array of numbers to which the function has been applied. This is done by simply replacing the call to the \code{math} version of the \code{cos} function by using the \code{numpy} version:
 \begin{python}[caption=Defining a function that works on an array] 
 #import the numpy module in order to use cos to an array
 import numpy as np
@@ -355,5 +362,8 @@ The integral between 1 and 5 using 1000 steps is 768.42
 One can easily integrate the above function analytically and obtain the exact result of $\num{768}$. The numerical answer will approach the exact answer as we make $N$ bigger. Of course, the power of numerical integration is to use it when the function cannot be integrated analytically.
 
 \begin{checkpoint}{What value of $N$ should you use above in order to get within $\num{0.01}$ of the exact analytic answer?}
+\begin{answer}
+With $N\approx 28000$, the numerical value is within 0.01 of the analytic value.
+\end{answer}
 \end{checkpoint}
 
