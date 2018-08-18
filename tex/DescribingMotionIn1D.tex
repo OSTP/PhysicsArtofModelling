@@ -56,30 +56,10 @@ Now suppose that the ball in Figure \ref{fig:DescribingMotionIn1D:1daxis.png} is
 \captionof{table}{\label{tab:DescribingMotionIn1D:1dmotion} Position of a ball along the x-axis recorded every second.}
 \endgroup
 \end{center}
-The easiest way to visualize the values in the table is to plot them on a graph. Plotting position as a function of time is one of the most common graphs to make in physics, since it is often a complete description of the motion of an object. We can easily plot these values using Python:
-\begin{python}[caption=Plotting position versus time] 
-#First, we load pylab module for plotting
-import pylab as pl
-#We define t as a list of values (note the square brackets):
-t = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
-#Similarly, we define the corresponding positions:
-x = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
-#Define the plot:
-pl.plot(t,x,'.')# the '.' means that it will show the actual points instead of a line
-#Set the range of the axes, add some labels and a grid
-pl.ylim(0,6)
-pl.xlim(0,10)
-pl.xlabel('time [s]')
-pl.ylabel('position [m]')
-pl.grid()
-#Show the plot
-pl.show()
-\end{python}
-\begin{poutput}
-(* \capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1dxvst.png}{\label{fig:DescribingMotionIn1D:1dxvst}Plot of position as a function of time using the values from Table \ref{tab:DescribingMotionIn1D:1dmotion}.} *)
-\end{poutput}
+The easiest way to visualize the values in the table is to plot them on a graph, as in Figure \ref{fig:DescribingMotionIn1D:1dxvst}. Plotting position as a function of time is one of the most common graphs to make in physics, since it is often a complete description of the motion of an object. 
+\capfig{0.7\textwidth}{figures/DescribingMotionIn1D/1dxvst.png}{\label{fig:DescribingMotionIn1D:1dxvst}Plot of position as a function of time using the values from Table \ref{tab:DescribingMotionIn1D:1dmotion}.} 
 
-The data plotted in Figure \ref{fig:DescribingMotionIn1D:1dxvst} show that the $x$ position of the ball increases linearly with time (i.e. it is a straight line). This means that in equal time increments, the ball will cover equal distances. Note that we also had the liberty to choose when we define $t=0$; in this case, we chose that time is zero when the ball is at $x=\SI{0.5}{m}$. 
+The data plotted in Figure \ref{fig:DescribingMotionIn1D:1dxvst} show that the $x$ position of the ball increases linearly with time (i.e. it is a straight line and the position increases at a constant rate). This means that in equal time increments, the ball will cover equal distances. Note that we also had the liberty to choose when we define $t=0$; in this case, we chose that time is zero when the ball is at $x=\SI{0.5}{m}$. 
 
 \begin{checkpoint}
 \begin{MCquestion}{Using the data from Table \ref{tab:DescribingMotionIn1D:1dmotion}, at what position along the x-axis will the ball be when time is $t=\SI{9.5}{s}$, if it continues its motion undisturbed?} 
