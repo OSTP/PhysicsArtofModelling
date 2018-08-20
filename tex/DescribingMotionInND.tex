@@ -21,7 +21,7 @@ In this chapter, we will learn how to extend our description of an object's moti
 \section{Motion in two dimensions}
 
 \subsection{Using vectors to describe motion in two dimensions}
-We can specify the location of an object with its coordinates, and we can describe any displacement by a vector. First, consider the case of an object moving with a constant velocity in a particular direction.  We can specify the position of the object at any time, $t$, using its position vector, $\vec r(t)$, which is a function of time. We can describe the $x$ and $y$ components of the position vector with independent functions, $x(t)$, and $y(t)$, respectively:
+We can specify the location of an object with its coordinates, and we can describe any displacement by a vector. First, consider the case of an object moving with a constant velocity in a particular direction.  We can specify the position of the object at any time, $t$, using its \textbf{position vector}, $\vec r(t)$, which is a function of time. The position vector is a vector that goes from the origin of the coordinate system to the position of the object. We can describe the $x$ and $y$ components of the position vector with independent functions, $x(t)$, and $y(t)$, that correspond to the $x$ and $y$ coordinates of the object at time $t$, respectively:
 \begin{align*}
 \vec r(t) = \begin{pmatrix}
            x(t) \\
@@ -69,7 +69,7 @@ where $\Delta r$ is the magnitude of the displacement vector. Thus, the average 
 \begin{MCquestion}{A llama runs in a field from a position $(x_1,y_1)=(\SI{2}{m},\SI{5}{m})$ to a position $(x_2,y_2)=(\SI{6}{m},\SI{8}{m})$ in a time $\Delta t=\SI{0.5}{s}$, as measured by Marcel, a llama farmer standing at the origin of the Cartesian coordinate system. What is the average speed of the llama?}
 \item \SI{1}{m/s}
 \item \SI{5}{m/s}
-\item \label{correct:describingmotioninnd:llama} \SI{10}{m/s}%correct
+\item \SI{10}{m/s} \correct
 \item \SI{15}{m/s}
 \end{MCquestion}
 \end{checkpoint}
@@ -96,7 +96,7 @@ which gives us the time derivative of the position vector (in one dimension, it 
          \end{pmatrix}\nonumber\\   
 \therefore \vec v(t) &= v_x(t)\hat x+v_y(t)\hat y  \nonumber     
 \end{align}
-where, again, we find that the components of the velocity vector are simply the velocities in the $x$ and $y$ direction. This means that we can treat motion in two dimensions as having two independent components: a motion along $x$ and a separate motion along $y$. This highlights the usefulness of the vector notation for allowing us to use one vector equation ($\vec v=\frac{d}{dt}\Delta \vec r$) to represent two equations (one for $x$ and one for $y$). 
+where, again, we find that the components of the velocity vector are simply the velocities in the $x$ and $y$ direction. This means that we can treat motion in two dimensions as two times one-dimensional motion: a motion along $x$ and a separate motion along $y$. This highlights the usefulness of the vector notation for allowing us to use one vector equation ($\vec v=\frac{d}{dt}\Delta \vec r$) to represent two equations (one for $x$ and one for $y$). 
 
 Similarly the acceleration vector is given by:
 \begin{align}
@@ -113,7 +113,7 @@ Similarly the acceleration vector is given by:
 \therefore \vec a(t) &= a_x(t)\hat x+a_y(t)\hat y      \nonumber        
 \end{align}
 
-For example, if an object is at position $\vec r_0=(x_0,y_0)$ with a velocity vector $\vec v_0=v_{0x}\hat x + v_{0y}\hat y$ at time $t=0$, and has a constant acceleration vector, $\vec a = a_x\hat x+a_y\hat y$, then the velocity vector at some later time $t$, $\vec v(t)$, is given by:
+If an object is at position $\vec r_0=(x_0,y_0)$ with a velocity vector $\vec v_0=v_{0x}\hat x + v_{0y}\hat y$ at time $t=0$, and has a \textbf{constant acceleration vector}\footnote{Where a constant vector means that both the magnitude and direction are constant in time.}, $\vec a = a_x\hat x+a_y\hat y$, then the velocity vector at some later time $t$, $\vec v(t)$, is given by:
 \begin{align*}
 \vec v(t) = \vec v_0 + \vec a t
 \end{align*}
@@ -130,7 +130,7 @@ Or, if we write out the components explicitly:
            a_yt \\
          \end{pmatrix}
 \end{align*}
-which really can be considered as two independent equations for the components of the velocity vector:
+these be considered as two independent equations for the components of the velocity vector:
 \begin{align*}
 v_x(t)&=v_{0x}+a_xt \\
 v_y(t)&=v_{0y}+a_yt \\
@@ -226,7 +226,7 @@ As you can see, the trajectory is a parabola, and corresponds to what you would 
 \begin{checkpoint}{\begin{MCquestion}{In example \ref{ex:describingmotioninnd:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:describingmotioninnd:parabola}?}
 \item $\vec v=(\SI{10}{m/s})\hat x+(\SI{15}{m/s})\hat y$
 \item $\vec v=(\SI{15}{m/s})\hat y$
-\item $\vec v=(\SI{10}{m/s})\hat x$ %correct
+\item $\vec v=(\SI{10}{m/s})\hat x$ \correct
 \item None of the above.
 \end{MCquestion}}
 \end{checkpoint}
@@ -234,32 +234,34 @@ As you can see, the trajectory is a parabola, and corresponds to what you would 
 \begin{example}{
 A monkey is hanging from a tree branch and you want to feed the monkey by throwing it a banana (Figure \ref{fig:describingmotioninnd:monkeytreeexample}). You know that the monkey is easily frightened and will let go of the tree branch the instant you throw the banana. The monkey is a horizontal distance $d$ away and a height $h$ above the point from which you release the banana when you throw it. At what angle with respect to the horizontal should you throw the banana so that the banana reaches the monkey?
 \capfig{0.6\textwidth}{figures/DescribingMotionInND/MonkeyTreeExample.png}{\label{fig:describingmotioninnd:monkeytreeexample} Feeding a monkey in a tree.}}
-This question is asking us to find what the angle, $\theta$, of the banana's initial velocity, $v_{0B}$, should be if we want to hit the monkey with the banana. This angle can be found by finding the ratio of the initial vertical velocity to the initial horizontal velocity:
+This question is asking us to find the angle, $\theta$, between the banana's initial velocity vector, $\vec v_{0B}$, and the horizontal for the banana to hit the monkey. This angle is given by the horizontal ($v_{B0x}$) and vertical ($v_{B0y}$) components of the initial velocity vector of the banana:
 \begin{align*}
-\tan\theta&=\frac{v_{0yB}}{v_{xB}}
+\tan\theta&=\frac{v_{B0y}}{v_{B0x}}
 \end{align*}
-Now, how do we know if we hit the monkey? A ``hit'' means that the monkey and the banana are \textbf{in the same place at the same time} at some time, $t$. So, our approach will be as follows: We will start by finding equations that describe the motion of the monkey and of the banana. Then, we will use our conditions for a successful ``hit'' to find the ratio ($\tan\theta=v_{0yB}/v_{xB}$) that we want for our initial throw, and use that to find $\theta$.\\
+In order for the banana to hit the monkey, and the banana and the monkey must be \textbf{in the same place at the same time} at some time, $t$. Our approach will be as follows: we will start by finding equations that describe the $x$ and $y$ position of the monkey and of the banana. Then, we will use our conditions for a successful ``hit'' to find the ratio ($\tan\theta=v_{B0y}/v_{B0x}$) that we want for our initial throw, and use that to find $\theta$.
 
-First, we need to set up our coordinate system. We set the origin to be where you release the banana; the origin is thus the initial position of the banana. We let $y$ be in the vertical direction and let $x$ be in the horizontal direction. We let ``up'' be positive and let the values of $x$ increase as you get closer to the tree, as shown in Figure \ref{fig:describingmotioninnd:monkeytreeexample}. 
+First, we define a coordinate system. We choose the origin to be where the banana is released. We let $y$ be in the vertical direction (positive upwards) and let $x$ be in the horizontal direction (positive towards the monkey), as shown in Figure \ref{fig:describingmotioninnd:monkeytreeexample}. 
 
-We can treat the $x$ and $y$ components of the banana's and of the monkey's velocity and position as independent. The monkey's motion has only a vertical component. The acceleration of the monkey in the vertical direction is the acceleration due to gravity, $a_y=-g$, which points in the $-y$ direction. The initial vertical position of the monkey is $h$ and its initial vertical velocity is 0, so we can describe the vertical position of the monkey, $y_M(t)$, by:
+We treat the $x$ and $y$ components of the banana and monkey's velocity and position vectors as independent. The monkey's motion has only a vertical component. The $y$ component of the monkey's acceleration is the acceleration due to gravity, $a_y=-\SI{9.8}{m/s^2}= -g$, which is negative, since gravity produces an acceleration in the negative $y$ direction. The $y$ component of the monkey's initial position is $y_{M0}=h$ and the $y$ component of its initial velocity is $v_{M0y}=0$. The $y$ component of the monkey's position as a function of time, $y_M(t)$, is given by:
 \begin{align*}
-y_M(t)&=y_0+v_{yo}t+\frac{1}{2}a_yt^2\\
+y_M(t)&=y_{M0}+v_{My0}t+\frac{1}{2}a_yt^2\\
 &=h+(0)-\frac{1}{2}gt^2
 \end{align*}
 The horizontal position of the monkey is constant, and is equal to $x_M(t)=d$.
 
-The banana's motion has both $x$ and $y$ components. There is no acceleration in the $x$ direction, and we defined the banana's initial horizontal position to be $x_{0B}=0$, so the horizontal position of the banana, $x_B$ is given by:
+The banana's motion has both $x$ and $y$ components. There is no acceleration in the $x$ direction, so the $x$ component of the banana's velocity is $v_{B0x}$ and constant. We defined the banana's initial $x$ coordinate to be $x_{B0}=0$, so the $x$ position of the banana as a function of time, $x_B(t)$ is given by:
 \begin{align*}
-x_B(t)&=x_0+v_{x0}\\
-&=(0)+v_{xB}t
+x_B(t)&=x_{B0}+v_{B0x}\\
+&=(0)+v_{B0x}t
 \end{align*}
-We defined the initial vertical position of the banana to be $y_{0B}=0$. The vertical position as a function of time, $y_B(t)$, can thus be described by:
+We defined the initial $y$ position of the banana to be $y_{B0}=0$. The $y$ position of the banana as a function of time, $y_B(t)$, can thus be described by:
 \begin{align*}
-y_B(t)&=y_0+v_{y0}t+\frac{1}{2}a_yt^2\\
-&=(0)+v_{0yB}t-\frac{1}{2}gt^2
+y_B(t)&=y_{B0}+v_{B0y}t+\frac{1}{2}a_yt^2\\
+&=(0)+v_{B0y}t-\frac{1}{2}gt^2
 \end{align*}
-Now that we have equations that describe the position of both the banana and the monkey, we can use our conditions for a successful hit. For the monkey and the banana to be in the same position, we need $y_M(t)=y_B(t)$ and $x_B(t)=d$ at some time $t$. Setting our equations for $y_M(t)$ and $y_B(t)$ equal to one another gives:
+where $v_{B0y}$ is the $y$ component of the banana's initial velocity and $a_y=-g$ is the $y$ component of the banana's acceleration (due to gravity). Now that we have equations that describe the position of both the banana and the monkey, we can use our conditions for the banana and monkey to be at the same position at the same time. For the monkey and the banana to be in the same position, we need $y_M(t)=y_B(t)$ and $x_B(t)=x_M(t) =d$ at some time $t$.
+
+Setting our equations for $y_M(t)$ and $y_B(t)$ equal to one another gives:
 \begin{align*}
 h-\frac{1}{2} gt^2&=v_{0yB}t-\frac{1}{2}gt^2\\
 \therefore h&=v_{0yB}t
@@ -278,8 +280,7 @@ This gives us the ratio we are looking for, so we now know that
 \tan\theta&=\frac{h}{d}\\
 \therefore \theta&=\tan^{-1}\left(\frac{h}{d}\right)
 \end{align*}
-Some people make the mistake of thinking that you should aim below the monkey when you throw the banana. This equation is telling us that what we should actually do is aim directly at the monkey. This works because the $x$ and $y$ components of the motion are independent, and the acceleration of the banana is the same as the acceleration of the monkey. 
-
+This is a somewhat surprising result, as it means that you only need to thrown the banana in the direction of the monkey (that is, aim at the monkey, and throw!). Thus, it will not matter how fast you throw the banana, and you will always hit the monkey if you aimed correctly. When you throw the banana faster, you will hit the monkey higher in its trajectory. If there is no ground for the monkey to hit, you can throw the banana as slowly as you like, and it will eventually catch up with the monkey when the banana reaches $x=d$.
 \end{example} 
 
 \subsection{Relative motion}
@@ -301,7 +302,7 @@ Note that the velocity of the object in the $x'y'$ system is found by adding the
 &=\pvec v'^B+\vec v^A(t)
 \end{align*}
 
-As an example, consider the situation depicted in Figure \ref{fig:describingmotioninnd:2drel}. Brice is on a boat off the shore of Nice, with a coordinate system $xy$, and is describing the position of a boat carrying Alice. He describes Alice's position as $\vec r^A(t)$ in the $xy$ coordinate system. Igor is on the shore and also wishes to describe Alice's position using the work done by Brice. Igor sees Brice's boat move with a velocity $\vec v'^B$ as measured in his $x'y'$ coordinate system. In order to find the vector pointing to Alice's position $\pvec r'^A(t)$, he adds the vector from his origin to Brice's origin ($\pvec v'^B t$) and the vector from Brice's origin to Alice $\vec r^A(t)$.
+As an example, consider the situation depicted in Figure \ref{fig:describingmotioninnd:2drel}. Brice is on a boat off the shore of Nice, with a coordinate system $xy$, and is describing the position of a boat carrying Alice. He describes Alice's position as $\vec r^A(t)$ in the $xy$ coordinate system. Igor is on the shore and also wishes to describe Alice's position using the work done by Brice. Igor sees Brice's boat move with a velocity $\pvec v'^B$ as measured in his $x'y'$ coordinate system. In order to find the vector pointing to Alice's position $\pvec r'^A(t)$, he adds the vector from his origin to Brice's origin ($\pvec v'^B t$) and the vector from Brice's origin to Alice $\vec r^A(t)$.
 
 \capfig{0.7\textwidth}{figures/DescribingMotionInND/2drel.png}{\label{fig:describingmotioninnd:2drel} Example of converting from one reference frame to another in two dimensions using vector addition.}
 
@@ -320,7 +321,7 @@ v_y'^A(t)&=v'^B_y+v_y^A(t)
 \begin{checkpoint}{\begin{MCquestion}{You are on a boat and crossing a North-flowing river, from the East bank to the West bank. You point your boat in the West direction and cross the river. \chloe is watching your boat cross the river from the shore, in which direction does she measure your velocity vector to be?}
 \item In the North direction.
 \item In the West direction.
-\item A combination of North and West directions.
+\item A combination of North and West directions.\correct
 \end{MCquestion}}
 \end{checkpoint}
 
@@ -386,7 +387,7 @@ where again, we see how writing a single vector equation (e.g. $\vec v(t) = \vec
 
 \section{Accelerated motion when the velocity vector changes direction}
 \label{sec:describingmotioninnd:accvconst}
-One key difference with one dimensional motion is that, in two dimensions, it is possible to have a non-zero acceleration even when the speed is constant. Recall, the acceleration \textbf{vector} is defined as the time derivative of the velocity \textbf{vector} (equation \ref{eqn:describingmotioninnd:avecdef}). This means that if the velocity vector changes with time, then the acceleration vector is non-zero. If the length of the velocity vector (speed) is constant, it is still possible that the \textbf{direction} of the velocity vector changes with time, and thus, that the acceleration vector is non-zero. This is, for example, what happens when an object goes around in a circle with a constant speed (the direction of the velocity vector changes). 
+One key difference with one dimensional motion is that, in two dimensions, it is possible to have an acceleration even when the speed is constant. Recall, the acceleration \textbf{vector} is defined as the time derivative of the velocity \textbf{vector} (equation \ref{eqn:describingmotioninnd:avecdef}). This means that if the velocity vector changes with time, then the acceleration vector is non-zero. If the length of the velocity vector (speed) is constant, it is still possible that the \textbf{direction} of the velocity vector changes with time, and thus, that the acceleration vector is non-zero. This is, for example, what happens when an object goes around in a circle with a constant speed (the direction of the velocity vector changes). 
 \capfig{0.35\textwidth}{figures/DescribingMotionInND/deltav.png}{\label{fig:describingmotioninnd:deltav} Illustration of how the direction of the velocity vector can change when speed is constant.}
 
 Figure \ref{fig:describingmotioninnd:deltav} shows an illustration of a velocity vector, $\vec v(t)$, at two different times, $\vec v_1$ and $\vec v_2$, as well as the vector difference, $\Delta \vec v=\vec v_2 - \vec v_1$, between the two. In this case, the length of the velocity vector did not change with time ($||\vec v_1||=||\vec v_2||$). The acceleration vector is given by:
@@ -465,7 +466,7 @@ where $\vec a_{\parallel}(t)$ is the component of the acceleration that is paral
 We often consider the motion of an object around a circle of fixed radius, $R$. In principle, this is motion in two dimensions, as a circle is necessarily in a two dimensional plane. However, since the object is constrained to move along the circumference of the circle, it can be thought of (and treated as) motion along a one dimensional axis that is curved. 
 \capfig{0.35\textwidth}{figures/DescribingMotionInND/circle.png}{\label{fig:describingmotioninnd:circle} Describing the motion of an object around a circle of radius $R$.}
 
-Figure \ref{fig:describingmotioninnd:circle} shows how we can describe motion on a circle. We could use $x(t)$ and $y(t)$ to describe the position on the circle, however, $x(t)$ and $y(t)$ are no longer independent since they have to correspond to the coordinates of points on a circle:
+Figure \ref{fig:describingmotioninnd:circle} shows how we can describe motion along a circle of radius, $R$. We could use $x(t)$ and $y(t)$ to describe the position on the circle, however, $x(t)$ and $y(t)$ are no longer independent since they have to correspond to the coordinates of points on a circle:
 \begin{align*}
 x^2(t)+y^2(t)=R^2
 \end{align*}
@@ -508,9 +509,15 @@ and the velocity vector is thus given by:
  &= R \begin{pmatrix}
            -\sin(\theta(t))\frac{d\theta}{dt} \\
            \cos(\theta(t))\frac{d\theta}{dt} \\
-         \end{pmatrix}     
+         \end{pmatrix}     \\  
 \end{align*}         
-where we used the Chain Rule to calculate the time derivatives of the trigonometric functions (since $\theta(t)$ is function of time). The magnitude of the velocity vector is given by:
+where we used the Chain Rule to calculate the time derivatives of the trigonometric functions (since $\theta(t)$ is function of time). We can write this in component form:
+\begin{align}
+\label{eqn:describingmotioninnd:vcircle}
+v_x &= -R\sin(\theta(t))\frac{d\theta}{dt}\nonumber\\
+v_y &= R\cos(\theta(t))\frac{d\theta}{dt}
+\end{align}
+The magnitude of the velocity vector is given by:
 \begin{align*}
 ||\vec v|| &=\sqrt{ v_x^2+v_y^2}\\
 &=\sqrt{ \left(-R\sin(\theta(t))\frac{d\theta}{dt}\right)^2+\left(R\cos(\theta(t))\frac{d\theta}{dt}\right)^2}\\
@@ -519,7 +526,7 @@ where we used the Chain Rule to calculate the time derivatives of the trigonomet
 \end{align*}
 The position and velocity vectors are illustrated in Figure \ref{fig:describingmotioninnd:vcircle} for an angle $\theta$ in the first quadrant ($0<\theta<\frac{\pi}{2}$).
 \capfig{0.35\textwidth}{figures/DescribingMotionInND/vcircle.png}{\label{fig:describingmotioninnd:vcircle} The position vector, $\vec r(t)$ is always perpendicular to the velocity vector, $\vec v(t)$, for motion on a circle.}
-In this case, you can note that the $x$ component of the velocity is negative (in the equation above, and in the Figure). From the equation above, you can also see that $\frac{|v_x|}{|v_y|}=\tan(\theta)$, which is illustrated in Figure \ref{fig:describingmotioninnd:vcircle}, showing that \textbf{the velocity vector is tangent to the circle} and perpendicular to the position vector. This is always the case for motion along a circle.
+In this case, you can note that the $x$ component of the velocity is negative (from the diagram and from Equation \ref{eqn:describingmotioninnd:vcircle}). From Equation \ref{eqn:describingmotioninnd:vcircle}, you can also see that $\frac{|v_x|}{|v_y|}=\tan(\theta)$, which is illustrated in Figure \ref{fig:describingmotioninnd:vcircle}, showing that \textbf{the velocity vector is tangent to the circle} and perpendicular to the position vector. This is always the case for motion along a circle.
 
 We can simplify our description of motion along the circle by using either $s(t)$ or $\theta(t)$ instead of the vectors for position and velocity. If we use $s(t)$ to represent position along the circumference ($s=0$ where the circle intersects the $x$ axis), then the velocity along the $s$ axis is:
 \begin{align*}
@@ -599,7 +606,7 @@ If an object goes around a circle, it will always have a centripetal acceleratio
 \item In the negative $y$ direction.
 \item In the positive $y$ direction.
 \item A combination of the positive $y$ and positive $x$ directions.
-\item A combination of the negative $y$ and positive $x$ directions. %correct
+\item A combination of the negative $y$ and positive $x$ directions. \correct
 \item A combination of the negative $y$ and negative $x$ directions.
 \end{MCquestion}}
 \end{checkpoint}
@@ -630,7 +637,7 @@ which is sometimes called the ``angular frequency'' instead of the angular veloc
 \capfig{0.35\textwidth}{figures/DescribingMotionInND/twocircles.png}{\label{fig:describingmotioninnd:twocircles} For a given angular velocity, the linear velocity will be larger on a larger circle ($v=\omega R$).} 
 \begin{checkpoint}{\begin{MCquestion}{A motor is rotating at \SI{3000}{rpm}, what is the corresponding frequency in \si{Hz}?}
 \item \SI{5}{Hz}
-\item \SI{50}{Hz}%correct
+\item \SI{50}{Hz}\correct
 \item \SI{500}{Hz}
 \end{MCquestion}}
 \end{checkpoint}
@@ -652,21 +659,30 @@ There are a couple of limitations to this trick. Remember that this only works f
 \newpage
 \section{Summary}
 
-\begin{chapterSummary}When the motion of an object is in more than one dimension, we describe the position of the object using a vector, $\vec{r}$. We can treat motion in two dimensions as having two independent components, a motion along $x$ and  a separate motion along $y$:
+\begin{chapterSummary}When the motion of an object is in more than one dimension, we describe the position of the object using a vector, $\vec{r}$. 
 \begin{align*}
 \vec r(t) = \begin{pmatrix}
           x(t) \\
           y(t) \\
-        \end{pmatrix}= x(t) \hat x + y(t) \hat y
+          z(t) \\
+        \end{pmatrix}= x(t) \hat x + y(t) \hat y + z(t) \hat z
 \end{align*}
-This can be extended for motion in $N$ dimensions.\\
+where $x(t)$, $y(t)$, and $z(t)$, are the position coordinates of the object. We treat the motion in each dimension as independent.
 
 The instantaneous velocity vector and the acceleration vector are given by:
 \begin{align*}
 \vec v(t) &=\frac{d}{dt}\vec r(t)\\
 \vec a(t) &= \frac{d}{dt}\vec v(t)
 \end{align*}
-If an object has position $\vec{r}^A$ as measured in a frame of reference $xy$ that is moving at constant speed $\vec{v}'^B$ as measured in a second frame of reference $x'y'$, then in the $x'y'$ reference frame:
+
+If the acceleration vector is constant (in magnitude and direction), then the position and velocity of the object are described by:
+\begin{align*}
+\vec r(t) &= \vec r_0 + \vec v_0 t + \frac{1}{2} \vec at^2 \\
+\vec v(t) &= \vec v_0 + \vec a t
+\end{align*}
+where each of these vector equations represents 3 independent equations, one for each of the $x$, $y$, and $z$ component of the vectors.
+
+If an object has position $\vec{r}^A$ as measured in a frame of reference $xy$ that is moving at constant speed $\pvec{v}'^B$ as measured in a second frame of reference $x'y'$, then in the $x'y'$ reference frame:
 \begin{align*}
 \pvec r'^A(t) &= \pvec v'^Bt+\vec r^A(t)\\
 \pvec v'^A(t) &=\pvec v'^B+\vec v^A(t)\\
@@ -674,16 +690,12 @@ If an object has position $\vec{r}^A$ as measured in a frame of reference $xy$ t
 \end{align*}
 An acceleration can change the magnitude and/or the direction of the velocity vector.
 \begin{enumerate}
-\item The component of the acceleration that is parallel to the velocity vector changes the magnitude of the velocity.
-\item The component of the acceleration that is perpendicular to the velocity vector changes the direction of the velocity.
+\item The component of the acceleration vector that is parallel to the velocity vector changes the magnitude of the velocity.
+\item The component of the acceleration vector that is perpendicular to the velocity vector changes the direction of the velocity.
 \end{enumerate}
-The acceleration vector for motion in two dimensions can be written as:
+The acceleration vector for motion in two dimensions can be written as the sum of vectors that are parallel ($\vec a_{\parallel}$) and perpendicular ($\vec a_{\perp}$) to the velocity vector:
 \begin{align*}
-\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt}
-\end{align*}
-If the speed is constant, then the acceleration vector is given by:
-\begin{align*}
-\vec a&=\frac{dv_x}{dt} \left(\hat x - \frac{v_x(t)}{v_y(t)}\hat y\right)
+\vec a&=\frac{dv}{dt}\hat v(t)+v(t)\frac{d\hat v}{dt} = \vec a_{\parallel} + \vec a_{\perp}
 \end{align*}
 
 If the position of an object moving in a circle of radius $R$ is described by its position along the curved axis $s$, then its position along the circle can be described using an angle, $\theta$, in radians:
@@ -720,14 +732,14 @@ The centripetal acceleration vector can be written as:
 \begin{align*}
 \vec a_{\bot}(t)&=\omega^2 R[-\cos(\theta)\hat x-\sin(\theta)\hat y]
 \end{align*}
-Uniform circular is when an object is going around a circle with a constant speed. The period, $T$, is the time that it takes for the object to complete one revolution of the circle. The frequency, $f$, is the inverse of the period, and can be thought of as the number of revolutions completed per second:
+Uniform circular is the motion of an object around a circle with a constant speed. The period, $T$, is the time that it takes for the object to complete one revolution. The frequency, $f$, is the inverse of the period, and can be thought of as the number of revolutions completed per second:
 \begin{align*}
 T&=\frac{2\pi}{\omega}\\
 f=\frac{1}{T}&=\frac{\omega}{2\pi}
 \end{align*}
 \end{chapterSummary}
 
-\newpage
+
 \begin{importantEquations}
 \begin{multicols}{2}
 \textbf{Motion in 2D:}
@@ -778,25 +790,34 @@ f=\frac{1}{T}&=\frac{\omega}{2\pi}
 
 \newpage
 \section{Thinking about the material}
-\subsection{Reflect and research}
 
-\begin{enumerate}
-\item Why do we observe the sun to be ``changing directions'' in the sky throughout the year?
-\item It was once believed that there was an absolute space and time called the ``luminiferous aether'' which all objects moved relative to. What was the name of the experiment that disproved this belief?
+\begin{chapteractivity}{Reflect and research}
+{
+\item It was once believed that there was an absolute reference frame called the ``luminiferous aether''. What was the name of the experiment that disproved the existence of this frame of reference?
 \item Find the centripetal acceleration of the Earth around the Sun.
-\item Your friend William believes that the earth is flat. Name two relative motion phenomena that would falsify William's belief.
-\end{enumerate}
-\subsection{To try at home}
+}
+\end{chapteractivity}
 
-\begin{tQuestion}All you need for this exercise is two identical objects that you can throw, one other person, and something tall that you can drop the objects from. Both people should hold the objects at the exact same height. One person will drop their object, and the other person will give their object an initial horizontal velocity by throwing it straight forward (make sure they don't throw it up or down!). Which object do you expect to land first? Why? If you do not see the results you expect, think of reasons why that might be. \end{tQuestion}
 
-\subsection{To try in the lab}
+\begin{chapteractivity}{To try at home}
+{
+\item Describe and carry out a small experiment to confirm that the amount of time that it takes for a projectile to fall a certain distance does not depend on the horizontal component of its velocity.
+}
+\end{chapteractivity}
+
+
+\begin{chapteractivity}{To try in the labe}
+{
+\item Develop a proposal for measuring how fast you can throw a ball, and carry out the experiment.
+\item Develop a proposal for measuring how far you can jump with a running start (e.g. a long jump).
+}
+\end{chapteractivity}
 
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{soln:describingmotioninnd:hurdle}{\label{prob:describingmotioninnd:hurdle}Ethan is jumping hurdles. He gets a running start, moving with a velocity of $\SI{3}{m/s}$ [E], and will not slow down before jumping. The hurdle is $\SI{0.5}{m}$ high and the maximum speed he can have when he leaves the ground is $\SI{5}{m/s}$. (You can assume Ethan is a point particle, and ignore air resistance).}
-\item How close can he get to the hurdle before he has to jump?
+\begin{problemParts}{soln:describingmotioninnd:hurdle}{\label{prob:describingmotioninnd:hurdle}Ethan is jumping hurdles. He gets a running start, moving with a speed of $\SI{3}{m/s}$. The hurdle is $\SI{0.5}{m}$ high and the maximum speed that he can have when he leaves the ground is $\SI{5}{m/s}$. (You can assume Ethan is a point particle, and ignore air resistance).}
+\item What is the closest distance from the hurdle at which Ethan can jump and still clear the hurdle?
 \item What maximum height does he reach?
 \end{problemParts}
 
@@ -809,115 +830,106 @@ f=\frac{1}{T}&=\frac{\omega}{2\pi}
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{prob:describingmotioninnd:hurdle}\label{soln:describingmotioninnd:hurdle}This is a question about motion in two dimensions. Our approach will be to consider the $x$ and $y$ components of the motion separately. We start by drawing a diagram and setting up our coordinate axes. We will set ``up'' to be in the positive $y$ direction and East to be in the positive $x$ direction, as in Figure \ref{fig:describingmotioninnd:hurdle}. We set the origin to be where Ethan leaves the ground.
+\begin{solution}{prob:describingmotioninnd:hurdle}\label{soln:describingmotioninnd:hurdle}Our approach will be to consider the $x$ and $y$ components of the motion separately. We start by drawing a diagram and choosing our coordinate system. We will choose $y$ to be vertical and positive upwards and $x$ to be in the direction that Ethan is running. We choose the origin to be the location where Ethan leaves the ground for the jump, as illustrated in Figure  \ref{fig:describingmotioninnd:hurdle}.
 
 \capfig{0.7\textwidth}{figures/DescribingMotionInND/HurdleQuestion.png}{\label{fig:describingmotioninnd:hurdle} Ethan wants to clear a \SI{0.5}{m} hurdle and has an initial velocity $\vec v_0$ with $x$ and $y$ components.}
 
 \begin{enumerate}[label=\alph*)]
-\item We are given that Ethan's maximum initial speed is $\SI{5}{m/s}$ and that the horizontal component of his velocity must be at least $\SI{3}{m/s}$. The first question we need to answer is whether we want the horizontal component to be equal to or greater than $\SI{3}{m/s}$. This question is asking us to minimize the horizontal distance Ethan must travel to reach a height of $\SI{0.5}{m}$. Since the magnitude of our initial velocity cannot exceed $\SI{5}{m/s}$, we want as little of our initial velocity as possible to be in the $x$ direction, so we want $v_x=\SI{3}{m/s}$. To find the $y$ component of the initial velocity, we use the Pythagorean theorem: 
+\item Ethan's speed at the beginning of the jump is $v_0=\SI{5}{m/s}$ and the horizontal ($x$) component of his velocity is $v_x=\SI{3}{m/s}$.  The $y$ component of his initial velocity, $v_{0y}$, is given by: 
 \begin{align*}
 v_x^2+v_{0y}^2&=v_0^2\\
 v_{0y}&=\sqrt{v_0^2-v_x^2}\\
-v_{0y}&=\sqrt{(\SI{5}{m/s})^2-(\SI{3}{m/s})^2}\\
-v_{0y}&=\SI{4}{m/s}
+v_{0y}&=\sqrt{(\SI{5}{m/s})^2-(\SI{3}{m/s})^2}=\SI{4}{m/s}
 \end{align*}
-We set Ethan's takeoff point to be at the origin, so we know that $x_0=0$ and $y_0=0$. Once Ethan is in the air, there will be no acceleration in the $x$ direction, and the only acceleration in the $y$ direction will be due to gravity.
-So, Ethan's position at any time $t$ can be described by the following equations: 
+We chose the origin at the beginning of the jump, so that Ethan's $x$ and $y$ coordinates at time $t=0$ are $x_0=0$ and $y_0=0$, respectively. Once Ethan is in the air, there will be no acceleration in the $x$ direction, and the only acceleration is in the $y$ direction and will be that due to gravity.
+Ethan's position at any time $t$ can be described by the following equations: 
 \begin{align*}
-x&=v_{x}t\\
-y&=v_{0y}t-\frac{1}{2}gt^2
+x(t)&=v_{x}t\\
+y(t)&=v_{0y}t-\frac{1}{2}gt^2
 \end{align*}
-where $g$ is the acceleration due to gravity, $g=\SI{9.8}{m/s^2}$.\\
+where $g$ is the acceleration due to gravity, $g=\SI{9.8}{m/s^2}$.
 
-We are interested in the value of $x$ when the vertical displacement $y$ is equal to the height of the hurdle. So we will find the value of $t$ when $y=\SI{0.5}{m}$ and find the value of $x$ at this time.\\
+We want to determine the value of $x(t)$ when the vertical displacement, $y(t)$, is equal to the height of the hurdle, $h$. We thus find the value of $t$ when $y=\SI{0.5}{m}$ and then find the value of $x$ at that time.
 
-First, rearrange the equation for $y$ and solve the quadratic:
+We can re-arrange the equation for $y(t)$ and solve the resulting quadratic for $t$ (we get two solutions):
 \begin{align*}
-0&=-\frac{1}{2}gt^2+v_{0y}t-y\\
+0&=-\frac{1}{2}gt^2+v_{0y}t-h\\
 0&=\frac{1}{2}(\SI{-9.8}{m/s^2})t^2+(\SI{4}{m/s})t-\SI{0.5}{m}\\
 t&=\SI{0.15}{s},\quad \SI{0.66}{s}
 \end{align*}
-We want to know when Ethan reaches $\SI{0.5}{m}$ for the first time, so $t=\SI{0.15}{s}$. All that's left is to find the horizontal displacement at this time:
+The jump will be a parabola, and Ethan will cross a height of $\SI{0.5}{m}$ twice, once on the way up, and once on the way down. We want to know when Ethan reaches $\SI{0.5}{m}$ for the first time (on the way up), so we choose $t=\SI{0.15}{s}$. The horizontal displacement at this time is:
 \begin{align*}
 x&=v_xt\\
 &=(\SI{3}{m/s})(\SI{0.15}{s})\\
 &=\SI{0.45}{m}
 \end{align*}
-$\therefore$ he can get as close as $\SI{0.45}{m}$ from the hurdle before he has to jump, if his initial horizontal velocity is $\SI{3}{m/s}$.
-\item Ethan's motion follows a parabolic shape. At the maximum height, Ethan's vertical velocity is equal to zero. Our approach will be to solve for the value of $y$ when $v_y=0$. Our known values are,
+Therefore, he can get as close as $\SI{0.45}{m}$ from the hurdle before he has to jump, if his initial horizontal velocity is $\SI{3}{m/s}$.
+\item Ethan's motion follows a parabolic shape. At the maximum height, Ethan's vertical velocity is equal to zero. We can model only the vertical part of the motion to solve for the value of $y$ when $v_y=0$. We know the following quantities:
 \begin{align*}
 v_{0y}&=\SI{4}{m/s}\\
 v_y&=\SI{0}{m/s}\\
 g&=\SI{9.8}{m/s^2}
 \end{align*}
-The easiest way to solve this problem is to use the formula, 
+The easiest way to determine $y$ is to use the formula, 
 \begin{align*}
-v_y^2&=v_{0y}^2-2gy\\
-\textrm{So,}\qquad y&=\frac{v_y^2-v_{0y}^2}{(-2g)}
+v_y^2&=v_{0y}^2-2g(y-y_0)\\
+\therefore y&=\frac{v_y^2-v_{0y}^2}{(-2g)}
 \end{align*}
 Substituting our values for $v_y$, $v_{0y}$, and $g$, we get:
 \begin{align*}
 y_{max}&=\frac{(\SI{-4}{m/s})^2}{(2)(\SI{-9.8}{m/s^2})}\\
 y_{max}&=\SI{0.82}{m}
 \end{align*}
-$\therefore$ Ethan reaches a maximum height of $\SI{0.82}{m}$. \\
+Ethan reaches a maximum height of $\SI{0.82}{m}$. 
 
-(Note: there is more than one way to solve for $y_{max}$)
 \end{enumerate}
 \end{solution}
 
 \newpage
 \begin{solution}{prob:describingmotioninnd:cowboy}\label{soln:describingmotioninnd:cowboy}
 \begin{enumerate}[label=\alph*)]
-\item Our goal is the find the period of the lasso's motion. To do this, we can use the formula: 
-\begin{align*}
-T&=\frac{2\pi}{\omega}
-\end{align*}
-for which we need the angular velocity, $\omega$. We know the radius of the lasso, so if we find the linear velocity of the end point of the lasso, we can find the angular velocity using:
-\begin{align*}
-\omega&=\frac{v}{R}
-\end{align*}
-We start by using what we know about relative motion to find the linear velocity of the lasso in the cowboy's reference frame. First, we need to set up our coordinate systems. We assign the $xy$ coordinate system to the hawk's reference frame and we assign the $x'y'$ system to the cowboy's reference frame. The solution will be simplest if we align the coordinate systems so that positive $y$ and positive $y'$ are in the same direction, as in Figure \ref{fig:describingmotioninnd:cowboysolution}. When we are talking about the velocity of the hawk, we will denote it with the superscript ``H'', and when we are talking about the lasso, we will use ``L''.\\
+\item We need to determine the speed of the end of the lasso in the cowboy's frame of reference, knowing its speed in the hawk's frame of reference and knowing the velocity of the hawk. Once we know the speed of the lasso in the cowboy's frame of reference we can easily determine how long it takes to complete one revolution (its period). \\
 
-We want the velocity of the \textbf{lasso} in the \textbf{cowboy's reference frame}, so we want $v'^L$. To find this, we start with the velocity of the lasso in the hawk's reference frame,$v^L$ and then take into account that the hawk is moving relative to the cowboy. We do this by adding the velocity of the hawk in the cowboy's reference frame, $v'^H$, to $v^L$. So, our equation is,
-\begin{align*}
-v^L+v'^H&=v'^L
-\end{align*}
-We are adding velocities, which have both a magnitude and a direction. However, we were not given any directions in the problem, so we describe the directions with respect to our coordinate system. The way we have set up our axes, the velocity of the hawk in the cowboy's reference frame is simply $\SI{50}{km/h}$ in the positive $y'$ direction.\\
 
-Now here's the key to solving this problem: We don't know the speed of the lasso in the cowboy's reference frame, but we do know something about its direction. Since the motion of the lasso is circular, its velocity must be tangent to the circle. This means that when the lasso is directly in front of the hawk, its velocity must be in either the $+x'$ or $-x'$ direction. In this case, we can just choose one, so we will choose the $+x'$ direction.
 \capfig{0.3\textwidth}{figures/DescribingMotionInND/CowboySolution.png}{\label{fig:describingmotioninnd:cowboysolution}The two coordinate systems are aligned so that positive $y'$ and positive $y$ are in the same direction. The velocity vectors of the hawk and the lasso in the reference frame of the cowboy are shown.}
-The velocity vectors $v'^H$ and $v'^L$ are shown in Figure \ref{fig:describingmotioninnd:cowboysolution}. Remember that when we add two vectors they must be lined up so that the ``head'' of one touches the ``tail'' of the other, so there can only be one direction for $v^L$, as shown in Figure \ref{fig:describingmotioninnd:cowboyvector}. 
+
+
+We start by introducing coordinate systems for the hawk  ($xy$) and the cowboy ($x'y'$), and choose for the $x$ ($y$) and $x'$ ($y'$) axes to be parallel. We choose the axes such that $x$ is to the right (when seen from above, as in Figure \ref{fig:describingmotioninnd:cowboysolution}) and $y$ is in the direction of motion of the hawk as seen in the cowboy's reference frame. The velocity vector of the hawk in the cowboy's frame of reference is:
+\begin{align*}
+\pvec v'_H =  v'_H \hat y = (\SI{50}{km/h})\hat y
+\end{align*}
+In the hawk's frame of reference, the lasso will have a $y$ component of velocity in the negative $y$ direction with the same magnitude as the speed of the hawk, and an unknown component, $v_{Lx}$, in the $x$ direction. The velocity of the lasso in the hawk's frame of reference is:
+\begin{align*}
+\vec v_L=v_{Lx}\hat x - v'_H \hat y
+\end{align*}
+However, we know the speed of the lasso in the hawk's frame of reference ($v_L=\SI{60}{km/h}$), so we can easily find $v_{Lx}$:
+\begin{align*}
+v_{Lx}=\sqrt{v_L^2-v'^2_H}=\sqrt{(\SI{60}{km/h})^2-(\SI{50}{km/h})^2}=\SI{33.17}{km/h}
+\end{align*}
 \capfig{0.25\textwidth}{figures/DescribingMotionInND/CowboyVectorAddition.png}{\label{fig:describingmotioninnd:cowboyvector} Vector addition to determine the velocity of the lasso in the cowboy's reference frame.}
-This is a right angle triangle, so we use the Pythagorean theorem so solve for $v'^L$:
+In the cowboy's frame of reference, the lasso will have a velocity vector (Figure \ref{fig:describingmotioninnd:cowboyvector}), $\pvec v'_L$, given by:
 \begin{align*}
-v'^{L^2}+v'^{H^2}&=v^{L^2}\\
-&=\sqrt{v^{L^2}-v'^{H^2}}\\
-&=\sqrt{(\SI{60}{km/h})^2-(\SI{50}{km/h})^2}\\
-v'^L&=\SI{33}{km/h}
+\pvec v'_L &= \pvec v'_H + \vec v_L\\
+&= v'_H \hat y + v_{Lx}\hat x - v'_H \hat y\\
+&=v_{Lx}\hat x = (\SI{33.17}{km/h})\hat x
 \end{align*}
-The linear velocity of the end of the lasso at this moment is $\SI{33}{km/h}$ in the positive $x$ direction.  To find the angular velocity, first convert the linear velocity from km/h to m/s:
+That is, in the cowboy's frame of reference, the lasso has a velocity that is in the $x$ direction. This corresponds to the speed, $v_s$, of the end of the lasso in uniform circular motion about a circle of radius $R=\SI{1.5}{m}$. We can thus find the time required for one revolution to be:
 \begin{align*}
-\frac{\SI{33}{km}}{\SI{1}{h}}\times \frac{\SI{1000}{m}}{\SI{1}{km}} \times \frac{\SI{1}{h}}{\SI{3600}{s}} &= \SI{9.2}{m/s}
-\end{align*}     
-Now we can substitute $\omega=\frac{v}{R}$ into $T=\frac{2\pi}{\omega}$ and solve for $T$:
-\begin{align*}
-T&={2\pi}\frac{R}{v}\\
-&={2\pi}\frac{\SI{1.5}{m}}{\SI{9.2}{m/s}}\\
-&={2\pi}\frac{\SI{1.5}{m}}{\SI{9.2}{m/s}}\\
-T&=\SI{1.0}{s}
+v_s &= \frac{2\pi R}{T}\\
+\therefore T &= \frac{2\pi R}{v_s} =\frac{2\pi (\SI{1.5}{m})}{(\SI{33.17}{km/h})} = \frac{2\pi (\SI{1.5}{m})}{(\SI{9.2}{m/s})}=\SI{1.02}{s}
 \end{align*}
-$\therefore$ it takes $\SI{1.0}{s}$ for the lasso to complete one revolution.
+where we converted the speed into $\si{m/s}$ before determining the time.
+
+
 \item The motion is uniform circular motion, so it has a centripetal acceleration given by
 \begin{align*}
-a_c(t)&=\frac{v^2(t)}{R}
+a_c(t)&=\frac{v_s^2(t)}{R}
 \end{align*}
-To find the centripetal acceleration of the end of the lasso, we just substitute in our values for $v$ and $R$.
+To find the centripetal acceleration of the end of the lasso, we just user our values for $v_s$ and $R$.
 \begin{align*}
-a_c(t)&=\frac{(\SI{9.2}{m/s})^2}{\SI{1.5}{m}}\\
-a_c(t)&=\SI{56}{m/s^2}
+a_c(t)&=\frac{(\SI{9.2}{m/s})^2}{\SI{1.5}{m}}=\SI{56}{m/s^2}
 \end{align*}
-$\therefore$ the centripetal acceleration of the end of the lasso is $\SI{56}{m/s^2}$ towards the centre of the circle. 
-\item You may be tempted to divide the centripetal acceleration by $R$ to find the angular acceleration $\alpha$. However, the angular acceleration is the rate of change of the angular velocity. The angular velocity is constant, so the angular acceleration is zero. (Remember that in the equation $a_s=R\alpha$, $a_s$ refers to the component of acceleration that is \textbf{parallel} to the velocity.)
+ 
+\item The angular acceleration of the lasso is zero. The angular acceleration refers to the rate of change of the angular velocity (the rate at which the lasso rotates), which is constant for uniform circular motion.
 \end{enumerate}
 \end{solution}
