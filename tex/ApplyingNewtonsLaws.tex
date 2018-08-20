@@ -469,16 +469,6 @@ T &= ma_R=m\frac{v^2}{R}\\
 \end{align*}
 Thus, we find that the tension is the string increases with the square of the speed, and decreases with the radius of the circle.
 
-TODO: Checkpoint question about what happens to the motion of the block if the string breaks (images with different possible trajectories). 
-
-\begin{checkpoint}
-\begin{MCquestion}{Consider a ball attached to a string, being spun in a vertical circle (such as the one depicted in figure \ref{fig:applyingnewtonslaws:circleH_fbd}). If you shortened the string, how would the minimum angular velocity of the ball change?}
-\item It would decrease %correct
-\item It would stay the same
-\item It would increase
-\end{MCquestion}
-\end{checkpoint}
-
 \begin{example}{\label{ex:applyingnewtonslaws:car}
 \capfig{0.25\textwidth}{figures/ApplyingNewtonsLaws/car.png}{\label{fig:applyingnewtonslaws:car} A car going around a curve that can be approximated as the arc of a circle of radius $R$.}
 A car goes around a curve which can be approximated as the arc of a circle of radius $R$, as shown in Figure \ref{fig:applyingnewtonslaws:car}. The coefficient of static friction between the tires of the car and the road is $\mu_s$. What is the maximum speed with which the car can go around the curve without skidding?
@@ -552,7 +542,13 @@ which is the minimum speed at the top of the trajectory for the ball to be able 
 \end{itemize}
 \end{example}
 
-TODO: checkpoint question, based on example above, does the minimum angular velocity increase or decrease with radius?
+\begin{checkpoint}
+\begin{MCquestion}{Consider a ball attached to a string, being spun in a vertical circle (such as the one depicted in figure \ref{fig:applyingnewtonslaws:circleV}). If you shortened the string, how would the minimum angular velocity of the ball change?}
+\item It would decrease %correct
+\item It would stay the same
+\item It would increase
+\end{MCquestion}
+\end{checkpoint}
 
 \subsection{Banked curves}
 As we saw in Example \ref{ex:applyingnewtonslaws:car}, there is a maximum speed with which a car can go around a curve before it starts to skid. You may have noticed that roads, highways especially, are banked where there are curves. Racetracks for cars that go around an oval (the boring kind of car races) also have banked curves. As we will see, this allows the speed of vehicles to be higher when going around the curve; or rather, it makes the curves safer as the speed at which vehicles \textit{would} skid is higher. In Example \ref{ex:applyingnewtonslaws:car}, we saw that it was the force of static friction between the tires of the car and the road that provided the only force with a component towards the centre of the circle. The idea of using a banked curve is to change the direction of the normal force between the road and the car tires so that it, too, has a component in the direction towards the centre of the circle. 
@@ -746,3 +742,95 @@ t &= \sqrt{\frac{\mu_sg\cos\theta}{R\alpha^2}}= \sqrt{\frac{(0.5)(\SI{9.8}{N/kg}
 
 \subsection{Problems and Solutions}
 %Conical pendulum, roller coaster (speed at the top) 
+
+\begin{problemParts}{soln:applyingnewtonslaws:pendulum}{\label{prob:applyingnewtonslaws:pendulum} Consider a conical pendulum with a mass m, attached to a string of length L, such as the one depicted in figure TODO (MAKE A CONICAL PENDULUM DRAWING). If the pendulum travels through a circular path of radius r and the string makes an angle theta with the vertical, derive}
+\item The equation for the centripetal acceleration;
+\item Tangential velocity;
+\item and the period of rotation of the pendulum.
+\end{problemParts}
+
+\begin{problem}{soln:applyingnewtonslaws:rollercoaster}{\label{prob:applyingnewtonslaws:rollercoaster} Barb and Kenny are going to the amusement park. Barb insists riding the giant roller coaster, but Kenny is scared that they will fall off on the giant loop. Barb assures Kenny by asking the roller coaster technician, who claims that they will be travelling at $\SI{40}{m/s}$ upside down, and it is impossible to fall out. The roller coaster loop has a radius of $\SI{22}{m}$. Kenny is still skeptical. What is the minimum speed at the top of the roller coaster that they can travel without falling out?}
+\end{problem}
+
+\newpage
+\subsection{Solutions}
+
+\begin{solution}{prob:applyingnewtonslaws:pendulum}\label{soln:applyingnewtonslaws:pendulum} 
+\begin{enumerate}[label=\alph*)]
+\item The forces acting on the mass are:
+\begin{itemize}
+\item $F_g$, its weight, with a magnitude mg.
+\item $T$, a force of tension exerted by the string.
+\end{itemize}
+
+Figure TODO this figure shows a free-body diagram for the forces on the mass along the circular path of the pendulum. The pendulum is not accelerating vertically. Writing the y component of Newton's Second law gives:
+\begin{align*}
+\sum F_y=0 \\
+Tcos\theta -F_g=0 \\
+Tcos\theta=mg \\
+T=\frac{mg}{cos\theta} \\
+\end{align*}
+
+In order for the pendulum to keep going in a circle, the net force must be directed towards the centre of the circle at all times. Writing the x component of Newton's Second law, we see that the sum of the forces that is directed towards the centre is equal to the x component of the tension in the string.
+
+\begin{align*}
+\sum F_x=ma_r \\
+Tsin\theta=ma_r
+\end{align*}
+
+In order to solve for the centripetal acceleration, we must continue to solve for the x component of Newton's Second law. Using the tension expression from the y component of Newton's second law, we can solve the x component of Newton's second law for the centripetal acceleration.
+
+\begin{align*}
+Tsin\theta=ma_r \\
+\frac{mg}{cos\theta}=ma_r \\
+\therefore a_r=gtan\theta
+\end{align*}
+
+\item Having already solved for the centripetal acceleration of the pendulum, we can easily find the tangential velocity of the pendulum by substituting the equation for centripetal acceleration into the expression we obtained above. Re-writing the centripetal acceleration for a conical pendulum, 
+
+\begin{align*}
+\therefore a_r=gtan\theta \\
+\frac{v^{2}}{R}=gtan\theta \\
+\therefore v=\sqrt{rgtan\theta}
+\end{align*}
+
+\item Writing the period of rotation, we see that the expression for the tangential velocity of the pendulum can be easily substituted into the denominator to give the period of rotation for the pendulum.
+
+\begin{align*}
+T=\frac{2\pi R}{v} \\
+\therefore T=\frac{2\pi R}{\sqrt{rgtan\theta }}
+\end{align*}
+
+\end{enumerate}
+\end{solution}
+
+\begin{solution}{prob:applyingnewtonslaws:rollercoaster}\label{soln:applyingnewtonslaws:rollercoaster} 
+At the top of the loop, the forces acting on Barb and Kenny are:
+\begin{itemize}
+\item $F_g$, their weight
+\item $F_c$, the inertial force with a magnitude $\frac{mv^{2}}{R}$ that is exerted upwards due to their centripetal acceleration
+\end{itemize}
+
+The forces in the frame of reference of Barb and Kenny are illustrated in the figure (TODO ROLLERCOASTER FIGURE).
+
+At this point in their ride, all of the forces acting on Barb and Kenny are pointing in the vertical direction, so we only need to write the y component of Newton's Second Law. By setting their weight as equal to their inertial force, we can easily solve for the expression for the minimum speed at which they can travel on the ride without falling off:
+
+\begin{align*}
+F_c=F_g \\
+\frac{mv^{2}}{R}=mg \\
+\therefore v_{min}=\sqrt{Rg} 
+\end{align*}
+
+Plugging in the value of the radius of their particular roller coaster, we determine whether or not $\SI{40}{m/s}$ is a safe speed for Barb and Kenny to travel on their roller coaster ride:
+
+\begin{align*}
+v_{min}=\sqrt{Rg} \\
+\therefore v_{min}=\SI{15}{m/s}
+\end{align*}
+
+Barb can assure Kenny that they will not fall out of the roller coaster, as long as their speed remains greater than $\SI{15}{m/s}$.
+
+\end{solution}
+
+
+
