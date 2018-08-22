@@ -16,10 +16,10 @@ In this chapter, we continue to develop the concept of energy in order to introd
 \begin{opening}
 Three roller coaster carts start at position $x=0$,  where they are all at the same height (Figure \ref{fig:potentialecons:rollercoaster}). All of the carts start with the same velocity. At $x_1$, which roller coaster cart will be moving the fastest? 
 
-All of the roller coasters end at ground level, at $x_2$. Which roller coaster cart will be moving the fastest at $x_2$? Will all of them make it to $x_2$? Who will get there first?  Assume the roller coaster is frictionless.
+All of the roller coasters end at ground level, at $x_2$. Which roller coaster cart will be moving the fastest at $x_2$? Will all of them make it to $x_2$? Who will get there first?  Assume that the roller coaster track is frictionless.
 \capfig{0.9\textwidth}{figures/PotentialECons/rollercoaster.png}{\label{fig:potentialecons:rollercoaster} Three roller coasters that start at the same height and end at the same height.}
 \begin{answer}
-All of the carts start at the same height and with the same speed, so they all start with the same mechanical energy. At $x_1$, Cart B is moving the fastest. This is because Cart B is at the lowest height, so more of its gravitational potential energy has been converted into kinetic energy. At $x_2$, Cart A and Cart B will be moving at the same speed because they are at the same height. Cart C will not make it to $x_2$ because it doesn't have enough energy to get over the final peak. Cart B will be moving the fastest at $x_2$ because throughout the duration of the ride, it is at a lower height on average than Cart A, so its gravitational potential energy is converted to kinetic energy sooner and it gets to the end in less time.   
+All of the carts start at the same height and with the same speed, so they all start with the same mechanical energy. At $x_1$, Cart B is moving the fastest. This is because Cart B is at the lowest height, so more of its gravitational potential energy has been converted into kinetic energy. At $x_2$, Cart A and Cart B will be moving at the same speed because they are at the same height. Cart C will only make it to $x_2$ if it is going fast enough at $x=0$, since it needs to clear bump that is higher than the height it started at. Cart B will be moving the fastest at $x_2$ because throughout the duration of the ride, it is at a lower height on average than Cart A, so its gravitational potential energy is converted to kinetic energy sooner and it gets to the end in less time.   
 \end{answer}
 \end{opening}
 
@@ -36,9 +36,9 @@ The above integral is, in general, difficult to evaluate, as it depends on the s
 We call ``conservative forces'' those forces for which the work done only depends on the initial and final positions and not on the path taken between those two positions. ``Non-conservative'' forces are those for which the work done does depend on the path taken. The force of gravity is an example of a conservative force, whereas friction is an example of a non-conservative force.
 
 This means that the work done by a conservative force on a ``closed path'' is zero; that is, \textbf{the work done by a conservative force on an object is zero if the object moves along a path that brings it back to its starting position.}
-Indeed, since the work done by a conservative force only depends on the location of the initial and final positions, and not the path taken between them, the work has to be zero if the object ends in the same place where it started (as a possible path is for the object to not move at all).
+Indeed, since the work done by a conservative force only depends on the location of the initial and final positions, and not the path taken between them, the work has to be zero if the object ends in the same place as where it started (a possible path is for the object to not move at all).
 
-Consider the work done by gravity in raising (displacement $\vec d_1$) and lowering (displacement $\vec d_2$) an object back to its starting position along a vertical path, as depicted in Figure \ref{fig:potentialecons:gravityvertical}.
+Consider the work done by gravity in raising (displacement $\vec d_1$) and lowering (displacement $\vec d_2=\-vec d_1$) an object back to its starting position along a vertical path, as depicted in Figure \ref{fig:potentialecons:gravityvertical}.
 \capfig{0.2\textwidth}{figures/PotentialECons/gravityvertical.png}{\label{fig:potentialecons:gravityvertical} An object that has moved up and back down.}
 The total work done by gravity on this particular closed path is easily shown to be zero, as the work can be broken up into the negative work done as the object moves up (displacement vector $\vec d_1$) and the positive work done as the object moves down (displacement vector $\vec d_2$):
 \begin{align*}
@@ -128,7 +128,7 @@ For example, near the surface of the Earth, the force of gravity on an object of
 \begin{align*}
 \vec F_g = -mg \hat z
 \end{align*}
-where we have defined the $z$ axis to be vertical and positive upwards. We already showed in Example \ref{ex:potentialecons:gravity} that this force is conservative and that we can thus calculate a potential energy function. To do so, we can calculate the work done by the force of gravity over a straight vertical path, from position $A$ to position $B$, as shown in Figure \ref{fig:potentialecons:gravitydl}.
+where we have defined the $z$ axis to be vertical and positive upwards. We already showed in Example \ref{ex:potentialecons:gravity} that this force is conservative and that we can thus define a potential energy function. To do so, we can calculate the work done by the force of gravity over a straight vertical path, from position $A$ to position $B$, as shown in Figure \ref{fig:potentialecons:gravitydl}.
 \capfig{0.2\textwidth}{figures/PotentialECons/gravitydl.png}{\label{fig:potentialecons:gravitydl} A vertical path for calculating the work done by gravity.}
 The work done by gravity from position $A$ to position $B$ is:
 \begin{align*}
@@ -146,33 +146,37 @@ where we replaced the position vector, $\vec r$, with the $z$ coordinate, since 
 -W=mg(z_B-z_A)&= U(z_B) - U(z_A)\\
 \therefore U(z) &= mgz + C
 \end{align*} 
-and we have found that, for the force of gravity near the surface of the Earth, one can define a potential energy function, $U(z) = mgz +C$.
+and we have found that, for the force of gravity near the surface of the Earth, one can define a potential energy function (by inspection), $U(z) = mgz +C$.
+
+It is important to note that, since it is only the \textbf{difference} in potential energy that matters when calculating the work done, the potential energy function can have an arbitrary constant, $C$, added to it. Thus, \textbf{the value of the potential energy function is meaningless, and only differences in potential energy are meaningful and related to the work done on an object}. In other words, it does not matter where the potential energy is equal to zero, and by choosing $C$, we can therefore choose a convenient location where the potential energy is zero.
 
 \begin{checkpoint}
 \begin{MCquestion}{When we found the work done by gravity, we defined positive $z$ to be upwards. If we instead chose positive $z$ to be downwards, how would the potential energy function be defined?}
 \item The potential energy function would be the same, $U(z)=mgz+C$.
 \item The potential energy function would be the same but negative, $U(z)=-mgz+C$ \correct
 \end{MCquestion}
+
 \end{checkpoint}
-
-It is important to note that, since it is only the \textbf{difference} in potential energy that matters when calculating the work done, the potential energy function can have an arbitrary constant, $C$, added to it. Thus, \textbf{the value of the potential energy function is meaningless, and only differences in potential energy are meaningful and related to the work done on an object}. In other words, it does not matter where the potential energy is equal to zero, and by choosing $C$, we can therefore choose a convenient location where the potential energy is zero.
-
 \begin{checkpoint}
 \begin{MCquestion}{Can an object have a negative potential energy?}
 \item Yes \correct %since C is arbitrary
 \item No
 \end{MCquestion}
 \end{checkpoint}
-
-\begin{example}{Calculate the work done \textbf{by gravity} when a box of mass, $m$, is moved from the ground up onto a table that is a distance $L$ away horizontally and $H$ vertically, as illustrated in Figure \ref{fig:potentialecons:table}. How much work must be done by a person moving the box?
-\capfig{0.5\textwidth}{figures/PotentialECons/table.png}{\label{fig:potentialecons:table} A box moved from the ground up onto a table.}}
-Since gravity is a conservative force, we can use the potential energy function $U(z)=mgz+C$ to calculate the work done by gravity when the box is moved. The work done by gravity will only depend on the change in height, $H$, as the potential energy function only depends on the $z$ coordinate of an object.  We can choose the origin of our coordinate system to be the ground and choose the constant $C=0$, so that the potential energy function at the starting position of the box is:
+\vspace{-0.25cm}
+\begin{example}{\capfig{0.5\textwidth}{figures/PotentialECons/table.png}{\label{fig:potentialecons:table} A box moved from the ground up onto a table.}
+Calculate the work done \textbf{by the force of gravity} when a box of mass, $m$, is moved from the ground up onto a table that is a distance $L$ away horizontally and $H$ vertically, as illustrated in Figure \ref{fig:potentialecons:table}. How much work must be done by a person moving the box?}
+Since the force of gravity is conservative, we can use the potential energy function given by:
 \begin{align*}
-U(z_A=0) = mgz+C= 0
+U(z)=mgz+C
+\end{align*}
+to calculate the work done by the force of gravity when the box is moved. The work done by gravity will only depend on the change in height, $H$, as the potential energy function only depends on the $z$ coordinate of an object.  We can choose the origin of our coordinate system to be the ground and choose the constant $C=0$, so that the potential energy function at the starting position of the box is:
+\begin{align*}
+U(z_A=0) = mg(0)= 0
 \end{align*}
 The potential energy function when the box is on the table, with $z=H$, is given by:
 \begin{align*}
-U(z_B=H) = mgz + C = mgH
+U(z_B=H) = mgH
 \end{align*}
 The change in potential energy, $\Delta U = U(z_B) - U(z_A)$ is equal to the negative of the work done by gravity. The work done by gravity, $W_g$, is thus:
 \begin{align*}
@@ -188,14 +192,14 @@ W^{net} = 0 &= W_g + W_p\\
 \end{align*}
 \textbf{Discussion:} We find that the person had to do positive work, which makes sense, since they had to exert a force with a component in the direction of motion (upwards). It is also interesting to note that it does not matter if the person exerted a constant force or whether they varied the force that they exerted on the box as they moved it: the amount of work done by the person is fixed to be the negative of the work done by gravity.
 \end{example}
-
 \newpage
 \begin{example}{\label{ex:potentialecons:springpotential}The force exerted by a spring that is extended or compressed by a distance, $x$, is given by Hookes' Law:
 \begin{align*}
 \vec F(x) = -k x\hat x
 \end{align*}
-where the $x$ axis is defined to be colinear with the spring and the origin is located at the rest position of the spring. Show that the force exerted by the spring onto an object is conservative
-and determine the corresponding potential energy function.} Since the force depends on position, it could be conservative, which we can check with the conditions from Equation \ref{eq:potentialecons:conservative}:
+where the $x$ axis is defined to be co-linear with the spring and the origin is located at the rest position of the spring. Show that the force exerted by the spring onto an object is conservative and determine the corresponding potential energy function.}
+
+Since the force depends on position, it could be conservative, which we can check with the conditions from Equation \ref{eq:potentialecons:conservative}:
 \begin{align*}
 \die{F_z}{y}-\die{F_y}{z} &= 0 - 0 &= 0\\
 \die{F_x}{z}-\die{F_z}{x} &= \die{}{z}(-kx)) - 0&= 0\\
@@ -208,7 +212,6 @@ W &=\int_A^B \vec F(\vec r) \cdot d\vec l\\
 &=\int_{x_A}^{x_B} (-kx)dx=\left[-\frac{1}{2}kx^2  \right]_{x_A}^{x_B}\\
 &=-\left( \frac{1}{2}kx_B^2-\frac{1}{2}kx_A^2 \right)
 \end{align*}
-
 Again, comparing with:
 \begin{align*}
 -W &= U(\vec r_B) - U(\vec r_A) = U(x_B) - U(x_A)
@@ -217,14 +220,14 @@ We can identify the potential energy for a spring:
 \begin{align*}
 U(x) = \frac{1}{2}kx^2 + C
 \end{align*}
-where, in general, the constant $C$ can take any value. If we choose $C=0$, then the potential energy is zero when the spring is at rest, although it is not important what choice is made.
+where, in general, the constant $C$ can take any value. If we choose $C=0$, then the potential energy is zero when the spring is at rest, although it is not important what choice is made. Note that in one dimension, the potential energy function is the negative of the anti-derivative of the function that gives the $x$ component of the force.
 \end{example}
 
 \begin{checkpoint}
 \begin{MCquestion}{A conservative force acts on an object that is initially at rest. No other forces act on the object. Does the object move in a way that increases its potential energy or decreases its potential energy?}
 \item Increases.
 \item Decreases. \correct
-\item It depends.
+\item It depends on the choice of $C$ for the corresponding potential energy.
 \end{MCquestion}
 \end{checkpoint}
 
@@ -233,7 +236,7 @@ Given a (scalar) potential energy function, $U(\vec r)$, it is possible to deter
 \begin{align*}
 U(x) = \frac{1}{2}kx^2 + C
 \end{align*} 
-As you recall from Example \ref{ex:potentialecons:springpotential}, to find this function (in one dimension), we took the $x$ component of the spring force and found the negative of its anti-derivative:
+As you recall from Example \ref{ex:potentialecons:springpotential}, to find this function (in one dimension), we took the $x$ component of the spring force and (effectively) found the negative of its anti-derivative, which we defined as the potential energy function:
 \begin{align*}
 F(x) &= -kx\\
 U(x) &= -\int F(x) dx = \int (kx) dx = \frac{1}{2}kx^2+C\\
@@ -268,7 +271,7 @@ where $U_1$ and $U_2$ are the changes in potential energy associated with forces
 W^{net}=W^C+W^{NC}=-\Delta U_1 - \Delta U_2 +W^{NC} &= \Delta K\\
 \therefore W^{NC} = \Delta U_1 + \Delta U_2 + \Delta K
 \end{align*}
-That is, the work done by non-conservative forces is equal to the sum of the changes in potential and kinetic energies. In general, we can use $\Delta U$ to represent the change in the total potential energy of the object. The total potential energy is the sum of the potential energies associated with each of the conservative forces acting on the object. The above expression can thus be written in a more general form:
+That is, the work done by non-conservative forces is equal to the sum of the changes in potential and kinetic energies. In general, we can use $\Delta U$ to represent the change in the total potential energy of the object. The total potential energy is the sum of the potential energies associated with each of the conservative forces acting on the object ($\Delta U = \Delta U_1 + \Delta U_2$ above). The above expression can thus be written in a more general form:
 \begin{align}
 \Aboxed{W^{NC}=\Delta U + \Delta K}
 \end{align}
@@ -305,9 +308,9 @@ This is what we generally call the ``conservation of mechanical energy''. If the
 The introduction of mechanical energy gives us a completely different way to think about mechanics. We can now think of an object as having ``energy'' (potential and/or kinetic), and we can think of forces as changing the energy of the object.
 
 \begin{checkpoint}
-\begin{MCquestion}{Is the value of an an object's mechanical energy meaningful, or is it only the difference that is meaningful? Why? (For example, if I said that the mechanical energy of an object is equal to \SI{12}{J}, would that be a meaningful statement? What if I said that the mechanical energy \textit{increases} by \SI{12}{J}?)}
+\begin{MCquestion}{Is the value of an an object's mechanical energy meaningful, or is it only the difference in mechanical energy that is meaningful?}
 \item Yes, the value of the mechanical energy is meaningful. At any given time, an object will have a quantifiable amount of mechanical energy.
-\item No, the value is not meaningful because the value of potential energy is arbitrary. \correct
+\item No, the value is not meaningful because the value of potential energy is arbitrary. Only differences in mechanical energy are meaningful. \correct
 \item No, the value is not meaningful because both the potential and kinetic energies are arbitrary. Their values will change depending on where you set the energy to be zero.
 \item It depends on which conservative forces act on the object (and therefore what ``kind'' of potential energy the object has).
 \end{MCquestion}
@@ -320,6 +323,7 @@ We can also think of the work done by non-conservative forces as a type of chang
 which is what we usually refer to as ``conservation of energy''. That is, the total energy in a system, including kinetic, potential and any other form (e.g. thermal, electrical, etc.) is constant unless some external agent is acting on the system. 
 
 We can always include that external agent in the system so that the total energy of the system is constant. The largest system that we can have is the Universe itself. Thus, the total energy in the Universe is constant and can only transform from one type into another, but no energy can ever be added or removed from the Universe.
+\vspace{-0.25cm}
 \begin{studentOpinion}{Olivia}
 Here's an example that may help you understand the concept of external agents and energy conservation. Say we have a mass that hangs from a spring, so that the mass oscillates up and down like a yo-yo. If we define our system to include the spring, the mass, and gravity, energy will be conserved (the energy is transformed from potential energy to kinetic energy and back again). 
 
@@ -327,9 +331,9 @@ Now, what if someone is holding the end of the spring and they start walking so 
 
 But what if there's an external agent acting on our new system? We can keep ``zooming out'' to include more and more external sources in the definition of our system. If you kept zooming out, eventually you would reach the point where the whole Universe was included in your system. At this point, you can't zoom out any more. This means that, if the Universe is your system, energy must always be conserved because there can't be any external agents acting on the system. 
 \end{studentOpinion}
-
-
+\vspace{-0.35cm}
 \begin{example}{\label{ex:potentialecons:blockspring}\capfig{0.4\textwidth}{figures/PotentialEcons/blockspring.png}{\label{fig:potentialecons:blockspring} A block is launched along a frictionless surface by compressing a spring by a distance $D$. The top panel shows the spring when at rest, and the bottom panel shows the spring compressed by a distance $D$ just before releasing the block.}
+
 A block of mass $m$ can slide along a horizontal frictionless surface. A horizontal spring, with spring constant, $k$, is attached to a wall on one end, while the other end can move, as shown in Figure \ref{fig:potentialecons:blockspring}. A coordinate system is defined such that the $x$ axis is horizontal and the free end of the spring is at $x=0$ when the spring is at rest. The block is pushed against the spring so that the spring is compressed by a distance $D$. The block is then released. What speed will the block have when it leaves the spring?}
 This is again the same example that we saw in Chapters \ref{chap:applyingnewtonslaws} and \ref{chap:workenergy}. We will show here that it is solved very easily using conservation of energy. The forces acting on the block are:
 \begin{enumerate}
@@ -361,11 +365,13 @@ W^{NC}&=\Delta E=E_B-E_A= 0\\
 \end{align*}
 as we found previously.
 \end{example}
-
+\vspace{-0.25cm}
 \begin{example}{\label{ex:potentialecons:blockI}
+\capfig{0.5\textwidth}{figures/PotentialEcons/blockI.png}{\label{fig:potentialecons:blockI} A block slides down an incline before sliding on a flat surface and stopping.}
 A block of mass $m$ is placed at rest on an incline that makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:potentialecons:blockI}. The block is nudged slightly so that the force of static friction is overcome and the block starts to accelerate down the incline. At the bottom of the incline, the block slides on a horizontal surface. 
-\capfig{0.5\textwidth}{figures/PotentialEcons/blockI.png}{\label{fig:potentialecons:blockI} A block slides down an incline before sliding on a flat surface and stopping.}The coefficient of kinetic friction between the block and the incline is $\mu_{k1}$, and the coefficient of kinetic friction between the block and horizontal surface is $\mu_{k2}$. If one assumes that the block started at rest a distance $L$ from the horizontal surface, how far along the horizontal surface will the block slide before stopping?}
-This is the same problem we solved in Example \ref{ex:applyingnewtonslaws:blockI}. In that case, we solved for the acceleration of the block using Newton's Second Law and then used kinematics to find how far the block goes. We can solve this problem in a much easier way using conservation of energy. 
+The coefficient of kinetic friction between the block and the incline is $\mu_{k1}$, and the coefficient of kinetic friction between the block and horizontal surface is $\mu_{k2}$. If one assumes that the block started at rest a distance $L$ from the bottom of the incline, how far along the horizontal surface will the block slide before stopping?}
+
+This is the same problem we solved in Example \ref{ex:applyingnewtonslaws:blockI}. In that case, we solved for the acceleration of the block using Newton's Second Law and then used kinematics to find how far the block went. We can solve this problem in a much easier way using conservation of energy. 
 
 It is still a good idea to think about what forces are applied on the object in order to determine if there are non-conservative forces doing work. In this case, the forces on the block are:
 \begin{enumerate}
@@ -378,20 +384,18 @@ Let us divide the motion into two segments: (1) a segment along the incline (pos
 Starting with the first segment, we can choose the gravitational potential energy to be zero when the block is at the bottom of the incline. The block starts at a height $h=L\sin\theta$ above the  bottom of the incline. The gravitational potential energy for the beginning and end of the first segment are thus:
 \begin{align*}
 U_A &= mgL\sin\theta\\
-U_B &= 0\\
-\Delta U_1 &= U_B-U_A = -mgh = -mgL\sin\theta
+U_B &= 0
 \end{align*}
 Since the block starts at rest, its kinetic energy is zero at position $A$, and if the speed of the box is $v_B$ at position $B$, we can write its kinetic energy at both positions as:
 \begin{align*}
 K_A &=0\\
-K_B &= \frac{1}{2}mv_B^2\\
-\Delta K_1 &=K_B-K_A= \frac{1}{2}mv_B^2
+K_B &= \frac{1}{2}mv_B^2
 \end{align*}
 The mechanical energy of the object at positions $A$ and $B$ is thus:
 \begin{align*}
 E_A &= U_A+K_A = mgL\sin\theta\\
 E_B &= U_B+K_B = \frac{1}{2}mv_B^2\\
-\Delta E &= E_B - E_A = \Delta U_1+\Delta K_1= \frac{1}{2}mv_B^2 - mgL\sin\theta
+\Delta E &= E_B - E_A = \frac{1}{2}mv_B^2 - mgL\sin\theta
 \end{align*}
 Finally, since we have a non-conservative force, the force of kinetic friction, acting on the first segment, we need to calculate the work done by that force. We found in Example \ref{ex:applyingnewtonslaws:blockI} that the force of friction had magnitude $f_k=\mu_{k1}N=\mu_{k1}mg\cos\theta$. Since the force of friction is anti-parallel to the displacement vector, which points down the incline and has length $L$, the work done by friction is:
 \begin{align*}
@@ -405,7 +409,7 @@ W^{NC} &= \Delta E\\
 \end{align*}
 Note that the above equation, in words, could be read as, ``the change in kinetic energy ($\frac{1}{2}mv_B^2$) is equal to the negative change in potential energy ($mgL\sin\theta$) minus the work done by friction ($\mu_{k1}mg\cos\theta L$)''. In other words, the block had potential energy, which was converted into kinetic energy and heat (the work done by friction can be thought of as thermal energy). 
 
-We now proceed in an analogous way for the second segment, from position $B$ to position $C$. The only force that can do work along this segment (of length $x$) is the force of kinetic friction, since both the weight and normal force are perpendicular to the displacement. There are no conservative forces doing work, so there is no change in potential energy. The initial kinetic energy is $K_B$, and the final kinetic energy, $K_C$, is zero. The change in mechanical energy is thus:
+We now proceed in an analogous way for the second segment, from position $B$ to position $C$. The only force that can do work along this segment (of length $x$) is the force of kinetic friction, since both the weight and normal force are perpendicular to the displacement. There are no conservative forces doing work, so there is no change in potential energy. The initial kinetic energy is $K_B$ (from above), and the final kinetic energy, $K_C$, is zero. The change in mechanical energy is thus:
 \begin{align*}
 \Delta E &= E_C - E_B = K_B - K_C = K_B\\
 &=\frac{1}{2}mv_B^2\\
@@ -434,7 +438,7 @@ E = K + U
 \end{align*}
 which will be a constant if there are no non-conservative forces doing work on the object. This means that if the potential energy of the object increases, then its kinetic energy must decrease by the same amount, and vice-versa. 
 
-Consider a block that can slide on a frictionless horizontal surface and that is attached to a spring, as is shown in Figure \ref{fig:potentialecons:springE} (left side), where $x=0$ is chosen as the position corresponding to the rest length of the spring. If you push on the block so as to compress the spring by a distance $D$ and then release it, the block will initially accelerate because of the spring force in the positive $x$ direction until the block reaches the rest position of the spring ($x=0$ on the diagram). When it passes that point, the spring will exert a force in the opposite direction. The block will continue in the same direction and decelerate until it stops and turns around. It will then accelerate again towards the rest position of the spring, and then decelerate once the spring starts being compressed again, until the block stops and the motion repeats. We can say that the block oscillates back and forth about the rest position of the spring.
+Consider a block that can slide on a frictionless horizontal surface and that is attached to a spring, as is shown in Figure \ref{fig:potentialecons:springE} (left side), where $x=0$ is chosen as the position corresponding to the rest length of the spring. If you push on the block so as to compress the spring by a distance $D$ and then release it, the block will initially accelerate because of the spring force in the positive $x$ direction until the block reaches the rest position of the spring ($x=0$ on the diagram). When it passes that point, the spring will exert a force in the opposite direction. The block will continue in the same direction and decelerate until it stops and turns around. It will then accelerate again towards the rest position of the spring, and then decelerate once the spring starts being compressed again, until the block stops and the motion repeats. We say that the block ``oscillates'' back and forth about the rest position of the spring.
 
 We can describe the motion of the block in terms of its total mechanical energy, $E$. Its potential energy is given by:
 \begin{align*}
@@ -455,7 +459,7 @@ An analysis of the energy diagram tells us that the block is bound between the t
 \begin{checkpoint}
 Calculate the positions of the turning points for the situation shown in Figure \ref{fig:potentialecons:springE}. The total energy is \SI{25}{J} and the spring constant is $k=\SI{1}{N/m}$.
 \begin{answer}
-\SI{7}{m}
+\SI{7.1}{m}
 \end{answer}
 \end{checkpoint}
 
@@ -475,8 +479,14 @@ Locations $A$ and $C$ on the diagram are stable equilibria, because if a marble 
 Now, say an object's potential energy is described by the function in Figure \ref{fig:potentialecons:potential}, and the object has total energy $E$. The object's motion along the $x$ axis will be exactly the same as the projection of the marble's motion on the $x$ axis.
 
 \begin{checkpoint}
-A force, $F(x)$, acts on an object. The potential energy function, $U(x)$, associated with the force is given by $U(x)=((x-6)^2(x-1)(x-3)+20)$. $U(x)$ is plotted in Figure \ref{fig:potentialecons:potentialcheckpoint}. Use the ``marble'' method to determine the direction of the force at $x=5$. Confirm your answer by finding the value of the force function at $x=5$.
-\capfig{0.7\textwidth}{figures/PotentialEcons/potentialcheckpoint.png}{\label{fig:potentialecons:potentialcheckpoint} A potential energy function $U(x)$. The $x$-axis represents the $x$ position and the $y$-axis represents the energy.}
+\begin{MCquestion}{A force, $F(x)$, acts on an object. The potential energy function, $U(x)$, associated with the force is given by $U(x)=a(x-6)^2(x-1)(x-3)+\SI{20}{J}$, where $a$ is a positive constant. $U(x)$ is plotted in Figure \ref{fig:potentialecons:potentialcheckpoint}. Use the ``marble'' method to determine the direction of the force at $x=5$. Confirm your answer by finding the value of the force , $F(x)$, at $x=5$.
+\capfig{0.7\textwidth}{figures/PotentialEcons/potentialcheckpoint.png}{\label{fig:potentialecons:potentialcheckpoint} A potential energy function $U(x)$. The $x$-axis represents the $x$ position and the $y$-axis represents the energy.}}
+\item $F(x=5)=-10a$
+\item $F(x=5)=10a$\correct
+\item $F(x=5)=20a$
+\item $F(x=5)=-20a$
+\end{MCquestion}
+
 \end{checkpoint}
 
 \section{Advanced Topic: The Lagrangian formulation of classical physics}
@@ -494,7 +504,7 @@ U(x) &= mgx\\
 K(v_x) &= \frac{1}{2}mv_x^2\\
 \therefore L(x,v_x) &= \frac{1}{2}mv_x^2 - mgx
 \end{align*}
-where we chose the potential energy to be zero at $x=0$, and $v_x$ is the $x$ component of the speed of the object.
+where we chose the potential energy to be zero at $x=0$, and $v_x$ is the velocity of the object.
 
 In the modern formulation of classical mechanics, the motion of the system will be such that the following integral is minimized:
 \begin{align*}
@@ -504,7 +514,7 @@ where $L$ can depend on time explicitly or implicitly (through the fact that pos
 \begin{align}
 \Aboxed{\frac{d}{dt}\left(\die{L}{v_x}\right)-\die{L}{x} = 0}
 \end{align}
-Thus, in the Lagrangian formulation, one first writes down the Lagrangian for the system, and then uses the Euler-Lagrange equation to obtain the ``equations of motion'' for the system (i.e. the kinematic quantities, such as acceleration, for the system). 
+Thus, in the Lagrangian formulation, one first writes down the Lagrangian for the system, and then uses the Euler-Lagrange equation to obtain the ``equations of motion'' for the system (i.e. equation that give the kinematic quantities, such as acceleration, for the system). 
 
 Given the Lagrangian that we found above for a particle moving in one dimension under the influence of gravity, we can determine each term in the Euler-Lagrange equation:
 \begin{align*}
@@ -516,8 +526,8 @@ Putting these into the Euler-Lagrange equation:
 \begin{align*}
 \frac{d}{dt}\left(\die{L}{v_x}\right)-\die{L}{x} &= 0\\
 (ma_x) - (-mg) &=0\\
-(ma_x)&=-mg
-\therefore a_x = -g
+ma_x&=-mg\\
+\therefore a_x &= -g
 \end{align*}
 which is exactly equivalent to using Newton's Second Law (the second last step is equivalent to $F=ma$). In the Lagrangian formulation, we do not need the concept of force. Instead, we describe possible ``interactions'' by a potential energy function. That is why you may sometimes hear of physicists talking about the ``Weak interaction'' instead of the ``Weak force'' when they are talking about one of the four fundamental interactions (forces) of Nature. This is because, in the modern formulation of physics, one does not use the concept of force, and instead thinks of potential energy functions to model what we would call a force in the Newtonian approach.
 
@@ -525,7 +535,7 @@ Emmy Noether, a mathematician in the early twentieth century, proved a theorem t
  Noether's theorem states that for any symmetry in the Lagrangian, there exists a quantity that is conserved. For example, if the Lagrangian does not depend explicitly on time, then a quantity, which we call energy, is conserved\footnote{If the Lagrangian does not depend on time, then we can shift the system in time and the equations of motion would be unaffected. We say that the Lagrangian is symmetric, or unaffected, by changes in time.}. 
 
 The Lagrangian that we had above for a particle moving under the influence of gravity did not depend on time explicitly, and thus energy is conserved (gravitational potential energy is converted into kinetic energy and there are no non-conservative forces). If the Lagrangian did not depend on position, then a quantity that we call ``momentum''\footnote{See chapter \ref{chap:momentum}} would be conserved. In this case, momentum in the $x$ direction was not conserved because the Lagrangian depended on $x$ through the potential energy. 
-\newpage
+
 \begin{studentOpinion}{Olivia}
 We saw in this chapter that describing systems in terms of energy is often easier than describing them in terms of forces. The Lagrangian gives us a way to get the same information we would get from Newton's laws (like the acceleration, etc.), but using energy as a starting point. The Lagrangian method is really useful when we are looking at motion in multiple dimensions, or when we are describing complicated systems. Using the Lagrangian is actually really simple, and just like with forces, you can pretty much approach every problem the same way. Here are the basic steps to follow:
 \begin{enumerate}
@@ -557,13 +567,13 @@ Equivalently, the force is conservative if the work done by the force on an obje
 \die{F_x}{z}-\die{F_z}{x} &= 0\nonumber\\
 \die{F_y}{x}-\die{F_x}{y} &= 0
 \end{align*}
-In particular, a force that is constant in magnitude and direction will be conservative. A force that depends on quantities other than position (e.g. speed, time) will not be conservative. The force exerted by gravity and the force exerted by a spring are conservative.\\
+In particular, a force that is constant in magnitude and direction will be conservative. A force that depends on quantities other than position (e.g. speed, time) will not be conservative. The force exerted by gravity and the force exerted by a spring are conservative.
 
 For any conservative force, $\vec F(\vec r)$, we can define a potential energy function, $U(\vec r)$, that can be used to calculate the work done by the force along any path between position $A$ and position $B$:
 \begin{align*}
 -W = - \int_A^B \vec F(\vec r) \cdot d\vec l = U(\vec r_B) - U(\vec r_A) = \Delta U
 \end{align*}
-where the change in potential energy function in going from $A$ to $B$ is equal to the negative of the work done in going from point $A$ to point $B$. We can determine the function $U(\vec r)$ by calculating the work integral over an ``easy'' path (e.g. a straight line).
+where the change in potential energy function in going from $A$ to $B$ is equal to the negative of the work done in going from point $A$ to point $B$. We can determine the function $U(\vec r)$ by calculating the work integral over an ``easy'' path (e.g. a straight line that is co-linear with the direction of the force).
 
 It is important to note that an arbitrary constant can be added to the potential energy function, because only differences in potential energy are meaningful. In other words, we are free to choose the location in space where the potential energy function is defined to be zero.
 
@@ -620,7 +630,7 @@ which is the difference between the kinetic energy, $K$, and the potential energ
 \textbf{Potential energy for a\\ conservative force:}
 \begin{align*}
 \Delta U&=-W\\
-&= - \int_A^B \vec F(\vec r) \cdot d\vec l
+U(\vec r_B) - U(\vec r_A)&= - \int_A^B \vec F(\vec r) \cdot d\vec l
 \end{align*}
 \columnbreak
 
@@ -649,35 +659,44 @@ L = K - U\\
 
 \newpage
 \section{Thinking about the material}
-\subsection{Reflect and research}
-
-\begin{enumerate}
+\begin{chapteractivity}{Reflect and research}
+{
+\item When did Lagrange publish his theory of classical mechanics, and what was the name of the publication?
+\item What is D'Alembert's contribution to the field of classical mechanics?
+\item Who first proposed the Principle of Least Action, and when?
 \item What is an example of a situation not already covered that you can describe where mechanical energy is conserved?
 \item Under what symmetry is angular momentum conserved?
 \item Think of three renewable energy sources and describe how they use conservation of energy to produce electricity. 
 \item What is a Rube Goldberg machine? Look up some videos of Rube Goldberg machines, and find the coolest one!
-\end{enumerate}
-\subsection{To try at home}
-\begin{tQuestion}Design a small catapult or slingshot that you can build using materials found at home. Describe how these machines work using conservation of energy, and try to model the path of an object that is launched from the catapult/slingshot.\end{tQuestion}
+}
+\end{chapteractivity}
 
-\subsection{To try in the lab}
+\begin{chapteractivity}{To try at home}
+{
+\item Design a small catapult or slingshot that you can build using materials found at home. Describe how these machines work using conservation of energy.
+}
+\end{chapteractivity}
 
+\begin{chapteractivity}{To try in the lab}
+{
+\item Propose an experiment to test that energy is conserved in a system where only gravity acts.
+}
+\end{chapteractivity}
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-
 \begin{problem}{soln:potentialecons:ballspring}{\label{prob:potentialecons:ballspring} A ball of mass $m$ is dropped onto a vertical spring with spring constant $k$. The spring will compress until the ball comes to rest. How much will it compress if the ball is dropped from a height $h$ above the spring?}
 \end{problem}
 \capfig{0.4\textwidth}{figures/PotentialECons/massdropspring.png}{\label{fig:potentialecons:ballspring} A ball is dropped from rest onto a vertical spring.}
 
 
 \begin{problem}{soln:potentialecons:pendulumvel}{\label{prob:potentialecons:pendulumvel}
-A simple pendulum consists of a mass $m$ connected to a string of length $L$. The pendulum is released an angle $\theta_0$ from the vertical. Use conservation of energy to find an expression for the velocity of the mass as a function of the angle.}
+A simple pendulum consists of a mass $m$ connected to a string of length $L$. The pendulum is released from an angle $\theta_0$ from the vertical. Use conservation of energy to find an expression for the velocity of the mass as a function of the angle.}
 \end{problem}
 \capfig{0.4\textwidth}{figures/PotentialECons/pendulumvelocity.png}{\label{fig:potentialecons:pendulumvel} A pendulum is released from rest an angle $\theta_0$ from the vertical.} 
 
 
-\begin{problem}{soln:potentialecons:springlagrange}{ \label{prob:potentialecons:springlagrange} A block of mass $m$ sits on a frictionless horizontal surface. It is attached to a wall by a spring with a spring constant $k$. The mass is pushed so as to compress the spring and then it is released (Figure \ref{fig:potentialecons:springmassoscillate}). Find the Lagrangian description for this system after the mass is released. In other words, find an equation of motion for the mass/spring system using the Lagrangian method.}
+\begin{problem}{soln:potentialecons:springlagrange}{ \label{prob:potentialecons:springlagrange} A block of mass $m$ sits on a frictionless horizontal surface. It is attached to a wall by a spring with a spring constant $k$. The mass is pushed so as to compress the spring and then it is released (Figure \ref{fig:potentialecons:springmassoscillate}). Use the Lagrangian formalism to find an equation of motion for the mass/spring system (i.e. use the Lagrangian to determine the acceleration of the mass).}
 \end{problem} 
 \capfig{0.4\textwidth}{figures/PotentialECons/massoscillating.png}{\label{fig:potentialecons:springmassoscillate}A mass attached to a spring oscillates about the rest position of the spring.}  
 
@@ -687,44 +706,44 @@ A simple pendulum consists of a mass $m$ connected to a string of length $L$. Th
 \begin{solution}{prob:potentialecons:ballspring}\label{soln:potentialecons:ballspring}
 The two forces acting on the ball are gravity and the spring force. Both are conservative, so we can use conservation of mechanical energy. We will find the energy of the ball when it is at a height $h$ above the spring, and the energy of the ball when the spring is fully compressed. Then, we will use conservation of mechanical energy to determine the compression of the spring.
 
-Remember that the total mechanical energy is the sum of the total potential energy and the kinetic energy, $E=U+K$. Let's call the initial position of the ball $A$ and the final position of the ball $B$. You will notice that we set up our coordinate system so that $y$ is positive upwards, with $y=0$ at the point where the ball comes into contact with the spring. The gravitational potential energy will be zero at $y=0$. 
+Remember that the total mechanical energy is the sum of the total potential energy and the kinetic energy, $E=U+K$. Let's call the initial position of the ball $A$ and the final position of the ball $B$. You will notice that we set up our coordinate system so that $y$ is positive upwards, with $y=0$ at the point where the ball comes into contact with the spring. We choose to define both the gravitational potential energy and spring potential energy so that they are zero at $y=0$. 
 
-Since the ball starts from rest, its kinetic energy is zero at position $A$. At this point, the ball is not touching the spring, so the potential energy from the spring force is zero. So, the energy of the ball is simply equal to its gravitational potential energy:
+Since the ball starts from rest, its kinetic energy is zero at position $A$. At this point, the ball is not touching the spring, so the potential energy from the spring force is zero. The mechanical energy of the ball at position $A$ is simply equal to its gravitational potential energy:
 \begin{align*}
-E_A=U_A+K_A\\
-E_A=mgh
+E_A&=U_A+K_A\\
+E_A&=mgh
 \end{align*}
-At position $B$, the ball is again at rest, so the kinetic energy of the ball is zero. Now that the ball is in contact with the spring, it will experience a force from the spring that can be modelled with a potential energy $U(y)=\frac{1}{2}ky^2$, where $y$ will be the distance between the rest position of the spring and its compressed length. Remember that the ball will still have gravitational potential energy, so its mechanical energy at position $B$ is given by:
+At position $B$, the ball is again at rest, so the kinetic energy of the ball is zero. Now that the ball is in contact with the spring, it will experience a force from the spring that can be modelled with a potential energy $U(y)=\frac{1}{2}ky_1^2$, where $y_1$ is the distance between the rest position of the spring and its compressed length. At point $B$ ($y=-y_1$), the ball will have both spring and gravitational potential energy, so its mechanical energy at position $B$ is given by:
 \begin{align*}
-E_B&=U_B+K_B\\
-E_B&=mg(-y_B)+\frac{1}{2}k(-y_B-0)^2\\
-E_B&=-mgy_B+\frac{1}{2}ky_B^2
+E_B&=U_B+K_B=U_B\\
+U_B&=mg(-y_1)+\frac{1}{2}ky_1^2\\
+E_B&=-mgy_1+\frac{1}{2}ky_1^2
 \end{align*}
-Mechanical energy is conserved, so we can now set $E_A=E_B$ and solve for $y_B$:
+Since mechanical energy is conserved in this system (no non-conservative forces are doing work), we can now set $E_A=E_B$ and solve for $y_1$:
 \begin{align*}
 E_A&=E_B\\
-mgh&=-mgy_B+\frac{1}{2}ky_B^2\\
-0&=\frac{1}{2}ky_B^2-mgy_B-mgh\\
+mgh&=-mgy_1+\frac{1}{2}ky_1^2\\
+0&=\frac{1}{2}ky_1^2-mgy_1-mgh\\
 \end{align*}
-where in the last line we rewrote the expression as a quadratic. We can solve for $y_B$ with the quadratic formula:
+where in the last line we rewrote the expression as a quadratic equation. We can solve for $y_1$ with the quadratic formula:
 \begin{align*}
-y_B=\frac{mg\pm\sqrt{(mg)^2-4(1/2k)(-mgh)}}{k}\\
-y_B=\frac{mg\pm\sqrt{mg(mg-2kh)}}{k}
+y_1=\frac{mg\pm\sqrt{(mg)^2-4(1/2k)(-mgh)}}{k}\\
+y_1=\frac{mg\pm\sqrt{mg(mg+2kh)}}{k}
 \end{align*}
-We now have an expression for the amount the spring is compressed, $y_B$, in terms of our known values. 
+We now have an expression for the amount the spring is compressed, $y_1$, in terms of our known values. 
 \end{solution}
 
 \begin{solution}{prob:potentialecons:pendulumvel}\label{soln:potentialecons:pendulumvel}
 We are going to find a general expression for the energy of the system, and then use this expression to find the velocity at any point. There are two forces acting on the mass:
 \begin{enumerate}
-\item The force of tension (from the string). This force is perpendicular to the direction of motion at any point, so it does zero work on the mass. 
+\item The force of tension (from the string). This force is perpendicular to the direction of motion at any point, so it does no work on the mass. 
 \item The force of gravity, which has a potential energy function given by $U(y)=mgy$. We choose the gravitational potential energy to be zero when the pendulum hangs vertically (when $\theta=0$ and $y=0$). 
 \end{enumerate}
-This means that the energy of the pendulum at any point is the sum of its kinetic energy and its gravitational potential energy:
+The mechanical energy of the mass is conserved, and at any point is given by the sum of its kinetic and its gravitational potential energies:
 \begin{align*}
 E=mgy+\frac{1}{2}mv^2
 \end{align*}
-We want to find the velocity as a function of $\theta$, so we need to write $y$ in terms of $\theta$. As you may recall from Problem \ref{prob:workenergy:swingwork}, we saw that from the geometry of the problem, we can express the height of the mass as $L-L\cos\theta$, or $L(1-\cos\theta)$ (in Problem \ref{prob:workenergy:swingwork}, the length of the pendulum was $R$ rather than $L$). Refer to Figure \ref{fig:workenergy:swingprobgeometry} to refresh your memory. The energy at any point is then:
+We want to find the velocity as a function of $\theta$, so we need to write $y$ in terms of $\theta$. As you may recall from Problem \ref{prob:workenergy:swingwork}, we saw that from the geometry of the problem, we can express the height of the mass as $y=L-L\cos\theta$, or $L(1-\cos\theta)$, where $y$ is the height as measured from the bottom point of the motion. You can refer to Figure \ref{fig:workenergy:swingprobgeometry} to refresh your memory. The energy at any point is then:
 \begin{align*}
 E=mgL(1-\cos\theta)+\frac{1}{2}mv^2
 \end{align*}
@@ -749,15 +768,12 @@ gL(\cos\theta-\cos\theta_0)&=\frac{1}{2}v^2\\
 \textbf{Discussion:} We can see from this expression that the speed will be maximized when $\cos\theta$ is maximized, which will occur when $\theta=0$ (when the pendulum is vertical). This is as we expected. We can also see that we will get an imaginary number if the magnitude of $\theta$ is greater than $\theta_0$, showing that the motion is constrained between $-\theta_0$ and $\theta_0$. Finally, we showed that the velocity of the pendulum does not depend on the mass!
 \end{solution}
 
-\begin{solution}{prob:potentialecons:springlagrange}\label{soln:potentialecons:springlagrange} We are going to find an equation of motion of the system using the Lagrangian method. First we need expressions for the kinetic energy and potential energy of the system. The kinetic energy is simply:
+\begin{solution}{prob:potentialecons:springlagrange}\label{soln:potentialecons:springlagrange} We are going to find an equation of motion of the system using the Lagrangian method. We choose to use a one dimension coordinate system, with the $x$ axis defined to be co-linear with the spring, positive in the direction where the spring is extended, and set the origin to be located at the rest position of the spring. The kinetic energy and potential energy of the mass are given by
 \begin{align*}
-K=\frac{1}{2}mv_x^2
+K&=\frac{1}{2}mv_x^2\\
+U&=\frac{1}{2}kx^2
 \end{align*}
-The only force acting on the mass is the spring force, which has a potential energy function given by:
-\begin{align*} 
-U=\frac{1}{2}kx^2
-\end{align*}
-where we have chosen the potential to be zero when $x=0$. The Lagrangian for this system is:
+since the only force exerted on the mass that can do work is the force from the spring. We have chosen the potential energy to be zero at $x=0$. The Lagrangian for this system is:
 \begin{align*}
 L&=K-U\\
 L&=\frac{1}{2}mv_x^2-\frac{1}{2}kx^2
@@ -778,8 +794,8 @@ We can calculate the terms of the Euler-Lagrange equation:
 and then put them together to get:
 \begin{align*}
 \frac{d}{dt}\left(\die{L}{v_x}\right)-\die{L}{x} &= 0\\
-\therefore ma_x+kx&=0\\
+\therefore ma_x&=-kx\\
 \end{align*}
-We can see that this equation of motion is equivalent to Newton's second law, where $ma_x=-kx$
+We can see that this equation of motion is equivalent to Newton's Second Law.
 \end{solution}
 
