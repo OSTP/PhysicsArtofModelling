@@ -192,9 +192,12 @@ W^{tot} = W_1 + W_2 = -\mu_k mg \left((x_A-x_B) + (y_A-y_B)\right)
 \end{align*}
 which is more work than was done along path 1. This makes sense because for both paths, the force of friction has the same magnitude and is always in the opposite direction of motion; thus, the longer the path, the more work will be done by the force.
 \end{example}
-
+\vspace{-0.25cm}
 \begin{example}{\label{ex:workenergy:workgravity}
-A box of mass $m$ is moved from the floor onto a table using two different paths, as shown in Figure \ref{fig:workenergy:workgravity}. The table is a horizontal distance $L$ away from where the box starts and a height $H$ above the floor. Compare the work done by the weight of the box along the two possible paths.\capfig{0.5\textwidth}{figures/WorkEnergy/workgravity.png}{\label{fig:workenergy:workgravity}Two possible paths to move a box from the floor onto a table.}}
+A box of mass $m$ is moved from the floor onto a table using two different paths, as shown in Figure \ref{fig:workenergy:workgravity}. The table is a horizontal distance $L$ away from where the box starts and a height $H$ above the floor. Compare the work done by the weight of the box along the two possible paths.
+\capfig{0.5\textwidth}{figures/WorkEnergy/workgravity.png}{\label{fig:workenergy:workgravity}Two possible paths to move a box from the floor onto a table.}
+}
+
 We can use a coordinate system such that the origin coincides with the initial position of the box. $x$ is horizontal and $y$ is vertical, as shown in Figure \ref{fig:workenergy:workgravity}. The weight of the box can be written as:
 \begin{align*}
 \vec F_g = -mg \hat y
@@ -687,6 +690,7 @@ P &= \vec F \cdot \vec v
 \begin{chapteractivity}{To try in the lab}
 {
 \item Propose an experiment to measure the thermal energy associated with a force of kinetic friction. 
+\item Propose an experiment to test the Work-Energy Theorem.
 }
 \end{chapteractivity}
 \newpage
@@ -704,7 +708,7 @@ P &= \vec F \cdot \vec v
 A child of mass $m$ sits on a swing of length $L$, as in Figure \ref{fig:workenergy:swingprob}. You push the child with a horizontal force $\vec F$. You apply the force in such a way that the child moves at a constant speed (note that $\vec F$ will not have a constant magnitude).}
 \item How much work do you do to move the child from $\theta=0$ to $\theta=\theta_1$? 
 \item Use a detailed diagram to show that the work done by $\vec F$ is equal to $mgh$, where $h$ is the change in height of the child. 
-\capfig{0.4\textwidth}{figures/WorkEnergy/swingprob.png}{\label{fig:workenergy:swingprob}A child on a swing is pushed from $\theta=0$ to $\theta=\theta_1$}
+\capfig{0.4\textwidth}{figures/WorkEnergy/swingprob.png}{\label{fig:workenergy:swingprob}A child on a swing is pushed from $\theta=0$ to $\theta=\theta_1$ at constant speed with a horizontal force, $\vec F$.}
 \end{problemParts}
 
 \newpage
@@ -713,7 +717,7 @@ A child of mass $m$ sits on a swing of length $L$, as in Figure \ref{fig:workene
 \begin{enumerate}[label=\alph*)]
 \item We start by defining a coordinate system. We choose the $x$ axis to be horizontal and positive in the direction of motion, and we choose the $y$ axis to be vertical and the positive direction upwards.
 
-We can determine the speed at the top of the ramp, $v_t$, using the Work-Energy Theorem:
+We will determine the speed at the top of the ramp, $v_t$, using the Work-Energy Theorem:
 \begin{align*}
 W^{net}=\frac{1}{2}mv_f^2-\frac{1}{2}mv_t^2
 \end{align*}
@@ -721,8 +725,8 @@ where $W^{net}$ is the net work done on the skier as they ``fly'' through the ai
 \begin{align*}
 W = \int \vec F_g \cdot d\vec l
 \end{align*}
-where $d\vec l$ is an infinitesimal displacement, as shown in Figure \ref{fig:workenergy:skijumpprobdisplacement}. 
-\capfig{0.7\textwidth}{figures/WorkEnergy/skijumpprobdisplacement.png}{\label{fig:workenergy:skijumpprobdisplacement}Infinitesimal displacement along the trajectory of the jump.}
+where $d\vec l$ is an infinitesimal displacement along the trajectory, as shown in Figure \ref{fig:workenergy:skiprobdisplacement}. 
+\capfig{0.7\textwidth}{figures/WorkEnergy/skiprobdisplacement.png}{\label{fig:workenergy:skiprobdisplacement}Infinitesimal displacement along the trajectory of the jump.}
 The displacement vector will have $x$ and $y$ components:
 \begin{align*}
 d\vec l = dx \hat x + dy \hat y
@@ -731,11 +735,11 @@ The scalar product with the force of gravity is thus:
 \begin{align*}
 \vec F_g \cdot d\vec l &= (-mg\hat y) \cdot (dx \hat x + dy \hat y)= -mgdy
 \end{align*}
-The work done by gravity is thus:
+The work done by gravity can thus be converted into an integral over $y$ (for which we know the start and end values), and is given by:
 \begin{align*}
 W = \int \vec F_g \cdot d\vec l = \int_h^0 -mgdy = [-mgy]_h^0 = mgh
 \end{align*}
-and is positive, which makes sense, since gravity is generally in the same direction as the net displacement (downwards). We did not need to take into account the specific shape of the trajectory, because the force was constant in magnitude and direction (see Example \ref{ex:workenergy:workparabola}).
+The work done by gravity is positive, which makes sense, since the force of gravity is generally in the same direction as the net displacement (downwards). We did not need to take into account the specific shape of the trajectory, because the force was constant in magnitude and direction (see Example \ref{ex:workenergy:workparabola}).
 
 We can now find the speed of the skier when they leave the jump using the Work-Energy theorem:
 \begin{align*}
@@ -744,95 +748,86 @@ mgh &= \frac{1}{2}mv_f^2-\frac{1}{2}mv_t^2\\
 \therefore v_t&=\sqrt{v_f^2-2gh}=\sqrt{(\SI{12}{m/s})^2 - 2(\SI{9.8}{m/s^2})(\SI{5}{m})}=\SI{6.8}{m/s}
 \end{align*}
 
-\item We can again use the Work-Energy Theorem to determine the work done by friction as the skier slides up the ramp. We know that the speed of the skier at the bottom of the ramp is $v_i=\SI{15}{m/s}$, and we just found that the speed of the skier at the top of the ramp is $v_t=\SI{6.8}{m/s}$. The net work done on the skier going up the ramp is equal to:
+\item We can again use the Work-Energy Theorem to determine the work done by friction as the skier slides up the ramp. We know that the speed of the skier at the bottom of the ramp is $v_i$, and we just found that the speed of the skier at the top of the ramp is $v_t=\sqrt{v_f^2-2gh}$. The net work done on the skier going up the ramp is equal to:
 \begin{align*}
 W^{net}&=\frac{1}{2}mv_t^2-\frac{1}{2}mv_i^2\\
-&=\frac{1}{2}m(v_t^2-v_i^2) = \frac{1}{2}(\SI{80}{kg})((\SI{6.8}{m/s})^2-(\SI{15}{m/s})^2)=\SI{-7150.4}{J}
+&=\frac{1}{2}m(v_t^2-v_i^2) = \frac{1}{2}m(v_f^2-2gh -v_i^2)\\
+&=\frac{1}{2}m(v_f^2-v_i^2)-mgh
 \end{align*}
-The net work done is the sum of the work done by each of the forces acting on the skier. The forces on the skier are gravity, the force of friction, and the normal force. The normal force does no work, since it is always perpendicular to the displacement. The net work is thus the sum of the work from gravity, $W_g$, and the work done by friction, $W_f$. 
+The net work done is also the sum of the work done by each of the forces acting on the skier as they slide up the ramp. The forces on the skier are the force of gravity, the force of friction, and the normal force. The normal force does no work, since it is always perpendicular to the displacement. The net work is thus the sum of the work done by the force gravity, $W_g$, and the work done by the force of friction, $W_f$, over the displacement corresponding to the length of the ramp: 
 \begin{align*}
 W^{net}=W_g+W_f
 \end{align*}
 The work done by gravity is:
 \begin{align*}
-W_g = \vec F_g \cdot \vec d = (-mg\hat y) \cdot  (d_x\hat x + h \hat y) = -mgy
+W_g = \vec F_g \cdot \vec d = (-mg\hat y) \cdot  (d_x\hat x + h \hat y) = -mgh
 \end{align*}
-where $\vec d$ is the displacement vector up the ramp (unknown horizontal distance, $d_x$, and vertical distance, $h$).
-
-%%%%%%%%%%%%%%Resume here - better to do with variables to highlight the point made in the discussion....
-
-If we were to solve for the work done by friction directly, using $W^{friction}=f_kd\cos\theta$, we would need to know the coefficient of kinetic friction and the length of the ramp, but we don't know either of these! Luckily, we don't need to solve for the work done by friction directly. We know the net work, and we can easily solve for the work done by gravity, so we can just solve for the work done by friction by rearranging the above equation:
+where $\vec d$ is the displacement vector up the ramp (unknown horizontal distance, $d_x$, and vertical distance, $h$). We can now determine the work done by the force of friction:
 \begin{align*}
-W^{friction}=W^{net}-W^{gravity}
+W^{net}&=W_g+W_f\\
+\frac{1}{2}m(v_f^2-v_i^2)-mgh &=  -mgh + W_f\\
+\therefore W_f &= \frac{1}{2}m(v_f^2-v_i^2) = \frac{1}{2}(\SI{80}{kg})((\SI{12}{m/s})^2-(\SI{15}{m/s})^2)=\SI{-3240}{J}
 \end{align*}
-We can solve for the work done by gravity exactly as we did in part (a), using $W=\vec F \cdot \vec d$. The component of the skier's displacement that is parallel to gravity is $h$, but this time it is in the $+y$ direction, so we get:
-\begin{align*}
-W^{gravity}&=-mg\hat y \cdot h\hat y\\
-&=-mgh
-\end{align*}
-The work done by gravity is the same as in part (a), except that its negative, which makes sense. We now have everything we need to solve for the work done by friction:
-\begin{align*}
-W^{friction}&=W^{net}-W^{gravity}\\
-&=\frac{1}{2}m(v_f^2-v_i^2-2gh)+mgh\\
-&=\frac{1}{2}m(v_f^2-v_i^2)
-\end{align*}
-$\therefore$ the work done by friction is equal to $\frac{1}{2}m(v_f^2-v_i^2)$. \\
+And we find that the force of friction did negative work (it reduced the kinetic energy of the skier).
 
-\textbf{Discussion}: This equation tells us that only friction is responsible for the difference between the skier's initial speed and their final speed. If the work done by friction were equal to zero, we would have $0=\frac{1}{2}m(v_f^2-v_i^2)$, so $v_f$ would have to be equal to $v_i$. Does this make sense? If there were no friction, the only force doing work on the skier would be gravity. We found that as the skier goes up the jump, the work done by gravity is equal to $-mgh$, and when the skier comes down from the jump, the work done by gravity is equal to $mgh$. So, the total work done by gravity is equal to zero ($-mgh+mgh=0$). It makes sense, then, that if there were no friction, the initial and final speeds would be the same. We can also see that the total work done by gravity is zero just by looking at the initial and final positions of the skier. The total vertical displacement is equal to zero, so the total work done by gravity must be zero. This problem leads us into the next chapter, where we will discuss conservative and non-conservative forces. \\
+\textbf{Discussion:} Over the course of the jump, the skier started at the bottom of the ramp with a given kinetic energy, then lost some of that energy going up the ramp (in the form of loss to friction and negative work done by gravity). During the airborne phase, gravity did positive work and the skier gained back some of the kinetic energy that they had lost going up the ramp. Thus the net work done by the force of friction is the difference in kinetic energies between the final landing point and the beginning of the ramp, because friction is the only force that did a net amount of (negative) work over the whole trajectory (gravity did no net work over the whole trajectory). This example shows how we can start to think about energy as something that is ``conserved'', which we will explore in more detail in the next chapter.
+
 \end{enumerate}
 \end{solution}
 
 \begin{solution}{prob:workenergy:swingwork}\label{soln:workenergy:swingwork}
 \begin{enumerate}[label=\alph*)]
-\item We want to find the work done by the applied force $\vec F$. We first need to find an expression for the magnitude of $\vec F$. Figure \ref{fig:workenergy:swingprobfbd} shows the forces acting on the child. 
-\capfig{0.3\textwidth}{figures/WorkEnergy/swingprobfbd.png}{\label{fig:workenergy:swingprobfbd}A free body diagram for the child on the swing}
-
-The child is moving at a constant speed, so the net force is equal to zero. We set the sum of the forces in the $x$ and $y$ directions equal to zero:
+\item We want to find the work done by the applied force $\vec F$. We first need to find an expression for the magnitude of $\vec F$, based on the fact that the child is not accelerating. The forces on the child are:
+\begin{itemize}
+\item $\vec F_g$, their weight, with magnitude $mg$.
+\item $\vec F_T$, the tension in the rope, which changes with the angle, $\theta$.
+\item $\vec F$, the applied force, which change in magnitude as the angle, $\theta$, changes.
+\end{itemize}
+The forces are illustrated in Figure \ref{fig:workenergy:swingprobfbd}. 
+\capfig{0.3\textwidth}{figures/WorkEnergy/swingprobfbd.png}{\label{fig:workenergy:swingprobfbd}A free-body diagram of the forces exerted on the child.}
+The child is moving at a constant speed, so the net force is equal to zero. The sum of the $x$ and $y$ components of the forces are equal to zero (Newton's Second Law):
 \begin{align*}
-x: \quad F-F_T\sin\theta &=0\\
-y: \quad F_T\cos\theta -mg &= 0
+\sum F_x &= F-F_T\sin\theta =0\\
+\sum F_y &= F_T\cos\theta -mg = 0
 \end{align*} 
 Rearranging these equations gives:
 \begin{align*}
 F&=F_T\sin\theta\\
 mg&=F_T\cos\theta
 \end{align*}
-We want an expression for $F$ that does not depend on $F_T$ (since $F_T$ is unknown), so we divide the above equations then multiply each side by $mg$:
+We want an expression for $F$ that does not depend on $F_T$ (since $F_T$ is unknown), so we can divide one equation by the other:
 \begin{align*}
-\frac{F}{mg}\cdot mg &= \frac{F_T\sin\theta}{F_T\cos\theta}\cdot mg\\
-F&=mg\tan\theta
+\frac{F}{mg} &= \frac{F_T\sin\theta}{F_T\cos\theta}=\tan\theta\\
+\therefore F(\theta)&=mg\tan\theta
 \end{align*}
-Now we have an expression for $F$. Since the force is not constant, we can calculate the work done by $\vec F$ using the formula:
+where we indicated that the force $\vec F(\theta)$ depends on the angle $\theta$. The work done by the force, $\vec F$, is given by:
 \begin{align*}
-W=\int_A^B\vec F(\vec r) \cdot d\vec l
+W_F=\int_A^B\vec F(\theta) \cdot d\vec l
 \end{align*} 
-Remember that $dl$ is the ``element of the path.'' We can take advantage of the fact that the child is moving along a circular path. Instead of using cartesian coordinates, it makes sense to describe the position of the child in terms of $s$ and $\theta$. An infinitesimally small section of the path can thus be written as $ds$, which is equal to $Ld\theta$. This gives us the expression:
+$d\vec l$ is the ``path element'' along part of the arc of circle over which the child moves, as illustrated in Figure \ref{fig:workenergy:swingprobdl}. We have an expression for how $\vec F$ changes in magnitude as a function of the angle $\theta$, and it would thus be convenient to perform the integral over the angle $\theta$.
+\capfig{0.2\textwidth}{figures/WorkEnergy/swingprobdl.png}{\label{fig:workenergy:swingprobdl}A path element along the circular trajectory of the swing.}
+We can use polar coordinate, $(r,\theta)$, instead of cartesian coordinates to describe the displacement vector, $d\vec l$. If the vector subtends an arc on the circle that makes an infinitesimal angle, $d\theta$, as illustrated, then the length of the vector $d\vec l$ is given by:
 \begin{align*}
-W=\int_0^{\theta_1}\vec F \cdot Ld\theta
+dl = L d\theta
 \end{align*}
-Where we set the limits of integration to be $\theta=0$ and $\theta=\theta_1$. Now we can find the scalar product:
+where $L$ is the radius of the circle. The vector $d\vec l$ makes an angle $\theta$ with the horizontal, and thus with the vector, $\vec F$. The dot product between $\vec F$ and $d\vec l$ can thus be written as:
 \begin{align*}
-W&=\int_0^{\theta_1}(F\cos\theta)Ld\theta\\
-&=\int_0^{\theta_1}(mg\tan\theta)(\cos\theta)Ld\theta\\
-&=\int_0^{\theta_1}(mgL)\frac{\sin\theta}{\cos\theta}\cos\theta d\theta\\
-&=\int_0^{\theta_1}(mgL)\sin\theta d\theta\\
+\vec F(\theta) \cdot d\vec l = Fdl\cos\theta=(mg\tan\theta)(Ld\theta)\cos\theta=mgL\sin\theta d\theta
 \end{align*}
-Now we can pull $mgL$ in front of the integral (because this is a constant value) and integrate: 
+We can now write the integral for the work using limit that are based on the angle $\theta$, from $\theta=0$ to $\theta=\theta_1$:
 \begin{align*}
-W&=mgL\int_0^{\theta_1}\sin\theta d\theta\\
-&=mgL(-\cos\theta\vert_0^{\theta_1})\\
-W&=mgL(1-\cos\theta)
+W&=\int_0^{\theta_1}mgL\sin\theta d\theta\\
+&=mgL[-\cos\theta]_0^{\theta_1}=mgL(1-\cos\theta_1)
 \end{align*}
-$\therefore$ the work done by you on the child is equal to $mgL(1-\cos\theta)$. 
-\item We know that the work done by $\vec F$ is $W=mgL(1-\cos\theta)$. So, we want to prove that $L(1-\cos\theta)$ is equal to $h$. Expanding $L(1-\cos\theta)$ gives:
-\begin{align*}
-L(1-\cos\theta)&=L-L\cos\theta
-\end{align*}
-Your diagram will look like the one shown in Figure \ref{fig:workenergy:swingprobgeometry}. 
-\capfig{0.4\textwidth}{figures/WorkEnergy/swingprobgeometry.png}{\label{fig:workenergy:swingprobgeometry}A diagram showing the geometry of the problem}
-This clearly shows that $h$ is equal to $L-L\cos\theta$.\\
 
-\textbf{Discussion:} The net force acting on the mass is equal to zero, so the net work must be equal to zero. The two forces that do work on the mass are the applied force $\vec F$, and gravity. The work done by gravity is $-mgh$, so the work done by $\vec F$ is $mgh$. 
+\item We know that the work done by $\vec F$ is $W=mgL(1-\cos\theta_1)$. So, we want to prove that $L(1-\cos\theta_1)$ is equal to $h$. Expanding $L(1-\cos\theta_1)$ gives:
+\begin{align*}
+L(1-\cos\theta_1)&=L-L\cos\theta_1
+\end{align*}
+This can be illustrated on a diagram, as in Figure \ref{fig:workenergy:swingprobgeometry}, which shows that $h$ is equal to $L-L\cos\theta$.
+\capfig{0.4\textwidth}{figures/WorkEnergy/swingprobgeometry.png}{\label{fig:workenergy:swingprobgeometry}A diagram showing the geometry of the problem}
+
+\textbf{Discussion:} The net force acting on the mass is equal to zero, so the net work must be equal to zero. The two forces that do work on the mass are the applied force $\vec F$, and gravity. The work done by the applied force if $mgh$, so the work done by gravity must be $-mgh$.
 \end{enumerate}
 \end{solution}
 
