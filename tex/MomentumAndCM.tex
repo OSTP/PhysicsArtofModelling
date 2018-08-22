@@ -105,7 +105,7 @@ where $\Delta t$ is the amount of time over which the force was exerted. Althoug
 \begin{example}{Estimate the impulse that is given to someone's head when they are slapped in the face.}
 When we slap someone's face with our hand, our hand exerts a force on their face during the period of time, $\Delta t$, over which our hand is in contact with their face. During that period of time, the force on their face goes from being 0, to some unpleasantly high value, and then back to zero, so the force cannot be considered constant. 
 
-Let us estimate the average magnitude of the slapping force by considering the deceleration of our slapping hand and modelling the motion as one-dimensional. Let us assume that our slapping hand has a mass $m=\SI{1}{kg}$ and that it is has a speed of $\SI{2}{m/s}$ just before it makes contact. Furthermore, let us assume that it is contact with the face for a period of time $\Delta t$. This allows us to find the average acceleration of our hand and thus the average force exerted by the face on our hand to stop it:
+Let us estimate the average magnitude of the slapping force by considering the deceleration of our slapping hand and modelling the motion as one-dimensional. Let us assume that our slapping hand has a mass $m=\SI{1}{kg}$ and that it is has a speed of $\SI{2}{m/s}$ just before it makes contact. Furthermore, let us assume that it is in contact with the face for a period of time $\Delta t$. This allows us to find the average acceleration of our hand and thus the average force exerted by the face on our hand to stop it:
 \begin{align*}
 a &= \frac{\Delta v}{\Delta t}\\
 \therefore F &= ma = m  \frac{\Delta v}{\Delta t}
@@ -179,6 +179,21 @@ When considering a system of multiple particles, we distinguish between \textbf{
 \end{checkpoint}
 
 The key property of internal forces is that \textbf{the vector sum of the internal forces in a system is zero}. Indeed, Newton's Third Law states that for every force exerted by object A on object B, there is a force that is equal in magnitude and opposite in direction exerted by object B on object A. If we consider both objects to be in the same system, then the sum of the internal forces between objects A and B must sum to zero. It is important to note that this is quite different than what we have discussed so far about summing forces. The forces that sum to zero are exerted on \textit{different} objects. Thus far, we had only ever considered summing forces that are exerted on the same object in order to apply Newton's Second Law. We have never encountered a situation where ``action'' and ``reaction'' forces are summed together, because they act on different objects.
+
+\begin{studentOpinion}{Emma}
+
+\textbf{Internal vs. External forces - what is the ``system'' and what forces should we consider?}
+
+As discussed above, internal and external forces can only be considered in the context of a specific system. So, how do we define this ``system''? How far do we go when defining the system?
+
+For example, let's say that you kick a soccer ball, and it hits a nearby lawn chair, knocking it down. You want to determine what will happen to the soccer ball after it hits the lawn chair. What is defined to be the system here, and how should the forces be classified? Is the force exerted by the soccer ball on the lawn chair an external force? Should we consider the friction between the first foot particle that touches the first soccer ball particle?
+
+The best way to approach ``defining the system'' is to pin down exactly what you're trying to model. Here, specifically, you are trying to determine the velocity of the ball after it hits the lawn chair. In this situation, thinking about the friction between individual foot and soccer ball particles wouldn't help us to figure out the final velocity of the soccer ball. Rather, thinking of the soccer ball and lawn chair as two giant, continuous particles, colliding and exchanging energy would be helpful. In this situation, it would be useful to consider the ``system'' to be the soccer ball and lawn chair only.
+
+ The force exerted by the soccer ball on the lawn chair would be an internal force, as this gives us information as to the final velocity of the soccer ball and is a force exchanged between the particles within the system. The force that gravity exerts on the lawn chair, normal force of the person's foot and force exerted by the foot on the soccer ball are all forces that we would consider ``external'', as they are forces that arise from interactions that take place partially outside of our defined ``system''. Therefore, we neglect them in the context of finding the final velocity of the soccer ball.
+
+Remember - ``internal'' and ``external'' are not magical properties of a specific type of force. These definitions are made by us in the quest of building useful models.
+\end{studentOpinion}
 
 \subsection{Conservation of momentum}
 Consider a system of two particles with momenta $\vec p_1$ and $\vec p_2$.  Newton's Second Law must hold for each particle:
@@ -300,7 +315,7 @@ We can consider the system as being comprised of you and your friend. There are 
 
 The mechanical energy will not be conserved. You had to use chemical potential energy stored in your muscles to shove your friend. Thus, external energy (i.e. not mechanical energy from you or your friend) was injected into the system, and we should expect the total mechanical energy to be larger after the collision. 
 
-Before the collision, both you and your friend have zero speed, and thus zero kinetic energy and zero momentum. After the collision, your friend as a velocity $\vec v_f$. We can use conservation of total momentum, $\vec P$, to determine your velocity, $\vec v_s$, after the collision. 
+Before the collision, both you and your friend have zero speed, and thus zero kinetic energy and zero momentum. After the collision, your friend has a velocity $\vec v_f$. We can use conservation of total momentum, $\vec P$, to determine your velocity, $\vec v_s$, after the collision. 
 \begin{align*}
 \vec P &=\pvec P'\\
 0 &= m_s\vec v_s + m_f\vec v_f\\
@@ -858,8 +873,6 @@ Regardless of the actual shape of the parabola (the parameter $a$), the centre o
 
 TODO: For above, redo the figure, and split into a figure with just the bowl in the question and a figure showing, dm, dz, etc, in the solution.
 
-TODO: Question Library find the CM of a uniform half disk.
-
 \newpage
 \section{Summary}
 
@@ -990,10 +1003,14 @@ The strategy to set up the integrals above is usually to express the mass elemen
 
 \begin{enumerate}
 \item Explain how Newton's Cradle illustrates the conservation of momentum. Are the collisions in Newton's Cradle elastic? Explain! 
+\item Gymnasts have specially engineered ``crash mats'' for landing after doing spins and flips in the air. Why do these crash mats have to be specially engineered, and why can't the gymnast just use a big pile of blankets?
+\item Give 2 examples where the centre of mass of a system is not physically inside of the system.
+\item The Volvo XC60 is supposedly the safest car in the world that money can buy. Why is this?
+\item In the boxing world, boxers use principles of momentum to ``ride the punch''. Research and explain how this method helps boxers to minimize injuries.
 \end{enumerate}
 \subsection{To try at home}
 
-\begin{tQuestion}Try doing this \end{tQuestion}
+\begin{tQuestion} Grab two or three of your friends and ask them to hold a bed sheet. Throw an egg at full speed onto the bed sheet. What happens to the egg, and why? \end{tQuestion}
 
 \subsection{To try in the lab}
 
@@ -1001,8 +1018,43 @@ The strategy to set up the integrals above is usually to express the mass elemen
 \section{Sample problems and solutions}
 \subsection{Problems}
 
+\begin{problem}{soln:momentumandcm:halfdisk}{\label{prob:momencumandcm:halfdisk} Find the centre of mass of a uniform half-disk.}
+\end{problem}
 
 \newpage
 \subsection{Solutions}
 
+\begin{solution}{prob:momentumandcm:halfdisk}\label{soln:momentumandcm:halfdisk} 
+First, we should draw a diagram with appropriate axis.
 
+\capfig{0.40\textwidth}{figures/MomentumAndCM/halfdisk.png}{\label{fig:momentumandcm:halfdisk} A uniform half-disk.}
+
+Let us say that the mass of a semicircular ring is m. Considering a slice of this half-disk with a width of dy and mass dm,
+
+\begin{align*}
+\sigma &=\frac{mass}{area} \\
+\sigma &=\frac{m}{\frac{1}{2}\pi r^{2}} \\
+\therefore \sigma &=\frac{2m}{\pi r^{2}} \\
+\end{align*}
+
+\begin{align*}
+dm&=\sigma dA\\
+&=\frac{2m}{\pi r^{2}}\pi ydy\\
+\therefore&=\frac{2m}{r^{2}} ydy\\
+\end{align*}
+
+The y coordinate of the position of the centre of mass will be located at $x=0$ and $y=\frac{2r}{\pi}$ by symmetry.
+
+Using this information, we can use the centre of mass formula for the y coordinate to determine the centre of mass for the half-disk.
+
+\begin{align*}
+y_{CM}&=\frac{1}{m}\int y dm\\
+&=\frac{1}{m}\int_{0}^{r} (\frac{2y}{\pi})\frac{2m}{r^{2}}ydy\\
+&=\frac{4}{\pi r^{2}}\int_{0}^{r}y^{2}dy\\
+&=\frac{4}{\pi r^{2}}(\frac{R^{3}}{3})\\
+&=\frac{4r}{3\pi}\\
+\therefore y_{CM}&=\frac{4r}{3\pi}\\
+\end{align*}
+
+Therefore, the centre of mass of a uniform half-disk is $x_{CM}=0$, $y_{CM}=\frac{4r}{3\pi}$.
+\end{solution}
