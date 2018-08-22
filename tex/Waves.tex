@@ -753,15 +753,16 @@ f &= \frac{nv}{2L}
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{soln:waves:reflectioncoeff}{\label{prob:waves:reflectioncoeff}A pulse propagates down a rope of mass per unit length $\mu_1$ that is tied to a second rope with a mass per unit length $\mu_2$ (the tensions in the ropes are equal in magnitude).}
-\item Write the incident pulse, the reflected pulse, and the transmitted pulse in the form $D=f(t\pm x/v)$ where $f$ is a function that will depend on either $t+x/v$ or $t-x/v$ depending on the direction that the pulse is travelling in.
+\begin{problemParts}{soln:waves:reflectioncoeff}{\label{prob:waves:reflectioncoeff}A pulse propagates down a rope of mass per unit length $\mu_1$ that is tied to a second rope with a mass per unit length $\mu_2$. The tensions in the ropes are equal in magnitude.}
+\item Write the incident pulse, the reflected pulse, and the transmitted pulse in the form $D(x,t)=f(t\pm x/v)$, where $f$ is some function that depends on either $t+x/v$ or $t-x/v$, depending on the direction that the pulse is travelling in.
 \item Using the boundary conditions, show that the reflection coefficient, $R$ , (the ratio of the amplitude of the reflected pulse to the amplitude of the incident pulse) is given by:
 \begin{align*}
 R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
 \end{align*}
 \end{problemParts}
 
-\begin{problemParts}{soln:waves:clarinet}{\label{prob:waves:clarinet} A clarinet can be modelled as an air column that is open at one end and closed at the other end.}
+\begin{problemParts}{soln:waves:clarinet}{\label{prob:waves:clarinet} A clarinet can be modelled as an air column that is open at one end and closed at the other end, as in Figure \ref{fig:waves:clarinetmodel}.
+\capfig{0.5\textwidth}{figures/Waves/clarinetmodel.png}{\label{fig:waves:clarinetmodel} A clarinet (of length $L$) modelled as an air column that is closed at one end.}}
 \item Draw the first three harmonics for a clarinet.
 \item Find an expression for the wavelength of the $n^{th}$ harmonic for a clarinet of length $L$.
 \item If a clarinet is \SI{60}{cm} long, what is the lowest frequency note it can produce?
@@ -771,66 +772,66 @@ R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
 \subsection{Solutions}
 \begin{solution}{prob:waves:reflectioncoeff}\label{soln:waves:reflectioncoeff}
 \begin{enumerate}[(a)] 
-\item We let the initial pulse move in the positive $x$ direction (Figure \ref{fig:waves:reflectioncoeff}).
-\capfig{0.5\textwidth}{figures/Waves/reflectioncoeff.png}{\label{fig:waves:reflectioncoeff} The wave propagates through a rope connected to a another rope with a different linear mass density. Whether the reflected pulse is inverted or upright will depend on the reflection coefficient.}
+\item We let the incident pulse move in the positive $x$ direction (Figure \ref{fig:waves:reflectioncoeff}), and set $x=0$ to be where the ropes connect.
+\capfig{0.5\textwidth}{figures/Waves/reflectioncoeff.png}{\label{fig:waves:reflectioncoeff} An incident pulse propagates through a rope connected to a another rope with a different linear mass density. When it reaches the boundary, part of the pulse is reflected and part is transmitted. Whether the reflected pulse is inverted or upright will depend on the reflection coefficient.}
 
- The incident pulse can then be described by the function:
+The incident pulse (denoted by $i$) is a travelling wave, moving in one dimension in the positive $x$ direction. The incident pulse can thus be described by the function:
 \begin{align*}
 D_i=A_i\cos(k_1x-\omega t)\\
 \end{align*}
-This can be rewritten to take the form $D=f(t- x/v)$:
+Using the fact that $k=2\pi/\lambda$ and $\omega=2\pi f$, this equation can be rewritten to take the form $D=f(t- x/v)$:
 \begin{align*}
 D_i&=A_i\cos\left( \frac{2\pi}{\lambda_1}x-2\pi ft\right)\\
-&=A_i\cos \left( 2\pi(\frac{1}{\lambda_1}x- ft)\right)\\
-&=A_i\cos \left( 2\pi f(\frac{x}{v_1}- t)\right)\\
-&=A_i\cos \left( -2\pi f(t-\frac{x}{v_1})\right)\\
-D_i&=A_i\cos \left(2\pi f(t-\frac{x}{v_1})\right)
+&=A_i\cos \left( 2\pi\left(\frac{1}{\lambda_1}x- ft\right)\right)\\
+&=A_i\cos \left( 2\pi f\left(\frac{x}{v_1}- t\right)\right)\\
+&=A_i\cos \left( -2\pi f\left(t-\frac{x}{v_1}\right)\right)\\
+D_i&=A_i\cos \left(2\pi f\left(t-\frac{x}{v_1}\right)\right)
 \end{align*}
-The transmitted wave will also travel in the positive $x$ direction but at a different speed (because the speed depends on the mass density of the rope):
+where we noted that $\cos(-x)=\cos(x)$.
+The transmitted wave will also travel in the positive $x$ direction, but at a different speed (because the speed depends on the mass density of the rope):
 \begin{align*}
-D_T&=A_T\cos \left( 2\pi f(t-\frac{x}{v_2})\right)
+D_T&=A_T\cos \left( 2\pi f\left(t-\frac{x}{v_2}\right)\right)
 \end{align*}
 The reflected wave will travel in the $-x$ direction and at the same speed as the incident pulse.
 \begin{align*}
-D_R&=A_R\cos \left( 2\pi f(t+\frac{x}{v_1})\right)
+D_R&=A_R\cos \left( 2\pi f\left(t+\frac{x}{v_1}\right)\right)
 \end{align*}
-\item We will consider the boundary conditions at the interface between the two ropes (we set this location on the rope to be $x=0$). One boundary condition is that the the rope must be continuous. As a result, the vertical displacement on the $-x$ side of the boundary must be the same as the vertical displacement on the $+x$ of the boundary. Since the front of the pulse will reach the boundary before the end of the pulse, the incident and reflected pulses will superpose. This can be expressed as:
+\item We will consider the boundary conditions at the interface between the two ropes. One boundary condition is that the rope must be continuous. As a result, the vertical displacement on the $-x$ side of the boundary must be the same as the vertical displacement on the $+x$ side of the boundary at every instant: 
 \begin{align*}
-A_{-x}&=A_{+x}\\
+y_{-x}&=y_{+x}\\
+\end{align*}
+Consequently, the amplitude on the $+x$ side of the boundary must be equal to the amplitude on the $-x$ side. The amplitude on the $+x$ side is equal to the amplitude of the transmitted pulse. For the $-x$ side of the boundary, we have to take into account that the incident and reflected pulses will superimpose (when the front of the incident pulse reaches the boundary, it will be reflected and interfere with the end of the incident pulse). This boundary condition can thus be expressed as:
+\begin{align*}
 A_i+A_R&=A_T
 \end{align*}
-Another condition is that, at the boundary, the net force in the $y$ direction must be zero, or else the ropes would disconnect:
-\begin{align*}
-F_T\sin\theta_1=F_T\sin\theta_2\\
-\sin\theta_1=\sin\theta_2
-\end{align*}
-where we noted that the magnitude of the tension is the same in both ropes. The angles are shown in Figure \ref{fig:waves:reflectioncoeffangle}
-\capfig{0.5\textwidth}{figures/Waves/reflectioncoeffangle.png}{\label{fig:waves:reflectioncoeffangle} The forces acting on the rope at the boundary.}
-
-For small angles, $\sin\theta \approx \tan\theta$. Since $\tan\theta$ is the slope of the rope, we can write:
+Unless there is a kink in the rope, the slope of the rope must also be continuous at the boundary. Since the incident and reflected pulses superimpose, and the principle of superposition states that the net displacement is simply the sum of the displacement of these two waves, we can write:
 \begin{align*}
 \die{}{x}(D_i+D_R)\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}\\
-\die{}{x}D_i\Bigr|_{x=0}+\die{}{x}D_R\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}\\
+\die{}{x}D_i\Bigr|_{x=0}+\die{}{x}D_R\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}
+\end{align*}
+Using our equations for the incident, transmitted, and reflected pulses found in part a), and taking the appropriate partial derivatives, this equation becomes:
+\begin{align*}
 (A_i/v_1) \sin \left(2\pi f\left( t-\frac{x}{v_1}\right)\right)\Bigr|_{x=0}+(-A_R/v_1) \sin \left( 2\pi f\left( t+\frac{x}{v_1}\right)\right)\Bigr|_{x=0}&=\\(A_T/v_2) \sin \left( 2\pi f\left( t-\frac{x}{v_2}\right)\right)\Bigr|_{x=0}
 \end{align*}
-Evaluating at $x=0$, we get:
+Evaluating at $x=0$ gives:
 \begin{align*}
 (A_i/v_1) \sin (2\pi ft) +(-A_R/v_1) \sin (2\pi ft)&=(A_T/v_2) \sin (2\pi ft)\\
 \frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_T}{v_2} 
 \end{align*}
-Using our earlier condition, $A_i+A_R=A_T$, and simplifying:
+Using our earlier condition, $A_i+A_R=A_T$, we get:
 \begin{align*}
 \frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_i}{v_2}+\frac{A_R}{v_2}\\
 \end{align*}
-Now we can find the reflection coefficient:
+Now, we can rearrange to find the reflection coefficient, $R=A_R/A_i$:
 \begin{align*}
 A_i\left( \frac{v_2-v_1}{v_1v_2}\right)&=A_R\left( \frac{v_2+v_1}{v_1v_2}\right)\\
 R&=\frac{v_2-v_1}{v_2+v_1}
 \end{align*}
-Since the velocities in the first and second rope are $v_1=\sqrt{F_T/\mu_1}$ and $v_2=\sqrt{F_T/\mu_2}$, the reflection coefficient can be stated as:
+Since the velocities in the first and second rope are $v_1=\sqrt{F_T/\mu_1}$ and $v_2=\sqrt{F_T/\mu_2}$, respectively, the reflection coefficient can be written as:
 \begin{align*}
 R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
 \end{align*}
+as desired. 
 \end{enumerate}
 \end{solution}
 
