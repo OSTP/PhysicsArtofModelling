@@ -1,7 +1,7 @@
 
 \chapter{Linear momentum and the centre of mass}
 \label{chapter:momentumandcm}
-In this chapter, we introduce the concepts of linear momentum and of centre of mass. Momentum is a quantity that, like energy, can be defined from Newton's Second Law, to facilitate building models in some cases. Since momentum is often a conserved quantity within a system, it can make calculations much easier than using forces. The concepts of momentum and of centre of mass will also allow us to apply Newton's Second Law to systems comprised of multiple particles including solid objects. 
+In this chapter, we introduce the concepts of linear momentum and of centre of mass. Momentum is a quantity that, like energy, can be defined from Newton's Second Law, to facilitate building models. Since momentum is often a conserved quantity within a system, it can make calculations much easier than using forces. The concepts of momentum and of centre of mass will also allow us to apply Newton's Second Law to systems comprised of multiple particles including solid objects. 
 
 \begin{learningObjectives}{
  \item Understand how to calculate linear momentum.
@@ -13,11 +13,11 @@ In this chapter, we introduce the concepts of linear momentum and of centre of m
 \end{learningObjectives}
 
 \begin{opening}
-\begin{MCquestion}{Rhonda and John are bowling with large watermelons. By mistake, Rhonda lets go of her $\SI{3}{kg}$ watermelon at a speed of $\SI{10}{m/s}$ and it charges at John's $\SI{1}{kg}$ watermelon that was travelling at $\SI{2}{m/s}$. If the watermelons hit and start rolling together, at what speed will they be travelling?}
-\item $\SI{2}{m/s}$
-\item $\SI{4}{m/s}$
-\item $\SI{8}{m/s}$ %correct 
-\item $\SI{-6}{m/s}$
+\begin{MCquestion}{You hit a pool ball square on with the cue ball. If both balls have the same mass, and you can neglect any ``english'' on the cue ball, what happens to the cue ball?}
+\item It stops.
+\item It continues, with half of its original speed.
+\item It continues, with its original speed.
+\item It rebounds, with its original speed.
 \end{MCquestion}
 \end{opening}
 
@@ -38,7 +38,7 @@ and we can write this as Newton's Second Law, since $m\vec a$ must be equal to t
 \begin{align}
 \Aboxed{\frac{d}{dt}\vec p = \sum \vec F = \vec F^{net}}
 \end{align}
-The equation above is the original form in which Newton first developed his theory. It says that the net force on an object is equal to the rate of change of its momentum. \textbf{If the net force on the object is zero, then its momentum is constant, or ``conserved''}. In terms of components, Newton's Second Law written for the rate of change of momentum is given by:
+The equation above is the original form in which Newton first developed his theory. It says that the net force on an object is equal to the rate of change of its momentum. \textbf{If the net force on the object is zero, then its momentum is constant} (as is its velocity). In terms of components, Newton's Second Law written for the rate of change of momentum is given by:
 \begin{align*}
 \frac{dp_x}{dt} =& \sum F_x\\
 \frac{dp_y}{dt} =& \sum F_y\\
@@ -95,10 +95,10 @@ where $\Delta t$ is the amount of time over which the force was exerted. Althoug
 
 \begin{checkpoint}
 \begin{MCquestion}{What is the SI unit for impulse?}
-\item kg per $m/s^2$
-\item g per $m/s^2$
-\item kg per m/s
-\item kg per s
+\item $\si{kg\cdot m/s^2}$
+\item $\si{kg \cdot s^2}$
+\item $\si{kg \cdot m/s}$\correct
+\item $\si{kg \cdot m/s^3}$
 \end{MCquestion}
 \end{checkpoint}
 
@@ -144,7 +144,7 @@ The change in momentum along the direction of motion for either the driver or pa
 \end{align*}
 where $v_A$ is the initial speed of the car, and the final momentum of either person is zero. 
 
-The change in momentum is equal to the impulse received by either person during a period of time $\Delta t$:
+The change in momentum is equal to the impulse received by either person during a period of time $\Delta t$, which is related to the force that was exerted on them:
 \begin{align*}
 J=F\Delta t &= \Delta p = -mv_A\\
 F&=-m \frac{v_A}{\Delta t}
@@ -159,22 +159,23 @@ F=(\SI{80}{kg})\frac{(\SI{27.8}{m/s})}{(\SI{0.2}{s})}=\SI{11120}{N}
 \end{align*}
 The force on the driver is thus comparable to their weight, whereas the passenger experiences an average force that is more than 10 times their weight.
 
-\textbf{Discussion:} Any mechanism that results in a longer collision time will help to reduce the forces that are involved. This is why cars are designed to crumple in head-on collisions. We can understand this in terms of the crumpling of the car absorbing some of the kinetic energy of the car, as well as lengthening the time of the collision so that the forces involved are smaller. Note that we did not need to use impulse to calculate the average force, since we could have just used kinematics to determine the acceleration and Newton's Second Law to calculate the corresponding force. Using impulse is equivalent by construction, but sometimes, it is easier mathematically.
+\textbf{Discussion:} Any mechanism that results in a longer collision time will help to reduce the forces that are involved. This is why cars are designed to crumple in head-on collisions. We can understand this in terms of the crumpling of the car absorbing some of the kinetic energy of the car, as well as lengthening the time of the collision so that the forces involved are smaller. You may also hear people that look at modern cars that are all crumpled up after a crash and say something along the lines of ``They sure don't make cars the way they used to''. But of course, that is by design; it is safer if the car crumples up (and cars are designed to crumple up in specific areas, not the passenger cabin).
+
+Note that we did not need to use impulse to calculate the average force, since we could have just used kinematics to determine the acceleration and Newton's Second Law to calculate the corresponding force. Using impulse is equivalent by construction, but sometimes, it is easier mathematically.
 \end{example}
 
-TODO: Question Library question: Give a function F(t), calculate the change in momentum resulting from that force over a certain range of time (i.e. they need to take an integral). 
 
 \subsection{Systems of particles: internal and external forces}
 So far, we have only used Newton's Second Law to describe the motion of a single point mass particle or to describe the motion of an object whose orientation we did not need to describe (e.g. a block sliding down a hill). In this section, we consider what happens when there are multiple point particles that form a ``system''.
 
 In physics, we loosely define a system as the ensemble of objects/particles that we wish to describe. So far, we have only described systems made of one particle, so describing the motion of the system was equivalent to describing the motion of that single particle. A  system of two particles could be, for example, two billiard balls on a pool table. To describe that system, we would need to provide functions that describe the positions, velocities, and forces exerted on both balls. We can also define functions/quantities that describe the system as a whole, rather than the details. For example, we can define the total kinetic energy of the system, $K$, corresponding to the sum of kinetic energies of the two balls. We can also define the total momentum of the system, $\vec P$, given by the vector sum of the momenta of the two balls.
 
-When considering a system of multiple particles, we distinguish between \textbf{internal} and \textbf{external} forces. Internal forces are those forces that the particles on the system exert on each other. For example, if the two billiard balls in the system collide with each other, they will each exert a force on the other during the collision; those forces are internal. External forces are all other forces exerted on the particles of the system. For example, the force of gravity and the normal force from the pool table are both external forces exerted on the balls in the system (exerted by the Earth, or by the pool table, neither of which we considered to be part of the system). The force exerted by a person hitting one of the balls with a pool queue is similarly an external force. What we consider to be a system is arbitrary; we could consider the pool table and the Earth to be part of the system along with the two balls; in that case, the normal force and the weight of the balls would become internal forces. The classification of whether a force is internal or external to a system of course depends on what is considered part of the system.
+When considering a system of multiple particles, we distinguish between \textbf{internal} and \textbf{external} forces. Internal forces are those forces that the particles in the system exert on each other. For example, if the two billiard balls in the system collide with each other, they will each exert a force on the other during the collision; those forces are internal. External forces are all other forces exerted on the particles of the system. For example, the force of gravity and the normal force from the pool table are both external forces exerted on the balls in the system (exerted by the Earth, or by the pool table, neither of which we considered to be part of the system). The force exerted by a person hitting one of the balls with a pool queue is similarly an external force. What we consider to be a system is arbitrary; we could consider the pool table and the Earth to be part of the system along with the two balls; in that case, the normal force and the weight of the balls would become internal forces. The classification of whether a force is internal or external to a system of course depends on what is considered part of the system.
 
 \begin{checkpoint}
-\begin{MCquestion}{Two pool balls crash against each other. Is this (minuscule) force of gravity exerted from one ball to the other an internal or external force?}
-\item Internal, because it is exerted by a particle in the system on another. %correct
-\item External, because one of the particles is not in the system.
+\begin{MCquestion}{Two pool balls crash against each other. Is this force of gravity exerted by one ball on the other an internal or external force?}
+\item Internal. \correct
+\item External.
 \end{MCquestion}
 \end{checkpoint}
 
@@ -190,7 +191,7 @@ For example, let's say that you kick a soccer ball, and it hits a nearby lawn ch
 
 The best way to approach ``defining the system'' is to pin down exactly what you're trying to model. Here, specifically, you are trying to determine the velocity of the ball after it hits the lawn chair. In this situation, thinking about the friction between individual foot and soccer ball particles wouldn't help us to figure out the final velocity of the soccer ball. Rather, thinking of the soccer ball and lawn chair as two giant, continuous particles, colliding and exchanging energy would be helpful. In this situation, it would be useful to consider the ``system'' to be the soccer ball and lawn chair only.
 
- The force exerted by the soccer ball on the lawn chair would be an internal force, as this gives us information as to the final velocity of the soccer ball and is a force exchanged between the particles within the system. The force that gravity exerts on the lawn chair, normal force of the person's foot and force exerted by the foot on the soccer ball are all forces that we would consider ``external'', as they are forces that arise from interactions that take place partially outside of our defined ``system''. Therefore, we neglect them in the context of finding the final velocity of the soccer ball.
+ The force exerted by the soccer ball on the lawn chair would be an internal force, as this gives us information as to the final velocity of the soccer ball and is a force exchanged between the particles within the system. The force that gravity exerts on the lawn chair, normal force on the person's foot and the force exerted by the foot on the soccer ball are all forces that we would consider ``external''.
 
 Remember - ``internal'' and ``external'' are not magical properties of a specific type of force. These definitions are made by us in the quest of building useful models.
 \end{studentOpinion}
@@ -209,7 +210,7 @@ The quantity on the right is the sum of the forces exerted on particle 1 plus th
 \begin{align*}
 \frac{d}{dt}(\vec p_1 + \vec p_2) = \sum \vec F
 \end{align*}
-where, again, the sum on the right is the sum over all of the forces exerted on the system. Some of those forces are external (e.g. gravity exerted by Earth on the particles), whereas some of the forces are internal (e.g. a contact force between the two particles). Dividing up the sum into a sum over all external forces ($\vec F^{ext}$) and a sum over internal forces ($\vec F^{int}$):
+where, again, the sum on the right is the sum over all of the forces exerted on the system. Some of those forces are external (e.g. gravity exerted by Earth on the particles), whereas some of the forces are internal (e.g. a contact force between the two particles). We can separate the sum into a sum over all external forces ($\vec F^{ext}$) and a sum over internal forces ($\vec F^{int}$):
 \begin{align*}
 \sum \vec F = \sum \vec F^{ext} + \sum \vec F^{int} 
 \end{align*}
@@ -264,12 +265,12 @@ When we refer to a force being ``exerted on a system'', we mean exerted on one o
 Consider a train made of $N$ cars of equal mass $m$ that is travelling at constant speed $v$ along a straight piece of track where friction and drag are negligible, as depicted in Figure \ref{fig:momentumandcm:train}. An empty car of mass $m$ was left at rest on the track in front of the train. The train collides with the empty car which stays attached to the front of the train. What is the speed of the train after the collision? Is the total mechanical energy of the system conserved?}
 When the train collides with the car, it will exert a ``collision'' force on the car, and the car will exert an opposite force on the train. If we consider both of the train and the car as being part of the same system, then those collision forces will be internal, and the momentum of the system (train + car) will be conserved. The train and car both experience external forces from Earth's gravity and the normal force from the train tracks. However, those two sets of forces cancel each other out, since neither the train nor the car have any acceleration in the vertical direction (the sum of the forces on each object has no net vertical component). Thus, there are no net external forces on the car+train system, and the total momentum of the system is conserved through the collision.
 
-We can model this system in one dimension (along the track), which we call the $x$ axis. We choose the ground as a frame of reference, the positive direction to correspond to the initial velocity of the train, and the origin to be located where the car initially starts. Before the collision, the $x$ component of the momenta of the train (mass $Nm$) and car (mass $m$) are:
+We can model this system in one dimension (along the track), defining our $x$ axis. We choose the ground as a frame of reference, the positive direction parallel to the initial velocity of the train, and the origin to be located where the car initially starts. Before the collision, the $x$ component of the momenta of the train (mass $Nm$) and car (mass $m$) are:
 \begin{align*}
 p_{train}&=Nmv\\
 p_{car}&=0
 \end{align*}
-After the collision, the car is attached to the train (and thus has the same speed, $v'$), so the momenta of the train and car are:
+After the collision, the car is attached to the train (and thus has the same speed, $v'$), so the momenta of the train and car after the collision are:
 \begin{align*}
 p'_{train}&=Nmv'\\
 p'_{car}&=mv'
@@ -333,10 +334,12 @@ We also saw that mechanical energy was not conserved. In terms of energy, we can
 
 The type of collision that we described here is also sometimes called an ``explosion''. You can imagine all of the parts that make up a bomb as small particles. When the bomb explodes, chemical potential energy is converted into the kinetic energy of the bomb fragments. If you consider all of the particles/fragments of the bomb as a system, then the total momentum of all of the bomb fragments is conserved (and equal to zero if the bomb was initially at rest). Again, mechanical energy would not be conserved (and would increase) as the chemical potential energy is converted into mechanical energy.
 \end{example}
-
+\vspace{-0.25cm}
 \begin{example}{
+A proton of mass $m_p$ and initial velocity $\vec v_p$ collides inelastically with a nucleus of mass $m_N$ at rest, as shown in Figure \ref{fig:momentumandcm:protonnucleus}. A coordinate system is set up as shown, such that the initial velocity of the proton is in the $x$ direction. After the collision, the proton's speed is measured to be $v'_p$ and its velocity vector is found to make an angle $\theta$ with the $x$ axis as shown. What is the velocity vector of the nucleus after the collision? Assume that the collision takes place in vacuum.
 \capfig{0.4\textwidth}{figures/MomentumAndCM/protonnucleus.png}{\label{fig:momentumandcm:protonnucleus}A proton of mass $m_p$ colliding inelastically with a nucleus of mass $m_N$.}
-A proton of mass $m_p$ and initial velocity $\vec v_p$ collides inelastically with a nucleus of mass $m_N$ at rest, as shown in Figure \ref{fig:momentumandcm:protonnucleus}. A coordinate system is set up as shown, such that the initial velocity of the proton is in the $x$ direction. After the collision, the proton's speed is measured to be $v'_p$ and its velocity vector is found to make an angle $\theta$ with the $x$ axis as shown. What is the velocity vector of the nucleus after the collision? Assume that the collision takes place in vacuum.}
+}
+
 As a system, we consider the proton and the nucleus together, so that the total momentum of the system is conserved during the collision, as no other external forces are exerted on the two particles (since they are in vacuum). Because momentum is a vector, each component of the total momentum, $\vec P$, is conserved during the collision:
 \begin{align*}
 \vec P &= \pvec P'\\
@@ -378,46 +381,7 @@ If we were given numbers for the initial and final speed of the proton, as well 
 \textbf{Discussion:} By using the conservation of momentum equation and writing out the $x$ and $y$ components, we were able to find two equations to determine the magnitude and direction of the nucleus' velocity after the collision. In the limit where $m_N >> m_p$, the final speed of the nucleus would be very small (close to zero). 
 \end{example}
 
-\begin{example}{
-\capfig{0.7\textwidth}{figures/MomentumAndCM/ballistic.png}{\label{fig:momentumandcm:ballistic}A bullet of mass $m$ strikes and embeds itself into a ballistic pendulum of mass $M$.}
-A ballistic pendulum is a device that can be built to measure the speed of a projectile. The pendulum is constructed such that the projectile is fired at the bob of the pendulum (typically a block of wood) which then swings as illustrated in Figure \ref{fig:momentumandcm:ballistic}, with the projectile embedded within. By measuring the height that is reached by the pendulum's bob, one can determine the speed of the projectile before it collided with the pendulum. If a ballistic pendulum with a mass $M$ suspended at the end of strings of length $L$ is observed to rise by a height $h$ after being struck by a bullet of mass $m$, how fast was the bullet moving?}
-We can model this situation by dividing it into three phases:
-\begin{enumerate}
-\item Before the bullet collides with the pendulum, only the bullet has momentum in the $x$ direction.
-\item Immediately after the \textbf{inelastic} collision, the bullet and pendulum form a combined object of mass $M+m$ that has the same momentum as the bullet, in the $x$ direction, before the pendulum starts to swing upwards.
-\item The pendulum with the embedded bullet swings upwards until its kinetic energy is zero.
-\end{enumerate}
-The collision between the bullet and pendulum is inelastic, because some of the kinetic energy of the bullet is used to deform the bullet and the pendulum. In general, any collision where two objects end up ``stuck together'' is inelastic.
 
-In order to model the pendulum's motion we first apply conservation of momentum to determine the speed, $v'$, of the pendulum and embedded bullet just after the collision. Applying conservation of momentum in the $x$ direction to the system formed by the pendulum and the bullet, just before and after the collision, we have:
-\begin{align*}
-P &= mv\\
-P' &= (M+m)v'\\
-\therefore mv &= (M+m)v'\\
-\therefore v' &= \frac{m}{m+M}v
-\end{align*}
-where $P$ and $P'$ are the initial and final momenta of the system, respectively. The pendulum with the bullet embedded in it will thus have a speed of $v'$ at the bottom of the pendulum's motion, before it swings upwards. 
-
-We can now use conservation of energy to model the swinging motion since, at that point, only tension and gravity act on the pendulum, and there are no non-conservative forces. If we choose the origin to be the location of the pendulum at the bottom of its trajectory, its initial gravitational potential energy is zero and its initial mechanical energy, $E$, is given by:
-\begin{align*}
-E = \frac{1}{2}(m+M) v'^2 
-\end{align*}
-At the top of the trajectory, the pendulum with the embedded bullet will stop and have no kinetic energy. The mechanical energy at the top of the trajectory, $E'$, is thus equal to the gravitational potential energy of the pendulum at a height $h$ above the origin:
-\begin{align*}
-E' = (m+M)gh
-\end{align*}
-Applying conservation of mechanical energy allows us to find the initial speed of the bullet:
-\begin{align*}
-E &= E'\\
-\frac{1}{2}(m+M) v'^2 &= (m+M)gh\\
-v'^2 &= 2gh\\
-\left( \frac{m}{m+M}v\right)^2&= 2gh\\
-\therefore v &= \frac{m+M}{m} \sqrt{2gh}
-\end{align*}
-where is the second last line we used the expression for $v'$ that we obtained from conservation of momentum.
-
-\textbf{Discussion: }This example showed a situation in which momentum and energy were both conserved, but not at the same time. This example also highlighted how, by using conservation laws, one can derive models that are much easier to solve mathematically than if one had to model all of the forces involved.
-\end{example}
 
 
 \subsection{Elastic collisions}
@@ -434,7 +398,7 @@ Mv_M+mv_m&=Mv'_M+mv'_m
 \end{align*}
 where the primes ($'$) correspond to the quantities after the collision. Note that, in principle, the $x$ components of the velocities ($v_M$, $v'_M$, $v_m$, $v'_m$) could be negative numbers if the corresponding block is moving in the negative $x$ direction.
 
-For the mechanical energy of the two blocks, we only need to consider their kinetic energy since their gravitational potential energies are the same before and after the collision on the horizontal surface.
+For the mechanical energy of the two blocks, we only need to consider their kinetic energy since their gravitational potential energies are the same before and after the collision on the horizontal surface. The total mechanical energy of the system, before and after the collision is given by:
 \begin{align*}
 E &=E'\\
 \frac{1}{2}Mv_M^2+\frac{1}{2}mv_m^2&=\frac{1}{2}Mv'^2_M+\frac{1}{2}mv'^2_m\\
@@ -449,16 +413,17 @@ Mv_M+mv_m&=Mv'_M+mv'_m\nonumber\\
 \therefore M(v_M-v'_M) &= m(v'm-v_m)
 \end{align}
 For conservation of energy, this gives:
-\begin{align*}
-Mv_M^2+mv_m^2&=Mv'^2_M+mv'^2_m\\
+\begin{align}
+\label{eq:momentumandcm:exptemp2}
+Mv_M^2+mv_m^2&=Mv'^2_M+mv'^2_m\nonumber\\
 \therefore  M(v_M^2-v'^2_M)&= M(v'^2_m-v^2_m)
-\end{align*}
+\end{align}
 which we can re-write as:
 \begin{align*}
 M(v_M^2-v'^2_M)&= M(v'^2_m-v^2_m)\\
 M(v_M-v'_M)(v_M+v'_M)&= M(v'_m-v_m)(v'_m+v_m)
 \end{align*}
-We can then divide this by the momentum equation (Equation \ref{eq:momentumandcm:exptemp}):
+We can then divide Equation \ref{eq:momentumandcm:exptemp2} by Equation \ref{eq:momentumandcm:exptemp}:
 \begin{align*}
 \frac{M(v_M-v'_M)(v_M+v'_M)}{M(v_M-v'_M)}&= \frac{M(v'_m-v_m)(v'_m+v_m)}{m(v'm-v_m)}\\
 \therefore v_M+v'_M&=v'_m+v_m
@@ -501,11 +466,11 @@ v'_m &= \frac{m-M}{M+m}v_m+\frac{2M}{M+m}v_M
 \end{example}
 
 \begin{checkpoint}
-\begin{MCquestion}{Two trains of equal masses collide elastically on a track. If train A was at rest and train B had a speed v, what are the speeds of the trains after the collision?}
-\item Both trains A and B travel away from each other with speeds $\frac{1}{2}$v.
-\item Train A will be at rest and train B will move away with a speed v.
-\item Both trains A and B will stick together and move at a speed of v.
-\item Train B will be at rest and train A will move away at a speed of v. %correct
+\begin{MCquestion}{Two trains of equal masses collide elastically on a track. If train A had a speed $v$ and train B was at rest, what are the speeds of the trains after the collision?}
+\item Both trains A and B travel away from each other with speeds $\frac{1}{2}v$.
+\item Train A will be at rest and train B will move away with a speed $v$.\correct
+\item Both trains A and B will stick together and move at a speed of $v$.
+\item Train B will be at rest and train A will move away at a speed of $v$.
 \end{MCquestion}
 \end{checkpoint}
 
@@ -529,16 +494,16 @@ where the left hand side corresponds to the initial kinetic energy and the right
 
 \subsection{Frames of reference}
 \begin{review}
-Before proceeding, you may wish to review sections \ref{sec:DescribingMotionIn1D:Relative motion} and  \ref{sec:DescribingMotionInND:Motion in two dimensions:Using vectors to describe motion in two dimensions} on expressing velocities in different frames of reference.
+Before proceeding, you may wish to review sections \ref{sec:describingmotionin1D:relativemotion} and  \ref{sec:desribingmotioninnd:relativemotion} on expressing velocities in different frames of reference.
 \end{review}
 
-Because the momentum of a particle is defined using the velocity of the particle, its value depends on the reference frame that we chose to measure that velocity. In some cases, it is useful to apply momentum conservation in a frame of reference where the total momentum of the system is zero. For example, consider two particles of mass $m_1$ and $m_2$, moving towards each other with velocities $\vec v_1$ and $\vec v_2$, respectively, as measured in a frame of reference $S$, as illustrated in Figure \ref{fig:momentumandcm:2particles}.
+Because the momentum of a particle is defined using the velocity of the particle, its value depends on the reference frame in which we chose to measure that velocity. In some cases, it is useful to apply momentum conservation in a frame of reference where the total momentum of the system is zero. For example, consider two particles of mass $m_1$ and $m_2$, moving towards each other with velocities $\vec v_1$ and $\vec v_2$, respectively, as measured in a frame of reference $S$, as illustrated in Figure \ref{fig:momentumandcm:2particles}.
 \capfig{0.3\textwidth}{figures/MomentumAndCM/2particles.png}{\label{fig:momentumandcm:2particles}Two particles moving towards each other.}
 In the frame of reference $S$, the total momentum, $\vec P$, of the two particles can be written:
 \begin{align*}
 \vec P = m_1\vec v_1 + m_2\vec v_2
 \end{align*}
-Consider a frame of reference, $S'$, that is moving with velocity $\vec v_{CM}$ relative to the frame of reference $S$. In that frame of reference, the velocities of the two particles are different and given by:
+Consider a frame of reference, $S'$, that is moving with velocity, $\vec v_{CM}$, relative to the frame of reference $S$. In that frame of reference, the velocities of the two particles are different and given by:
 \begin{align*}
 \pvec v'_1&=\vec v_1- \vec v_{CM}\\
 \pvec v'_2&=\vec v_2- \vec v_{CM}
@@ -549,7 +514,7 @@ The total momentum, $\pvec P'$, in the frame of reference $S'$ is then given by\
 &=m_1(\vec v_1- \vec v_{CM})+m_2(\vec v_2- \vec v_{CM})\\
 &= m_1\vec v_1 + m_2\vec v_2 - (m_1+m_2) \vec v_{CM}
 \end{align*}
-We can choose the velocity of the frame, $\vec v_{CM}$ such that the total momentum in that frame of reference is zero:
+We can choose the velocity of the frame $S'$, $\vec v_{CM}$, such that the total momentum in that frame of reference is zero:
 \begin{align*}
 \vec P' &= 0\\
 m_1\vec v_1 + m_2\vec v_2 - (m_1+m_2) \vec v_{CM} &=0\\
@@ -588,60 +553,14 @@ Clearly, the total momentum is zero in the centre of mass frame of reference:
 \textbf{Discussion:} As we have seen, in the centre of mass frame of reference the total momentum is zero. If there are only two particles, and they have the same mass, then, in the centre of mass frame of reference, they both have the same speed and move either towards or away from each other. 
 \end{example}
 
-\begin{example}{\capfig{0.6\textwidth}{figures/MomentumAndCM/springcollision.png}{\label{fig:momentumandcm:springcollision}One block attached to a spring about to collide with another block.} A block of mass $M$ with a spring of spring constant $k$ attached to it is sliding on a frictionless surface with velocity $\vec v_M$ in the $x$ direction. A second block of mass $m$ has velocity $\vec v_m$ also in the $x$ direction (shown above in the negative $x$ direction, but let us assume that we do not necessarily know the direction, only  that the two blocks will collide). During the collision between the blocks, what is the maximum amount by which the spring is compressed?
-}
-The collision is elastic because the energy used to compress the spring is ``given back'' when the spring extends again, since the spring force is conservative. 
 
-They key to modelling the compression of the spring is to identify the condition under which the spring is maximally compressed. This will occur at the point during the collision where the two masses will have exactly the same velocity, momentarily moving in unison as the spring is maximally compressed. Because, instantaneously, the masses have the same velocity, there is a frame of reference in which the two masses are at rest, and the momentum is zero. Of course, that frame of reference is the centre of mass frame of reference. 
-
-Because the collision is one-dimensional, we can calculate the velocity of the centre of mass as:
-\begin{align*}
-v_{CM} = \frac{Mv_M+mv_m}{m+M}
-\end{align*}
-where we note that $v_m$ is a negative number, since the block of mass $m$ is moving in the negative $x$ direction. The total momentum, $\vec P^{CM}$, in the centre of mass frame of reference must be zero. Writing this out for the $x$ component and transforming the velocities of the two blocks into the centre of mass frame of reference:
-\begin{align*}
-P^{CM}_x = M(v_M-v_{CM})+m(v_m-v_{CM})&=0\\
-\therefore (v_m-v_{CM}) &= -\frac{M}{m}(v_M-v_{CM})
-\end{align*}
-Also note that we can write the velocity difference $v_M-v_{CM}$ without using the centre of mass velocity:
-\begin{align*}
-v_M-v_{CM} &= v_M-\frac{Mv_M+mv_m}{m+M}=\frac{1}{m+M}(v_M(m+M)-Mv_M-mv_m)\\
-&=\frac{m}{m+M}(v_M-v_m)
-\end{align*}
-We can then use conservation of energy in the centre of mass frame to determine the maximal compression of the spring. Before the collision, the total mechanical energy in the system, $E$, is the sum of the kinetic energies of the two blocks (as the spring is not compressed):
-\begin{align*}
-E&=\frac{1}{2}m(v_m-v_{CM})^2+\frac{1}{2}M(v_M-v_{CM})^2\\
-&=\frac{1}{2}\frac{M^2}{m}(v_M-v_{CM})^2+\frac{1}{2}M(v_M-v_{CM})^2\\
-&=\frac{1}{2}M \left( 1 + \frac{M}{m}\right) (v_M-v_{CM})^2\\
-&=\frac{1}{2}M \left(\frac{m+M}{m} \right)(v_M-v_{CM})^2\\
-&=\frac{1}{2}M \left(\frac{m+M}{m} \right)\left(\frac{m}{m+M}(v_M-v_m)\right)^2\\
-&=\frac{1}{2} \left(\frac{mM}{m+M}\right)(v_M-v_m)^2
-\end{align*}
-where we used our expressions above to simplify the expression. When the spring is maximally compressed, the two blocks are at rest and the mechanical energy of the system, $E'$, is all ``stored'' as spring potential energy:
-\begin{align*}
-E'&=\frac{1}{2}kx^2
-\end{align*}
-where $x$ is the distance by which the spring is compressed. Equating the two allows us to determine the maximal compression of the spring:
-\begin{align*}
-E &= E' \\
-\frac{1}{2} \left(\frac{mM}{m+M}\right)(v_M-v_m)^2 &= \frac{1}{2}kx^2\\
-\therefore x &= \sqrt{\frac{1}{k} \left(\frac{mM}{m+M}\right)}(v_M-v_m)
-\end{align*}
-\textbf{Discussion:} By modelling the collision in the centre of mass frame of reference, we were easily able to determine the maximal compression of the spring. This would have been more difficult in the lab frame of reference, because the two blocks would still be moving when the spring is maximally compressed, so we would have needed to determine their speeds to determine the total mechanical energy when the spring is compressed.
-
-When we calculated the initial kinetic energy, we found that it was given by:
-\begin{align*}
-E=\frac{1}{2} \left(\frac{mM}{m+M}\right)(v_M-v_m)^2 &=\frac{1}{2}M_{red}(v_M-v_m)^2
-\end{align*}
-The combination of masses in parentheses is called the ``reduced mass'' of the system, and is a sort of effective mass that can be used to model the system as a whole. 
-\end{example}
 
 \section{The centre of mass}
 In this section, we show how to generalize Newton's Second Law so that it may describe the motion of an object that is not a point particle. Any object can be described as being made up of point particles; for example, those particles could be the atoms that make up regular matter. We can thus use the same terminology as in the previous sections to describe a complicated object as a ``system'' comprised of many point particles, themselves described by Newton's Second Law. A system could be a rigid object where the point particles cannot move relative to each other, such as atoms in a solid\footnote{In reality, even atoms in a solid can move relative to each other, but they do not move by large amounts compared to the object.}. Or, the system could be a gas, made of many atoms moving around, or it could be a combination of many solid objects moving around. 
 
 In the previous section, we saw how the total momentum and the total mechanical energy of the system could be used to describe the system as a whole. In this section, we will define the centre of mass which will allow us to describe the position of the system as a whole.
 
-Consider a system comprised of $N$ point particles. Each point particle $i$, of mass $m_i$, can be described by a position vector, $\vec r_i$, a velocity vector, $\vec v_i$, and an acceleration vector, $\vec a_i$, relative to some coordinate system. Newton's Second Law can be applied to any one of the particles in the system:
+Consider a system comprised of $N$ point particles. Each point particle $i$, of mass $m_i$, can be described by a position vector, $\vec r_i$, a velocity vector, $\vec v_i$, and an acceleration vector, $\vec a_i$, relative to some coordinate system in an inertial frame of reference. Newton's Second Law can be applied to any one of the particles in the system:
 \begin{align*}
 \sum_k \vec F_{ik} = m_i \vec a_i
 \end{align*}
@@ -668,7 +587,7 @@ we would like to have an equation of the form:
 \label{eqn:momentumandcm:cmtemp2}
 \sum \vec F^{ext}&=M\vec a_{CM}
 \end{align}
-to describe the system as a whole. However, it is not clear what the acceleration, $\vec a_{CM}$ refers to, since the particles in the system could all be moving in different directions. Suppose that there is a point in the system, whose position is given by the vector, $\vec r_{CM}$, in such a way that the acceleration above is the second time-derivative of that position vector:
+to describe the system as a whole. However, it is not (yet) clear what is accelerating with acceleration, $\vec a_{CM}$, since the particles in the system could all be moving in different directions. Suppose that there is a point in the system, whose position is given by the vector, $\vec r_{CM}$, in such a way that the acceleration above is the second time-derivative of that position vector:
 \begin{align*}
 \vec a_{CM} = \frac{d^2 }{dt^2}\vec r_{CM}
 \end{align*}
@@ -727,7 +646,7 @@ which we can also use in Newton's Second Law:
 \begin{align*}
 \frac{d}{dt}\vec P = \sum \vec F^{ext}
 \end{align*}
-and again, see that the total momentum of the system is conserved if the net external force on the system is zero. In other words, the centre of mass of the system will move with constant velocity when momentum is conserved.
+and again, we see that the total momentum of the system is conserved if the net external force on the system is zero. In other words, the centre of mass of the system will move with constant velocity when momentum is conserved.
 
 Finally, we can also define the acceleration of the centre of mass by taking the time derivative of the velocity:
 \begin{align}
@@ -753,9 +672,10 @@ The centre of mass of the Sun-Earth-Mars system during a syzygy is located appro
 
 \textbf{Discussion:} The radius of the Sun is approximately $\SI{700000}{km}$, so the centre of mass of the system is well inside of the Sun. The Sun is so much more massive than either of the Earth or Mars, that the two planets hardly contribute to shifting the centre of mass away from the centre of the Sun. We would generally consider the masses of the two planets to be negligible if one wanted to model how the solar system itself moves around the Milky Way galaxy.
 \end{example}
-
-\begin{example}{\capfig{0.5\textwidth}{figures/MomentumAndCM/cmraft.png}{\label{fig:momentumandcm:cmraft}Three people on rafts on a lake.}
+\vspace{-0.25cm}
+\begin{example}{\capfig{0.45\textwidth}{figures/MomentumAndCM/cmraft.png}{\label{fig:momentumandcm:cmraft}Three people on rafts on a lake.}
 Alice (mass $m_A$), Brice (mass $m_B$), and \chloe (mass $m_C$) are stranded on individual rafts of negligible mass on a lake, off of the coast of Nyon. The rafts are located at the corners of a right-angle triangle, as illustrated in Figure \ref{fig:momentumandcm:cmraft}, and are connected by ropes. The distance between Alice and Brice is $r_{AB}$ and the distance between Alice and \chloe is $r_{AC}$, as illustrated. Alice decides to pull on the rope that connects her to \chloe, while Brice decide to pull on the rope that connects him to Alice. Where will the three rafts meet?}
+
 We consider the system comprised of the three people and their rafts and model each person and their raft as a point particle with the mass concentrated at the centre of the raft. The forces exerted by pulling on the ropes are internal forces (one particle on the other), and will thus have no impact on the motion of the centre of mass of the system. There are no net external forces exerted on the system (the forces of gravity are balanced out by the forces of buoyancy from the rafts). The centre of mass of the system does not move when the people are pulling on the ropes, so they must ultimately meet at the centre of mass.
 
 We can define a coordinate system such that the origin is located where Alice is initially located, the $x$ axis is in the direction from Alice to Brice, and the $y$ axis is in the direction from Alice to Chlo\"e. The initial positions of Alice, Brice, and \chloe are thus:
@@ -773,7 +693,7 @@ which corresponds to the position where the three rafts will meet, relative to t
 
 \textbf{Discussion: }By using the centre of mass, we easily found where the three rafts would meet. If we had used Newton's Second Law on the three rafts individually, the model would have been complicated by the fact that the forces exerted by Alice and Brice on the ropes change direction as the rafts begin to move, which would have required the use of integrals to determine the motion of each person.
 \end{example}
-TODO: Question library problem, projectile that splits in flight, where does it land? See Giancolli example 9-18.
+
 
 \subsection{The centre of mass for a continuous object}
 So far, we have considered the centre of mass for a system made of point particles. In this section, we show how one can determine the centre of mass for a ``continuous object''\footnote{In reality, there are of course no continuous objects since, at the atomic level, everything is made of particles.}. We previously argued that if an object is uniform and symmetric, its centre of mass will be located at the centre of the object. Let us show this explicitly for a uniform rod of total mass $M$ and length $L$, as depicted in Figure \ref{fig:momentumandcm:rod}.
@@ -869,17 +789,15 @@ Regardless of the actual shape of the parabola (the parameter $a$), the centre o
 \begin{checkpoint}
 \begin{MCquestion}{True or False: The centre of mass of a continuous object is always located within the object.}
 \item True
-\item False %correct
+\item False \correct
 \end{MCquestion}
 \end{checkpoint}
-
-TODO: For above, redo the figure, and split into a figure with just the bowl in the question and a figure showing, dm, dz, etc, in the solution.
 
 \newpage
 \section{Summary}
 
 \begin{chapterSummary}{
-The momentum vector, $\vec p$, of a point particle of mass $m$ with velocity $\vec v$ is defined as:
+The momentum vector, $\vec p$, of a point particle of mass, $m$, with velocity, $\vec v$, is defined as:
 \begin{align*}
 \vec p = m\vec v
 \end{align*}
@@ -889,7 +807,7 @@ We can write Newton's Second Law for a point particle in term of its momentum:
 \end{align*}
 where the net force on the particle determines the rate of change of its momentum. In particular, if there is no net force on a particle, its momentum will not change.
 
-The net impulse vector, $\vec J^{net}$, given over a period of time is defined as the net force exerted on a particle integrated from a time $t_A$ to a time $t_B$:
+The net impulse vector, $\vec J^{net}$, is defined as the net force exerted on a particle integrated from a time $t_A$ to a time $t_B$:
 \begin{align*}
 \vec J^{net} = \int_{t_A}^{tB} \vec F^{net} dt
 \end{align*}
@@ -905,17 +823,17 @@ The total momentum of a system, $\vec P$, is the sum of the momenta, $\vec p_i$,
 \vec P = \sum \vec p_i
 \end{align*}
 
-The rate of change of the momentum of a system is equal to the sum of the external forces on the system:
+The rate of change of the momentum of a system is equal to the sum of the external forces exerted on the system:
 \begin{align*}
 \frac{d}{dt}\vec P = \sum \vec F^{ext}
 \end{align*}
 which can be thought of as an equivalent description as Newton's Second Law, but for the system as a whole. If the net (external) force on a system is zero, then the total momentum of the system is conserved. 
 
-Collisions are those events when the particles in a system interact (e.g. by colliding) and change their momenta. When modelling collisions, it is usually beneficial to first define a system for which the total momentum is conserved before and after the collision. One can then write the total momentum of the system in terms of the momenta of the individual particles before and after the collision and equate them to determine the momenta of the individual particles.
+Collisions are those events when the particles in a system interact (e.g. by colliding) and change their momenta. When modelling collisions, it is usually beneficial to first define a system for which the total momentum is conserved before and after the collision. 
 
 Collisions can be elastic or inelastic. Elastic collisions are those where, in addition to the total momentum, the total mechanical energy of the system is conserved. The total mechanical energy can usually be taken as the sum of the kinetic energies of the particles in the system.
 
-Inelastic collisions are those in which the total mechanical energy of the system is not conserved. One can usually identify if mechanical energy was introduced or removed from the system and determine if the collision is elastic. It is important to identify when momentum and mechanical energy are conserved. Momentum is conserved if no net force is exerted on the system, whereas mechanical energy is conserved if no net work was done on the system by non-conservative forces.
+Inelastic collisions are those in which the total mechanical energy of the system is not conserved. One can usually identify if mechanical energy was introduced or removed from the system and determine if the collision is elastic. It is important to identify when momentum and mechanical energy are conserved. Momentum is conserved if no net force is exerted on the system, whereas mechanical energy is conserved if no net work was done on the system by non-conservative forces (internal or external) or by external conservative forces.
 
 We can always choose in which frame of reference to model a collision. In some cases, it is convenient to use the frame of reference of the centre of mass of the system, because in that frame of reference, the total momentum of the system is zero.
 
@@ -975,6 +893,7 @@ The strategy to set up the integrals above is usually to express the mass elemen
 \sum \vec F^{ext} &=\frac{d}{dt} \vec P
 \end{align*}
 \columnbreak
+\\
 \textbf{Position of the Centre of Mass \\ of a system:}
 \begin{align*}
 \vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i 
@@ -1001,62 +920,168 @@ The strategy to set up the integrals above is usually to express the mass elemen
 
 \newpage
 \section{Thinking about the material}
-\subsection{Reflect and research}
 
-\begin{enumerate}
+\begin{chapteractivity}{Reflect and research}
+{
 \item Explain how Newton's Cradle illustrates the conservation of momentum. Are the collisions in Newton's Cradle elastic? Explain! 
 \item Gymnasts have specially engineered ``crash mats'' for landing after doing spins and flips in the air. Why do these crash mats have to be specially engineered, and why can't the gymnast just use a big pile of blankets?
-\item Give 2 examples where the centre of mass of a system is not physically inside of the system.
+\item Give 2 examples where the centre of mass of an object is not located inside of the object.
 \item The Volvo XC60 is supposedly the safest car in the world that money can buy. Why is this?
-\item In the boxing world, boxers use principles of momentum to ``ride the punch''. Research and explain how this method helps boxers to minimize injuries.
-\end{enumerate}
-\subsection{To try at home}
+\item In the boxing world, boxers try to ``ride the punch''. Research and explain how this method helps boxers to reduce injuries.
+}
+\end{chapteractivity}
 
-\begin{tQuestion} Grab two or three of your friends and ask them to hold a bed sheet. Throw an egg at full speed onto the bed sheet. What happens to the egg, and why? \end{tQuestion}
+\begin{chapteractivity}{To try at home}
+{
+\item Grab two or three of your friends and ask them to hold a bed sheet. Throw an egg at full speed onto the bed sheet. What happens to the egg, and why? 
+\item Verify that in a 1 one-dimensional elastic collision between two objects of the same mass, if one object starts at rest, the other object will end at rest after the collision (look up Newton's Cradle to get an idea).
+}
+\end{chapteractivity}
 
-\subsection{To try in the lab}
+\begin{chapteractivity}{To try in the lab}
+{
+\item Propose an experiment to test whether a collision is elastic.
+\item Propose an experiment to test whether momentum is conserved in a two dimensional collision.
+}
+\end{chapteractivity}
 
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
 
-\begin{problem}{soln:momentumandcm:halfdisk}{\label{prob:momencumandcm:halfdisk} Find the centre of mass of a uniform half-disk.}
+\begin{problem}{soln:momentumandcm:ballistic}{\label{prob:momencumandcm:ballistic} 
+\capfig{0.7\textwidth}{figures/MomentumAndCM/ballistic.png}{\label{fig:momentumandcm:ballistic}A bullet of mass $m$ strikes and embeds itself into a ballistic pendulum of mass $M$.}
+A ballistic pendulum is a device that can be built to measure the speed of a projectile. The pendulum is constructed such that the projectile is fired at the bob of the pendulum (typically a block of wood) which then swings as illustrated in Figure \ref{fig:momentumandcm:ballistic}, with the projectile embedded within. By measuring the height that is reached by the pendulum's bob, one can determine the speed of the projectile before it collided with the pendulum. If a ballistic pendulum with a mass $M$ suspended at the end of strings of length $L$ is observed to rise by a height $h$ after being struck by a bullet of mass $m$, how fast was the bullet moving?}
+\end{problem}
+
+\begin{problem}{soln:momentumandcm:springcollision}{\label{prob:momencumandcm:springcollision} \capfig{0.6\textwidth}{figures/MomentumAndCM/springcollision.png}{\label{fig:momentumandcm:springcollision}One block attached to a spring about to collide with another block.} A block of mass $M$ with a spring of spring constant $k$ attached to it is sliding on a frictionless surface with velocity $\vec v_M$ in the $x$ direction. A second block of mass $m$ has velocity $\vec v_m$ also in the $x$ direction (shown above in the negative $x$ direction, but let us assume that we do not necessarily know the direction, only  that the two blocks will collide). During the collision between the blocks, what is the maximum amount by which the spring is compressed?
+}
+\end{problem}
+
+\begin{problem}{soln:momentumandcm:curvedwire}{\label{prob:momencumandcm:curvedwire} A uniform wire is bent into a semi-circle of radius $R$. Where is the centre of mass of the wire?}
 \end{problem}
 
 \newpage
 \subsection{Solutions}
+\begin{solution}{prob:momencumandcm:ballistic}\label{soln:momentumandcm:ballistic}
+We can model this situation by dividing it into three phases:
+\begin{enumerate}
+\item Before the bullet collides with the pendulum, only the bullet has momentum in the $x$ direction.
+\item Immediately after the \textbf{inelastic} collision, the bullet and pendulum form a combined object of mass $M+m$ that has the same momentum as the bullet, in the $x$ direction, before the pendulum starts to swing upwards.
+\item The pendulum with the embedded bullet swings upwards until its kinetic energy is zero.
+\end{enumerate}
+The collision between the bullet and pendulum is inelastic, because some of the kinetic energy of the bullet is used to deform the bullet and the pendulum. In general, any collision where two objects end up ``stuck together'' is inelastic.
 
-\begin{solution}{prob:momentumandcm:halfdisk}\label{soln:momentumandcm:halfdisk} 
-First, we should draw a diagram with appropriate axis.
-
-\capfig{0.40\textwidth}{figures/MomentumAndCM/halfdisk.png}{\label{fig:momentumandcm:halfdisk} A uniform half-disk.}
-
-Let us say that the mass of a semicircular ring is m. Considering a slice of this half-disk with a width of dy and mass dm,
-
+In order to model the pendulum's motion we first apply conservation of momentum to determine the speed, $v'$, of the pendulum and embedded bullet just after the collision. Applying conservation of momentum in the $x$ direction to the system formed by the pendulum and the bullet, just before and after the collision, we have:
 \begin{align*}
-\sigma &=\frac{mass}{area} \\
-\sigma &=\frac{m}{\frac{1}{2}\pi r^{2}} \\
-\therefore \sigma &=\frac{2m}{\pi r^{2}} \\
+P &= mv\\
+P' &= (M+m)v'\\
+\therefore mv &= (M+m)v'\\
+\therefore v' &= \frac{m}{m+M}v
 \end{align*}
+where $P$ and $P'$ are the initial and final momenta of the system, respectively. The pendulum with the bullet embedded in it will thus have a speed of $v'$ at the bottom of the pendulum's motion, before it swings upwards. 
 
+We can now use conservation of energy to model the swinging motion since, at that point, only tension and gravity act on the pendulum, and there are no non-conservative forces. If we choose the origin to be the location of the pendulum at the bottom of its trajectory, its initial gravitational potential energy is zero and its initial mechanical energy, $E$, is given by:
 \begin{align*}
-dm&=\sigma dA\\
-&=\frac{2m}{\pi r^{2}}\pi ydy\\
-\therefore&=\frac{2m}{r^{2}} ydy\\
+E = \frac{1}{2}(m+M) v'^2 
 \end{align*}
-
-The y coordinate of the position of the centre of mass will be located at $x=0$ and $y=\frac{2r}{\pi}$ by symmetry.
-
-Using this information, we can use the centre of mass formula for the y coordinate to determine the centre of mass for the half-disk.
-
+At the top of the trajectory, the pendulum with the embedded bullet will stop and have no kinetic energy. The mechanical energy at the top of the trajectory, $E'$, is thus equal to the gravitational potential energy of the pendulum at a height $h$ above the origin:
 \begin{align*}
-y_{CM}&=\frac{1}{m}\int y dm\\
-&=\frac{1}{m}\int_{0}^{r} (\frac{2y}{\pi})\frac{2m}{r^{2}}ydy\\
-&=\frac{4}{\pi r^{2}}\int_{0}^{r}y^{2}dy\\
-&=\frac{4}{\pi r^{2}}(\frac{R^{3}}{3})\\
-&=\frac{4r}{3\pi}\\
-\therefore y_{CM}&=\frac{4r}{3\pi}\\
+E' = (m+M)gh
 \end{align*}
+Applying conservation of mechanical energy allows us to find the initial speed of the bullet:
+\begin{align*}
+E &= E'\\
+\frac{1}{2}(m+M) v'^2 &= (m+M)gh\\
+v'^2 &= 2gh\\
+\left( \frac{m}{m+M}v\right)^2&= 2gh\\
+\therefore v &= \frac{m+M}{m} \sqrt{2gh}
+\end{align*}
+where is the second last line we used the expression for $v'$ that we obtained from conservation of momentum.
 
-Therefore, the centre of mass of a uniform half-disk is $x_{CM}=0$, $y_{CM}=\frac{4r}{3\pi}$.
+\textbf{Discussion: }This example showed a situation in which momentum and energy were both conserved, but not at the same time. This example also highlighted how, by using conservation laws, one can derive models that are much easier to solve mathematically than if one had to model all of the forces involved.
 \end{solution}
+
+
+\begin{solution}{prob:momencumandcm:springcollision}\label{soln:momentumandcm:springcollision}
+The collision is elastic because the energy used to compress the spring is ``given back'' when the spring extends again, since the spring force is conservative. 
+
+They key to modelling the compression of the spring is to identify the condition under which the spring is maximally compressed. This will occur at the point during the collision where the two masses will have exactly the same velocity, momentarily moving in unison as the spring is maximally compressed. Because, instantaneously, the masses have the same velocity, there is a frame of reference in which the two masses are at rest, and the momentum is zero. Of course, that frame of reference is the centre of mass frame of reference. 
+
+Because the collision is one-dimensional, we can calculate the velocity of the centre of mass as:
+\begin{align*}
+v_{CM} = \frac{Mv_M+mv_m}{m+M}
+\end{align*}
+where we note that $v_m$ is a negative number, since the block of mass $m$ is moving in the negative $x$ direction. The total momentum, $\vec P^{CM}$, in the centre of mass frame of reference must be zero. Writing this out for the $x$ component and transforming the velocities of the two blocks into the centre of mass frame of reference:
+\begin{align*}
+P^{CM}_x = M(v_M-v_{CM})+m(v_m-v_{CM})&=0\\
+\therefore (v_m-v_{CM}) &= -\frac{M}{m}(v_M-v_{CM})
+\end{align*}
+Also note that we can write the velocity difference $v_M-v_{CM}$ without using the centre of mass velocity:
+\begin{align*}
+v_M-v_{CM} &= v_M-\frac{Mv_M+mv_m}{m+M}=\frac{1}{m+M}(v_M(m+M)-Mv_M-mv_m)\\
+&=\frac{m}{m+M}(v_M-v_m)
+\end{align*}
+We can then use conservation of energy in the centre of mass frame to determine the maximal compression of the spring. Before the collision, the total mechanical energy in the system, $E$, is the sum of the kinetic energies of the two blocks (as the spring is not compressed):
+\begin{align*}
+E&=\frac{1}{2}m(v_m-v_{CM})^2+\frac{1}{2}M(v_M-v_{CM})^2\\
+&=\frac{1}{2}\frac{M^2}{m}(v_M-v_{CM})^2+\frac{1}{2}M(v_M-v_{CM})^2\\
+&=\frac{1}{2}M \left( 1 + \frac{M}{m}\right) (v_M-v_{CM})^2\\
+&=\frac{1}{2}M \left(\frac{m+M}{m} \right)(v_M-v_{CM})^2\\
+&=\frac{1}{2}M \left(\frac{m+M}{m} \right)\left(\frac{m}{m+M}(v_M-v_m)\right)^2\\
+&=\frac{1}{2} \left(\frac{mM}{m+M}\right)(v_M-v_m)^2
+\end{align*}
+where we used our expressions above to simplify the expression. When the spring is maximally compressed, the two blocks are at rest and the mechanical energy of the system, $E'$, is all ``stored'' as spring potential energy:
+\begin{align*}
+E'&=\frac{1}{2}kx^2
+\end{align*}
+where $x$ is the distance by which the spring is compressed. Equating the two allows us to determine the maximal compression of the spring:
+\begin{align*}
+E &= E' \\
+\frac{1}{2} \left(\frac{mM}{m+M}\right)(v_M-v_m)^2 &= \frac{1}{2}kx^2\\
+\therefore x &= \sqrt{\frac{1}{k} \left(\frac{mM}{m+M}\right)}(v_M-v_m)
+\end{align*}
+\textbf{Discussion:} By modelling the collision in the centre of mass frame of reference, we were easily able to determine the maximal compression of the spring. This would have been more difficult in the lab frame of reference, because the two blocks would still be moving when the spring is maximally compressed, so we would have needed to determine their speeds to determine the total mechanical energy when the spring is compressed.
+
+When we calculated the initial kinetic energy, we found that it was given by:
+\begin{align*}
+E=\frac{1}{2} \left(\frac{mM}{m+M}\right)(v_M-v_m)^2 &=\frac{1}{2}M_{red}(v_M-v_m)^2
+\end{align*}
+The combination of masses in parentheses is called the ``reduced mass'' of the system, and is a sort of effective mass that can be used to model the system as a whole. 
+\end{solution}
+
+
+\begin{solution}{prob:momencumandcm:curvedwire}\label{soln:momentumandcm:curvedwire} 
+The curved wire is illustrated in Figure \ref{fig:momentumandcm:curvedwire}, along with a small mass element, $dm$, on the wire, and our choice of coordinate system (centred at the centre of the semi-circle). By symmetry, the position of the centre of mass will be located at $x=0$, so we only need to determine the $y$ position.
+\capfig{0.4\textwidth}{figures/MomentumAndCM/curvedwire.png}{\label{fig:momentumandcm:curvedwire}A uniform wire bent into a semi circle of radius $R$, and a small mass element, $dm$, on the wire.}
+The $y$ position of the centre of mass is given by:
+\begin{align*}
+y_{CM} = \frac{1}{M}\int y dm
+\end{align*}
+where $M$ is the total mass of the wire. We can define the mass per unit length, $\lambda$, for the wire as:
+\begin{align*}
+\lambda =\frac{M}{\pi R}
+\end{align*}
+We will choose to integrate the equation for the $y$ position of the centre of mass over $\theta$ (from 0 to $\pi$), instead of over $y$, as it will make the integral easier (it is easier to express $dm$ in terms of $d\theta$ than $dy$ because the wire is curved). $\theta$ is the angle at which the mass element is located. The mass element forms an arc on the wire of length $ds$ that subtends an angle $d\theta$. The two are related by:
+\begin{align*}
+ds = Rd\theta
+\end{align*}
+The mass element, $dm$, can then be expressed in terms of the mass per unit length of the wire and the length, $Rd\theta$, of the mass element:
+\begin{align*}
+dm = \lambda ds = \lambda Rd\theta
+\end{align*}
+We also need to express the $y$ position of the mass element using $\theta$:
+\begin{align*}
+y = R\sin\theta
+\end{align*}
+Now that we have expressed $dm$ and $y$ in terms of $\theta$, we can determine the $y$ position of the centre of mass:
+\begin{align*}
+y_{CM}  &= \frac{1}{M}\int y dm =  \frac{1}{M}\int_0^\pi R\sin\theta \lambda Rd\theta\\
+&= \frac{R^2\lambda}{M}\int_0^\pi \sin\theta d\theta = \frac{R^2\lambda}{M} \bigl[-\cos\theta\bigr]_0^\pi\\
+&=\frac{2R^2\lambda}{M}=\frac{2R}{\pi}
+\end{align*}
+where in the last equality, we used the expression for the mass per unit length, $\lambda$, obtained above.
+\end{solution}
+
+
+
