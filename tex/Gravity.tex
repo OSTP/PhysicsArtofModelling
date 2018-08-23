@@ -233,13 +233,13 @@ Earth's rotation has some interesting consequences for stationary objects. At an
 
 Take, for example, a plumb line, which consists of a mass hanging from a string. The two forces acting on the mass are gravity and tension. The force of gravity must point towards the centre of the Earth. We would expect that the force of tension, and therefore the string, would point directly away from the centre of the Earth. However, we find that if the plumb line is located at some angle $\theta$ from the equator (but not at the equator or poles), as in Figure \ref{fig:gravity:apparentweight2}, then the string will point slightly away from the centre of the Earth.  In order for the mass to remain stationary relative to the ground, it must rotate along with the Earth (radius $R$) around a circle of radius $R\cos\theta$.   Thus, the tension from the string cannot point away from the centre of the Earth, because the net force must point towards the centre of the circle of radius $R\cos\theta$.
 
-\capfig{0.8\textwidth}{figures/Gravity/apparentweight2.png}{\label{fig:gravity:apparentweight2}Away from the equator and poles, a plumb line (right) does not point towards the centre of the Earth, because a component of the tension must provide acceleration towards the centre of the circle (of radius $R\sin\theta$) about which the plumb line rotates due to the Earth's rotation. Note that the deflection of the plumb line is exaggerated}
-%%%%%%%%%%%Review from here
+\capfig{0.8\textwidth}{figures/Gravity/apparentweight2.png}{\label{fig:gravity:apparentweight2}Away from the equator and poles, a plumb line (right) does not point towards the centre of the Earth, because the net force on the mass must provide the acceleration towards the centre of the circle (of radius $R\cos\theta$) about which the plumb line rotates due to the Earth's rotation. Note that the deflection of the plumb line is highly exaggerated.}
+
 \begin{checkpoint}
-\begin{MCquestion}{You cut the string of the plumb line. Where does the mass land relative to it's initial latitude?}
-\item At the same latitude.
+\begin{MCquestion}{You cut the string of the plumb line. Where does the mass land relative to it's initial latitude (the angle $\theta$ in Figure \ref{fig:gravity:apparentweight2})? }
+\item At the same latitude.\correct
 \item Closer to the nearest pole.
-\item Closer to the equator. \correct
+\item Closer to the equator. %OW had this as correct?
 \end{MCquestion}
 \end{checkpoint}
 
@@ -250,7 +250,7 @@ The gravitational force exerted on a mass $m$ by a mass $M$ can be written as:
 \end{align*}
 if we define a coordinate system with the origin located at the centre of mass $M$ so that $\vec r$ is the position of $m$ relative to $M$. We can define the ``gravitational field'' at position, $\vec g(\vec r)$, of mass $M$ as the gravitational force per unit mass exerted by $M$:
 \begin{align}
-\Aboxed{\vec g(\vec r) = - \frac{GM}{r^2}\hat r}
+\Aboxed{\vec g(\vec r) = \frac{\vec F(\vec r)}{m} =  - \frac{GM}{r^2}\hat r}
 \end{align}
 The word ``field'' is just a mathematical term for a function that depends on position. Since $\vec g(\vec r)$ is a vector, we would refer to it as a ``vector field''.
 
@@ -272,10 +272,10 @@ m\vec g(R_\oplus)&= m\vec a\\
 but we see here why it more precise to refer to $g$ as the ``magnitude of the gravitational field at the surface of the Earth'' rather than ``the acceleration due to Earth's gravity''. It is also worth noting that the two are only equal if the gravitational mass (on the left of the equation in the second line) is the same as the inertial mass (on the right of the equation). The gravitational mass is the mass that appears in the gravitational force defined by Newton, whereas the inertial mass is the mass that appears with the acceleration in Newton's Second Law.
 
 \begin{checkpoint}
-\begin{MCquestion}{Two small objects with different masses, $m_1$ and $m_2$, are a located a distance $r$ from a nearby star. What can you say about the magnitude of the gravitational field and the magnitude of the gravitational force on $m_1$ and $m_2$?}
+\begin{MCquestion}{Two small objects with different masses, $m_1$ and $m_2$, are located a distance $r$ from a nearby star. What can you say about the magnitude of the gravitational field and the magnitude of the gravitational force on $m_1$ and $m_2$?}
 \item The field is different and the forces are different. 
 \item The field is different but the forces are the same.
-\item The field is the same but the forces are different.
+\item The field is the same but the forces are different.\correct
 \item The field is the same and the forces are the same. 
 \end{MCquestion}
 \end{checkpoint}
@@ -290,6 +290,7 @@ where we have introduced the total gravitational field:
 \vec g(\vec r) = \vec g_1(\vec r)+\vec g_2(\vec r)
 \end{align*}
 In other words, if there are multiple bodies that result in a non-negligible force of gravity, we can calculate their gravitational fields independently and sum them together to define a net gravitational field, $\vec g(\vec r)$, that models the net force of gravity from all of the bodies. The net gravitational force on a new body of mass $m'$ is then simply given by $m'\vec g(\vec r)$, and we do not need to add any more vectors together. For example, when calculating the motion of satellites that can be influenced by the force of gravity from both the Earth and the Moon, we simply need to calculate the net gravitational field from the Earth and Moon, and the motion of any satellite can then be modelled using that net gravitational field.
+\newpage
 \begin{checkpoint}
 \begin{MCquestion}{There are two planets located a distance $d$ apart. Position $A$ is located midway between the two planets. Position $B$ is located a distance $d/2$ from one of the planets, in the position shown in Figure \ref{fig:gravity:fieldAB}. How does the field at $A$ compare to the field at $B$?\capfig{0.7\textwidth}{figures/Gravity/fieldAB.png}{\label{fig:gravity:fieldAB}Two planets are a distance $d$ apart. We are considering the gravitational field at two positions, A and B, located near the planets.}}
 \item The magnitude of the field is the same at $A$ and $B$.
@@ -305,14 +306,14 @@ If a force is given by an inverse-square law, then Gauss' Law gives a way to det
 \begin{align*}
 \oint \vec g(\vec r) \cdot d\vec A = 4\pi G M^{enc}
 \end{align*}
-where the integral on the left is an integral over a ``closed surface''. That is, imagine taking a closed surface, $S$, and then taking a small element of that surface and drawing a vector $d\vec A$ that points outwards from the closed surface and has a magnitude equal to the area of that small surface, as illustrated in Figure \ref{fig:gravity:gauss}. You can then take the scalar product of that vector with the gravitational field, $\vec g(\vec r)$, at that point on the surface. If you sum all of those scalar products, you get the value of the integral on the left. Gauss' Law states that the value of that integral is equal $4 \pi G$ times the total mass that is enclosed by the surface. 
+where the integral on the left is an integral over a ``closed surface'' that completely surrounds the mass for which we want to determine the gravitational field. To evaluate the integral, imagine taking a closed surface, $S$, that surrounds the mass. The vector $d\vec A$ is defined as the vector that goes with a small element of that surface and points outwards from the closed surface. The magnitude of the vector is equal to the area of that small surface ($dA$), as illustrated in Figure \ref{fig:gravity:gauss}. You can then take the scalar product of $d\vec A$ with the gravitational field, $\vec g(\vec r)$, at that point on the surface. If you sum all of those scalar products, you get the value of the integral on the left. Gauss' Law states that the value of that integral is equal $4 \pi G$ times the total mass that is enclosed by the surface. 
 \newpage
 \begin{studentOpinion}{Olivia}
 If you want to know if a surface is closed, ask yourself if you could put water inside the surface and not be worried about it spilling out. For example, if you put water in a sphere or a cube , the water would not spill out even if you shook it around, so they are closed surfaces. A flat square is an open surface because there is no ``inside'' to even put the water in.  A bowl is an open surface because, though you can put water in it, the water could spill out. 
 \end{studentOpinion}
 We will go into more detail about Gauss' Law when we cover electromagnetism, but it is worth seeing how to use it in a simple scenario. Figure \ref{fig:gravity:gauss} shows a spherical body of mass $M$ and radius $R$ for which we would like to determine the value of the gravitational field at a distance $r$ from the centre of the body.
 \capfig{0.3\textwidth}{figures/Gravity/gauss.png}{\label{fig:gravity:gauss}Example of a spherical Gaussian surface, $S$, of radius $r$ centred about a body of mass $M$ and radius $R$. An element of the surface, $d\vec A$ is also shown along with the gravitational field, $\vec g(\vec r)$, at that point.}
-To do so, we draw a ``Gaussian surface'', $S$, that is a sphere with a radius $r$, and centred about the body. At any point on the surface, the area element vector $d\vec A$ points away from the centre of the spherical surface. The gravitational field vector will always point towards the centre of the spherical surface. Furthermore, by symmetry, the magnitude of $\vec g(\vec r)$ is constant along the whole Gaussian surface. Thus, the scalar product $\vec g(\vec r) \cdot d\vec A=-g(r)dA$ everywhere along the surface (it is negative because the two vectors are anti-parallel). The integral is thus given by:
+To do so, we draw a ``Gaussian surface'', $S$, that is a sphere with a radius $r$, and centred about the body. At any point on the surface, the area element vector $d\vec A$ points away from the centre of the spherical surface. The gravitational field vector, $\vec g(\vec r)$ will always point towards the centre of the spherical surface, as illustrated. Furthermore, by symmetry, the magnitude of $\vec g(\vec r)$ is constant along the whole Gaussian surface. Thus, the scalar product $\vec g(\vec r) \cdot d\vec A=-g(r)dA$ everywhere along the surface (it is negative because the two vectors are anti-parallel). The integral is thus given by:
 \begin{align*}
 \oint \vec g(\vec r) \cdot d\vec A = -g(r)\oint dA 
 \end{align*}
@@ -326,13 +327,13 @@ Inserting this into Gauss' Law, we find:
 -g(r)(4\pi r^2) &= 4\pi G M^{enc}\\
 \therefore g(r) &= - \frac{GM}{r^2}
 \end{align*}
-where $M^{enc}=M$ is the total mass enclosed by the Gaussian surface (in this case, the entire mass $M$ is enclosed). This is of course the result that we expected. Note that Gauss' Law is only easy to use if the system is highly symmetric (e.g. spherically symmetric), and that it does not give the direction of the field vector, which must be obtained from symmetry arguments. 
+where $M^{enc}=M$ is the total mass enclosed by the Gaussian surface (in this case, the entire mass $M$ is enclosed). This is of course the result that we expected and obtained earlier from Newton's formulation. Note that Gauss' Law is only easy to use if the system is highly symmetric (e.g. spherically symmetric), and that it does not give the direction of the field vector, which must be obtained from symmetry arguments. 
 \begin{studentOpinion}{Olivia} Here's an analogy to describe Gauss's Law for gravity: A famous celebrity is doing an event, and they attract a certain number of fans who want to get as close to the celebrity as possible. You put up a barricade around the celebrity. The gravitational field is represented by how crowded it is somewhere along the barricade. If a second celebrity is at the event, they will attract their own fans, so there will be more people around the barricade. The number of celebrities is kind of like the enclosed mass $M^{enc}$. 
 
 A photographer is coming to the event, and you told him to stand at some location that is a distance $r$ from the celebrities. The photographer wants to know how crowded it will be when he is standing behind the barricade at that location. Gauss's law gives us a way to figure this out. If you know which celebrities are at the event ($M^{enc}$), you can determine how many people will be there (this is like finding $4\pi GM^{enc}$). Then, if you can build a barricade such that the fans are evenly distributed around it, and you know how long that barricade is ($\oint dA$), you can easily calculate how crowded it will be at some point along the barricade (you can just divide the number of people by the length of the barricade). 
 \newpage
 The barricade represents our Gaussian surface and, like a Gaussian surface, it can be whatever shape we want as long as it encloses the celebrities and passes through the point we are interested in. If we want to make sure the people are spread out evenly, the shape of the barricade is going to depend on the specific case. Let's take the example of our single spherical body. This is analagous to having one celebrity at the event. Figure \ref{fig:gravity:barricadeanalogy} shows two possible barricades we could build. Although we can technically build the barricade on the left, it doesn't help us because the areas closer to the celebrity will be more crowded. Instead, we want to build the barricade on the right, which is a circle of radius $r$, because the fans are evenly spread out. This is why we use a spherical Gaussian surface when we're considering the field due to a spherical body - at any point a distance $r$ from the body, the field will be the same. (Note: Remember that, unlike the barricade, the Gaussian surface isn't a physical thing, so it won't affect the gravitational field. It is just a mathematical tool that allows us to take advantage of what the field already looks like.)
-\capfig{0.7\textwidth}{figures/Gravity/barricadeanalogy.png}{\label{fig:gravity:barricadeanalogy}A celebrity (black dot) attracts fans (grey dots). A photographer (dot labelled ``P'') stands behind the barricade a distance $r$ away. This shows two possible barricades we could build around the celebrity.}
+\capfig{0.7\textwidth}{figures/Gravity/barricadeanalogy.png}{\label{fig:gravity:barricadeanalogy}A celebrity (black dot) attracts fans (grey dots). A photographer (dot labelled ``P'') stands behind the barricade a distance $r$ away. This shows two possible barricades we could build around the celebrity. The density of the fans is not uniform for the barricade on the left, so we would not choose that shape to evaluate the Gaussian integral.}
 \end{studentOpinion}
 
 We can also use Gauss' Law to determine the gravitational field \textbf{inside} of the body of mass $M$ and radius $R$. This is illustrated in Figure \ref{fig:gravity:gauss2}, which shows a spherical Gaussian surface of radius $r$ that is \textbf{inside} of the body of mass $M$.
@@ -384,7 +385,7 @@ Mathematically, this is equivalent to the force that we considered in Example \r
 
 In order to determine the gravitational potential energy function for the mass $m$ in the presence of a mass $M$, we calculate the work done by the force of gravity on the mass $m$ over a path where the integral for work will be ``easy'' to evaluate, namely a straight line. Figure \ref{fig:gravity:potential} shows such a path in the radial direction, $r$, over which it will be easy to calculate the work done by the force of gravity from mass $M$ when mass $m$ moves from being a distance $r_A$ to a distance $r_B$ from the centre of mass $M$.
 \capfig{0.5\textwidth}{figures/Gravity/potential.png}{\label{fig:gravity:potential}Calculating the work done on a mass $m$ by the force of gravity exerted by mass $M$ when mass $m$ moves from a distance $r_A$ to a distance $r_B$ from the center of mass $M$.}
-The work done by the force of gravity is given by:
+The work done by the force of gravity on $m$ in going from $r_A$ to $r_B$ is given by:
 \begin{align*}
 W &= \int_{r_A}^{r_B}\vec F(r) \cdot d\vec r = \int_{r_A}^{r_B} \left(- G\frac{Mm}{r^2}\hat r \right)\cdot d\vec r =\int_{r_A}^{r_B} - G\frac{Mm}{r^2}dr\\
 &=\left[G\frac{Mm}{r} \right]_{r_A}^{r_B} =G\frac{Mm}{r_B} - G\frac{Mm}{r_A}
@@ -401,7 +402,7 @@ which is determined only up to a constant, $C$.
 
 A particularly useful choice of constant is $C=0$. This corresponds to choosing the potential energy to be zero only when $r$ goes to infinity. That is, the potential energy of mass $m$ is zero only when it is infinitely far away from mass $M$. The choice of constant $C$ corresponds to the (arbitrary) value of the potential energy when mass $m$ is infinitely far from mass $M$. When mass $m$ is not infinitely far away, it has \textbf{negative} potential energy (if $C=0$). This is not a problem! Remember, the only thing that is meaningful is a difference in potential energy, so the specific value of the potential energy has no meaning. The kinetic energy of an object, on the other hand, has to be positive.
 
-Recall that if there are no other forces acting on an object, that object will move in such a way to reduce its potential energy. If the object of mass $m$ is located at some distance $r$ from the object of mass $M$, the force of gravity will attract $m$ so that $r$ decreases. As $r$ decreases in magnitude, the potential energy becomes more negative (larger in magnitude, but further away from zero), and the potential energy will indeed decrease under the influence of gravity. The potential energy that we have found does have the correct properties.
+Recall that if there are no other forces acting on an object, that object will move in such a way to reduce its potential energy. If the object of mass $m$ is located at some distance $r$ from the object of mass $M$, the force of gravity will attract $m$ so that $r$ decreases. As $r$ decreases in magnitude, the potential energy becomes more negative (larger in magnitude, but further away from zero), and the potential energy of $m$ will indeed decrease as it accelerates due to the force of gravity. 
 
 \subsection{Mechanical energy with gravity}
 Unless noted otherwise, we will continue our discussion of gravitational potential energy with the particular choice of constant $C=0$:
@@ -416,7 +417,7 @@ E = U + K = -G\frac{Mm}{r}+\frac{1}{2}mv^2
 \end{align*}
 where the kinetic energy term is always positive. If gravity is the only force exerted on mass $m$, then the mechanical energy, $E$, as defined above, will be a constant. The mechanical energy of an object can give us insight into the possible motion of the object.
 
-Imagine launching a rocket upwards from the surface of the Earth; once all of the fuel has burnt up, the rocket's mechanical energy becomes constant as the rocket engine stops doing work on the rocket. As soon as the engine stops providing thrust, the rock will start to slow down as the force of gravity attracts the rocket back to Earth. If the rocket is going fast enough, it will be able to completely escape the Earth's gravitational pull and travel to infinity (we assume that there are no other planets or the Sun, just the Earth exists!). If, on the other hand, the rocket's speed is too low, it will eventually stop and fall back to Earth. This is the same thing that happens to you when you try to jump vertically. If you could jump hard enough, you would be able to escape the Earth's gravitational pull!
+Imagine launching a rocket straight upwards from the surface of the Earth; once all of the fuel has burnt up, the rocket's mechanical energy becomes constant as the rocket engine stops doing work on the rocket. As soon as the engine stops providing thrust, the rocket will start to slow down as the force of gravity attracts the rocket back to Earth. If the rocket is going fast enough, it will be able to completely escape the Earth's gravitational pull and travel to infinity (we assume that there are no other planets or the Sun, just the Earth exists!). If, on the other hand, the rocket's speed is too low, it will eventually stop and fall back to Earth. This is the same thing that happens to you when you try to jump vertically. If you could jump hard enough, you would be able to escape the Earth's gravitational pull!
 
 In terms of mechanical energy, we can ask ourselves if the mechanical energy of the rocket is large enough to escape the Earth's gravitational pull. Specifically, we can ask ourselves what the value of the rocket's kinetic energy would be when it reaches infinity. The kinetic energy of the rocket is given by:
 \begin{align*}
@@ -441,7 +442,7 @@ Finally, if the mechanical energy is greater than zero, then the rocket will hav
 \begin{MCquestion}{What is the escape velocity from the surface of the Earth?}
 \item $\SI{4.29e6}{km/s}$
 \item $\SI{1.25e5}{km/s}$
-\item $\SI{11.2}{km/s}$
+\item $\SI{11.2}{km/s}$\correct
 \item $\SI{9.81}{km/s}$
 \end{MCquestion}
 \end{checkpoint}
@@ -494,13 +495,13 @@ The possible orbits are illustrated in Figure \ref{fig:gravity:conical}, and are
 \section{Einstein's Theory of General Relativity}
 Newton's Universal Theory of Gravity was extremely successful at describing the motion of planets in the solar system, and allowed for high precision astronomy. For example, precision measurements of  Uranus's orbit showed that it appeared to be inconsistent with Newton's theory, unless the gravitational influence of another planet was included in the model. This led to the discovery of the planet Neptune. 
 
-However, some issues with Newton's theory were uncovered. The orbit of Mercury was shown to be different than what Newton's theory could describe, but searches for another planet (Vulcan) were unsuccessful. In addition, Albert Einstein's theory of Special Relativity, published in 1905, was found to be incompatible with Newton's theory of gravity. One of the consequences of Special Relativity is that nothing can propagate faster than the speed of light. Newton's Universal Theory of Gravity implies that the gravitational force is transmitted instantaneously. In Newton's theory, if the Sun suddenly disappeared, Earth would immediately ``fall out'' of its orbit, and we would immediately know that the Sun has disappeared. This would violate Special Relativity because there cannot be a mechanism that would allow us to know that the sun has disappeared that travels faster than the speed of the light. In other words, for the $\SI{8}{min}$ that are required for light to travel from the Sun to the Earth, we cannot know that the Sun has disappeared: only when we see the Sun disappear would the Earth be ``allowed'' to fall out of its orbit.
+However, some issues with Newton's theory were uncovered. The orbit of Mercury was shown to be different than what Newton's theory could describe, but searches for another planet (Vulcan) were unsuccessful. In addition, Albert Einstein's theory of Special Relativity, published in 1905, was found to be incompatible with Newton's theory of gravity. One of the consequences of Special Relativity is that nothing can propagate faster than the speed of light. Newton's Universal Theory of Gravity implies that the gravitational force is transmitted instantaneously. In Newton's theory, if the Sun suddenly disappeared, Earth would immediately ``fall out'' of its orbit, and we would immediately know that the Sun has disappeared. This would violate Special Relativity because there cannot be a mechanism that would allow us to know that the Sun has disappeared faster than it would take light to propagate from the Sun. In other words, for the $\SI{8}{min}$ that are required for light to travel from the Sun to the Earth, we cannot know that the Sun has disappeared: only when we literally see the Sun disappear would the Earth be ``allowed'' to fall out of its orbit.
 
 Einstein's Theory of General Relativity is a theory developed by Einstein in order to describe gravity in a way that is consistent with Special Relativity and the propagation of light. Einstein was famous for his ``thought experiments,'' which allow us to think about some of the implications of a theory, even if the experiments would be very difficult to carry out in practice. One such thought experiment is to consider what someone would observe in an accelerating frame of reference.
 
-Consider an observer in an elevator, as illustrated in Figure \ref{fig:gravity:elevator}. If the elevator is stationary at the surface of the Earth (left panel), and the observer is standing on a scale, they could measure their weight, $mg$, on the scale. The two forces on the observer are their weight and the normal force, which would be equal in magnitude since the observer is not accelerating. The normal force, read out by the scale, would thus correspond to their weight. To be more precise, the normal force would be equal to $m_gg$, where $m_g$ is the gravitational mass of the observer (that mass which is related to the force of gravity experienced by a mass).
+Consider an observer in an elevator, as illustrated in Figure \ref{fig:gravity:elevator}. If the elevator is stationary at the surface of the Earth (left panel), and the observer is standing on a scale, they could measure their weight, $mg$, on the scale. The two forces on the observer are their weight and the normal force, which would be equal in magnitude since the observer is not accelerating. The normal force, read out by the scale, would thus correspond to their weight. To be more precise, the normal force would be equal to $m_Gg$, where $m_G$ is the gravitational mass of the observer (that mass which is related to the force of gravity experienced by a mass).
 
-If the elevator was instead placed in empty space, and the elevator was accelerating upwards with an acceleration of $g$ (right panel), the observer would still be able to measure their weight by stepping on the scale. The only force on the observer is the normal force from the scale, which must be equal to its mass times their acceleration $N=ma=mg$, since the observer is accelerating with the elevator. In this case, it is the inertial mass of the observer, $m_i$, that comes into play, so the normal force read on the scale is $m_ig$.  
+If the elevator was instead placed in empty space, and the elevator was accelerating upwards with an acceleration of $g$ (right panel), the observer would still be able to measure their weight by stepping on the scale. The only force on the observer is the normal force from the scale, which must be equal to its mass times their acceleration $N=ma=mg$, since the observer is accelerating with the elevator. In this case, it is the inertial mass of the observer, $m_I$, that comes into play, so the normal force read on the scale is $m_Ig$.  
 
 \capfig{0.8\textwidth}{figures/Gravity/elevator.png}{\label{fig:gravity:elevator} Left: A person standing on a scale in an elevator at rest at the surface of the Earth. Right: A person in an elevator that is accelerating in empty space with the same acceleration as that due to gravity at the Earth's surface. The curvature of the light beam is exaggerated.}
 
@@ -518,7 +519,7 @@ Now imagine there's a second ladybug. Both bugs start at the middle of the ball 
 
 Objects that are moving in a gravitational field are actually following Newton's First Law (they are moving at constant velocity in a straight line and no force is exerted on them). It is strange and unexpected, but high precision measurements confirm that this correctly describes everything that we have measured!
 
-Einstein's theory was able to describe the orbit of Mercury, and the prediction that gravity leads to light following a curved path was confirmed by Eddington within five years of Einstein's theory being published. Another implication of the theory is that time goes by slower in the presence of a gravitational field. Clocks on Earth run slower than clocks in orbit (where the gravitational field is weaker). This effect is taken into account when using GPS to determine your position on Earth, since this is based on comparing the time that it takes signals to arrive to your position on Earth from different satellites.
+Einstein's theory was able to describe the orbit of Mercury, and the prediction that gravity leads to light following a curved path was confirmed by Eddington within five years of Einstein's theory being published. Another implication of the theory is that time goes by slower in the presence of a gravitational field. Clocks on Earth run slower than clocks in orbit (where the gravitational field is weaker). This effect is taken into account when using GPS to determine your position on Earth, since this is based on comparing the time that it takes signals to arrive to your position on Earth from different satellites. This is also somewhat reasonably well described in the movie ``Interstallar'', where time is seen to pass much faster for a set of astronauts in the vicinity of a black hole, where the gravitational field is strong.
 
 \newpage
 \section{Summary}
@@ -537,13 +538,13 @@ Newton described the attractive force of gravity exerted between two bodies of m
 \begin{align*}
 \vec F_{12}=-G\frac{M_1M_2}{r^2}\hat r_{21}
 \end{align*}
-where $\vec F_{12}$ is the force on body 1 from body 2, $r$ is the distance between the two bodies, and $\vec r_{21}$ is the vector from body 2 to body 1. The motion of a body under the influence of only this force will satisfy all of Kepler's Laws.
+where $\vec F_{12}$ is the force on body 1 from body 2, $r$ is the distance between the two bodies, and $\vec r_{21}$ is the vector from body 2 to body 1. The motion of a body under the influence of only this force will satisfy all of Kepler's Laws, if the body is gravitationally bound.
 
 The gravitational field, $\vec g(\vec r)$, from a body of mass $M$, is defined as the gravitational force that another body would experience per unit mass:
 \begin{align*}
-\vec g(\vec r)=-G\frac{M}{r^2}\hat r
+\vec g(\vec r)=\frac{\vec F(\vec r)}{m}=-G\frac{M}{r^2}\hat r
 \end{align*}
-The field can be used to determine the corresponding gravitational force, $\vec F_g$, that a body of mass $m$ would experience if located at a position $\vec r$ relative to the $M$:
+The field can be used to determine the corresponding gravitational force, $\vec F_g$, that a body of mass $m$ would experience if located at a position $\vec r$ relative to the body of mass $M$:
 \begin{align*}
 F_g = m \vec g(\vec r)
 \end{align*}
@@ -602,9 +603,9 @@ E = K + U = \frac{1}{2}mv^2 - G\frac{Mm}{r}
 
 \newpage
 \section{Thinking about the material}
-\subsection{Reflect and research}
 
-\begin{enumerate}
+\begin{chapteractivity}{Reflect and research}
+{
 \item When you look at the night sky, how can you tell the difference between a planet and a star?
 \item What was the relationship between Tycho Brahe and Johannes Kepler?
 \item How did Tycho Brahe collect all the data that Kepler used?
@@ -615,14 +616,15 @@ E = K + U = \frac{1}{2}mv^2 - G\frac{Mm}{r}
 \item Explain how the force of gravity from the moon results in tides on both sides of the Earth.
 \item Explain what an L1 Lagrange point is, and how it does not violate Kepler's Third Law.
 \item How did Eddington confirm that light follows a curved path in a gravitational field?
-\end{enumerate}
-\subsection{To try at home}
+}
+\end{chapteractivity}
 
-\begin{tQuestion}Try doing this \end{tQuestion}
-
-\subsection{To try in the lab}
-Theory project: Prove, based on Newton's Universal Theory of Gravity, that the motion of orbiting bodies is given by a conic section. 
-
+\begin{chapteractivity}{To try in the lab}
+{
+\item Theory project: Prove, based on Newton's Universal Theory of Gravity, that the motion of orbiting bodies is given by a conic section. 
+\item Write a computer simulation to plot the orbit of two bodies, and explore how the total mechanical energy of one object affects its motion. If the two bodies have the same mass, and both move, where is the focus of the conical section describing their respective paths?
+}
+\end{chapteractivity}
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
@@ -632,7 +634,7 @@ Theory project: Prove, based on Newton's Universal Theory of Gravity, that the m
 \begin{problem}{soln:gravity:geosyncenergy}{\label{prob:gravity:geosyncenergy}How much energy must be expended in order to place a satellite of mass $m=\SI{1000}{kg}$ in a geosynchronous circular orbit around the Earth, if the satellite is launched from the North Pole of the Earth? How much energy is this per kilogram of satellite placed in orbit?}
 \end{problem}
 
-\begin{problem}{soln:gravity:fieldrod}{\label{prob:gravity:fieldrod}Find an integral for the gravitational field due to a thin uniform rod of mass $M$ at point $P$, which is a distance $d$ above the midsection of the rod (Figure \ref{fig:gravity:rodfield}). You do not need to solve the integral!
+\begin{problem}{soln:gravity:fieldrod}{\label{prob:gravity:fieldrod}Find an expression for the gravitational field due to a thin uniform rod of mass $M$ at point $P$, which is a distance $h$ above the midsection of the rod (Figure \ref{fig:gravity:rodfield}).
 
 \capfig{0.5\textwidth}{figures/Gravity/rodfield.png}{\label{fig:gravity:rodfield}A thin rod of mass $M$ and length $L$ produces a gravitational field at a point $P$ located above the midsection of the rod.}}
 \end{problem}
@@ -677,15 +679,15 @@ Thus, geosynchronous satellites are located at an altitude of approximately $\SI
 \end{solution}
 
 \begin{solution}{prob:gravity:geosyncenergy}\label{soln:gravity:geosyncenergy}
-We need to calculate how much work must be done for the satellite to go from being at rest at the surface of the Earth to being in a geosynchronous orbit. That work will be done by a non-conservative force (a rocket engine). The work done by the non-conservative force, $W$, is equal to the satellite's change in energy:
+We need to calculate how much work must be done for the satellite to go from being at rest at the surface of the Earth to being in a geosynchronous orbit. That work will be done by a non-conservative force (a rocket engine). The work done by the non-conservative force, $W$, is equal to the satellite's change in mechanical energy:
 \begin{align*}
 W = \Delta E = E_B -E_A
 \end{align*}
-The initial energy of the satellite, $E_A$, is given by:
+The initial mechanical energy of the satellite, $E_A$, is given by its gravitational potential energy (it has no kinetic energy at the surface of the Earth when at the North Pole - on the equator, it would have kinetic energy due to the Earth's rotation):
 \begin{align*}
 E_A = K + U = 0 - G\frac{Mm}{R_\oplus}
 \end{align*}
-where $M=\SI{5.97e24}{kg}$ is the mass of the Earth, and $R_\oplus=\SI{6.731e6}{m}$ is the radius of the Earth. Initially, the rocket is at rest, and so all of the mechanical energy is potential energy. 
+where $M=\SI{5.97e24}{kg}$ is the mass of the Earth, and $R_\oplus=\SI{6.731e6}{m}$ is the radius of the Earth.  
 
 In orbit, the energy of the rocket, $E_B$, is given by:
 \begin{align*}
@@ -722,38 +724,58 @@ Our strategy will be to break the rod into very small segments of length $dx$. E
 
 The gravitational field due to each segment is given by:
 \begin{align*}
-d\vec g=-\frac{G\cdot dM}{r^2}\hat{r}
+d\vec g=-\frac{GdM}{r^2}\hat{r}
 \end{align*}
 The element of the field, $d\vec g$, will point in a different direction for each segment $dx$. You can conclude from Figure \ref{fig:gravity:rodfieldsoln} that, due to symmetry, the $x$ components of the field from each segment will cancel out (for the segment $dx$ shown in the diagram, there will be an identical segment on the other side of the rod). The net field will point in the $-\hat{y}$ direction, so we are only interested in the vertical component of $d\vec g$. Using our diagram, this means that we want to find the magnitude of $dg\cos\theta$: 
 \begin{align*}
-dg\cos\theta=\frac{G\cdot dM}{r^2}\cos\theta
+dg\cos\theta=\frac{G dM}{r^2}\cos\theta
 \end{align*}
-The distance from each segment to the point $P$ is represented by $r$. We can find this distance using the Pythagorean theorem:
+The magnitude of the gravitational field at point $P$ is thus given by:
 \begin{align*}
-r^2&=x^2+d^2\\
-\therefore dg\cos\theta&=-\frac{G\cdot dM}{x^2+d^2}\cos\theta
+g = \int dg\cos\theta =\int \frac{G dM}{r^2}\cos\theta
 \end{align*}
-We can also rewrite $\cos\theta$:
+The integral is written over $dM$, where both $r$, and $\theta$ are different for each different mass element, $dM$. We need to express any variable that changes for different mass elements in terms of a single variable of integration. We will choose $\theta$ as the variable of integration, and thus need to express $r$ and $dM$ in terms of $\theta$, $d\theta$, and other constants. 
+
+The distance, $r$, between $P$ and a mass element $dM$ located at angle $\theta$ is easily found to be:
 \begin{align*}
-\cos\theta&=\frac{d}{\sqrt{x^2+d^2}}\\
-\therefore dg\cos\theta&=\frac{GdM}{x^2+d^2}\cdot\frac{d}{\sqrt{x^2+d^2}}\\
-&=\frac{Gd}{(x^2+d^2)^{3/2}}dM
+r &= \frac{h}{\cos\theta}\\
+\therefore \frac{1}{r^2} &= \frac{\cos^2\theta}{h^2}
 \end{align*}
-We can find the magnitude of the field at $P$ by taking the sum of the contributions from each segment, using integration:
+
+$dM$ can easily be expressed in term of $dx$ (the length of the mass element in the $x$ direction) and $\lambda$, the mass per unit length of the rod:
 \begin{align*}
-g(x)=\int dg\cos\theta=\int_{x_1}^{x_2}\frac{Gd}{(x^2+d^2)^{3/2}}dM
+dM = \lambda dx = \frac{M}{L} dx
 \end{align*}
-We can easily write $dM$ in terms of $dx$ if we define $\lambda$ to be the linear density, so that $\lambda=M/L$. The mass of each segment will then be $dM=\lambda dx$. Our integral then becomes:
+
+We now need to express $dx$ in terms of $d\theta$. This can be found as follows, by first expressing $x$ in terms of $\theta$, and then taking the derivative of $x$ with respect to $\theta$
 \begin{align*}
-g(x)=\int_{x_1}^{x_2}\frac{G\lambda d}{(x^2+d^2)^{3/2}}dx
+x &= h\tan\theta\\
+\therefore \frac{dx}{d\theta}&=\frac{h}{\cos^2\theta}\\
+\therefore dx  &= \frac{h}{\cos^2\theta} d\theta
 \end{align*}
-We will integrate over the length of the rod. The way we have set up our axes, this means that our limits of integration will be $x=-L/2$ and $x=L/2$:
+Now that we have found the small change in $x$ that results from a small change in $\theta$, we can write the mass element, $dM$, in terms of the $d\theta$:
 \begin{align*}
-g(x)&=\int_{x=-L/2}^{x=L/2}\frac{G\lambda d}{(x^2+d^2)^{3/2}}dx\\
-&=\int_{x=-L/2}^{x=L/2}\frac{GM d}{L(x^2+d^2)^{3/2}}dx\\
-\therefore g(x)&=\frac{GMd}{L}\int_{x=-L/2}^{x=L/2}\frac{1}{(x^2+d^2)^{3/2}}dx
+dM = \frac{M}{L} dx = \frac{M}{L}  \frac{h}{\cos^2\theta} d\theta
 \end{align*}
-Where we substituted in $\lambda=M/L$. Our integral is now complete. We have the limits of integration and the expression is in terms of our known values.
+We can now write the integral in terms of $\theta$:
+\begin{align*}
+g = \int \frac{GdM}{r^2}\cos\theta&=G\int \frac{1}{r^2}\cos\theta dM\\
+&=G\int \left( \frac{\cos^2\theta}{h^2} \right)\cos\theta \left(\frac{M}{L}  \frac{h}{\cos^2\theta}  \right)\\
+&=\frac{GM}{Lh}\int\cos\theta d\theta
+\end{align*}
+Now that we have the integral over $\theta$, we need to set the limits to correspond to the values of $\theta$ at each end of the rod. The angle will have the same magnitude for each end of the rod, $\theta _0$, given by:
+\begin{align*}
+\sin\theta_0 =\frac{L}{2\sqrt{h^2 + \frac{L^2}{4}}}
+\end{align*}
+The magnitude of the field is thus given by:
+\begin{align*}
+g &=\frac{GM}{Lh}\int_{-\theta_0}^{\theta_0}\cos\theta d\theta = \frac{GM}{Lh} [\sin\theta]_{-\theta_0}^{\theta_0}\\
+&=\frac{2GM}{Lh} \sin\theta_0  = \frac{2GM}{Lh} \frac{L}{2\sqrt{h^2 + \frac{L^2}{4}}}
+\end{align*}
+The gravitational field at point $P$ is thus given by:
+\begin{align*}
+\vec g =  -\frac{2GM}{Lh} \frac{L}{2\sqrt{h^2 + \frac{L^2}{4}}}\hat y
+\end{align*}
 \end{solution}
 
 
