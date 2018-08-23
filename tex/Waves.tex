@@ -405,7 +405,7 @@ We can see that the power transmitted by a wave goes as the amplitude, $A$, of t
 \subsection{Energy transported in a spherical, three-dimensional, wave}
 In this section, we show how to model the rate at which energy is transported in spherical three-dimensional waves, such as the sound waves that are generated when you clap your hands. A spherical sound wave is a pressure disturbance in the air that propagates spherically outwards from a point of emission. We can think of thin spherical shells containing air that expand and contract about their equilibrium position as the wave moves through the shells. The motion of each shell is similar to that of a simple harmonic oscillator of mass $dm$, where $dm$ is the mass of air in the oscillating shell.
 
-\capfig{0.7\textwidth}{figures/Waves/sphericalwave.png}{\label{fig:waves:sphericalwave}Left: Before you start clapping, the air molecules are evenly distributed. We divide the air up into thin spherical shells. They are in their equilibrium position and all have the same density. Right: When you start clapping, these shells alternately expand and contract about their equilibrium positions.}
+\capfig{0.9\textwidth}{figures/Waves/sphericalwave.png}{\label{fig:waves:sphericalwave}Left: We divide the air into thin spherical shells. Here we represent three shells (the black circles). Center: When you clap, the innermost shell is given energy and expands. Right: Energy is transferred to the next shell, which expands as the first shell contracts. This is how the wave propagates outwards. When the shells are closer together, the air molecules are closer together, so it is an area of high pressure.}
 
 Consider a shell at a radial position, $r$, from the source, with thickness $dr$, and mass $dm$:
 \capfig{0.3\textwidth}{figures/Waves/sphericalshell.png}{\label{fig:waves:sphericalshell}A spherical shell at radial position $r$ with thickness $dr$}
@@ -442,7 +442,9 @@ P& = \text{constant}\\
 This is very different from the propagation of a one-dimensional wave, in which the amplitude does not change with distance. In practice, if there are energy losses due to, say, friction, then the amplitude of a one-dimensional wave would also decrease with distance from the source, but this is a different effect.
 
 \begin{studentOpinion}{Olivia}
-Here's one way to remember that the amplitude decreases as a function of distance from the source: The further a shell is from the centre, the more particles it contains (since the density of the medium is constant). When the energy is transferred from one shell to the next, the total energy stays the same. Since the energy must be split between a greater number of particles, each particle gets less energy, and therefore oscillates with a smaller amplitude than the particles in the previous shell did.
+Here's a slightly different way to think about why the amplitude of the wave decreases as you get further from the source. When a spherical wave travels outwards, energy is passed from one shell to the next. The outer shells are bigger than the inner shells, and so they will contain more particles. Because of conservation of energy, when the energy is transferred from one shell to the next, the total energy stays the same. In the outer shells, the energy must be shared between a greater number of particles, so each particle gets less energy, and therefore oscillates with a smaller amplitude than the particles in the previous shell did.
+
+To remember this, imagine the shells in Figure \ref{fig:waves:sphericalwave} are circles of kids standing side by side. The innermost circle has 10 kids and the outermost circle has 100 kids. If you have 100 candies, and you give them to the kids in the innermost circle, each will get 10 so they will get really hyper and start jumping around a lot. If you instead give the 100 candies to the kids in the outermost circle, each will only get one. The kids will only get a little bit hyper and jump around less.
 \end{studentOpinion}
 
 The ``intensity of a wave'', $I$, is defined as the power per unit area that is transmitted by the wave. For a spherical wave front at radial position $r$, with area $4\pi r^2$, the intensity of the wave is defined as:
@@ -590,7 +592,7 @@ We can rearrange this equation to get:
 \begin{align*}
 D(x,t)=\underbrace{2A\cos(\omega t)}_{\textrm{amplitude}}\sin(kx)
 \end{align*}
-This looks like the equation for a stationary wave (the displacement is a function of $x$) with an amplitude $2A\cos(\omega t)$. We know that $\cos(\omega t)$ will give a value that ranges between -1 and 1, so we can just think of it as a scaling term that modifies the amplitude of the wave. 
+This looks like the equation for a stationary wave (the displacement is a function of $x$) with an amplitude $2A\cos(\omega t)$. We know that $\cos(\omega t)$ will give a value that ranges between -1 and 1, so we can just think of $\cos(\omega t)$ as a scaling term that modifies the amplitude of the wave. 
 
 When we look at a standing wave, this is exactly what we see - a wave whose amplitude is always changing but that does not travel one way or the other. Figure \ref{fig:waves:standingwavetime} shows a few snapshots of what the wave looks like at different times.
 
@@ -753,13 +755,6 @@ f &= \frac{nv}{2L}
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{soln:waves:reflectioncoeff}{\label{prob:waves:reflectioncoeff}A pulse propagates down a rope of mass per unit length $\mu_1$ that is tied to a second rope with a mass per unit length $\mu_2$. The tensions in the ropes are equal in magnitude.}
-\item Write the incident pulse, the reflected pulse, and the transmitted pulse in the form $D(x,t)=f(t\pm x/v)$, where $f$ is some function that depends on either $t+x/v$ or $t-x/v$, depending on the direction that the pulse is travelling in.
-\item Using the boundary conditions, show that the reflection coefficient, $R$ , (the ratio of the amplitude of the reflected pulse to the amplitude of the incident pulse) is given by:
-\begin{align*}
-R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
-\end{align*}
-\end{problemParts}
 
 \begin{problemParts}{soln:waves:clarinet}{\label{prob:waves:clarinet} A clarinet can be modelled as an air column that is open at one end and closed at the other end, as in Figure \ref{fig:waves:clarinetmodel}.
 \capfig{0.5\textwidth}{figures/Waves/clarinetmodel.png}{\label{fig:waves:clarinetmodel} A clarinet (of length $L$) modelled as an air column that is closed at one end.}}
@@ -768,72 +763,18 @@ R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
 \item If a clarinet is \SI{60}{cm} long, what is the lowest frequency note it can produce?
 \end{problemParts}
 
-\newpage
-\subsection{Solutions}
-\begin{solution}{prob:waves:reflectioncoeff}\label{soln:waves:reflectioncoeff}
-\begin{enumerate}[(a)] 
-\item We let the incident pulse move in the positive $x$ direction (Figure \ref{fig:waves:reflectioncoeff}), and set $x=0$ to be where the ropes connect.
-\capfig{0.5\textwidth}{figures/Waves/reflectioncoeff.png}{\label{fig:waves:reflectioncoeff} An incident pulse propagates through a rope connected to a another rope with a different linear mass density. When it reaches the boundary, part of the pulse is reflected and part is transmitted. Whether the reflected pulse is inverted or upright will depend on the reflection coefficient.}
-
-The incident pulse (denoted by $i$) is a travelling wave, moving in one dimension in the positive $x$ direction. The incident pulse can thus be described by the function:
-\begin{align*}
-D_i=A_i\cos(k_1x-\omega t)\\
-\end{align*}
-Using the fact that $k=2\pi/\lambda$ and $\omega=2\pi f$, this equation can be rewritten to take the form $D=f(t- x/v)$:
-\begin{align*}
-D_i&=A_i\cos\left( \frac{2\pi}{\lambda_1}x-2\pi ft\right)\\
-&=A_i\cos \left( 2\pi\left(\frac{1}{\lambda_1}x- ft\right)\right)\\
-&=A_i\cos \left( 2\pi f\left(\frac{x}{v_1}- t\right)\right)\\
-&=A_i\cos \left( -2\pi f\left(t-\frac{x}{v_1}\right)\right)\\
-D_i&=A_i\cos \left(2\pi f\left(t-\frac{x}{v_1}\right)\right)
-\end{align*}
-where we noted that $\cos(-x)=\cos(x)$.
-The transmitted wave will also travel in the positive $x$ direction, but at a different speed (because the speed depends on the mass density of the rope):
-\begin{align*}
-D_T&=A_T\cos \left( 2\pi f\left(t-\frac{x}{v_2}\right)\right)
-\end{align*}
-The reflected wave will travel in the $-x$ direction and at the same speed as the incident pulse.
-\begin{align*}
-D_R&=A_R\cos \left( 2\pi f\left(t+\frac{x}{v_1}\right)\right)
-\end{align*}
-\item We will consider the boundary conditions at the interface between the two ropes. One boundary condition is that the rope must be continuous. As a result, the vertical displacement on the $-x$ side of the boundary must be the same as the vertical displacement on the $+x$ side of the boundary at every instant: 
-\begin{align*}
-y_{-x}&=y_{+x}\\
-\end{align*}
-Consequently, the amplitude on the $+x$ side of the boundary must be equal to the amplitude on the $-x$ side. The amplitude on the $+x$ side is equal to the amplitude of the transmitted pulse. For the $-x$ side of the boundary, we have to take into account that the incident and reflected pulses will superimpose (when the front of the incident pulse reaches the boundary, it will be reflected and interfere with the end of the incident pulse). This boundary condition can thus be expressed as:
-\begin{align*}
-A_i+A_R&=A_T
-\end{align*}
-Unless there is a kink in the rope, the slope of the rope must also be continuous at the boundary. Since the incident and reflected pulses superimpose, and the principle of superposition states that the net displacement is simply the sum of the displacement of these two waves, we can write:
-\begin{align*}
-\die{}{x}(D_i+D_R)\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}\\
-\die{}{x}D_i\Bigr|_{x=0}+\die{}{x}D_R\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}
-\end{align*}
-Using our equations for the incident, transmitted, and reflected pulses found in part a), and taking the appropriate partial derivatives, this equation becomes:
-\begin{align*}
-(A_i/v_1) \sin \left(2\pi f\left( t-\frac{x}{v_1}\right)\right)\Bigr|_{x=0}+(-A_R/v_1) \sin \left( 2\pi f\left( t+\frac{x}{v_1}\right)\right)\Bigr|_{x=0}&=\\(A_T/v_2) \sin \left( 2\pi f\left( t-\frac{x}{v_2}\right)\right)\Bigr|_{x=0}
-\end{align*}
-Evaluating at $x=0$ gives:
-\begin{align*}
-(A_i/v_1) \sin (2\pi ft) +(-A_R/v_1) \sin (2\pi ft)&=(A_T/v_2) \sin (2\pi ft)\\
-\frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_T}{v_2} 
-\end{align*}
-Using our earlier condition, $A_i+A_R=A_T$, we get:
-\begin{align*}
-\frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_i}{v_2}+\frac{A_R}{v_2}\\
-\end{align*}
-Now, we can rearrange to find the reflection coefficient, $R=A_R/A_i$:
-\begin{align*}
-A_i\left( \frac{v_2-v_1}{v_1v_2}\right)&=A_R\left( \frac{v_2+v_1}{v_1v_2}\right)\\
-R&=\frac{v_2-v_1}{v_2+v_1}
-\end{align*}
-Since the velocities in the first and second rope are $v_1=\sqrt{F_T/\mu_1}$ and $v_2=\sqrt{F_T/\mu_2}$, respectively, the reflection coefficient can be written as:
+\begin{problemParts}{soln:waves:reflectioncoeff}{\label{prob:waves:reflectioncoeff}A pulse propagates down a rope of mass per unit length $\mu_1$ that is tied to a second rope with a mass per unit length $\mu_2$ (Figure \ref{fig:waves:reflectioncoeffgiven}). The tensions in the ropes are equal in magnitude.
+\capfig{0.5\textwidth}{figures/Waves/reflectioncoeffgiven.png}{\label{fig:waves:reflectioncoeffgiven} An incident pulse propagates through a rope connected to a another rope with a different linear mass density. When it reaches the boundary, part of the pulse will be reflected and part will be transmitted.}}
+\item Write the displacements of the incident pulse, the reflected pulse, and the transmitted pulse in the form $D(x,t)=f(t\pm x/v)$, where $f$ is some function that depends on either $t+x/v$ or $t-x/v$, depending on the direction that the pulse is travelling in.
+\item The reflection coefficient, $R$, is the ratio of the amplitude of the reflected pulse to the amplitude of the incident pulse. Using the boundary conditions, show that the reflection coefficient is given by:
 \begin{align*}
 R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
 \end{align*}
-as desired. 
-\end{enumerate}
-\end{solution}
+Note: The boundary is the interface between the two ropes. By ``using the boundary conditions'', we mean that you should think about what must be true at the boundary for this problem to make sense. Boundary conditions are often more obvious than you think!
+\end{problemParts}
+
+\newpage
+\subsection{Solutions}
 
 \begin{solution}{prob:waves:clarinet}\label{soln:waves:clarinet}
 \begin{enumerate}[(a)]
@@ -847,13 +788,13 @@ We let the fixed end be at $x=0$. At the fixed end, the displacement is equal to
 \sin(kL)&=1\\
 \therefore kL&=\pi/2,3\pi/2,...\\
 \end{align*}
-This can be expressed as:
+This condition can be expressed as:
 \begin{align*}
 kL&=\frac{(2n-1)\pi}{2}\\
 \frac{2\pi L}{\lambda}&=\frac{(2n-1)\pi}{2}\\
 \therefore \lambda=\frac{4L}{2n-1}
 \end{align*}
-where we used the fact that $k=2\pi /\lambda$. We can check that this formula works for the first three harmonics:
+where, in the second line, we used $k=2\pi /\lambda$. We can check that this formula works for the first three harmonics:
 \begin{align*}
 n=1: \quad \lambda&=\frac{4L}{2(1)-1} \\
 L&=\frac{1}{4}\lambda \\
@@ -862,21 +803,92 @@ L&= \frac{3}{4}\lambda \\
 n=3: \quad \lambda&=\frac{4L}{2(3)-1} \\
 L&= \frac{5}{4}\lambda 
 \end{align*}
+Referring back to our diagram (Figure \ref{fig:waves:clarinet}), we can see that our formula holds true for the first three harmonics (i.e. for the first harmonic, the length of the clarinet is equal to $1/4$ of a wavelength, etc.)
 \item We found that the wavelength for the $n^{th}$ wavelength is given by: 
 \begin{align*}
 \lambda=\frac{4L}{2n-1}
 \end{align*}
-Writing $\lambda$ in terms of the velocity, $v$, and frequency, $f$, and rearranging gives:
+Writing $\lambda$ in terms of the velocity, $v$, and frequency, $f$, gives:
 \begin{align*}
 \frac{v}{f}&=\frac{4L}{2n-1}\\
-f&=\frac{v(2n-1)}{4L}
+\therefore f&=\frac{v(2n-1)}{4L}
 \end{align*}
-If we want to find the lowest frequency (and therefore the largest wavelength), we want $n=1$. The speed of sound in air  at room temperature is $\SI{343}{m/s}$ and the length of the clarinet is $\SI{0.6}{m}$. Now we can solve for $f$.
+From this formula, we can see that, if we want to find the lowest frequency, we want $n=1$. The length of the clarinet is $\SI{0.6}{m}$, and $v$ is the speed of sound in air which is $\SI{343}{m/s}$ at room temperature. Using these values, the lowest frequency is:
 \begin{align*}
 f&=\frac{(\SI{343}{m/s})(2(1)-1)}{4(\SI{0.6}{m})}\\
 f&=\SI{143}{Hz}
 \end{align*}
-Discussion: This is close to the $D_3$ note, which has a frequency of $\SI{144}{Hz}$, so this answer makes sense. Why might our answer differ from the true value?
+Discussion: This frequency is close to the $D_3$ note, which has a frequency of $\SI{144}{Hz}$, so this answer makes sense. However, the value we found differs from the true value. Why might this be?
 \end{enumerate}
 \end{solution}
+
+\begin{solution}{prob:waves:reflectioncoeff}\label{soln:waves:reflectioncoeff}
+\begin{enumerate}[(a)] 
+\item We let the incident pulse move in the positive $x$ direction (Figure \ref{fig:waves:reflectioncoeff}), and set $x=0$ to be where the ropes connect.
+\capfig{0.5\textwidth}{figures/Waves/reflectioncoeff.png}{\label{fig:waves:reflectioncoeff} An incident pulse propagates through a rope connected to a another rope with a different linear mass density. When it reaches the boundary, part of the pulse is reflected and part is transmitted. Whether the reflected pulse is inverted or upright will depend on the reflection coefficient.}
+
+The incident pulse (denoted by $i$) is a travelling wave, moving in one dimension in the positive $x$ direction. The incident pulse can thus be described by the function:
+\begin{align*}
+D_i(x,t)=A_i\cos(k_1x-\omega t)\\
+\end{align*}
+We will use the formulas $k=2\pi/\lambda$ and $\omega=2\pi f$ to rewrite this equation in the form $D=f(t- x/v)$. The frequency, $f$, of the wave will be the same in both ropes. The velocity of the wave, and therefore its wavelength, depends on the mass density of the rope. Since the incident wave travels through the first rope ($\mu_1$), its velocity will be $v_1$ and its wavelength will be $\lambda_1$. The incident wave can thus be described by:
+\begin{align*}
+D_i&=A_i\cos\left( \frac{2\pi}{\lambda_1}x-2\pi ft\right)\\
+&=A_i\cos \left( 2\pi\left(\frac{1}{\lambda_1}x- ft\right)\right)\\
+&=A_i\cos \left( 2\pi f\left(\frac{x}{v_1}- t\right)\right)\\
+&=A_i\cos \left( -2\pi f\left(t-\frac{x}{v_1}\right)\right)\\
+D_i&=A_i\cos \left(2\pi f\left(t-\frac{x}{v_1}\right)\right)
+\end{align*}
+where we used $v=f\lambda$, and noted that $\cos(-x)=\cos(x)$.\\
+
+The transmitted wave (denoted by the subscript $T$) will also travel in the positive $x$ direction, but its speed will be $v_2$, since it travels through the second rope:
+\begin{align*}
+D_T&=A_T\cos \left( 2\pi f\left(t-\frac{x}{v_2}\right)\right)
+\end{align*}
+The reflected wave (denoted by $R$) will travel in the $-x$ direction and at the same speed as the incident pulse.
+\begin{align*}
+D_R&=A_R\cos \left( 2\pi f\left(t+\frac{x}{v_1}\right)\right)
+\end{align*}
+\item We will consider the boundary conditions at the interface between the two ropes. One boundary condition is that the rope must be continuous. As a result, the vertical displacement on the $-x$ side of the boundary must be the same as the vertical displacement on the $+x$ side of the boundary at every instant: 
+\begin{align*}
+D_{-x}&=D_{+x}\\
+\end{align*}
+Consequently, the amplitude on the $+x$ side of the boundary must be equal to the amplitude on the $-x$ side. The amplitude on the $+x$ side is equal to the amplitude of the transmitted pulse. For the $-x$ side of the boundary, we have to take into account that the incident and reflected pulses will superimpose (when the front of the incident pulse reaches the boundary, it will be reflected and interfere with the end of the incident pulse). This boundary condition can thus be expressed as:
+\begin{align*}
+A_i+A_R&=A_T
+\end{align*}
+Unless there is a kink in the rope, the slope of the rope must also be continuous at the boundary. Since the incident and reflected pulses superimpose, and the principle of superposition states that the net displacement is the sum of the displacement of these two waves, we can write:
+\begin{align*}
+\die{}{x}(D_i+D_R)\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}\\
+\die{}{x}D_i\Bigr|_{x=0}+\die{}{x}D_R\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}
+\end{align*}
+Using our equations for the incident, transmitted, and reflected pulses found in part a), and taking the appropriate partial derivatives, this equation becomes:
+\begin{align*}
+(A_i/v_1) \sin \left(2\pi f\left( t-\frac{x}{v_1}\right)\right)\Bigr|_{x=0}+(-A_R/v_1) \sin \left( 2\pi f\left( t+\frac{x}{v_1}\right)\right)\Bigr|_{x=0}&=\\(A_T/v_2) \sin \left( 2\pi f\left( t-\frac{x}{v_2}\right)\right)\Bigr|_{x=0}
+\end{align*}
+Evaluating at $x=0$ gives:
+\begin{align*}
+(A_i/v_1) \sin (2\pi ft) +(-A_R/v_1) \sin (2\pi ft)&=(A_T/v_2) \sin (2\pi ft)\\
+\frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_T}{v_2} 
+\end{align*}
+Using our first condition, $A_i+A_R=A_T$, we get:
+\begin{align*}
+\frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_i}{v_2}+\frac{A_R}{v_2}\\
+\end{align*}
+Now, we can rearrange to find the reflection coefficient, $R=A_R/A_i$:
+\begin{align*}
+A_i\left( \frac{v_2-v_1}{v_1v_2}\right)&=A_R\left( \frac{v_2+v_1}{v_1v_2}\right)\\
+R&=\frac{v_2-v_1}{v_2+v_1}
+\end{align*}
+Since the velocities in the first and second rope are $v_1=\sqrt{F_T/\mu_1}$ and $v_2=\sqrt{F_T/\mu_2}$, respectively, the reflection coefficient can be written as:
+\begin{align*}
+R&=\frac{\sqrt{\frac{F_T}{\mu_2}}-\sqrt{\frac{F_T}{\mu_1}}}{\sqrt{\frac{F_T}{\mu_2}}+\sqrt{\frac{F_T}{\mu_1}}}\\
+&=\frac{\sqrt{F_T}}{\sqrt{F_T}}\cdot \frac{\frac{1}{\sqrt{\mu_2}}-\frac{1}{\sqrt{\mu_1}}}{\frac{1}{\sqrt{\mu_2}}+\frac{1}{\sqrt{\mu_1}}}\\
+\therefore R&=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
+\end{align*}
+as desired. 
+\end{enumerate}
+\end{solution}
+
+
 
