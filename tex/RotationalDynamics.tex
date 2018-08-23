@@ -21,11 +21,14 @@ In this Chapter, we use Newton's Second Law to develop a formalism to describe h
 \end{opening}
 
 \section{Rotational kinematic vectors}
-TODO: Review box to rotational kinematics, and vector product. (Note: The vector section on the right hand rule is labelled subsec:Vectors:rotationalmotion)
+
+\begin{review}
+Before proceeding, you may wish to review the section \ref{subsec:Vectors:rotationalmotion} on rotational kinematics and vector products.
+\end{review}
 
 \subsection{Scalar rotational kinematic quantities}
 Recall that we can describe the motion of a particle along a circle of radius $R$ by using its angular position, $\theta$, its angular velocity, $\omega$, and its angular acceleration, $\alpha$. With a suitable choice of coordinate systen, the angular position can be defined as the angle made by the position vector of the particles, $\vec r$, and the $x$ axis of a coordinate system whose origin is the centre of the circle and for which the motion is around the $z$ axis, as shown in Figure \ref{fig:rotationaldynamics:vcircle}. 
-\capfig{0.4\textwidth}{figures/RotationalDynamics/vcircle.png}{\label{fig:rotationaldynamics:vcircle} Angular position for a particle moving around the $z$ axis (out of the page), along a circle of radius $R$ centre at the origin.}
+\capfig{0.4\textwidth}{figures/RotationalDynamics/vcircle.png}{\label{fig:rotationaldynamics:vcircle} Angular position for a particle moving around the $z$ axis (out of the page), along a circle of radius $R$ with a centre at the origin.}
 
 The angular velocity, $\omega$, is the rate of the change of the angular position, and the angular acceleration, $\alpha$, is the rate of change of the angular velocity:
 \begin{align*}
@@ -112,8 +115,16 @@ Finally, we can define an angular displacement vector, $\vec \theta$, relative t
 d\vec \theta &= \frac{1}{r^2} \vec r \times d\vec s\\
 \end{align*}
 
-TODO: Checkpoint question: An ant on a disk that is rotating slower and slower as illustrated. MC: the angular velocity vector is into the page and the angular acceleration is out of the page, etc... (they will be in opposite directions) 
-
+\begin{checkpoint}
+\begin{MCquestion}{Which statement is correct regarding an ant on a disk that is rotating slower and slower as illustrated?
+\capfig{0.40\textwidth}{figures/RotationalDynamics/ant.png}{\label{fig:rotationaldynamics:ant} An ant on a disk.}
+}
+\item The angular velocity points into the page and the angular acceleration points out of the page. 
+\item Both the angular velocity and acceleration point into the page.
+\item Both the angular velocity and acceleration point out of the page.
+\item The angular acceleration points into the page and the angular velocity points out of the page. %correct
+\end{MCquestion}
+\end{checkpoint}
 
 The angular velocity vector is the rate of change of the angular displacement vector:
 \begin{align*}
@@ -133,7 +144,14 @@ d\vec s &= d\vec\theta \times \vec r\nonumber\\
 \end{align}
 where the linear quantities are always in the direction perpendicular to $\vec r$ (tangent to the circle, for motion around a circle). In other words, one cannot, say, take the acceleration vector, obtain the angular acceleration vector, and then get back the original acceleration vector - one will only get back the component of the acceleration vector that is perpendicular to $\vec r$.  
 
-TODO: Checkpoint MC: A particle has an angular velocity in the negative $z$ direction. In which way is the particle's velocity vector at a point in its trajectory when it is on the positive $y$ axis? (positive x direction)
+\begin{checkpoint}
+\begin{MCquestion}{A particle has an angular velocity in the negative $z$ direction. In which way is the particle's velocity vector at a point in its trajectory when it is on the positive $y$ axis?}
+\item Positive $z$ direction 
+\item Negative $y$ direction
+\item Positive $x$ direction %correct
+\item Negative $x$ direction
+\end{MCquestion}
+\end{checkpoint}
 
 \section{Rotational dynamics for a single particle}
 Suppose that a single force, $\vec F$, is acting on a particle of mass $m$.  Newton's Second Law for the particle is then given by:
@@ -256,11 +274,27 @@ which highlights that only the component of the force that is perpendicular to $
 \end{align*}
 The quantity $r_\perp$ is called the ``lever arm'' of the force about a specific axis of rotation. 
 
+\begin{studentOpinion}{Emma}
+\textbf{Remembering how to maximize the torque about an axis using a pencil}
+
+We already know that the greater the force that you apply, the more an object will rotate. Here is an easy way to quickly remind yourself of the two other factors that play a role in whether or not an object will rotate:
+
+\textbf{Torque about an axis increases if the force is applied further from the axis of rotation.}
+
+First, pinch the centre of your pencil. Try to make the pencil rotate by pushing right next to where you are pinching. Try making the pencil rotate again, by pushing near the eraser. You should notice that it is much easier to make the pencil rotate by pushing near the eraser, as it is further from the axis of rotation (the pinch).
+
+\textbf{Torque about an axis is maximized if the force is applied perpendicular to the object.}
+
+Next, you should try pushing on the top of the eraser of your pencil. Now, try pushing on the side of the eraser of your pencil. Pushing on the side should make it spin with ease, as you are applying the force from the perpendicular.
+
+If you are ever having trouble remembering the factors involved in maximizing torque about an axis, just grab your pencil case and do this quick exercise. 
+\end{studentOpinion}
+
 \begin{checkpoint}
 \begin{MCquestion}{Why is the handle of a door placed on the side of the door that is opposite to the hinges?}
 \item Because it increases the lever arm of a force used to rotate the door about the handle.
 \item Because it increases the perpendicular component of force used to rotate the door about the hinges.
-\item Because it increases the lever arm of a force used to rotate the door about the hinges. \correct
+\item Because it increases the lever arm of a force used to rotate the door about the hinges. %correct
 \item Because it would be inconvenient if the handle were next to the hinges.
 \end{MCquestion}
 \end{checkpoint}
@@ -301,7 +335,7 @@ If instead we want to calculate the torque about the origin, we take the cross-p
 \end{align*}
 If a particle were located at the given position, the force would cause the particle to (instantaneously) rotate about an axis that goes through the origin and is parallel to the torque vector. 
 
-\textbf{Discussion:} This example highlights the difference between calculating the torque about an axis of rotation that goes through the origin and determining the torque about the origin. When calculating the torque about an axis that goes through the origin, we only consider the components of the vectors $\vec r$ and $\vec F$ that are in the plane perpendicular to the axis of rotation. This would correspond to a situation in which the particle is constrained to move in a plane that is perpendicular to the axis of rotation. Instead, if we calculate the torque about the origin, then the torque vector determines the axis of rotation through the origing about which the particle would rotate. 
+\textbf{Discussion:} This example highlights the difference between calculating the torque about an axis of rotation that goes through the origin and determining the torque about the origin. When calculating the torque about an axis that goes through the origin, we only consider the components of the vectors $\vec r$ and $\vec F$ that are in the plane perpendicular to the axis of rotation. This would correspond to a situation in which the particle is constrained to move in a plane that is perpendicular to the axis of rotation. Instead, if we calculate the torque about the origin, then the torque vector determines the axis of rotation through the origin about which the particle would rotate. 
 \end{example}
 
 
@@ -317,7 +351,7 @@ We can write the rotational version of Newton's Second Law for particle, $i$, wi
 \end{align*}
 where $\vec\tau_{ik}$ is the $k$-th torque on particle $i$. $\pvec\tau_i^{net}$ is the net torque on the particle \textbf{about the axis of rotation} and $\vec\alpha_i$ is the particle's angular acceleration about that axis.
 
-We can divide the torques exerted on a particle into internal and external torques. Internal torques are those exerted by another particle in the system, whereas external torques are exerted by something external to the system. If particle 1 exerts a torque $\vec tau$ on particle 2, particle 2 will exert an equal and opposite torque, $-\vec\tau$ on particle 1.
+We can divide the torques exerted on a particle into internal and external torques. Internal torques are those exerted by another particle in the system, whereas external torques are exerted by something external to the system. If particle 1 exerts a torque $\vec\tau$ on particle 2, particle 2 will exert an equal and opposite torque, $-\vec\tau$ on particle 1.
 
 Indeed, consider the two particles that exert an equal and opposite force (Newton's Third Law), $\vec F$, on each other, and an arbitrary point/axis of rotation, as illustrated in Figure \ref{fig:rotationaldynamics:internaltau}. The torque on particle 1 from the force exerted by particle 2 will have the same magnitude as the torque on particle 2 from the force by particle 1. This is because both forces have the same magnitude and they are co-linear, which results in them having the same lever arm. The torque vector from each force will be in opposite directions, because the forces are in opposite direction. Newton's Third Law thus also holds for torques.
 \capfig{0.3\textwidth}{figures/RotationalDynamics/internaltau.png}{\label{fig:rotationaldynamics:internaltau} Two particles will exert equal and opposite torques on each other due to Newton's Third Law; the forces exerted by each particle on the other are co-linear and will thus have the same lever arm relative to any point/axis of rotation.}
@@ -489,7 +523,10 @@ We find that the $y$ component from the hinge is in the negative $y$ direction, 
 \end{example}
 
 \subsection{Dynamic equilibrium}
-TODO: Review box on inertial forces
+
+\begin{review}
+Before proceeding, you may wish to review the section \ref{subsec:NewtonsLaws:inertialforces} on inertial forces.
+\end{review}
 
 When an object is in dynamic equilibrium, its centre of mass is accelerating, but the object is not rotating when viewed from its centre of mass frame of reference. Thus, the sum of the external forces exerted on the object is not zero, while the net external torque exerted on the object is zero, in the frame of reference of the centre of mass.
 
@@ -722,16 +759,45 @@ I_h = I_{CM} + Mh^2 \quad \text{Parallel axis theorem}
 \end{align*}
 
 
-
-\end{chapterSummary}
-
 \newpage
 \begin{importantEquations}
-This is an important equation
+\medskip
+\begin{multicols}{2}
+\textbf{Angular Velocity:}
 \begin{align*}
-E = mc^2
+\vec\omega = \frac{1}{r^2}\vec r \times \vec v
 \end{align*}
-
+\textbf{Angular Acceleration:}
+\begin{align*}
+\vec\alpha = \frac{1}{r^2}\vec r \times \vec a_\perp
+\end{align*}
+\textbf{Torque from a force:}
+\begin{align*}
+\vec\tau &= \vec r \times \vec F\\
+\tau &= rF\sin\phi\\
+&=rF_\perp\\
+&=r_\perp F
+\end{align*}
+\columnbreak
+\textbf{Newton's Second Law \\ for a point particle about a \\ given axis of rotation:}
+\begin{align*}
+\pvec \tau^{net} = mr^2 \vec\alpha
+\end{align*}
+\textbf{Newton's Second Law for rotation about an axis:}
+\begin{align*}
+\pvec \tau^{net} = I\vec\alpha
+\end{align*}
+\textbf{Moment of Inertia:}
+\begin{align*}
+I = \sum_i m_ir_i^2\\
+I = \int r^2 dm\\
+\end{align*}
+\textbf{Parallel Axis Theorem:}
+\begin{align*}
+I_h = I_{CM} + Mh^2\\
+\end{align*}
+\medskip
+\end{multicols}
 \end{importantEquations}
 
 
@@ -740,7 +806,9 @@ E = mc^2
 \subsection{Reflect and research}
 
 \begin{enumerate}
-\item Something to research more.
+\item Compare the steering wheels of a small car and a large transport truck. What are the differences, and why?
+\item List 2 kitchen utensils that use torque to ``get the job done''.
+\item What is a gyroscope, and how does it work?
 \end{enumerate}
 \subsection{To try at home}
 
