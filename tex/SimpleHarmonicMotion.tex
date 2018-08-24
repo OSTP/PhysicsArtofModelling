@@ -11,12 +11,12 @@ In this chapter, we look at oscillating systems that undergo ``simple harmonic m
 \end{learningObjectives}
 
 \begin{opening}
-In Section \ref{sec:potentialecons:ediagrams}, we considered the motion of a mass connected to a wall by a spring. The mass moves in one dimension along a frictionless horizontal surface. We found that the mass will oscillate between two points about an equilibrium position (Figure \ref{fig:potentialecons:springE}). We want to graph the position of the mass as a function of time ($x(t)$). Can you think of any functions we could use to graph this motion? What factors will affect the features/appearance of our graph?
+What do the motion of a mass attached to a spring, a cork bobbing in the water, and a pendulum have in common?
 \end{opening}
 
 \section{The motion of a spring-mass system}
 As an example of simple harmonic motion, we first consider the motion of a block of mass $m$ that can slide without friction along a horizontal surface. The mass is attached to a spring with spring constant $k$ which is attached to a wall on the other end. We introduce a one-dimensional coordinate system to describe the position of the mass, such that the $x$ axis is co-linear with the motion, the origin is located where the spring is at rest, and the positive direction corresponds to the spring being extended. This ``spring-mass system'' is illustrated in Figure \ref{fig:simpleharmonicmotion:spring}.
-\capfig{0.45\textwidth}{figures/SimpleHarmonicMotion/spring.png}{\label{fig:simpleharmonicmotion:spring}A horizontal spring-mass system oscillating about the origin with an amplitude $A$.}
+\capfig{0.6\textwidth}{figures/SimpleHarmonicMotion/spring.png}{\label{fig:simpleharmonicmotion:spring}A horizontal spring-mass system oscillating about the origin with an amplitude $A$.}
 
 We assume that the force exerted by the spring on the mass is given by Hooke's Law:
 \begin{align*}
@@ -31,19 +31,19 @@ We can describe the motion of the mass using energy, since the mechanical energy
 \begin{align*}
 E = U + K =\frac{1}{2}kx^2 + \frac{1}{2}mv^2
 \end{align*}
-We can find the mechanical energy, $E$, by evaluating the energy at one of the turning points. At these points, the  kinetic energy of the mass is zero, so $E=U(A)=1/2kA^2$. We can then write the expression for mechanical energy as:
+We can find the mechanical energy, $E$, by evaluating the energy at one of the turning points. At these points, the  kinetic energy of the mass is zero, so $E=U(x=A)=1/2kA^2$. We can then write the expression for mechanical energy as:
 \begin{align}
 \Aboxed{\frac{1}{2}kx^2 + \frac{1}{2}mv^2&= \frac{1}{2}kA^2}
 \end{align}
 We can thus always know the speed, $v$, of the mass at any position, $x$, if we know the amplitude $A$:
 \begin{align*}
-v = \sqrt{\frac{k(A^2-x^2)}{m}}
+v(x) = \sqrt{\frac{k(A^2-x^2)}{m}}
 \end{align*}
 
 \begin{checkpoint}
-\begin{MCquestion}{If you double the amplitude of the motion of the mass, its maximum speed will be:}
-\item double.
-\item $\sqrt 2$ times greater. \correct
+\begin{MCquestion}{If you double the amplitude of the motion of a mass attached to a spring, its maximum speed will be:}
+\item double.\correct
+\item $\sqrt 2$ times greater. 
 \item the same.
 \item halved.
 \end{MCquestion}
@@ -65,7 +65,7 @@ We want to find the position function, $x(t)$. Equation {\ref{eq:simpleharmonicm
 \begin{align}
 \Aboxed{x(t) = A \cos(\omega t + \phi)}
 \end{align}
-where $A$, $\omega$, and $\phi$ are constants that we need to determine. We can take the second order derivative with respect to time of the function above to see if it solves the differential equation:
+where $A$, $\omega$, and $\phi$ are constants that we need to determine. We can take the second order derivative with respect to time of the function above to verify that it indeed ``solves'' the differential equation:
 \begin{align*}
 x(t) &= A \cos(\omega t + \phi)\\
 \frac{d}{dt}x(t) &= -A\omega\sin(\omega t + \phi)\\
@@ -88,10 +88,10 @@ We call $\omega$ the ``angular frequency'' of the spring-mass system. We have fo
 \end{checkpoint}
 
 \begin{studentOpinion}{Olivia}
-In Chapter \ref{chapter:describingmotionin1d}, we found $x(t)$ from an acceleration function $a(t)$ by using simple integration. You may be wondering why we can't do the same thing in order to find $x(t)$ for the mass-spring system. The difference is that, before, the acceleration was a function of time. Here, the acceleration is a function of $x$. This means that we have to use a different method to solve for $x(t)$, which is why we are making these ``guesses.'' 
+In Chapter \ref{chapter:describingmotionin1d}, we found, $x(t)$, from a function, $a(t$), by using simple integration. You may be wondering why we can't do the same thing in order to find $x(t)$ for the mass-spring system. The difference is that, before, the acceleration was a function of time. Here, the acceleration is a function of $x$. This means that we have to use a different method to solve for $x(t)$, which is why we are making these ``guesses'' to solve a differential equation. 
 \end{studentOpinion}
 
-We still need to identify what the constants $A$ and $\phi$ have to do with the motion of the mass. The constant $A$ is the maximal value that $x(t)$ can take (when the cosine is equal to 1). This corresponds to the amplitude of the motion of the mass, which we already had labelled $A$. The constant $\phi$ is called the ``phase'' and depends on when we choose $t=0$ to be. Suppose that we define time $t=0$ to be when the mass is at $x=A$; in that case:
+We still need to identify what the constants $A$ and $\phi$ have to do with the motion of the mass. The constant $A$ is the maximal value that $x(t)$ can take (when the cosine is equal to 1). This corresponds to the amplitude of the motion of the mass, which we already had labelled, $A$. The constant, $\phi$, is called the ``phase'' and depends on when we choose $t=0$ to be. Suppose that we define time $t=0$ to be when the mass is at $x=A$; in that case:
 \begin{align*}
 x(t=0) &= A\\
 A \cos(\omega t + \phi) &= A\\
@@ -99,16 +99,17 @@ A \cos(\omega (0) + \phi) &= A\\
 \cos(\phi) &= 1\\
 \therefore \phi = 0
 \end{align*}
-If we define $t=0$ to be when the mass is at $x=A$, then the phase, $\phi$, is zero. In general, the value of $\phi$ can take any value between $-\pi$ and $+\pi$\footnote{The argument to the cosine function is in radians, since the angular frequency is usually defined in radians per second. The value of $\phi$ is constrained to be within that range, since the cosine function is periodic with a period $2\pi$.} and, physically, corresponds to our choice of when $t=0$.
+If we define $t=0$ to be when the mass is at $x=A$, then the phase, $\phi$, is zero. In general, the value of $\phi$ can take any value between $-\pi$ and $+\pi$\footnote{The argument to the cosine function is in radians, since the angular frequency is usually defined in radians per second. The value of $\phi$ is constrained to be within that range, since the cosine function is periodic with a period $2\pi$.} and, physically, corresponds to our choice of when $t=0$ (i.e. the position of the mass when we choose $t=0$).
 
 Since we have determined the position as a function of time for the mass, its velocity and acceleration as a function of time are easily found by taking the corresponding time derivatives:
 \begin{align*}
+x(t) &= A \cos(\omega t + \phi)\\
 v(t) &= \frac{d}{dt}x(t) = -A\omega\sin(\omega t + \phi)\\
-a(t)&= \frac{d}{dt}v(t) = -A\omega^2\cos(\omega t + \phi)\\
+a(t)&= \frac{d}{dt}v(t) = -A\omega^2\cos(\omega t + \phi)
 \end{align*}
 
 \begin{checkpoint}
-\begin{MCquestion}{What is the value of $\phi$ if we choose $t=0$ to be when the mass is at $x=0$ and is moving in the positive $x$ direction?}
+\begin{MCquestion}{What is the value of $\phi$ if we choose $t=0$ to be when the mass is at $x=0$ and moving in the positive $x$ direction?}
 \item $\pi$
 \item $-\pi$
 \item $\pi/2$
@@ -128,13 +129,6 @@ We can make a few observations about the position and velocity illustrated in Fi
 \end{itemize}
 
 The motion of the spring is clearly periodic. If the period of the motion is $T$, then the position of the mass at time $t$ will be the same as its position at $t+T$. The period of the motion, $T$, is easily found:
-\begin{align*}
-x(t) &= x(t+T)\\
-A \cos(\omega t + \phi) &= A \cos(\omega (t+T) + \phi)\\
-\therefore \omega t + \phi  +2\pi &= \omega (t+T) + \phi\\
-2\pi &= \omega T\\
-\end{align*}
-where we used the fact that the cosine function has a period of $2\pi$. The period of the motion is thus given by:
 \begin{align}
 \Aboxed{T&=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}}
 \end{align}
@@ -146,7 +140,7 @@ It should now be clear why $\omega$ is called the angular frequency, since it is
 
 \begin{checkpoint}\label{cp:simpleharmonicmotion:period}
 \begin{MCquestion}{In order to double the oscillation period of a spring-mass system, you can}
-\item double the mass.
+\item double the ratio of the mass over the spring constant.
 \item quadruple the mass. \correct
 \item halve the spring constant.
 \item All of the above. 
@@ -174,14 +168,12 @@ where $r=A$ is the radius of the circle. The $x$ component of the particle's vel
 v_x(t) = -v\sin(\theta(t)) = -\omega A\sin(\theta_0 + \omega t)
 \end{align*}
 We can visualize simple harmonic motion as if it were the projection onto the $x$ axis of uniform circular motion with angular speed $\omega$ about a circle with radius $A$. The phase $\phi$ corresponds to the angular position of the particle around the circle, $\theta_0$, at time $t=0$. When the particle crosses the $y$ axis ($x=0$), its velocity is in the $x$ direction, so the $x$ component of the velocity is maximal. When the particle crosses the $x$ axis ($x=\pm A$), the $x$ component of the velocity is zero.
-\newpage
+\vspace{-0.25cm}
 \begin{studentOpinion}{Olivia}
 Here's a visualization of uniform circular motion projected onto the $x$ axis:
 \capfig{0.4\textwidth}{figures/SimpleHarmonicMotion/circularmotionprojection.png}{\label{fig:simpleharmonicmotion:projection}Projecting the motion of a ball around a circle onto the $x$ axis.}
 Figure \ref{fig:simpleharmonicmotion:projection} shows a ball moving at a constant speed around a circle of radius $A$. In this diagram, I have taken snapshots of the ball's motion at regular time intervals as the ball moves from Position 1 to Position 5. Since the speed is constant, the balls are evenly spaced out around the circle. At the bottom of the figure, you can see what it would look like if we only considered the motion in the $x$ direction (this is the projection of the motion onto the $x$ axis). You could also think of this as what the motion would look like if you looked up at the circle from below. As you can see, this projection looks a lot like the motion of a mass on a spring. The motion of the ball is constrained between $-A$ and $+A$ (the turning points), and the velocity of the ball, in the $x$ direction, will be highest when $x=0$. There are tons of videos online that show animations of this concept, just look up ``SHM as a projection of circular motion'' and you will get lots of different ways to visualize this.
 \end{studentOpinion}
-
-
 
 \section{Vertical spring-mass system}
 Consider the vertical spring-mass system illustrated in Figure \ref{fig:simpleharmonicmotion:vertspring}.
@@ -192,7 +184,7 @@ When no mass is attached to the spring, the spring is at rest (we assume that th
  mg - ky_0 &= 0 \\
  \therefore mg &= ky_0
 \end{align*}
-Now, consider the forces on the mass at some position $y$ when the spring is extended downwards (right panel of Figure \ref{fig:simpleharmonicmotion:vertspring}). Newton's Second Law at that position can be written as:
+Now, consider the forces on the mass at some position $y$ when the spring is extended downwards relative to the equilibrium position (right panel of Figure \ref{fig:simpleharmonicmotion:vertspring}). Newton's Second Law at that position can be written as:
 \begin{align*}
 \sum F_y = mg - ky &= ma\\
 \therefore m \frac{d^2y}{dt^2}& = mg - ky 
@@ -226,7 +218,7 @@ This is the same equation as that for the simple harmonic motion of a horizontal
 \end{checkpoint}
 
 \subsection{Two-spring-mass system}
-Consider a horizontal spring-mass system composed a of single mass, $m$, attached to two different springs with spring constants $k_1$ and $k_2$, as shown in Figure \ref{fig:simpleharmonicmotion:2springs}.
+Consider a horizontal spring-mass system composed of a single mass, $m$, attached to two different springs with spring constants $k_1$ and $k_2$, as shown in Figure \ref{fig:simpleharmonicmotion:2springs}.
 \capfig{0.7\textwidth}{figures/SimpleHarmonicMotion/2springs.png}{\label{fig:simpleharmonicmotion:2springs}A mass attached to two different springs.}
 We introduce a horizontal coordinate system, such that the end of the spring with spring constant $k_1$ is at position $x_1$ when it is at rest, and the end of the $k_2$ spring is at $x_2$ when it is as rest, as shown in the top panel. A mass $m$ is then attached to the two springs, and $x_0$ corresponds to the equilibrium position of the mass when the net force from the two springs is zero. We will assume that the length of the mass is negligible, so that the ends of both springs are also at position $x_0$ at equilibrium. You can see in the middle panel of Figure \ref{fig:simpleharmonicmotion:2springs} that both springs are in extension when in the equilibrium position. It is possible to have an equilibrium where both springs are in compression, if both springs are long enough to extend past $x_0$ when they are at rest. 
 
@@ -275,7 +267,7 @@ A possible solution to that equation was given by:
 \end{align}
 We then saw that the motion of a vertical spring-mass system, as well as that of a mass attached to two springs, could also be described by Equation \ref{eq:simpleharmonicmotion:shm}. Any physical system that can described by Equation \ref{eq:simpleharmonicmotion:shm} is said to undergo ``simple harmonic motion'', or to be a ``simple harmonic oscillator''. If we find that the physical model of a system leads to Equation \ref{eq:simpleharmonicmotion:shm}, then we immediately know that the position of system can be described by Equation \ref{eq:simpleharmonicmotion:shmsol}.
 
-The key physical characteristic of a simple harmonic oscillator is that there is a ``restoring force'' whose magnitude is proportional to the displacement from the equilibrium position. A restoring force is a force that acts to place the system back in equilibrium, and is thus always in the direction that is opposite of the displacement relative to an equilibrium position.
+The key physical characteristic of a simple harmonic oscillator is that there is a ``restoring force'' whose magnitude is proportional to the displacement from the equilibrium position. A restoring force is a force that acts to place the system back in equilibrium, and is thus always in the direction that is opposite of the displacement relative to an equilibrium position. In the three systems that we considered so far, the net force on the mass was always such that it would restore the mass back to the equilibrium position, where the net force on the mass is zero.
 
 Many systems in nature are well modelled as simple harmonic oscillators. Some examples are: the motion of a pendulum as it oscillates, the motion of a buoy bobbing up and down in the sea, the motion of electrons in a shorted capacitor, and the vibrations of atoms in a molecule.
 
@@ -337,10 +329,9 @@ where $\theta_{max}$ is the maximal amplitude of the oscillations and $\phi$ is 
 \subsection{The physical pendulum}
 A physical pendulum is defined as any object that is allowed to rotate in the vertical plane about some axis that goes through the object, as illustrated in Figure \ref{fig:simpleharmonicmotion:physicalp}.
 \capfig{0.2\textwidth}{figures/SimpleHarmonicMotion/physicalp.png}{\label{fig:simpleharmonicmotion:physicalp}A physical pendulum which oscillates in a vertical plane about an axis through the object.}
-The only forces exerted on the pendulum are its weight (exerted at its centre of mass) and a contact force exerted at the axis of rotation. The physical pendulum can be modelled in exactly the same way as the simple pendulum, except that we use the moment of inertia of the object about the axis of rotation:
+The only forces exerted on the pendulum are its weight (exerted at its centre of mass) and a contact force exerted at the axis of rotation. The physical pendulum can be modelled in exactly the same way as the simple pendulum, except that we use the moment of inertia of the object about the axis of rotation. Only the weight results in a torque about the rotation axis, since the contact force is exerted at the rotation axis:
 \begin{align*}
-\tau^{net} &= I\alpha\\
-\tau_g &= I \alpha\\
+\tau^{net} = \tau_g &= I\alpha\\
 -mgh\sin\theta &= I\alpha = I \frac{d^2\theta}{dt^2}
 \end{align*}
 where $h$ is the distance from the axis of rotation to the centre of mass. In the small angle approximation, this becomes:
@@ -445,56 +436,78 @@ E =U+K=\frac{1}{2}kx^2+\frac{1}{2}mv^2= \frac{1}{2}kA^2
 
 \newpage
 \section{Thinking about the material}
-\subsection{Reflect and research}
-\begin{enumerate}
+
+\begin{chapteractivity}{Reflect and research}
+{
 \item What is an example of a system that is a simple harmonic oscillator (not covered in this this chapter)? What is the restoring force for that system?
-\item What is a coupled oscillator? Find a video of a coupled oscillator online.
+\item What happens to the motion of a mass-spring system in the presence of friction? Sketch out the position as a function of time.
+\item What is a ``damped'' harmonic oscillator?
+\item What is a coupled oscillator? Find a video of a coupled oscillator online and describe the motion.
 \item How do the shock absorbers on a car relate to simple harmonic motion?
-\end{enumerate}
-\subsection{To try at home}
+}
+\end{chapteractivity}
 
-\begin{tQuestion}Try doing this \end{tQuestion}
 
-\subsection{To try in the lab}
-Theory lab: what is the function $x(t)$ if there is a frictional force, proportional to velocity, $-bv$, exerted on the spring mass system?
+\begin{chapteractivity}{To try at home}
+{
+\item Compare values of $\theta$ and $\sin\theta$ to see when the small angle approximation holds. Does it matter if $\theta$ is expressed in radians?
+\item Build a simple pendulum and describe the motion. Is it simple harmonic motion? Is it damped simple harmonic motion? Does the frequency depend on the length of the pendulum as expected?
+}
+\end{chapteractivity}
+
+\begin{chapteractivity}{To try in the lab}
+{
+\item Theory lab: what is the function $x(t)$ if there is a frictional force, proportional to velocity, $-bv$, exerted on the spring mass system?
+\item Propose an experiment to test whether the period of the motion of pendulum depends on the amplitude of the motion.
+\item Propose an experiment to test whether a physical pendulum is well-described by simple harmonic motion.
+}
+\end{chapteractivity}
+
+
+
+
+
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problem}{soln:simpleharmonicmotion:playground}{\label{prob:simpleharmonicmotion:playground} Ty ($m=\SI{30}{kg}$) is trying out a new piece of equipment at his local playground. The equipment consists of a platform that is connected to two springs. The top spring ($k_1=\SI{2400}{Nm}$) connects the platform to the playground structure and the bottom spring ($k_2=\SI{3480}{Nm}$) (Figure \ref{fig:simpleharmonicmotion:playground}) connects it to the ground. When no one is standing on the platform, the springs are unstretched and the platform is \SI{50}{cm} off the ground. When Ty is standing on the platform, he oscillates up and down, and the lowest point the platform reaches is $\SI{35}{cm}$ off the ground. Show that this is simple harmonic motion and determine what Ty's maximum speed will be.}
+\begin{problem}{soln:simpleharmonicmotion:playground}{\label{prob:simpleharmonicmotion:playground} Ty ($m=\SI{30}{kg}$) is trying out a new piece of equipment at his local playground. The equipment consists of a platform that is connected to two springs. The top spring ($k_1=\SI{2400}{N/m}$) connects the platform to the playground structure and the bottom spring ($k_2=\SI{3480}{N/m}$) (Figure \ref{fig:simpleharmonicmotion:playground}) connects it to the ground. When no one is standing on the platform the platform is $\SI{50}{cm}$ off the ground. When Ty is standing on the platform, he oscillates up and down, and the lowest point that the platform reaches is $\SI{35}{cm}$ off the ground. Show that this is simple harmonic motion and determine what Ty's maximum speed will be.}
 \capfig{0.3\textwidth}{figures/SimpleHarmonicMotion/playground1.png}{\label{fig:simpleharmonicmotion:playground}Playground equipment made of a platform connected to two vertical springs.}
 \end{problem}
-\begin{problemParts}{soln:simpleharmonicmotion:torsional}{
-\label{prob:simpleharmonicmotion:torsional} A torsional pendulum consists of a mass suspended from a wire. When the mass is rotated so that it is displaced an angle $\theta$ from equilibrium, the wire (which is now twisted) provides a restoring torque given by:
+
+\begin{problem}{soln:simpleharmonicmotion:torsional}{
+\label{prob:simpleharmonicmotion:torsional} A torsional pendulum consists of a horizontal rod suspended from a vertical wire. When the rod is rotated so that it is displaced an angle $\theta$ from equilibrium, the wire (which is now twisted) provides a restoring torque about the axis of the wire given by:
 \begin{align*}
 \tau=-\kappa\theta
 \end{align*}
-where $\kappa$ is the torsion coefficient, which depends on the stiffness of the wire. You may notice that this formula closely resembles Hooke's law.}
-\item  You construct a torsional pendulum by attaching two small spherical masses (you can assume they are point masses, each of mass $m$) to the ends of a thin rod of length $L$ and attaching a wire to the centre of the rod (Figure \ref{fig:simpleharmonicmotion:torsional}). When you displace one of the masses by an angle $\theta$ and release it, you find that it oscillates with a period $T$. Find an expression for the torsion coefficient, $\kappa$. 
+where $\kappa$ is the torsion coefficient, which depends on the stiffness of the wire. You may notice that this formula closely resembles Hooke's law.
+\begin{enumerate}[label=\alph*),topsep=-10pt]
+\item  You construct a torsional pendulum by attaching two small spherical masses (you can assume they are point masses, each of mass $m$) to the ends of a thin (mass-less) rod of length $L$ and attaching a wire to the centre of the rod (Figure \ref{fig:simpleharmonicmotion:torsional1}). When you displace one of the masses by an angle $\theta$ and release it, you find that it oscillates with a period $T$. Find an expression for the torsion coefficient, $\kappa$, in term of $T$, $m$, and $L$. 
 \capfig{0.8\textwidth}{figures/SimpleHarmonicMotion/torsionalpendulum1.png}{\label{fig:simpleharmonicmotion:torsional1}A torsional pendulum. The right side shows a top view.}
-\item You place two very large spheres, each of mass $M$, near each of the small spheres (as shown in Figure \ref{fig:simpleharmonicmotion:torsional2}). Each of the small spheres will be acted on by a force of gravity from the \textbf{nearest} large sphere. The pendulum is at equilibrium when it is deflected an angle $\beta$ from its original equilibrium position. At the new equilibrium, the displacement vectors connecting the large and small spheres have a magnitude $d$ and are essentially perpendicular to the rod. Find an expression for the universal gravitational constant $G$. \\
+\item You place two very large spheres, each of mass $M$, near each of the small spheres (as shown in Figure \ref{fig:simpleharmonicmotion:torsional2}). Each of the small spheres will be acted on by a force of gravity from the \textbf{nearest} large sphere. The pendulum is at equilibrium when it is deflected an angle $\beta$ from its original equilibrium position. At the new equilibrium, the displacement vectors connecting the centres of large and small spheres have a magnitude $d$ and are essentially perpendicular to the rod. Find an expression for the universal gravitational constant $G$, in terms of the masses, the length of the rod, and the period measured in part a). 
 \\
-Fun fact! This set-up resembles an experiment performed by Henry Cavendish that was actually used to find a value for $G$.
-\capfig{0.5\textwidth}{figures/SimpleHarmonicMotion/torsionalpendulum2.png}{\label{fig:simpleharmonicmotion:torsional2}Two very large spheres are placed near each of the small masses on the torsional pendulum (top view). At the new equilibrium, each small mass is a distance $d$ from the nearest large mass.}
-\end{problemParts}
+Fun fact! This set-up resembles an experiment performed by Henry Cavendish that was first used to determine the value for $G$ and to test Newton's Universal Theory of Gravity.
+\capfig{0.4\textwidth}{figures/SimpleHarmonicMotion/torsionalpendulum2.png}{\label{fig:simpleharmonicmotion:torsional2}Two very large spheres are placed near each of the small masses on the torsional pendulum (top view). At the new equilibrium, each small mass is a distance $d$ from the nearest large mass.}
+\end{enumerate}}
+\end{problem}
 
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:simpleharmonicmotion:playground}\label{soln:simpleharmonicmotion:playground}
-First, we need to solve for the new equilibrium position of the platform, $x_0$. We set up our $x$ axis so that the origin is \SI{50}{cm} above the ground (the equilibrium position when no one is standing on the platform) and set down to be the positive direction (Figure \ref{fig:simpleharmonicmotion:playground2})
-\capfig{0.4\textwidth}{figures/SimpleHarmonicMotion/playground2.png}{\label{fig:simpleharmonicmotion:playground2}The platform when no one is standing on it.}
-When Ty is standing on the platform, the sum of the forces is:
+First, we need to solve for the new equilibrium position of the platform, $x_0$, when Ty is standing on the platform. We define the $x$ axis so that the origin is $\SI{50}{cm}$ above the ground (the equilibrium position when no one is standing on the platform) and choose the positive direction to be downwards (Figure \ref{fig:simpleharmonicmotion:playground2}).
+\capfig{0.35\textwidth}{figures/SimpleHarmonicMotion/playground2.png}{\label{fig:simpleharmonicmotion:playground2}The platform when no one is standing on it.}
+
+Even though we do not know the mass of the platform, or the actual resting lengths of the spring, we do not need to know these, since we can model the platform with nobody on it as a single spring with spring constant $k=k_1+k_2$ and rest position $x=0$.
+
+When Ty is standing on the platform, the sum of the forces is given by his weight and the force from the ``effective spring'':
 \begin{align*}
-\sum F=mg-k_1x-k_2x
+\sum F=mg-(k_1+k_2)x
 \end{align*}
 where we noted that, when the platform moves down, both the top and bottom spring will exert a force upwards (Figure \ref{fig:simpleharmonicmotion:playgroundfbd}). 
-At equilibrium, the sum of the forces is equal to zero. 
-We can use this to solve for the displacement at $x_0$:
+
+At equilibrium, the sum of the forces is equal to zero. We can use this to solve for the displacement at $x_0$:
 \begin{align*}
-0&=mg-k_1x_0-k_2x_0\\
-(k_1+k_2)x_0&=mg\\
-x_0&=\frac{mg}{k_1+k_2}\\
-x_0&=\frac{(\SI{30}{kg})(\SI{9.8}{m/s^2})}{\SI{2400}{Nm}+\SI{3480}{Nm}}\\
-x_0&=\SI{0.05}{m}
+0&=mg-(k_1+k_2)x_0\\
+\therefore x_0&=\frac{mg}{k_1+k_2}=\frac{(\SI{30}{kg})(\SI{9.8}{m/s^2})}{(\SI{2400}{Nm})+(\SI{3480}{Nm})}=\SI{0.05}{m}
 \end{align*}
 We will confirm that this is a simple harmonic oscillator by showing that the system's motion can be described by the equation:
 \begin{align*}
@@ -502,7 +515,6 @@ We will confirm that this is a simple harmonic oscillator by showing that the sy
 \end{align*}
 For some position $x$ below equilibrium, we can rewrite Newton's second law as:
 \begin{align*}
-ma&=mg-k_1x-k_2x\\
 ma&=mg-(k_1+k_2)x\\
 m\frac{d^2x}{dt^2}&=mg-(k_1+k_2)x
 \end{align*}
@@ -545,11 +557,11 @@ The speed will be maximized when $\sin(\omega t)=1\quad \textrm{or} -1$ . So, th
 
 \begin{solution}{prob:simpleharmonicmotion:torsional}\label{soln:simpleharmonicmotion:torsional}
 \begin{enumerate}[(a)]
-\item The only force that creates a torque on the masses is the restoring force from the twisting of the wire. The net torque, using the rotational dynamics version of Newton's law, is then:
+\item The only force that creates a torque on the masses is the restoring force from the twisting of the wire. The rotational dynamics version of Newton's Second Law relates this torque to the angular acceleration, $\alpha$ of the rod:
 \begin{align*}
 I\alpha=-\kappa\theta
 \end{align*}
-Rewriting $\alpha$ more explicitly as the second time derivative of the angle, we get:
+where $I$ is the moment of inertia of the rod. Rewriting $\alpha$ more explicitly as the second time derivative of the angle, we get:
 \begin{align*}
 I\frac{d^2\theta}{dt^2}&=-\kappa\theta\\
 \frac{d^2\theta}{dt^2}&=-\frac{\kappa}{I}\theta\\
@@ -564,13 +576,11 @@ We can rearrange this expression to get $\kappa$:
 T^2&=\frac{4\pi^2I}{\kappa}\\
 \kappa&=\frac{4\pi^2I}{T^2}
 \end{align*}
-The moment of inertia for one of the masses is $m(L/2)^2$, where $L/2$ is the distance from the mass to the axis of rotation. The moment of inertia for two masses is then:
+The moment of inertia for one of the masses is $m(L/2)^2$, where $L/2$ is the distance from the mass to the axis of rotation. The moment of inertia for the two masses attached to the mass-less rod is:
 \begin{align*}
-I&=2m(\frac{L}{2})^2\\
-I&=\frac{2mL^2}{4}\\
-I&=\frac{mL^2}{2}\\
+I&=2m\left(\frac{L}{2}\right)^2=\frac{mL^2}{2}\\
 \end{align*}
-Putting this into our expression for $\kappa$ results in:
+Putting this into our expression for $\kappa$:
 \begin{align*}
 \kappa=\frac{2\pi^2mL^2}{T^2}
 \end{align*}
