@@ -710,13 +710,13 @@ Measure the viscosity of maple syrup.
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{soln:fluids:shipwreck}{\label{prob:fluids:shipwreck}A man and a woman, let's call them Rebeka (\SI{57}{kg}) and Josh (\SI{63}{kg}), are on a cruise when their ship tragically sinks. They are thrust into the freezing cold ocean. They see a large wooden door floating on the surface of the water, and wonder if they could both survive if they both lay on top of the door. They estimate that the door measures about $\SI{2}{m}\times\SI{1}{m}\times\SI{0.12}{m}$.The density of salt water is $\rho_w=\SI{1027}{kg/m^3}$.
+\begin{problemParts}{soln:fluids:shipwreck}{\label{prob:fluids:shipwreck}A man and a woman, let's call them Rebeka (\SI{57}{kg}) and Josh (\SI{63}{kg}), are on a cruise when their ship tragically sinks. They are thrust into the freezing cold ocean. They see a large wooden door floating on the surface of the water, and wonder if they could both survive if they both lay on top of the door. They estimate that the door measures about $\SI{2}{m}\times\SI{1}{m}\times\SI{0.12}{m}$. The density of salt water is $\rho_w=\SI{1027}{kg/m^3}$.
 \capfig{0.6\textwidth}{figures/FluidMechanics/notthetitanic.png}{\label{fig:fluidmechanics:notthetitanic}Rebeka and Josh wonder if they can stay above water if they get on top of a floating door.}}
-\item What does the density of the wood have to be in order for them to stay above the surface of the water? (see Figure \ref{fig:fluidmechanics:notthetitanic}) 
+\item What does the density of the wood have to be in order for Rebeka and Josh to stay above the surface of the water? (see Figure \ref{fig:fluidmechanics:notthetitanic}) 
 \item If the door is made of oak ($\rho_d=\SI{750}{kg/m^3}$), will they survive? Can one of them survive?
 \end{problemParts}
 
-\begin{problemParts}{soln:fluids:iv}{\label{prob:fluids:iv} A doctor prescribes an IV drip to a dehydrated patient. She asks a nurse, Lily, to administer \SI{2}{l} of saline solution ($\eta=\SI{1.0e-3}{\pascal\second}$) to the patient over 2 hours. An IV drip works by inserting a needle into a vein in a patient's arm. The needle is connected to an IV bag by a tube (Figure \ref{fig:fluidmechanics:ivneedle}). Lily uses a needle that has a diameter of \SI{0.60}{mm} and a length of \SI{32}{mm}. The blood pressure in the patient's veins is $\SI{80}{mm Hg}$ above atmospheric pressure. Note: $\SI{1}{mm Hg}\approx \SI{133}{Pa}$
+\begin{problemParts}{soln:fluids:iv}{\label{prob:fluids:iv} A doctor prescribes an IV drip to a dehydrated patient. She asks a nurse, Lily, to administer \SI{2}{l} of saline solution ($\eta=\SI{1.0e-3}{\pascal\second}$, $\rho=\SI{997}{kg/m^3}$) to the patient over 2 hours. An IV drip works by inserting a needle into a vein in a patient's arm. The needle is connected to an IV bag by a tube (Figure \ref{fig:fluidmechanics:ivneedle}). Lily uses a needle that has a diameter of \SI{0.60}{mm} and a length of \SI{32}{mm}. The blood pressure in the patient's veins is $\SI{80}{mm Hg}$ above atmospheric pressure. Note: $\SI{1}{mm Hg}\approx \SI{133}{Pa}$
 \capfig{0.6\textwidth}{figures/FluidMechanics/ivneedle.png}{\label{fig:fluidmechanics:ivneedle}Left: A cylindrical IV needle. Right: The IV needle connected to an IV bag by a tube. The free end of the needle goes into the patient's vein.}} 
 \item What must the pressure be at the entrance of the needle? Assume the needle is essentially horizontal. Write your answer in Pascals above atmospheric pressure.
 \item How high above the patient's arm should Lily put the IV bag?
@@ -728,18 +728,18 @@ Measure the viscosity of maple syrup.
 \begin{enumerate}[(a)]
 \item The forces acting on the door are the force of buoyancy, its weight, and the weight of Rebeka and Josh, as shown in Figure \ref{fig:fluidmechanics:notthetitanic_fbd}. 
 \capfig{0.2\textwidth}{figures/FluidMechanics/notthetitanic_fbd.png}{\label{fig:fluidmechanics:notthetitanic_fbd}The forces acting on the door when Rebeka and Josh are on top of it.}
-If we combine the weight of the door and the people into the total force due to gravity, $F_g$, we can write Newton's second law for the door as:
+If we combine the weight of the door and the weight of the people into the total weight, $F_g$, and set up to be in the positive direction, we can write Newton's Second Law for the door as:
 \begin{align*}
-\sum F =F_B-F_g
+\sum \vec F =\vec F_B-\vec F_g
 \end{align*}
-where we set up to be in the positive direction. For the door to float, the net force on the door must be greater than or equal to zero. We want to find the minimum buoyant force for them to float, so we set the net for equal to zero and get:
+For the door to float, the net force on the door must be greater than or equal to zero. We want to find the minimum buoyant force for them to float, so we set the net force equal to zero and get:
 \begin{align*}
 0&=F_B-F_g\\
 F_g&=F_B\\
 (m_R+m_J+m_d)g&=\rho_wV_wg\\
 m_R+m_J+m_d&=\rho_wV_w
 \end{align*}
-where the weight depends on the mass of Rebeka ($R$), Josh ($J$) and the door ($d$). We added the subscript $W$ to right side of the equation to remind ourselves that the buoyant force depends on the density and volume \textbf{of the displaced water}. We want to find the maximum density of the wood in order for Rebeka and Josh to stay above the water's surface. This means that the maximum volume of water that can be displaced is the volume of the door, $V_w=V_d$ (so that the surface of the door is level with the surface of the water). We can rewrite the mass of the door in terms of its volume and density, and apply our condition that $V_w=V_d$ :
+where the weight depends on the mass of Rebeka ($R$), Josh ($J$) and the door ($d$). We added the subscript $W$ to right side of the equation to remind ourselves that the buoyant force depends on the density and volume \textbf{of the displaced water}. We want to find the maximum density of the wood in order for Rebeka and Josh to stay above the water's surface. This means that the maximum volume of water that can be displaced is the volume of the door, $V_w=V_d$ (so that the surface of the door is level with the surface of the water, as in Figure \ref{fig:fluidmechanics:notthetitanic}). We can rewrite the mass of the door in terms of its volume and density, and apply our condition that $V_w=V_d$ :
 \begin{align*}
 m_R+m_J+\rho_dV_d&=\rho_wV_d\\
 \rho_d&=\frac{\rho_wV_d-m_R-m_J}{V_d}
@@ -750,7 +750,8 @@ A quick calculation tells us that the volume of the door is $(\SI{2}{m})(\SI{1}{
 \rho_d&=\frac{(\SI{1027}{kg/m^3})(\SI{0.24}{m^3})-\SI{57}{kg}-\SI{63}{kg}}{\SI{0.24}{m^3}}\\
 \rho_d&=\SI{527}{kg/m^3}
 \end{align*}
-\item No, they could not both stay on the door because the density of oak is greater than the maximum density of \SI{527}{kg/m^3}. We can solve for the maximum additional mass on the door ($m_A$) if the door is made of oak:
+The maximum density of the wood is \SI{527}{kg/m^3}.
+\item No, they could not both stay on the door because the density of oak is greater than the maximum density of \SI{527}{kg/m^3}. We can find the amount of mass that can be added to the door ($m_A$) in order for the person on it to stay above water:
 \begin{align*}
 F_g&=F_B\\
 (m_A+m_d)g&=\rho_wV_wg\\
@@ -770,41 +771,41 @@ The door can support an additional mass of \SI{66}{kg}, so either Rebeka or Josh
 
 \begin{solution}{prob:fluids:iv}\label{soln:fluids:iv}
 \begin{enumerate}[(a)]
-\item We assume that the saline solution exhibits laminar flow and we model the needle as a horizontal cylindrical pipe. We can therefore use Poiseuille's equation:
+\item Given that the pressure in the patient's veins is \SI{80}{mm Hg} above atmospheric pressure, we want to find the pressure required at the other end of the needle so that we get the desired flow rate. We model the needle as a horizontal cylindrical pipe and assume that the saline solution exhibits laminar flow. We can therefore use Poiseuille's equation:
 \begin{align*}
 Q=\frac{\pi r^4}{8\eta L}(P_1-P_2)
 \end{align*}
-We want the flow to be positive, so we let $P_1$ be the pressure where the needle connects to the tube. We can find $P_1$ from this equation:
+We let $P_1$ be the pressure where the needle connects to the tube. Solving for $P_1$ gives:
 \begin{align*}
 P_1&=Q\frac{8\eta L}{\pi r^4}+P_2\\
 \end{align*}
-The pressure at the exit of the needle, $P_2$, is just the blood pressure ($\SI{80}{mm Hg} + \SI{1}{atm}$). The radius of the needle is $\SI{0.60}{mm}/2=\SI{0.30}{mm}$. You can confirm that the flow rate has to be in units of $m^3/s$. We can calculate the flow rate in the appropriate units:
+The pressure at the exit of the needle, $P_2$, is just the blood pressure ($\SI{80}{mm Hg} + \SI{1}{atm}$). The radius of the needle is $\SI{0.60}{mm}/2=\SI{0.30}{mm}$. The flow rate has to be in units of \si{m^3/s}, which you can confirm. The flow rate in the appropriate units is thus:
 \begin{align*}
 Q=\frac{\SI{2}{l}}{\SI{2}{hr}}\cdot \frac{\SI{1}{hr}}{\SI{3600}{s}}\cdot \frac{\SI{0.001}{m^3}}{\SI{1}{l}}=\SI{2.8e-7}{m^3/s}
 \end{align*}
-Using the given values, we can calculate $P_1$:
+Using our values, we can calculate $P_1$:
 \begin{align*}
-P_2&=(\SI{2.8e-7}{m^3/s})\frac{8(\SI{1.0e-3}{\pascal\second}) (\SI{0.032}{m})}{\pi (\SI{3e-4}{m})^4}+\SI{80}{mm Hg}\cdot \frac{\SI{133}{Pa}}{\SI{1}{mm Hg}}+\SI{1}{atm}\\
-P_2&=\SI{2817}{Pa}+\SI{10640}{Pa}+\SI{1}{atm}\\
+P_1&=(\SI{2.8e-7}{m^3/s})\frac{8(\SI{1.0e-3}{\pascal\second}) (\SI{0.032}{m})}{\pi (\SI{3e-4}{m})^4}+\SI{80}{mm Hg}\cdot \frac{\SI{133}{Pa}}{\SI{1}{mm Hg}}+\SI{1}{atm}\\
+P_1&=\SI{2817}{Pa}+\SI{10640}{Pa}+\SI{1}{atm}\\
 \therefore P_2&=\SI{13457}{Pa} \quad \textrm{above atmospheric pressure}
 \end{align*}
-where, in the first line, we converted \SI{80}{mm Hg} to Pascals. 
+Note that, in the first line, we converted \SI{80}{mm Hg} into Pascals. 
 
-\item We can use Bernoulli's principle to find the appropriate height of the IV bag. We set up our coordinate system so that the height is zero at the needle is ($y_1=0$) (Figure \ref{fig:fluidmechanics:ivneedleheight}).
+\item We can use Bernoulli's principle to find the appropriate height of the IV bag. We set up our coordinate system so that the height is zero at the needle ($y_1=0$) (Figure \ref{fig:fluidmechanics:ivneedleheight}).
 \capfig{0.3\textwidth}{figures/FluidMechanics/ivneedleheight.png}{\label{fig:fluidmechanics:ivneedleheight}The needle is at height 0 and the top of the fluid in the IV bag is at $y_0$.}
-At the top of the solution in the IV bag, $y_0$, the solution has a speed of zero and is at atmospheric pressure, $P_0=\SI{1}{atm}$. The minimum velocity at the needle is 0, and the pressure is $\SI{13457}{Pa}+\SI{1}{atm}$. Bernoulli's principle therefore states that:
+At the top of the solution in the IV bag, $y_0$, the solution has a speed of zero and is at atmospheric pressure, $P_0=\SI{1}{atm}$. The velocity at the needle is 0, and the pressure is $\SI{13457}{Pa}+\SI{1}{atm}$. Bernoulli's principle states:
 \begin{align*}
 P_0+\frac{1}{2}\rho v_0^2+\rho gy_0=P_1+\frac{1}{2}\rho v_1^2+\rho gy_1\\
 \end{align*}
-Using our values and the density of water ($\rho=\SI{997}{kg/m^3}$) to solve for $y_0$, we get:
+Using our values to solve for $y_0$, we get:
 \begin{align*}
-P_0+\rho gy_0=P_1\\
-y_0=\frac{P_1-P_0}{\rho g}\\
-y_0=\frac{\SI{13457}{Pa}+\SI{1}{atm}-\SI{1}{atm}}{(\SI{997}{kg/m^3})(\SI{9.8}{m/s^2})}\\
-y_0=\frac{\SI{13457}{Pa}}{(\SI{997}{kg/m^3})(\SI{9.8}{m/s^2})}\\
-y_0=\SI{1.4}{m}
+P_0+\rho gy_0&=P_1\\
+y_0&=\frac{P_1-P_0}{\rho g}\\
+y_0&=\frac{\SI{13457}{Pa}+\SI{1}{atm}-\SI{1}{atm}}{(\SI{997}{kg/m^3})(\SI{9.8}{m/s^2})}\\
+y_0&=\frac{\SI{13457}{Pa}}{(\SI{997}{kg/m^3})(\SI{9.8}{m/s^2})}\\
+y_0&=\SI{1.4}{m}
 \end{align*}
-Therefore, the IV bag must be placed at least $\SI{1.4}{m}$ above the patient's arm. 
+Therefore, the IV bag should be placed $\SI{1.4}{m}$ above the patient's arm. 
 
   
 \end{enumerate}
