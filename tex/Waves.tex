@@ -27,13 +27,13 @@ A travelling wave is a \textbf{disturbance that travels through} a medium. Consi
 The fans can be thought of as the medium through which the wave propagates. The elements of the medium may oscillate about an equilibrium position (the fans move a short distance up and down), but they do not travel with the wave (the fans do not move horizontally with the wave). 
 \capfig{0.8\textwidth}{figures/Waves/soccer.png}{\label{fig:waves:soccer}A transverse wave made by soccer fans moving up and down.}
 
-Consider the ripples (waves) made by a rock dropped in a pond (Figure \ref{fig:waves:water}). The ripples travel outwards from where the rock was dropped, but the water itself does not move outwards. Though individual water molecules will move in small circles about an equilibrium position, but they do not move along with the waves.
+Consider the ripples (waves) made by a rock dropped in a pond (Figure \ref{fig:waves:water}). The ripples travel outwards from where the rock was dropped, but the water itself does not move outwards. The individual water molecules will move in small circles about an equilibrium position, but they do not move along with the waves.
 \capfig{0.6\textwidth}{figures/Waves/water.png}{\label{fig:waves:water}A transverse wave travelling through water. The left panel shows the view from above as ripples move outwards. The right panel shows the motion of an individual water molecule as the wave is viewed from the side.}
 
 We can distinguish between two classes of waves, based on the motion of the medium through which it propagates. With \textbf{transverse waves}, the elements of the medium oscillate back and forth in a direction perpendicular to the motion of the wave. For example, if you attach a horizontal rope to a wall and move the other end up and down (Figure \ref{fig:waves:rope}), you can create a disturbance (a wave) that travels horizontally along the rope. The parts of the rope do not move horizontally; they only move up and down, about some equilibrium position. 
 \capfig{0.6\textwidth}{figures/Waves/rope.png}{\label{fig:waves:rope}A transverse wave travelling through a rope. The wave is created by moving one end of the rope up and down.}
 
-With \textbf{longitudinal waves}, the elements of the medium oscillate back and forth in the same direction as the motion of the wave. If you clap your hands, you will create a pressure disturbance in the air that will propagate; this is what we call sound (a sound wave). The air molecules oscillate horizontally about an equilibrium position, but they do not move with the wave.
+With \textbf{longitudinal waves}, the elements of the medium oscillate back and forth in the same direction as the motion of the wave. If you clap your hands, you will create a pressure disturbance in the air that will propagate; this is what we call sound (a sound wave). The air molecules oscillate about an equilibrium position in the same direction as the wave propagates, but they do not move with the wave.
 \capfig{0.6\textwidth}{figures/Waves/sound.png}{\label{fig:waves:sound}A longitudinal sound wave travelling through the air. The air molecules move back and forth in the same direction as the wave, but they oscillate about an equilibrium position instead of moving with the wave.}
 
  Furthermore, we can distinguish between ``travelling waves'', in which a disturbance propagates through a medium, and ``standing waves'', which do not transport energy through the medium (for example, a vibrating string on a violin). 
@@ -42,7 +42,7 @@ With \textbf{longitudinal waves}, the elements of the medium oscillate back and 
 \begin{MCquestion}{Are the waves propagating through a slinky when you compress and elongate it (Figure \ref{fig:waves:slinky}) transverse or longitudinal?
 \capfig{0.6\textwidth}{figures/Waves/slinky.png}{\label{fig:waves:slinky}A wave travelling through a slinky. The wave is created when you compress or elongate the slinky}}
 \item Transverse
-\item Longitudinal
+\item Longitudinal\correct
 \end{MCquestion}
 \end{checkpoint}
 
@@ -75,7 +75,7 @@ Thus, of the three quantities (speed, period/frequency, and wavelength), only tw
 \begin{checkpoint}
 \begin{MCquestion}{What can you say about the sound emitted by a cello versus that emitted by a violin?}
 \item The sound from the violin has a higher frequency.
-\item The sound from the cello has a lower wavelength.
+\item The sound from the cello has a longer wavelength.
 \item The sound from both instruments propagates at the same speed.
 \item All of the above. \correct
 \end{MCquestion}
@@ -164,35 +164,6 @@ D(x,t) = A\sin\left( kx -\omega t + \phi \right)
 \end{align*}
 which is the function that we used in the previous section to describe a sine wave.
 
-\begin{example}{Show that the function $D(x,t) = A\sin\left( kx -\omega t + \phi \right)$ satisfies the one-dimensional wave equation.}The wave equation is the condition:
-\begin{align*}
-\die{^2D}{x^2}=\frac{1}{v^2}\die{^2D}{t^2}
-\end{align*}
-We start by taking the second partial derivative of $D$ with respect to $x$. Remember that when taking a partial derivative, we treat all other variables as constants. 
-\begin{align*}
-\die{D}{x}&=\die{}{x}A\sin\left( kx -\omega t + \phi \right)=kA\cos\left( kx -\omega t + \phi \right)\\
-\therefore \die{^2D}{x^2}&=\die{}{x}kA\cos\left( kx -\omega t + \phi \right)=-k^2A\sin\left( kx -\omega t + \phi \right)
-\end{align*}
-where we used the chain rule. Now we take the second partial derivative of $D$ with respect to $t$:
-\begin{align*}
-\die{D}{t}&=\die{}{t}A\sin\left( kx -\omega t + \phi \right)=-\omega A\cos\left( kx -\omega t + \phi \right)\\
-\therefore \die{^2D}{t^2}&=\die{}{t}(-\omega)A\cos\left( kx -\omega t + \phi \right)=-\omega^2A\sin\left( kx -\omega t + \phi \right)
-\end{align*}
-Putting this into the wave equation:
-\begin{align*}
-\die{^2D}{x^2}&=\frac{1}{v^2}\die{^2D}{t^2}\\
--k^2A\sin\left( kx -\omega t + \phi \right)&=\frac{1}{v^2}\cdot (-\omega^2)A\sin\left( kx -\omega t + \phi \right)\\
--k^2&=\frac{1}{v^2}(-\omega^2)\\
-\end{align*}
-Using the fact that $v=\omega/k$, we get:
-\begin{align*}
--k^2&=-\frac{1}{v^2}\omega^2\\
--k^2&=-\frac{k^2}{\omega^2}\omega^2\\
--k^2&=-k^2\\
-\therefore QED
-\end{align*}
-\end{example}
-
 Furthermore, if multiple solutions to the wave equation, $D_1(x,t)$, $D_2(x,t)$, etc, exist, then any linear combination, $D(x,t)$, of the solutions will also be a solution to the wave equation:
 \begin{align*}
 D(x,t) = a_1D_1(x,t)+a_2D_2(x,t)+a_3D_3(x,t)+\dots
@@ -211,14 +182,14 @@ In this section, we model the motion of transverse waves on a rope, as this prov
 \subsection{A pulse on a rope}
 We start by modelling how a single pulse propagates down a horizontal rope that is under a tension, $F_T$\footnote{We do not use $T$ for tension, so as to not confuse with the period of a wave.}. A wave is generally considered to be a regular series of alternating upwards and downwards pulses propagating down the rope. Modelling the propagation of a pulse is thus equivalent to modelling the propagation of a wave. Figure \ref{fig:waves:pulse} shows how one can generate a pulse in a taught horizontal rope by raising (and then lowering) one end of the rope.
 \capfig{0.8\textwidth}{figures/Waves/pulse.png}{\label{fig:waves:pulse}(Left:) Pulling upwards and then downwards on a horizontal rope causes a pulse to form and propagate. After a short period of time, a pulse is seen propagating down the rope (right).}
-We can model the propagation speed of the pulse by considering the speed, $v$, of point $B$ that is shown in the left panel of Figure \ref{fig:waves:pulse}. Note that point $B$ is not a particle of the rope, and is instead, the location of the ``front'' of the disturbance that the pulse causes on the rope. We model the rope as being under a horizontal force of tension, $\vec F_T$, and the pulse is started by exerting a vertical force, $\vec F$, to move the end (point $A$) of the rope upwards with a speed, $v'$. Thus, by pulling upwards on the rope with a force, $\vec F$, at a speed $v'$, we can start a disturbance in the rope that will propagate with speed $v$. 
+We can model the propagation speed of the pulse by considering the speed, $v$, of point $B$ that is shown in the left panel of Figure \ref{fig:waves:pulse}. Note that point $B$ is not a particle of the rope, and is, instead, the location of the ``front'' of the disturbance that the pulse causes on the rope. We model the rope as being under a horizontal force of tension, $\vec F_T$, and the pulse is started by exerting a vertical force, $\vec F$, to move the end (point $A$) of the rope upwards with a speed, $v'$. Thus, by pulling upwards on the rope with a force, $\vec F$, at a speed $v'$, we can start a disturbance in the rope that will propagate with speed $v$. 
 
-In a short amount of time, $t$, the point $A$ on the rope will have moved up by a distance $v't$, whereas point $B$ will have moved to the right by a distance $vt$. If $t$ is small enough, we can consider the points $A$, $B$, and $C$ to form the corners of a triangle. That triangle is similar to the triangle that is made by vectorially summing the applied force $\vec F$ and the tension $\vec F_T$, as shown in the top right of Figure \ref{fig:waves:pulse}. In this case, we mean the technical term ``similar'', which describes two triangles which have the same angles. We can thus write:
+In a short amount of time, $t$, the point $A$ on the rope will have moved up by a distance $v't$, whereas point $B$ will have moved to the right by a distance $vt$. If $t$ is small enough, we can consider the points $A$, $B$, and $C$ to form the corners of a triangle. That triangle is similar to the triangle that is made by vectorially summing the applied force $\vec F$ and the tension $\vec F_T$, as shown in the top left of Figure \ref{fig:waves:pulse}. In this case, we mean the geometry term ``similar'', which describes two triangles which have the same angles. We can thus write:
 \begin{align*}
 \frac{F}{F_T}&=\frac{v't}{vt}=\frac{v'}{v}\\
 \therefore F&= F_T \frac{v'}{v}
 \end{align*}
-Consider the section of rope with length $vt$ that we have raised by applying that force (we assume that the distance $AC$ is approximately equal to the distance $AB$). If the rope has a mass per unit length $\mu$, then the mass of the rope element that was raised (between points $A$ and $B$) has a mass, $m$, given by:
+Consider the section of rope with length $vt$ that we have raised by applying that force (we assume that the distance $AB$ is approximately equal to the distance $BC$). If the rope has a mass per unit length $\mu$, then the mass of the rope element that was raised (between points $A$ and $B$) has a mass, $m$, given by:
 \begin{align*}
 m = \mu vt
 \end{align*}
@@ -265,17 +236,17 @@ When the pulse moves from a lighter rope to a heavier rope ($\mu_1<\mu_2$), the 
 
 When the end of the rope is fixed to a wall (as in Figure \ref{fig:waves:reflectionfixed}), this represents a limiting case in which the linear mass density of the second material approaches infinity ($\mu_2 \rightarrow \infty$):
 \begin{align*}
-\lim_{\mu_2\to \infty}\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}=\frac{-\sqrt{\mu_2}}{\sqrt{\mu_2}}=-1
+R=\lim_{\mu_2\to \infty}\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}=\frac{-\sqrt{\mu_2}}{\sqrt{\mu_2}}=-1
 \end{align*}
 which means that the amplitude of the reflected pulse will have the same magnitude as the initial pulse but will be in the opposite direction. When the end of the rope is free (Figure \ref{fig:waves:reflectionfree}), this represents another limiting case, where $\mu_2\rightarrow 0$:
 \begin{align*}
-\lim_{\mu_2\to 0}\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}=\frac{\sqrt{\mu_1}}{\sqrt{\mu_1}}=1
+R=\lim_{\mu_2\to 0}\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}=\frac{\sqrt{\mu_1}}{\sqrt{\mu_1}}=1
 \end{align*}
 which means that the amplitude of the reflected pulse will be in the same direction  and have the same amplitude as the initial pulse. 
 
 
 \begin{checkpoint}
-\begin{MCquestion}{A wave propagates from a light rope to a heavier rope that is attached to the light rope (as the pulse illustrated in Figure \ref{fig:waves:transmission}. What can you say about the wavelength of the wave on either side of the interface?}
+\begin{MCquestion}{A wave propagates from a light rope to a heavier rope that is attached to the light rope (as the pulse illustrated in Figure \ref{fig:waves:transmission}). What can you say about the wavelength of the wave on either side of the interface?}
 \item It is the same in both sections of rope.
 \item The wavelength in the heavy section of rope is longer.
 \item The wavelength in the light section of rope is longer.\correct
@@ -295,7 +266,7 @@ where we used the fact that the force of tension has a magnitude, $F_T$, on eith
 \begin{align*}
 \sin\theta\approx \tan\theta = \die{D}{x}
 \end{align*}
-in which the sine of the angle, is approximately equal to the tangent of the angle, which is equal to the slope of the rope. Applying this approximation to Newton's Second Law:
+in which the sine of the angle is approximately equal to the tangent of the angle, which is equal to the slope of the rope. Applying this approximation to Newton's Second Law:
 \begin{align*}
 F_T\left(\die{D}{x}\Bigr|_{right} - \die{D}{x}\Bigr|_{left}\right) &= dm \die{^2D}{t^2}
 \end{align*}
@@ -405,7 +376,7 @@ We can see that the power transmitted by a wave goes as the amplitude, $A$, of t
 \subsection{Energy transported in a spherical, three-dimensional, wave}
 In this section, we show how to model the rate at which energy is transported in spherical three-dimensional waves, such as the sound waves that are generated when you clap your hands. A spherical sound wave is a pressure disturbance in the air that propagates spherically outwards from a point of emission. We can think of thin spherical shells containing air that expand and contract about their equilibrium position as the wave moves through the shells. The motion of each shell is similar to that of a simple harmonic oscillator of mass $dm$, where $dm$ is the mass of air in the oscillating shell.
 
-\capfig{0.9\textwidth}{figures/Waves/sphericalwave.png}{\label{fig:waves:sphericalwave}Left: We divide the air into thin spherical shells. Here we represent three shells (the black circles). Center: When you clap, the innermost shell is given energy and expands. Right: Energy is transferred to the next shell, which expands as the first shell contracts. This is how the wave propagates outwards. When the shells are closer together, the air molecules are closer together, so it is an area of high pressure.}
+\capfig{0.9\textwidth}{figures/Waves/sphericalwave.png}{\label{fig:waves:sphericalwave}Left: We divide the air into thin spherical shells. Here we represent three shells (the black circles). Center: When you clap, the innermost shell is given energy and expands. Right: Energy is transferred to the next shell, which expands as the first shell contracts. This is how the wave propagates outwards. When the shells are closer together, the air molecules are closer together and exert a pressure that tries to expand the shell.}
 
 Consider a shell at a radial position, $r$, from the source, with thickness $dr$, and mass $dm$:
 \capfig{0.3\textwidth}{figures/Waves/sphericalshell.png}{\label{fig:waves:sphericalshell}A spherical shell at radial position $r$ with thickness $dr$}
@@ -432,9 +403,9 @@ where $\frac{dr}{dt}=v$ is the speed of the wave (the rate of change of the radi
 \begin{align*}
 P &=\frac{dE}{dr}v =2\pi\rho  \omega^2 A^2  r^2 v
 \end{align*}
-where the power depends on how far you are from the source ($r$), unlike the case for a one-dimensional wave. 
+where the power appears to depends on how far you are from the source ($r$). 
 
-Suppose that you have a $\SI{50}{W}$ speaker emitting sound; each radial shell emanating from the speaker must transport energy at a rate of $\SI{50}{W}$. This is simply a statement that the energy radiated by the speaker has to move from one shell to the next and be conserved. Since the power transported by a shell depends on the radius of the shell, if the power transmitted by each shell is the same, then the amplitude of the wave in each shell must decrease. In particular, for a spherical wave, the amplitude will decrease as a function of distance from the source:
+Suppose that you have a $\SI{50}{W}$ speaker emitting sound; each radial shell emanating from the speaker must transport energy at a rate of $\SI{50}{W}$. This is simply a statement that the energy radiated by the speaker has to move from one shell to the next and be conserved. Since the power transported by a shell depends on appears to depend on the radius of the shell, if the power transmitted by each shell is the same, then the amplitude of the wave in each shell must decrease, so that the power does not actually depend on the radius of the shell. In particular, for a spherical wave, the amplitude will decrease as a function of distance from the source:
 \begin{align*}
 P& = \text{constant}\\
 \therefore A&=\frac{1}{r}\sqrt{\frac{P}{2\pi\rho \omega^2 v}}
@@ -454,7 +425,7 @@ I = \frac{P}{4\pi r^2} = \frac{1}{2}\rho  \omega^2 A^2 v
 
 Usually, the intensity of a wave is something that you can measure, as it corresponds to the power delivered into some measuring device with a known surface area. For example, we cannot directly measure the total power that is transported by the waves from an earthquake, as we would need an instrument that could encompass the entire resulting wave. Instead, we can measure the intensity of waves from the earthquake by measuring how much power is delivered into some instrument with a known surface area. By knowing our distance from the earthquake, we could then determine the total power output of the earthquake. 
 
-The intensity is a measure of how much energy is delivered per unit area by a wave and goes down as the square of the distance from the source. If the source of the wave is an earthquake, then your house will have four times less damage than your friend's, if your house is located only twice as far from the epicentre as your friend's. You will cause four times less damage to your ears if you move only twice as far away from the stage at a rock concert.
+The intensity is a measure of how much energy is delivered per unit area by a wave and goes down as the square of the distance from the source (since $A\propto 1/r^2$). If the source of the wave is an earthquake, then your house will have four times less damage than your friend's, if your house is located only twice as far from the epicentre as your friend's. You will cause four times less damage to your ears if you move only twice as far away from the stage at a rock concert.
 
 \section{Superposition of waves and interference}
 In this section, we consider what happens when two (or more) different waves propagate in a medium and interfere with each other. The superposition principle states that if $D_1(x,t)$, $D_2(x,t)$, etc, are functions that satisfy the wave equation, then any linear combination of these functions, $D(x,t)$:
@@ -479,7 +450,7 @@ D(x,t) = A_1\sin(k_1x-\omega_1t+\phi_1) + A_2\sin(k_2x+\omega_2t+\phi_2)
 The superposition of waves is illustrated in Figure \ref{fig:waves:superposition}, which shows three waves, and their resulting sum in the bottom most panel.
 \capfig{0.7\textwidth}{figures/Waves/superposition.png}{\label{fig:waves:superposition}The superposition of three waves to create a resulting wave shown in the bottom panel. The waves are shown as the displacement as a function of position at a fixed instant in time.}
 
-The resulting wave is created by the ``interference'' of the three waves, and mathematically is simply a sum of the three individual waves at each position (and instant in time). The resulting wave in this example has a rather complicated shape, that is no longer described by a sine function. However, by the superposition principle, it is a valid solution to the wave equation\footnote{Fourier's Theorem states that any periodic function can be described as the as the linear combination of sine (or cosine) functions. This is the reason why we focused on using a sine function to describe a wave. Any complicated wave can always be modelled as the resulting wave formed by combining different sine waves.}.
+The resulting wave is created by the ``interference'' of the three waves, and mathematically is simply a sum of the three individual waves at each position (and instant in time). The resulting wave in this example has a rather complicated shape, that is no longer described by a sine function. However, by the superposition principle, it is a valid solution to the wave equation\footnote{Fourier's Theorem states that any periodic function can be described as the linear combination of sine (or cosine) functions. This is the reason why we focused on using a sine function to describe a wave.}.
 
 The individual waves in the top three panels of Figure \ref{fig:waves:superposition} all have an amplitude of $\SI{5}{m}$. The resulting wave, at some points (e.g. at $x=\SI{2}{m}$), has an amplitude that is larger than any of the individual waves; we say that, at those positions, the individual waves have ``constructively interfered''. In other locations (e.g. at $x=\SI{6}{m}$), the resulting wave has a smaller amplitude than the individual waves, and we say that the individual waves have ``destructively interfered''. The interference between waves can be observed easily on a water surface, for example by observing the constructive and destructive interference pattern of waves that originate from two pebbles being dropped at the same time a certain distance apart. Constructive interference between waves is also thought to be behind some reports of gigantic waves observed out at sea.
 
@@ -510,7 +481,7 @@ The corresponding frequency is give by:
 \end{align}
 where $v=f\lambda$ is the speed of the waves on the string.
 
-A standing wave is the result of two waves of the same frequency and amplitude travelling in opposite directions. Thus, there is no energy that is transmitted by a standing wave (e.g. through the nodes at the end of the string), although there is energy contained within the nodes. Although we described standing waves for a string, these are not restricted to one dimensional waves. For example, the membrane of a drum can also support standing waves.
+A standing wave is the result of two waves of the same frequency and amplitude travelling in opposite directions. Thus, there is no energy that is transmitted by a standing wave (e.g. through the nodes at the end of the string). Although we described standing waves for a string, these are not restricted to one dimensional waves. For example, the membrane of a drum can also support standing waves.
 
 \begin{checkpoint}
 \begin{MCquestion}{A standing wave (composed of two travelling waves) has a maximum amplitude $A$. What must the amplitude $A_0$ of each travelling wave be? }
@@ -575,11 +546,11 @@ Thus, for example, the second node ($m=2$) of the third harmonic ($n=3$), is loc
 \end{align*}
 where, for example, the first anti-node of the first harmonic is located at $x=L/2$, as can be seen in the top panel of Figure \ref{fig:waves:standing}.
 
-\begin{checkpoint}\begin{MCquestion}{A standing wave on a string (fixed at both ends) has a fundamental frequency $f$. If you quadruple the tension in the string, how can you change the length of the string so that the frequency remains the same? (Check all that apply)}
+\begin{checkpoint}\begin{MCquestion}{A standing wave on a string (fixed at both ends) has a fundamental frequency $f$. If you quadruple the tension in the string, how can you change the length of the string so that the fundamental frequency remains the same?}
 \item half the length.
 \item double the length. \correct
 \item triple the length. 
-\item quadruple the length. \correct
+\item quadruple the length. 
 \end{MCquestion}
 \end{checkpoint}
 
@@ -608,7 +579,7 @@ We can see from the equation that the maximum amplitude will be $2A$. This makes
 \section{Summary}
 
 \begin{chapterSummary}
-A travelling wave is the propagation of a disturbance with a speed, $v$, through a medium. Particles in the medium oscillate back and forth, about an equilibrium position, as a wave passes through the medium, but they are not carried with the wave. Only mechanical energy is transmitted by a wave.
+A travelling wave is the propagation of a disturbance with a speed, $v$, through a medium. Particles in the medium oscillate back and forth, about an equilibrium position, as a wave passes through the medium, but they are not carried with the wave. Only energy is transmitted by a wave.
 
 In a transverse wave, the particles in the medium oscillate in a direction that is perpendicular to the velocity of the wave. In a longitudinal wave, the particles of the medium oscillate in a direction that is co-linear with the velocity of the wave.
 
@@ -641,7 +612,7 @@ Generally, the speed of a wave in a medium depends on the elasticity of the medi
 
 A pulse travelling through a rope will get reflected at the end of the rope and travel back in the opposite direction. If the end of the rope is fixed, the reflected pulse will be inverted. If the end of the rope can move, the reflected pulse will be in the same orientation as the incoming pulse.
 
-A one-dimensional wave in rope of linear mass density, $\mu$, will transfer energy at an average rate:
+A one-dimensional wave in a rope of linear mass density, $\mu$, will transfer energy at an average rate:
 \begin{align*}
 P = \frac{1}{2}\omega^2\mu A^2 v 
 \end{align*}
@@ -737,48 +708,66 @@ f &= \frac{nv}{2L}
 
 \newpage
 \section{Thinking about the material}
-\subsection{Reflect and research}
 
-\begin{enumerate}
+\begin{chapteractivity}{Reflect and research}
+{
 \item Look up a video of the Tacoma Narrows bridge failing, and explain what happened.
 \item Why do airlines ask you to turn off your electronic devices during take-off?
 \item Is it true that there is no sound in space?
 \item What type of wave was first observed in 2015?
-\end{enumerate}
-\subsection{To try at home}
-\begin{enumerate}
+}
+\end{chapteractivity}
+
+
+\begin{chapteractivity}{To try at home}
+{
 \item Confirm that the reflected pulse from a rope on a string is inverted when the end of the rope is fixed.
 \item Think of different ways you could create a standing wave at home and try one of them out. How many harmonics can you create? How can you modify your set-up to create more harmonics?
-\end{enumerate}
-\subsection{To try in the lab}
+}
+\end{chapteractivity}
+
+\begin{chapteractivity}{To try in the lab}
+{
+\item Propose an experiment to verify the relation $v=\lambda f$.
+}
+\end{chapteractivity}
+
 
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
 
-\begin{problemParts}{soln:waves:clarinet}{\label{prob:waves:clarinet} A clarinet can be modelled as an air column that is open at one end and closed at the other end, as in Figure \ref{fig:waves:clarinetmodel}.
-\capfig{0.5\textwidth}{figures/Waves/clarinetmodel.png}{\label{fig:waves:clarinetmodel} A clarinet (of length $L$) modelled as an air column that is closed at one end.}}
-\item Draw the first three harmonics for a clarinet.
+\begin{problem}{soln:waves:clarinet}{\label{prob:waves:clarinet} A clarinet can be modelled as an air column that is open at one end and closed at the other end, as in Figure \ref{fig:waves:clarinetmodel}.
+\capfig{0.5\textwidth}{figures/Waves/clarinetmodel.png}{\label{fig:waves:clarinetmodel} A clarinet (of length $L$) modelled as an air column that is closed at one end.}
+\begin{enumerate}[label=\alph*),topsep=-10pt]
+\item Draw the first three harmonics for a clarinet (draw the maximum displacement of the air molecules as a function of distance in the clarinet).
 \item Find an expression for the wavelength of the $n^{th}$ harmonic for a clarinet of length $L$.
-\item If a clarinet is \SI{60}{cm} long, what is the lowest frequency note it can produce?
-\end{problemParts}
+\item If a clarinet is $\SI{60}{cm} long$, what is the lowest frequency note it can produce?
+\end{enumerate}
+}
+\end{problem}
 
-\begin{problemParts}{soln:waves:reflectioncoeff}{\label{prob:waves:reflectioncoeff}A pulse propagates down a rope of mass per unit length $\mu_1$ that is tied to a second rope with a mass per unit length $\mu_2$ (Figure \ref{fig:waves:reflectioncoeffgiven}). The tensions in the ropes are equal in magnitude.
-\capfig{0.5\textwidth}{figures/Waves/reflectioncoeffgiven.png}{\label{fig:waves:reflectioncoeffgiven} An incident pulse propagates through a rope connected to a another rope with a different linear mass density. When it reaches the boundary, part of the pulse will be reflected and part will be transmitted.}}
-\item Write the displacements of the incident pulse, the reflected pulse, and the transmitted pulse in the form $D(x,t)=f(t\pm x/v)$, where $f$ is some function that depends on either $t+x/v$ or $t-x/v$, depending on the direction that the pulse is travelling in.
+\begin{problem}{soln:waves:reflectioncoeff}{\label{prob:waves:reflectioncoeff}A pulse propagates down a rope of mass per unit length $\mu_1$ that is tied to a second rope with a mass per unit length $\mu_2$ (Figure \ref{fig:waves:reflectioncoeffgiven}). The tensions in the ropes are equal in magnitude.
+\capfig{0.5\textwidth}{figures/Waves/reflectioncoeffgiven.png}{\label{fig:waves:reflectioncoeffgiven} An incident pulse propagates through a rope connected to a another rope with a different linear mass density. When it reaches the boundary, part of the pulse will be reflected and part will be transmitted.}
+\begin{enumerate}[label=\alph*),topsep=-10pt]
+\item Write the displacements of the incident pulse, the reflected pulse, and the transmitted pulse in the form $D(x,t)=D(a(t\pm x/v))$, where $a$ is some constant that you need to determine, and the choice of $+$ or $-$ depends on the direction that the pulse is travelling in.
 \item The reflection coefficient, $R$, is the ratio of the amplitude of the reflected pulse to the amplitude of the incident pulse. Using the boundary conditions, show that the reflection coefficient is given by:
 \begin{align*}
 R=\frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}
 \end{align*}
+\end{enumerate}
 Note: The boundary is the interface between the two ropes. By ``using the boundary conditions'', we mean that you should think about what must be true at the boundary for this problem to make sense. Boundary conditions are often more obvious than you think!
-\end{problemParts}
+
+}
+\end{problem}
 
 \newpage
 \subsection{Solutions}
 
 \begin{solution}{prob:waves:clarinet}\label{soln:waves:clarinet}
 \begin{enumerate}[(a)]
-\item \capfig{0.5\textwidth}{figures/Waves/clarinet.png}{\label{fig:waves:clarinet} The first three harmonics for a clarinet. There is a node at the fixed end and an anti-node at the free end.}
+\item The first three harmonics are are shown in Figure \ref {fig:waves:clarinet}.
+\capfig{0.5\textwidth}{figures/Waves/clarinet.png}{\label{fig:waves:clarinet} The first three harmonics for a clarinet. There is a node at the fixed end and an anti-node at the free end.}
 \item The equation for a standing wave is:
 \begin{align*}
 D(x,t)=2A\sin(kx)cos(\omega t)
@@ -792,7 +781,7 @@ This condition can be expressed as:
 \begin{align*}
 kL&=\frac{(2n-1)\pi}{2}\\
 \frac{2\pi L}{\lambda}&=\frac{(2n-1)\pi}{2}\\
-\therefore \lambda=\frac{4L}{2n-1}
+\therefore \lambda&=\frac{4L}{2n-1}
 \end{align*}
 where, in the second line, we used $k=2\pi /\lambda$. We can check that this formula works for the first three harmonics:
 \begin{align*}
@@ -829,15 +818,15 @@ Discussion: This frequency is close to the $D_3$ note, which has a frequency of 
 
 The incident pulse (denoted by $i$) is a travelling wave, moving in one dimension in the positive $x$ direction. The incident pulse can thus be described by the function:
 \begin{align*}
-D_i(x,t)=A_i\cos(k_1x-\omega t)\\
+D_I(x,t)=A_I\cos(k_1x-\omega t)\\
 \end{align*}
-We will use the formulas $k=2\pi/\lambda$ and $\omega=2\pi f$ to rewrite this equation in the form $D=f(t- x/v)$. The frequency, $f$, of the wave will be the same in both ropes. The velocity of the wave, and therefore its wavelength, depends on the mass density of the rope. Since the incident wave travels through the first rope ($\mu_1$), its velocity will be $v_1$ and its wavelength will be $\lambda_1$. The incident wave can thus be described by:
+We will use the formulas $k=2\pi/\lambda$ and $\omega=2\pi f$ to rewrite this equation in the form $D=(a(t\pm x/v))$. The frequency, $f$, of the wave will be the same in both ropes. The velocity of the wave, and therefore its wavelength, depends on the mass density of the rope. Since the incident wave travels through the first rope ($\mu_1$), its velocity will be $v_1$ and its wavelength will be $\lambda_1$. The incident wave can thus be described by:
 \begin{align*}
-D_i&=A_i\cos\left( \frac{2\pi}{\lambda_1}x-2\pi ft\right)\\
-&=A_i\cos \left( 2\pi\left(\frac{1}{\lambda_1}x- ft\right)\right)\\
-&=A_i\cos \left( 2\pi f\left(\frac{x}{v_1}- t\right)\right)\\
-&=A_i\cos \left( -2\pi f\left(t-\frac{x}{v_1}\right)\right)\\
-D_i&=A_i\cos \left(2\pi f\left(t-\frac{x}{v_1}\right)\right)
+D_I&=A_I\cos\left( \frac{2\pi}{\lambda_1}x-2\pi ft\right)\\
+&=A_I\cos \left( 2\pi\left(\frac{1}{\lambda_1}x- ft\right)\right)\\
+&=A_I\cos \left( 2\pi f\left(\frac{x}{v_1}- t\right)\right)\\
+&=A_I\cos \left( -2\pi f\left(t-\frac{x}{v_1}\right)\right)\\
+D_I&=A_I\cos \left(2\pi f\left(t-\frac{x}{v_1}\right)\right)
 \end{align*}
 where we used $v=f\lambda$, and noted that $\cos(-x)=\cos(x)$.\\
 
@@ -851,33 +840,33 @@ D_R&=A_R\cos \left( 2\pi f\left(t+\frac{x}{v_1}\right)\right)
 \end{align*}
 \item We will consider the boundary conditions at the interface between the two ropes. One boundary condition is that the rope must be continuous. As a result, the vertical displacement on the $-x$ side of the boundary must be the same as the vertical displacement on the $+x$ side of the boundary at every instant: 
 \begin{align*}
-D_{-x}&=D_{+x}\\
+D_{-x}&=D_{+x}\quad\text{at $x=0$}
 \end{align*}
-Consequently, the amplitude on the $+x$ side of the boundary must be equal to the amplitude on the $-x$ side. The amplitude on the $+x$ side is equal to the amplitude of the transmitted pulse. For the $-x$ side of the boundary, we have to take into account that the incident and reflected pulses will superimpose (when the front of the incident pulse reaches the boundary, it will be reflected and interfere with the end of the incident pulse). This boundary condition can thus be expressed as:
+The amplitude on the $+x$ side is equal to the amplitude of the transmitted pulse. For the $-x$ side of the boundary, we have to take into account that the incident and reflected pulses will superimpose (when the front of the incident pulse reaches the boundary, it will be reflected and interfere with the end of the incident pulse). This boundary condition can thus be expressed as:
 \begin{align*}
-A_i+A_R&=A_T
+A_I+A_R&=A_T
 \end{align*}
-Unless there is a kink in the rope, the slope of the rope must also be continuous at the boundary. Since the incident and reflected pulses superimpose, and the principle of superposition states that the net displacement is the sum of the displacement of these two waves, we can write:
+The slope of the rope must also be continuous at the boundary. Since the incident and reflected pulses superimpose, and the principle of superposition states that the net displacement is the sum of the displacement of these two waves, we can write:
 \begin{align*}
-\die{}{x}(D_i+D_R)\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}\\
-\die{}{x}D_i\Bigr|_{x=0}+\die{}{x}D_R\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}
+\die{}{x}(D_I+D_R)\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}\\
+\die{}{x}D_I\Bigr|_{x=0}+\die{}{x}D_R\Bigr|_{x=0}&=\die{}{x}D_T\Bigr|_{x=0}
 \end{align*}
 Using our equations for the incident, transmitted, and reflected pulses found in part a), and taking the appropriate partial derivatives, this equation becomes:
 \begin{align*}
-(A_i/v_1) \sin \left(2\pi f\left( t-\frac{x}{v_1}\right)\right)\Bigr|_{x=0}+(-A_R/v_1) \sin \left( 2\pi f\left( t+\frac{x}{v_1}\right)\right)\Bigr|_{x=0}&=\\(A_T/v_2) \sin \left( 2\pi f\left( t-\frac{x}{v_2}\right)\right)\Bigr|_{x=0}
+(A_I/v_1) \sin \left(2\pi f\left( t-\frac{x}{v_1}\right)\right)\Bigr|_{x=0}+(-A_R/v_1) \sin \left( 2\pi f\left( t+\frac{x}{v_1}\right)\right)\Bigr|_{x=0}&=\\(A_T/v_2) \sin \left( 2\pi f\left( t-\frac{x}{v_2}\right)\right)\Bigr|_{x=0}
 \end{align*}
 Evaluating at $x=0$ gives:
 \begin{align*}
-(A_i/v_1) \sin (2\pi ft) +(-A_R/v_1) \sin (2\pi ft)&=(A_T/v_2) \sin (2\pi ft)\\
-\frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_T}{v_2} 
+(A_I/v_1) \sin (2\pi ft) +(-A_R/v_1) \sin (2\pi ft)&=(A_T/v_2) \sin (2\pi ft)\\
+\frac{A_I}{v_1} -\frac{A_R}{v_1}&=\frac{A_T}{v_2} 
 \end{align*}
-Using our first condition, $A_i+A_R=A_T$, we get:
+Using our first condition, $A_I+A_R=A_T$, we get:
 \begin{align*}
-\frac{A_i}{v_1} -\frac{A_R}{v_1}&=\frac{A_i}{v_2}+\frac{A_R}{v_2}\\
+\frac{A_I}{v_1} -\frac{A_R}{v_1}&=\frac{A_I}{v_2}+\frac{A_R}{v_2}\\
 \end{align*}
-Now, we can rearrange to find the reflection coefficient, $R=A_R/A_i$:
+Now, we can rearrange to find the reflection coefficient, $R=A_R/A_I$:
 \begin{align*}
-A_i\left( \frac{v_2-v_1}{v_1v_2}\right)&=A_R\left( \frac{v_2+v_1}{v_1v_2}\right)\\
+A_I\left( \frac{v_2-v_1}{v_1v_2}\right)&=A_R\left( \frac{v_2+v_1}{v_1v_2}\right)\\
 R&=\frac{v_2-v_1}{v_2+v_1}
 \end{align*}
 Since the velocities in the first and second rope are $v_1=\sqrt{F_T/\mu_1}$ and $v_2=\sqrt{F_T/\mu_2}$, respectively, the reflection coefficient can be written as:
