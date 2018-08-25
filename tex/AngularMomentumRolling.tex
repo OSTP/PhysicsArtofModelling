@@ -698,9 +698,66 @@ Measure the critical angle of an incline, above which an object cannot roll with
 
 \newpage
 \section{Sample problems and solutions}
-
+\subsection{Problems}
+\begin{problem}{soln:angularmomentumrolling:yoyo}{\label{prob:angularmomentumrolling:yoyo} A yo-yo can be modelled as two uniform disks, each of radius $r_2$, attached to either side of a smaller uniform disk of radius $r_1$, as in Figure \ref{fig:angularmomentumrolling:yoyo}. Each disk has a has mass $m$. A string is wrapped around the smaller disk and then the yo-yo is released. What is the angular acceleration of the yo-yo when it is falling (without slipping)? (Note: When the string is wrapped around the yo-yo, it will slightly increase the radius of the disk, but assume that this effect is negligible.)
+\capfig{0.5\textwidth}{figures/AngularMomentumRolling/yoyo.png}{\label{fig:angularmomentumrolling:yoyo}Left: Side view of the yo-yo. Right: Front view of the yo-yo, modelled as two disks of radius of $r_2$ attached to either side of a disk of radius $r_1$.}}
+\end{problem}
 
 \newpage
 \subsection{Solutions}
+\begin{solution}{prob:angularmomentumrolling:yoyo}\label{soln:angularmomentumrolling:yoyo}TODO: EDIT! Especially when you get to the moment of inertia stuff!
+
+The forces acting on the yo-yo are shown in Figure \ref{fig:angularmomentumrolling:yoyo_fbd}.
+\capfig{0.2\textwidth}{figures/AngularMomentumRolling/yoyo_fbd.png}{\label{fig:angularmomentumrolling:yoyo_fbd}Free body diagram for the yo-yo}
+We can find the angular acceleration by using Newton's Second Law for rotational quantities:
+\begin{align*}
+\vec\tau^{ext}=I\vec\alpha
+\end{align*}
+The two forces acting on the yo-yo are its weight and the tension from the rope. The weight does not create a torque on the yo-yo (since it acts on the axis of rotation), so the sum of the torques on the yo-yo is:
+\begin{align*}
+I\vec\alpha=Tr_1
+\end{align*}
+We have two unknowns, the tension and the angular acceleration, so we need another equation. First, we rearrange for $T$ in the equation above:
+\begin{align*}
+T=\frac{I\alpha}{r_1}
+\end{align*}
+For our second equation, we can examine the net forces acting on the yo-yo. We set up to be the positive direction and let $M$ represent the total mass of the yo-yo. The sum of the forces on the yo-yo is:
+\begin{align*}
+\vec F^{ext}&=Mg-T\\
+Ma_{CM}&=Mg-T
+\end{align*}
+Using our expression for $T$ found earlier, we can write:
+\begin{align*}
+Ma_{CM}&=Mg-\frac{I\alpha}{r_1}
+\end{align*}
+Since the yo-yo exhibits rolling without slipping, the acceleration of the centre of mass is related to the angular acceleration by $a_{CM}=\alpha r_1$:
+\begin{align*}
+M\alpha r_1&=Mg-\frac{I\alpha}{r_1}
+\end{align*}
+Solving for $\alpha$ gives:
+\begin{align*}
+\alpha=\frac{Mg}{Mr_1+\frac{I}{r_1}}
+\end{align*}
+Each of the disks that make up the yo-yo are rotating about their centre of mass. The moment of inertia for each of the large disks is thus:
+\begin{align*}
+I_2=\frac{1}{2}mr_2^2
+\end{align*}
+and the moment of inertia for the smaller disk is:
+\begin{align*}
+I_1=\frac{1}{2}mr_1^2
+\end{align*}
+The moment of the inertia of the yo-yo is given by:
+\begin{align*}
+I&=2I_2+I_1\\
+I&=2(\frac{1}{2}mr_2^2)+\frac{1}{2}mr_1^2\\
+I&=m(r_2^2+\frac{1}{2}r_1^2)
+\end{align*}
+Noting that the total mass of the yo-yo is $M=3m$, the angular acceleration is equal to:
+\begin{align*}
+\alpha&=\frac{3mg}{3mr_1+\frac{I}{r_1}}\\
+&=\frac{3mg}{3mr_1+\frac{m(r_2^2+\frac{1}{2}r_1^2)}{r_1}}\\
+\alpha&=\frac{3gr_1}{r_2^2+(7/2)r_1^2}
+\end{align*}
+\end{solution}
 
 
