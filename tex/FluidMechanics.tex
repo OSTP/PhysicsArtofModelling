@@ -38,11 +38,10 @@ where $F_\perp$ is the component of the force perpendicular to the surface. The 
 When a force is exerted on a fluid, it creates pressure that we model as being \textbf{everywhere in the fluid}.
 For each element in the fluid, the pressure from the surrounding fluid exerts an inwards force on the element from \textbf{all directions} (see Figure \ref{fig:fluidmechanics:pressure}). In reaction, the element exerts an outwards force in all directions, and these forces act on neighbouring elements. 
 
-This is somewhat analogous to the tension that exists everywhere in a rope, where each element of the rope experiences forces from the rope that try to pull it apart. Pressure can be thought of as a ``negative'' tension, in that the material under pressure is experiencing forces trying to collapse the element onto itself, rather than trying to pull it apart. To create a tension in a rope, one would exert an outwards force on the rope (in order to stretch it), so that the rope exerts an inwards force in reaction. In order to create pressure in a fluid, one must exert an inwards force on the fluid, which then exerts an outwards force in reaction.
-
+This is somewhat analogous to the tension that exists everywhere in a rope, where each element of the rope experiences forces from the neighbouring elements in rope that try to ``pull it apart''. Pressure can be thought of as a ``negative'' tension, in that the material under pressure is experiencing forces trying to collapse the element onto itself, rather than trying to pull it apart. To create a tension in a rope, one would exert an outwards force on the rope (in order to stretch it), so that the rope exerts an inwards force in reaction. In order to create pressure in a fluid, one must exert an inwards force on the fluid, which then exerts an outwards force in reaction.
 
 If we consider a small cubic volume of fluid, as depicted in the centre of Figure \ref{fig:fluidmechanics:pressure}, that element of fluid will experience inwards forces in all directions from the pressure in the surrounding fluid, as illustrated by the arrows. If the forces from the pressure result in no net force on the fluid element, then we say that the fluid is in hydrostatic equilibrium, and the element of fluid will be at rest in an inertial frame of reference.
-\capfig{0.2\textwidth}{figures/FluidMechanics/pressure.png}{\label{fig:fluidmechanics:pressure}A small element inside of a fluid will experience no net force from the pressure in the fluid, since the force from the pressure is exerted in all directions.}
+\capfig{0.2\textwidth}{figures/FluidMechanics/pressure.png}{\label{fig:fluidmechanics:pressure}A small element inside of a fluid with pressure will experience no net force from the pressure in the fluid, since the force associated with the pressure in the fluid is exerted in all directions.}
 
 Consider, instead, an element of fluid that at the edge of a container for the fluid (e.g. a cup of water), as depicted in Figure \ref{fig:fluidmechanics:pressure_edge}.
 \capfig{0.3\textwidth}{figures/FluidMechanics/pressure_edge.png}{\label{fig:fluidmechanics:pressure_edge}At the edge of a container, a small element of fluid will exert an outwards force on the container, and the container will exert an inwards force on the element of fluid.}
@@ -57,7 +56,7 @@ In general, if there is an interface with fluid on either side of it a different
 \item By sucking the air out of the can, you also suck in on the walls of the can. 
 \item You lower the pressure inside the can so that the air outside the can exerts a larger inwards force on the can than the outwards force from the air inside the can. \correct
 \item You lower the pressure inside the can so that the air inside the can exerts a pulling force on the walls of the can.
-\item All of the above. 
+\item All of the above are all valid ways to model this. 
 \end{MCquestion}
 \end{checkpoint}
 
@@ -70,7 +69,7 @@ The element of fluid has a total mass, $m$, given by:
 \begin{align*}
 m = \rho V = \rho Ah
 \end{align*}
-where $V=Ah$ is the volume of the fluid, and $\rho$, its density.
+where, $V=Ah$, is the volume of the fluid, and, $\rho$, its density.
 
 The net (horizontal) force exerted by the external fluid on the fluid element is zero along the vertical surfaces. Let $P_1$ be the pressure in the fluid above the fluid element, and $P_2$ be the pressure below the fluid element. If we choose a $y$ axis that is positive upwards and the fluid element does not accelerate in the vertical direction, then the $y$ component of Newton's Second Law, written for the fluid element, is:
 \begin{align*}
@@ -85,25 +84,25 @@ where we used the fact that the force resulting from a pressure is given by the 
 \Aboxed{P(y_2) - P(y_1) = -\rho g (y_2 - y_1)}
 \end{align}
 where the $y$ axis is defined to increase in the upwards direction. Since the pressure in the fluid depends on the location in the fluid, we say that there is a ``pressure gradient'' in the fluid.
+\newpage
 \begin{checkpoint}
 \capfig{0.2\textwidth}{figures/FluidMechanics/straw.png}{\label{fig:fluidmechanics:straw}Holding water in a vertical straw.}
 \begin{MCquestion}{You use your finger to block off the top end of a straw and then remove the straw from a glass of water. What is the most correct description of why the water stays in the straw (Figure \ref{fig:fluidmechanics:straw}) before you release your finger?}
 \item The straw cannot have vacuum inside of it; unless the finger is removed to let air in to replace the water, the water will remain in the straw.
 \item There is a small amount of vacuum above the water that sucks the water upwards and prevents it from dropping. 
-\item The pressure of the air below the water in the straw is higher than the pressure of the air above the water. \correct
-\item The pressure of the air below the water in the straw is lower than the pressure of the air above the water.
+\item The pressure of the air in the straw below the water is higher than the pressure of the air in the straw above the water. \correct
+\item The pressure of the air in the straw below the water is lower than the pressure of the air in the straw above the water.
 \end{MCquestion}
 \end{checkpoint}
 
-
-We have assumed that the density of the fluid, $\rho$, is constant, and that the fluid cannot be compressed. This is a very good approximation for a liquid such as water, but not for a gas, whose density will depend on its pressure. If the fluid were a gas (e.g. a column of air in our atmosphere), both the density and the pressure will change as a function of height. We can easily take this into account in our model, if we consider the fluid element to have a very small height, $dy$, instead of the finite height, $h$, as in the derivation above. A fluid with an infinitesimal height, $dy$, is illustrated in Figure \ref{fig:fluidmechanics:pressure_gravity2}.
+We have assumed that the density of the fluid, $\rho$, is constant, and that the fluid cannot be compressed. This is a very good approximation for a liquid such as water, but not for a gas, whose density will depend on its pressure. If the fluid were a gas (e.g. a column of air in our atmosphere), both the density and the pressure will change as a function of height. We can easily take this into account in our model, if we consider the fluid element to have a very small height, $dy$, instead of the finite height, $h$, as in the derivation above. A fluid element with an infinitesimal height, $dy$, is illustrated in Figure \ref{fig:fluidmechanics:pressure_gravity2}.
 \capfig{0.4\textwidth}{figures/FluidMechanics/pressure_gravity2.png}{\label{fig:fluidmechanics:pressure_gravity2}Pressure gradient from gravity on an infinitesimal fluid element.}
 
  In the very small height, $dy$, the density of the fluid, $\rho$, can be taken to be constant, and the infinitesimal element of fluid will have a mass $dm$:
 \begin{align*}
 dm = \rho A dy
 \end{align*}
-We can model the pressure exerted by the fluid above the fluid element as $P+dP$, and the pressure exerted by the fluid below as $P$, where $dP$ is a small (negative) change in pressure\footnote{We placed the $dP$ on the top part of the fluid, even though the pressure is higher on the bottom part of the fluid, because the $y$ axis increases upwards. We are really interested in the change in pressure, $dP$, that corresponds to a change in height along the positive $y$ direction, $dy$. }. The $y$ component of Newton's Second Law written for the infinitesimal fluid element is thus:
+We can model the pressure exerted by the fluid above the fluid element as $P+dP$, and the pressure exerted by the fluid below as $P$, where $dP$ is a small (negative) change in pressure\footnote{We placed the $dP$ on the top part of the fluid, even though the pressure is higher on the bottom part of the fluid, because the $y$ axis increases upwards. We are really interested in the change in pressure, $dP$, that corresponds to a change in height, $dy$, along the positive $y$ direction. }. The $y$ component of Newton's Second Law written for the infinitesimal fluid element is thus:
 \begin{align*}
 \sum F_y = PA - (P+dP)A -dm g &=0\\
 PA -PA -dPA - \rho A dy g &=0\\
@@ -164,11 +163,12 @@ a = \frac{\rho_0}{P_0}
 Pascal's Principle states that \textbf{if an external pressure is exerted on a fluid, the pressure everywhere in the fluid increases by that amount}. For example, if a fluid is contained in a piston with a cross-section area, $A$, and a force, $F$, is exerted on the piston (Figure \ref{fig:fluidmechanics:piston}), then the pressure everywhere in the fluid increase by $F/A$. 
 \capfig{0.4\textwidth}{figures/FluidMechanics/piston.png}{\label{fig:fluidmechanics:piston}A force exerted on the piston will increase the pressure everywhere in the fluid.}
 
-If we wish to determine the absolute pressure in the water at some depth, $h$, in the ocean, we need to include the fact that the Earth's atmosphere exerts a net downwards force on the surface of the ocean in addition to the fact that the pressure changes with depth due to gravity. The pressure from the air in the Earth's atmosphere is called ``atmospheric pressure'', and depends on a variety of conditions, such as the weather. The average pressure from the atmosphere is $P_0=\SI{1.013e5}{Pa}$. If the atmofspheric pressure is $P_0$ at the surface of the ocean, then the pressure at some depth, $h$, is given by:
+If we wish to determine the absolute pressure in the water at some depth, $h$, in the ocean, we need to include the fact that the Earth's atmosphere exerts a net downwards force on the surface of the ocean in addition to the fact that the pressure changes with depth due to gravity. The pressure from the air in the Earth's atmosphere is called ``atmospheric pressure'', and depends on a variety of conditions, such as the weather. The average pressure from the atmosphere is $P_0=\SI{1.013e5}{Pa}$. If the atmospheric pressure is $P_0$ at the surface of the ocean, then the pressure at some depth, $h$, is given by:
 \begin{align*}
 P(h) = P_0 + \rho g h
 \end{align*}
 where $\rho$ is the density of water. As a consequence, the pressure at any depth, $h$, in a fluid is the same everywhere at that depth in the fluid. 
+\newpage
 \begin{checkpoint}
 \capfig{0.4\textwidth}{figures/FluidMechanics/glasses.png}{\label{fig:fluidmechanics:glasses}Three glasses with different shapes.}
 \begin{MCquestion}{You fill the three glasses in Figure \ref{fig:fluidmechanics:glasses} such that the liquid reaches a height $h$ above the bottom of the glass. What can you say about the pressure of the liquid at the bottom of each glass?}
@@ -179,9 +179,10 @@ where $\rho$ is the density of water. As a consequence, the pressure at any dept
 \item It is only the same for all glasses if we can neglect atmospheric pressure. 
 \end{MCquestion}
 \end{checkpoint}
-\newpage
+
 \begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/lift.png}{\label{fig:fluidmechanics:lift}A force exerted on the piston of a hydraulic lift in order to lift a mass $M$.}
 A hydraulic lift exploits Pascal's principle in order to use a small force to exert a large force. The hydraulic lift in Figure \ref{fig:fluidmechanics:lift} shows a lift that is constructed by having a fluid between two vertical movable pistons. The pistons are cylindrical and the diameter of their cross-sections are $D$ and $D/2$. A mass, $M$, is placed on the piston with the larger diameter. What is the magnitude of the force, $\vec F$, that must be applied on the smaller piston in order to lift the mass, $M$?}
+
 If a force $\vec F$ is applied to the small piston, then the pressure in the fluid will increase by:
 \begin{align*}
 \Delta P = \frac{F}{A}=\frac{F}{\pi \frac{D^2}{4}}=\frac{4F}{\pi D^2}
@@ -208,7 +209,7 @@ P_A &= P_B \\
 P_0+\rho g h &= P\\
 \therefore P - P_0 &= \rho g h 
 \end{align*}
-The difference between a pressure and the atmospheric pressure is called ``gauge pressure'', and is all that we can measure if we do not know the absolute value of the atmospheric pressure. Using a manometer, the gauge pressure is given by $\rho g h$, whereas the ``absolute pressure'', $P$, is given by adding the atmospheric pressure to the gauge pressure, $P = P_0 + \rho g h$. Most pressure measuring devices (``pressure gauges''), measure pressure relative to atmospheric pressure, using a similar mechanism. Thus, if these measure ``gauge pressure'', one must remember to add the atmospheric pressure if one needs to determine the absolute pressure.
+The difference between a pressure and the atmospheric pressure is called ``gauge pressure'', and is all that we can measure if we do not know the absolute value of the atmospheric pressure. Using a manometer, the gauge pressure is given by $\rho g h$, whereas the ``absolute pressure'', $P$, is given by adding the atmospheric pressure to the gauge pressure, $P = P_0 + \rho g h$. Most pressure measuring devices (``pressure gauges''), measure pressure relative to atmospheric pressure, using a similar mechanism. 
 
 The atmospheric pressure at a location on Earth varies based on the weather. A barometer is an instrument designed to measure the atmospheric pressure. A simple barometer can be built from a manometer, with one end closed, as illustrated in Figure \ref{fig:fluidmechanics:barometer}.
 {\capfig{0.3\textwidth}{figures/FluidMechanics/barometer.png}{\label{fig:fluidmechanics:barometer}A barometer constructed from a manometer to measure relative changes in atmospheric pressure.}
@@ -246,7 +247,7 @@ h=\frac{P_1}{\rho g}=\frac{(\SI{1.013e5}{Pa})}{(\SI{1000}{kg/m^3})(\SI{9.8}{m/s^
 \section{Buoyancy}
 In this section, we examine how the pressure gradient in a fluid leads to a force of buoyancy on an object that is immersed in the fluid.
 \capfig{0.7\textwidth}{figures/FluidMechanics/buoyant.png}{\label{fig:fluidmechanics:buoyant}(Left:) The weight of a fluid element, $\vec F_g$, is supported by the net upwards force from the pressure, $\vec F_B$, of the fluid below it. (Right:) If the fluid element is removed and replaced with an object, there will still be the same net upwards force, $\vec F_B$, from the pressure of the fluid, which is now exerted on the object.}
-In the left panel of Figure \ref{fig:fluidmechanics:buoyant}, we show an element of fluid with a volume $V$. The weight of the element of fluid, $\vec F_g$, is supported by the net upwards force, $\vec F_B$, exerted by the pressure of the fluid surrounding the fluid element. The mass, $M$, of the element of fluid is given by:
+In the left panel of Figure \ref{fig:fluidmechanics:buoyant}, we show a hemi-spherical element of fluid with a volume $V$. The weight of the element of fluid, $\vec F_g$, is supported by the net upwards force, $\vec F_B$, exerted by the pressure of the fluid surrounding the fluid element. The mass, $M$, of the element of fluid is given by:
 \begin{align*}
 M = \rho V
 \end{align*} 
@@ -277,6 +278,7 @@ This ``principle'' was originally discovered by Archimedes, who stated that the 
 \end{checkpoint}
 
 \begin{example}{You measure the weight of an object by suspending it with a spring scale. When you measure the weight of the object in air, you find that it has a weight $W_{a}$. When you measure the weight of the object when it is completely submerged in water, you find that it has a weight $W_w$. What is the density of the object?}
+
 Given the weight of the object in air, we can easily determine its mass:
 \begin{align*}
 M = \frac{W_a}{g}
@@ -290,9 +292,9 @@ where $\rho_w$ is the density of water. Given the volume, we can now determine t
 \begin{align*}
 \rho = \frac{M}{V}=\frac{W_a\rho_w g}{g (W_w -W_a)}=\rho_w\frac{W_a}{W_w -W_a}
 \end{align*}
-
 \textbf{Discussion:} By using Archimedes' Principle, we were able to determine the volume, and thus the density of the object, by comparing measurements of its weight in air and in water. This is similar to the method that Archimedes came up with to determine if a crown owned by a general was made of real gold or if some of the gold had been replaced with an equal weight of silver. Archimedes supposedly went to the baths to ponder how to determine if the crown was made of gold and had his Eureka moment when we he noticed the water level in the bath went up as he went into the bath. He realized that denser gold would displace less water than silver for an equal weight. 
 \end{example}
+\vspace{-0.45cm}
 \begin{studentOpinion}{Olivia}
 Whether or not an object will float depends on its density. Let's consider an object that is placed in water. The only forces acting on the object are its weight and the force of buoyancy. We want to know when the net force will be zero. I'm going to write out Newton's Second Law for the object, but writing the mass of the object in terms of its density and volume.
 \begin{align*}
@@ -306,16 +308,16 @@ where $O$ refers to the object and $W$ refers to the water. Cancelling out the $
 \end{align*}
 Consider a solid cube that has the same density as water. In this case, $\rho_0/\rho_W=1$, and so $V_W/V_0=1$. This means that, in order for the cube to float, a volume of water that is equal to the volume of the cube must be displaced. So, the entire cube must be submerged. If you placed this cube \SI{5}{m} deep in the water, it would stay at this depth.
 
-Now consider a cube whose density is half that of water. We find that $\rho_0/\rho_W=0.5$, so we must have $V_W/V_0=0.5$. In order for the cube to float, only half of it needs to be submerged. If you placed the cube \SI{5}{m} deep in the water, it would rise to the surface and stop when half of it was above water. 
+Now consider a cube whose density is half that of water. We find that $\rho_0/\rho_W=0.5$, so we must have $V_W/V_0=0.5$. In order for the cube to float, only half of it needs to be submerged. If you placed the cube \SI{5}{m} deep in the water, it would rise to the surface and stop when half of it was above water (after bobbing for a bit). 
 
 Finally, what about a cube whose density is 1.5 times the density of water? In this case, one and a half cubes worth of water would have to be displaced in order for the cube to float. Even when the entire cube is submerged, not enough volume has been displaced in order for it to float, so the cube will sink. 
 
-Objects like pool noodles or life jackets allow us to float because they have low densities. They have very little mass (they don't add much to the weight) in a relatively large volume (they can displace water to add to the buoyant force). 
+Objects like pool noodles or life jackets allow us to float because they have low densities. They have very little mass (they don't add much to the weight) in a relatively large volume (they can displace water to add to the buoyant force). An object with a density less than water will float with some fraction of the object being submerged.
 \end{studentOpinion}
 
 
 \section{Hydrodynamics}
-In the previous sections we developed ``hydrostatic'' models for fluids when those fluids are at rest (in some inertial reference frame). In this section, we develop ``hydrodynamic'' models to discuss what happens when fluids flow. We will restrict most of our models to fluids that flow in a ``laminar'' fashion, rather than a ``turbulent'' fashion.
+In the previous sections we developed ``hydrostatic'' models for fluids when those fluids are at rest (in some inertial reference frame). In this section, we develop ``hydrodynamic'' models to discuss what happens when fluids flow. We will restrict our models to fluids that flow in a ``laminar'' fashion, rather than a ``turbulent'' fashion.
 
 Laminar flow is the flow of a fluid when each particle in the fluid follows a path that can be represented by a line (a ``streamline''). Turbulent flow is the flow of a fluid where particles can follow rather complex paths, usually involving ``Eddy currents'' (little whirlpools). The two types of flow are illustrated in Figure \ref{fig:fluidmechanics:turbulent}.
 \capfig{0.7\textwidth}{figures/FluidMechanics/turbulent.png}{\label{fig:fluidmechanics:turbulent}Laminar (left) and turbulent (right) flow of a fluid around an object.}
@@ -392,7 +394,7 @@ To model how the fluid moves through this pipe, we can use energy and the Work-E
 
 The fluid that is to the left of the element of fluid exerts a pressure, $P_1$, on the fluid element that leads to a net force, $\vec F_1$, towards the right. Similarly, the fluid to the right of the element of fluid exerts a net force $\vec F_2$ in the opposite direction, due to the pressure $P_2$ on that side of the fluid element.
 
-In a period of time, $\Delta t$, the left part of the fluid element will move a distance $l_1 = v_1 \Delta t$, while the the right part of the fluid element will move a distance $l_2=v_2\Delta t$. We can calculate the work done by each force, defining positive work to be in the direction of motion:
+In a period of time, $\Delta t$, the left part of the fluid element will move a distance $l_1 = v_1 \Delta t$, while the right part of the fluid element will move a distance $l_2=v_2\Delta t$. We can calculate the work done by each force, defining positive work to be in the direction of motion:
 \begin{align*}
 W_1 &=  F_1l_1 = (P_1A_1)(v_1 \Delta t)\\
 W_2 &= -F_2l_2 = -(P_2A_2)(v_2 \Delta t)
@@ -464,16 +466,17 @@ Bernoulli's principle also describes why the roof can be lifted off of a house i
 \end{MCquestion}
 \end{checkpoint}
 \newpage
-\begin{example}{\capfig{0.5\textwidth}{figures/FluidMechanics/watertower.png}{\label{fig:fluidmechanics:watertower}Water leaking out of a horizontal hole in a water tank.} A water tower is constructed so that the bottom of the water tank is a height $h_2$ above the ground, as illustrated in Figure \ref{fig:fluidmechanics:watertower}. The water in the tank is at a height $h_1$ from the bottom of the tank. A leak from a horizontal hole is found at the base of the tank. What is the horizontal distance, $d$, from the bottom of the tower to where the water from the leak hits the ground? Assume that the water level in the tank is constant and that atmospheric pressure does not change appreciably over the height of the tower.}
-The pressure in the water tank leads to the water exiting the bottom of the tank with a horizontal velocity of magnitude $v$. That water then undergoes projectile motion on its way to the ground. We can first determine the speed of the water exiting the tank and then use the kinematics for projectile motion to model the distance, $d$. 
+\begin{example}{\capfig{0.5\textwidth}{figures/FluidMechanics/watertower.png}{\label{fig:fluidmechanics:watertower}Water leaking out of a horizontal hole in a water tank.} A water tower is constructed so that the bottom of the water tank is a height $h_2$ above the ground, as illustrated in Figure \ref{fig:fluidmechanics:watertower}. The water in the tank is at a height $h_1$ from the bottom of the tank. A leak from a hole is found at the base of the tank (the water flows horizontally out of the hole). What is the horizontal distance, $d$, from the bottom of the tower to where the water from the leak hits the ground? Assume that the water level in the tank is constant and that atmospheric pressure does not change appreciably over the height of the tower.}
+
+The pressure in the water tank leads to the water exiting the bottom of the tank with a horizontal velocity of magnitude, $v$. That water then undergoes projectile motion on its way to the ground. We can first determine the speed of the water exiting the tank and then use the kinematics for projectile motion to model the distance, $d$. 
 
 We model the flow of the water using a two-dimensional coordinate system with a horizontal $x$ axis (positive to the right), and a vertical $y$ axis (positive upwards). We place the origin at the bottom of the water tower, on the ground, below the hole, as shown in Figure \ref{fig:fluidmechanics:watertower}.
  
-At the top of tank, at a height $y = h_1+h_2$, the water has a speed of zero and is at atmospheric pressure, $P_0$. At the exit of the hole at the bottom of the tank, at a height $y = h_2$, the water has a speed $v$ and is also at atmospheric pressure. Using Bernoulli's equation at the top (1) and bottom (2) of the tank, we have:
+At the top of tank, at a height $y = h_1+h_2$, the water has a speed of zero and is at atmospheric pressure, $P_0$. At the exit of the hole at the bottom of the tank, at a height $y = h_2$, the water has a speed $v_2$ and is also at atmospheric pressure. Using Bernoulli's equation at the top (1) and bottom (2) of the tank, we have:
 \begin{align*}
 P_1 +\frac{1}{2}\rho v_1^2+ \rho g y_1&= P_2 + \frac{1}{2}\rho v_2^2 + \rho g y_2\\
 P_0 + (0) + \rho g (h_1+h_2) &= P_0 +  \frac{1}{2}\rho v^2 + \rho g h_2\\
-\therefore v &= \sqrt{2gh_1}
+\therefore v_2 &= \sqrt{2gh_1}
 \end{align*}
 which is exactly the speed that any object falling a distance $h_1$ would have. 
 
@@ -484,13 +487,13 @@ h_2 &= \frac{1}{2}gt^2\\
 \end{align*}
 The distance $d$ covered by the water is thus given by:
 \begin{align*}
-d &= vt = \sqrt{2gh_1}\sqrt{\frac{2h_2}{g}} = \sqrt{4h_1h_2}
+d &= v_2t = \sqrt{2gh_1}\sqrt{\frac{2h_2}{g}} = \sqrt{4h_1h_2}
 \end{align*}
-\textbf{Discussion:} We find that the water coming out of the bottom of the tank, when there is a height $h_1$ of water above it providing pressure, will have the same speed as that of a particle which has fallen a distance $h_1$. This is because there is no net pressure difference between the top of the water tank and where the water has exited the hole, so gravity is the only force doing work on the water. Gravity will do work at the same rate on particles of water as on any other particle, so the speed of the water particles at the bottom of the tank is the same as if they had fallen a distance $h_1$. Again, once the water particles are falling through the air, gravity is the only net force exerted on those particles, so they undergo projectile motion, just as any other particle would.
+\textbf{Discussion:} We find that the water coming out of the bottom of the tank, when there is a height, $h_1$, of water above it providing pressure, will have the same speed as that of a particle which has fallen a distance, $h_1$. This is because there is no net pressure difference between the top of the water tank and where the water has exited the hole, so gravity is the only force doing work on the water. Gravity will do work at the same rate on particles of water as on any other particle, so the speed of the water particles at the bottom of the tank is the same as if they had fallen a distance, $h_1$. Again, once the water particles are falling through the air, gravity is the only net force exerted on those particles, so they undergo projectile motion, just as any other particle would.
 \end{example}
-\newpage
-\begin{example}{You measure that water comes out of your kitchen faucet at a rate of $\SI{6}{l/min}$. The faucet has a diameter of $\SI{2}{cm}$. At what rate will water flow out of your basement faucet, which has a diameter of $\SI{1}{cm}$ and is located a height $h=\SI{3}{m}$ below your kitchen faucet? Assume that atmospheric pressure, $P_0$, does not change appreciably between your kitchen and basement.}
-\label{ex:fluidmechanics:kitchen}
+
+\begin{example}{\label{ex:fluidmechanics:kitchen}You measure that water comes out of your kitchen faucet at a rate of $\SI{6}{l/min}$. The faucet has a diameter of $\SI{2}{cm}$. At what rate will water flow out of your basement faucet, which has a diameter of $\SI{1}{cm}$ and is located a height, $h=\SI{3}{m}$, below your kitchen faucet? Assume that atmospheric pressure, $P_0$, does not change appreciably between your kitchen and basement.}
+
 The water flows out of the kitchen faucet at a speed, $v_1$, where the pressure is atmospheric. If the area of the kitchen faucet is $A_1$ we can determine the speed, $v_1$, from the given flow rate, $Q_1=\SI{6}{l/min}=\SI{1e-4}{m^3/s}$:
 \begin{align*}
 Q_1 &= A_1 v_1\\
@@ -514,7 +517,7 @@ You can easily verify that the speed of the water in different levels of your ho
 \end{example}
 
 \subsection{Viscosity}
-So far, we have assumed that fluids flow with no friction. In reality, the particles moving in  a fluid exert internal friction on each other called ``viscosity''. This can be modelled as the friction between different layers of fluid in a laminar flow. For example, you may notice that the water that flows in a river flows much faster in the middle of the river than near the river banks, where the water is almost stationary, as shown in Figure \ref{fig:fluidmechanics:river}. 
+So far, we have assumed that fluids flow with no friction. In reality, the particles moving in  a fluid exert internal friction on each other called ``viscosity''. This can be modelled as the friction between different layers of fluid in a laminar flow. For example, you may notice that the water that flows in a wide river flows much faster in the middle of the river than near the river banks, where the water is almost stationary, as shown in Figure \ref{fig:fluidmechanics:river}. 
 \capfig{0.4\textwidth}{figures/FluidMechanics/river.png}{\label{fig:fluidmechanics:river}Water flowing in a river; the water near the banks is almost immobile due to the viscosity of the water.}
 
 One can model the banks of the river as exerting a frictional force on the layer of water that is in contact with the banks. That layer then exerts a frictional force on the next layer closer to the centre of the river, and so on. 
@@ -529,7 +532,7 @@ The constant of proportionality is defined as the viscosity, $\eta$, of the flui
 \begin{align}
 \Aboxed{F = \eta A\frac{v}{l}}
 \end{align}
-If the viscosity of the fluid is zero, then no force is required to pull the plate. The more viscous the fluid, the more difficult it is to pull the top plate. You can experiment with this by comparing the force required to move a small piece of paper across the top of a puddle of water and across the top of maple syrup.
+If the viscosity of the fluid is zero, then no force is required to pull the plate. The more viscous the fluid, the more difficult it is to pull the top plate. You can experiment with this by comparing the force required to move a small piece of paper across the top of a puddle of water and across the top of honey.
 
 The presence of viscosity means that any fluid that flows will lose mechanical energy due to internal friction (which will heat up the fluid). Thus, Bernoulli's equation is not correct if the fluid has viscosity, as a fluid cannot flow through a horizontal pipe without a change in pressure to overcome the losses due to friction.
 
@@ -552,7 +555,7 @@ Poiseuille first developed a model for the \textbf{laminar flow of a liquid thro
 \begin{align*}
 R = \frac{8\eta L}{\pi r^4}
 \end{align*}
-This makes some intuitive sense, as we expect more resistance (more impedance to flow), if the pipe is longer and if the fluid is more viscous (the resistance is zero if there is no viscosity). We further expect less resistance if the pipe has a larger radius. The resistance found by Poiseuille goes down as the fourth power of the radius. Thus, a pipe that is twice as wide will let $2^4=16$ times more fluid through. 
+This makes some intuitive sense, as we expect more resistance (more impedance to flow), if the pipe is longer and if the fluid is more viscous (the resistance is zero if there is no viscosity). We further expect less resistance if the pipe has a larger radius. The resistance found by Poiseuille goes down as the fourth power of the radius. Thus, a pipe that is twice as wide will have a volume flow that is $2^4=16$ times larger because of the reduced resistance. 
 
 The laminar flow rate, $Q$, of a viscous fluid through a pipe of length $L$ and radius $R$, when there is a pressure difference $\Delta P$, is given by:
 \begin{align}
@@ -567,8 +570,10 @@ This is usually referred to as ``Poiseuille's Equation''.
 \end{MCquestion}
 \end{checkpoint}
 
-\begin{example}{\capfig{0.5\textwidth}{figures/FluidMechanics/parallel.png}{\label{fig:fluidmechanics:parallel}Flow of water being separated into two parallel paths that join up again.}
-You are modelling the flow of water for a city. Two houses are connected in parallel to the main water supply, so that water from the main supply flows into either house 1 or house 2, and the flows out of each house then join up again at the main supply. The difference in pressure, $\Delta P$, between the entry and exit point of water is the same for each house, and each house can be modelled as having a net resistance, $R_{1}$ or $R_2$, to the flow of water, as illustrated in Figure \ref{fig:fluidmechanics:parallel}. If you model the two houses as being the equivalent of a single ``effective'' house with an effective resistance $R$, what is the value of $R$ in terms of $R_1$ and $R_2$?}
+\begin{example}{You are modelling the flow of water for a city. Two houses are connected in parallel to the main water supply, so that water from the main supply flows into either house 1 or house 2, and the flows out of each house then join up again at the main supply. The difference in pressure, $\Delta P$, between the entry and exit point of water is the same for each house, and each house can be modelled as having a net resistance, $R_{1}$ or $R_2$, to the flow of water, as illustrated in Figure \ref{fig:fluidmechanics:parallel}. If you model the two houses as being the equivalent of a single ``effective'' house with an effective resistance $R$, what is the value of $R$ in terms of $R_1$ and $R_2$?
+\capfig{0.5\textwidth}{figures/FluidMechanics/parallel.png}{\label{fig:fluidmechanics:parallel}Flow of water being separated into two parallel paths that join up again.}
+}
+
 The water from the main will have to flow through either house 1 or house 2. If the flow rate through the main is $Q$, we require that this be equal to the sum of the flow rates through each house:
 \begin{align*}
 Q = Q_1 + Q_2
@@ -604,7 +609,7 @@ where $F_\perp$ is the component of the force perpendicular to the surface.
 
 If a force is exerted on the particles in a fluid (e.g. gravity), a pressure will exist everywhere in the fluid. If the fluid is placed in a container, that pressure leads to an external force on all surfaces of the container. 
 
-If two fluids at different pressures exist on either side of an interface/object, the net force on that interface/object from the pressures of the fluid will be proportional to the difference in pressure of the fluid on either side.
+If two fluids at different pressures exist on either side of an interface/object, the net force on that interface/object from the pressures of the fluids will be proportional to the difference in pressure of the fluids on either side.
 
 A fluid is in hydrostatic equilibrium if the sum of the forces on any fluid element is zero. In the presence of gravity, this always leads to a vertical pressure gradient
 \begin{align*}
@@ -622,7 +627,7 @@ If an object is immersed in a fluid, it will experience a force of buoyancy that
 \begin{align*}
 F_B = \rho Vg
 \end{align*}
-where, $\rho$, is the density of the fluid and, $V$, is the volume of the fluid displaced by the object (e.g. the volume of the part of the object that is immersed in the fluid). 
+where, $\rho$, is the density of the fluid and, $V$, is the volume of the fluid displaced by the object (i.e. the volume of the part of the object that is immersed in the fluid). 
 
 We can distinguish between laminar and turbulent flow of fluids. In laminar flow, individual particles in the fluid follow well-defined streamlines. In turbulent flow, individual particle follow complicated paths that usually involve Eddy currents. In general, it is much easier to model the laminar flow of fluids.
 
@@ -638,7 +643,7 @@ Bernoulli's Principle, which is based on the conservation of mechanical energy, 
 \begin{align*}
 P + \frac{1}{2}\rho v^2 + \rho g y= \text{constant}
 \end{align*}
-for the laminar flow of a fluid with no viscosity.$P$ is the internal pressure of the fluid, $v$ its speed, and $y$ the height of the fluid relative to a fixed coordinate system. In particular, Bernoulli's Principle implies that, for a constant height, the internal pressure of a fluid must decrease if its speed increases.
+for the laminar flow of a fluid with no viscosity. $P$ is the internal pressure of the fluid, $v$ its speed, and $y$ the height of the fluid relative to a fixed coordinate system. In particular, Bernoulli's Principle implies that, for a constant height, the internal pressure of a fluid must decrease if its speed increases.
 
 Viscosity, $\eta$, for the laminar flow of a fluid can be modelled as the result of the internal friction force between layers of the fluid. Because of viscosity, a fluid cannot flow in a horizontal pipe unless there is a difference in pressure across the pipe. Similarly, there will be no horizontal pressure gradient through a fluid unless the fluid is flowing. In general, the volume flow rate, $Q$, of an incompressible fluid through a pipe with resistance, $R$, is given by:
 \begin{align*}
@@ -682,75 +687,82 @@ Q&= \frac{\pi r^4}{8\eta L}\Delta P \quad \textrm{(Poiseuille)}
 
 \newpage
 \section{Thinking about the material}
-\subsection{Reflect and research}
 
-\begin{enumerate}
+\begin{chapteractivity}{Reflect and research}
+{
 \item Does atmospheric pressure increase or decrease when the weather is nice? How come?
 \item How does water move from the roots of a tree to the top, for a very tall tree?
 \item When did Bernoulli describe the motion of fluids?
 \item Where did Bernoulli come from?
-\end{enumerate}
-\subsection{To try at home}
-Place your hand in a plastic bag, and immerse your hand with the bag in water. The deeper the column of water, the better. Describe what you feel on your hand in terms of the direction of the force exerted by the water pressure.
+}
+\end{chapteractivity}
+\begin{chapteractivity}{To try at home}
+{
+\item Place your hand in a plastic bag, and immerse your hand with the bag in water. The deeper the column of water, the better. Describe what you feel on your hand in terms of the direction of the force exerted by the water pressure.
+\item If you assume that the water that comes out of your bathroom faucet is gravity-fed from a water tank, determine the height of the corresponding water tower relative to your bathroom faucet. Measure the flow rate of water from the faucet to determine the height and discuss whether it makes sense. 
+\item Try plugging the faucet in your bathroom tap with your thumb. Are you able to completely prevent water from coming out when the tap is open? Estimate the pressure of the water in the pipes leading to your bathroom faucet.
+\item In your house/building, measure the flow rate between similar faucets at different heights, and compare with what one would expect from the model from Example \ref{ex:fluidmechanics:kitchen}.
+}
+\end{chapteractivity}
 
-If you assume that the water that comes out of your bathroom faucet is gravity-fed from a water tank, determine the height of the corresponding water tower relative to your bathroom faucet. Measure the flow rate of water from the faucet to determine the height and discuss whether it makes sense. 
+\begin{chapteractivity}{To try in the lab}
+{
+\item Propose an experiment to build a barometer and track the changes in atmospheric pressure as a function of time, and to compare your measurements to those from a weather station. 
+\item Propose an experiment to characterize how liquid flows in a sponge. Is there a maximum height to which a sponge can draw liquid? How is energy conserved if water is drawn upwards in a sponge?
+\item Propose an experiment to measure the resistance of a pipe to the flow of water and compare with the result expected from Poiseuille's equation.
+\item Propose an experiment to determiner the viscosity of maple syrup.
+}
+\end{chapteractivity}
 
-Try plugging the faucet in your bathroom tap with your thumb. Are you able to completely prevent water from coming out when the tap is open? Estimate the pressure of the water in the pipes leading to your bathroom faucet.
-
-In your house/building, measure the flow rate between similar faucets at different heights, and compare with what one would expect from the model from Example \ref{ex:fluidmechanics:kitchen}.
-
-\subsection{To try in the lab}
-Build a barometer and track the changes in atmospheric pressure as a function of time. Compare your measurements to those from a weather station. 
-
-Characterize how liquid flows in a sponge. Is there a maximum height to which a sponge can draw liquid? How is energy conserved if water is drawn upwards in a sponge?
-
-Measure the resistance of a pipe to the flow of water and compare with the result expected from Poiseuille's equation.
-
-Measure the viscosity of maple syrup.
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-\begin{problemParts}{soln:fluids:shipwreck}{\label{prob:fluids:shipwreck}A man and a woman, let's call them Rebeka (\SI{57}{kg}) and Josh (\SI{63}{kg}), are on a cruise when their ship tragically sinks. They are thrust into the freezing cold ocean. They see a large wooden door floating on the surface of the water, and wonder if they could both survive if they both lay on top of the door. They estimate that the door measures about $\SI{2}{m}\times\SI{1}{m}\times\SI{0.12}{m}$. The density of salt water is $\rho_w=\SI{1027}{kg/m^3}$.
-\capfig{0.6\textwidth}{figures/FluidMechanics/notthetitanic.png}{\label{fig:fluidmechanics:notthetitanic}Rebeka and Josh wonder if they can stay above water if they get on top of a floating door.}}
-\item What does the density of the wood have to be in order for Rebeka and Josh to stay above the surface of the water? (see Figure \ref{fig:fluidmechanics:notthetitanic}) 
+\begin{problem}{soln:fluids:shipwreck}{\label{prob:fluids:shipwreck}A man and a woman, Rebecca (\SI{57}{kg}) and Ryan (\SI{63}{kg}), are on a cruise when their ship tragically sinks. They are thrust into the freezing cold ocean. They see a large wooden door floating on the surface of the water, and wonder if they could both survive if they both lay on top of the door. They estimate that the door measures about $\SI{2}{m}\times\SI{1}{m}\times\SI{0.12}{m}$. The density of salt water is $\rho_w=\SI{1027}{kg/m^3}$.
+\capfig{0.6\textwidth}{figures/FluidMechanics/notthetitanic.png}{\label{fig:fluidmechanics:notthetitanic}Rebecca and Ryan wonder if they can stay above water if they get on top of a floating door.}
+\begin{enumerate}[label=\alph*),topsep=-10pt]
+\item What does the density of the wood have to be in order for Rebecca and Ryan to stay above the surface of the water? (see Figure \ref{fig:fluidmechanics:notthetitanic}) 
 \item If the door is made of oak ($\rho_d=\SI{750}{kg/m^3}$), will they survive? Can one of them survive?
-\end{problemParts}
+\end{enumerate}
+}
+\end{problem}
 
-\begin{problemParts}{soln:fluids:iv}{\label{prob:fluids:iv} A doctor prescribes an IV drip to a dehydrated patient. She asks a nurse, Lily, to administer \SI{2}{l} of saline solution ($\eta=\SI{1.0e-3}{\pascal\second}$, $\rho=\SI{997}{kg/m^3}$) to the patient over 2 hours. An IV drip works by inserting a needle into a vein in a patient's arm. The needle is connected to an IV bag by a tube (Figure \ref{fig:fluidmechanics:ivneedle}). Lily uses a needle that has a diameter of \SI{0.60}{mm} and a length of \SI{32}{mm}. The blood pressure in the patient's veins is $\SI{80}{mm Hg}$ above atmospheric pressure. Note: $\SI{1}{mm Hg}\approx \SI{133}{Pa}$
-\capfig{0.6\textwidth}{figures/FluidMechanics/ivneedle.png}{\label{fig:fluidmechanics:ivneedle}Left: A cylindrical IV needle. Right: The IV needle connected to an IV bag by a tube. The free end of the needle goes into the patient's vein.}} 
-\item What must the pressure be at the entrance of the needle? Assume the needle is essentially horizontal. Write your answer in Pascals above atmospheric pressure.
+\begin{problem}{soln:fluids:iv}{\label{prob:fluids:iv} A doctor prescribes an IV drip to a dehydrated patient. She asks a nurse, Rob, to administer \SI{2}{l} of saline solution ($\eta=\SI{1.0e-3}{\pascal\second}$, $\rho=\SI{997}{kg/m^3}$) to the patient over 2 hours. An IV drip works by inserting a needle into a vein in a patient's arm. The needle is connected to an IV bag by a tube (Figure \ref{fig:fluidmechanics:ivneedle}). Lily uses a needle that has a diameter of \SI{0.60}{mm} and a length of \SI{32}{mm}. The blood pressure in the patient's veins is $\SI{80}{mm Hg}$ above atmospheric pressure. Note: $\SI{1}{mm Hg}\approx \SI{133}{Pa}$
+\capfig{0.6\textwidth}{figures/FluidMechanics/ivneedle.png}{\label{fig:fluidmechanics:ivneedle}Left: A cylindrical IV needle. Right: The IV needle connected to an IV bag by a tube. The free end of the needle goes into the patient's vein.} 
+\begin{enumerate}[label=\alph*),topsep=-10pt]
+\item What must the pressure be at the entrance of the needle (the side connected to the saline, not the patient)? Assume that the needle is essentially horizontal and that the diameter of the tube from the IV bag is large enough so that resistance in the vertical tube is negligible. Write your answer in Pascals above atmospheric pressure.
 \item How high above the patient's arm should Lily put the IV bag?
-\end{problemParts}
+\end{enumerate}
+}
+\end{problem}
 
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:fluids:shipwreck}\label{soln:fluids:shipwreck}
 \begin{enumerate}[(a)]
-\item The forces acting on the door are the force of buoyancy, its weight, and the weight of Rebeka and Josh, as shown in Figure \ref{fig:fluidmechanics:notthetitanic_fbd}. 
-\capfig{0.2\textwidth}{figures/FluidMechanics/notthetitanic_fbd.png}{\label{fig:fluidmechanics:notthetitanic_fbd}The forces acting on the door when Rebeka and Josh are on top of it.}
-If we combine the weight of the door and the weight of the people into the total weight, $F_g$, and set up to be in the positive direction, we can write Newton's Second Law for the door as:
+\item The forces acting on the door are the force of buoyancy, the door's weight, and the weights of Rebecca and Ryan, as shown in Figure \ref{fig:fluidmechanics:notthetitanic_fbd}. 
+\capfig{0.2\textwidth}{figures/FluidMechanics/notthetitanic_fbd.png}{\label{fig:fluidmechanics:notthetitanic_fbd}The forces acting on the door when Rebecca and Ryan are on top of it.}
+We can combine the weight of the door and the weight of the people into the total weight, $F_g$. We choose the $y$ axis to be positive upwards. The sum of the forces on the door in the $y$ direction is given by:
 \begin{align*}
-\sum \vec F =\vec F_B-\vec F_g
+\sum F_y = F_B- F_g
 \end{align*}
-For the door to float, the net force on the door must be greater than or equal to zero. We want to find the minimum buoyant force for them to float, so we set the net force equal to zero and get:
+For the door to float, the net force on the door must be greater than or equal to zero. We want to find the minimum buoyant force for them to float, so we set the net force equal to zero:
 \begin{align*}
-0&=F_B-F_g\\
 F_g&=F_B\\
-(m_R+m_J+m_d)g&=\rho_wV_wg\\
-m_R+m_J+m_d&=\rho_wV_w
+(m_R+m_r+m_d)g&=\rho_wV_wg\\
+m_R+m_r+m_d&=\rho_wV_w
 \end{align*}
-where the weight depends on the mass of Rebeka ($R$), Josh ($J$) and the door ($d$). We added the subscript $W$ to right side of the equation to remind ourselves that the buoyant force depends on the density and volume \textbf{of the displaced water}. We want to find the maximum density of the wood in order for Rebeka and Josh to stay above the water's surface. This means that the maximum volume of water that can be displaced is the volume of the door, $V_w=V_d$ (so that the surface of the door is level with the surface of the water, as in Figure \ref{fig:fluidmechanics:notthetitanic}). We can rewrite the mass of the door in terms of its volume and density, and apply our condition that $V_w=V_d$ :
+where the weight includes the mass of Rebecca ($m_R$), Ryan ($m_r$) and the door ($m_d$). We added the subscript $W$ to the right side of the equation to remind ourselves that the buoyant force depends on the density and volume \textbf{of the displaced water}. We want to find the maximum density of the wood in order for Rebcca and Ryan to stay above the water's surface. This means that the maximum volume of water that can be displaced is the volume of the door, $V_w=V_d$ (so that the surface of the door is level with the surface of the water, as in Figure \ref{fig:fluidmechanics:notthetitanic}). We can rewrite the mass of the door in terms of its volume and density, and apply our condition that $V_w=V_d$ :
 \begin{align*}
-m_R+m_J+\rho_dV_d&=\rho_wV_d\\
-\rho_d&=\frac{\rho_wV_d-m_R-m_J}{V_d}
+m_R+m_r+\rho_dV_d&=\rho_wV_d\\
+\rho_d&=\frac{\rho_wV_d-m_R-m_r}{V_d}
 \end{align*}
 A quick calculation tells us that the volume of the door is $(\SI{2}{m})(\SI{1}{m})(\SI{0.12}{m})=\SI{0.24}{m^3}$. We can now calculate the desired density of the wood:
 \begin{align*}
-\rho_d&=\frac{\rho_wV_d-m_R-m_J}{V_d}\\
+\rho_d&=\frac{\rho_wV_d-m_R-m_r}{V_d}\\
 \rho_d&=\frac{(\SI{1027}{kg/m^3})(\SI{0.24}{m^3})-\SI{57}{kg}-\SI{63}{kg}}{\SI{0.24}{m^3}}\\
 \rho_d&=\SI{527}{kg/m^3}
 \end{align*}
-The maximum density of the wood is \SI{527}{kg/m^3}.
+The maximum density of the wood that would allow them to both float is \SI{527}{kg/m^3}. Balsa wood has a density that is about $\SI{150}{kg/m^3}$, so would allow them to survive. However, it is unlikely that a random floating door is made of balsa wood (although one would choose lighter materials when constructing a ship).
 \item No, they could not both stay on the door because the density of oak is greater than the maximum density of \SI{527}{kg/m^3}. We can find the amount of mass that can be added to the door ($m_A$) in order for the person on it to stay above water:
 \begin{align*}
 F_g&=F_B\\
@@ -765,13 +777,13 @@ m_A&=V_d(\rho_w-\rho_d)\\
 m_A&=(\SI{0.24}{m^3})(\SI{1027}{kg/m^3}-\SI{750}{kg/m^3})\\
 m_A&=\SI{66}{kg}
 \end{align*}
-The door can support an additional mass of \SI{66}{kg}, so either Rebeka or Josh can survive if the other does not get on the door.  
+The door can support an additional mass of \SI{66}{kg}, so either Rebecca or Ryan can survive if the other does not get on the door.  
 \end{enumerate}
 \end{solution}
 
 \begin{solution}{prob:fluids:iv}\label{soln:fluids:iv}
 \begin{enumerate}[(a)]
-\item Given that the pressure in the patient's veins is \SI{80}{mm Hg} above atmospheric pressure, we want to find the pressure required at the other end of the needle so that we get the desired flow rate. We model the needle as a horizontal cylindrical pipe and assume that the saline solution exhibits laminar flow. We can therefore use Poiseuille's equation:
+\item Given that the pressure in the patient's veins is $\SI{80}{mm Hg}$ above atmospheric pressure, we want to find the pressure required at the other end of the needle so that we get the desired flow rate through the needle. We model the needle as a horizontal cylindrical pipe and assume that the saline solution exhibits laminar flow. We can therefore use Poiseuille's equation:
 \begin{align*}
 Q=\frac{\pi r^4}{8\eta L}(P_1-P_2)
 \end{align*}
@@ -779,7 +791,7 @@ We let $P_1$ be the pressure where the needle connects to the tube. Solving for 
 \begin{align*}
 P_1&=Q\frac{8\eta L}{\pi r^4}+P_2\\
 \end{align*}
-The pressure at the exit of the needle, $P_2$, is just the blood pressure ($\SI{80}{mm Hg} + \SI{1}{atm}$). The radius of the needle is $\SI{0.60}{mm}/2=\SI{0.30}{mm}$. The flow rate has to be in units of \si{m^3/s}, which you can confirm. The flow rate in the appropriate units is thus:
+The pressure at the exit of the needle, $P_2$, is just the blood pressure ($\SI{80}{mm Hg} + \SI{1}{atm}$). The radius of the needle is $\SI{0.60}{mm}/2=\SI{0.30}{mm}$. The flow rate has to be in units of $\si{m^3/s}$. The flow rate in the appropriate units is thus:
 \begin{align*}
 Q=\frac{\SI{2}{l}}{\SI{2}{hr}}\cdot \frac{\SI{1}{hr}}{\SI{3600}{s}}\cdot \frac{\SI{0.001}{m^3}}{\SI{1}{l}}=\SI{2.8e-7}{m^3/s}
 \end{align*}
@@ -791,7 +803,7 @@ P_1&=\SI{2817}{Pa}+\SI{10640}{Pa}+\SI{1}{atm}\\
 \end{align*}
 Note that, in the first line, we converted \SI{80}{mm Hg} into Pascals. 
 
-\item We can use Bernoulli's principle to find the appropriate height of the IV bag. We set up our coordinate system so that the height is zero at the needle ($y_1=0$) (Figure \ref{fig:fluidmechanics:ivneedleheight}).
+\item We can  easily determine the height of the IV bag that is required to give the desired pressure. We choose a coordinate system with a $y$ axis that is vertical (positive upwards) with the origin at the location of the needle (Figure \ref{fig:fluidmechanics:ivneedleheight}).
 \capfig{0.3\textwidth}{figures/FluidMechanics/ivneedleheight.png}{\label{fig:fluidmechanics:ivneedleheight}The needle is at height 0 and the top of the fluid in the IV bag is at $y_0$.}
 At the top of the solution in the IV bag, $y_0$, the solution has a speed of zero and is at atmospheric pressure, $P_0=\SI{1}{atm}$. The velocity at the needle is 0, and the pressure is $\SI{13457}{Pa}+\SI{1}{atm}$. Bernoulli's principle states:
 \begin{align*}
@@ -807,7 +819,6 @@ y_0&=\SI{1.4}{m}
 \end{align*}
 Therefore, the IV bag should be placed $\SI{1.4}{m}$ above the patient's arm. 
 
-  
 \end{enumerate}
 \end{solution}
 
