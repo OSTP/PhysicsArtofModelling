@@ -122,7 +122,7 @@ pl.show()
 QExpy is a Python module that was developed with students from Queen's University to handle all aspects of undergraduate physics laboratories. In this section, we look at how to use QExpy to propagate uncertainties and to plot experimental data.
 
 \subsection{Propagating uncertainties}
-In Chapter \ref{chap:ModelAndExperiment}, we saw how to use the ``derivative method'' to propagate the uncertainty from measurements into the uncertainty in a value that depended on those measurements. In Example \ref{ex:ModelAndExperiment:derivprop}, we propagated the uncertainties $x=\SI{3.00 \pm 0.01}{m}$ and $t=\SI{0.76\pm0.15}{s}$ to the quantity $k=\frac{t}{\sqrt x}$. We show below how easily this can be done with QExpy:
+In Chapter \ref{chap:modelandexperiment}, we saw how to use the ``derivative method'' to propagate the uncertainty from measurements into the uncertainty in a value that depended on those measurements. In Example \ref{ex:modelandexperiment:derivprop}, we propagated the uncertainties $x=\SI{3.00 \pm 0.01}{m}$ and $t=\SI{0.76\pm0.15}{s}$ to the quantity $k=\frac{t}{\sqrt x}$. We show below how easily this can be done with QExpy:
 
 \begin{python}[caption=QExpy to propagate uncertainties] 
 #First, we load the QExpy module
@@ -140,7 +140,7 @@ print(k)
 \end{poutput}
 which is the result that we obtained when manually applying the derivative method. Note that we used the square root function from the QExpy module, as it ``knows'' how to take the square root of a value with uncertainty (a ``Measurement'' in the language of QExpy). 
 
-We also saw that when we had repeated measurements of the same quantity (Section \ref{sec:c2:determiningerrors}), one could define a central value and uncertainty for that quantity by using the mean and standard deviations of the measurements. QExpy can easily take a set of measurements (an array of values) and convert them into a single quantity (a ``Measurement'') with a central value and uncertainty that correspond to the mean and standard deviation of the set of measurements:
+We also saw that when we had repeated measurements of the same quantity (Section \ref{sec:modelandexperiment:determiningu}), one could define a central value and uncertainty for that quantity by using the mean and standard deviations of the measurements. QExpy can easily take a set of measurements (an array of values) and convert them into a single quantity (a ``Measurement'') with a central value and uncertainty that correspond to the mean and standard deviation of the set of measurements:
 
 \begin{python}[caption=QExpy to calculate mean and standard deviation] 
 #First, we load the QExpy module
@@ -155,7 +155,7 @@ print("t = ",t)
 \begin{poutput}
 t = 0.76 +/- 0.15
 \end{poutput}
-By using QExpy, we do not need to tediously calculate the mean and standard deviation, as we had in Example \ref{ex:ModelAndExperiment:stdcalc}.
+By using QExpy, we do not need to tediously calculate the mean and standard deviation, as we had in Example \ref{ex:modelandexperiment:stdcalc}.
 
 
 \subsection{Plotting experimental data with uncertainties}
