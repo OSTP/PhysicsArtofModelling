@@ -258,7 +258,7 @@ In this section, we show how to use Newton's Second Law to derive the wave equat
 \capfig{0.55\textwidth}{figures/Waves/weqn.png}{\label{fig:waves:weqn}A small section of rope under tension as a wave passes through.}
 We assume that the weight of the mass element is negligible compared to the force of tension that is in the rope. Thus, the only forces exerted on the mass element are those from the tension in the rope, pulling on the mass element from each side, with forces, $\vec F_{T1}$ and $\vec F_{T2}$. In general, the forces from tension on either side of the mass element will have different directions and make different angles, $\theta$, with the horizontal, although their magnitude is the same. Let $D(x,t)$ be the vertical displacement of the mass element located at position $x$. We can write the $y$ (vertical) component of Newton's Second Law for the mass element, $dm$, as:
 \begin{align*}
-\sum F_y = F_{T2} - F_{T1} &= (dm)a\\
+\sum F_y = F_{T2y} - F_{T1y} &= (dm)a_y\\
 F_T\sin\theta_2 - F_T\sin\theta_1 &= dm \die{^2D}{t^2}\\
 F_T(\sin\theta_2 - \sin\theta_1) &= dm \die{^2D}{t^2}
 \end{align*}
@@ -343,12 +343,12 @@ We can also view a snapshot of the wave in time, and model the \textbf{different
 \subsection{Energy transported in a one dimensional wave}
 In this section, we show how to describe the energy transported by a one-dimensional wave along a rope. We model each particle in the rope through which the wave propagates as a small simple harmonic oscillator with mass $m$, attached to a spring with an effective spring constant, $k_s$\footnote{We use $k_s$ for the spring constant, to distinguish it from $k$, the wave number.}.
 
-Of course, there is no actual spring, but we can still determine an effective spring constant, $k_s$, from the angular velocity:
+Of course, there is no actual spring, but we can still determine an effective spring constant, $k_s$, from the angular frequency:
 \begin{align*}
 \omega &= \sqrt{\frac{k_s}{m}}\\
 \therefore k_s &= \omega^2 m
 \end{align*}
-which corresponds to the spring constant that would give the correct angular frequency for the particle of mas $m$.
+which corresponds to the spring constant that would give the correct angular frequency for the particle of mass $m$.
 
 The total mechanical energy of one oscillator, $E_m$, can be evaluated when the oscillator is at its maximal displacement, $A$, from its equilibrium, where its kinetic energy is zero:
 \begin{align*}
@@ -405,7 +405,7 @@ P &=\frac{dE}{dr}v =2\pi\rho  \omega^2 A^2  r^2 v
 \end{align*}
 where the power appears to depends on how far you are from the source ($r$). 
 
-Suppose that you have a $\SI{50}{W}$ speaker emitting sound; each radial shell emanating from the speaker must transport energy at a rate of $\SI{50}{W}$. This is simply a statement that the energy radiated by the speaker has to move from one shell to the next and be conserved. Since the power transported by a shell depends on appears to depend on the radius of the shell, if the power transmitted by each shell is the same, then the amplitude of the wave in each shell must decrease, so that the power does not actually depend on the radius of the shell. In particular, for a spherical wave, the amplitude will decrease as a function of distance from the source:
+Suppose that you have a $\SI{50}{W}$ speaker emitting sound; each radial shell emanating from the speaker must transport energy at a rate of $\SI{50}{W}$. This is simply a statement that the energy radiated by the speaker has to move from one shell to the next and be conserved. Since the power transported by a shell appears to depend on the radius of the shell, if the power transmitted by each shell is the same, then the amplitude of the wave in each shell must decrease, so that the power does not actually depend on the radius of the shell. In particular, for a spherical wave, the amplitude will decrease as a function of distance from the source:
 \begin{align*}
 P& = \text{constant}\\
 \therefore A&=\frac{1}{r}\sqrt{\frac{P}{2\pi\rho \omega^2 v}}
@@ -425,7 +425,7 @@ I = \frac{P}{4\pi r^2} = \frac{1}{2}\rho  \omega^2 A^2 v
 
 Usually, the intensity of a wave is something that you can measure, as it corresponds to the power delivered into some measuring device with a known surface area. For example, we cannot directly measure the total power that is transported by the waves from an earthquake, as we would need an instrument that could encompass the entire resulting wave. Instead, we can measure the intensity of waves from the earthquake by measuring how much power is delivered into some instrument with a known surface area. By knowing our distance from the earthquake, we could then determine the total power output of the earthquake. 
 
-The intensity is a measure of how much energy is delivered per unit area by a wave and goes down as the square of the distance from the source (since $A\propto 1/r^2$). If the source of the wave is an earthquake, then your house will have four times less damage than your friend's, if your house is located only twice as far from the epicentre as your friend's. You will cause four times less damage to your ears if you move only twice as far away from the stage at a rock concert.
+The intensity is a measure of how much energy is delivered per unit area by a wave and goes down as the square of the distance from the source (since $A\propto 1/r$). If the source of the wave is an earthquake, then your house will have four times less damage than your friend's, if your house is located only twice as far from the epicentre as your friend's. You will cause four times less damage to your ears if you move only twice as far away from the stage at a rock concert.
 
 \section{Superposition of waves and interference}
 In this section, we consider what happens when two (or more) different waves propagate in a medium and interfere with each other. The superposition principle states that if $D_1(x,t)$, $D_2(x,t)$, etc, are functions that satisfy the wave equation, then any linear combination of these functions, $D(x,t)$:
