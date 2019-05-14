@@ -60,7 +60,7 @@ We can create a net charge on the polarized rod if we provide a conducting path 
 \section{The Coulomb force}
 Coulomb was the first to provide a detailed quantitative description of the force between charged objects. Nowadays, we use the (derived) SI unit of ``Coulomb'' (C) to represent charge. The ``charge'' of an object corresponds to the net excess (or lack) of electrons on the object. An electron has a charge of $-e=\SI{-1.6e-19}{C}$. Thus, an object with a charge of $\SI{-1}{C}$ has an excess of about $\num{1e19}$ electrons on it. If an object has an excess of electrons, it is negatively charged and we indicate this with a negative sign on the charge of the object. An object with a (positive) charge of $\SI{1}{C}$ thus has a deficit of electrons.
 
-Through careful studies of the force between two charged spheres, Coulomb observed\footnote{Others had initially observed the inverse square Law, but Coulomb was the first to formalize the theory.} that:
+Through careful studies of the force between two charged spheres, Coulomb observed\footnote{Others had initially observed the inverse square law for the electric force, but Coulomb was the first to formalize the theory.} that:
 \begin{itemize}
 \item The force is attractive if the objects have opposite charges and repulsive if the objects have the same charge.
 \item The force is inversely proportional to the squared distance between spheres.
@@ -77,24 +77,304 @@ If the two charges have positions $\vec r_1$ and $\vec r_2$, respectively, then 
 \hat r_{21} = \frac{1}{||\vec r_2 - \vec r_1||}\vec r_2 - \vec r_1
 \end{align*}
 Coulomb's Law is mathematically identical to the gravitational force in Newton's Universal Theory of Gravity. Rather than quantity of mass determining the strength of the gravitational force, it is the quantity of charge that determines the strength of the electric force. The only major difference is that gravity is always attractive, whereas the Coulomb force can be repulsive.
-
+\begin{checkpoint}\label{cp:chargesfields:conservative}
+\begin{MCquestion}{The Coulomb force is conservative.}
+\item True. \correct
+\item False.
+\end{MCquestion}
+\end{checkpoint}
 The product $Q_1Q_2$ in the numerator of Coulomb's force is positive if the two charges have the same sign (both positive or both negative) and negative if the charges have opposite signs. Again, referring to Figure \ref{fig:chargesfields:coulombforce}, if the two charges are positive, the force on $Q_1$ will point in the same direction as $\hat r_{21}$ and thus be repulsive. If, instead, the two charges have opposite signs, the product $Q_1Q_2$ will be negative and the force vector on $Q_1$ will point in the opposite direction from $\hat r_{21}$ and the force is attractive. 
+
 \begin{example}{Calculate the magnitude of the electric force between the electron and the proton in a hydrogen atom and compare this to the gravitational force between them.}
 We model this by assuming that the electron and proton are point charges a distance of $\SI{1}{\angstrom}=\SI{1e-10}{m}$ apart (1 \r Angstrom). The proton and electron have the same charge with magnitude $e=\SI{1.6e-19}{C}$, so the (attractive) electric force between them has a magnitude of:
 \begin{align*}
-F^e = k\frac{Q_1}{Q_2}{r^2}=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{1.6e-19}{C})(\SI{1.6e-19}{C})}{(\SI{1e-10}{m})^2}=\SI{2.3e-8}{N}
+F^e = k\frac{Q_1Q_2}{r^2}=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{1.6e-19}{C})(\SI{1.6e-19}{C})}{(\SI{1e-10}{m})^2}=\SI{2.3e-8}{N}
 \end{align*}
-which is a small number, but acting on a very small mass. In comparison, the force of gravity between an electron () and a proton () is given by:
+which is a small number, but acting on a very small mass. In comparison, the force of gravity between an electron ($m_e=\SI{9.1e-31}{kg}$) and a proton ($m_p=\SI{1.7e-27}{kg}$) is given by:
 \begin{align*}
-F^g=G\frac{M_1M_2}{r^2}=(\SI{6.67e-11}{Nm^2/kg^2})\frac{(\SI{50}{kg})(\SI{50}{kg})}{(\SI{0.5}{m})^2}=TODO!
+F^g=G\frac{m_em_p}{r^2}=(\SI{6.7e-11}{Nm^2/kg^2})\frac{(\SI{9.1e-31}{kg})(\SI{1.7e-27}{kg})}{(\SI{1e-10}{m})^2}=\SI{1.04e-47}{N}
 \end{align*}
+\textbf{Discussion:} As we can see, the electric force between an electron and a proton is 39 orders of magnitude larger than the gravitational force. This shows that the gravitational force is extremely weak on the scale of particles and has essentially no effect in particle physics. Indeed, the best current theory of particle physics, and the most precisely tested theory in physics, the ``Standard Model'', does not need to include gravity in order to provide a spectacularly precise description of particles. One of the big challenges in theoretical physics is nonetheless to develop a theory that integrates the gravitational force with the other forces.
+\end{example}
+\begin{example}{\label{ex:chargesfields:chargetriangle}Three charges, $Q_1=\SI{1}{nC}$, $Q_2=\SI{-2}{nC}$, and $q=\SI{-1}{nC}$, are held fixed at the three corners of an equilateral triangle with sides of length $a=\SI{1}{cm}$, with a coordinate system as shown in Figure \ref{fig:chargesfields:chargetriangle}. What is the electric force vector on charge $q$? (Note that $\SI{1}{nC}=\SI{1e-9}{C}$).
+\capfig{0.4\textwidth}{figures/ChargesFields/chargetriangle.png}{\label{fig:chargesfields:chargetriangle}Three charges arranged in an equilateral triangle of side $a$.}}
+The net electric force on charge $q$ will be the vector sum of the forces from charges $Q_1$ and $Q_2$. We thus need to determine the force vectors on $q$ from each charge using Coulomb's Law, and then add those two vectors to obtain the net force on $q$. The force vectors exerted on $q$ from each charge are illustrated in Figure \ref{fig:chargesfields:chargetriangle_sol}.
+\capfig{0.4\textwidth}{figures/ChargesFields/chargetriangle_sol.png}{\label{fig:chargesfields:chargetriangle_sol}Force vectors on charge $q$.}
+The force from charge $Q_1$ has magnitude:
+\begin{align*}
+F_{q1}=\left |k\frac{Q_1q}{a^2}\right |=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{1e-9}{C})(\SI{1e-9}{C})}{(\SI{0.01}{m})^2}=\SI{9e-5}{N}
+\end{align*}
+and components:
+\begin{align*}
+\vec F_{q1}&=-F_{q1}\cos(\SI{60}{\degree})\hat x-F_{q1}\sin(\SI{60}{\degree})\hat y\\
+&=-(\SI{4.5e-5}{N})\hat x-(\SI{7.8e-5}{N})\hat y
+\end{align*}
+Similarly, the force on $q$ from $Q_2$ has magnitude:
+\begin{align*}
+F_{q2}=\left |k\frac{Q_2q}{a^2}\right |=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{2e-9}{C})(\SI{1e-9}{C})}{(\SI{0.01}{m})^2}=\SI{1.8e-4}{N}
+\end{align*}
+and components:
+\begin{align*}
+\vec F_{q2}&=-F_{q2}\cos(\SI{60}{\degree})\hat x+F_{q2}\sin(\SI{60}{\degree})\hat y\\
+&=-(\SI{9.0e-5}{N})\hat x+(\SI{1.6e-4}{N})\hat y
+\end{align*}
+Finally, we can add the two force vectors together to obtain the net force on $q$:
+\begin{align*}
+\vec F^{net}&=\vec F_{q1}+\vec F_{q2}\\
+&=-(\SI{4.5e-5}{N})\hat x-(\SI{7.8e-5}{N})\hat y-(\SI{9.0e-5}{N})\hat x+(\SI{1.6e-4}{N})\hat y\\
+&=-(\SI{13.5e-5}{N})\hat x+(\SI{8.2e-5}{N})\hat y
+\end{align*}
+which has a magnitude of $\SI{15.8e-5}{N}$.
 
+\textbf{Discussion:} In this example, we determined the net force on a charge by making use of the superposition principle; namely, that we can treat the forces exerted on $q$ by $Q_1$ and $Q_2$ independently, without needing to consider the fact that $Q_1$ and $Q_2$ exert forces on each other.
+\end{example}
 
-\textbf{Discussion:} TODO. 
+\section{The electric field}
+We define the electric field vector in much the same way as we define the gravitational field vector, $\vec g$. By defining the gravitational field vector, say, at the surface of the Earth, we can easily calculate the gravitational force exerted by the Earth on any mass, $m$, without having to use Newton's Universal Theory of Gravity. As you recall, we can define the gravitational field at some position $\vec r$, $\vec g(\vec r)$, from a point mass $M$ as the gravitational force per unit mass:
+\begin{align*}
+\vec g(\vec r) = -G \frac{M}{r^2}\hat r
+\end{align*}
+where $\vec r$ is a vector from the position of $M$ to where we want to know the gravitational field. As a result, the force exerted on a ``test mass'' $m$ located at position $\vec r$ relative to mass $M$ is given by:
+\begin{align*}
+\vec F^g=m\vec g= -G\frac{Mm}{r^2}\hat r
+\end{align*}
+which, of course, is the result from Newton's Theory of Gravity. As you recall, we can define the gravitational field for  any object that is not a point mass (e.g. the Earth), and use that field to find the force exerted by the Earth on any mass $m$, without having to re-calculate the gravitational field each time (which requires an integral or Gauss' Law). 
+
+We proceed in an analogous was to define the ``Electric field'', $\vec E(\vec r)$, as the \textit{electric force per unit charge}. If we have a point charge, $Q$, located at the origin of a coordinate system, then the electric field from that point charge at some position $\vec r$ relative to the origin is given by:
+\begin{align*}
+\Aboxed{\vec E(\vec r) = k\frac{Q}{r^2}\hat r}
+\end{align*}
+If we place a ``test charge'', $q$, at position $\vec r$ in space, it will experience a force given by:
+\begin{align*}
+\vec F^e=q\vec E=k\frac{Qq}{r^2}\hat r
+\end{align*}
+just as we find from Coulomb's Law. Just as is the case with gravity, the electric field is not terribly useful when there are only two point charges, but it becomes useful when we want to know the force that would experienced by any test charge in the presence of a collection of other fixed charges. 
+\begin{checkpoint}\label{cp:chargesfields:edirection}
+\begin{MCquestion}{A negative charge is placed at the origin of a coordinate system. At some point in space, the electric field from that charge}
+\item points towards the origin. \correct
+\item points away from the origin.
+\end{MCquestion}
+\end{checkpoint}
+In Example \ref{ex:chargesfields:chargetriangle}, we determined the electric force on charge $q$, exerted by two other charges $Q_1$ and $Q_2$. If we now changed the value of $q$ and wanted to determine the force, we can use the electric field to simplify the process considerably. That is, we can determine the value of the electric field, $\vec E$, from $Q_1$ and $Q_2$ at the position of $q$, and then simply multiply that field vector by a charge $q$ to obtain the force on that charge.
+\begin{example}{\label{ex:chargesfields:epointcharges}Two charges, $Q_1=\SI{1}{nC}$, and $Q_2=\SI{-2}{nC}$ are held fixed at two corners of an equilateral triangle with sides of length $a=\SI{1}{cm}$, with a coordinate system as shown in Figure \ref{fig:chargesfields:chargetriangle}. What is the electric field vector at the third corner of the triangle? 
+\capfig{0.4\textwidth}{figures/ChargesFields/fieldtriangle.png}{\label{fig:chargesfields:fieldtriangle}Two charges at the corners of an equilateral triangle of side $a$.}}
+The net electric field at the third corner of the triangle will be the vector sum of the electric fields from charges $Q_1$ and $Q_2$. We thus need to determine the electric field vectors from each charge, and then add those two vectors to obtain the net electric field. The vectors are illustrated in Figure \ref{fig:chargesfields:fieldtriangle_sol}.
+\capfig{0.4\textwidth}{figures/ChargesFields/fieldtriangle_sol.png}{\label{fig:chargesfields:fieldtriangle_sol}Electric field vectors from two charges at the corners of an equilateral triangle of side $a$.}
+The electric field from charge $Q_1$ has magnitude:
+\begin{align*}
+E_1=\left |k\frac{Q_1}{a^2}\right |=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{1e-9}{C})}{(\SI{0.01}{m})^2}=\SI{9e4}{N/C}
+\end{align*}
+and components:
+\begin{align*}
+\vec E_1&=E_1\cos(\SI{60}{\degree})\hat x+E_1\sin(\SI{60}{\degree})\hat y\\
+&=(\SI{4.5e4}{N/C})\hat x+(\SI{7.8e4}{N/C})\hat y
+\end{align*}
+Similarly, the electric field from $Q_2$ has magnitude:
+\begin{align*}
+E_2=\left |k\frac{Q_2}{a^2}\right |=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{2e-9}{C})}{(\SI{0.01}{m})^2}=\SI{1.8e5}{N/C}
+\end{align*}
+and components:
+\begin{align*}
+\vec E_2&=E_2\cos(\SI{60}{\degree})\hat x-E_2\sin(\SI{60}{\degree})\hat y\\
+&=(\SI{9.0e4}{N/C})\hat x-(\SI{1.6e5}{N/C})\hat y
+\end{align*}
+Finally, we can add the two force vectors together to obtain the net force on $q$:
+\begin{align*}
+\vec E^{net}&=\vec E_1+\vec E_2\\
+&=(\SI{4.5e4}{N/C})\hat x+(\SI{7.8e4}{N/C})\hat y+(\SI{9.0e4}{N/C})\hat x-(\SI{1.6e5}{N/C})\hat y\\
+&=(\SI{13.5e4}{N/C})\hat x-(\SI{8.2e4}{N/C})\hat y
+\end{align*}
+which has a magnitude of $\SI{15.8e4}{N/C}$. By knowing the electric field at the empty corner of the triangle, we can now calculate the net electric force that would act on any charge placed in that location. For example, if we place a charge $q=\SI{-1}{nC}$ (as in Example \ref{ex:chargesfields:chargetriangle}), we can easily find the corresponding electric force:
+\begin{align*}
+\vec F_q &= q\vec E=(\SI{-1}{nC})left[ (\SI{13.5e4}{N/C})\hat x-(\SI{8.2e4}{N/C})\hat y right]\\
+&=-(\SI{13.5e-5}{N})\hat x+(\SI{8.2e-5}{N})\hat y
+\end{align*}
+as we found previously. Note that the force on $q$ is in the opposite direction of the electric field vector. This is because $q$ is negative. The \textbf{electric field at some point in space thus points in the same direction as the force that a positive test charge would experience}.
+
+\textbf{Discussion:} In this example, we determined the net electric field by making use of the superposition principle; namely, that we can treat the electric fields from $Q_1$ and $Q_2$ independently, without needing to consider the fact that $Q_1$ and $Q_2$ exert forces on each other. By knowing the electric field at some position in space, we can easily calculate the force vector on any test charge, $q$, placed at that position. Furthermore, the sign of the charge $q$ will determine in which direction the force will point (parallel to $\vec E$ for a positive charge and anti-parallel to $\vec E$ for a negative charge).
+\end{example}
+
+\subsection{Electric field from a charge distribution}
+So far, we have only considered Coulomb's Law for point charges (charges that are infinitely small and can be considered to exist at a single point in space). We can use the principle of superposition to determine the electric field from a charged extended/continuous object by modelling that object as being made of many point charges. The electric field from that object is then the sum of the electric field from the point charges that make up that object. 
+
+Consider a charged wire that is bent into a semi-circle of radius $R$, as in Figure \ref{fig:chargesfields:semicircle}. The wire carries a net electric charge, $Q$, that is uniformly distributed along the length of the wire. We wish to determine the electric field vector at the centre of the circle. 
+
+\capfig{0.2\textwidth}{figures/ChargesFields/semicircle.png}{\label{fig:chargesfields:semicircle}A charged wire bent into a semi-circle of radius $R$.}
+
+We start by choosing a very small section of wire and model that section of wire as a point charge with infinitesimal charge $dq$. A distance $R$ from that point charge, the electric field from that point charge will have magnitude, $dE$, given by:
+\begin{align*}
+dE=k\frac{dq}{R^2}
+\end{align*}
+The electric field vector, $d\vec E$, from the point charge $dq$ is illustrated in Figure \ref{fig:chargesfields:semicircle_sol}.
+\capfig{0.3\textwidth}{figures/ChargesFields/semicircle_sol.png}{\label{fig:chargesfields:semicircle_sol}Infinitesimal electric fields from point charges along the bent wire.}
+Using the coordinate system that is show, we define $\theta$ as the angle made by the vector from the origin to the point charge $dq$ and the $x$-axis. The electric field vector from $dq$ is then given by:
+\begin{align*}
+d\vec E = dE\cos\theta \hat x - dE\sin\theta \hat y
+\end{align*}
+and the total electric field at the origin is given by summing the electric fields from $dq$ over the entire semi-circle:
+\begin{align*}
+\vec E &= \int d\vec E = \int \left(dE\cos\theta \hat x - dE\sin\theta \hat y\right)\\
+&=\left( \int dE\cos\theta \right)\hat x -\left( \int dE\sin\theta \right)\hat y\\
+\therefore E_x &= \int dE\cos\theta\\
+\therefore E_y &= -\int dE\sin\theta\\
+\end{align*}
+We are thus left with two integrals to solve for the $x$ and $y$ components of the electric field, respectively. Before jumping into solving the integrals, it is useful to think about the symmetry of the problem. Specifically, consider a second point charge, $dq'$, located symmetrically about the $x$-axis from charge $dq$, as illustrated in Figure \ref{fig:chargesfields:semicircle_sol}. The charge $dq'$ will create a small electric field $d\vec E'$ as illustrated. When we add together $d\vec E$ and $d\vec E'$, the two $y$ components will cancel, and only the $x$ components will sum together. Similarly, for any $dq$ that we choose, there will always be another $dq'$ such that when we sum together their respective electric fields, the $y$ component will cancel. Thus, by symmetry, we can argue that the net $y$ component of the electric field, $E_y$, must be identically zero. We thus only need to evaluate the $x$ component of $\vec E$:
+\begin{align*}
+E_x = \int dE\cos\theta = \int k\frac{dq}{R^2} \cos\theta
+\end{align*}
+In order to solve this integral, we need to consider which variables change for different choices of the point charge $dq$. In this case, the distance $R$ is the same anywhere along the semi-circle, so only $\theta$ changes with different choices of $dq$, as $k$ is a constant. We thus need to express $dq$ in terms of $d\theta$ so that we can solve the integral. $d\theta$ corresponds to a small change in the angle $\theta$, and is the angle that is subtended by the charge $dq$. That is, the charge $dq$ covers a small arc length, $ds$, of the semi-circle, which is related to $d\theta$ by:
+\begin{align*}
+ds = Rd\theta
+\end{align*}
+The total charge on the wire is given by $Q$, and the wire has a length $\pi R$ (half the circumference of a circle). Since the charge is distributed uniformly on the wire, the charge per unit length of any piece of wire must be constant. In particular, $dq$ divided by $ds$ must be equal to $Q$ divided by $\pi R$:
+\begin{align*}
+\frac{dq}{ds}&=\frac{Q}{\pi R}\\
+\therefore dq &=\frac{Q}{\pi R}ds=\frac{Q}{\pi}d\theta
+\end{align*}
+where in the last equality we used the relation $ds=Rd\theta$. We now have all the ingredients to solve the integral:
+\begin{align*}
+E_x &= \int k\frac{dq}{R^2} \cos\theta = \int_{-\pi/2}^{+\pi/2} k\frac{Q}{\pi R^2}\cos\theta d\theta\\
+&= k\frac{Q}{\pi R^2}\int_{-\pi/2}^{+\pi/2}\cos\theta d\theta=k\frac{Q}{\pi R^2}\left[ \sin\theta \right]_{-\pi/2}^{+\pi/2}\\
+&= k\frac{2Q}{\pi R^2}
+\end{align*}
+The total electric field vector at the centre of the circle is thus given by:
+\begin{align*}
+\vec E = k\frac{2Q}{\pi R^2} \hat x
+\end{align*}
+Note that if we had not realized that we did not need to solve the integral for the $y$ component, we would still find that it is zero:
+\begin{align*}
+E_y= -k\frac{Q}{\pi R^2}\int_{-\pi/2}^{+\pi/2}\cos\theta d\theta=-k\frac{Q}{\pi R^2}\left[ -\cos\theta \right]_{-\pi/2}^{+\pi/2}=0
+\end{align*}
+In order to determine the electric field at some point from any continuous charge distribution, the procedure is generally the same:
+\begin{enumerate}
+\item Make a \textit{good} diagram.
+\item Choose a charge element $dq$.
+\item Draw the electric field element, $d\vec E$, at the point of interest.
+\item Write out the electric field element vector, $d\vec E$, in terms of $dq$ and any other relevant variables.
+\item Think of symmetry: will any of the component of $d\vec E$ sum to zero over all of the $dq$?
+\item Write the total electric field as the sum (integral) of the electric field elements.
+\item Identify which variables change as one varies the $dq$ and choose an integration variable to express $dq$ and everything else in terms of that variable and other constants.
+\item Do the sum (integral).
+\end{enumerate}
+
+\begin{example}{A ring of radius $R$ carries a total charge $+Q$. Determine the electric field a distance $a$ from the centre of the ring, along the axis of symmetry of the ring.}
+In order to determine the electric field, we carry out the procedure outlined above, and start by drawing a good diagram, as in Figure \ref{fig:chargesfields:ring} showing: our coordinate system, our choice of $dq$, the electric field element vector $d\vec E$ that corresponds to $dq$, and variables ($r$, $\theta$) to specify the position of $dq$.
+\capfig{0.3\textwidth}{figures/ChargesFields/ring.png}{\label{fig:chargesfields:ring}Determining the electric field on the axis of a ring of radius $R$ carrying charge $Q$.}
+In this case, the figure is challenging to draw and visualize because of the three-dimensional nature of the problem. With the specific $dq$ that we chose, the electric field element vector is given by:
+\begin{align*}
+d\vec E = -dE\sin\theta \hat x + 0\hat y + dE\cos\theta \hat z 
+\end{align*}
+where $d\vec E$ has magnitude:
+\begin{align*}
+dE = k\frac{dq}{r^2}
+\end{align*}
+The $x$ and $z$ components of the total electric field will then be given by:
+\begin{align*}
+E_x &= -\int dE\sin\theta=-\int k\frac{dq}{r^2}\sin\theta\\
+E_z &= \int dE\cos\theta=\int k\frac{dq}{r^2}\cos\theta \\
+\end{align*}
+In general, if we had chosen a $dQ$ that is not along one of the axes of the coordinate system, the electric field element vector would have components in all three directions. However, if we consider the symmetry of the ring, we can note that once we sum together all of the electric field elements, only the $z$ components will survive. Indeed, we have shown in Figure \ref{fig:chargesfields:ring} that for each $dq$, there will be a $dq'$ located on the opposite side of the ring that will create an electric field element that will cancel all by the $z$ component of the field element from $dq$. We thus only need to consider the $z$ components of the electric field elements when determining the total electric field:
+\begin{align*}
+\vec E = E_z\hat z
+\end{align*}
+We now have to evaluate the integral for the $z$ component of the electric field:
+\begin{align*}
+E_z &= \int k\frac{dq}{r^2}\cos\theta \\
+\end{align*}
+and determine which quantities change as we move $dq$ around the ring. In this case, both $r^2$ and $\cos\theta$ are the same for all elements on the ring, and the integral is trivial:
+\begin{align*}
+E_z &= k\frac{1}{r^2}\cos\theta\int dq=k\frac{Q}{r^2}\cos\theta=k\frac{Q}{r^2}\frac{a}{\sqrt{R^2+a^2}}  \\
+\end{align*}
+where the integral $\int dq$ simply means ``sum all of the charges $dq$ together'', which is equal to $Q$, the total charge on the ring, and we replaced $\cos\theta$ with the variables $a$ and $R$ that are provided in the question.
 \end{example}
 
 
-\section{The electric field}
+
+\begin{example}{You have rubbed a glass rod with a silk cloth such that the glass rod has acquired a positive charge. The rod has a length, $L$, a negligible cross-section, and has acquired a total charge, $Q$, that is uniformly distributed along the length of the rod. What is the electric field a distance $R$ from the centre of the rod?}
+In order to determine the electric field, we carry out the procedure outlined above, and start by drawing a good diagram, as in Figure \ref{fig:chargesfields:finiteline} showing: our coordinate system, our choice of $dq$ at a distance $y$ above the centre of the rod, the electric field element vector $d\vec E$ that corresponds to $dq$, and variables ($y$, $r$, $\theta$) to specify the position of $dq$.
+\capfig{0.3\textwidth}{figures/ChargesFields/finiteline.png}{\label{fig:chargesfields:finiteline}Determining the electric field a distance $R$ from the centre of a rod of length $L$ carrying charge $Q$.}
+We define the origin to be located at the point where we want to determine the electric field, and the angle $\theta$ to be the angle between the horizontal and the position vector of $dq$. We can write the electric field element vector as:
+\begin{align*}
+d\vec E = dE\cos\theta \hat x - dE\sin\theta \hat y
+\end{align*}
+where $d\vec E$ has magnitude:
+\begin{align*}
+dE = k\frac{dq}{r^2}
+\end{align*}
+The $x$ and $y$ components of the total electric field will then be given by:
+\begin{align*}
+E_x &= \int dE\cos\theta=\int k\frac{dq}{r^2}\cos\theta \\
+E_y &= -\int dE\sin\theta=-\int k\frac{dq}{r^2}\sin\theta\\
+\end{align*}
+Again, before proceeding with the integrals, we consider symmetry. Specifically, if we consider a charge $dq'$ located symmetrically about the $x$ axis from $dq$ (as illustrated in Figure \ref{fig:chargesfields:finiteline}), we see that the $y$ component of the electric field element $d\vec E'$ that it creates will cancel the $y$ component of $d\vec E$. For each choice of $dq$, there will exist a corresponding choice $dq'$ which will result in the $y$ component of the net electric field being zero. We thus only need to evaluate the $x$ component of the total electric field:
+\begin{align*}
+\vec E = E_x \hat x = \int k\frac{dq}{r^2}\cos\theta \hat x
+\end{align*}
+Within the integrand, both $r$ and $\theta$ will change as we sum over the different charges $dq$ along the rod. A straightforward option to write the integral is use $y$ as the integration constant, and to write $dq$, $r$, and $\cos\theta$ in terms of $y$. The charge $dq$ covers an infinitesimal length of the rod, $dy$. Since the rod is uniformly charged, the charge per unit length must be the same over a small length $dy$ as it is over the whole length of the rod:
+\begin{align*}
+\frac{dq}{dy}&=\frac{Q}{L}\\
+\therefore dq &= \frac{Q}{L} dy
+\end{align*}
+It is often useful to introduce a constant charge per unit length, $\lambda=\frac{Q}{L}$, so that we can write the charge $dq$ as:
+\begin{align*}
+dg = \lambda dy
+\end{align*}
+We can also express $r^2$ and $\cos\theta$ in terms of $y$ (and $R$ which is constant):
+\begin{align*}
+r^2 &= y^2+R^2\\
+\cos\theta=\frac{R}{r}=\frac{R}{\sqrt{y^2+R^2}}
+\end{align*}
+Finally, we can combine this all into an integral that we can evaluate:
+\begin{align*}
+ E_x &=\int k\frac{dq}{r^2}\cos\theta\\
+ &=k\int_{-L/2}^{L/2} \lambda \frac{1}{y^2+R^2}\frac{R}{\sqrt{y^2+R^2}} dy\\
+ &=kR\lambda\int_{-L/2}^{L/2} \frac{1}{(y^2+R^2)^{\frac{3}{2}}} dy\\
+ &=kR\lambda \left[  \frac{y}{R^2\sqrt{y^2+R^2}}\right]_{-L/2}^{L/2}\\
+ \therefore E_x &= \frac{k\lambda}{R}\frac{L}{\sqrt{\left(\frac{L}{2}\right)^2+R^2}}  
+\end{align*}
+If the rod were infinitely long (or very long compared to the distance $R$), the electric field becomes:
+\begin{align*}
+\lim_{L\to\infty}E_x=\frac{2k\lambda}{R}
+\end{align*}
+By using the charge per unit length, $\lambda$, we were able to easily generalize our result to that expected for an infinitely long rod with uniform charge density.
+
+Solving the integral above in terms of the integration variable $y$ is difficult without some knowledge of integrals. For this specific integral, the easiest method to use from calculus is ``trig substitution''. We show below how we can arrive at a much easier integral if we had instead chosen the angle $\theta$ as the integration variable instead of $y$, and we will see that this is a physical illustration of the ``trig substitution method'' from calculus!
+
+We go back to step 7 in our procedure and choose $\theta$ as the integration variable for the integral:
+\begin{align*}
+E_x &=\int k\frac{dq}{r^2}\cos\theta\\
+\end{align*}
+That is, we need to express $1/r^2$ and $dq$ in terms of $\theta$. Referring to Figure \ref{fig:chargesfields:finiteline}, we have:
+\begin{align*}
+r &= \frac{R}{\cos\theta}\\
+\therefore \frac{1}{r^2}&=\frac{\cos^2\theta}{R^2}\\
+y &= R\tan\theta\\
+\therefore dy &= \frac{dy}{d\theta}d\theta=\frac{R}{\cos^2\theta}d\theta\\
+\therefore dq &= \lambda dy =\lambda\frac{R}{\cos^2\theta}d\theta
+\end{align*}
+The only difficulty is in determining the angle $d\theta$ subtended by $dq$, which was determined above by first relating $dy$ and $d\theta$. With these substitutions, the integral becomes trivial:
+\begin{align*}
+E_x &=\int k\frac{dq}{r^2}\cos\theta\\
+&=k\int_{-\theta_0}^{\theta_0} \lambda\frac{R}{\cos^2\theta} \frac{\cos^2\theta}{R^2} \cos\theta d\theta=\frac{k\lambda}{R}\int_{-\theta_0}^{\theta_0}\cos\theta d\theta=\frac{k\lambda}{R}\left[\sin\theta \right]_{-\theta_0}^{\theta_0}\\
+&=\frac{2k\lambda}{R}\sin\theta_0
+\end{align*}
+where $\theta_0$ is the angle subtended by half of the wire. Referring to Figure \ref{fig:chargesfields:finiteline}, we can easily see that:
+\begin{align*}
+\sin\theta_0=\frac{L/2}{\sqrt{\left(\frac{L}{2}\right)^2+R^2}}
+\end{align*}
+So that the total electric field is given by:
+\begin{align*}
+E_x &=\frac{2k\lambda}{R}\sin\theta_0=\frac{k\lambda}{R}\frac{L}{\sqrt{\left(\frac{L}{2}\right)^2+R^2}}
+\end{align*}
+as found before. Furthermore, in the limit of an infinitely long rod, the angle $\theta_0$ tends to $\frac{\pi}{2}$, so that the electric field becomes:
+\begin{align*}
+E_x=\lim_{\theta_0\to\frac{\pi}{2}}\frac{2k\lambda}{R}\sin\theta_0=\frac{2k\lambda}{R}
+\end{align*}
+\textbf{Discussion:} In this example, we saw how to apply the principle of superposition to determine the electric field near a finite and a infinite line of charge with constant charge per unit length. We showed that it was relatively straightforward to set up the integral in terms of $dy$, but not so easy to solve the integral. We then showed that by using $\theta$ as the integration variable, we could arrive at a much easier integral. This change of variable corresponds to a physical variable in our problem, but is also the basis for the more abstract ``trig substitution'' method used to solve integrals in calculus.
+\end{example}
+
+
+
 
 \section{The electric dipole}
 
