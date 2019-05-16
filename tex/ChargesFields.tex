@@ -70,7 +70,12 @@ This leads to Coulomb's Law for the electric force (or simply ``Coulomb's Law'')
 \begin{align*}
 \Aboxed{\vec F_{12}=k\frac{Q_1Q_2}{r^2}\hat r_{21}}
 \end{align*}
-where $\hat r_{21}$ is the unit vector from $Q_2$ to $Q_1$ and $r$ is the distance between the two charges, as illustrated in Figure \ref{fig:chargesfields:coulombforce}. $k=\SI{8.99e9}{N\cdot m^2/C^{2}}$ is simply a proportionality constant (``Coulomb's constant'') to ensure that the quantity on the right will have units of Newtons when all other quantities are in S.I. units. 
+where $\hat r_{21}$ is the unit vector from $Q_2$ to $Q_1$ and $r$ is the distance between the two charges, as illustrated in Figure \ref{fig:chargesfields:coulombforce}. $k=\SI{8.99e9}{N\cdot m^2/C^{2}}$ is simply a proportionality constant (``Coulomb's constant'') to ensure that the quantity on the right will have units of Newtons when all other quantities are in S.I. units. In some instances, it is more convenient to use the ``permittivity of free space'', $\epsilon_0$, rather than Coulomb's constant, in which case Coulomb's Law has the form:
+\begin{align*}
+\vec F_{12}=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{r^2}\hat r_{21}
+\end{align*}
+where $\epsilon_0=\frac{1}{4\pi k}=\SI{8.85e-12}{C^2\cdot N^{-1}\cdot m^{-2}}$ is a more fundamental constant, as we will see in later chapters.
+
 \capfig{0.5\textwidth}{figures/ChargesFields/coulombforce.png}{\label{fig:chargesfields:coulombforce}Vectors involved in applying Coulomb's Law.}
 If the two charges have positions $\vec r_1$ and $\vec r_2$, respectively, then the vector $\hat r_{21}$ is given by:
 \begin{align*}
@@ -194,6 +199,27 @@ as we found previously. Note that the force on $q$ is in the opposite direction 
 \textbf{Discussion:} In this example, we determined the net electric field by making use of the superposition principle; namely, that we can treat the electric fields from $Q_1$ and $Q_2$ independently, without needing to consider the fact that $Q_1$ and $Q_2$ exert forces on each other. By knowing the electric field at some position in space, we can easily calculate the force vector on any test charge, $q$, placed at that position. Furthermore, the sign of the charge $q$ will determine in which direction the force will point (parallel to $\vec E$ for a positive charge and anti-parallel to $\vec E$ for a negative charge).
 \end{example}
 
+\subsection{Visualizing the electric field}
+Generally, a ``field'' is something that has a different value at different positions in space. The pressure in a fluid under the presences of gravity is a field: the pressure is different at different heights in the fluid. Since pressure is a scalar quantity (a number), we call it a ``scalar field''. The electric field is called a ``vector field'', because it is a vector that is different at each position in space. One way to visualize the electric field is to draw arrows at different positions in space; the length of the arrow is then proportional to the strength of the electric field at that position, and the direction of the arrow then represents the direction of the electric field. The electric field for a point charge is show in Figure TODO.
+%TODO A figure of a bunch of arrows point away from a point charge, with amplitude dropping off as 1/r^2.
+
+One disadvantage of visualizing a vector field with arrows is that the arrows take up space, and it can be challenging to visualize how the field changes magnitude and direction continuously through space. For this reason, one can instead draw ``field lines'' to visualize an electric field. Field lines are continuous lines with the following properties:
+\begin{itemize}
+\item The direction of the electric field at some point in space is tangent to the field line at that point.
+\item Field lines have a direction to indicate the direction of the field vector along the tangent.
+\item The magnitude of the field is proportional to the density of field lines at that point. The more field lines near a location in space, the strong the electric field at that point.
+\end{itemize}
+An example of using field lines to represent a vector field in space is shown in Figure \ref{fig:chargesfields:fieldlines}. The corresponding field vector is shown at two different positions in space. At both positions, the vector is tangent to the field lines and points in the direction of the little arrow drawn at the end of the field lines. The field vector at point $A$ has a larger magnitude than the one at point $B$, since the field lines are more concentrated at point $A$ than at point $B$ (there are more field lines per unit area at that position in space).
+\capfig{0.4\textwidth}{figures/ChargesFields/fieldlines.png}{\label{fig:chargesfields:fieldlines}An example of determining a field vector from the continuous field lines.}
+\begin{checkpoint}\label{cp:chargesfields:efield}
+\begin{MCquestion}{It is possible for field lines to cross?}
+\item Yes.
+\item No. \correct
+\end{MCquestion}
+\end{checkpoint}
+Because the electric field vector always points in the direction of the force that a positive charge would feel electric field lines will point out from a positive charge and into a negative charge. The electric field lines for a combination of positive and negative charges is illustrated in Figure TODO.
+%TODO A figure with 2 positive and 1 negative charge, with correct field lines.
+
 \subsection{Electric field from a charge distribution}
 So far, we have only considered Coulomb's Law for point charges (charges that are infinitely small and can be considered to exist at a single point in space). We can use the principle of superposition to determine the electric field from a charged extended/continuous object by modelling that object as being made of many point charges. The electric field from that object is then the sum of the electric field from the point charges that make up that object. 
 
@@ -257,7 +283,7 @@ In order to determine the electric field at some point from any continuous charg
 \item Do the sum (integral).
 \end{enumerate}
 
-\begin{example}{A ring of radius $R$ carries a total charge $+Q$. Determine the electric field a distance $a$ from the centre of the ring, along the axis of symmetry of the ring.}
+\begin{example}{\label{ex:chargesfields:ring}A ring of radius $R$ carries a total charge $+Q$. Determine the electric field a distance $a$ from the centre of the ring, along the axis of symmetry of the ring.}
 In order to determine the electric field, we carry out the procedure outlined above, and start by drawing a good diagram, as in Figure \ref{fig:chargesfields:ring} showing: our coordinate system, our choice of $dq$, the electric field element vector $d\vec E$ that corresponds to $dq$, and variables ($r$, $\theta$) to specify the position of $dq$.
 \capfig{0.3\textwidth}{figures/ChargesFields/ring.png}{\label{fig:chargesfields:ring}Determining the electric field on the axis of a ring of radius $R$ carrying charge $Q$.}
 In this case, the figure is challenging to draw and visualize because of the three-dimensional nature of the problem. With the specific $dq$ that we chose, the electric field element vector is given by:
@@ -283,14 +309,12 @@ E_z &= \int k\frac{dq}{r^2}\cos\theta \\
 \end{align*}
 and determine which quantities change as we move $dq$ around the ring. In this case, both $r^2$ and $\cos\theta$ are the same for all elements on the ring, and the integral is trivial:
 \begin{align*}
-E_z &= k\frac{1}{r^2}\cos\theta\int dq=k\frac{Q}{r^2}\cos\theta=k\frac{Q}{r^2}\frac{a}{\sqrt{R^2+a^2}}  \\
+E_z &= k\frac{1}{r^2}\cos\theta\int dq=k\frac{Q}{r^2}\cos\theta=kQ\frac{a}{(R^2+a^2)^\frac{3}{2}}  \\
 \end{align*}
 where the integral $\int dq$ simply means ``sum all of the charges $dq$ together'', which is equal to $Q$, the total charge on the ring, and we replaced $\cos\theta$ with the variables $a$ and $R$ that are provided in the question.
 \end{example}
 
-
-
-\begin{example}{You have rubbed a glass rod with a silk cloth such that the glass rod has acquired a positive charge. The rod has a length, $L$, a negligible cross-section, and has acquired a total charge, $Q$, that is uniformly distributed along the length of the rod. What is the electric field a distance $R$ from the centre of the rod?}
+\begin{example}{\label{ex:chargesfields:finiteline}You have rubbed a glass rod with a silk cloth such that the glass rod has acquired a positive charge. The rod has a length, $L$, a negligible cross-section, and has acquired a total charge, $Q$, that is uniformly distributed along the length of the rod. What is the electric field a distance $R$ from the centre of the rod?}
 In order to determine the electric field, we carry out the procedure outlined above, and start by drawing a good diagram, as in Figure \ref{fig:chargesfields:finiteline} showing: our coordinate system, our choice of $dq$ at a distance $y$ above the centre of the rod, the electric field element vector $d\vec E$ that corresponds to $dq$, and variables ($y$, $r$, $\theta$) to specify the position of $dq$.
 \capfig{0.3\textwidth}{figures/ChargesFields/finiteline.png}{\label{fig:chargesfields:finiteline}Determining the electric field a distance $R$ from the centre of a rod of length $L$ carrying charge $Q$.}
 We define the origin to be located at the point where we want to determine the electric field, and the angle $\theta$ to be the angle between the horizontal and the position vector of $dq$. We can write the electric field element vector as:
@@ -373,12 +397,63 @@ E_x=\lim_{\theta_0\to\frac{\pi}{2}}\frac{2k\lambda}{R}\sin\theta_0=\frac{2k\lamb
 \textbf{Discussion:} In this example, we saw how to apply the principle of superposition to determine the electric field near a finite and a infinite line of charge with constant charge per unit length. We showed that it was relatively straightforward to set up the integral in terms of $dy$, but not so easy to solve the integral. We then showed that by using $\theta$ as the integration variable, we could arrive at a much easier integral. This change of variable corresponds to a physical variable in our problem, but is also the basis for the more abstract ``trig substitution'' method used to solve integrals in calculus.
 \end{example}
 
-
-
-
+\begin{example}{Calculate the electric field a distance, $a$, above a infinite plane that carries uniform charge per unit area, $\sigma$.}
+In this case, we need to determine the field above an object that is two dimensional (a plane). In the previous examples (a ring, a line of charge), we modelled a one dimensional object (e.g. the line), as being made of many point charges (0-dimensional objects). We treated those point charges has having an infinitesimal length along the object (e.g. $dy$ was the length of the charge for the rod/line of charge).
+ 
+In order to model the two-dimensional object (the plane), we model it has being the sum of many one dimensional objects. We can model a plane either as a rectangle of width, $W$, and length, $L$, as show in the left panel of Figure \ref{fig:chargesfields:planecharge} or as a disk of radius, $R$, as shown in the right panel. To model an infinite plane, we can then take the limit of either $L$ and $W$ going to infinity (rectangle) or $R$ going to infinity (disk). We can model the rectangle as being the sum of many lines of \textbf{finite} length, $L$, and infinitesimal width, $dx$. Similarly, we can model the disk as the sum of infinitesimally thin rings of \textbf{finite} radius, $r$, and thickness, $dr$. In both cases, we know how to model the field from a line of charge (Example \ref{ex:chargesfields:finiteline}) or from a ring (Example \ref{ex:chargesfields:ring}). 
+\capfig{0.8\textwidth}{figures/ChargesFields/planecharge.png}{\label{fig:chargesfields:planecharge}A two-dimensional object such as a plane modelled as a the sum of infinitely thin lines (left panel) or as the sum of infinitely thin rings (right panel).}
+We proceed by modelling the plane as a disk made up of infinitesimal rings. Our infinitesimal charge, $dq$, is thus that of a ring of radius $r$ and thickness $dr$, as illustrated in Figure \ref{fig:chargesfields:disk}.
+\capfig{0.3\textwidth}{figures/ChargesFields/disk.png}{\label{fig:chargesfields:disk}Modelling the field from a disk as the sum of fields from concentric thin rings.}
+We know from Example \ref{ex:chargesfields:ring} that the magnitude of the electric field a distance $a$ from the centre of the ring, along its axis of symmetry (the $z$ axis in Figure \ref{fig:chargesfields:disk}), is given by:
+\begin{align*}
+dE = kdq\frac{a}{(r^2+a^2)^\frac{3}{2}} 
+\end{align*}
+By symmetry, for all infinitesimal rings, the field will always point along the $z$ axis. In order to determine the total field, we sum (integrate) the values of $dE$, over all of the rings, from a radius of $r=0$ to a radius $r=R$. For each ring, the value of $r$ will be different, so we need to express $dq$ in terms of $dr$ in order to perform the integral. We know that the plane has a uniform charge per unit area given by $\sigma$. The charge $dq$ of an infinitesimal ring is given by:
+\begin{align*}
+dq = \sigma dA=\sigma 2\pi r dr
+\end{align*}
+where $dA=2\pi r dr$ is the area of the infinitesimal ring of radius $r$ and thickness $dr$ (think of unfolding the ring into a rectangle of height $dr$ and length $2\pi r$, the circumference of the circle, in order to determine the area). We now have all of the ingredients in order to determine the total electric field:
+\begin{align*}
+E &= \int dE = \int_0^R kdq\frac{a}{(r^2+a^2)^\frac{3}{2}}  = 2\pi k a \sigma \int_0^R \frac{r}{(r^2+a^2)^\frac{3}{2}}dr\\
+&=2\pi k a \sigma \left[  \frac{-1}{\sqrt{r^2+a^2}}\right]_0^R=2\pi k  \sigma\left(1-\frac{a}{R^2+a^2} \right)
+\end{align*}
+Finally, we can take the limit of $R\to\infty$ in order to get the electric field above an infinite plane:
+\begin{align*}
+E=\lim_{R\to\infty}2\pi k a \sigma \left[  \frac{-1}{\sqrt{R^2+a^2}}\right]_0^R=2\pi k  \sigma\left(1-\frac{a}{R^2+a^2} \right)=2\pi k\sigma=\frac{\sigma}{2\epsilon_0}
+\end{align*}
+where we used $\epsilon_0$ in the last equality as the result is a little cleaner without the factors of $\pi$. Note that for an infinite plane of charge, the electric field does not depend on the distance from the plane!
+\textbf{Discussion:} In this example, we showed how we can model a two-dimensional charge distribution as the sum of one-dimensional charge distributions. In particular, we showed that an infinite plane of charge can be modelled as the sum of many line charges or of many rings of charge (we chose the latter to complete the example). We also found that the electric field above an infinite plane of charge does not depend on the distance from the plane; that is, the electric field is constant above an infinite plane of charge. 
+\end{example}
 \section{The electric dipole}
+Electric dipoles are a specific combination of a positive charge $+Q$ held at a fixed distance, $l$, from an equal and opposite charge, $-Q$, as illustrated in Figure \ref{fig:chargesfields:dipole}. Dipole can be represented by their ``electric dipole vector'', $\vec p$, defined to point in the direction \textbf{from the negative charge to the positive charge}, with magnitude:
+\begin{align*}
+p=Ql
+\end{align*}
+\capfig{0.3\textwidth}{figures/ChargesFields/dipole.png}{\label{fig:chargesfields:dipole}An electric dipole.}
+Dipoles arise often in nature, for example, a water molecule can be modelled as a dipole, because the two hydrogen atoms are not symmetrically arranged around the oxygen atom. The electrons in a water molecule tend to stay closer to the oxygen atom, which acquires an excess of 2 electrons, while each proton has a deficit of 1 electron, resulting in a separation of charge (polarization), which can be modelled as a an electric dipole, as in Figure \ref{fig:chargesfields:h20}.
+\capfig{0.1\textwidth}{figures/ChargesFields/h20.png}{\label{fig:chargesfields:h20}A water molecule can be modelled as an electric dipole.}
+When a dipole is immersed in uniform electric field, as illustrated in Figure \ref{fig:chargesfields:dipoleinfield}, the net force on the dipole is zero. The electric force on the positive charge will always be equal and in the opposite direction from the force on the negative charge. 
+\capfig{0.5\textwidth}{figures/ChargesFields/dipoleinfield.png}{\label{fig:chargesfields:dipoleinfield}An electric dipole in a uniform electric field.}
+Although the net force on the dipole is zero, there is still a net torque about its centre that will cause the dipole to rotate (unless the dipole vector is already parallel to the electric field vector). If the dipole vector makes an angle of $\theta$ with the electric field vector, the magnitude of the net torque on the dipole about its centre is given by:
+\begin{align*}
+\tau=\frac{l}{2}F^+\sin\theta+\frac{l}{2}F^-\sin\theta=\frac{l}{2}QE\sin\theta+\frac{l}{2}QE\sin\theta=QlE\sin\theta=pE\sin\theta
+\end{align*}
+In Figure \ref{fig:chargesfields:dipoleinfield}, the torque vector is into the page (the forces will make it rotate clockwise), which is the same direction as the cross product, $\vec p \times \vec E$. Note that the magnitude of the torque is also equal to the magnitude of the cross product. Thus, in general, the torque vector on a dipole, $\vec p$, from an electric field, $\vec E$, is given by:
+\begin{align*}
+\Aboxed{\vec \tau =\vec p \times \vec E}
+\end{align*}
+In particular, note that the torque is zero when the dipole and electric field vectors are parallel. Thus, a dipole will always experience a torque that tends to align it with the electric field vector. The dipole is thus in a stable equilibrium when it is parallel to the electric field.
 
-
+We can model the behaviour of the dipole using energy. If a dipole is rotated away from its equilibrium orientation and released, it will gain (rotational) kinetic energy as it tries to return to equilibrium, and will oscillate about the equilibrium position. When the dipole is held out of equilibrium, we can think of it has having some form of potential energy. To determine the functional form of that potential energy function, we consider the work done in rotating the dipole from an angle $\theta_1$ to an angle $\theta_2$, as measured with respect to the electric field:
+\begin{align*}
+W&=\int_{\theta_1}^{\theta_2} \tau d\theta=\int_{\theta_1}^{\theta_2} -pE\sin\theta d\theta=-pE\int_{\theta_1}^{\theta_2} \sin\theta d\theta\\
+&=pE[\cos\theta]_{\theta_1}^{\theta_2}=pE\cos\theta_2-pE\cos\theta_1
+\end{align*}
+where the negative sign in the torque is to indicate that the torque is in the opposite direction from increasing $\theta$. The net work done in going from position $\theta_1$ to $\theta_2$ is the negative of the change in potential energy in going from $\theta_1$ to $\theta_2$. Thus, we define the potential energy of an electric dipole, $\vec p$, in an electric field, $\vec E$, as:
+\begin{align*}
+\Aboxed{U=-pE\cos\theta=-\vec p\cdot \vec E}
+\end{align*}
+which has a negative sign, and we also recognize that this is equivalent to the scalar product between $\vec p$ and $\vec E$. Note that the negative sign makes sense because systems experience a force/torque that will decrease their potential energy. When the angle is zero, $\cos\theta$, is maximal. Since we need the position with $\theta=0$ to have the lowest potential energy, the minus sign guarantees that all values of $\theta$ other than zero will give a potential energy that is higher. Remember that only changes in potential energy are relevant, so the minus sign should not bother you, although you should think about whether it makes sense.
 \newpage
 \section{Summary}
 
