@@ -1,0 +1,986 @@
+\section{Circuits}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Multiple Choice
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple Choice}
+
+%Question based on Matt Routliffe's RA19 question (Kate)
+\question Circuit A has three identical resistors connected in series, whereas circuit B has three resistors (identical to those in circuit A) connected in parallel. Which circuit uses the most power if connected to identical batteries?
+\begin{checkboxes}
+\choice Circuit A
+\CorrectChoice Circuit B \correct
+\choice Both circuits have the same power
+\choice Cannot be determined with the information given
+\end{checkboxes}
+
+\question Referring to Figure \ref{fig:Circuits:twocircuits}, which circuit will result in the highest current through the battery?
+\begin{center}
+	\begin{circuitikz}[]
+		\ctikzset{label/align=smart,bipoles/length=1.5cm}
+		\draw (0,0) node[anchor=north]{a} to [battery1=9V,*-*] (4,0)node[anchor=north]{h}
+		to (4,3) node[anchor=west]{g} 
+		to [R=\SI{4}{\ohm},*-*] (2,3) node[anchor=east]{e}
+		to (2,2 )node[anchor=west]{f} to [R=\SI{3}{\ohm},*-*] (0,2) node[anchor=east]{b}
+		(2,3) to (2,4 )node[anchor=west]{d} to [R=\SI{2}{\ohm},*-*] (0,4) node[anchor=east]{c}
+		(0,4) to (0,0);   
+	\end{circuitikz}
+	\begin{circuitikz}[]
+		\ctikzset{label/align=smart,bipoles/length=1.5cm}
+		\draw (0,0) node[anchor=north]{a} to [battery1=9V,*-*] (4,0)node[anchor=north]{h}
+		to (4,3) node[anchor=west]{g} 
+		to [R=\SI{3}{\ohm},*-*] (2,3) node[anchor=east]{e}
+		to (2,2 )node[anchor=west]{f} to [R=\SI{4}{\ohm},*-*] (0,2) node[anchor=east]{b}
+		(2,3) to (2,4 )node[anchor=west]{d} to [R=\SI{2}{\ohm},*-*] (0,4) node[anchor=east]{c}
+		(0,4) to (0,0);   
+	\end{circuitikz}
+	\captionof{figure}{\label{fig:Circuits:twocircuits}Two different configurations of resistors connected to a battery.} 
+\end{center}
+\begin{checkboxes}
+	\choice The circuit on the left.
+	\CorrectChoice The circuit on the right.
+	\choice They will both lead to the same current in the battery.
+	\choice It depends on whether this is an ideal battery.
+\end{checkboxes}
+
+\question Which dissipates the most power?
+\begin{checkboxes}
+	\CorrectChoice $N$ identical $\SI{1}{\Omega}$ resistors connected in parallel to a \SI{9}{V} battery.
+	\choice $N$ identical $\SI{1}{\Omega}$ resistors connected in series with a \SI{9}{V} battery.
+	\choice Both will dissipate the same power.
+\end{checkboxes}
+%Gregary Li
+\question Which of the following wires has the smallest resistance (all made of the same material)?
+\begin{checkboxes}
+	\choice a wire of length $L$ and diameter $d/2$
+	\choice a wire of length $2L$ and diameter $d/2$
+	\choice  a wire of length $2L$ and diameter $d$
+	\CorrectChoice a wire of length $L$ and diameter $d$
+\end{checkboxes}
+
+
+%Hongli Zeng - but check for plagiarism!
+%\question What is the resistance of a \SI{40}{W} light designed for a \SI{120}{V} outlet?
+%\begin{checkboxes}
+%	\choice \SI{2.7e-3}{\Omega}
+%	\choice  \SI{0.33}{\Omega}
+%	\choice \SI{3.0}{\Omega}
+%	\CorrectChoice \SI{360}{\Omega}
+%\end{checkboxes}
+%%%% That check for plagiarism line is slightly concerning, so I'm leaving the above question out for now
+
+
+%Yannick Bisson (modified)
+\question If a metal wire with radius $\SI{0.5}{cm}$ and length $L=\SI{2}{m}$ has a resistance of \SI{10}{\Omega}, what is the material's conductivity?
+\begin{checkboxes}
+	\choice \SI{3.9e-4}{\Omega^{-1}m^{-1}}
+	\choice \SI{0.25}{\Omega^{-1}m^{-1}}
+	\choice \SI{3.9}{\Omega^{-1}m^{-1}}
+	\CorrectChoice  \SI{2.5e3}{\Omega^{-1}m^{-1}}
+\end{checkboxes}
+
+%Q11
+%Michael Amorim
+\question A \SI{2}{\Omega} resistor in series with a \SI{4}{\Omega} resistor are in parallel with a \SI{3}{\Omega} resistor.  What is the equivalent resistance of these three resistors?
+\begin{checkboxes}
+	\choice \SI{1}{\Omega}
+	\CorrectChoice \SI{2}{\Omega}
+	\choice \SI{3}{\Omega}
+	\choice \SI{4}{\Omega}
+\end{checkboxes}
+
+%Ashley Meness
+\question  Three identical resistors are connected in series to a \SI{12}{V} battery. What is the voltage across the middle resistor?
+\begin{checkboxes}
+	\choice \SI{3}{V}
+	\CorrectChoice \SI{4}{V}
+	\choice \SI{5}{V}
+	\choice \SI{6}{V}
+\end{checkboxes}
+
+\question A \SI{15}{V} battery is connected to a \SI{30}{\Omega} resistor in series with a \SI{15}{\Omega} resistor. How much power is dissipated in the resistors?
+\begin{checkboxes}
+	\choice \SI{0.3}{W}
+	\choice \SI{3}{W}
+	\CorrectChoice \SI{5}{W}
+	\choice \SI{30}{W}
+\end{checkboxes}
+
+\question Circuit A has three identical resistors connected in series, whereas circuit B has three resistors (identical to those in circuit A) connected in parallel. Which circuit draws the most current from if connected to identical batteries?
+\begin{checkboxes}
+\choice Circuit A
+\CorrectChoice Circuit B \correct
+\choice Both circuits draw the same current
+\choice Cannot be determined with the information given
+\end{checkboxes}
+
+\question Circuit A has three identical resistors connected in series, whereas circuit B has three resistors (identical to those in circuit A) connected in parallel. In which circuit is the potential difference across any given resistor the greatest, if the circuits are connected to identical batteries?
+\begin{checkboxes}
+\choice Circuit A
+\CorrectChoice Circuit B \correct
+\choice The potential difference across each resistor is the same in both circuits.
+\choice Cannot be determined with the information given
+\end{checkboxes}
+
+%Joanna Fu 
+\question A \SI{30}{W} and a \SI{50}{W} light bulb are designed for use with the same voltage. What is the ratio of the resistance of the \SI{50}{W} bulb to the resistance of the \SI{30}{W} bulb ($\frac{R_{50}}{R_{30}}$)?
+\begin{choices} 
+\choice \num{0.36}
+\CorrectChoice \num{0.6} \correct
+\choice \num{1.7}
+\choice \num{2.8}
+\end{choices}
+
+%Quentin Sanders
+\question If two resistors are connected in parallel and the equivalent resistance of those two resistors is \SI{0.5}{\ohm}, which of the following values could not possibly be the resistance of one of the individual resistors?
+\begin{choices} 
+\CorrectChoice \SI{0.25}{\ohm} \correct
+\choice \SI{1}{\ohm}
+\choice \SI{1.5}{\ohm}
+\choice \SI{2.0}{\ohm}
+\end{choices}
+
+\question Referring to the circuit in Figure \ref{fig:circuit1}, what is the current through the \SI{6}{\ohm} resistor?
+\begin{choices} 
+\CorrectChoice \SI{0}{A} \correct
+\choice \SI{0.56}{A}
+\choice \SI{1.11}{A}
+\choice \SI{2.22}{A}
+\end{choices}
+\begin{center}
+\begin{circuitikz}[]
+\ctikzset{label/align=smart,bipoles/length=1.5cm}
+\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+            to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+            to [battery1=\SI{3}{V}] (6,3)node[anchor=west]{d}
+            to [short,*-*] (6,0)node[anchor=west]{c}
+            to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+            to [battery1=\SI{6}{V},*-*] (0,0)
+      (3,0) to [R=\SI{6}{\ohm}] (3,3);     
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuit1}A circuit} 
+\end{center}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{center}
+\begin{circuitikz}[]
+\ctikzset{label/align=smart,bipoles/length=1.5cm}
+\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+            to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+            to [battery1=\SI{3}{V}] (6,3)node[anchor=west]{d}
+            to [short,*-*] (6,0)node[anchor=west]{c}
+            to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+            to [battery1=\SI{6}{V},*-*] (0,0)
+      (1.6,0) to [short,i=$I_1$](3,0)
+      (3,0,0) to [short,i=$I_2$](3,0.9)
+      (3,0,0) to [short,i=$I_3$](3.9,0)
+      (3,0) to [R=\SI{6}{\ohm}] (3,3);
+      
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:circuit1_sol}A circuit} 
+\end{center}
+Using the currents drawn in Figure \ref{fig:circuits:circuit1_sol}, the loop $abefa$ gives:
+\begin{align}
+\label{eqn:circuit1:loop1}
+6-6I_2-4I_1&=0\nonumber\\
+\therefore 2I_1+3I_2=3
+\end{align}
+The loop $debcd$ gives:
+\begin{align}
+\label{eqn:circuit1:loop2}
+3+6I_2-2I_3&=0\nonumber\\
+\therefore 6I_2-2I_3&=-3
+\end{align}
+The junction rule at  point $b$ gives:
+\begin{align*}
+I_3=I_1-I_2
+\end{align*}
+which we can substitute into the equation \ref{eqn:circuit1:loop2}
+\begin{align*}
+6I_2-2(I_2-I_2)&=-3\\
+\therefore 8I_2-2I_1 =-3
+\end{align*}
+If we add this equation to equation \ref{eqn:circuit1:loop1}, we find that current $I_2$ is identically zero.
+\end{solution}
+
+\question \label{q:circuits:TriangleCircuit} Referring to Figure \ref{fig:circuits:TriangleCircuit}, what is the resistance between points A and B?
+%\begin{wrapfigure}{l}{0.3\textwidth}
+\begin{figure}[h!]
+\centering
+\begin{circuitikz}[scale=1.25]
+\ctikzset{label/align=smart,bipoles/length=1.5cm}
+\draw (0,0)node[anchor=east]{A} to[R,l_=\mbox{$R_3=5\,\Omega$},*-*] node[anchor=west]{B}(4,0);
+\draw (4,0) to[R,l^=\mbox{$R_2=4\,\Omega$},*-*] (2,3);
+\draw (2,3)to[R,l_=\mbox{$R_1=3\,\Omega$},*-*] (0,0);
+\end{circuitikz}
+\caption{\label{fig:circuits:TriangleCircuit} Circuit for Question \ref{q:circuits:TriangleCircuit}}
+\end{figure}
+%\end{wrapfigure}
+\begin{checkboxes}
+\choice 0.34\,$\Omega$
+\choice 0.44\,$\Omega$
+\choice 2.3\,$\Omega$
+\CorrectChoice 2.9\,$\Omega$ \correct
+\end{checkboxes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% long answer
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Long answers}
+%From Giancolli26-82 -fixed
+\question In the circuit that is shown in Figure \ref{fig:circuits:circuitpar2}, what is the power dissipated by the \SI{6.0}{\ohm} resistor?
+\capfig{0.3\textwidth}{figures/Circuits//circuitpar22.png}{\label{fig:circuits:circuitpar22}A circuit.}
+\begin{finalanswer}
+\SI{5.39}{W}
+\end{finalanswer}
+\begin{solution}
+In order to find the power through the \SI{6.0}{\ohm} resistor, we need to find the current through it. The easiest way to determine the current is reduce the circuit into equivalent resistors. We can combine the \SI{10}{\ohm} and \SI{20}{\ohm} resistors in parallel:
+\begin{align*}
+R_1=\frac{(\SI{10}{\ohm})(\SI{20}{\ohm})}{(\SI{10}{\ohm})+(\SI{20}{\ohm})}&=\SI{6.67}{\ohm}
+\end{align*}
+The $R_1$ equivalent resistor is in series with the \SI{6.0}{\ohm} resistor, leading to an equivalent resistor $R_2$:
+\begin{align*}
+R_2=R_1+(\SI{6.0}{\ohm})=\SI{12.667}{\ohm}
+\end{align*}
+$R_2$ is in parallel with the remaining \SI{15.5}{\ohm} resistor. However, the potential difference across $R_2$ is that of the battery, so we can find the current through $R_2$:
+\begin{align*}
+I_2=\frac{\Delta V}{R_2}=\frac{(\SI{12}{V})}{(\SI{12.667}{\ohm})}=\SI{0.947}{A}
+\end{align*}
+The current through $R_2$ is the same as the current through the \SI{6.0}{\ohm} resistor. So we can determine the power dissipated by that resistor:
+\begin{align*}
+I=I_2^2R=(\SI{0.947}{A})^2(\SI{6.0}{\ohm})=\SI{5.39}{W}
+\end{align*}
+\end{solution}
+
+%From Giancolli26-82 modified
+\question In the circuit that is shown in Figure \ref{fig:circuits:circuitpar1}, what is the power dissipated by the \SI{4.5}{\ohm} resistor?
+\capfig{0.3\textwidth}{figures/Circuits//circuitpar1.png}{\label{fig:circuits:circuitpar1}A circuit.}
+\begin{finalanswer}
+\SI{2.293}{W}
+\end{finalanswer}
+\begin{solution}
+In order to find the power through the \SI{4.5}{\ohm} resistor, we need to find the current through it. The easiest way to determine the current is reduce the circuit into equivalent resistors. We can combine the \SI{12}{\ohm} and \SI{25}{\ohm} resistors in parallel:
+\begin{align*}
+R_1=\frac{(\SI{12}{\ohm})(\SI{25}{\ohm})}{(\SI{12}{\ohm})+(\SI{25}{\ohm})}&=\SI{8.108}{\ohm}
+\end{align*}
+The $R_1$ equivalent resistor is in series with the \SI{4.5}{\ohm} resistor, leading to an equivalent resistor $R_2$:
+\begin{align*}
+R_2=R_1+(\SI{4.5}{\ohm})=\SI{12.667}{\ohm}
+\end{align*}
+$R_2$ is in parallel with the remaining \SI{15.5}{\ohm} resistor. However, the potential difference across $R_2$ is that of the battery, so we can find the current through $R_2$:
+\begin{align*}
+I_2=\frac{\Delta V}{R_2}=\frac{(\SI{12}{V})}{(\SI{12.667}{\ohm})}=\SI{0.714}{A}
+\end{align*}
+The current through $R_2$ is the same as the current through the \SI{4.5}{\ohm} resistor. So we can determine the power dissipated by that resistor:
+\begin{align*}
+I=I_2^2R=(\SI{0.714}{A})^2(\SI{4.5}{\ohm})=\SI{2.293}{W}
+\end{align*}
+\end{solution}
+
+%From Giancolli26-82 very modified
+\question In the circuit that is shown in Figure \ref{fig:circuits:circuitpar3}, the \SI{4.5}{\ohm} resistor is found to dissipate \SI{2}{W}. What is the battery voltage, $\Delta V$?
+\capfig{0.3\textwidth}{figures/Circuits//circuitpar3.png}{\label{fig:circuits:circuitpar3}A circuit.}
+\begin{finalanswer}
+\SI{8.405}{V}
+\end{finalanswer}
+\begin{solution}
+From the power dissipated in the \SI{4.5}{\ohm} resistor, we can find the current through it:
+\begin{align*}
+I=\sqrt\frac{P}{R}=\sqrt\frac{(\SI{2}{W})}{(\SI{4.5}{\ohm})}=\SI{0.667}{A}
+\end{align*}
+
+We can then calculate the equivalent resistance from the \SI{4.5}{\ohm}, \SI{12}{\ohm} and \SI{25}{\ohm} resistors. That equivalent resistor will have a voltage $\Delta V$ across of it and the current $I$ that we just calculated through it. 
+
+We can combine the \SI{12}{\ohm} and \SI{25}{\ohm} resistors in parallel:
+\begin{align*}
+R_1=\frac{(\SI{12}{\ohm})(\SI{25}{\ohm})}{(\SI{12}{\ohm})+(\SI{25}{\ohm})}&=\SI{8.108}{\ohm}
+\end{align*}
+The $R_1$ equivalent resistor is in series with the \SI{4.5}{\ohm} resistor, leading to an equivalent resistor $R_2$:
+\begin{align*}
+R_2=R_1+(\SI{4.5}{\ohm})=\SI{12.667}{\ohm}
+\end{align*}
+
+The current through $R_2$ is the same as the current through the \SI{4.5}{\ohm} resistor. The $R_2$ resistor has a potential difference $\Delta V$ across it, so:
+\begin{align*}
+\Delta V=R_2I=(\SI{12.667}{\ohm})(\SI{0.667}{A})=\SI{8.405}{V}
+\end{align*} 
+
+\end{solution}
+
+%From Alexis
+\question Find the currents $I_{1}$,$I_{2}$, and $I_{3}$ in the circuit shown in Figure \ref{fig:circuits:circuit}.
+\capfig{0.35\textwidth}{figures/Circuits//circuit.png}{\label{fig:circuits:circuit} A circuit containing different branches.}
+\begin{finalanswer}
+$I_1=\SI{2.0}{A}$, $I_2=\SI{-3.0}{A}$, $I_3=\SI{-1.0}{A}$
+\end{finalanswer}
+\begin{solution} 
+First, note that we cannot simplify the circuit by the rules of adding resistances in series and in parallel (if the \SI{10}{V} battery were taken away, we could reduce the remaining circuit with series and parallel combinations). Thus, we categorize this problem as one in which we must use Kirchhoff’s rules. To analyse the circuit, we arbitrarily make a consistent guess for the directions of the currents as labelled in the figure. Applying Kirchhoff’s junction rule
+to junction $c$ gives
+\begin{align}
+\label{eqn:j1}
+I_1+I_2=I_3
+\end{align}
+We now have one equation with three unknowns $I_2$, $I_2$, and $I_3$. There are three possible loops in the circuit: $abcda$, $befcb$, and $aefda$, of which only two (any two) are independent. We therefore need only two loop equations to determine
+the unknown currents.  Applying Kirchhoff’s loop rule to loops $abcda$:
+\begin{align}
+\label{eqn:l1}
+(\SI{10.0}{V}) -(\SI{6.0}{\Omega}) I_1 - (\SI{2.0}{\Omega}) I_3&=0\nonumber\\
+(\SI{3.0}{\Omega}) I_1 + (\SI{1.0}{\Omega}) I_3 &=(\SI{5.0}{V}) 
+\end{align}
+where, in the last line, we divided the equation by two.
+
+Doing the same for loop $befcb$:
+\begin{align}
+\label{eqn:l2}
+ -(\SI{4.0}{\Omega})I_2-(\SI{14.0}{V}) +(\SI{6.0}{\Omega})I_1-\SI{10.0}{V} &=0\nonumber\\
+ -(\SI{2.0}{\Omega})I_2 +(\SI{3.0}{\Omega})I_1 &=(\SI{12}{V})
+\end{align}
+where, in the last line, we divided the equation by two. Note that in loop $befcb$ we obtain a positive value when traversing the $6.0\Omega$ resistor because our direction of travel was opposite to the assumed direction of $I_1$. Also, both batteries contributed negative terms in this loop, as we traversed them in the $+$ to $-$ direction.
+
+We now have three equations with three unknowns. The rest is just math. Substituting equation \ref{eqn:j1} into equation \ref{eqn:l1}:
+\begin{align}
+\label{eqn:t1}
+(\SI{3.0}{\Omega}) I_1 + (\SI{1.0}{\Omega}) (I_1+I_2) &=(\SI{5.0}{V})\nonumber\\
+(\SI{4.0}{\Omega}) I_1 +(\SI{1.0}{\Omega})I_2&=(\SI{5.0}{V})
+\end{align}
+We can add equation \ref{eqn:l2} to equation \ref{eqn:t1} multiplied by 2 to get rid of $I_2$:
+\begin{align*}
+(\SI{11.0}{\Omega}) I_1&=(\SI{22.0}{V})\\
+\therefore I_1&=\SI{2.0}{A}
+\end{align*}
+We can now substitute into equation \ref{eqn:t1} to get $I_2$:
+\begin{align*}
+(\SI{4.0}{\Omega}) I_1 +(\SI{1.0}{\Omega})I_2&=(\SI{5.0}{V})\\
+(\SI{4.0}{\Omega})(\SI{2.0}{A}) +(\SI{1.0}{\Omega})I_2&=(\SI{5.0}{V})\\
+\therefore I_2=\SI{-3.0}{A}
+\end{align*}
+and we note that since $I_2$ is negative, we guessed the direction incorrectly. Finally, substituting back into equation \ref{eqn:j1}, we can find $I_3$:
+\begin{align*}
+I_3&=I_1+I_2=(\SI{2.0}{A})+(\SI{-3.0}{A})=\SI{-1.0}{A}
+\end{align*}
+and we note that we also incorrectly guessed the direction of $I_3$.
+\end{solution}
+
+%McLean? Past 106 problem
+\question Consider the infinite ladder network of resistors shown in Figure \ref{fig:circuits:resistorladder}. If all of the resistors have equal magnitude, what is the equivalent resistance of the network between points a and b?
+
+\textbf{Hint:} Since the network of resistors is infinite, the resistance does not change when 1 additional ‘rung’ is added.
+\capfig{0.4\textwidth}{figures/Circuits//resistorladder.png}{\label{fig:circuits:resistorladder}The infinite resistor ladder.}
+\begin{finalanswer}
+$R_{eq}=(1+\sqrt{3})R$
+\end{finalanswer}
+\begin{solution}
+Let $R_{eq}$ be the equivalent resistance that we'd like to find. If the resistance does not change when we add one rung to the ladder, then:
+\begin{align*}
+R_{eq}= 2R + \frac{1}{\frac{1}{R}+\frac{1}{R_{eq}}}
+\end{align*}
+That is, the two horizontal resistors are added in series, whereas the vertical resistor is added to the network in parallel. One needs to assume that there is a next rung in the ladder (otherwise, all three resistors add in series). This is illustrated in Figure \ref{fig:circuits:resistorladder_sol}.
+\capfig{0.4\textwidth}{figures/Circuits//resistorladder_sol.png}{\label{fig:circuits:resistorladder_sol}Adding a rung to the infinite resistor ladder.}
+We can re-arrange the above equation to be a quadratic equation for $R_{eq}$:
+\begin{align*}
+R_{eq}^2-2RR_{eq}-2R^2=0
+\end{align*}
+which has positive root:
+\begin{align*}
+R_{eq}=(1+\sqrt 3)R
+\end{align*}
+
+\end{solution}
+
+
+\question You are given three identical resistors and each of the resistors has a resistance of \SI{4}{\Omega}. Moreover, each resistor can dissipate at most \SI{20}{W}. Consider, in turn, the four possible ways of connecting the three resistors together and determine the maximum power that can be dissipated in each configuration without blowing one of the resistors.
+\begin{finalanswer}
+Two configurations have a maximum power of \SI{30}{W}, and two a maximum power of \SI{60}{W}. 
+\end{finalanswer}
+\begin{solution}
+If the resistors are \textbf{all connected in series or all in parallel}, they will each have the same current. Thus, they can all be run at full power, and the total power will \SI{60}{W}.
+
+Figure \ref{fig:circuits:resistors} shows the other two possible configurations.
+\capfig{0.4\textwidth}{figures/Circuits//resistors.png}{\label{fig:circuits:resistors}Two possibilities of connecting 3 resistors.}
+
+On the \textbf{left hand panel}, the resistor that is alone will have the highest current, and the two resistors in parallel will each have half of that current. The resistor that is alone will thus run at \SI{20}{W}, the other two resistors, with half of the current, will output one quarter of the power, namely \SI{5}{W}. The total power is thus \SI{30}{W}.
+
+On the \textbf{right hand panel}, the resistor that is alone will have the highest current, and the two resistors in parallel will each have half of that current. The resistor that is alone will thus run at \SI{20}{W}, the other two resistors, with half of the current, will output one quarter of the power, namely \SI{5}{W}. The total power is thus \SI{30}{W}.
+
+\end{solution}
+
+
+%Giancolli 26-31 -fixed
+\question For the circuit that is shown in Figure \ref{fig:circuits:circuit2}
+\begin{parts}
+\part What is the potential difference between points a and d, $V_d-V_a$?
+\part What is the terminal voltage at each battery? (Note that the lower case r, represent the internal resistance of the batteries)
+\end{parts}
+\capfig{0.7\textwidth}{figures/Circuits//circuit2.png}{\label{fig:circuits:circuit2} A circuit.}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \SI{43.15}{V}
+\item \SI{45}{V} battery: \SI{24.06}{V}, \SI{83}{V} battery: \SI{71.98}{V}
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part In order to find the potential difference between points a and d, we need to know the currents, so that we can determine the voltage across the resistors. Since there are three possible loops and three currents, we will obtain one equation from the junction rule, and two from the loop rules. Based on the currents that are drawn on the figure, the junction rule at points $a$ or $d$ gives:
+\begin{align}
+\label{eqn:c2j}
+I_1+I_2=I_3
+\end{align}
+Applying the loop rule to loop $ahdcba$, we have:
+\begin{align}
+\label{eqn:c2l1}
+-(\SI{22}{\Omega})I_1+(\SI{30}{V})-(\SI{39}{\Omega})I_3&=0\nonumber\\
+(\SI{22}{\Omega})I_1+(\SI{39}{\Omega})I_3&=(\SI{30}{V})\nonumber\\
+\therefore 22I_1+39I_3&=30
+\end{align}
+where we added the \SI{35}{\Omega} and \SI{4}{\Omega} resistors which are in series, and in the last line, we did not write in the units to make it more readable.
+
+Finally, we write the loop rule for loop $ahdefga$:
+\begin{align}
+\label{eqn:c2l2}
+-(\SI{22}{\Omega})I_1+(\SI{20}{\Omega})I_2-(\SI{83}{V})&=0\nonumber\\
+-(\SI{22}{\Omega})I_1+(\SI{20}{\Omega})I_2&=(\SI{83}{V})\nonumber\\
+\therefore -22I_1+20I_2&=83
+\end{align}
+We substitute equation \ref{eqn:c2j} into equation \ref{eqn:c2l1}:
+\begin{align}
+\label{eqn:c2t1}
+22I_1+39(I_1+I_2)&=30\nonumber\\
+\therefore 61I_1+39I_2&=30
+\end{align}
+We can then multiply equation \ref{eqn:c2l2} by 61 and add that to equation \ref{eqn:c2t1} multiplied by 22:
+\begin{align*}
+(22\times 39+61\times 20)I_2=22\times 30+61 \times 83\\
+\therefore I_2=\frac{(\SI{5723}{V})}{(\SI{2078}{\Omega})}=\SI{2.754}{A}
+\end{align*}
+Back-substituting into equation \ref{eqn:c2t1} lets us solve for $I_1$:
+\begin{align*}
+61I_1+39I_2&=30\\
+\therefore I_1&=\frac{(\SI{30}{V})-(\SI{39}{\Omega})(\SI{2.754}{A})}{(\SI{61}{\Omega})}=\SI{-1.269}{A}
+\end{align*}
+and we note that the initial guess for the direction of this current was wrong. Finally, using equation \ref{eqn:c2j}, we can find $I_3$:
+\begin{align*}
+I_3&=I_1+I_2=(\SI{-1.269}{A})+(\SI{2.754}{A})=\SI{1.485}{A}
+\end{align*}
+Finally, to find the potential difference between points $a$ and $d$, we can use the voltage across the \SI{34}{\Omega} resistor that is caused by $I_1$:
+\begin{align*}
+V_d-V_a=-(\SI{34}{\Omega})I_1=-(\SI{34}{\Omega})(\SI{-1.269}{A})=\SI{43.15}{V}
+\end{align*}
+\part To find the terminal voltages across the batteries, we subtract the voltage drop across the internal resistances (the \SI{1}{\Omega} resistors) from the battery voltages. For the \SI{30}{V} battery, this gives:
+\begin{align*}
+\Delta V = (\SI{30}{V})-(\SI{4}{\Omega})I_3= (\SI{30}{V})-(\SI{4}{\Omega})(\SI{1.485}{A})=\SI{24.06}{V}
+\end{align*}
+For the \SI{83}{V} battery, this gives:
+\begin{align*}
+\Delta V = (\SI{83}{V})-(\SI{4}{\Omega})I_2= (\SI{83}{V})-(\SI{4}{\Omega})(\SI{2.754}{A})=\SI{71.98}{V}
+\end{align*}
+\end{parts}
+\end{solution}
+
+
+%Giancolli 26-58 -fixed
+\question You are tasked with changing a milliammeter to a voltmeter. The milliammeter reads \SI{18}{mA} full scale, and consists of a \SI{0.3}{\Omega} resistor in parallel with a \SI{41}{\Omega} galvanometer. You must change the ammeter to a voltmeter which gives a full scale reading of \SI{18}{V} without disassembling the ammeter. How should you do this?
+\begin{finalanswer}
+We can create a voltmeter if we add a \SI{298}{k\Omega} resistor in series with the ammeter.
+\end{finalanswer} 
+\begin{solution}
+When the ammeter reads \SI{18}{mA}, this means that it has a potential difference across of it equal to $(\SI{18}{mA})(\SI{41}{\Omega})=\SI{0.738}{V}$. We thus need to add a resistor in series to the ammeter (as shown in Figure \ref{fig:circuits:voltmeter}) so that the voltage across the series resistor and ammeter corresponds to \SI{18}{V} when \SI{18}{mA} of current go through the ammeter.
+\capfig{0.3\textwidth}{figures/Circuits//voltmeter.png}{\label{fig:circuits:voltmeter}A voltmeter from an ammeter.}
+
+The total resistance of the voltmeter is given by:
+\begin{align*}
+R_{ser}+\frac{1}{\frac{1}{R_{shunt}}+\frac{1}{R_G}}
+\end{align*}
+We need the voltage across the voltmeter to equal \SI{25}{V} when \SI{25}{mA} of current go through the device:
+\begin{align*}
+(\SI{25}{V})&=(\SI{18}{mA})\left(R_{ser}+\frac{1}{\frac{1}{R_{shunt}}+\frac{1}{R_G}}\right)\\
+\therefore R_{ser}&=\frac{(\SI{18}{V})}{(\SI{0.018}{A})}-\left(\frac{1}{\frac{1}{R_{shunt}}+\frac{1}{R_G}}\right)\\
+&=\frac{(\SI{18}{V})}{(\SI{0.018}{A})}-\left(\frac{1}{\frac{1}{(\SI{0.3}{\Omega})}+\frac{1}{(\SI{41}{\Omega})}}\right)\\
+&=\SI{297.82}{\Omega}
+\end{align*}
+Thus, we can create a voltmeter if we add a \SI{298}{\Omega} resistor in series with the ammeter. 
+\end{solution}
+
+%Giancolli 26-91 -fixed
+\question Measurements made on circuits that contain large resistances can be confusing. Consider a circuit powered by a \SI{12}{V} battery (of negligible internal resistance) with an \SI{8}{M\Omega} resistor in series with an unknown resistor, $R$. As shown in Figure \ref{fig:circuits:voltmeter2}, a particular voltmeter reads $V_1=\SI{0.621}{V}$ when connected across the  \SI{8}{M\Omega} resistor and $V_2=\SI{8.552}{V}$ when connected across the unknown resistor. Determine the value of $R$. 
+ 
+\capfig{0.6\textwidth}{figures/Circuits//voltmeter2.png}{\label{fig:circuits:voltmeter2}A voltmeter affecting a circuit.}
+\begin{finalanswer}
+\begin{align*}
+R=\frac{V_2}{V_1}R_1
+\end{align*}
+\end{finalanswer}
+\begin{solution}
+Clearly, the voltmeter is affecting the circuit, since the two measurements would otherwise add up to \SI{12}{V}. We thus model the voltmeter as having an unknown resistance $R_V$, as in Figure \ref{fig:circuits:voltmeter2_sol}.
+
+\capfig{0.6\textwidth}{figures/Circuits//voltmeter2_sol.png}{\label{fig:circuits:voltmeter2_sol}A voltmeter affecting a circuit.}
+
+If we consider the left panel, we can combine the $R_1=\SI{8}{M\Omega}$ resistor with $R_V$ and write the loop equation across the whole circuit:
+\begin{align*}
+I_1\left( \frac{1}{\frac{1}{R_1}+\frac{1}{R_V}} \right)+I_1R=\SI{12}{V}
+\end{align*}
+The voltage drop across $R$ is given by $RI_1=\SI{12}{V}-\SI{0.621}{V}=\SI{11.379}{V}$. We can thus use this to get rid of $I_1$:
+\begin{align}
+\label{eqn:vm1}
+\frac{(\SI{11.379}{V})}{R}\left( \frac{1}{\frac{1}{R_1}+\frac{1}{R_V}} \right)+\frac{(\SI{11.379}{V})}{R}R&=\SI{12}{V}\nonumber\\
+\frac{(\SI{11.379}{V})}{R}\left( \frac{1}{\frac{1}{R_1}+\frac{1}{R_V}} \right)&=\SI{0.621}{V}\nonumber\\
+\left( \frac{R_VR_1}{R_V+R_1} \right)&=\frac{(\SI{0.621}{V})}{(\SI{11.379}{V})}R=0.055R
+\end{align}
+We apply the same logic to the right side panel. Combining the unknown resistor with $R_V$ and writing the loop equation, we have:
+\begin{align*}
+I_3R_1+I_3\left( \frac{1}{\frac{1}{R}+\frac{1}{R_V}} \right)=\SI{12}{V}
+\end{align*}
+The voltage drop across $R_1$ is $R_1I_3=\SI{12}{V}-\SI{8.552}{V}=\SI{3.448}{V}$, which allows us to get rid of $I_3$ in the above equation:
+\begin{align}
+\label{eqn:vm2}
+\SI{3.448}{V}+\frac{(\SI{3.448}{V})}{R_1}\left( \frac{1}{\frac{1}{R}+\frac{1}{R_V}} \right)&=\SI{12}{V}\nonumber\\
+\frac{(\SI{3.448}{V})}{R_1}\left( \frac{1}{\frac{1}{R}+\frac{1}{R_V}} \right)&=\SI{8.552}{V}\nonumber\\
+\left( \frac{R_VR}{R_V+R} \right)&=\frac{(\SI{8.552}{V})}{(\SI{3.448}{V})}R_1=2.48R_1
+\end{align}
+Equations \ref{eqn:vm1} and \ref{eqn:vm2} now give us two equations for the two unknowns, $R_V$ and $R$. We start by using equation \ref{eqn:vm1} to isolate $R_V$:
+\begin{align*}
+\left( \frac{R_VR_1}{R_V+R_1} \right)&=0.055R\\
+R_VR_1&=0.055R(R_V+R_1)\\
+R_V(R_1-0.055R)&=0.055R_1R\\
+\therefore R_V&=\frac{0.055R_1R}{R_1-0.055R}
+\end{align*}
+and then repeat for equation \ref{eqn:vm2}
+\begin{align*}
+\left( \frac{R_VR}{R_V+R} \right)&=2.48R_1\\
+R_VR&=2.48R_1(R_V+R)\\
+R_V(R-2.48R_1)&=2.48R_1R\\
+\therefore R_V&=\frac{2.48R_1R}{R-2.48R_1}
+\end{align*}
+We can now equate the two expressions for $R_V$ to solve for $R$:
+\begin{align*}
+R_V=\frac{0.055R_1R}{R_1-0.055R}&=\frac{2.48R_1R}{R-2.48R_1}\\
+\frac{0.055}{R_1-0.055R}&=\frac{2.48}{R-2.48R_1}\\
+0.055(R-2.48R_1)&=2.48(R_1-0.055R)\\
+0.055R-(0.055)(2.48)R_1&=2.48R_1-(0.055)(2.48)R\\
+0.055(1+2.48)R&=2.48R_1(1+0.055)\\
+\therefore R&=\frac{2.48(1+0.055)}{0.055(1+2.48)}R_1\\
+&=(13.670)R_1=(13.670)(\SI{8}{M\Omega})=\SI{109.4}{M\Omega}
+\end{align*}
+Although we have obtained the answer that we need, we can remove the numerical factors and obtain a rather clean answer. Recall:
+\begin{align*}
+0.055&=\frac{V_1}{\Delta V-V_1}\\
+2.48&=\frac{V_2}{\Delta V-V_2}\\
+\end{align*}
+where $\Delta V=\SI{12}{V}$ is the battery voltage. The numerical term in the expression of $R$ can be simplified dramatically. Consider the numerator:
+\begin{align*}
+2.48(1+0.055)&=\frac{V_2}{\Delta V-V_2}\left(1+ \frac{V_1}{\Delta V-V_1} \right)\\
+&=\frac{V_2}{\Delta V-V_2}+\frac{V_2V_1}{(\Delta V-V_2)(\Delta V-V_1)}\\
+&=\frac{V_2(\Delta V-V_1)+V_2V_1}{(\Delta V-V_2)(\Delta V-V_1)}\\
+&=\frac{V_2\Delta V}{(\Delta V-V_2)(\Delta V-V_1)}
+\end{align*}
+Similarly, the denominator is given by:
+\begin{align*}
+0.055(1+2.48)&=\frac{V_1\Delta V}{(\Delta V-V_2)(\Delta V-V_1)}
+\end{align*}
+The expression for the resistor simplifies to:
+\begin{align*}
+R&=\frac{2.48(1+0.055)}{0.055(1+2.48)}R_1=\frac{V_2}{V_1}R_1
+\end{align*}
+\end{solution}
+
+
+%Q11
+\question Referring to figure \ref{fig:Circuits:circuit1}, what potential difference $\Delta V$ is required in order for there to be no current through the \SI{6}{\Omega} resistor?
+\begin{center}
+	\begin{circuitikz}[]
+		\ctikzset{label/align=smart,bipoles/length=1.5cm}
+		\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+		to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+		to [battery1=$\Delta V$] (6,3)node[anchor=west]{d}
+		to [short,*-*] (6,0)node[anchor=west]{c}
+		to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+		to [battery1=\SI{6}{V},*-*] (0,0)
+		(3,0) to [R=\SI{6}{\ohm}] (3,3);     
+	\end{circuitikz}
+	\captionof{figure}{\label{fig:Circuits:circuit1}A circuit} 
+\end{center}
+\begin{finalanswer}
+	$\SI{3}{V}$
+\end{finalanswer}
+\begin{solution}
+	\begin{center}
+		\begin{circuitikz}[]
+			\ctikzset{label/align=smart,bipoles/length=1.5cm}
+			\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+			to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+			to [battery1=$\Delta V$] (6,3)node[anchor=west]{d}
+			to [short,*-*] (6,0)node[anchor=west]{c}
+			to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+			to [battery1=\SI{6}{V},*-*] (0,0)
+			(1.6,0) to [short,i=$I_1$](3,0)
+			(3,0,0) to [short,i=$I_2$](3,0.9)
+			(3,0,0) to [short,i=$I_3$](3.9,0)
+			(3,0) to [R=\SI{6}{\ohm}] (3,3);
+			
+		\end{circuitikz}
+		\captionof{figure}{\label{fig:Circuits:circuit1_sol}A circuit} 
+	\end{center}
+	Using the currents drawn in Figure \ref{fig:Circuits:circuit1_sol}, the loop $abefa$ gives:
+	\begin{align}
+	\label{eqn:Circuits:circuit1:loop1}
+	6-6I_2-4I_1&=0\nonumber\\
+	\therefore 2I_1+3I_2=3
+	\end{align}
+	The loop $debcd$ gives:
+	\begin{align}
+	\label{eqn:Circuits:circuit1:loop2}
+	\Delta V+6I_2-2I_3&=0\nonumber\\
+	\therefore 6I_2-2I_3&=-\Delta V
+	\end{align}
+	The junction rule at  point $b$ gives:
+	\begin{align*}
+	I_3=I_1-I_2
+	\end{align*}
+	which we can substitute into the equation \ref{eqn:Circuits:circuit1:loop2}
+	\begin{align}
+	\label{eqn:Circuits:circuit1:loop3}
+	6I_2-2(I_1-I_2)&=-\Delta V\nonumber\\
+	\therefore 8I_2-2I_1 =-\Delta V
+	\end{align}
+	If we add this equation to equation \ref{eqn:Circuits:circuit1:loop1}, and then set the current $I_2=0$, we find:
+	\begin{align*}
+	11I_2&=3-\Delta V=0\\
+	\therefore \Delta V&=\SI{3}{V}
+	\end{align*}
+	
+\end{solution}
+
+\question Referring to figure \ref{fig:Circuits:circuit2}, what is the power dissipated by the \SI{2}{\Omega}  resistor?
+\begin{center}
+	\begin{circuitikz}[]
+		\ctikzset{label/align=smart,bipoles/length=1.5cm}
+		\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+		to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+		to [battery1=\SI{3}{V}] (6,3)node[anchor=west]{d}
+		to [short,*-*] (6,0)node[anchor=west]{c}
+		to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+		to [battery1=\SI{6}{V},*-*] (0,0)
+		(3,0) to [R=\SI{6}{\ohm}] (3,3);     
+	\end{circuitikz}
+	\captionof{figure}{\label{fig:Circuits:circuit2}A circuit} 
+\end{center}
+\begin{finalanswer}
+	$\SI{4.5}{W}$
+\end{finalanswer}
+\begin{solution}
+	\begin{center}
+		\begin{circuitikz}[]
+			\ctikzset{label/align=smart,bipoles/length=1.5cm}
+			\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+			to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+			to [battery1=\SI{3}{V}] (6,3)node[anchor=west]{d}
+			to [short,*-*] (6,0)node[anchor=west]{c}
+			to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+			to [battery1=\SI{6}{V},*-*] (0,0)
+			(1.6,0) to [short,i=$I_1$](3,0)
+			(3,0,0) to [short,i=$I_2$](3,0.9)
+			(3,0,0) to [short,i=$I_3$](3.9,0)
+			(3,0) to [R=\SI{6}{\ohm}] (3,3);
+			
+		\end{circuitikz}
+		\captionof{figure}{\label{fig:Circuits:circuit2_sol}A circuit} 
+	\end{center}
+	Using the currents drawn in Figure \ref{fig:Circuits:circuit2_sol}, the loop $abefa$ gives:
+	\begin{align}
+	\label{eqn:Circuits:circuit2:loop1}
+	6-6I_2-4I_1&=0\nonumber\\
+	\therefore 2I_1+3I_2=3
+	\end{align}
+	The loop $debcd$ gives:
+	\begin{align}
+	\label{eqn:Circuits:circuit2:loop2}
+	3+6I_2-2I_3&=0\nonumber\\
+	\therefore 6I_2-2I_3&=-3
+	\end{align}
+	The junction rule at  point $b$ gives:
+	\begin{align*}
+	I_3+I_2=I_1
+	\end{align*}
+	which we can substitute into the equation \ref{eqn:Circuits:circuit2:loop1}
+	\begin{align}
+	\label{eqn:Circuits:circuit2:loop3}
+	2(I_2+I_3)+3I_2=3\nonumber\\
+	\therefore 5I_2+2I_3 =3
+	\end{align}
+	If we add this equation to equation \ref{eqn:Circuits:circuit2:loop2}, we find that current $I_2$ is identically zero:
+	\begin{align*}
+	11I_2&=0\\
+	\therefore I_2&=0
+	\end{align*}
+	Thus, from equation \ref{eqn:Circuits:circuit2:loop3}, we can find $I_3$, the current through the \SI{2}{\Omega} resistor:
+	\begin{align*}
+	5I_2+2I_3 &=3\\
+	\therefore I_3=\SI{1.5}{A}
+	\end{align*}
+	The power dissipated by that resistor is then:
+	\begin{align*}
+	P=RI_3^2=(\SI{2}{\Omega})(\SI{1.5}{A})^2=\SI{4.5}{W}
+	\end{align*}
+	
+\end{solution}
+
+
+\question Referring to figure \ref{fig:Circuits:circuit3}, what is the potential difference between points $a$ and $c$ on the circuit?
+\begin{center}
+	\begin{circuitikz}[]
+		\ctikzset{label/align=smart,bipoles/length=1.5cm}
+		\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+		to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+		to [battery1=\SI{3}{V}] (6,3)node[anchor=west]{d}
+		to [short,*-*] (6,0)node[anchor=west]{c}
+		to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+		to [battery1=\SI{6}{V},*-*] (0,0)
+		(3,0) to [R=\SI{6}{\ohm}] (3,3);     
+	\end{circuitikz}
+	\captionof{figure}{\label{fig:Circuits:circuit3}A circuit} 
+\end{center}
+\begin{finalanswer}
+	$\SI{3}{V}$
+\end{finalanswer}
+\begin{solution}
+	\begin{center}
+		\begin{circuitikz}[]
+			\ctikzset{label/align=smart,bipoles/length=1.5cm}
+			\draw (0,0)node[anchor=east]{a} to [short,*-*] (0,3)node[anchor=east]{f}
+			to [R=\SI{4}{\ohm},*-*] (3,3)node[anchor=south]{e}
+			to [battery1=\SI{3}{V}] (6,3)node[anchor=west]{d}
+			to [short,*-*] (6,0)node[anchor=west]{c}
+			to [R=\SI{2}{\ohm},*-*] (3,0)node[anchor=north]{b}
+			to [battery1=\SI{6}{V},*-*] (0,0)
+			(1.6,0) to [short,i=$I_1$](3,0)
+			(3,0,0) to [short,i=$I_2$](3,0.9)
+			(3,0,0) to [short,i=$I_3$](3.9,0)
+			(3,0) to [R=\SI{6}{\ohm}] (3,3);
+			
+		\end{circuitikz}
+		\captionof{figure}{\label{fig:Circuits:circuit3_sol}A circuit} 
+	\end{center}
+	Using the currents drawn in Figure \ref{fig:Circuits:circuit3_sol}, the loop $abefa$ gives:
+	\begin{align}
+	\label{eqn:Circuits:circuit3:loop1}
+	6-6I_2-4I_1&=0\nonumber\\
+	\therefore 2I_1+3I_2=3
+	\end{align}
+	The loop $debcd$ gives:
+	\begin{align}
+	\label{eqn:Circuits:circuit3:loop2}
+	3+6I_2-2I_3&=0\nonumber\\
+	\therefore 6I_2-2I_3&=-3
+	\end{align}
+	The junction rule at  point $b$ gives:
+	\begin{align*}
+	I_3+I_2=I_1
+	\end{align*}
+	which we can substitute into the equation \ref{eqn:Circuits:circuit3:loop1}
+	\begin{align}
+	\label{eqn:Circuits:circuit3:loop3}
+	2(I_2+I_3)+3I_2=3\nonumber\\
+	\therefore 5I_2+2I_3 =3
+	\end{align}
+	If we add this equation to equation \ref{eqn:Circuits:circuit3:loop2}, we find that current $I_2$ is identically zero:
+	\begin{align*}
+	11I_2&=0\\
+	\therefore I_2&=0
+	\end{align*}
+	Thus, from equation \ref{eqn:Circuits:circuit3:loop3}, we can find $I_3$, the current through the \SI{2}{\Omega} resistor:
+	\begin{align*}
+	5I_2+2I_3 &=3\\
+	\therefore I_3=\SI{1.5}{A}
+	\end{align*}
+	The voltage across that resistor is then:
+	\begin{align*}
+	\Delta V=RI_3=(\SI{2}{\Omega})(\SI{1.5}{A})=\SI{3.0}{V}
+	\end{align*}
+	The voltage difference between points $a$ and $c$ on the circuit is thus:
+	\begin{align*}
+	(\SI{6}{V})-RI_3=(\SI{6}{V})-(\SI{3}{V})=\SI{3}{V}
+	\end{align*}
+\end{solution}
+
+
+\question Answer the following:
+\begin{parts}
+	%Zaremba 2007 midterm
+	\part A beam of electrons with a kinetic energy of \SI{10}{keV} (the electrons were accelerated through a potential difference of \SI{1e4}{V}) is directed at the surface of a conducting metallic sphere of radius $R=\SI{15.0}{cm}$. The sphere is initially neutral, but acquires charge as the electrons collect on the sphere. Eventually, the charge on the sphere will be strong enough to repel any further electrons. What is the maximum charge that can be deposited on the sphere by the electron beam? Assume that the charge on the sphere is uniform on the surface and that the beam of electrons effectively originates from infinitely far away.
+	%Zaremba 2006 Final
+	\part Referring to the circuit in Figure \ref{fig:Circuits:AVcircuit}, determine the readings (absolute value) of the voltmeter and ammeter when the \textbf{switch S is open}. You may assume that the voltmeter and ammeter are ``ideal'', in that connecting them to the circuit does not affect the circuit (thus, the voltmeter can be treated as having infinite resistance and the ammeter as having zero resistance).
+	\part Referring to the circuit in Figure \ref{fig:Circuits:AVcircuit}, determine the readings (absolute value) of the voltmeter and ammeter when the \textbf{switch S is closed}. You may again assume that the voltmeter and ammeter are ``ideal''.
+	\begin{center}
+		\begin{circuitikz}[]
+			\ctikzset{label/align=smart,bipoles/length=1.5cm}
+			\draw (0,0) node[anchor=north]{a} to [battery1=12V,*-*] (0,4)node[anchor=south]{b}
+			to [R=\SI{2}{\ohm},*-*] (2,4) node[anchor=south]{c} 
+			to [R=\SI{6}{\ohm},*-*] (2,2)
+			to [ammeter, rotation=90] (2,0) node[anchor=north]{h}
+			(2,4) to (4,4) node[anchor=south]{d}
+			to [R=\SI{12}{\ohm},*-*] (4,0) node[anchor=north]{g}
+			(4,4) to [R=\SI{5}{\ohm},*-*] (8,4) node[anchor=south]{e}
+			to [battery1=6V,*-*] (8,2) to [nos=S,*-*] (8,0)  node[anchor=north]{f}
+			to (0,0); 
+			\draw (4,4) to[voltmeter](8,0);  
+		\end{circuitikz}
+		
+		\captionof{figure}{\label{fig:Circuits:AVcircuit}A circuit with an ideal voltmeter and ammeter.} 
+	\end{center}
+\end{parts}
+
+\begin{finalanswer}
+	\begin{parts}
+		
+		\part $\SI{-1.67e-7}{C}$
+		\part $\SI{-1.33}{A}$
+		\part $\SI{5.05}{V}$
+		
+	\end{parts}	
+\end{finalanswer}
+
+\begin{solution}
+	\begin{parts}
+		%Zaremba 2007 midterm
+		\part The electrons will not be able to deposit on the sphere if they do not have enough kinetic energy to overcome the repulsion from the electrons already on the sphere. This will happen if the potential on the sphere is \SI{1e4}{V} relative to where the electrons have finished accelerating. If we take this to be infinitely far away from the sphere and define it as \SI{0}{V}, then the potential on the sphere needs to be \SI{-1e4}{V}.
+		
+		If we define the potential to be zero at infinity, the electric potential at the surface of a sphere of radius $R$ carrying charge $Q$ is given by:
+		\begin{align*}
+		V=\frac{kQ}{R}
+		\end{align*}
+		Setting this to $V=\SI{-1e4}{V}$, we find:
+		\begin{align*}
+		Q&=\frac{VR}{k}=\frac{(\SI{-1e4}{V})(\SI{0.15}{m})}{(\SI{9e9}{N/m^2/C^2})}=\SI{-1.67e-7}{C}
+		\end{align*}
+		
+		\part When the switch is open, we can ignore the section $def$ of the circuit, and the reading of the voltmeter will be the voltage across the ${12}{\Omega}$ resistor. We can simplify the circuit to have only 3 currents, as shown in Figure \ref{fig:Circuits:AVcircuit_sola}. Note that there is no current flowing through the voltmeter ($defg$), since the voltmeter has infinite resistance.
+		\begin{center}
+			\begin{circuitikz}[]
+				\ctikzset{label/align=smart,bipoles/length=1.5cm}
+				\draw (0,0) node[anchor=north]{a} to [battery1=12V,*-*] (0,4)node[anchor=south]{b}
+				to [R=\SI{2}{\ohm},*-*] (2,4) node[anchor=south]{c} 
+				to [R=\SI{6}{\ohm},*-*]  (2,2)
+				to [ammeter, rotation=90] (2,1)
+				(2,4) to (4,4) node[anchor=south]{d}
+				to [R=\SI{12}{\ohm},*-*] (4,0) node[anchor=north]{g}
+				(4,4) to (6,4) node[anchor=south]{e}
+				to [voltmeter](6,0) node[anchor=north]{f}
+				to (0,0);  
+				\draw (0,0) [short,i=$I_1$] to (0,2);
+				\draw (2,1) [short,i=$I_2$] to (2,0) node[anchor=north]{h};
+				\draw (2,4) [short,i=$I_3$] to (4,4);
+			\end{circuitikz}
+			\captionof{figure}{\label{fig:Circuits:AVcircuit_sola}Equivalent circuit when S is open.} 
+		\end{center}
+		The junction law at point $c$ gives:
+		\begin{align*}
+		I_1=I_2+I_3
+		\end{align*}
+		We can write the loop rules to obtain 2 more equations. For the loop $abcha$, we have:
+		\begin{align*}
+		-(\SI{12}{V})-2I_1-6I_2&=0\\
+		2I_1+6I_2&=-(\SI{12}{V}) \\
+		\therefore  I_1+3I_2&=-(\SI{6}{V})
+		\end{align*}
+		For the loop $hcdgh$, we have:
+		\begin{align*}
+		6I_2-12I_3&=0\\
+		I_2 - 2I_3&=0
+		\end{align*} 
+		In this last equation, we use the junction equation to substitute $I_3=I_1-I_2$:
+		\begin{align*}
+		I_2 - 2I_3&=0\\
+		I_2 - 2(I_1-I_2)&=0\\
+		3I_2-2I_1&=0
+		\end{align*}
+		Subtracting this equation from the one that we obtained from the $abcha$ loop, we can solve for $I_1$:
+		\begin{align*}
+		3I_1=-(\SI{6}{V})\\
+		\therefore I_1=\SI{-2}{A}
+		\end{align*}
+		and the current is in the opposite direction from the diagram in Figure \ref{fig:Circuits:AVcircuit_sola}. This means that voltage drop across the $\SI{2}{\Omega}$ resistor is given by $\Delta V=(\SI{2}{\Omega})(\SI{-2}{A})=\SI{-4}{V}$, so \textbf{the voltmeter reads} $\SI{12}{V}-\SI{4}{V}=\SI{8}{V}$.
+		
+		Since the potential difference is $\SI{8}{V}$ across the voltmeter, and this is the same as the voltage drop across the $\SI{6}{\Omega}$ resistor, \textbf{the current} through that resistor (and thus through the ammeter) is given by:
+		\begin{align*}
+		I_2=\frac{(\SI{8}{V})}{(\SI{6}{\Omega})}=\SI{-1.33}{A}
+		\end{align*}
+		
+		We guessed the direction of the currents incorrectly, so they actually go in the opposite direction from what is shown in Figure \ref{fig:Circuits:AVcircuit_sola}.
+		
+		\part In Figure \ref{fig:Circuits:AVcircuit_solb}, we show the 5 currents in the circuit.
+		\begin{center}
+			\begin{circuitikz}[]
+				\ctikzset{label/align=smart,bipoles/length=1.5cm}
+				\draw (0,0) node[anchor=north]{a} to [battery1=12V,*-*] (0,4)node[anchor=south]{b}
+				to [R=\SI{2}{\ohm},*-*] (2,4) node[anchor=south]{c} 
+				to [R=\SI{6}{\ohm},*-*] (2,2)
+				to [ammeter, rotation=90] (2,1) 
+				(2,4) to (4,4) node[anchor=south]{d}
+				(4,2) to [R=\SI{12}{\ohm},*-*] (4,0) node[anchor=north]{g}
+				(4,4) to [R=\SI{5}{\ohm},*-*] (8,4) node[anchor=south]{e}
+				to [battery1=6V,*-*] (8,0)  node[anchor=north]{f}
+				to (0,0); 
+				\draw (4,4) to[voltmeter](8,0); 
+				\draw (0,0) [short,i=$I_1$] to (0,2);
+				\draw (2,1) [short,i=$I_2$] to (2,0) node[anchor=north]{h};
+				\draw (2,4) [short,i=$I_3$] to (4,4); 
+				\draw (4,0) [short,i=$I_3$] to (2,0); 
+				\draw (4,4) [short,i=$I_4$] to (4,2); 
+				\draw (4,4) [short,i=$I_5$] to (5,4); 
+				\draw (8,0) [short,i=$I_5$] to (4,0); 
+			\end{circuitikz}
+			\captionof{figure}{\label{fig:Circuits:AVcircuit_solb}Equivalent circuit when S is open.} 
+		\end{center}
+		We can write junction rule equations for the junctions at $c$ and $d$:
+		\begin{align*}
+		I_1&=I_2+I_3\quad\text{(junction c)}\\
+		I_3&=I_4+I_5\quad\text{(junction d)}\\
+		\end{align*}
+		We can write loop rule equations for the loops $abcha$ $hcdgh$, and $defgd$:
+		\begin{align*}
+		-(\SI{12}{V})-2I_1-6I_2&=0\quad\text{(loop abcha)}\\
+		\therefore I_1 +3I_2&=-(\SI{6}{V})\\
+		6I_2-12I_4&=0\quad\text{(loop hcdgh)}\\
+		\therefore I_2-2I_4&=0\\
+		-5I_5-(\SI{6}{V})+12I_4&=0\quad\text{(loop defgd)}\\
+		\therefore 12I_4-5I_5&=(\SI{6}{V})
+		\end{align*}
+		We can start by eliminating $I_3$ from the 2 junction equations:
+		\begin{align*}
+		I_1&=I_2+I_4+I_5
+		\end{align*}
+		We can use this to eliminate $I_1$ from the $abcha$ loop equation
+		\begin{align*}
+		4I_2+I_4+I_5 &=-(\SI{6}{V})\\
+		\end{align*}
+		which leaves us with 3 equations, and 3 unknowns:
+		\begin{align}
+		4I_2+I_4+I_5 &=-(\SI{6}{V}) \\
+		I_2-2I_4&=0\\
+		12I_4-5I_5&=(\SI{6}{V})
+		\end{align}
+		We use the second equation to eliminate $I_4=\frac{1}{2}I_2$ from the other two:
+		\begin{align*}
+		4.5I_2+I_5 &=-(\SI{6}{V}) \\
+		6I_2-5I_5&=(\SI{6}{V})
+		\end{align*}
+		Multiplying the first equation by 5 and adding the second one eliminates $I_5$, allowing us to determine $I_2$, the current through the ammeter:
+		\begin{align*}
+		28.5I_2&=\SI{-24}{V}\\
+		\therefore I_2&=\SI{-0.84}{A}
+		\end{align*}
+		and the current is in the opposite direction that we drew in Figure \ref{fig:Circuits:AVcircuit_solb}.
+		
+		The potential difference measured by the voltmeter also corresponds to the voltage drop across the \SI{6}{\Omega} resistor, for which we just determined the current. The voltmeter reading is thus:
+		\begin{align*}
+		\Delta V = I_2(\SI{6}{\Omega})=(\SI{-0.84}{A})(\SI{6}{\Omega})=\SI{5.05}{V}
+		\end{align*}
+	\end{parts}
+\end{solution}

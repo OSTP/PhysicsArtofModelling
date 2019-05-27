@@ -1,0 +1,200 @@
+\section{Statics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Multiple Choice
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple Choice}
+
+\question You are driving in your car and go around a left turn. You notice that the shocks (springs) in your car compress more on one side than the other. 
+\begin{checkboxes}
+\CorrectChoice The right side of the car is lower in the turn \correct
+\choice The left side of the car is lower in the turn
+\end{checkboxes}
+
+\question Why are the breaks on a motorcycle (and cars) bigger on the front wheel(s)?
+\begin{checkboxes}
+\choice Because there is more room on those wheels, as the back wheels are near the engine.
+\CorrectChoice Because the normal force from the ground is bigger on the front wheel(s) than on the back wheel(s) when breaking \correct
+\choice Because the normal force from the ground is bigger on the back wheel(s) than on the front wheel(s) when breaking
+\end{checkboxes}
+
+\question A speed skater leans towards the centre of the track as they go around it. If you consider the torques on the skater about the point where their skates contact the ice, which forces create a torque?
+\begin{checkboxes}
+\choice Gravity
+\choice Gravity and the normal force from the ice
+\choice Gravity, an inertial (centrifugal) force,  and the normal force from the ice
+\CorrectChoice Gravity and an inertial (centrifugal) force \correct
+\end{checkboxes}
+
+\question A guanaco with a mass of $m$ is standing on a horizontal plank that is suspended on the side of Huayna Picchu (a mountain near Machu Picchu). The plank has a length $L$ and a mass $M$. The plank is anchored to the side of the mountain with a hinge and would swing freely if there were no rope attached to the plank. A rope is attached to the end of the plank that is away from the mountain and the rope is anchored into the mountain, as shown in Figure \ref{fig:statics:GuanacoPlank}. The rope makes an angle $\theta$ with the plank. The guanaco is standing a distance $\frac{3}{4}L$ from the mountain. What is the tension in the rope?
+\capfig{0.2\textwidth}{figures/Statics/GuanacoPlank.png}{\label{fig:statics:GuanacoPlank} A guanaco on a plank.}
+\begin{checkboxes} 
+\choice $T=\frac{\left( \frac{1}{2}m+ \frac{3}{4}M\right)g}{\cos\theta}$
+\choice $T=\frac{mg}{\sin\theta}$
+\choice $T=\frac{\left( \frac{3}{4}m+ \frac{1}{2}M\right)g}{\cos\theta}$
+\CorrectChoice $T=\frac{\left( \frac{3}{4}m+ \frac{1}{2}M\right)g}{\sin\theta}$ \correct
+\end{checkboxes}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% long answer
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Long answers}
+\question The system in Figure \ref{fig:statics:hinge} is in static equilibrium. A mass of $m=\SI{225}{kg}$ hangs from the end of the uniform strut whose mass is $M=\SI{45.0}{kg}$. 
+\begin{parts}
+\part Find the tension, $T$, in the cable.
+\part Find the horizontal and vertical force components exerted on the sturt by the hinge.
+\capfig{0.5\textwidth}{figures/Statics/hinge.png}{\label{fig:statics:hinge} The geometry of the system.}
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \SI{6626.59}{N}
+\item $F_{hx}=\SI{5738.80}{N}$, $F_{hy}=\SI{5959.30}{N}$
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part Since the system is at rest, the sum of the forces and torques on the strut must be zero. The force of tension from the cable, $\vec T$, is directed at $\SI{30}{\degree}$ below the horizontal. The force from the hinge on the strut will have both a vertical and a horizontal component. Figure \ref{fig:statics:hinge_a} shows the forces on the strut (including where they are exerted, since this matters for torques). If we define the $x$ axis to be horizontal (positive to the right), and the $y$ axis to be vertical (positive upwards), we can write the sum of the forces as:
+\begin{align*}
+\sum F_x &=F_{hx}-T\cos(\SI{30}{\degree}) = 0\\
+\sum F_y &=F_{hy}-T\sin(\SI{30}{\degree})-(m+M)g = 0
+\end{align*}
+
+\capfig{0.5\textwidth}{figures/Statics/hinge_annotated.png}{\label{fig:statics:hinge_a} Forces acting on the strut.}
+
+Let $L$ be the length of the strut. We choose to write the torques about the hinge (so that the unknown forces at the hinge are not needed). The torques are all in the same plane, so that we can deal with only their magnitudes. Let us choose clockwise as corresponding to positive torque. The sum of the torques must be zero:
+\begin{align*}
+\sum \tau&=Mg\frac{L}{2}\cos(\SI{45}{\degree})+mgL\cos(\SI{45}{\degree})-TL\sin(\SI{15}{\degree})=0\\
+T\sin(\SI{15}{\degree}) &= g\cos(\SI{45}{\degree})\left(\frac{M}{2}+m \right)\\
+\therefore T &= (\SI{9.8}{m/s^2})\frac{\cos(\SI{45}{\degree})}{\sin(\SI{15}{\degree})}\left(\frac{(\SI{45.0}{kg})}{2}+(\SI{225}{kg}) \right)=\SI{6626.59}{N}
+\end{align*}
+
+\part Knowing the tension from part (a), we can now use the sum of the forces equations in $x$ and $y$ to get the forces on the hinge:
+\begin{align*}
+F_{hx}&=T\cos(\SI{30}{\degree})=(\SI{6626.59}{N})\cos(\SI{30}{\degree})=\SI{5738.80}{N}\\
+F_{hy}&=T\sin(\SI{30}{\degree})+(m+M)g=(\SI{6626.59}{N})\sin(\SI{30}{\degree})+(\SI{9.8}{m/s^2})(\SI{270}{kg})=\SI{5959.30}{N}
+\end{align*}
+\end{parts}
+
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This question taken from Physics for Scientists and Engineers, a Strategic Approach
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\question A $L=\SI{3.0}{m}$ long rigid uniform beam with a mass of $M=\SI{100}{kg}$ is supported at each end, as shown in Figure \ref{fig:statics:student}. A $m=\SI{80}{kg}$ student stands a distance $d=\SI{2.0}{m}$ away from support 1. How much upward force does each support exert on the beam if the system is at rest?
+
+\capfig{0.6\textwidth}{figures/Statics/student.png}{\label{fig:statics:student} }
+\begin{finalanswer}
+\SI{751.33}{N}
+\end{finalanswer}
+\begin{solution} 
+Since the system is at rest, the sum of the forces and torques on the beam must be zero. We can choose to write the torques about support point 1, so that the unknown force at support point 1 does not contribute. Let $F_1$ and $F_2$ be the upward components of the forces on support 1 and 2, respectively. Let us choose clockwise for positive torques:
+\begin{align*}
+\sum \tau &= (\SI{1.5}{m})Mg+(\SI{2.0}{m})mg-(\SI{3.0}{m})F_2=0\\
+\therefore F_2& = \frac{(\SI{9.8}{m/s^2})}{(\SI{3.0}{m})}((\SI{1.5}{m})(\SI{100}{kg})+(\SI{2.0}{m})(\SI{80}{kg}))\\
+&=\SI{1012.67}{N}
+\end{align*}
+
+To find $F_1$, we can either write the torgues about support point 2, or use the sum of the forces in the vertical direction. Choosing the latter (with positive upwards), we have:
+
+\begin{align*}
+\sum F &= F_1+F_2-Mg-mg=0\\
+\therefore F_1&=(M+m)g-F_2=(\SI{180}{kg})(\SI{9.8}{m/s^2})-(\SI{1012.67}{N})\\
+&=\SI{751.33}{N}
+\end{align*}
+\end{solution}
+
+%Based on Giancolli 12-59
+\question You wish to pull a sphere of radius $R$ and mass $M$ over a step of height $h$, by exerting a tangential force $\vec F$ at the top of the sphere as shown in Figure \ref{fig:statics:SphereStep}. What is the minimum magnitude of the force that is required?
+\capfig{0.4\textwidth}{figures/Statics/SphereStep.png}{\label{fig:statics:SphereStep} }
+\begin{finalanswer}
+$F=Mg\sqrt{\frac{h}{2R-h}}$
+\end{finalanswer}
+\begin{solution}
+Figure \ref{fig:statics:SphereStep_FBD} shows the forces acting on the sphere and the relevant dimensions. The sphere will move as soon as $F$ is large enough to cause it to have a net torque. 
+\capfig{0.4\textwidth}{figures/Statics/SphereStep_FBD.png}{\label{fig:statics:SphereStep_FBD} } 
+Since we do not know the normal force, we evaluate the torques about the corner of the step. The lever arm of $F$ is $2R-h$, and the lever arm of the weight, $x$ on the diagram, is given by:
+\begin{align*}
+(R-h)^2+x^2&=R^2\\
+\therefore x&=\sqrt{R^2-(R-h)^2}=\sqrt{2Rh-h^2}=\sqrt{h(2R-h)}
+\end{align*}
+The sum of the torques, taking clockwise as positive, is given by:
+\begin{align*}
+\sum \tau &= F(2R-h)-Mg\sqrt{h(2R-h)}=0\\
+\therefore F&=Mg\frac{\sqrt{h(2R-h)}}{2R-h}=Mg\sqrt{\frac{h}{2R-h}}
+\end{align*}
+
+\end{solution}
+
+%Based on Giancolli 12-80
+\question A uniform ladder with a length of $L=\SI{6.0}{m}$ and a mass of $M=\SI{20}{kg}$ leans against a frictionless wall (so that the wall can only exert a horizontal force on the ladder). The ladder makes an angle $\theta=\SI{20}{\degree}$ with the wall, as shown in Figure \ref{fig:statics:Ladder}. Determine the minimum value of the coefficient of static friction between the ladder and the ground for the ladder not to slip when a person weighing $m=\SI{75}{kg}$ stands two-thirds of the way up the ladder.
+\capfig{0.2\textwidth}{figures/Statics/Ladder.png}{\label{fig:statics:Ladder}A ladder leaning against a frictionless wall.}
+\begin{finalanswer}
+$\mu_s =\tan\theta\left(\frac{\frac{1}{2}M-\frac{2}{3}m}{(m+M)}  \right)$
+\end{finalanswer}
+\begin{solution}
+The forces one the ladder when the person is on it are shown in Figure \ref{fig:statics:Ladder_FBD}.
+\capfig{0.2\textwidth}{figures/Statics/Ladder_FBD.png}{\label{fig:statics:Ladder_FBD}Forces on the ladder.}
+
+The sum of the torques and forces must be zero, since the ladder is not moving. The sum of the forces in the vertical direction allow us to determine the normal force:
+\begin{align*}
+\sum F_y&=N-(m+M)g=0\\
+\therefore N&=(m+M)g
+\end{align*}
+The force of static friction at the bottom of the ladder is thus give by:
+\begin{align*}
+f_s=\mu_sN=\mu_s(m+M)g
+\end{align*}
+where $\mu_s$ is the coefficient of static friction between the bottom of the ladder and the ground. We take the torques above the top of the ladder, so that we do not need to solve for $\vec R$, the force from the wall. We will take clockwise as positive torques:
+\begin{align*}
+\sum\tau&=N\sin\theta L-f_s\cos\theta L-Mg\sin\theta\frac{L}{2}-mg\sin\theta\frac{L}{3}=0\\
+f_s\cos\theta&=N\sin\theta-\frac{1}{2}Mg\sin\theta-\frac{1}{3}mg\sin\theta\\
+f_s&=N\tan\theta-\frac{1}{2}Mg\tan\theta-\frac{1}{3}mg\tan\theta\\
+\mu_s(m+M)g &=(m+M)g\tan\theta-\frac{1}{2}Mg\tan\theta-\frac{1}{3}mg\tan\theta\\
+\mu_s(m+M)g &=g\tan\theta\left(\frac{1}{2}M-\frac{2}{3}m  \right) \\
+\therefore \mu_s &=\tan\theta\left(\frac{\frac{1}{2}M-\frac{2}{3}m}{(m+M)}  \right) \\
+\end{align*}
+\end{solution}
+
+
+%Harrison/Zaremba 2000 Final exam
+\question A thin rod of length $L=\SI{0.5}{m}$ and mass $M=\SI{1.0}{kg}$ makes an angle $\theta=\SI{60}{\degree}$ with the horizontal. It is held in position by a light horizontal string attached at the top end of the rod, as shown in Figure \ref{fig:statics:RodMass}. A mass $m$ is suspended from the top of the rod by a second string. If the coefficient of static friction between the rod and the ground at the point of contact is $\mu=0.50$, what is the largest mass $m$ that can be suspended such that the rod does not slip?
+\capfig{0.4\textwidth}{figures/Statics/RodMass.png}{\label{fig:statics:RodMass}A mass hanging from a rod.}
+\begin{finalanswer}
+\SI{2.73}{kg}
+\end{finalanswer}
+\begin{solution}
+The forces on the rod are shown in Figure \ref{fig:statics:RodMass_FBD}. Just before the rod slips, the force of friction will be equal to $\mu N$.
+\capfig{0.4\textwidth}{figures/Statics/RodMass_FBD.png}{\label{fig:statics:RodMass_FBD}Forces on the rod.}
+Since the rod is in static equilibrium, the sum of the forces and torques are both zero. The sum of the forces in the horizontal and vertical directions are:
+\begin{align*}
+T-\mu N&=0\\
+mg+Mg-N&=0
+\end{align*}
+respectively.  The second equation gives the normal force, which we can substitute in to the first equation:
+\begin{align*}
+N&=(m+m)g\\
+\therefore T&=\mu(m+M)g
+\end{align*}
+We can take the torques about the bottom (positive torques clockwise):
+\begin{align*}
+T\sin\theta L-mg\cos\theta L-Mg\cos\theta \frac{L}{2}&=0\\
+T\sin\theta-(m+\frac{1}{2}M)g\cos\theta&=0\\
+\therefore T&=(m+\frac{1}{2}M)g\frac{\cos\theta}{\sin\theta}=(m+\frac{1}{2}M)g\frac{1}{\tan\theta}\\
+\end{align*}
+Equating the two equations for $T$ and re-arranging for $m$:
+\begin{align*}
+\mu(m+M)g &= (m+\frac{1}{2}M)g\frac{1}{\tan\theta}\\
+\mu\tan\theta m+\mu\tan\theta M&=m+\frac{1}{2}M\\
+m(\mu\tan\theta-1) &= M(\frac{1}{2}-\mu\tan\theta)\\
+\therefore m&= \frac{\frac{1}{2}-\mu\tan\theta}{\mu\tan\theta-1}M = \frac{\frac{1}{2}-(0.5)\tan(\SI{60}{\degree})}{0.5\tan(\SI{60}{\degree})-1}\SI{1.0}{kg}\\
+&=\SI{2.73}{kg}
+\end{align*}
+\end{solution}

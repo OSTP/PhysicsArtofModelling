@@ -1,866 +1,1010 @@
+\section{Rotational dynamics}
 
-\chapter{Rotational dynamics}
-\label{chapter:rotationaldynamics}
-In this Chapter, we use Newton's Second Law to develop a formalism to describe how objects rotate. In particular, we will introduce the concept of torque which plays a similar role to that of force in non-rotational dynamics. We will also introduce the concept of moment of inertia to describe how objects resist rotational motion. 
-
-\begin{learningObjectives}
-{
- \item Understand how to use vector quantities for describing the kinematics of rotations.
- \item Understand how to use torque to determine the angular acceleration of an object.
- \item Understand conditions for static and dynamic equilibrium. 
- \item Understand how to determine the moment of inertia of an object.
- }
-\end{learningObjectives}
-
-\begin{opening}
-\begin{MCquestion}{A construction worker would like to lift one end of a heavy block from the ground using a bar propped against a rock on the ground as a lever. Should he place the rock close or far from the block to make it easier to lift the block?}
-\item It will be easier to lift the block if the rock is close to the block. \correct
-\item It will be easier to lift the block if the rock is far from the block.
-\item It does not matter where he places the rock, as long as the bar is short.
-\item It does not matter where he places the rock, as long as the bar is long.
-\end{MCquestion}
-\end{opening}
-
-\section{Rotational kinematic vectors}
-
-\begin{review}
-Before proceeding, you may wish to review:
-\begin{itemize}[topsep=-10pt]
-\item Section \ref{sec:describingmotioninnd:circularmotion} on kinematics for circular motion.
-\item Section \ref{sec:Vectors:vectorproduct} on the vector product.
-\item Section \ref{sec:Vectors:rotationalmotion} on axial vectors and their use in defining rotational quantities.
-\end{itemize}
-\end{review}
-
-\subsection{Scalar rotational kinematic quantities}
-Recall that we can describe the motion of a particle along a circle of radius, $R$, by using its angular position, $\theta$, its angular velocity, $\omega$, and its angular acceleration, $\alpha$. With a suitable choice of coordinate systen, the angular position can be defined as the angle made by the position vector of the particles, $\vec r$, and the $x$ axis of a coordinate system whose origin is the centre of the circle, as shown in Figure \ref{fig:rotationaldynamics:vcircle}. 
-\capfig{0.4\textwidth}{figures/RotationalDynamics/vcircle.png}{\label{fig:rotationaldynamics:vcircle} Angular position for a particle moving around the $z$ axis (out of the page), along a circle of radius $R$ with a centre at the origin.}
-
-The angular velocity, $\omega$, is the rate of the change of the angular position, and the angular acceleration, $\alpha$, is the rate of change of the angular velocity:
-\begin{align*}
-\omega &= \frac{d}{dt}\theta \\
-\alpha &= \frac{d}{dt}\omega
-\end{align*}
-If the angular acceleration is constant, then angular velocity and position as a function of time are given by:
-\begin{align*}
-\omega(t) = \omega_0+\alpha t\\
-\theta(t) = \theta_0+\omega_0 t+\frac{1}{2}\alpha t^2
-\end{align*}
-where $\theta_0$ and $\omega_0$ are the angular position and velocity, respectively, at $t=0$.
-
-We can also describe the motion of the particle in terms of ``linear'' quantities (as opposed to ``angular'' quantities) along a one-dimensional axis that is curved along the circle. If $s$ is the distance along the circumference of the circle, measured counter-clockwise from where the circle intersects the $x$ axis, then it is related to the angular displacement:
-\begin{align*}
-s = R\theta
-\end{align*}
-if $\theta$ is expressed in radians. Similarly, the linear velocity along the $s$ axis, $v_s$, and the corresponding acceleration, $a_s$, are given by:
-\begin{align*}
-v_s &= \frac{ds}{dt} =\frac{d}{dt}R\theta = R\omega\\
-a_s&= \frac{dv}{dt} =\frac{d}{dt}R\omega = R\alpha
-\end{align*}
-where the radius of the circle, $R$, is a constant that can be taken out of the time derivatives. For motion along a circle, the velocity vector, $\vec v$, of the particle is always tangent to the circle (Figure \ref{fig:rotationaldynamics:vcircle}), so $v_s$ corresponds to the speed of the particle. The acceleration vector, $\vec a$, is in general not tangent to the circle; $a_s$ represents the component of the acceleration vector that is tangent to the circle. If $a_s=0$, then $\alpha=0$, and the particle is moving with a constant speed (uniform circular motion), and the acceleration vector points towards the centre of the circle.
-
-\begin{checkpoint}
-\begin{MCquestion}{Which of the following statements correctly describes the speeds at points $A$ and $B$ on the disk rotating about an axis through its centre, as illustrated in Figure \ref{fig:rotationaldynamics:rotatingdisk}?
-\capfig{0.25\textwidth}{figures/RotationalDynamics/rotatingdisk.png}{\label{fig:rotationaldynamics:rotatingdisk} Two points at different radii on a rotating disk.}}
-\item Both points A and B have the same angular and linear speeds.
-\item Both points A and B have the same linear speed but they have different angular speeds.
-\item Both points A and B have the same angular speed but they have different linear speeds. %correct
-\end{MCquestion}
-\end{checkpoint}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Multiple Choice
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple Choice}
 
 
-\subsection{Vector rotational kinematic quantities}
-In the previous section, we defined angular quantities to describe the motion of a particle about the $z$ axis along a circle of radius $R$ that lies in the $xy$ plane. By using vectors, we can define the angular quantities for rotation about an \textbf{axis that can point in any direction}. Given an axis of rotation, the path of any particle rotating about that axis can be described by a circle that lies in the plane perpendicular to that axis of rotation, as illustrated in Figure \ref{fig:rotationaldynamics:axis}.
-\capfig{0.5\textwidth}{figures/RotationalDynamics/axis.png}{\label{fig:rotationaldynamics:axis} Defining the vector $\vec r$ and the angular velocity, $\vec \omega$ for a particle with velocity $\vec v$ rotating about an axis in a general direction.}
+%Based on Ashley Braun
+\question[1] A bug sits on a horizontal vinyl record at a distance $r$ from the centre of the record. The record starts playing (accelerating), and the bug is accelerated by a torque $\tau$. A second bug with the same mass as the first is located at a distance $\frac{r}{2}$ from the centre of the record. What is the net torque exerted on the second bug? Assume that both bugs do not move relative to the record as it accelerates.
+\begin{checkboxes} 
+	\CorrectChoice $\frac{1}{4}\tau$
+	\choice  $\frac{1}{2}\tau$
+	\choice $2\tau$
+	\choice $4\tau$
+\end{checkboxes}
 
-We define the vector, $\vec r$, for a particle to be the vector that goes from the axis of rotation to the particle and is in a plane perpendicular to the axis of rotation, as in Figure \ref{fig:rotationaldynamics:axis}. Given the velocity vector of the particle, $\vec v$, we define its angular velocity vector, $\vec\omega$, \textbf{about the axis of rotation}, as:
-\begin{align}
-\Aboxed{\vec \omega = \frac{1}{r^2} \vec r \times \vec v}
-\end{align}
-The angular velocity vector is perpendicular to both the velocity vector and the vector $\vec r$, since it is defined as their cross-product. Thus, the \textbf{angular velocity vector is co-linear with the axis of rotation}. By using the angular velocity vector, we can specify \textbf{the direction of the axis of rotation as well as the direction in which the particle is rotating about that axis}. The direction of rotation is given by the right hand rule for axial vectors: when you point your thumb in the same direction as the angular velocity vector, the direction of rotation is the direction that your fingers point when you curl them, as illustrated in Figure. \ref{fig:rotationaldynamics:hand}.
-\capfig{0.5\textwidth}{figures/RotationalDynamics/righthandruleaxial.png}{\label{fig:rotationaldynamics:hand} Using the right hand rule for axial vectors. In this case, the direction of rotation is counter clockwise when looking at the page (the direction that the fingers curl), so the rotation vector points out of the page (the direction of the thumb).}
+\question You approach a closed door with a door handle to your left. You need to push the door handle to open the door, and thus you exert a torque on the door (relative to an axis through the hinges on the right of the door) that is directed
+\begin{checkboxes} 
+	\choice Upwards.
+	\CorrectChoice  Downwards.
+	\choice Away from you. 
+	\choice Towards you.
+\end{checkboxes}
+
+\question \label{question:rotationaldynamics:personladder} A mass-less ladder has a total length $L$ and is placed against a wall such that it makes an angle $\theta$ with the horizontal, as shown in Figure \ref{fig:rotationaldynamics:personladder}. The coefficient of static friction between the ladder and the ground is $\mu_s$, while there is no friction between the ladder and the vertical wall. What is the maximum distance, $D$, along the ladder (as measured from the ground) that a person can climb up the ladder before the ladder starts to slide?
+\begin{checkboxes} 
+	\choice $D\leq L(1-\mu_s\sin\theta)$
+	\choice $D\leq L(1-\mu_s\tan\theta)$
+	\choice $D\leq L\mu_s\cos\theta$
+	\CorrectChoice $D\leq L\mu_s\tan\theta$
+\end{checkboxes}
+\capfig{0.20\textwidth}{figures/RotationalDynamics/personladder.png}{\label{fig:rotationaldynamics:personladder} A person climbing a ladder (Question \ref{question:rotationaldynamics:personladder}).}
 
 
-This definition of the angular velocity is consistent with the description from the previous section for motion about a circle of radius $R$ that lies in the $xy$ plane, as in Figure \ref{fig:rotationaldynamics:vcircle}. In that case, the magnitude of the angular velocity is given by:
-\begin{align*}
-\omega &=\frac{1}{r^2} || \vec r \times \vec v||= \frac{1}{r^2}r v\sin\phi= \frac{v}{R}\\
-\therefore v &= R\omega
-\end{align*}
-where $\phi$ is the angle between the vectors $\vec r$ and $\vec v$ ($\SI{90}{\degree}$ for motion around a circle). The direction of the angular velocity in Figure \ref{fig:rotationaldynamics:vcircle} is in the positive $z$ direction, which corresponds to counter-clockwise rotation about the $z$ axis. 
+\question A travelling amusement park came to town, and your little brother decides that you both need to test the new spinning saucer ride. Your brother wants to go ``as fast as possible'', in attempt to take-off into outer-space. There are seats near the centre of the saucer, and seats on the outer-edge of the saucer. Where should you sit, in order to go the fastest?
+\begin{checkboxes}
+\choice Near the centre, because you will increase linear speed and angular velocity.
+\choice Near the centre, because you will increase linear speed.
+\CorrectChoice Near the outer-edge, because you will increase linear speed. %correct
+\choice Near the outer-edge, because you will increase linear speed and angular velocity.
+\end{checkboxes}
 
-\begin{checkpoint}
-\begin{MCquestion}{You push on the right-hand side of a door to open it, as the door's hinges are on the left. The angular velocity vector of the door is:}
-\item Upwards \correct
-\item Downwards
-\item Forwards
-\item Backwards
-\end{MCquestion}
-\end{checkpoint}
+%Need to double-check this one
+\question A construction worker has to turn a lever at an angle of 55$^{\circ}$. The length of the lever is $\SI{0.61}{m}$ long and is a force of $\SI{25}{N}$ is exerted to turn it. What is the net torque on the lever?
+\begin{checkboxes}
+\choice $\SI{9.0}{Nm}$
+\choice $\SI{34}{Nm}$
+\CorrectChoice $\SI{12}{Nm}$ \correct
+\choice $\SI{22}{Nm}$
+\end{checkboxes}
 
-One can always define an angular velocity vector \textbf{relative to a point of rotation}, even if the particle is not moving along a circle. If we define the vector $\vec r$ to be the vector from the point of rotation to the particle, then the angular velocity vector describes the motion of the particle as if it were instantaneously moving in a circle centred at the point of rotation, in a plane given by the vectors $\vec r$ and $\vec v$. 
+\question You are fed up with your non-physics course and decide to throw the book in the air. If you want the book to spin as fast as possible, which of the following axes should you spin it about? All of the axes pass through the centre of mass of the book. Ignore the thickness of the book and assume it is longer than it is wide.
+\begin{checkboxes}
+\CorrectChoice The axis along the length of the book, parallel to its surface \correct
+\choice The axis along the width of the book, parallel to its surface
+\choice The axis through the center of the book, perpendicular to its surface
+\choice Both the length and width axes will work
+\end{checkboxes}
 
-Consider, for example, the particle in Figure \ref{fig:rotationaldynamics:vline} which is moving in a straight line with a velocity vector in the $xy$ plane at a position $\vec r$ relative to the origin. We can define its angular velocity vector relative to the origin, which will be in the positive $z$ direction. 
-\capfig{0.35\textwidth}{figures/RotationalDynamics/vline.png}{\label{fig:rotationaldynamics:vline} Angular position for a particle moving in a straight line.}
-The angular velocity describes the motion of the particle as if it were \textbf{instantaneously moving along a circle of radius $r$ centred about the origin}. The angular velocity is related to the component of $\vec v$, $v_\perp$, that is perpendicular to $\vec r$ (which is the component tangent to the circle of radius $r$, in Figure \ref{fig:rotationaldynamics:vline}):
-\begin{align}
-||\vec \omega|| = \frac{1}{r^2} || \vec r \times \vec v||=\frac{v\sin\phi}{r}= \frac{v_\perp}{r}
-\end{align}
-where $\phi$ is the angle between $\vec r$ and $\vec v$.
 
-Similarly, we can define the angular acceleration vector, $\vec \alpha$, about an axis of rotation:
-\begin{align}
-\vec \alpha = \frac{1}{r^2}\vec r \times \vec a
-\end{align}
-where $\vec a$ is the particle's acceleration vector,  and $\vec r$ is the vector from the axis of rotation to the particle. The direction of the angular acceleration is co-linear with the axis of rotation and the right-hand rule gives the rotational direction of the angular acceleration. We can also define the angular acceleration about a point; in that case, the direction of the vector will define an instantaneous axis of rotation about a circle of radius $r$ centred at the point as well as the direction of the angular acceleration about that axis.
+\question A vicu\~na with a mass of \SI{50}{kg} stands on the corner of a giant spinning chocolate bar with dimensions \SI{50}{m} by \SI{100}{m} (assume uniform density and no thickness). The axis of rotation is in the center of the chocolate bar and perpendicular to the plane it forms. If the chocolate bar has a mass of \SI{1000}{kg}, what is the moment of inertia of the whole system? (The vicu\~na can be treated as a point mass)
+\begin{checkboxes}
+\CorrectChoice \SI{1.20e6}{kg m} \correct
+\choice \SI{1.67e6}{kg m}
+\choice \SI{6.41e6}{kg m}
+\choice \SI{1.20e6}{kg^2 m}
+\end{checkboxes}
 
-Finally, we can define an angular displacement vector, $\vec \theta$, relative to an axis of rotation. The direction of the angular displacement vector will be co-linear with the axis of rotation, its direction will indicate the direction of rotation about that axis, and its magnitude (in radians) will correspond to the angular displacement (as shown in Figure \ref{fig:rotationaldynamics:axis}). We can only relate the angular displacement vector to an infinitesimal linear displacement vector, $d\vec s$, since the position vector $\vec r$ from the axis of rotation will be different at each end of the displacement vector if the displacement is large. The infinitesimal angular displacement vector that corresponds to an infinitesimal displacement vector, $d\vec s$, is defined as:
-\begin{align*}
-d\vec \theta &= \frac{1}{r^2} \vec r \times d\vec s\\
-\end{align*}
 
-\begin{checkpoint}
-\begin{MCquestion}{Which statement is correct regarding an ant on a disk that is rotating slower and slower as illustrated?
-\capfig{0.35\textwidth}{figures/RotationalDynamics/ant.png}{\label{fig:rotationaldynamics:ant} An ant on a disk.}
-}
-\item The angular velocity points into the page and the angular acceleration points out of the page. 
-\item Both the angular velocity and acceleration point into the page.
-\item Both the angular velocity and acceleration point out of the page.
-\item The angular acceleration points into the page and the angular velocity points out of the page. \correct
-\end{MCquestion}
-\end{checkpoint}
+\question A sphere with a radius of \SI{2}{m} and a mass of \SI{1}{kg} and uniform density begins spinning from rest about its centre.  With uniform angular acceleration it reaches a rotational speed of 2 revolutions per second over the course of 10 seconds.  If the applied force was tangential to the surface of the sphere, what was the magnitude of the applied force?
+\begin{checkboxes}
+\CorrectChoice \SI{1.01}{N} \correct
+\choice \SI{1.21}{N}
+\choice \SI{0.96}{N}
+\choice \SI{2.01}{N}
+\end{checkboxes}
 
-The instantaneous angular velocity vector is the rate of change of the angular displacement vector:
-\begin{align*}
-\vec\omega &= \frac{d\vec \theta}{dt} = \frac{d}{dt} \frac{1}{r^2} \vec r \times d\vec s = \frac{1}{r^2} \vec r \times \vec v_s
-\end{align*}
-where $\vec v_s$ is the (instantaneous) tangential velocity around the circle (i.e. the component of the velocity $\vec v$ that is perpendicular to $\vec r$). The angular acceleration vector is the rate of change of the angular velocity vector:
-\begin{align*}
-\vec\alpha = \frac{d}{dt} \vec \omega
-\end{align*}
 
-Given the angular kinematic quantities, the related linear quantities at a position $\vec r$ from the axis of rotation are given by:
-\begin{align}
-d\vec s &= d\vec\theta \times \vec r\nonumber\\
-\vec v_s &= \vec \omega \times \vec r\nonumber\\
-\vec a_s&= \vec \alpha \times \vec r
-\end{align}
-where the linear quantities are always in the direction perpendicular to $\vec r$ (tangent to the circle, for motion around a circle). In other words, one cannot, say, take the acceleration vector, obtain the angular acceleration vector, and then get back the original acceleration vector - one will only get back the component of the acceleration vector that is perpendicular to $\vec r$.  
+\question While sitting in class, you find yourself watching the clock very closely. By watching the ticking of the second hand, you determine that it spends \SI{0.9}{s} stationary and then spends \SI{0.1}{s} to move to the next position. It does this 60 times in one minute for a full rotation. What is the average and maximum angular velocity of the second hand during one full rotation?
+\begin{checkboxes}
+\CorrectChoice $\omega_{AVG} = \SI{0.11}{rad\per s}$, $\omega_{MAX} = \SI{1.1}{rad\per s}$ \correct
+\choice $\omega_{AVG} = \SI{0.002}{rad\per s}$, $\omega_{MAX} = \SI{0.02}{rad\per s}$
+\choice $\omega_{AVG} = 0$, $\omega_{MAX} = \SI{1.1}{rad\per s}$
+\choice $\omega_{AVG} = \omega_{MAX} = \SI{1.1}{rad\per s}$
+\end{checkboxes}
 
-\begin{checkpoint}
-\begin{MCquestion}{A particle has an angular velocity in the negative $z$ direction. In which way is the particle's velocity vector at a point in its trajectory when it is on the positive $y$ axis?}
-\item Positive $z$ direction 
-\item Negative $y$ direction
-\item Positive $x$ direction \correct
-\item Negative $x$ direction
-\end{MCquestion}
-\end{checkpoint}
+% Question submitted by Haoyuan Wang
+\question All parts of a rigid object rotating about a fixed axis have the same angular velocity $\omega$ and the same angular acceleration $\alpha$ at any instant.
+\begin{checkboxes}
+\CorrectChoice True \correct
+\choice False
+\end{checkboxes}
 
-\section{Rotational dynamics for a single particle}
-Suppose that a single force, $\vec F$, is acting on a particle of mass $m$.  Newton's Second Law for the particle is then given by:
-\begin{align*}
-\vec F = m \vec a
-\end{align*}
-We can define a point of rotation such that $\vec r$ is the position of the particle relative to that point. We can take the cross-product of $\vec r$ with both sides of the equation in Newton's Second Law:
-\begin{align*}
-\vec r \times \vec F &= m \vec r \times \vec a
-\end{align*}
-The left hand-side of the equation is called ``the torque of $\vec F$ relative to the point of rotation'', and is usually denoted by $\vec \tau$:
-\begin{align}
-\Aboxed{\vec \tau = \vec r \times \vec F}
-\end{align}
-The right-hand side of the equation is related to the angular acceleration vector, $\vec \alpha$, about that point of rotation:
-\begin{align*}
- m \vec r \times \vec a = mr^2\vec\alpha
-\end{align*}
-Putting this altogether, we get:
-\begin{align*}
-\vec\tau = mr^2 \vec\alpha
-\end{align*}
+%Question submitted by Nicole Gaul
+\question A moment of inertia : [select all that apply]
+\begin{checkboxes}
+\choice Has units of $m^2/kg$
+\CorrectChoice Is the counterpart of mass in the formula for rotational kinetic energy \correct
+\CorrectChoice Is the quantitative measure of rotational inertia \correct
+\end{checkboxes}
 
-If more than one force is exerted on the particle, it is easy to show that the \textbf{net torque} from the net force on the particle \textbf{is equal to the sum of the torques on the particle}:
-\begin{align*}
-\vec r \times (\vec F_1 + \vec F_2 + \vec F_3 + \dots) &=  (\vec r \times \vec F_1 + \vec r \times \vec F_2 + \vec r \times \vec F_3 + \dots) \\
-\therefore \vec r \times \sum \vec F &= \sum \vec \tau = \pvec \tau^{net}
-\end{align*}
+\question You have two circular frisbees of the same mass and radius. One of them is a ring, and the other is the more traditional disk shape. You throw them exactly the same way. Which one will spin the fastest?
+\begin{checkboxes}
+\choice The ring
+\CorrectChoice The disk \correct
+\choice They spin at the same rate
+\end{checkboxes}
 
-We can write ``Newton's Second Law for the rotational dynamics of a particle'':
-\begin{align}
-\Aboxed{\sum \vec \tau = \pvec \tau ^{net} = mr^2 \vec \alpha}
-\end{align}
-This equation provides us an alternate formulation to Newton's Second Law that is useful for describing the motion of a particle that is rotating. The left-hand side of the equation corresponds to the ``causes of motion'' (much like the sum of the forces in Newton's Second Law), and the right-hand side of the equation to the inertia and the kinematics. A few things to note when comparing to Newton's Second Law:
-\begin{enumerate}
-\item The rotational quantities, torque and angular acceleration, \textbf{are only defined with respect to a point or axis of rotation} (as this determines the vector $\vec r$). If one chooses a different point of rotation, then the torque and angular acceleration will be different.
-\item The angular acceleration of a particle is proportional to the net torque exerted on it, much like the linear acceleration is proportional to the net force exerted on the particle.
-\item Torque about a centre of rotation can be thought of as the equivalent of a force that causes things rotate about an axis that goes through the point of rotation and that is parallel to the torque/angular acceleration vectors.
-\item Instead of mass, it is mass times $r^2$ that plays the role of inertia and determines how large of an angular acceleration a particle will experience for a given net torque.  
+\question Two forces of different magnitude are exerted at the same point on an object. Is it possible for them to produce the same torque about an axis that does not go through the point where the forces are applied?
+\begin{checkboxes}
+\CorrectChoice Yes \correct
+\choice No
+\end{checkboxes}
+
+\question You ride a bicycle forward in a straight line. In which direction does the angular velocity of the wheels point
+\begin{checkboxes}
+\choice Forward
+\choice Backward
+\CorrectChoice To your left \correct
+\choice To your right
+\end{checkboxes}
+
+%Question submitted by Adam McCaw
+\question If a point mass A is double the distance from a rotation axis than another point mass B that is half of the mass of A, how do their moments or inertia about that axis relate?
+\begin{checkboxes}
+\choice $I_A=I_B$
+\CorrectChoice $I_A=2I_B$ \correct
+\choice $I_B=2I_A$
+\choice $I_A=4I_B$
+\end{checkboxes}
+
+
+\question You have designed an engine that provides a constant torque regardless of its rotational speed. You place different shapes on the axle and measure their angular velocity after a fixed period of time. Which one will have the highest angular velocity?
+\begin{checkboxes} 
+\choice A solid disk of mass $M$ and radius $R$ (the axle is perpendicular to the plane of the disk and goes through its centre)
+\CorrectChoice A solid disk of mass $M$ and radius $R/2$ (the axle is perpendicular to the plane of the disk and goes through its centre) \correct
+\choice A ring of mass $M$ and radius $R/2$ (the axle is perpendicular to the plane of the ring and goes through its centre)
+\choice A ring of mass $M$ and radius $R$ (the axle is perpendicular to the plane of the ring and goes through its centre)
+\end{checkboxes}
+
+\question You wish to accelerate a uniform solid disk of mass $M=\SI{20}{kg}$ and radius $R=\SI{0.5}{m}$ to an angular velocity of \SI{100}{rad/s} in \SI{2}{s}. The disk rotates about a fixed axis that goes through its centre and is perpendicular to the plane of the disk. How much power is required?
+ \begin{checkboxes} 
+\choice \SI{3125}{W}
+\CorrectChoice \SI{6250}{W} \correct
+\choice \SI{12500}{W}
+\choice \SI{25000}{W}
+\end{checkboxes}
+
+\question Suppose that you spin a ball that is resting on a desk. As time passes by, the angular velocity of the ball relative to some axis decreases. In what direction is the angular acceleration of the ball, relative to that same axis?
+\begin{checkboxes}
+\choice The angular velocity is zero.
+\CorrectChoice Anti-parallel to the angular velocity.
+\choice Parallel to the angular velocity.
+\choice Not enough information to tell.
+\end{checkboxes}
+
+\question You push on a door located in front of you to open it and exert a downwards torque on the door relative to its hinges. Relative to you, on which side are the door's hinges? 
+\begin{checkboxes}
+\CorrectChoice On your right.
+\choice On your left. 
+\choice Above you.
+\choice At your feet.
+\end{checkboxes}
+
+\question Which is easier (i.e. requires less effort on your part)?
+\begin{checkboxes}
+\CorrectChoice Rotating a bar about its centre.
+\choice Rotating a bar about its end.
+\end{checkboxes}
+
+\question You are driving in your car and go around a left turn. You notice that the shocks (springs) in your car compress more on one side than the other. 
+\begin{checkboxes}
+\CorrectChoice The right side of the car is lower in the turn \correct
+\choice The left side of the car is lower in the turn
+\end{checkboxes}
+
+\question Why are the breaks on a motorcycle (and cars) bigger on the front wheel(s)?
+\begin{checkboxes}
+\choice Because there is more room on those wheels, as the back wheels are near the engine.
+\CorrectChoice Because the normal force from the ground is bigger on the front wheel(s) than on the back wheel(s) when breaking \correct
+\choice Because the normal force from the ground is bigger on the back wheel(s) than on the front wheel(s) when breaking
+\end{checkboxes}
+
+\question A speed skater leans towards the centre of the track as they go around it. If you consider the torques on the skater about the point where their skates contact the ice, which forces create a torque?
+\begin{checkboxes}
+\choice Gravity
+\choice Gravity and the normal force from the ice
+\choice Gravity, an inertial (centrifugal) force,  and the normal force from the ice
+\CorrectChoice Gravity and an inertial (centrifugal) force \correct
+\end{checkboxes}
+
+\question A guanaco with a mass of $m$ is standing on a horizontal plank that is suspended on the side of Huayna Picchu (a mountain near Machu Picchu). The plank has a length $L$ and a mass $M$. The plank is anchored to the side of the mountain with a hinge and would swing freely if there were no rope attached to the plank. A rope is attached to the end of the plank that is away from the mountain and the rope is anchored into the mountain, as shown in Figure \ref{fig:rotationaldynamics:GuanacoPlank}. The rope makes an angle $\theta$ with the plank. The guanaco is standing a distance $\frac{3}{4}L$ from the mountain. What is the tension in the rope?
+\capfig{0.2\textwidth}{figures/Statics/GuanacoPlank.png}{\label{fig:rotationaldynamics:GuanacoPlank} A guanaco on a plank.}
+\begin{checkboxes} 
+\choice $T=\frac{\left( \frac{1}{2}m+ \frac{3}{4}M\right)g}{\cos\theta}$
+\choice $T=\frac{mg}{\sin\theta}$
+\choice $T=\frac{\left( \frac{3}{4}m+ \frac{1}{2}M\right)g}{\cos\theta}$
+\CorrectChoice $T=\frac{\left( \frac{3}{4}m+ \frac{1}{2}M\right)g}{\sin\theta}$ \correct
+\end{checkboxes}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% long answer
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Long answers}
+
+\question Four equal point masses $m$ are located at the corners of a square of length $a$. The masses are connected by rigid mass-less rods. The square is in the vertical plane, as shown in Figure \ref{fig:rotationaldynamics:square}.
+\begin{parts}
+\part What is the moment of inertia of the system about an axis that is perpendicular to the page and goes through the bottom left mass?
+\part If the system is free to rotate under the influence of gravity about the same axis in part (a), what is its initial angular acceleration about that axis, just as it is released?
+\end{parts}
+\capfig{0.2\textwidth}{figures/RotationalDynamics/square.png}{\label{fig:rotationaldynamics:square} Four equal masses on the side of a square.}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item $4ma^2$
+\item $\frac{g}{2a}$
 \end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part The mass at the axis of rotation does not contribute to the moment of inertia. The masses above and to the right are a distance $a$ away from the axis of rotation, whereas the one that is diagonally opposite of the axis is at a distance $\sqrt a$ from the axis of rotation. The moment of inertia is thus:
+\begin{align*}
+I=ma^2+ma^2+m(\sqrt 2a)^2=4ma^2
+\end{align*}
+\part We calculate the torques from the weight of the masses about the axis. The mass directly above the axis creates no torque, since its weight is parallel to the vector between it and the rotation axis. The sum of the torques is:
+\begin{align*}
+\sum \tau &= mg\sqrt 2 a\sin(\SI{45}{degree})+mga\\
+&=mg\sqrt 2 a\frac{1}{\sqrt 2}+mga=2mga\\
+\end{align*}
+The sum of the torques is the moment of inertia times angular acceleration:
+\begin{align*}
+\sum \tau &= I \alpha\\
+2mga &= 4ma^2 \alpha\\
+\therefore \alpha = \frac{g}{2a}
+\end{align*}
+\end{parts}
+\end{solution}
 
-\begin{example}{\capfig{0.3\textwidth}{figures/RotationalDynamics/rocket.png}{\label{fig:rotationaldynamics:rocket} A toy rocket accelerating around a circle of radius $R$, as seen from above.} A toy rocket is attached to a string on a horizontal frictionless table, as shown in Figure \ref{fig:rotationaldynamics:rocket}. The rocket has a mass $m$ and produces a constant force of thrust with a magnitude $F$ that accelerates the rocket along a circle of radius $R$ (the length of the string). If the rocket starts at rest, what distance along the circumference of the circle will the rocket have travelled after a time, $t$?}
-We can model the rocket as a point particle of mass $m$ with the following forces exerted on it:
-\begin{enumerate}
-\item $\vec F$, the thrust of the rocket, always acting tangent to the circle.
-\item $\vec T$, the force of tension in the string, always acting towards the centre of the circle.
-\item $\vec F_g$, the rocket's weight, acting into the page, with magnitude $mg$.
-\item $\vec N$, a normal force exerted by the table, out of the page, with magnitude $mg$.
+
+% Modified question from phone app called "Brilliant", from Troy
+\question A ceiling fan is powered on and rotating with constant angular velocity. You switch it off and measure that it takes 36 revolutions to reduce its angular velocity to half its original value. How many more revolutions will it take before it comes to rest? Assume constant angular acceleration.
+\begin{finalanswer}
+The fan will complete 12 more revolutions.
+\end{finalanswer}
+\begin{solution}
+Let $\theta(t)$ be the angular position of one of the fan fins and let us take $\theta(t=0)=0$. Since the angular acceleration ($\alpha$) is constant (and negative), the angular position $\theta(t)$ and angular speed $\omega(t)$ are given by:
+\begin{align*}
+\theta(t)&=\omega_0t+\frac{1}{2}\alpha t^2\\
+\omega(t)&=\omega_0+\alpha t
+\end{align*}
+where $\omega_0$ is the initial angular speed of the fan before it starts to decelerate, and we have used the fact that $\theta(t=0)=0$. We know that at some (unknown) time $t_1$, the angular displacement is 36 revolutions ($\theta(t_1)=36\times 2\pi$), and that the angular speed is $\omega(t_1)=\frac{1}{2}\omega_0 t$:
+\begin{align*}
+\theta(t_1)&=72\pi=\omega_0t_1+\frac{1}{2}\alpha t_1^2\\
+\omega(t_1)&=\frac{1}{2}\omega_0=\omega_0+\alpha t_1
+\end{align*}
+We can use the second equation to express $t_1$ in terms of $alpha$ and $\omega_0$ and use it in the equation for $\theta(t_1)$:
+\begin{align*}
+t_1 &=-\frac{1}{2}\frac{w_0}{\alpha}\\
+72\pi &= \omega_0\left(- \frac{1}{2}\frac{w_0}{\alpha}\right)+\frac{1}{2}\alpha \left( \frac{1}{2}\frac{w_0}{\alpha}\right)^2\\
+&=-\frac{1}{2}\frac{w_0^2}{\alpha}+\frac{1}{8}\frac{w_0^2}{\alpha}\\
+&=-\frac{3}{8}\frac{w_0^2}{\alpha}\\
+\therefore \frac{w_0^2}{\alpha} &= -192\pi
+\end{align*}
+
+Later, at some time $t_2$, the fan comes to rest:
+\begin{align*}
+\theta(t_2)&=\omega_0t_2+\frac{1}{2}\alpha t_2^2\\
+\omega(t_2)&=0=\omega_0+\alpha t_2
+\end{align*}
+Again, we can use the second equation to express $t_2$ in terms of $\alpha$ and $\omega_0$ and use it in the equation for $\theta(t_2)$:
+\begin{align*}
+t_2&=-\frac{\omega_0}{\alpha}\\
+\theta(t_2)&=-\frac{\omega_0^2}{\alpha}+\frac{1}{2}\alpha \left(\frac{\omega_0}{\alpha}\right)^2\\
+&=-\frac{\omega_0^2}{\alpha}+\frac{1}{2}\frac{\omega_0^2}{\alpha}\\
+&=-\frac{1}{2}\frac{\omega_0^2}{\alpha}\\
+&=-\frac{1}{2}(-192\pi)\\
+&=96\pi
+\end{align*}
+where we used our expression for $\frac{\omega_0^2}{\alpha}$ determined above. We are asked to find $\theta(t_2)-\theta(t_1)$, the angular displacement between $t_1$ and $t_2$, which is:
+\begin{align*}
+\theta(t_2)-\theta(t_1)=96\pi-72\pi=12\times(2\pi)
+\end{align*}
+thus, the fan will complete 12 more revolutions.
+\end{solution}
+
+%Troy
+\question You are working on a physics assignment the night before it is due, but you realize that you do not have enough time to complete it. You start to wonder if you could stop the Earth from rotating and stop the sun from rising the next day. Hopefully the ensuing confusion would give you more time to work on the assignment. Instead of working on your physics assignment, you decide to explore the feasibility of this scenario. Model the Earth as a perfect solid sphere rotating constantly without any precession.
+
+\begin{parts}
+\part What is the angular velocity of the Earth?
+\part If your assignment is due in 12 hours, what is the minimum constant angular acceleration that you would need to stop the Earth's rotation by then?
+\part Calculate the torque required to produce the angular acceleration you calculated in part (b).
+\part To achieve the torque from part (c), you decide to install rocket engines onto the Earth. The Rocketdyne F-1 is the most powerful single-nozzle liquid-fuelled rocket engine ever flown. It has a thrust of approximately \SI{6800}{\kilo\newton}. What is the minimum number of F-1 engines that you need to stop the Earth?
+\end{parts}
+
+\textit{Note: The mass of the Earth is \SI{5.972e24}{\kilo\gram}, the radius of the Earth is \SI{6378}{km}, the moment of inertia of a solid sphere of radius $r$ is $I = \frac{2}{5}mr^2$.}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item $\SI{7.27e-5}{rad/s}$
+\item $\SI{-1.68e-9}{rad/s^2}$
+\item $\SI{1.63e29}{Nm}$
+\item $\num{3.76e15}$ rockets
 \end{enumerate}
-Because the normal force and the weight are equal in magnitude and opposite in direction, the net force will be the sum of the force of thrust and the force of tension, which are always perpendicular to each other. Thinking about this with Newton's Second Law, we could model the force of thrust as increasing the speed of the particle, while the force of tension keeps the rocket moving in a circle (it can do no work to increase the speed, since it is always perpendicular to the motion).
-
-We can also think about this in terms of torques and angular acceleration about the centre of the circle. The thrust will result in a net torque about the centre of rotation, which will lead to the rocket having an angular acceleration. By determining the angular acceleration, we can then model the displacement at some time, $t$, using kinematics. The force of tension will create no torque about the centre of the circle because the force of tension is always co-linear with the position vector, $\vec r$ (the cross-product of co-linear vectors is always zero).
-
-We introduce a coordinate system whose origin coincides with the centre of the circle, as shown in Figure \ref{fig:rotationaldynamics:rocket_fbd}, so that $\vec r$ corresponds to the position of the rocket relative to the origin.  The force of thrust and the tension are also shown in the diagram. We choose the direction of the $x$ axis such that the rocket was located at the intersection of the $x$ axis and the circle at time, $t=0$.
-\capfig{0.4\textwidth}{figures/RotationalDynamics/rocket_fbd.png}{\label{fig:rotationaldynamics:rocket_fbd} Coordinate system to describe the motion of the rocket.}
-
-The net torque on the rocket about the point of rotation is given by the cross-product between the thrust force, $\vec F$, and the position vector, $\vec r$:
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part The angular velocity of the Earth is given by $2\pi$ divided by the length of one day:
 \begin{align*}
-\vec\tau^{net} = \vec r\times\vec F
+\omega = \frac{\Delta\theta}{\Delta t} = \frac{(\SI{2\pi}{rad})}{(\SI{86400}{s})} = \SI{7.27e-5}{rad \per s}
 \end{align*}
-and will point in the positive $z$ direction (as given by the right hand rule). $\vec r$ and $\vec F$ are perpendicular, so the magnitude of the net torque is given by:
+
+\part The acceleration is the change in angular speed over the period of SI{12}{hr}:
 \begin{align*}
-\tau^{net} = rF \sin(\SI{90}{\degree}) = RF
+\alpha = \frac{\Delta\omega}{\Delta t} = \frac{(\SI{-7.27e-5}{rad/s})}{(\SI{43200}{s})} = \SI{-1.68e-9}{rad /s^2}
 \end{align*}
-where $R$ is the magnitude of $\vec r$. The net torque vector is thus:
+
+\part The required torque is given by $I\alpha$, where $I$ is the moment of inertia of the Earth about its rotation axis:
 \begin{align*}
-\vec\tau^{net} = RF \hat z
+\tau &= \alpha I  = (\SI{-1.68e-9}{rad/s^2})\left(\frac{2(\SI{5.972e24}{kg})(\SI{6378}{km})^2}{5}\right)\\
+ &= \SI{1.63e29}{Nm}
 \end{align*}
-Applying the rotational version of Newton's Second Law allows us to determine the angular acceleration:
+
+\part The most efficient way to generate the torque is to attach the rockets at the equator of the Earth so that their thrust is tangent to the Earth and in the direction opposite of the rotation. The total torque can be evaluated from the total force from all the rockets, $F$, assuming that the lever arm is the radius of the Earth, and that the force is tangent to the surface of the Earth:
 \begin{align*}
-\vec \tau ^{net} &= mr^2\vec\alpha\\
-RF \hat z&= mR^2\vec\alpha\\
-\therefore \vec \alpha &= \frac{F}{mR}\hat z
+\tau &= |r||F|\sin\theta = |r||F|\sin(\SI{90}{\degree}) = |r||F|\\
+\therefore |F| &= \frac{\tau}{|r|} = \frac{(\SI{1.63e29}{Nm})}{(\SI{6378}{km})}\\
+|F| &= \SI{2.56e22}{N}\\
 \end{align*}
-The angular acceleration vector points in the positive $z$ direction (as does the net torque), and indicates that the rocket is accelerating in the counter-clockwise direction about the $z$ axis. 
-
-After a period of time $t$, the rocket will have covered an angular displacement, $\Delta \theta$, given by:
+In terms of the thrust of an F-1 rocket engine, this gives
 \begin{align*}
-\Delta \theta &= \theta(t)-\theta_0 = \omega_0t + \frac{1}{2}\alpha t^2\\
-&=\frac{1}{2}\frac{F}{mR} t^2
+\frac{\SI{2.56e22}{\newton}}{\SI{6800}{\kilo\newton\per rocket}} = \SI{3.76e15}{rockets}\\
 \end{align*}
-The linear displacement, $\Delta s$, that corresponds to this angular displacement is:
+That seems like a lot of rockets. Luckily, by solving this question, you have made progress on your assignment.
+\end{parts}
+
+\end{solution}
+
+
+\question Two different blocks of mass $m_1$ and $m_2$, respectively, are on different sides of an incline, where the slopes of the two sides make angles of $\alpha$ and $\beta$ with the horizontal, respectively, as depicted in Figure \ref{fig:rotationaldynamics:InclinePulley}. The blocks are connected by a mass-less inextensible rope that goes around a frictionless pulley of mass $M$ and radius $R$ without slipping. The pulley can be modelled as a solid disk with moment of inertia $I=\frac{1}{2}MR^2$. The coefficient of kinetic friction between the blocks and the incline is $\mu_k$. Show that when the system is accelerating such that $m_1$ is moving downwards, the acceleration is given by:
 \begin{align*}
-\Delta s = R \Delta\theta = \frac{1}{2}\frac{F}{m} t^2
+a &= \frac{m_1(\sin\alpha-\mu_k\cos\alpha)-m_2(\sin\beta+\mu_k\cos\beta)}{m_1+m_2+\frac{1}{2}M}g
 \end{align*}
-\textbf{Discussion:} The formula that we found for the total linear displacement is the same that we would have found if the particle were moving in a straight line with a net force $F$ applied to it (as the particle would have a constant acceleration given by $F/m$).
-\end{example}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Torque}
-The torque associated with a force is a mathematical tool to describe how much a particular force will cause a particle (or solid) object to rotate about a given point or a given axis of rotation. A torque is \textbf{only defined relative to an axis or point of rotation}. It never makes sense to say ``the torque is ...'', and one should always say ``the torque about this axis/point of rotation is ... ''. Angular quantities (torque, angular velocity, angular displacement, etc) are only ever defined relative to a specific axis or point of rotation.
-
-Mathematically, the torque vector from a force, $\vec F$, exerted at a position, $\vec r$, relative to the axis or point of rotation is defined as:
+\textit{Hint: The tension in the rope is not the same on either side of the pulley if the pulley has a moment of inertia. If the tensions were the same, the pulley would not rotate, as the net torque on it would be zero.}
+\capfig{0.4\textwidth}{figures/RotationalDynamics/InclinePulley.png}{\label{fig:rotationaldynamics:InclinePulley}Two masses on an inclined plane with a pulley.}
+\begin{solution}
+The two blocks will have the same acceleration magnitude, equal to the tangential acceleration of the pulley. We will assume that the system accelerates to the left so that we can draw the friction forces, as in the free body diagram shown in Figure \ref{fig:rotationaldynamics:InclinePulley_FBD}.
+\capfig{0.5\textwidth}{figures/RotationalDynamics/InclinePulley_FBD.png}{\label{fig:rotationaldynamics:InclinePulley_FBD}}
+For each block, we choose the positive $x$ axis to be parallel to the acceleration (and positive in the direction of the acceleration), and the $y$ axis to be perpendicular to the plane and positive away from the plane. For block 1, Newton's second law gives for the $x$ and $y$ components respectively:
 \begin{align*}
-\vec \tau = \vec r \times \vec F
+\sum F_x&=m_1g\sin\alpha-f_1-T_1=m_1a\\
+\sum F_y&=N_1-m_1g\cos\alpha=0\\
 \end{align*}
-Note that the torque from a given force increases if that force is further from the axis of rotation (if $\vec r$ has a bigger magnitude). 
-
-Consider the solid disk of radius, $r$, depicted in Figure \ref{fig:rotationaldynamics:disk}. The disk can rotate about an axis that passes through the centre of the disk and that is perpendicular to the plane of the disk. A force, $\vec F$, is exerted on the edge of the disk as shown.
-\capfig{0.7\textwidth}{figures/RotationalDynamics/disk.png}{\label{fig:rotationaldynamics:disk} A force exerted on the perimeter of a disk that can rotate about an axis that is perpendicular to the disk and that passes through its centre. We can determine the resulting torque by considering either the component of $\vec F$ that is perpendicular to $\vec r$ (left panel) or the component of $\vec r$ that is perpendicular to $\vec F$ (right panel). The torque vector, $\vec \tau$, is out of the page, as illustrated in the centre. }
-Intuitively, that force will cause the disk to rotate in the counter-clockwise direction. The torque from the force $\vec F$ about the axis as rotation is given by:
+Using the $y$ equation to eliminate $N_1$, and using the fact that $f_1=\mu_kN_1$, we have:
 \begin{align*}
-\vec \tau = \vec r \times \vec F
+m_1g\sin\alpha-\mu_km_1g\cos\alpha-T_1&=m_1a\\
+\therefore m_1g(\sin\alpha-\mu_k\cos\alpha)-T_1&=m_1a
 \end{align*}
-where the vector $\vec r$ is perpendicular to the axis of rotation and goes from the axis of rotation to the point where $\vec F$ is exerted. The direction of the torque vector is out of the page (right hand rule, see Figure \ref{fig:rotationaldynamics:disk}), and will thus lead to an angular acceleration that is also out of the page, which corresponds to the counter-clockwise direction, as anticipated. 
-
-We can break up the force into components that are parallel ($F_\parallel$) and perpendicular ($F_\perp$) to the vector $\vec r$, as shown on the left panel of Figure \ref{fig:rotationaldynamics:disk}. Only the component of the force that is perpendicular to $\vec r$ will contribute to rotating the disk. Imagine that the force is from a string that you have attached to the perimeter of the disk; if you pull on the string such that the force is parallel to $\vec r$, the disk would not rotate. The magnitude of the torque is given by:
-\begin{align}
-\label{eq:rotationaldynamics:taumag}
-\tau = rF\sin\phi
-\end{align}
-where $\phi$ is the angle between $\vec r$ and $\vec F$, as shown in Figure \ref{fig:rotationaldynamics:disk}. $F \sin \phi$ is precisely the component of $\vec F$ that is perpendicular to $\vec r$, so we could also write the magnitude of the torque as:
+For block 2, Newton's second law gives for the $x$ and $y$ components respectively:
 \begin{align*}
-\tau =rF_\perp
+\sum F_x&=T_2-f_2-m_2g\sin\beta=m_2a\\
+\sum F_y&=N_2-m_2g\cos\beta=0\\
 \end{align*}
-which highlights that only the component of the force that is perpendicular to $\vec r$ contributes to the torque. Instead of combining the $\sin \phi$ with $F$ to obtain $F_\perp$, the component of $\vec F$ perpendicular to $\vec r$, we can instead combine the $\sin \phi$ with $r$ in Equation \ref{eq:rotationaldynamics:taumag} to obtain $r_\perp$, the component of $\vec r$ that is perpendicular to $\vec F$. This is illustrated in the right panel of Figure \ref{fig:rotationaldynamics:disk}. The magnitude of the torque is thus also given by:
+Again, using the $y$ equation to eliminate $N_2$ and using $f_2=\mu_kN_2$ into the $x$ equation gives:
 \begin{align*}
-\tau =r_\perp F
+T_2-\mu_km_2g\cos\beta-m_2g\sin\beta&=m_2a\\
+\therefore T_2-m_2g(\sin\beta+\mu_k\cos\beta)&=m_2a\\
 \end{align*}
-The quantity $r_\perp$ is called the ``lever arm'' of the force about a specific axis of rotation. 
-
-\begin{studentOpinion}{Emma}
-\textbf{Remembering how to maximize the torque about an axis using a pencil}
-
-We already know that the greater the force that you apply, the more an object will rotate. Here is an easy way to quickly remind yourself of the two other factors that play a role in whether or not an object will rotate:
-
-\textbf{Torque about an axis increases if the force is applied further from the axis of rotation.}
-
-First, pinch the centre of your pencil. Try to make the pencil rotate by pushing right next to where you are pinching. Try making the pencil rotate again, by pushing near the eraser. You should notice that it is much easier to make the pencil rotate by pushing near the eraser, as it is further from the axis of rotation (the pinch).
-
-\textbf{Torque about an axis is maximized if the force is applied perpendicular to the object.}
-
-Next, you should try pushing on the top of the eraser of your pencil, parallel to the pencil. The pencil will not rotate. Now, try pushing on the eraser, but perpendicular to the pencil. In this case, the pencil will rotate.
-
-If you are ever having trouble remembering the factors involved in maximizing torque about an axis, just grab your pencil case and do this quick exercise. 
-\end{studentOpinion}
-
-\begin{checkpoint}
-\begin{MCquestion}{Why is the handle of a door placed on the side of the door that is opposite to the hinges?}
-\item Because it increases the lever arm of a force used to rotate the door about the handle.
-\item Because it increases the perpendicular component of force used to rotate the door about the hinges.
-\item Because it increases the lever arm of a force used to rotate the door about the hinges. \correct
-\item Because it would be inconvenient if the handle were next to the hinges.
-\end{MCquestion}
-\end{checkpoint}
-
-\section{Rotation about an axis versus rotation about a point}
-When defining angular quantities (torque, angular acceleration, etc.), it is important to identify whether these are defined relative to an axis or to a point of rotation. This, in turn, determines the vector $\vec r$ that is involved in the definition of the angular quantities.
-
-Consider a disk of radius $r$ with a force, $\vec F$ exerted on its perimeter, as illustrated in Figure \ref{fig:rotationaldynamics:fplane}. The disk can only rotate about an axis that is perpendicular to the disk and that goes through the centre of the disk, like a wheel mounted on an axle. The force has a component, $\vec F_{plane}$, that lies in the plane perpendicular to the axis of rotation, and a component, $\vec F_{axis}$, that is parallel to axis of rotation.
-\capfig{0.6\textwidth}{figures/RotationalDynamics/fplane.png}{\label{fig:rotationaldynamics:fplane} A force exerted on disk that can only rotate about an axis through its centre and perpendicular to its plane. Only the component of $\vec F$ that is in the plane perpendicular to the axis of rotation, $\vec F_{plane}$, will contribute to the torque about the axis of rotation.}
-
-The vector $\vec r$ is  \textbf{always defined to be perpendicular to the axis of rotation and to go from the axis of rotation to the point where the force $\vec F$ is exerted}, as illustrated. The torque obtained by taking the cross product:
+On the pulley, we define the angular acceleration to be positive in the direction counter-clockwise direction. It is related to the acceleration of the blocks by:
 \begin{align*}
-\vec \tau = \vec r \times \vec F
+\alpha R = a
 \end{align*}
-will be perpendicular to both $\vec r$ and $\vec F$, and will thus not be parallel to the axis of rotation. \textbf{Only the component of the torque that is parallel to the axis of rotation} will contribute to rotating the disk about the axis. Only the component of the force that lies in the plane perpendicular to the axis of rotation, $\vec F_{plane}$, will contribute to the component of the torque about that axis of rotation. Thus, when we need to determine the torque about an axis of rotation, we can \textbf{consider vectors $\vec r$ and $\vec F$ that lie in the plane perpendicular to the axis of rotation}. The torque of $\vec F$ relative to the axis of rotation is thus:
+The net torque on the pulley comes from the two tensions ($T_1$ exerting a positive torque and $T_2$ exerting a negative torque):
 \begin{align*}
-\vec \tau_{axis} = \vec r \times \vec F_{plane}
+\sum \tau = T_1R-T_2R&=I\alpha\\
+T_1R-T_2R&=\frac{1}{2}MR^2 \frac{a}{R}\\
+T_1-T_2&=\frac{1}{2}Ma
 \end{align*}
-Furthermore, only the component of $\vec F_{plane}$ that is perpendicular to $\vec r$ will contribute to that torque, as we saw in the previous section. 
-
-In general, solid objects such as a disk can only rotate about an axis. In that case, one can consider only the components of forces that lie in the plane perpendicular to the axis of rotation in order to calculate the components of the torques about that axis that are parallel to that axis. 
-
-A point particle may be able to rotate about any axis that goes through a point of rotation. The net torque vector on the particle about that point will indicate the direction of the axis about which the particle would rotate. This is illustrated in the left panel of Figure \ref{fig:rotationaldynamics:pointaxis}.
-
-Instead, if the particle were constrained to rotate about the $z$ axis (e.g. if the particle is on a track), then we would use the component of the torque vector that is parallel to the $z$ axis to describe its motion, as illustrated in the right panel. The $z$ component of the torque could be determined by using only the components of the forces that lie in the plane perpendicular to the axis, and defining the vector $\vec r$ from the axis to the particle rather than from the point of rotation to the particle.
-
-\capfig{0.7\textwidth}{figures/RotationalDynamics/pointaxis.png}{\label{fig:rotationaldynamics:pointaxis} Left panel: a particle rotating about a circle centred at the origin with an axis determined from the net torque vector. Right panel: a particle that is constrained to rotate about the $z$ axis.}
-
-\begin{example}{A force given by $\vec F=F_x\hat x + F_y \hat y + F_z \hat z$ is exerted at a position $\vec r=r_x \hat x + r_y \hat y + r_z\hat z$. Calculate the torque about the $z$ axis as well as the torque about the origin.}
-To calculate the torque about the $z$ axis, we need take the cross-product between the components of the vectors $\vec r$ and $\vec F$ that lie in the $x-y$ plane, since that is the plane perpendicular to the axis of rotation (the $z$ axis). This gives:
+With the equations from the two blocks, we now have 3 equations and 3 unknowns ($a$, $T_1$, and $T_2$):
 \begin{align*}
-\vec\tau_z =(r_x \hat x + r_y \hat y) \times (F_x\hat x + F_y \hat y) =(r_xF_y-r_yF_y)\hat z
+ m_1g(\sin\alpha-\mu_k\cos\alpha)-T_1&=m_1a\\
+ T_2-m_2g(\sin\beta+\mu_k\cos\beta)&=m_2a\\
+ T_1-T_2&=\frac{1}{2}Ma\\
 \end{align*}
-If instead we want to calculate the torque about the origin, we take the cross-product between the two vectors:
+Let us use the third equation to express $T_2$ in terms of $T_1$, and substitute that into the second equation to get an expression for $T_1$:
 \begin{align*}
-\vec\tau &=(r_x \hat x + r_y \hat y+ r_z\hat z) \times (F_x\hat x + F_y \hat y+ F_z \hat z)\\
-&=(r_yF_z-r_zF_y)\hat x+(r_zF_x-r_xF_z)\hat y+(r_xF_y-r_yF_y)\hat z
+T_2&=T_1-\frac{1}{2}Ma\\
+T_1-\frac{1}{2}Ma-mg(\sin\beta+\mu_k\cos\beta)&=m_2a\\
+\therefore T_1&=m_2a+\frac{1}{2}Ma+m_2g(\sin\beta+\mu_k\cos\beta)
 \end{align*}
-If a particle were located at the given position, the force would cause the particle to (instantaneously) rotate about an axis that goes through the origin and is parallel to the torque vector. 
-
-\textbf{Discussion:} This example highlights the difference between calculating the torque about an axis of rotation and determining the torque about a point. When calculating the torque about an axis that goes through the origin, we only consider the components of the vectors $\vec r$ and $\vec F$ that are in the plane perpendicular to the axis of rotation. This would correspond to a situation in which the particle is constrained to move in a plane that is perpendicular to the axis of rotation. Instead, if we calculate the torque about the origin, then the torque vector determines the axis of rotation through the origin about which the particle would rotate. In this case, since the axis of rotation is the $z$ axis, and the point of rotation was the origin, the torque about the $z$ axis was simply the $z$ component of the torque calculated about the origin.
-\end{example}
-
-
-\section{Rotational dynamics for a solid object}
-We now consider the rotational dynamics for a solid object about a specific axis of rotation. Just as we did in Chapter \ref{chapter:momentumandcm}, we model a solid object as a system made of many particles of mass $m_i$. Because all of the points in a solid must move in unison, they all \textbf{rotate about an axis of rotation instead of a point}. We describe the position of each particle $i$ by a vector $\vec r_i$ that is \textbf{perpendicular to the axis of rotation and goes from the axis to the corresponding particle}, as shown in Figure \ref{fig:rotationaldynamics:blob}.
-\capfig{0.3\textwidth}{figures/RotationalDynamics/blob.png}{\label{fig:rotationaldynamics:blob} Two point particles that are part of a large solid object and their position vectors relative to an axis of rotation.}
-
-We wish to model the motion of the object as it rotates about a specific axis. Thus, when considering the net torque on any particle $i$, we only consider the component of the particle's net torque that is parallel to the axis of rotation (that component of torque that comes from forces that are in the plane perpendicular to the rotation axis).
-
-We can write the rotational version of Newton's Second Law for particle, $i$, with mass $m_i$, and position vector $\vec r_i$ relative to the rotation axis:
+We can isolate $T_1$ from the equation that came from block 1, and set it equal to the above:
 \begin{align*}
-\sum_k \vec\tau_{ik} = \pvec\tau_i^{net} &= m_ir_i^2\vec\alpha_i
+T_1&= m_1g(\sin\alpha-\mu_k\cos\alpha)-m_1a\\
+m_2a+\frac{1}{2}Ma+m_2g(\sin\beta+\mu_k\cos\beta) &= m_1g(\sin\alpha-\mu_k\cos\alpha)-m_1a\\
+(m_1+m_2+\frac{1}{2}M)a &=m_1g(\sin\alpha-\mu_k\cos\alpha)-m_2g(\sin\beta+\mu_k\cos\beta)\\
+\therefore a &= \frac{m_1(\sin\alpha-\mu_k\cos\alpha)-m_2(\sin\beta+\mu_k\cos\beta)}{m_1+m_2+\frac{1}{2}M}g
 \end{align*}
-where $\vec\tau_{ik}$ is the $k$-th torque on particle $i$. $\pvec\tau_i^{net}$ is the net torque on the particle \textbf{about the axis of rotation} and $\vec\alpha_i$ is the particle's angular acceleration about that axis.
+ 
+\end{solution}
 
-We can divide the torques exerted on a particle into internal and external torques. Internal torques are those exerted by another particle in the system, whereas external torques are exerted by something external to the system. If particle 1 exerts a torque $\vec\tau$ on particle 2, particle 2 will exert an equal and opposite torque, $-\vec\tau$ on particle 1.
 
-Indeed, consider the two particles that exert an equal and opposite force (Newton's Third Law), $\vec F$, on each other, and an arbitrary point/axis of rotation, as illustrated in Figure \ref{fig:rotationaldynamics:internaltau}. The torque on particle 1 from the force exerted by particle 2 will have the same magnitude as the torque on particle 2 from the force by particle 1. This is because both forces have the same magnitude and they are co-linear, which results in them having the same lever arm. The torque vector from each force will be in opposite directions, because the forces are in opposite direction. Newton's Third Law thus also holds for torques.
-\capfig{0.3\textwidth}{figures/RotationalDynamics/internaltau.png}{\label{fig:rotationaldynamics:internaltau} Two particles will exert equal and opposite torques on each other due to Newton's Third Law; the forces exerted by each particle on the other are co-linear and will thus have the same lever arm relative to any point/axis of rotation.}
 
-We can sum together the equations for each particle $i$:
-\begin{align*}
-\pvec\tau_1^{net} + \pvec\tau_2^{net} +\pvec\tau_3^{net} + \dots &= m_1r_1^2\vec\alpha_1 + m_2r_2^2\vec\alpha_2 +m_3r_3^2\vec\alpha_3 +\dots\\
-\sum_i \pvec\tau_i^{net} &= \sum_i  m_ir_i^2\vec\alpha_i
-\end{align*}
-where the sum over all of the torques exerted on each particle will be equal to the net external torque exerted on all of the particles, since the sum of the internal torques, $\pvec\tau_i^{int}$, will be zero:
-\begin{align*}
-\sum_i \pvec\tau_i^{net} = \sum_i \pvec\tau_i^{int} + \sum_i \pvec\tau_i^{ext} = \sum_i \pvec\tau_i^{ext} = \pvec\tau^{ext}
-\end{align*}
-where $ \pvec\tau^{ext}$ is the net external torque on the system.
+\question One can model the blades of a helicopter as 3 identical uniform thin rods of length $L=\SI{4.0}{m}$ and mass $M=\SI{120}{kg}$, as shown in Figure \ref{fig:rotationaldynamics:HelicopterBlades}. The helicopter's blades accelerate from rest to \SI{450}{rpm} in \SI{10}{s}, and the helicopter's engine is 85\% efficient at delivering power to the rotor blades. 
+\begin{parts}
+\part What is the minimum required power for the helicopter's engine? Give your answer in horsepower (\SI{1}{hp}=\SI{745.7}{W})
+\part If a small bird of mass $m=\SI{500}{g}$ managed to hold on to the end of one of the blades as they accelerated from rest, what speed would the blades have after \SI{10}{s} if you assume that power was delivered by the engine at the same rate as in part a)? Express your answer in rpms.
+\part What is the centripetal acceleration felt by the bird in part b after $\SI{10}{s}$? Express your answer in $g$s.
+\end{parts}
 
-All of the particles are part of the same rigid body, and cannot move relative to each other. Furthermore, they must all move around circles that are centred about the axis of rotation and in a plane perpendicular to that axis. They must thus all have the same angular acceleration\footnote{They will have different linear accelerations, but the angular acceleration (and angular velocity) will be the same for all particles if they are moving in unison.}, $\vec\alpha_i = \vec \alpha_1 = \vec \alpha_2 =\dots=\vec\alpha$. We can thus factor the angular acceleration, $\vec \alpha$, out of the sum.
-
-We can thus write Newton's Second Law for rotational dynamics of a solid object as:
-\begin{align*}
-\sum_i \pvec\tau_i^{net} &= \sum_i  m_ir_i^2\vec\alpha_i\\
-\therefore \pvec\tau^{ext}&= \left(\sum_i  m_ir_i^2\right)\vec\alpha
-\end{align*}
-The term in parentheses describes how the various masses are distributed relative to the axis of rotation. The term in parenthesis is called the \textbf{moment of inertia of the object}, and usually denoted with the letter, $I$:
-\begin{align}
-\Aboxed{I = \sum_i  m_ir_i^2}
-\end{align}
-The moment of inertia is a property of the object \textbf{relative to a specific axis of rotation}. Re-writing Newton's Second Law for the rotational dynamics of solid objects using the moment of inertia:
-\begin{align}
-\Aboxed{\pvec\tau^{ext}&= I\vec\alpha}
-\end{align}
-The net torque exerted on an object in the direction of the axis of rotation is thus equal to its moment of inertia about that axis multiplied by its angular acceleration about that axis. In other words, the moment of inertia describes how the object will resist rotational motion given a net torque. An object with a smaller moment of inertia will have a larger angular acceleration for a given torque. Again, this is analogous to the linear case, where the acceleration of an object given a net force is determined by its inertial mass.
-\vspace{-0.25cm}
-\begin{example}{\capfig{0.3\textwidth}{figures/RotationalDynamics/dumbbell.png}{\label{fig:rotationaldynamics:dumbbell} A dumbbell made of two small identical masses separated by a distance $L$.} Two small point masses, $m$, are connected by a mass-less rod of length $L$ to form a dumbbell, as illustrated in Figure \ref{fig:rotationaldynamics:dumbbell}. A net force of magnitude $F$ is exerted on each mass, in opposite directions, as illustrated in the Figure. 
-\begin{enumerate}[label=\alph*),topsep=-10pt]
-\item What is the linear acceleration of the centre of mass of the dumbbell?
-\item What is the angular acceleration of the dumbbell relative to an axis that goes through its centre of mass and is perpendicular to the page?
-\item What is the angular acceleration of the dumbbell relative to an axis that goes through one of the masses and is perpendicular to the page? 
-\end{enumerate}}
-
-We model the dumbbell as a rigid body made of two point masses held at a fixed distance.
-\begin{enumerate}[label=\alph*),topsep=-10pt]
-\item The linear acceleration of the centre of mass must be zero, because the net force on the dumbbell is zero. However, just because the centre of mass does not move does not mean that all parts of the dumbbell are immobile.
-
-\item First, we calculate the angular acceleration relative to an axis that is perpendicular the page and goes through the centre of mass. The centre of mass is located midway between the two masses, as illustrated in Figure \ref{fig:rotationaldynamics:dumbbell_CM}. We also define a coordinate system as shown, such that the $z$ axis is out of the page.
-\capfig{0.3\textwidth}{figures/RotationalDynamics/dumbbell_CM.png}{\label{fig:rotationaldynamics:dumbbell_CM} The dumbbell rotating about the centre of mass.}
-The vector from the axis of rotation to each mass will have the same magnitude, $r$, but different directions. The net external torque on the dumbbell relative to the axis that goes through the centre of mass, $\pvec\tau^{ext}$, which is equal to the sum of the torques from each force:
-\begin{align*}
-\pvec\tau^{ext}&= \vec r \times \vec F + (-\vec r) \times (-\vec F) \\
-&= 2 (\vec r \times \vec F)=2 (r\hat x \times F\hat y) = 2rF (\hat x \times \hat y)=2rF\hat z\\
-&=LF\hat z
-\end{align*}
-where we used the fact that $2r = L$. The net torque is thus non zero and in the positive $z$ direction; the dumbbell will have an angular acceleration that is parallel to the net torque, and thus will accelerate in the counter-clockwise direction.
-
-The moment of inertia of the dumbbell relative to the axis through the centre of mass is given by:
-\begin{align*}
-I = \sum_i  m_ir_i^2 = mr^2 +mr^2 = 2mr^2 = \frac{1}{2}mL^2
-\end{align*}
-Using Newton's Second Law for rotational dynamics, we find the angular acceleration to be:
-\begin{align*}
-\pvec\tau^{ext}&= I\vec\alpha\\
-LF\hat z&=\frac{1}{2}mL^2\vec\alpha\\
-\therefore \vec\alpha &= \frac{2F}{mL}\hat z
-\end{align*}
-Because the centre of mass is fixed (the sum of the forces is zero), the two ends of the dumbbell will rotate about an axis that goes through the centre of mass. This is a feature of all situations in which the net force on an object is zero and the net torque about an axis that goes through the centre of mass is non-zero.
-
-\item Let us now calculate the angular acceleration of the dumbbell about an axis that goes through one of the masses, as illustrated in Figure \ref{fig:rotationaldynamics:dumbbell_end}.
-\capfig{0.3\textwidth}{figures/RotationalDynamics/dumbbell_end.png}{\label{fig:rotationaldynamics:dumbbell_end} The dumbbell rotating about one of its ends.}
-
-We first calculate the net torque on the dumbbell. The vector that goes from the axis of rotation to the force exerted on the mass that coincides with the rotation axis is zero. Thus, only the force exerted on the mass that is not at the rotation axis contributes to the net torque:
-\begin{align*}
-\pvec\tau^{ext}&= \vec r \times \vec F = LF\hat z
-\end{align*}
-The moment of inertia of the dumbbell about this axis is:
-\begin{align*}
-I = \sum_i  m_ir_i^2 = m(0)^2 + m(r^2) = mL^2
-\end{align*}
-which is larger than it was about the centre of mass. Again, the angular acceleration is found using Newton's Second Law for rotational dynamics:
-\begin{align*}
-\pvec\tau^{ext}&= I\vec\alpha\\
-LF\hat z&=mL^2\vec\alpha\\
-\therefore \vec\alpha &= \frac{F}{mL}\hat z
-\end{align*}
-We find that the angular acceleration is smaller about an axis that goes through one of the mass than it is about an axis through the centre of mass. Because the centre of mass of the dumbbell is fixed, we can only think of the dumbbell as instantaneously rotating about one of its ends; that is, the motion of the dumbbell will not be such that one mass rotates about the other; this is only true instantaneously.
+\capfig{0.3\textwidth}{figures/RotationalDynamics/HelicopterBlades.png}{\label{fig:rotationaldynamics:HelicopterBlades}A model for helicopter blades.}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item $\SI{336.20}{hp}$
+\item $\SI{448.98}{rpm}$
+\item 902 $g$s
 \end{enumerate}
-\textbf{Discussion: }This simple example illustrates several key features about rotational dynamics:
-\begin{itemize}
-\item If the sum of the forces on an object is zero, it does not mean that the entire object is stationary; it only implies that the centre of mass is stationary (or rather, moving with a constant velocity, but we can always choose to model the system in a frame of reference where the centre of mass is stationary).
-\item If the sum of the forces on an object is zero, and the sum of the external torques is non-zero, the object will rotate about an axis that goes through the centre of mass. That is, all points on the object will move along circles that are centred on an axis that goes through the centre of mass. 
-\item We can model the rotating object about any axis that we choose. In general, the net external torque and the moment of inertia will depend on the choice of axis, as will the resulting angular acceleration. 
-\item When determining the motion of the centre of mass, we can draw a free-body diagram, and the location of where the forces are exerted do not matter.
-\item When determining how the object rotates, we cannot use a free-body diagram, because it matters where the forces are applied (as the torque from a given force depends on the location where the force is applied relative to the axis of rotation).
-\end{itemize}
-\end{example}
-
-\section{Moment of inertia}
-In order to model how an object rotates about an axis, we use Newton's Second Law for rotational dynamics:
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part
+We model the helicopter blades as three thin rods being rotated about their end. The moment of inertia of the system of three blades is thus:
 \begin{align*}
-\pvec\tau^{ext} = I \vec \alpha
+I=3I_{rod}=3\frac{1}{3}ML^2=ML^2=(\SI{120}{kg})(\SI{4.0}{m})^2=\SI{1920}{kgm^2}
 \end{align*}
-where $\pvec\tau^{ext}$ is the net external torque exerted on the object about the axis of rotation, $\vec \alpha$ is the angular acceleration of the object, and $I$ is the moment of inertia of the object (about the axis). If we consider the object as being made of many particles of mass $m_i$ each located at a position $\vec r_i$ relative to the axis of rotation, the moment of inertia is defined as:
+The rotational kinetic energy of the blades when rotating at \SI{450}{rpm} is:
 \begin{align*}
-I = \sum_i m_i r_i^2
+K&=\frac{1}{2}I\omega^2\\
+&=\frac{1}{2}(\SI{1920}{kgm^2})((\SI{450}{rot/min})(2\pi\si{rad/rot})(\frac{1}{60}\si{min/s}))^2\\
+&=\frac{1}{2}(\SI{1920}{kgm^2})(\SI{47.12}{rad/s})^2\\
+&=\SI{2.131e6}{J}
 \end{align*}
-Consider, for example, the moment of inertia of a uniform rod of mass $M$ and length $L$ that is rotated about an axis perpendicular to the rod that pass through one of the ends of the rod, as depicted in Figure \ref{fig:rotationaldynamics:rod}.
-\capfig{0.5\textwidth}{figures/RotationalDynamics/rod.png}{\label{fig:rotationaldynamics:rod} A rod of length $L$ and mass $M$ being rotated about an axis perpendicular to the rod that goes through one of its ends.}
-We introduce the linear mass density of the rod, $\lambda$, as the mass per unit length:
+The power required to bring them up to speed in \SI{10}{s} is:
 \begin{align*}
-\lambda = \frac{M}{L}
+P=\frac{K}{\Delta t}=\frac{(\SI{2.131e6}{J})}{(\SI{10}{s})}&=\SI{2.131e5}{W}
 \end{align*}
-We model the rod as being made of many small mass elements of mass $\Delta m$, of length $\Delta r$, at a location $r_i$, as illustrated in Figure \ref{fig:rotationaldynamics:rod}. Using the linear mass density, the mass element, $\Delta m$, has a mass of:
+Since the engine is only 85\% efficient, the engine power must be:
 \begin{align*}
-\Delta m = \lambda \Delta r
+P^E=\frac{P}{0.85}=\SI{2.507e5}{W}=\SI{336.20}{hp}
 \end{align*}
-The rod is made of many such mass elements, and the moment of inertia of the rod is thus given by:
+\part The bird changes the moment of inertia of the blades:
 \begin{align*}
-I &= \sum_i \Delta m r_i^2 =\sum_i \lambda \Delta r r_i^2
+I=ML^2+mL^2=\SI{1920}{kgm^2}+(\SI{500}{g})(\SI{4.0}{m})=\SI{1928}{kgm^2}
 \end{align*}
-If we take the limit in which the length of the mass element is infinitesimally small ($\Delta r \to dr$) the sum can be written as an integral over the dimension of the rod:
+In \SI{10}{s}, the helicopter blades will have the same rotational kinetic energy as before, which we can use to solve for the speed:
 \begin{align*}
-I &= \int_0^L\lambda r_i^2dr = \frac{1}{3}\lambda L^3 = \frac{1}{3}\left( \frac{M}{L} \right)L^3 \\
-&=\frac{1}{3} ML^2
+K&=\frac{1}{2}I\omega^2\\
+\therefore \omega &= \sqrt{\frac{2K}{I}}\\
+&=\sqrt{\frac{2(\SI{2.131e6}{J})}{(\SI{1928}{kgm^2})}}\\
+&=\SI{47.01}{rad/s}=\SI{448.98}{rpm}
 \end{align*}
-where we re-expressed the linear mass density in terms of the mass and length of the rod. In general, we can write the moment of inertia of a continuous object as:
+Thus the rotational speed of the blades is hardly affected, although the blade with the bird on it will have a tension force to keep the bird on it (see next part).
+\part The centripetal acceleration in $g$s is given by:
 \begin{align*}
-I = \int r^2 dm 
+a_c\frac{1}{g}=\omega^2L\frac{1}{g}=(\SI{47.01}{rad/s})^2(\SI{4.0}{m})\frac{1}{(\SI{9.8}{m/s^2})}=902
 \end{align*}
-where $dm$ is a small mass element that makes up the object, $r$ is the distance from that mass element to the axis of rotation, and the integral is over the dimension of the object. As we did above, we would usually set up this integral so that $dm$ is expressed in terms of $r$ so that we can take an integral over $r$. 
+That's a lot of $g$s! The bird is thus pulling with a force of about $ma_c\sim \SI{450}{N}$ on that blade.
+\end{parts}
+\end{solution}
 
-\begin{example}{\label{ex:rotationaldynamics:ring}Calculate the moment of inertia of a uniform thin ring of mass $M$ and radius $R$, rotated about an axis that goes through its centre and is perpendicular to the disk.}
-We take a small mass element $dm$ of the ring, as shown in Figure \ref{fig:rotationaldynamics:ring}. 
-\capfig{0.3\textwidth}{figures/RotationalDynamics/ring.png}{\label{fig:rotationaldynamics:ring} A small mass element on a ring.}
-The moment of inertia is given by:
+\question A solid cone of mass $M$ and height $H$ has a circular base of radius $R$. The cone is rotated about its axis of symmetry as shown in Figure \ref{fig:rotationaldynamics:Cone}. Derive a formula for its moment of inertia about its axis of symmetry.
+\capfig{0.15\textwidth}{figures/RotationalDynamics/Cone.png}{\label{fig:rotationaldynamics:Cone}A cone.}
+\begin{finalanswer}
+$\frac{3}{10}MR^2$
+\end{finalanswer}
+\begin{solution}
+We will break the cone up into many small cylinders of radius $r(h)$ and infinitesimal height $dh$, as in Figure \ref{fig:rotationaldynamics:Cone_dh}. Each small cylinder will have a mass $dm=\rho\pi r(h)^2 dh$, where $\rho$ is the density of the cone. The moment of inertia of a small disk of mass $dm$ and radius $r$ will be:
 \begin{align*}
-I = \int dm r^2
-\end{align*}
-In this case, each mass element around the ring will be the same distance away from the axis of rotation. The value $r^2$ in the integral is a constant over the whole ring, and so can be taken out of the integral:
-\begin{align*}
-I = \int dm r^2 = R^2\int dm
-\end{align*}
-where we used the fact that the ring has a radius $R$, so the distance $r$ of each mass element to the axis of rotation is $R$. The integral:
-\begin{align*}
-\int dm
-\end{align*}
-just means ``sum all of the mass elements, $dm$'', and is thus equal to $M$, the total mass of the ring. The moment of inertia of the ring is thus:
-\begin{align*}
-I = R^2\int dm = MR^2
-\end{align*}
-\end{example}
-
-\subsection{The parallel axis theorem}
-The moment of inertia of a solid object can be difficult to calculate, especially if the object is not symmetric. The parallel axis theorem allows us to determine the moment of inertia of an object about an axis, if we already know the moment of inertia of the object about an axis that is parallel and goes through the centre of mass of the object.
-
-Consider an object for which we know the moment of inertia, $I_{CM}$, about an axis that goes through the object's centre of mass. We define a coordinate system such that the origin is located at the centre of mass, and the $z$ axis is parallel to the axis about which we know the moment of inertia, as illustrated in Figure \ref{fig:rotationaldynamics:parallel}. 
-\capfig{0.3\textwidth}{figures/RotationalDynamics/parallel.png}{\label{fig:rotationaldynamics:parallel} An object with a coordinate system whose origin is at the object's centre of mass, and for which we know the moment of inertia about the $z$ axis. We wish to determine the object's moment of inertia through a second axis, parallel to the $z$ axis, but located a distance $h$ away from the centre of mass.}
-We wish to determine the moment of inertia for the object for an axis that is parallel to the $z$ axis, but goes through a point with coordinates $(x_0,y_0)$ located a distance $h$ away from the centre of mass. The moment of inertia about an axis parallel to the $z$ axis and that goes through that point, $I_h$ is given by:
-\begin{align*}
-I_h = \sum_i m_i r_i^2
-\end{align*}
-where $m_i$ is a mass element of the object located at a distance $r_i$ from the axis of rotation. If the mass element is located at a position $(x_i,y_i)$ relative to the centre of mass, we can write the distance $r_i$ in terms of the position of the mass element, and of the position of the axis of rotation:
-\begin{align*}
-r_i^2 = (x_i-x_0)^2+(y_i-y_0)^2 = x_i^2-2x_ix_0+x_0^2+y_i^2-2y_iy_0+y_0^2
-\end{align*}
-Note that:
-\begin{align*}
-x_0^2 + y_0^2 = h^2
-\end{align*}
-The moment of inertia, $I_h$, can thus be written as:
-\begin{align*}
-I_h &= \sum_i m_i r_i^2 =\sum_i (m_i(x_i^2+ y_i^2)-2x_0m_ix_i-2y_0m_iy_i+m_ih^2)\\
-&=\sum_i m_i(x_i^2+ y_i^2) + h^2\sum_i m_i - 2x_0 \sum_im_ix_i- 2y_0 \sum_im_iy_i
-\end{align*}
-where we broke the sum up into several sums, and factored constant terms ($h$, $x_0$, $y_0$) out of the sums, since these constants do not depend on which mass element we are considering. The first term is the moment of inertia about the centre of mass, since $x_i^2+y_i^2$ is the distance to the centre of mass. The second term is $h^2$ times the total mass of the object, since the sum of all the $m_i$ is just the mass, $M$, of the object. Now consider the term:
-\begin{align*}
--2x_0 \sum_im_ix_i
-\end{align*}
-The sum, $\sum m_i x_i$ is the numerator in the definition of the $x$ coordinate of the centre of mass! The sum is thus zero, because we choose the origin to be located at the centre of mass. The last two terms in the sum are thus identically zero, because they correspond to the $x$ and $y$ coordinates of the centre of mass!
-
-We can thus write the parallel axis theorem:
-\begin{align}
-\Aboxed{I_h = I_{CM} + Mh^2}
-\end{align}
-where $I_{CM}$ is the moment of inertia of an object of mass $M$ about an axis that goes through the centre of mass and, $I_h$, is the moment of inertia about a second axis that is parallel to the first and a distance $h$ away.
-
-\begin{example}{In the previous section, we calculated the moment of inertia of a rod of length $L$ and mass $M$ through an axis that is perpendicular to the rod and through one of its ends, and found that it was given by:
-\begin{align*}
-I=\frac{1}{3}ML^2
-\end{align*}
-What is the moment of inertia of the rod about an axis that is perpendicular to the rod and goes through its centre of mass?}
-In this case, we know the moment of inertia through an axis that does not go through the centre of mass. The centre of mass is located a distance $h=L/2$ away from the point about which we know the moment of inertia, $I_h$. 
-
-Using the parallel axis theorem, we can find the moment of inertia through the centre of mass:
-\begin{align*}
-I_{CM} &= I_h - Mh^2\\
-&=\frac{1}{3}ML^2 - M \left( \frac{L}{2}\right)^2 = \frac{1}{12}ML^2
-\end{align*}
-
-\textbf{Discussion: }We find that the moment of inertia about the centre of mass is smaller than the moment of inertia about the end of the rod. This makes sense because when rotating the rod about its end, more of its mass is further away from the axis of rotation, which results in a larger moment of inertia.
-\end{example}
-
-
-\section{Equilibrium}
-In this section, we consider the conditions under which an object is in static or dynamic equilibrium. An object is in equilibrium if it does not rotate when viewed in a frame of reference where the object's centre of mass is stationary (or moving at constant velocity).
-\subsection{Static equilibrium}
-An object is in static equilibrium, if \textbf{both the sum of the external forces exerted on the object and the sum of the external torques (about any axis) are zero}. If the object is in static equilibrium the centre of mass will have no acceleration and the object will have no angular acceleration. In the centre of mass frame of reference, the object is immobile. 
-\vspace{-0.25cm}
-\begin{example}{\capfig{0.6\textwidth}{figures/RotationalDynamics/scale.png}{\label{fig:rotationaldynamics:scale} Two masses on a balance.}
-
- Two masses, $m_1$ and $m_2$ are placed on a balance as shown in Figure \ref{fig:rotationaldynamics:scale}. The balance is made of a plank of mass $M$ and length $L$ that is placed on a fulcrum that is a distance $d$ from one of the edges of the plank. If mass $m_1$ is placed at a distance $r_1$ from the fulcrum, how far should mass $m_2$ be placed on the other side of the plank in order for the balance to be in equilibrium?}
-We can consider the plank as the object that is in static equilibrium. Thus, the sum of the forces and the sum of the torques on the plank must be zero. We first start by identifying the forces that are exerted on the plank; these are:
-\begin{enumerate}
-\item $\vec F_g$, the weight of the plank, exerted at the centre of mass of the plank.
-\item $\vec F_1$, a force equal to the weight of mass $m_1$, exerted at the location of $m_1$. 
-\item $\vec F_2$, a force equal to the weight of mass $m_2$, exerted at the location of $m_2$.
-\item $\vec N$, a normal force exerted by the fulcrum.
-\end{enumerate} 
-The forces are illustrated in Figure \ref{fig:rotationaldynamics:scale_fbd} along with our choice of coordinate system. The $z$ axis is not illustrated, and is directed out of the page. 
-\capfig{0.6\textwidth}{figures/RotationalDynamics/scale_fbd.png}{\label{fig:rotationaldynamics:scale_fbd} Forces exerted on the plank.}
-
-All of the forces are in the $y$ direction, so we only write the $y$ component of Newton's Second Law (with zero acceleration), which allows us to determine the magnitude of the normal force:
-\begin{align*}
-\sum F_y = N - Mg -m_1g - m_2 g &=0\\
-\therefore N &= (M+m_1+m_2) g
-\end{align*}
-
-Because the plank is in static equilibrium, the sum of the torques must also be zero. We can choose the axis of rotation about which to calculate the torques. We choose an axis that is parallel to the $z$ axis (out of the page) and goes through the fulcrum. In general, since we can choose the axis of rotation, it is usually convenient to choose an axis that goes through a point where at least one force is being exerted, because the torque from that force will be zero (its lever arm will be zero).  Furthermore, since all of the forces are in the $xy$ plane, the net torque on the plank will be in the $z$ direction, so it makes sense to choose an axis in that direction.
-
-The torques from the weight of the plank and from the force exerted by mass $m_2$ will be in the negative $z$ direction, and the torque from the force exerted by mass $m_1$ will be in the positive $z$ direction. The normal force will not result in any torque, because it is exerted at the axis of rotation and has a lever arm of zero. 
-
-We define $\vec r_1$ as the vector from the fulcrum to mass $m_1$. The torque, $\vec \tau_1$, from the force exerted by mass $m_1$ is given by:
-\begin{align*}
-\vec \tau_1 &= \vec r_1 \times \vec F_1 = (-r_1 \hat x) \times (-F_1 \hat y) \\
-&= r_1F_1(\hat x \times \hat y) = r_1F_1\hat z=r_1m_1g\hat z
-\end{align*}
-where we used the fact that the magnitude of $\vec F_1$ is $m_1 g$. Similarly, the torques from the force exerted by $m_2$, $\vec\tau_2$, and by the weight, $\vec\tau_g$, are given by:
-\begin{align*}
-\vec \tau_2 &=\vec r_2 \times \vec F_2 = -m_2 g r_2 \hat z\\
-\vec \tau_g &=\vec r \times \vec F_g=-rMg\hat z = -\left(\frac{L}{2}-d\right)Mg\hat z
-\end{align*}
-where $\frac{L}{2}-d$ is the distance between the fulcrum and where the weight of the plank is exerted. We require that the $z$ component of the net torque be equal to zero (since all of the torques are in the $z$ direction), which allows us to determine $r_2$:
-\begin{align*}
-\sum \tau_z = \tau_{1z} + \tau_{2z} + \tau_{gz} &=0\\
-m_1 g r_1 -m_2 g r_2 -\left(\frac{L}{2}-d\right)Mg &=0\\
-\therefore r_2 = \frac{1}{m_2} \left(m_1r_1-\left(\frac{L}{2}-d\right)M\right)
-\end{align*}
-Note that because we chose to calculate the torques about a point that goes through the fulcrum, in this case, we did not need to determine the value of the normal force which we obtained from Newton's Second Law.
-
-\textbf{Discussion: }This example highlights the fact that when an object is in static equilibrium, we can choose a convenient axis about which to calculate the torques. In this case, by calculating the torques about the fulcrum, we did not need to consider the torque from the normal force. If we had chosen a different point, then the torque from the normal force would have been non-zero, and we would have used Newton's Second Law to express the normal force in terms of the other quantities. Physically, if we had placed the fulcrum at the centre of the plank $d = L/2$, then we would have found that $m_1r_1 = m_2r_2$, the well known equation for a balance. This equation, of course, comes from requiring that the torques from the forces exerted by $m_1$ and $m_2$ are equal in magnitude and opposite in direction.
-\end{example}
-
-\subsection{Dynamic equilibrium}
-\vspace{0.25cm}
-\begin{review}
-Before proceeding, you may wish to review Section \ref{sec:newtonslaws:inertialforces} on inertial forces.
-\end{review}
-
-When an object is in dynamic equilibrium, its centre of mass is accelerating, but the object is not rotating when viewed from its centre of mass frame of reference. Thus, the sum of the external forces exerted on the object is not zero, while the net external torque exerted on the object is zero, in the frame of reference of the centre of mass.
-
-
-Consider, for example, a speed skater going around a circular track or radius $R$, and leaning into the centre making an angle $\theta$ with the ice, as depicted in Figure \ref{fig:rotationaldynamics:skater}. The skater's centre of mass is accelerating, because she is going around a circle, so the net force on the skater is not zero. However, in the reference frame of the skater, the skater is not rotating; she is thus in dynamic equilibrium.
-\capfig{0.3\textwidth}{figures/RotationalDynamics/skater.png}{\label{fig:rotationaldynamics:skater} A speed skater leaning in as she goes around a circle.}
-
-The forces on the skater are:
-\begin{enumerate}
-\item $\vec F_g$, her weight, exerted at her centre of mass with magnitude, $Mg$.
-\item $\vec N$, a normal force, exerted by the ice upwards on her skates.
-\item $\vec f_s$, a force of static friction, exerted towards the centre of the circle, by the ice on her skates.
-\end{enumerate}
-The forces are illustrated in Figure \ref{fig:rotationaldynamics:skater_fbd} along with our choice of coordinate system.
-\capfig{0.5\textwidth}{figures/RotationalDynamics/skater_fbd.png}{\label{fig:rotationaldynamics:skater_fbd} Forces on the speed skater from Figure \ref{fig:rotationaldynamics:skater}.}
-
-The sum of the forces exerted on the skater must be towards the centre of the circle and equal to the mass of the skater times her centripetal acceleration (which is the acceleration of her centre of mass, $\vec a_{CM}$). The $x$ and $y$ components of Newton's Second Law are thus given by:
-\begin{align*}
-\sum F_x &= -f_s = -ma_{CM}- m\frac{v^2}{R}\\
-\sum F_y &= N-mg = 0
-\end{align*}
-
-All of the forces exerted on the skater are in the $xy$ plane, so we consider torques about an axis that is co-linear with the $z$ axis. Consider the torques about an axis through the point of contact between the skates and the ice; there is a net torque in the counter-clockwise direction due to the weight of the skater (the weight is the only force that can result in a torque about the point of contact with the ice). We expect that the skater would topple over, however, this must not be a correct model for the skater, since we know that it is possible for her to lean in without falling. 
-
-Consider, instead, the sum of the torques about an axis through her centre of mass. If the skater has a length $L$ and the centre of mass is in the middle of the skater, the sum of the torques about the centre of mass is given by the torques from the normal forces and the force of friction:
-\begin{align*}
-\sum \tau = \tau_{Nz} + \tau_{f_sz} = \frac{L}{2}\cos\theta N - \frac{L}{2}\sin\theta f_s
-\end{align*}
-About the centre of mass, the torques must be zero for the skater not to rotate, and this would give a relation between the force of static friction and the normal force.
-
-Why do we get an incorrect model when we take the torques about the point of contact between the ice and the skater? In order to determine if the skater is rotating, we need to be in the same reference frame as the skater. However, the frame of reference of the skater is not an inertial frame of reference, since the skater is accelerating. We can still model the forces on the skater in the non-accelerating frame of reference, \textbf{as long as we include the inertial force, $-m\vec a_{CM}$}, in that frame of reference. In the frame of reference of the skater, there is an additional inertial force, $-m\vec a_{CM}$, in order for the sum of the forces to be zero (in the frame of reference of the skater, the sum of the forces must be zero since the skater is not accelerating in that frame of reference). The additional inertial force is exerted at the centre of mass, as illustrated in Figure \ref{fig:rotationaldynamics:skater_fbdcm}.
-\capfig{0.45\textwidth}{figures/RotationalDynamics/skater_fbdcm.png}{\label{fig:rotationaldynamics:skater_fbdcm} Forces on the speed skater from Figure \ref{fig:rotationaldynamics:skater} as seen in the accelerating frame of reference of the centre of mass.}
-
-The reason that our model worked when taking the torques about the centre of mass is that the inertial force, exerted at the centre of mass, does not result in a torque (since it has a lever arm of zero). Our model was technically wrong, but if we take the torques about the centre of mass, then we do not need to worry about the inertial force. If we include the additional inertial force, then we can take the torques about any point, just as in the static equilibrium case.
-
-\newpage
-\section{Summary}
-
-\begin{chapterSummary}
-We can describe the kinematics of rotational motion using vectors to indicate both an axis of rotation and the direction of rotation about that axis. If a particle with velocity vector, $\vec v$, is rotating in an circle about an axis, then its angular velocity vector, $\vec\omega$, relative to that axis is defined as:
-\begin{align*}
-\vec\omega = \frac{1}{r^2}\vec r \times \vec v
-\end{align*}
-where $\vec r$ is a vector from the axis of rotation to the particle. The particle rotates in a circle that lies in the plane defined by $\vec r$ and $\vec v$, perpendicular to the axis of rotation. The direction of the angular velocity vector is co-linear with the axis of rotation and the direction of rotation is given by the right-hand rule for axial vectors. 
-
-One can define the angular velocity of a particle relative to a point of rotation, even if the particle is not moving in a circle. In that case, the angular velocity corresponds to the angular velocity of the particle as if it were instantaneously moving about a circle. 
-
-If a particle moving around a circle has a tangential acceleration, $\vec a_s$, then its angular acceleration vector is defined as:
-\begin{align*}
-\vec\alpha = \frac{1}{r^2}\vec r \times \vec a_s
-\end{align*}
-
-
-The torque from a force, $\vec F$, exerted at a position $\vec r$, relative to an axis (or point) of rotation is defined as:
-\begin{align*}
-\vec\tau &= \vec r \times \vec F\\
-\end{align*}
-Torque is analogous to force in that it is used to model the causes of motion. Torques are only ever defined relative to an axis or point of rotation. The torque vector will be co-linear with the axis about which the object on which the force is exerted would rotate as a result of that force.
-
-The magnitude of the torque can be written using either the component of the force, $F_\perp$ perpendicular to the vector $\vec r$, or the lever arm, $r_\perp$, of the force relative to the axis of rotation:
-\begin{align*}
-\tau &= rF\sin\phi\\
-&=rF_\perp\\
-&=r_\perp F
-\end{align*}
-where $\phi$ is the angle between the vectors $\vec r$ and $\vec F$ when these are placed ``tail to tail''.
-
-Using rotational/angular quantities, we can modify Newton's Second Law to describe rotational dynamics about a given axis (or point) of rotation. For a point particle, this gives:
-\begin{align*}
-\pvec \tau^{net} = mr^2 \vec\alpha
-\end{align*}
-where $\pvec \tau^{net}$ is the net torque on the particle (the sum of the torques from each force exerted on the particle) about the axis, and $\vec\alpha$ is the resulting angular acceleration about that axis.
-
-For an object (either continuous or made of point particles), the rotational version of Newton's Second Law for rotation about a specific axis is given by:
-\begin{align*}
-\pvec \tau^{net} = I\vec\alpha
+dI=\frac{1}{2}dmr(h)^2
 \end{align*} 
-where $I$ is the moment of inertia of the object about that axis.
+\capfig{0.15\textwidth}{figures/RotationalDynamics/Cone_dh.png}{\label{fig:rotationaldynamics:Cone_dh}A small disk in the cone.}
 
-The moment of inertia of an object about an axis of rotation is given by
+We can then add the moments of inertia of each little cylinder to get the total moment of inertia of the cone:
 \begin{align*}
-I = \sum_i m_ir_i^2
+I=\int dI=\int_0^H \frac{1}{2} dm r(h)^2=\int_0^H \frac{1}{2}  r(h)^2\rho\pi r(h)^2 dh=\frac{1}{2}  \rho\pi\int_0^H  r(h)^4 dh
 \end{align*}
-if the object is modelled as a system of point particles of mass $m_i$ each a distance $r_i$ from the axis of rotation. For a continuous object, the moment of inertia is given by:
+We define the integration variable $h$ to be 0 at the vertex of the cone. We need to determine the function $r(h)$, knowing that $r(0)=0$ and $r(H)=R$, and that the function is linear, we have:
 \begin{align*}
-I = \int r^2 dm
+r(h) = \frac{R}{H}h
 \end{align*}
-where $dm$ is a small mass element a distance $r$ from the axis of rotation and the integral is over the dimension of the object. Generally, one can set up the integral by expressing $dm$ in terms of $r$ using the density of the object, and then integrating $r$ over the dimension of the object.
-
-If the moment of inertia of an object of mass $M$ about an axis that goes through the centre of mass is given by $I_{CM}$, then the moment of inertia, $I_h$, of the object through an axis that is parallel and a distance $h$ from the centre of mass is given by the parallel axis theorem:
+The integral for the moment of inertia is thus:
 \begin{align*}
-I_h = I_{CM} + Mh^2 \quad \text{Parallel axis theorem}
+I=\frac{1}{2} \rho\pi\left(\frac{R}{H}\right)^4\int_0^H  h^4 dh=\frac{1}{2} \rho\pi\left(\frac{R}{H}\right)^4\left[\frac{1}{5}h^5\right]_0^H=\frac{1}{10} \rho\pi R^4H
 \end{align*}
-
-Objects are in equilibrium if they are not rotating when viewed in their centre of mass frame of reference. Thus, for an object to be in equilibrium, the sum of the torques on the object, in the centre of mass reference frame, must be zero.
-
-An object is in static equilibrium if the centre of mass is not accelerating, and thus the sum of the external forces on the object is zero. To model the torques on an object in static equilibrium, one can choose the axis about which to calculate the torques. A good choice is to choose an axis that is perpendicular to the plane in which the forces on the object are exerted (if such a plane exists), and to choose the axis to go through a point where at least one force is exerted (so that torques exerted at that point are identically zero).
-
-An object is in dynamic equilibrium if the centre of mass is accelerating, but the object does not rotate when viewed in the frame of reference of its centre of mass. In dynamic equilibrium, if one models the torques exerted on the object about an axis that does not go through the centre of mass, then one must remember to include an inertial force exerted at the centre of mass. 
-
-
-\end{chapterSummary}
-
-\newpage
-\begin{importantEquations}
-\medskip
-\begin{multicols}{2}
-\textbf{Angular quantities:}
+Finally, we need to express the density in terms of the mass and dimensions of the cone. Just for fun and instead of looking up the volume of a cone, we can find the volume by summing the volume of the infinitesimal cylinders of radius $r(h)$ and height $dh$:
 \begin{align*}
-\vec\omega &= \frac{1}{r^2}\vec r \times \vec v\\
-\vec\alpha &= \frac{1}{r^2}\vec r \times \vec a_\perp\\
-\vec v_s &= \vec \omega \times \vec r\nonumber\\
-\vec a_s&= \vec \alpha \times \vec r
+V&=\int dV=\int_0^H  \pi r(h)^2 dh=\pi\left(\frac{R}{H}\right)^2\int_0^H  h^2 dh=\pi\left(\frac{R}{H}\right)^2\left[\frac{1}{3}h^3\right]_0^H\\
+&=\frac{1}{3}\pi R^2H
 \end{align*}
-\textbf{Torque from a force:}
+The density is thus:
 \begin{align*}
-\vec\tau &= \vec r \times \vec F\\
-\tau &= rF\sin\phi\\
-&=rF_\perp\\
-&=r_\perp F
+\rho=\frac{3M}{\pi R^2H}
 \end{align*}
-\columnbreak
-\\
-\textbf{Newton's Second Law for a point particle about a given axis of rotation:}
+and the moment of inertia is:
 \begin{align*}
-\pvec \tau^{net} = mr^2 \vec\alpha
+I&=\frac{1}{10} \rho\pi R^4H=\frac{1}{10} \frac{3M}{\pi R^2H}\pi R^4H\\
+&=\frac{3}{10}M R^2\\
 \end{align*}
-\textbf{Newton's Second Law for rotation about an axis:}
-\begin{align*}
-\pvec \tau^{net} = I\vec\alpha
-\end{align*}
-\textbf{Moment of Inertia:}
-\begin{align*}
-I = \sum_i m_ir_i^2\\
-I = \int r^2 dm\\
-\end{align*}
-\textbf{Parallel Axis Theorem:}
-\begin{align*}
-I_h = I_{CM} + Mh^2\\
-\end{align*}
-\medskip
-\end{multicols}
-\end{importantEquations}
-
-
-\newpage
-\section{Thinking about the material}
-\begin{chapteractivity}{Reflect and research}
-{
-\item Compare the steering wheels of a small car and a large transport truck. What are the differences, and why?
-\item List 2 kitchen utensils that use torque to ``get the job done''.
-}
-\end{chapteractivity}
-
-\begin{chapteractivity}{To try at home}
-{
-\item Take a large textbook and consider the 3 axes that are parallel to the sides of the textbook and go through the centre of mass. By rotating the book along the three axes successively, determine the axis about which the moment of inertia of the textbook is the largest.
-\item Confirm that the moment of inertia of a rod is smaller if the rod is rotated about its centre of mass than if it is rotated by one of its ends.
-}
-\end{chapteractivity}
-
-
-\begin{chapteractivity}{To try in the lab}
-{
-\item Propose an experiment to measure the moment of inertia of an object and to compare that to a model prediction.
-}
-\end{chapteractivity}
-
-\newpage
-\section{Sample problems and solutions}
-\subsection{Problems}
-
-\begin{problem}{soln:rotationaldynamics:diskI}{\label{prob:rotationaldynamics:diskI}Calculate the moment of inertia of a uniform disk of mass $M$ and radius $R$, rotated about an axis that goes through its centre and is perpendicular to the disk.}
-\end{problem}
-
-
-\begin{problem}{soln:rotationaldynamics:sign}{\label{prob:rotationaldynamics:sign}
-\capfig{0.3\textwidth}{figures/RotationalDynamics/sign.png}{\label{fig:rotationaldynamics:sign} A sign is suspended on a horizontal bar of mass $M$ and length $L$.} A sign holder is built by attaching a bar of mass $M$ and length $L$ to a wall using a hinge that allows the bar to rotate in the vertical plane. The sign of mass $m$ is attached to the end of the  bar that is opposite fo the wall. The bar is held up by a rope that is attached to the wall on one end and to the bar on the other end, two thirds of the length of the bar from the wall, as illustrated in Figure \ref{fig:rotationaldynamics:sign}. The rope makes an angle $\theta$ with respect to the horizontal bar. Find the tension in the rope and the magnitude of the force exerted by the hinge onto the bar.}
-\end{problem}
-
-
-\newpage
-\subsection{Solutions}
-
-\begin{solution}{prob:rotationaldynamics:diskI}\label{soln:rotationaldynamics:diskI}
-We need to split up the disk into mass elements, $dm$, that we can sum together to obtain the moment of inertia of the disk. We can choose a ring of radius $r$ and radial thickness $dr$ for the shape of our mass element, as depicted in Figure \ref{fig:rotationaldynamics:diskI}.
-\capfig{0.3\textwidth}{figures/RotationalDynamics/diskI.png}{\label{fig:rotationaldynamics:diskI} A mass element, $dm$, in the shape of a ring of radius $r$ and radial thickness $dr$.}
-We can define a surface mass density, $\sigma$, equal to the mass per unit area of the disk:
-\begin{align*}
-\sigma = \frac{M}{\pi R^2}
-\end{align*}
-The mass of the ring shaped element is thus given by:
-\begin{align*}
-dm = \sigma 2\pi r dr
-\end{align*}
-where $2\pi r dr$ is the area of the mass element. You can imagine unfolding the mass element into a rectangle of height $dr$ and of length $2\pi r$ to obtain its area. Now that we have expressed the mass element in terms of $r$, we can proceed to calculate the moment of inertia of the disk.
-
-We know from Example \ref{ex:rotationaldynamics:ring}, that the infinitesimal moment of inertia, $dI$, of a ring of radius $r$ and infinitesimal mass, $dm$, about its axis of symmetry is given by:
-\begin{align*}
-dI = dm r^2
-\end{align*}
-
-The moment of inertia of the disk, is found by summing the moments of inertia of the infinitesimal rings:
-\begin{align*}
-I &=\int dI = \int dm r^2 = \int_0^R \sigma 2\pi r dr r^2 =2\pi \sigma \int_0^R  r^3 dr \\
-&=2 \pi \sigma \frac{1}{4}R^4 = 2\pi \left( \frac{M}{\pi R^2} \right) \frac{1}{4}R^4\\
-&=\frac{1}{2}MR^2
-\end{align*}
-where we removed the surface mass density by expressing it in term of the total mass and radius of the disk. 
-
-\textbf{Discussion:} The moment of inertia of a disk of mass $M$ and radius $R$ is half of that of a ring of radius $R$ and mass $M$. It is thus easier to rotate the disk than the ring. 
+which is independent of the height!
 \end{solution}
 
-\begin{solution}{prob:rotationaldynamics:sign}\label{soln:rotationaldynamics:sign}
-The whole system does not move and so it is in static equilibrium. In order to determine the forces exerted on the bar by the rope and the hinge, we model the bar as being in static equilibrium. The forces exerted on the bar are:
-\begin{itemize}
-\item $\vec F_g$, the weight of the bar, with magnitude $Mg$, exerted at the bar's centre of mass.
-\item $\vec F_m$, a downwards forced exerted by the sign at the end of the bar, with magnitude $mg$.
-\item $\vec T$, a force of tension exerted by the rope at a distance $2/3 L$ from the wall.
-\item $\vec R$, a force exerted by the hinge on the bar at the end next to the wall\footnote{We chose the letter R for ``Reaction'', as this is the force of reaction from the hinge as the bar pushes against the hinge.}. We expect that the force from the hinge will have both a horizontal component, $R_x$, and a vertical component, $R_y$, in order for the net force on the bar to be zero.
-\end{itemize}
-The forces are illustrated in Figure \ref{fig:rotationaldynamics:sign_fbd} along with our choice of coordinate system (and the $z$ axis, not shown, points out of the page).
-\capfig{0.4\textwidth}{figures/RotationalDynamics/sign_fbd.png}{\label{fig:rotationaldynamics:sign_fbd} Forces on the bar that is holding the sign of mass $m$.}
-We start by writing out the $x$ and $y$ components of Newton's Second Law (with zero acceleration):
-\begin{align*}
-\sum F_x &= R_x - T\cos\theta =0\\
-\sum F_y &= R_y + T\sin\theta - Mg - mg=0
-\end{align*}
-We can choose the axis about which to calculate the torques. Since all of the forces are in the $xy$ plane, we choose to calculate the torques about an axis parallel to the $z$ axis that goes through the hinge on the wall. The force from the hinge, $\vec R$, will thus result in a torque of zero (since it has a lever arm of zero). The torque from each force about the hinge is given by:
-\begin{align*}
-\vec \tau_M &= \vec r_M \times \vec F_g = \left(\frac{L}{2}\hat x\right) \times (-Mg \hat y) =-Mg\frac{L}{2} \hat z\\
-\vec \tau_T &= \vec r_T \times \vec T = \left(\frac{L}{3}\hat x\right) \times (-T\cos\theta \hat x + T\sin\theta \hat y) =T\sin\theta\frac{L}{3} \hat z\\
-\vec \tau_m &= \vec r_m \times \vec F_m = (L\hat x) \times (-mg \hat y) =-mgL\hat z\\
-\end{align*}
-The sum of the torques in the $z$ direction must be zero for static equilibrium, which allows us to determine the magnitude of the force of tension:
-\begin{align*}
-\sum \tau_z = \tau_{Mz} + \tau_{Tz}+ \tau_{mz} &=0\\
--Mg\frac{L}{2} + T\sin\theta\frac{L}{3} -mgL &=0\\
--Mg\frac{1}{2} + T\sin\theta\frac{1}{3} -mg &=0\\
-\therefore T&= \frac{3g}{\sin\theta} \left( m + \frac{M}{2}\right)
-\end{align*}
-Using the $x$ and $y$ components of Newton's Second Law, we can now use the tension to determine the $x$ and $y$ components of the force exerted by the hinge:
-\begin{align*}
-R_x &= T\cos\theta = \frac{3g}{\tan\theta} \left( m + \frac{M}{2}\right)\\
-R_y &= (M+m)g - T\sin\theta = (M+m)g - 3g \left( m + \frac{M}{2}\right)=  -\left( 2m + \frac{M}{2}\right)g
-\end{align*}
-We find that the $y$ component of the force from the hinge is in the negative $y$ direction, so \textbf{our diagram in Figure \ref{fig:rotationaldynamics:sign_fbd} is wrong}! If you removed the hinge on the wall and instead held that end of the bar with your hand, you would feel that the end of the bar is trying to go into the wall and upwards, as the bar tries to rotate with the opposite end moving downwards due to the weight of the sign. You would have to push in the positive $x$ and negative $y$ direction to keep the bar from moving. 
 
-\textbf{Discussion: }In this example, we saw that we needed to use both the sum of the forces and the sum of the torques in order to determine the forces on the bar. 
+\question Two solid spheres of masses $M=\SI{4}{kg}$ and $m=\SI{2}{kg}$, with radii $R=\SI{20}{cm}$ and $r=\SI{10}{cm}$, respectively, are attached at either end of a rod of mass $m_r=\SI{5}{kg}$ and length $L=\SI{50}{cm}$ to form a dumbbell (see Figure \ref{fig:rotationaldynamics:Dumbbell}). Note that the spheres are attached to the ends of the rod (the rod does not penetrate the spheres). 
+\capfig{0.4\textwidth}{figures/RotationalDynamics/Dumbbell.png}{\label{fig:rotationaldynamics:Dumbbell}A dumbbell.}
+\begin{parts}
+\part What is the moment of inertia of the system about its centre of mass?
+\part A coordinate system is set up so that the origin is at the centre of mass of the dumbbell, and the $x$ axis is parallel to the rod, with the positive direction from the $M$ to $m$. A force:
+\begin{align*}
+\vec F=(\SI{0.8}{N})\hat i+(\SI{1.0}{N}) \hat j + (\SI{1.2}{N}) \hat k
+\end{align*}is applied to the outer edge of the small mass $m$ (the edge of the sphere opposite of where it meets the rod). If $\vec F$ is the only force applied to the dumbbell, what is the angular acceleration vector of the dumbbell with respect to the origin of the coordinate system that is specified? What is its magnitude? 
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item $\SI{1.121}{kgm^2}$
+\item $\vec\alpha =(\SI{-0.589}{rad/s^2})\hat j+(\SI{0.491}{rad/s^2})\hat k$,
+which has magnitude $\alpha=\SI{0.767}{rad/s^2}$.
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part First, we need to find the centre of mass of the system. After that, we can use the parallel axis theorem to find the moments of inertia of the rod and two masses about the CM and them.
+
+We choose the centre of the rod as the origin of a one dimension coordinate system, and choose the positive $x$ direction as going from $M$ to $m$. The sphere of mass $M$ has its centre of mass at $x_M=-\frac{L}{2}-R=\SI{-45}{cm}$, and the sphere of mass $m$ has its centre of mass at $x_m=\frac{L}{2}+r=\SI{35}{cm}$. The centre of mass of the rod is at $x_r=0$, by choice.
+
+The centre of mass of the system is thus given by:
+\begin{align*}
+x_{CM}&=\frac{1}{M+m+m_r}(Mx_M+mx_m+m_rx_r)\\
+&=\frac{1}{(\SI{4}{kg})+(\SI{2}{kg})+(\SI{5}{kg})}((\SI{4}{kg})(\SI{-0.45}{m})+(\SI{2}{kg})(\SI{0.35}{m})+(\SI{5}{kg})(0))\\
+&=\SI{-0.1}{m}
+\end{align*}
+
+The moment of inertia of the rod is its moment of inertia about its centre plus $m_r(x_r-x_{CM})^2$ (by the parallel axis theorem):
+\begin{align*}
+I_{rod}&=\frac{1}{12}m_rL^2+m_r(x_r-x_{CM})^2\\
+&=\frac{1}{12}(\SI{5}{kg})(\SI{0.5}{m})^2+(\SI{5}{kg})(\SI{-0.1}{m})^2\\
+&=\SI{0.154}{kg m^2}
+\end{align*}
+The moments of inertia of the two rods are found in a similar manner:
+\begin{align*}
+I_M&=\frac{2}{5}MR^2+M(x_M-x_{CM})^2\\
+&=\frac{2}{5}(\SI{4}{kg})(\SI{0.2}{m})^2+(\SI{4}{kg})((\SI{-0.45}{m})-(\SI{-0.1}{m}))^2\\
+&=\SI{0.554}{kgm^2}\\
+I_m&=\frac{2}{5}mr^2+m(x_m-x_{CM})^2\\
+&=\frac{2}{5}(\SI{2}{kg})(\SI{0.1}{m})^2+(\SI{2}{kg})((\SI{0.35}{m})-(\SI{-0.1}{m}))^2\\
+&=\SI{0.413}{kgm^2}
+\end{align*}
+The total moment of inertia about the centre of mass is thus:
+\begin{align*}
+I &= I_{rod}+I_M+I_m\\
+&=(\SI{0.154}{kg m^2})+(\SI{0.554}{kgm^2})+(\SI{0.413}{kgm^2})=\SI{1.121}{kgm^2}
+\end{align*}
+\part Given the force, we first calculate the torque, from which we can find the angular acceleration vector. The force is applied at the outer edge of the smaller sphere, which corresponds to a point on the $x$ axis given by:
+\begin{align*}
+\vec r &= (\frac{L}{2}+2r-x_{CM})\hat i=((\SI{0.25}{m})+2(\SI{0.1}{m})-(\SI{-0.1}{m}))\hat i\\
+&=(\SI{0.55}{m})\hat i
+\end{align*}
+The torque from the force is given by the vector product:
+\begin{align*}
+\vec\tau &=\vec r\times \vec F=[(\SI{0.55}{m})\hat i]\times[(\SI{0.8}{N})\hat i+(\SI{1.0}{N}) \hat j + (\SI{1.2}{N}) \hat k]\\
+&=(\SI{0.55}{m})(\SI{0.8}{N})(\hat i\times \hat i)+(\SI{0.55}{m})(\SI{1.0}{N})(\hat i\times \hat j)+(\SI{0.55}{m})(\SI{1.2}{N})(\hat i\times \hat k)\\
+&=(0)+(\SI{0.55}{Nm})(\hat k)+(\SI{0.66}{Nm})(-\hat j)\\
+&=(\SI{-0.66}{Nm})\hat j+(\SI{0.55}{Nm})\hat k
+\end{align*}
+
+The angular acceleration is given by the angular version of Newton's Second Law. The torque that we calculated above is the only torque on the dumbbell, giving the angular acceleration vector
+\begin{align*}
+\sum \vec\tau &= I\vec\alpha = (\SI{-0.66}{Nm})\hat j+(\SI{0.55}{Nm})\hat k\\
+\therefore \vec\alpha &=\frac{1}{(\SI{1.121}{kgm^2})}(\SI{-0.66}{Nm})\hat j+(\SI{0.55}{Nm})\hat k\\
+&=(\SI{-0.589}{rad/s^2})\hat j+(\SI{0.491}{rad/s^2})\hat k
+\end{align*}
+which has magnitude $\alpha=\SI{0.767}{rad/s^2}$.
+\end{parts}
 \end{solution}
 
 
 
+%% From Olivia (or Emma?)
+\question Derive a formula for the moment of inertia of a solid Double Chocolate Donut of radius $r$ rotated about its axis of symmetry, as illustrated in Figure \ref{fig:rotationaldynamics:donut}.
+
+\capfig{0.5\textwidth}{figures/RotationalDynamics/donut.png}{\label{fig:rotationaldynamics:donut} This is a Double Chocolate Donut.}
+\begin{solution}
+
+In order to solve this problem, we should imagine that the Double Chocolate Donut\footnote{Please take special note of the asymmetry of the icing of this Double Chocolate Donut. In physics, we must often perform approximations to model physical situations. We can appropriately approximate this Double Chocolate Donut by ascribing its shape to that of a regular torus.} is composed of small donut cylinders of radius r.
+
+So, each cylinder must have a volume of: $V=\Delta xy\Delta z$
+
+Using the formula for density, D= M/V, we can solve for the mass of a small cylinder.
+
+\begin{align*}
+\rho=m/v
+m=\rho v
+m=\Delta xy\Delta z\rho
+\end{align*}
+
+Now, we must put variables x,y and z in terms of the variables theta, r and X (the height);
+
+Let us first look at the y variable, which is the height of the Double Chocolate Donut;
+
+This is the equation for a circle with radius ``2r'', which is:
+
+\begin{align*}
+r^{2}=y^{2}+(x-r)^{2}
+\end{align*}
+
+Solving in terms of y, we get:
+
+\begin{align*}
+y=\sqrt{r^{2}-(x-r)^{2}}
+\end{align*}
+
+Now, plug in r=2r
+
+\begin{align*}
+y=\sqrt{2r-(x-2r)^{2}}
+y=\sqrt{2r^{2}+2rx-x^{2}}
+\end{align*}
+
+For the actual height, we must multiply by 2 for the top and bottom semicircles. Also, we have to multiply by the distance from the rotational axis, which is: $(R+x)$ equation. So we get:
+
+\begin{align*}
+y=2\sqrt{2r^{2}+2rx-x^{2}}(R+x)
+\end{align*}
+
+To solve further from here, we need to put dz in terms of R, r, X and theta. Z here is the width, which depends on the distance from the centre multiplied by the angle:
+
+\begin{align*}
+dz=(R+x)dt\theta
+\end{align*}
+
+Plugging it all in, we'll need a double integral:
+
+\begin{align*}
+I=\int_{0}^{2\pi}\int_{0}^{2r} 2\rho\sqrt{2r^{2}+2rx-x^{2}}(R+x)^{2}(R+x)dxd\theta
+\end{align*}
+
+Simplifying this we get:
+
+\begin{align*}
+I=\int_{0}^{2\pi}\int_{0}^{2r} 2\rho\sqrt{2r^{2}+2rx-x^{2}}(R+x)^{3}dxd\theta
+\end{align*}
+
+This is the correct expression for the moment of inertia of a solid Double Chocolate Donut. Note that solving complicated double integrals is beyond the scope of the course and is an exercise in mathematics rather than physics. For those who would like to solve it for fun, solving the above expression gives the moment of inertia for a solid donut to be:
+
+\begin{align*}
+I=2\rho \sqrt{\frac{8r^{3}(10R^{3}+30rR^{2}+39r^{2}R+19r^{3}}{15}}
+\end{align*}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Statics
+%%%%%%%%%%%%%%%%%%%%%
+
+\question The system in Figure \ref{fig:rotationaldynamics:hinge} is in static equilibrium. A mass of $m=\SI{225}{kg}$ hangs from the end of the uniform strut whose mass is $M=\SI{45.0}{kg}$. 
+\begin{parts}
+\part Find the tension, $T$, in the cable.
+\part Find the horizontal and vertical force components exerted on the sturt by the hinge.
+\capfig{0.5\textwidth}{figures/Rotationaldynamics/hinge.png}{\label{fig:rotationaldynamics:hinge} The geometry of the system.}
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \SI{6626.59}{N}
+\item $F_{hx}=\SI{5738.80}{N}$, $F_{hy}=\SI{5959.30}{N}$
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part Since the system is at rest, the sum of the forces and torques on the strut must be zero. The force of tension from the cable, $\vec T$, is directed at $\SI{30}{\degree}$ below the horizontal. The force from the hinge on the strut will have both a vertical and a horizontal component. Figure \ref{fig:rotationaldynamics:hinge_a} shows the forces on the strut (including where they are exerted, since this matters for torques). If we define the $x$ axis to be horizontal (positive to the right), and the $y$ axis to be vertical (positive upwards), we can write the sum of the forces as:
+\begin{align*}
+\sum F_x &=F_{hx}-T\cos(\SI{30}{\degree}) = 0\\
+\sum F_y &=F_{hy}-T\sin(\SI{30}{\degree})-(m+M)g = 0
+\end{align*}
+
+\capfig{0.5\textwidth}{figures/Rotationaldynamics/hinge_annotated.png}{\label{fig:rotationaldynamics:hinge_a} Forces acting on the strut.}
+
+Let $L$ be the length of the strut. We choose to write the torques about the hinge (so that the unknown forces at the hinge are not needed). The torques are all in the same plane, so that we can deal with only their magnitudes. Let us choose clockwise as corresponding to positive torque. The sum of the torques must be zero:
+\begin{align*}
+\sum \tau&=Mg\frac{L}{2}\cos(\SI{45}{\degree})+mgL\cos(\SI{45}{\degree})-TL\sin(\SI{15}{\degree})=0\\
+T\sin(\SI{15}{\degree}) &= g\cos(\SI{45}{\degree})\left(\frac{M}{2}+m \right)\\
+\therefore T &= (\SI{9.8}{m/s^2})\frac{\cos(\SI{45}{\degree})}{\sin(\SI{15}{\degree})}\left(\frac{(\SI{45.0}{kg})}{2}+(\SI{225}{kg}) \right)=\SI{6626.59}{N}
+\end{align*}
+
+\part Knowing the tension from part (a), we can now use the sum of the forces equations in $x$ and $y$ to get the forces on the hinge:
+\begin{align*}
+F_{hx}&=T\cos(\SI{30}{\degree})=(\SI{6626.59}{N})\cos(\SI{30}{\degree})=\SI{5738.80}{N}\\
+F_{hy}&=T\sin(\SI{30}{\degree})+(m+M)g=(\SI{6626.59}{N})\sin(\SI{30}{\degree})+(\SI{9.8}{m/s^2})(\SI{270}{kg})=\SI{5959.30}{N}
+\end{align*}
+\end{parts}
+
+\end{solution}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This question taken from Physics for Scientists and Engineers, a Strategic Approach
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\question A $L=\SI{3.0}{m}$ long rigid uniform beam with a mass of $M=\SI{100}{kg}$ is supported at each end, as shown in Figure \ref{fig:rotationaldynamics:student}. A $m=\SI{80}{kg}$ student stands a distance $d=\SI{2.0}{m}$ away from support 1. How much upward force does each support exert on the beam if the system is at rest?
+
+\capfig{0.6\textwidth}{figures/Rotationaldynamics/student.png}{\label{fig:rotationaldynamics:student} }
+\begin{finalanswer}
+\SI{751.33}{N}
+\end{finalanswer}
+\begin{solution} 
+Since the system is at rest, the sum of the forces and torques on the beam must be zero. We can choose to write the torques about support point 1, so that the unknown force at support point 1 does not contribute. Let $F_1$ and $F_2$ be the upward components of the forces on support 1 and 2, respectively. Let us choose clockwise for positive torques:
+\begin{align*}
+\sum \tau &= (\SI{1.5}{m})Mg+(\SI{2.0}{m})mg-(\SI{3.0}{m})F_2=0\\
+\therefore F_2& = \frac{(\SI{9.8}{m/s^2})}{(\SI{3.0}{m})}((\SI{1.5}{m})(\SI{100}{kg})+(\SI{2.0}{m})(\SI{80}{kg}))\\
+&=\SI{1012.67}{N}
+\end{align*}
+
+To find $F_1$, we can either write the torgues about support point 2, or use the sum of the forces in the vertical direction. Choosing the latter (with positive upwards), we have:
+
+\begin{align*}
+\sum F &= F_1+F_2-Mg-mg=0\\
+\therefore F_1&=(M+m)g-F_2=(\SI{180}{kg})(\SI{9.8}{m/s^2})-(\SI{1012.67}{N})\\
+&=\SI{751.33}{N}
+\end{align*}
+\end{solution}
+
+%Based on Giancolli 12-59
+\question You wish to pull a sphere of radius $R$ and mass $M$ over a step of height $h$, by exerting a tangential force $\vec F$ at the top of the sphere as shown in Figure \ref{fig:rotationaldynamics:SphereStep}. What is the minimum magnitude of the force that is required?
+\capfig{0.4\textwidth}{figures/Rotationaldynamics/SphereStep.png}{\label{fig:rotationaldynamics:SphereStep} }
+\begin{finalanswer}
+$F=Mg\sqrt{\frac{h}{2R-h}}$
+\end{finalanswer}
+\begin{solution}
+Figure \ref{fig:rotationaldynamics:SphereStep_FBD} shows the forces acting on the sphere and the relevant dimensions. The sphere will move as soon as $F$ is large enough to cause it to have a net torque. 
+\capfig{0.4\textwidth}{figures/Rotationaldynamics/SphereStep_FBD.png}{\label{fig:rotationaldynamics:SphereStep_FBD} } 
+Since we do not know the normal force, we evaluate the torques about the corner of the step. The lever arm of $F$ is $2R-h$, and the lever arm of the weight, $x$ on the diagram, is given by:
+\begin{align*}
+(R-h)^2+x^2&=R^2\\
+\therefore x&=\sqrt{R^2-(R-h)^2}=\sqrt{2Rh-h^2}=\sqrt{h(2R-h)}
+\end{align*}
+The sum of the torques, taking clockwise as positive, is given by:
+\begin{align*}
+\sum \tau &= F(2R-h)-Mg\sqrt{h(2R-h)}=0\\
+\therefore F&=Mg\frac{\sqrt{h(2R-h)}}{2R-h}=Mg\sqrt{\frac{h}{2R-h}}
+\end{align*}
+
+\end{solution}
+
+%Based on Giancolli 12-80
+\question A uniform ladder with a length of $L=\SI{6.0}{m}$ and a mass of $M=\SI{20}{kg}$ leans against a frictionless wall (so that the wall can only exert a horizontal force on the ladder). The ladder makes an angle $\theta=\SI{20}{\degree}$ with the wall, as shown in Figure \ref{fig:rotationaldynamics:Ladder}. Determine the minimum value of the coefficient of static friction between the ladder and the ground for the ladder not to slip when a person weighing $m=\SI{75}{kg}$ stands two-thirds of the way up the ladder.
+\capfig{0.2\textwidth}{figures/Rotationaldynamics/Ladder.png}{\label{fig:rotationaldynamics:Ladder}A ladder leaning against a frictionless wall.}
+\begin{finalanswer}
+$\mu_s =\tan\theta\left(\frac{\frac{1}{2}M-\frac{2}{3}m}{(m+M)}  \right)$
+\end{finalanswer}
+\begin{solution}
+The forces one the ladder when the person is on it are shown in Figure \ref{fig:rotationaldynamics:Ladder_FBD}.
+\capfig{0.2\textwidth}{figures/Rotationaldynamics/Ladder_FBD.png}{\label{fig:rotationaldynamics:Ladder_FBD}Forces on the ladder.}
+
+The sum of the torques and forces must be zero, since the ladder is not moving. The sum of the forces in the vertical direction allow us to determine the normal force:
+\begin{align*}
+\sum F_y&=N-(m+M)g=0\\
+\therefore N&=(m+M)g
+\end{align*}
+The force of static friction at the bottom of the ladder is thus give by:
+\begin{align*}
+f_s=\mu_sN=\mu_s(m+M)g
+\end{align*}
+where $\mu_s$ is the coefficient of static friction between the bottom of the ladder and the ground. We take the torques above the top of the ladder, so that we do not need to solve for $\vec R$, the force from the wall. We will take clockwise as positive torques:
+\begin{align*}
+\sum\tau&=N\sin\theta L-f_s\cos\theta L-Mg\sin\theta\frac{L}{2}-mg\sin\theta\frac{L}{3}=0\\
+f_s\cos\theta&=N\sin\theta-\frac{1}{2}Mg\sin\theta-\frac{1}{3}mg\sin\theta\\
+f_s&=N\tan\theta-\frac{1}{2}Mg\tan\theta-\frac{1}{3}mg\tan\theta\\
+\mu_s(m+M)g &=(m+M)g\tan\theta-\frac{1}{2}Mg\tan\theta-\frac{1}{3}mg\tan\theta\\
+\mu_s(m+M)g &=g\tan\theta\left(\frac{1}{2}M-\frac{2}{3}m  \right) \\
+\therefore \mu_s &=\tan\theta\left(\frac{\frac{1}{2}M-\frac{2}{3}m}{(m+M)}  \right) \\
+\end{align*}
+\end{solution}
+
+
+%Harrison/Zaremba 2000 Final exam
+\question A thin rod of length $L=\SI{0.5}{m}$ and mass $M=\SI{1.0}{kg}$ makes an angle $\theta=\SI{60}{\degree}$ with the horizontal. It is held in position by a light horizontal string attached at the top end of the rod, as shown in Figure \ref{fig:rotationaldynamics:RodMass}. A mass $m$ is suspended from the top of the rod by a second string. If the coefficient of static friction between the rod and the ground at the point of contact is $\mu=0.50$, what is the largest mass $m$ that can be suspended such that the rod does not slip?
+\capfig{0.4\textwidth}{figures/Rotationaldynamics/RodMass.png}{\label{fig:rotationaldynamics:RodMass}A mass hanging from a rod.}
+\begin{finalanswer}
+\SI{2.73}{kg}
+\end{finalanswer}
+\begin{solution}
+The forces on the rod are shown in Figure \ref{fig:rotationaldynamics:RodMass_FBD}. Just before the rod slips, the force of friction will be equal to $\mu N$.
+\capfig{0.4\textwidth}{figures/Rotationaldynamics/RodMass_FBD.png}{\label{fig:rotationaldynamics:RodMass_FBD}Forces on the rod.}
+Since the rod is in static equilibrium, the sum of the forces and torques are both zero. The sum of the forces in the horizontal and vertical directions are:
+\begin{align*}
+T-\mu N&=0\\
+mg+Mg-N&=0
+\end{align*}
+respectively.  The second equation gives the normal force, which we can substitute in to the first equation:
+\begin{align*}
+N&=(m+m)g\\
+\therefore T&=\mu(m+M)g
+\end{align*}
+We can take the torques about the bottom (positive torques clockwise):
+\begin{align*}
+T\sin\theta L-mg\cos\theta L-Mg\cos\theta \frac{L}{2}&=0\\
+T\sin\theta-(m+\frac{1}{2}M)g\cos\theta&=0\\
+\therefore T&=(m+\frac{1}{2}M)g\frac{\cos\theta}{\sin\theta}=(m+\frac{1}{2}M)g\frac{1}{\tan\theta}\\
+\end{align*}
+Equating the two equations for $T$ and re-arranging for $m$:
+\begin{align*}
+\mu(m+M)g &= (m+\frac{1}{2}M)g\frac{1}{\tan\theta}\\
+\mu\tan\theta m+\mu\tan\theta M&=m+\frac{1}{2}M\\
+m(\mu\tan\theta-1) &= M(\frac{1}{2}-\mu\tan\theta)\\
+\therefore m&= \frac{\frac{1}{2}-\mu\tan\theta}{\mu\tan\theta-1}M = \frac{\frac{1}{2}-(0.5)\tan(\SI{60}{\degree})}{0.5\tan(\SI{60}{\degree})-1}\SI{1.0}{kg}\\
+&=\SI{2.73}{kg}
+\end{align*}
+\end{solution}
+
+\question Chlo\"e loves her rocket shoes! I investigated whether it would be safe to buy her some \textit{actual} rocket shoes. To do this, I modelled Chlo\"e as a vertical uniform bar of length $L=\SI{80}{cm}$ and mass $M=\SI{13}{kg}$ with rocket shoes at the bottom, as in Figure \ref{fig:rotationaldynamics:RocketShoe}. I modelled the rocket shoes as being massless and having negligible dimensions (assumed to be a point at the end of the rod). The shoes provide a combined constant thrust of $F=\SI{20}{N}$ parallel to the ground for a duration of \SI{10}{s}. Although the shoes have wheels on them, I assumed that it would be equivalent to sliding on the ground with a kinetic friction coefficient of $\mu_k=0.1$.
+
+\capfig{0.1\textwidth}{figures/RotationalDynamics/RocketShoe.png}{\label{fig:rotationaldynamics:RocketShoe} A model for Chlo\"e and her rocket shoes.}
+\begin{parts}
+\part If starting from rest, how fast will Chlo\"e be travelling after \SI{10}{s}?
+\part Since I do not want to get too much exercise chasing after her, what total distance will she have travelled when she comes to rest? Remember, the rockets only burn for the first \SI{10}{s}; after that, she will slow back down and come to rest.
+\part In order to not tip over while the rockets are on, Chlo\"e will need to lean forwards or backwards. What angle will she need to make with the vertical to remain stable as the rocket shoes push her forward? Make a diagram and indicate whether she needs to lean forwards or backwards.
+\end{parts}
+
+\begin{solution}
+\begin{parts}
+\part We need to determine the horizontal acceleration, which we can do from Newton's Second Law and a free body diagram. The forces acting on Chlo\"e are her weight, the normal force from the ground, the thrust from the rocket shoes, and the force of kinetic friction. If we choose positive $x$ in the direction of motion and positive $y$ upwards, the sum of the forces in each direction is:
+\begin{align*}
+\sum F_x &= F-f_k=ma\\
+\sum F_y &= N-mg=0
+\end{align*}
+Since $f_k=\mu_kN$, we easily find the acceleration:
+\begin{align*}
+a&=\frac{1}{m}(F-f_k)=\frac{1}{m}(F-f_k)=\frac{1}{m}(F-\mu_kmg)\\
+&=\frac{1}{(\SI{13}{kg})}((\SI{20}{N})-(0.1)(\SI{13}{kg})(\SI{9.8}{m/s^2}))=\SI{0.558}{m/s^2}
+\end{align*}
+After \SI{10}{s}, she will be travelling at a speed of:
+\begin{align*}
+v(t)=v_0+at=(\SI{0.558}{m/s^2})(\SI{10}{s})=\SI{5.558}{m/s}
+\end{align*}
+which corresponds to about \SI{20}{km/h}, a little fast for a small child. I would not consider this safe!
+\part We can divide the motion in two phases. First, she has a constant acceleration for \SI{10}{s}, as found in part (a). After that, she will decelerate because of friction. During the acceleration phase, she travels a distance of:
+\begin{align*}
+x_1 = \frac{1}{2}at^2=\frac{1}{2}(\SI{0.558}{m/s^2})(\SI{10}{s})^2=\SI{27.9}{m}
+\end{align*}
+The deceleration due to friction is:
+\begin{align*}
+a=-\frac{f_k}{m}=-\frac{\mu_kmg}{m}=-\mu_kg=(0.1)(\SI{9.8}{m/s^2})=\SI{-0.98}{m/s^2}
+\end{align*}
+The time that it will take for her to come to rest is given by:
+\begin{align*}
+t = \frac{v_f-v_i}{a}=\frac{-(\SI{5.558}{m/s})}{(\SI{-0.98}{m/s^2})}=\SI{5.67}{s}
+\end{align*}
+The final position after decelerating is thus:
+\begin{align*}
+x_f &= x_1 +v_0t+\frac{1}{2}at^2\\
+&=(\SI{27.9}{m}) +(\SI{5.558}{m/s})(\SI{5.67}{s})+\frac{1}{2}(\SI{-0.98}{m/s^2})(\SI{5.67}{s})^2\\
+&=\SI{43.66}{m}
+\end{align*}
+
+\part The thrust from the rocket shoes will cause a torque about Chlo\"e's centre of mass that would cause her to fall backwards. She will thus need to lean forward so that she does not rotate. We have to be a little careful, because Chlo\"e is accelerating, so the sum of the torques is only zero about an axis that is co-moving with Chlo\"e, or instantaneously about the centre of mass.
+
+The easiest way to solve this is to be in the frame of reference of Chlo\"e since we already know the acceleration. We take the sum of torques about the shoe so that we do not need to worry about the three forces at the shoe end of Chlo\"e. Since we are in an non-inertial frame of reference, we have to include an inertial force of $-M\vec a$ at the centre of mass.
+\capfig{0.15\textwidth}{figures/RotationalDynamics/RocketShoe_forces.png}{\label{fig:rotationaldynamics:RocketShoe_forces}Force on Chlo\"e in the \textit{accelerating} frame of reference.}
+Taking the torques about the shoe (positive clockwise), only gravity and the inertial force contribute. The torques sum to zero:
+\begin{align*}
+Mg\frac{L}{2}\sin\theta-Ma\cos\theta\frac{L}{2}&=0\\
+g\sin\theta&=a\cos\theta\\
+\therefore\tan\theta&=\frac{a}{g}=\frac{(\SI{0.558}{m/s^2})}{(\SI{9.8}{m/s^2})}=0.0570\\
+\therefore \theta&=\tan^{-1}(0.0579)=\SI{3.26}{\degree}
+\end{align*}
+which is a small enough angle that it is reasonable to expect that she could maintain.
+
+Note that if we take the torques about the centre of mass, then we don't need to worry about the inertial force, and the torques must be zero in all reference frames. Again, taking positive torque clockwise and about the centre of mass:
+\begin{align*}
+N\sin\theta\frac{L}{2}+f_k\cos\theta\frac{L}{2}-F\cos\theta\frac{L}{2}&=0\\
+N\sin\theta+f_k\cos\theta-F\cos\theta&=0\\
+mg\sin\theta+\mu_kmg\cos\theta-F\cos\theta&=0\\
+mg\sin\theta &= (F-\mu_kmg)\cos\theta\\
+\tan\theta &=\frac{F-\mu_kmg}{mg}=\frac{a}{g}
+\end{align*}
+where in the last line, we substituted in the expression for acceleration from part (a).
+\end{parts}
+\end{solution}
+
+\question A majestic llama of mass $m=\SI{500}{kg}$ is walking on a horizontal plank of mass $M=\SI{200}{kg}$ and length $L=\SI{5}{m}$ that is attached to the vertical face of Huyana Picchu (a mountain in Peru). The plank is attached to the mountain with a hinge that allows the plank to rotate in the vertical plane. The other end of the plank is secured by a mass-less rope that makes an angle of $\theta =\SI{30}{\degree}$ with respect to the plank. The rope can sustain a maximum tension of $\SI{5000}{N}$. As the llama walks away from the mountain, the tension in the rope increases until the rope suddenly breaks, and the plank with the llama on it starts to rotate about the hinge. What is the (linear) acceleration of the llama the moment just after the rope breaks? 
+
+Note that the moment of inertial of plank of mass $M$ and length $L$ rotated about one of its ends is $I=\frac{1}{3}ML^2$.
+\capfig{0.3\textwidth}{figures/RotationalDynamics/llamaplank.png}{\label{fig:rotationaldynamics:llamaplank}An adventurous llama walking out on a plank.}
+\begin{solution}
+First we need to find how far the llama walks before the force of tension exceeds its maximal value. We can consider the torques on the plank about the hinge, so that the only forces that contribute a torque are the weight of the plank, the weight of the llama and the force of tension. The plank is in equilibrium (net torque of zero) until the llama is far enough (say a distance $x$ from the hinge). The sum of the torques is given by:
+\begin{align*}
+\sum \tau = Mg\frac{L}{2}+mgx-T\sin\theta L &= 0\\
+\therefore x &= \frac{2T\sin\theta -Mg}{2mg}L
+\end{align*}
+We can solve for the position $x$ of the llama when $T$ is at its maximal value:
+\begin{align*}
+x &= \frac{2T\sin\theta -Mg}{2mg}L= \frac{2(\SI{5000}{N})\sin(\SI{30}{\degree})-(\SI{200}{kg})(\SI{9.8}{m/s^2})}{2(\SI{500}{kg})(\SI{9.8}{m/s^2})} (\SI{5}{m})= \SI{1.551}{m}
+\end{align*}
+When the llama reaches this position, the rope breaks, and the system comprised of the plank and llama will rotate about the hinge. The moment of inertia of the plank and llama is given by:
+\begin{align*}
+I&=I_{plank}+mx^2=\frac{1}{3}ML^2+mx^2\\
+&=\frac{1}{3}(\SI{200}{kg})(\SI{5}{m})^2+(\SI{500}{kg})(\SI{1.551}{m})^2=\SI{2869.50}{kg\cdot m^2}
+\end{align*}
+The net torque on the plank and llama system about the hinge is that from the weights of the plank and llama:
+\begin{align*}
+\sum\tau &=  Mg\frac{L}{2}+mgx
+\\&= (\SI{200}{kg})(\SI{9.8}{m/s^2})\frac{(\SI{5}{m})}{2}+(\SI{500}{kg})(\SI{9.8}{m/s^2})(\SI{1.551}{m})=\SI{12500}{N\cdot m}
+\end{align*}
+The angular acceleration of the plank and llama is then given by:
+\begin{align*}
+\sum\tau &= I\alpha\\
+\therefore \alpha &= \frac{\sum\tau}{I}=\frac{(\SI{12500}{N\cdot m})}{(\SI{2869.50}{kg\cdot m^2})}=\SI{4.36}{rad/s}
+\end{align*}
+The linear acceleration of the llama is given by:
+\begin{align*}
+a &= \alpha r\\
+a &= \alpha x = (\SI{4.36}{rad/s})(\SI{1.551}{m}) =\SI{6.77}{m/s^2}
+\end{align*}
+\end{solution}
+
+
+
+\question A uniform wire of mass $M$ is bent into a closed semi-circle with radius $R$ (the wire has a curved section and a straight section), as shown in Figure \ref{fig:rotationaldynamics:semicircle}.
+\capfig{0.30\textwidth}{figures/semicircle.png}{\label{fig:rotationaldynamics:semicircle} A wire bent into a closed semi-circle of radius $R$.}
+\begin{parts}
+	\part Show that the centre of mass of the wire is located at a distance:
+	\begin{align*}
+	h=\frac{2R}{2+\pi}
+	\end{align*}
+	from the centre of the semi-circle.
+	\part The semi-circular wire from above is held with a pin that is placed at the centre of the straight section of wire (point $P$ in Figure \ref{fig:rotationaldynamics:semicircle_b}), so that the wire can rotate in the vertical plane about a horizontal axis that goes through the pin and that is perpendicular to the plane of the wire. What is the moment of inertia of the wire about this axis of rotation?
+	
+	\part A small bug of mass $m=\SI{5}{g}$ lands on the wire, directly below the point where the wire is suspended (left panel of Figure \ref{fig:rotationaldynamics:semicircle_b}), and starts to walk up the wire. When the bug is at a position such that a line from $P$ to the bug makes an angle $\theta=\SI{30}{\degree}$ with respect to the vertical (right panel), what angle, $\phi$, does the straight part of the wire make with the horizontal? Assume that the wire has a mass $M=\SI{100}{g}$.
+\end{parts}
+\capfig{0.60\textwidth}{figures/RotationalDynamics/semicircle_b.png}{\label{fig:rotationaldynamics:semicircle_b} The wire is suspended at point $P$ (midpoint of the straight section) so that it may rotate in the vertical plane. A bug of mass $m$ starts below point $P$ (left panel) and starts to walk up the wire, causing the wire to rotate (right panel).}
+
+\begin{solution}
+	\begin{parts}
+		\part We introduce a coordinate system such that the origin is located at the centre of the semi-circle and such that the wire lies in the negative $y$ side, as shown in Figure \ref{fig:rotationaldynamics:semicircle_sol}.
+		\capfig{0.30\textwidth}{figures/RotationalDynamics/semicircle_sol.png}{\label{fig:rotationaldynamics:semicircle_sol}A small mass element of the curved section of wire.}
+		By symmetry, the $x$ coordinate of the centre of mass will be zero. We consider the wire to be made of two parts, a straight part with its centre of mass at the origin (a rod of length $2R$), and a curved part, whose $y$ coordinate of the centre of mass is given by:
+		\begin{align*}
+		y_{CM}=\frac{1}{M_{circ}}\int y dm
+		\end{align*}
+		where $M_{circ}$ is the mass of the circular part of the wire. We can choose $dm$ to be small piece of the wire of length $dl$ that subtends and arc $d\theta$, so that the mass element is given by:
+		\begin{align*}
+		dm =\lambda dl = \lambda Rd\theta=\frac{M}{L}Rd\theta
+		\end{align*}
+		where $\lambda$ is the mass per unit length of the wire. The $y$ position of the mass element is given by:
+		\begin{align*}
+		y=R\sin\theta
+		\end{align*}
+		where $\theta$ is taken as zero at the $x$ axis and increases counter-clockwise (such that $\sin\theta$ is negative). The $y$ position of the centre of mass of the curved part of the wire is then given by:
+		\begin{align*}
+		y_{CM}&=\frac{1}{M_{circ}}\int y dm=\frac{1}{M_{circ}}\int_{\pi}^{2\pi} y \frac{M}{L}Rd\theta\\
+		&=\frac{1}{M_{circ}}\int_{\pi}^{2\pi} (R\sin\theta) \frac{M}{L}Rd\theta\\
+		&=\frac{R^2M}{LM_{circ}}\int_{\pi}^{2\pi} \sin\theta d\theta=-\frac{R^2M}{LM_{circ}}[\cos\theta]_{\pi}^{2\pi}\\
+		&=-\frac{2R^2M}{LM_{circ}}
+		\end{align*}
+		We also need to determine the fraction of the mass that is located in the circular part:
+		\begin{align*}
+		M_{circ}=\pi R\frac{M}{L}
+		\end{align*}
+		The $y$ position of the centre of mass of the bent part of the wire becomes:
+		\begin{align*}
+		y_{CM}&=-\frac{2R^2M}{LM_{circ}}=-\frac{2R}{\pi}
+		\end{align*}
+		Finally, combining this with the straight section of the bar ($M_s$), the centre of mass is given by:
+		\begin{align*}
+		y_{CM}&=\frac{M_s(0)-M_{circ}\left(\frac{2R}{\pi}\right)}{M}=-\frac{2R^2}{L}
+		\end{align*}
+		Noting that $L=2R+\pi R$, we can write this as:
+		\begin{align*}
+		y_{CM}&=-\frac{2R}{2+\pi}
+		\end{align*} 
+		\part We consider the wire as being comprised of a bar rotated about its centre of mass plus a semi-circle rotated about its centre. We first need to determine the mass of each section. The total length of the wire is:
+		\begin{align*}
+		L=2R+\pi R=(2+\pi)R
+		\end{align*}
+		The straight part thus has a mass:
+		\begin{align*}
+		M_{bar}=\frac{M}{L}2R=\frac{2M}{2+\pi}
+		\end{align*}
+		and the curved part:
+		\begin{align*}
+		M_{circ}=\frac{M}{L}\pi R=\frac{M \pi}{2+\pi}
+		\end{align*}
+		The total moment of inertia is thus:
+		\begin{align*}
+		I&=I_{bar}+I_{circ}=\frac{1}{12}M_{bar}(2R)^2+M_{circ}R^2\\
+		&=\frac{1}{12}\frac{2M}{2+\pi}(2R)^2+\frac{M \pi}{2+\pi}R^2\\
+		&=\left(\frac{1}{3}\right)\frac{2+3\pi}{6+3\pi}MR^2
+		\end{align*}
+		\part We can consider the torques about the point $P$ exerted on the wire by both the bug and the weight of the wire (exerted at the centre of mass found in part a). The torques have to be equal and opposite in direction since the system will be in equilibrium and there are no other torques exerted on the wire.
+		\begin{align*}
+		\tau_{bug} &= \tau_{g}\\
+		mgR\sin\theta &= Mg\left(\frac{2R}{2+\pi}\right)\sin\phi\\
+		\therefore \sin\phi&=\frac{m(2+\pi)}{2M}\sin\theta\\
+		\end{align*}
+		Using the numbers provided:
+		\begin{align*}
+		\phi=\sin^{-1}\left(\frac{(\SI{5}{g})(2+\pi)}{2(\SI{100}{g})}\sin(\SI{30}{\degree})  \right)=\SI{3.685}{\degree}
+		\end{align*}
+		Note that we would find the same answer if we considered that the centre of mass of the bug and wire system must remain at $x=0$.
+	\end{parts}
+\end{solution}
+
+
+
+
+
+%TODO: Question library question: Given a coefficient of static friction, what is the maximum angle of the incline that would allow rolling without slipping.
+%TODO: Question library question: A yo-yo that is falling, what is its linear acceleration?
 
