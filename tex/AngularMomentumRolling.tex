@@ -1,557 +1,779 @@
-\section{Rotational energy and momentum}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Multiple Choice
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Multiple Choice}
+\chapter{Rotational energy and momentum}
+\label{chapter:angularmomentumrolling}
+In this chapter, we extend our description of rotational dynamics to include the rotational equivalents of kinetic energy and momentum. We also develop the framework for describing the motion of rolling objects. We will see that many of the relations that hold for linear quantities also hold for angular quantities. 
 
-\question A solid disk of mass $M$ and radius $R$ rolls without slipping along a horizontal surface, so that its centre of mass has a speed $v$ relative to the ground. What is the total kinetic energy of the disk?
-\begin{checkboxes} 
-	\choice $K_{tot}=\frac{1}{2}mv^2$ 
-	\choice  $K_{tot}=\frac{1}{4}mv^2$ 
-	\choice $K_{tot}=\frac{3}{2}mv^2$ 
-	\CorrectChoice $K_{tot}=\frac{3}{4}mv^2$ 
-\end{checkboxes}
+\begin{learningObjectives}{
+ \item Understand how to define the rotational kinetic energy of an object as well as its total kinetic energy.
+ \item Understand how to model rolling motion, and what slipping means in the context of rolling motion.
+ \item Understand how to define the angular momentum of an object and when it is conserved.
+ }
+\end{learningObjectives}
 
-\question A figure skater is spinning with her arms extended. As she brings her arms in close to her body, she begins spinning faster because
-\begin{checkboxes}
-\choice Her arms do work on her body, and thus increases her kinetic energy.
-\choice Her moment of inertia decreases, which increases her angular momentum.
-\CorrectChoice Her moment of inertia decreases, which increases her angular velocity. \correct
-\choice It only looks like she's spinning faster because she is more compact.
-\end{checkboxes}
+\begin{opening}
+\begin{MCquestion}{How can you model the motion of a downwards going yo-yo?}
+\item It is similar to that of an object falling with a force of drag.
+\item It is similar to that of an object rolling down an incline. \correct
+\item It is similar to that of an object sliding down an incline.
+\item It is similar to that of an object rotating about a fixed axis of rotation.
+\end{MCquestion}
+\end{opening}
 
-\question If a figure skater starts to spin twice as fast when he brings his arms in during a spin, he 
-\begin{choices} 
-	\choice increased his moment of inertia by a factor of 2.
-	\CorrectChoice  decreased his moment of inertial by a factor of 2.
-	\choice  increased his moment of inertia by a factor of 4.
-	\choice decreased his moment of inertial by a factor of 4.
-\end{choices}
+\section{Rotational kinetic energy of an object}
+In this section, we show how to define the rotational kinetic energy of an object that is rotating about a stationary axis in an inertial frame of reference. Consider a solid object that is rotating about an axis with angular velocity, $\vec\omega$, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/rotE.png}{\label{fig:angularmomentumrolling:rotE}An object rotating about an axis that passes through its centre of mass.}
+We can model the object as being composed of many point particles, each with a mass $m_i$, located at a position $\vec r_i$, with velocity $\vec v_i$ relative to the axis of rotation. We choose a coordinate system whose origin is on the axis of rotation and whose $z$ axis is co-linear with the axis of rotation, as depicted in Figure \ref{fig:angularmomentumrolling:rotE}.
 
-\question Two identical solid spheres roll down two different inclined planes A and B. Both A and B have the same height, but different angles of inclination. If you release the balls at the same time, then they will reach the bottom:
-\begin{checkboxes}
-\choice With different speeds at different times
-\choice With different speeds at the same time
-\CorrectChoice With the same speed at different times \correct
-\choice With the same speed at the same time
-\end{checkboxes}
-
-\question A particle is travelling along a straight line. If you measured the angular momentum of the particle about each of the following points, for which would the result be zero?
-\begin{checkboxes}
-\CorrectChoice Any point along its axis of travel \correct
-\choice Any point, because it is travelling in a straight line
-\choice There are no points where the angular momentum will measured to be zero
-\end{checkboxes}
-
-%Based on a question by Wei Zhuolin
-\question  A pinball ($m=\SI{10}{g}$) is shot at with a speed $v=\SI{100}{m/s}$ into the end of a small rod of length $L=\SI{2}{m}$, and mass $M=\SI{2}{kg}$, in the direction perpendicular to the length of the rod.  The rod has an axis of rotation at the centre.  The rod is initially at rest.  What is the angular velocity of the rod after impact?
-\begin{checkboxes}
-\choice 2.91 rad/s
-\CorrectChoice 1.47 rad/s \correct
-\choice 2.01 rad/s
-\choice 1.78 rad/s
-\end{checkboxes}
-
-%From Midyear Exam F17
-\question[1] For your next demonstration, you wish to demonstrate how figure skaters can increase their angular velocity when doing spins. You place one of your friends on your desk chair (which can spin with virtually no friction) and ask them to cross their arms tightly against their chest. You give the chair a good spin and then ask your friend to spread their arms out. 
-\begin{checkboxes} 
-\choice The chair starts to spin faster because the moment of inertia of your friend about the rotation axis increased
-\choice The chair starts to spin faster because the angular momentum of your friend about the rotation axis increased
-\CorrectChoice The chair starts to spin slower because the moment of inertia of your friend about the rotation axis increased \correct
-\choice The chair starts to spin slower because the angular momentum of your friend about the rotation axis increased
-\end{checkboxes}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% long answer
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Long answers}
-
-%Thomas
-\question A large meteorite of mass $m$ strikes the Earth. It hits with a velocity perpendicular to the ground. It causes the Earth to start spinning slightly slower such that each day is slightly longer. Assume that the Earth is a solid sphere of radius $R_\oplus$ and mass $M_\oplus$, with uniform density.
-\begin{parts}
-\part If each day before impact lasts exactly $d=\SI{24}{hr}$, find the Earth's rotational (not orbital) angular momentum before the meteorite hits. Express your answer in terms of the variables above.
-\part Express the angular momentum of the Earth after the meteorite hits in terms of the variables above, and in terms of $\Delta t$, the extra time in seconds that it takes the Earth to complete one day.
-\part Find an expression for $\Delta t$, in terms of the mass of the meteorite and the mass of the Earth, expressed as a fraction of a day.
-\part Hoba, the largest single meteorite ever found, has a mass of about \SI{60000}{kg}. Based on our assumptions here, how much longer is each day since it hit? The mass of the Earth is \SI{5.972e24}{kg}.
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item $\frac{2}{5} M_\oplus R_\oplus^2\frac{2 \pi}{d}$, where $d=\SI{86400}{s}$ is the length of one day.
-\item  $\left(\frac{2}{5}M_\oplus R_\oplus^2+ m R_\oplus^2\right)\frac{2\pi}{d + \Delta t}$
-\item $\frac{\Delta t}{d} = \frac{5}{2}\frac{m}{M_\oplus}$
-\item $\SI{2.17e-15}{s}$
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part The angular momentum is given by the Earth's initial moment of inertia times its angular velocity:
+Each particle of mass $m_i$ in the object has a kinetic energy, $K_i$:
 \begin{align*}
-L_0 &= I_0 \omega_0\\
-I_0 &= \frac{2}{5} M_\oplus R_\oplus^2\\
-\omega_0 & = \frac{2 \pi}{d}\\
-\therefore L_0 &= \frac{2}{5} M_\oplus R_\oplus^2\frac{2 \pi}{d}
-\end{align*}
-where $d=\SI{86400}{s}$ is the length of one day.
- 
-\part The meteorite changes the moment of inertia of the Earth from $I_0$ to $I_f$. We assume that all of the mass is deposited at the outer radius as a point. The angular velocity is now expressed in terms of $\Delta t$:
-\begin{align*}
-I_{f} &= \frac{2}{5} M_\oplus R_\oplus^2+ m R_\oplus^2\\
-\omega_f&=\frac{2\pi}{d+\Delta t}\\
-\therefore L_f &= I_f\omega_f= \left(\frac{2}{5}M_\oplus R_\oplus^2+ m R_\oplus^2\right)\frac{2\pi}{d + \Delta t} 
-\end{align*}
-
-\part Since no external torques are applied to the Earth+meteorite system, the total angular momentum is conserved. Since the meteorite hits perpendicularly to the surface of the Earth, it carries no angular momentum, and the initial angular momentum is what we calculated in part (a).
-\begin{align*}
-L_0&=L_f\\
-I_0\omega_0 &=I_f\omega_f\\
-\therefore \omega_f &= \frac{I_0}{I_f}\omega_0\\
-\frac{2\pi}{d+\Delta t} &= \frac{\frac{2}{5} M_\oplus R_\oplus^2}{\frac{2}{5} M_\oplus R_\oplus^2+ m R_\oplus^2}\frac{2 \pi}{d}\\
-\frac{1}{d+\Delta t} &= \frac{\frac{2}{5} M_\oplus R_\oplus^2}{\frac{2}{5} M_\oplus R_\oplus^2+ m R_\oplus^2}\frac{1}{d}\\
-\frac{1}{d+\Delta t} &= \frac{1}{1 +\frac{5}{2}\frac{m}{M_\oplus} }\frac{1}{d}\\
-d+\Delta t &=\left(1 +\frac{5}{2}\frac{m}{M_\oplus}\right)d\\
-\frac{\Delta t}{d} &= \frac{5}{2}\frac{m}{M_\oplus}
-\end{align*}
-
-\part Plug the numbers into part (c) and obtain:
-\begin{align*}
-\frac{\Delta t}{d} &= \frac{5}{2}\frac{m}{M_\oplus}=\frac{5}{2}\frac{\SI{6e4}{kg}}{\SI{5.972e24}{kg}}=\num{2.5e-20}
-\end{align*}
-which corresponds to \SI{2.17e-15}{s}.
-\end{parts}
-\end{solution}
-
-%Giancolli 11-51
-\question A child is attempting to create a lollipop by rolling a small hard candy along a frictionless surface and onto a plastic stick. The plastic stick has a mass $M$ and length $L$ and the hard candy has a mass $m$ and is moving at a speed $v$. The hard candy strikes the plastic stick at the point $\frac{L}{4}$ above its centre of mass. The hard candy is sticky, so when it collides with the plastic stick, the two objects remain in contact and move together. 
-\begin{enumerate}[(a)]
-\item What is the velocity of the centre of mass of the lollipop? 
-\item Show that the angular speed of the lollipop is given by:
-\begin{align*}
-\omega = \frac{12mv}{L(4M+7m)}
-\end{align*}
-\end{enumerate}
-
-\capfig{0.2\textwidth}{figures/AngularMomentumRolling/RodClay.png}{\label{fig:angularmomentumrolling:RodClay}A piece of hard candy strikes the plastic stick at a distance $\frac{L}{4}$ above the stick's CM.}
-
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item $\vec v_{CM}=\frac{m}{M+m}\vec v$
-\item N/A
-\end{enumerate}
-
-\end{finalanswer}
-\begin{solution}
-The collision is inelastic, but both linear and angular momentum are conserved, as there are no external torques or forces on the system. Conservation of linear momentum trivially gives the velocity of the centre of mass after the collision:
-\begin{align*}
-m\vec v &= \vec v_{CM}(M+m)\\
-\therefore \vec v_{CM} &=\frac{m}{M+m}\vec v
-\end{align*}
-Angular momentum about the centre of mass of the system is also conserved. First, we need to determine the position of the centre of mass so that we can calculate the angular momentum. Referring to the figure, the $x$ component of the centre of mass moves with the velocity $\vec v_{CM}$, and the $y$ position is fixed. Right at the instant of the collision, the CM is on the stick, with $y$ coordinate given by:
-\begin{align*}
-y_{CM}=\frac{mL}{4(M+m)}
-\end{align*}
-where we have chosen the origin such that the $y$ position of the centre of mass of the stick is zero. The initial angular momentum comes from the hard candy (it strikes the stick with linear momentum perpendicular to the stick, so $L=rp$):
-\begin{align*}
-L_i&=mvr=mv\left(\frac{L}{4}-y_{CM}\right)\\
-&=mv\left(\frac{L}{4}-\frac{mL}{4(M+m)}\right)\\
-&=mv\left(\frac{L(M+m)}{4}-\frac{Lm}{4(M+m)}\right)\\
-&=mv\left(\frac{ML}{4(M+m)}\right)\\
-\end{align*}
-where we have taken into account the fact that the hard candy is moving perpendicular to the stick when it strikes. After the collision, the stick and hard candy form a system that rotates about their common centre of mass. The moment of inertia of the system is given by:
-\begin{align*}
-I &= I_m+I_M=m\left(\frac{L}{4}-y_{CM}\right)^2+\left(\frac{1}{12}ML^2+M y_{CM}^2\right)\\
-&=m\left(\frac{ML}{4(M+m)}\right)^2+\frac{1}{12}ML^2+M\left( \frac{mL}{4(M+m)}\right)^2\\
-&=\frac{mM^2L^2}{16(M+m)^2}+\frac{1}{12}ML^2+\frac{Mm^2L^2}{16(M+m)^2}\\
-&=\frac{ML^2}{(16)(12)(M+m)^2} (12Mm+16(M+m)^2)+12m^2)\\ 
-&=\frac{ML^2}{(16)(12)(M+m)^2} (12Mm+16M^2+32Mm+16m^2+12m^2)\\ 
-&=\frac{ML^2}{(16)(12)(M+m)^2} (16M^2+44Mm+28m^2)\\ 
-&=\frac{ML^2}{48(M+m)^2} (4M^2+11Mm+7m^2)\\ 
-&=\frac{ML^2}{48(M+m)} (4M+7m)\\ 
-\end{align*}
-By conservation of angular momentum, we have:
-\begin{align*}
-L_i &= I\omega\\
-mv\left(\frac{ML}{4(M+m)}\right) &=\frac{ML^2}{48(M+m)} (4M+7m)\omega\\
-mv &=\frac{L}{12}(4M+7m)\omega\\
-\therefore \omega &=\frac{12mv}{L(4M+7m)}
-\end{align*}
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% This question taken from http://oyc.yale.edu/sites/default/files/midterm_solutions_0.pdf
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%USe for quiz
-\question
-A bullet of mass $m$ is moving horizontally with velocity $v$ when it strikes the edge of a uniform horizontal disk with mass $M$ and radius $R$. The disk is anchored at its center but free to rotate about a vertical axis. Assume that the bullet struck the disk tangentially at its edge.
-\begin{parts}
-\part Which of energy, momentum, and angular momentum are conserved for the bullet+disk system? Explain.
-\part Find $\omega$, the angular velocity of the disk with respect to its centre, in terms of the given variables. Assume that the disk started at rest.
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item Only angular momentum is conserved.
-\item $\omega =\frac{mv}{\left(\frac{1}{2}M+m\right)R}$
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}  
-\begin{parts}
-\part Only angular momentum is conserved. The collision is an inelastic collision, so energy is not conserved.
-Momentum is not conserved because there is an external force acting at the centre of the disk that keeps
-the disk-bullet system from moving forward after the collision. Angular momentum is conserved because
-there are no external torques acting on the system. (The force acting at the center of the disk does not
-provide a torque because it is acting at the pivot point.)
-
-\part Since the disk started at rest, the initial angular momentum is that of the bullet:
-\begin{align*}
-L_i=\vec r\times\vec p
+K_i = \frac{1}{2}m_iv_i^2
 \end{align*} 
-where $\vec r$ is the location that the bullet strikes with respect to the centre of the disk, and $\vec p$ is the momentum of the bullet. Since the bullet strikes the disk tangentially, $\vec r$ and $\vec p$ are perpendicular, and we can write:
+We can sum the kinetic energy of each particle together to get the total rotational kinetic energy, $K_{rot}$, of the object:
 \begin{align*}
-L_i=rp=Rmv
+K_{rot} = \sum_i \frac{1}{2}m_iv_i^2
 \end{align*}
-After the collision, the bullet and disk form a single object with moment of inertia:
+Although each particle will have a different velocity, $\vec v_i$, they will all have the same angular velocity, $\vec\omega$. For any particle, located a distance $r_i$ from the axis of rotation, their velocity is related to the angular velocity of the object by:
 \begin{align*}
-I=\frac{1}{2}MR^2+mr^2=\left(\frac{1}{2}M+m\right)R^2
+\vec v_i &= \vec \omega \times \vec r_i\\
+v_i &= \omega r_i
 \end{align*}
-and angular momentum:
+where $\vec \omega$ and $\vec r_i$ are always perpendicular to each other, since $\vec\omega$ is out of the plane of the page. Furthermore, the velocity vector, $\vec v_i$, will always be perpendicular to $\vec r_i$, since all particles are moving in circles centred about the axis of rotation.  We can thus write the total rotational kinetic energy of the object using the angular speed:
 \begin{align*}
-L_f=I\omega
+K_{rot} &= \sum_i \frac{1}{2}m_iv_i^2 = \sum_i \frac{1}{2}m_ir_i^2\omega^2= \frac{1}{2} \omega^2 \sum_i m_ir_i^2\\
+&=\frac{1}{2}I\omega^2
 \end{align*}
-Since angular momentum is conserved, we can find the angular velocity of the disk and bullet after the collision:
+where we factored $\omega$ and the one half out of the sum, as these are the same for each particle $i$. We then recognized that the remaining sum is simply the definition of the object's moment of inertia about the axis:
 \begin{align*}
-L_i &= L_f\\
-Rmv &= I\omega\\
-\therefore \omega &= \frac{Rmv}{I}=\frac{Rmv}{\left(\frac{1}{2}M+m\right)R^2}\\
-&=\frac{mv}{\left(\frac{1}{2}M+m\right)R}
+I = \sum_i mr_i^2
 \end{align*}
-\end{parts}
-\end{solution}
 
-%%%%%%%%%%%%%%%%
-%Rolling
-%%%%%%%%%%%%%%
+Thus, the rotational kinetic energy of an object rotating with angular speed $\omega$ about an axis that is stationary in an inertial frame of reference is given by:
+\begin{align}
+\Aboxed{K_{rot}=\frac{1}{2}I\omega^2}
+\end{align}
+where $I$ is the object's moment of inertia about that axis. The rotational kinetic energy is functionally very similar to the linear kinetic energy; instead of mass, we use the moment of inertia, and instead of speed squared, we use angular speed squared. 
 
-\question A solid cylinder of mass $M$ and radius $R$ is placed on an incline that makes and angle $\theta=\SI{45}{\degree}$ with the horizontal, as shown at the top of Figure \ref{fig:angularmomentumrolling:CylinderIncline}.
-\begin{parts}
-\part What is the minimum coefficient of static friction between the cylinder and the incline that will allow the cylinder to roll down the incline without slipping?
-\part What is the acceleration vector of the centre of mass of the cylinder as it rolls down the incline?
-\part If the cylinder was released from a height $h=\SI{3.0}{m}$ above the ground (as shown), and it rolls down the incline without slipping, what is the velocity vector of point $A$ on the cylinder as shown in the bottom of Figure \ref{fig:angularmomentumrolling:CylinderIncline}?
-\part If the cylinder was released from a height $h=\SI{3.0}{m}$ above the ground (as shown), and it rolls down the incline without slipping, what is the velocity vector of point $B$ on the cylinder as shown in the bottom of Figure \ref{fig:angularmomentumrolling:CylinderIncline}?
-\end{parts}
-\capfig{0.4\textwidth}{figures/AngularMomentumRolling/CylinderIncline.png}{\label{fig:angularmomentumrolling:CylinderIncline} A cylinder rolling without slipping down an incline, before being released, and at the bottom.}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item 1/3
-\item $\SI{4.62}{m/s^2}$; points downwards and parallel to the plane
-\item $\SI{12.52}{m/s}$, horizontal and to the right.
-\item $\vec v_B=(\SI{6.26}{m/s})\hat i-(\SI{6.26}{m/s})\hat j$
+\subsection{Work on a rotating object}
+We can calculate the work done by a force exerted on an object rotating about a stationary axis in an inertial frame of reference. Let $\vec F$ be a force exerted at position, $\vec r$, relative to the axis of rotation at some instant in time, and let the force be exerted in the plane perpendicular to the axis of rotation, as illustrated in Figure \ref{fig:angularmomentumrolling:work}. Because the object is rotating about the given axis, only the component of the force that is tangent to the circle about which the point where the force is exerted can do work (only the component of the force that is parallel to the displacement can do work). 
+
+The work done by the force as the object rotates by a certain angle is given by:
+\begin{align*}
+W = \int \vec F \cdot d\vec l = \int F_\perp dl
+\end{align*}
+where $d\vec l$ is a small displacement along the (circular) path followed by the point where the force is exerted, as illustrated in Figure \ref{fig:angularmomentumrolling:work}. $F_\perp$ is the component of $\vec F$ that is perpendicular to the vector, $\vec r$, from the axis of rotation to the location where the force is exerted ($F_\perp$ is the component of $\vec F$ that is tangent to the circle).
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/work.png}{\label{fig:angularmomentumrolling:work}Calculating the work done by a force on a rotating object.}
+At some instant in time, when the force is exerted at position, $\vec r$, consider the scalar product between the torque from the force, $\vec \tau$, and an infinitesimal angular displacement, $d\vec \theta$, about the axis of rotation:
+\begin{align*}
+\vec\tau \cdot d\vec\theta = (\vec r \times \vec F) \cdot \left(\frac{1}{r^2} \vec r\times d\vec l\right)
+\end{align*}
+The vectors $\vec \tau$ and $d\vec \theta$ are parallel to the axis of rotation (because $\vec F$ and $d\vec l$ are in the plane perpendicular to the axis of rotation), so their scalar product will be equal to the product of their magnitudes. The vector $\vec r \times \vec F$ has a magnitude of:
+\begin{align*}
+\vec r \times \vec F = rF_\perp
+\end{align*} 
+where $F_\perp$ is the component of the force tangent to the circle. The vector $\vec r\times d\vec l$ has a magnitude:
+\begin{align*}
+\vec r\times d\vec l = rdl
+\end{align*}
+since $\vec r$ and $d\vec l$ are always perpendicular. The scalar product $\vec\tau \cdot d\vec\theta$ is thus equal to:
+\begin{align*}
+\vec\tau \cdot d\vec\theta = rF_\perp \frac{1}{r^2} rdl = F_\perp dl
+\end{align*}
+The work done by a force when an object rotates about an axis can thus be written in terms of its torque about that axis and the corresponding angular displacement from $\theta_1$ to $\theta_2$:
+\begin{align}
+W = \int_{\theta_1}^{\theta_2}\vec\tau\cdot d\vec \theta
+\end{align}
+
+The net work done on an object through an angular displacement from $\theta_1$ to $\theta_2$ can thus be written using the net torque $\pvec \tau^{net}$ exerted on the object:
+\begin{align*}
+W^{net} = \int_{\theta_1}^{\theta_2}\pvec\tau^{net}\cdot d\vec \theta
+\end{align*}
+We can re-arrange this using Newton's Second Law for rotational dynamics:
+\begin{align*}
+\pvec\tau^{net} &= I \vec\alpha\\
+&= I \frac{d\vec\omega}{dt} =  I \frac{d\omega}{d\theta}\frac{d\vec\theta}{dt}=I \frac{d\omega}{d\theta} \vec\omega
+\end{align*}
+which allows us to write the integral over a change in angular velocity instead of angular displacement:
+\begin{align*}
+W^{net} &= \int_{\theta_1}^{\theta_2}\pvec\tau^{net}\cdot d\vec \theta =  \int_{\theta_1}^{\theta_2}I \frac{d\omega}{d\theta} \vec\omega \cdot d\vec \theta\\
+&=\int_{\omega_1}^{\omega_2}I \omega d\omega = \frac{1}{2}I\omega_2^2 - \frac{1}{2}I\omega_1^2
+\end{align*}
+where we used the fact that $\vec\omega$ are $d\vec\theta$ are parallel. We thus find that the Work-Energy Theorem can also be applied to find the change in rotational kinetic energy resulting from the net work done by a torque:
+\begin{align}
+\Aboxed{W^{net}=\int_{\theta_1}^{\theta_2}\pvec\tau^{net}\cdot d\vec \theta = \Delta K_{rot}}
+\end{align}
+
+If a constant torque, $\vec\tau$, is exerted on an object that is rotating at constant angular velocity, $\vec\omega$, then the rate at which that work  is being done is given by:
+\begin{align*}
+P = \frac{dW}{dt} = \frac{d}{dt} \vec \tau \cdot d\vec\theta =  \vec \tau \cdot \frac{d\vec\theta}{dt} = \vec \tau \cdot \vec\omega
+\end{align*}
+This is very similar to the power, $P=\vec F\cdot \vec v$, with which a force does work on an object moving with constant velocity, except that instead of force we use torque, and instead of velocity, we use angular velocity. 
+
+\subsection{Total kinetic energy of an object}
+In the frame of reference of the centre of mass, an object rotating about an axis through its centre of mass with angular velocity, $\vec \omega$, will have rotational kinetic energy, $K_{rot}$, given by:
+\begin{align*}
+K_{rot}=\frac{1}{2}I_{CM}\omega^2
+\end{align*}
+where $I_{CM}$ is the moment of inertia of the object about the axis through its centre of mass. 
+
+We wish to determine the kinetic energy of the object in an inertial frame of reference where the object's centre of mass is moving with a velocity $\vec v_{cm}$; that is, in a frame where the axis of rotation is moving with the velocity of the centre of mass. We model the object as being composed of particles of mass, $m_i$, each located at position, $\vec r_i$, relative to the axis of rotation through the centre of mass. The velocity, $\vec v_i$, of a particle $i$, in this frame of reference, is given by:
+\begin{align*}
+\vec v_i = \vec\omega \times \vec r_i + \vec v_{CM}
+\end{align*}
+where $\vec\omega \times \vec r_i$ is the velocity of the particle as seen in the centre of mass (due to rotation). The kinetic energy of particle $i$, $K_i$, is given by:
+\begin{align*}
+K_i = \frac{1}{2}m_iv_i^2 = \frac{1}{2}m_i(\vec v_i\cdot \vec v_i)
+\end{align*}
+where we expressed the speed of the particle squared using a scalar product of the velocity of the particle with itself. The total kinetic energy of the object is found by summing the kinetic energies of all of the particles:
+\begin{align*}
+K_{tot} &= \sum \frac{1}{2}m_i(\vec v_i\cdot \vec v_i) \\
+&=\frac{1}{2} \sum_i m_i (\vec\omega \times \vec r_i + \vec v_{CM}) \cdot (\vec\omega \times \vec r_i + \vec v_{CM})\\
+&=\frac{1}{2} \sum_i m_i (\vec\omega \times \vec r_i)\cdot(\vec\omega \times \vec r_i ) + \frac{1}{2} \sum_i m_i (\vec v_{CM}) \cdot (\vec v_{CM}) + \sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})\\
+&=\frac{1}{2}  \sum_i m_i \omega^2r_i^2 + \frac{1}{2} \sum_i m_i v_{CM}^2 + \sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})\\
+&=\frac{1}{2} I_{CM}\omega ^2 + \frac{1}{2}M v_{CM}^2+\sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM})
+\end{align*} 
+where the first term is the rotational kinetic energy that we found earlier. The second term, called the ``translational kinetic energy'', can be thought of as the kinetic energy of the whole system with mass $M=\sum m_i$, due to the translational motion of the centre of mass. The last term is identically zero; we can re-order the scalar product and factor $\vec v_{CM}$ out of the sum:
+\begin{align*}
+\sum_i m_i (\vec\omega \times \vec r_i) \cdot (\vec v_{CM}) &= (\vec v_{CM}) \cdot \sum_i m_i (\vec\omega \times \vec r_i)\\
+&=(\vec v_{CM}) \cdot \sum_i m_i \pvec v'_{i}
+\end{align*}
+where $v'_{i} = \vec\omega \times \vec r_i$ is the velocity of particle $i$ in the center of mass frame of reference. But the sum:
+\begin{align*}
+\sum_i m_i \pvec v'_{i}
+\end{align*}
+is the numerator for the definition of the velocity of the centre of mass, which, in the centre of mass frame of reference is identically zero!
+
+Thus, the total kinetic energy of an object of mass, $M$, that is rotating about an axis through its centre of mass with angular velocity, $\omega$, and whose centre of mass is moving with velocity, $\vec v_{CM}$, is given by:
+\begin{align}
+\Aboxed{K_{tot}=K_{rot}+K_{trans}=\frac{1}{2} I_{CM}\omega ^2 + \frac{1}{2}M v_{CM}^2} 
+\end{align}
+The total kinetic energy can be thought of as the sum of the rotational and kinetic energies.
+
+
+\section{Rolling motion}
+In this section, we examine how to model the motion of an object that is rolling along a surface, such as the motion of a bicycle wheel. Consider the motion of a wheel of radius, $R$, rotating with angular velocity, $\vec\omega$, about an axis perpendicular to the wheel and through its centre of mass, \textbf{as observed in the centre of mass frame}. This is illustrated in Figure \ref{fig:angularmomentumrolling:wheelcm}.
+\capfig{0.3\textwidth}{figures/AngularMomentumRolling/wheelcm.png}{\label{fig:angularmomentumrolling:wheelcm}A wheel rotating with angular velocity $\vec\omega$ about an axis through its centre of mass.}
+In the frame of reference of the centre of mass, each point on the edge of the wheel has a velocity, $\vec v_{rot}$, due to rotation given by:
+\begin{align*}
+\vec v_{rot} = \vec \omega\times \vec r 
+\end{align*}
+where $\vec r$ is a vector (of magnitude $R$) from the centre of mass to the corresponding point on the edge of the wheel (shown in Figure \ref{fig:angularmomentumrolling:wheelcm} for a point on the lower left of the wheel). The vector $\vec r$ is always perpendicular to $\vec \omega$, so that the speed of all points on the edge, as measured in the frame of reference of the centre of mass, is the same:
+\begin{align}
+\label{eq:angularmomentumrolling:vrot}
+v_{rot} = \omega R
+\end{align} 
+as illustrated in Figure \ref{fig:angularmomentumrolling:wheelcm}.
+
+Now, suppose that the whole wheel is moving, as it rolls on the ground, such that the centre of mass of the wheel moves with a velocity, $\vec v_{CM}$, as illustrated in Figure \ref{fig:angularmomentumrolling:wheelground}.
+\capfig{0.95\textwidth}{figures/AngularMomentumRolling/wheelground.png}{\label{fig:angularmomentumrolling:wheelground}A wheel rolling without slipping on the ground, with the centre of mass moving with velocity $\vec v_{CM}$. The wheel is shown at different instants in time, as the point shown in red moves around the centre of mass.}
+In the frame of reference of the ground, each point on the edge of the wheel will have a velocity $\vec v$ given by:
+\begin{align*}
+\vec v = \vec v_{rot} + \vec v_{CM}
+\end{align*}
+That is, in the frame reference of the ground, each point will have a velocity obtained by (vectorially) adding its velocity relative to the centre of mass, $\vec v_{rot}$, and the velocity of the centre of mass relative to the ground, $\vec v_{CM}$. This is illustrated in Figure \ref{fig:angularmomentumrolling:wheelground} for one specific point, shown in red. The red vector corresponds to the velocity of the red point as the wheel rotates, and is obtained by adding the velocity of the centre of mass, $\vec v_{CM}$, and the velocity, $\vec v_{rot}$, relative to the centre of mass (shown as the dashed vector, tangent to the edge of the wheel). 
+
+Consider, specifically, the instant in time when the red point is at the bottom of the wheel, where the wheel makes contact with the ground. \textbf{If the wheel is not slipping with respect to the ground}, then the point is, at that instant, at rest relative to the ground. We call this type of motion ``rolling without slipping''; the point on the rotating object that is in contact with the ground is instantaneously at rest relative to the ground. This is the scenario illustrated in Figure \ref{fig:angularmomentumrolling:wheelground}.
+
+For the point in contact with the ground, the vectors $\vec v_{rot}$ and $\vec v_{CM}$ are anti-parallel, horizontal, and must sum to zero. Writing out the horizontal component of the velocity of that point (choosing the positive direction to be in the direction of the velocity of the centre of mass):
+\begin{align*}
+v &= -v_{rot} + v_{CM} = 0\\
+\therefore v_{rot} &= v_{CM}
+\end{align*}
+and we find that, for rolling without slipping, the speed due to rotation about the centre of mass has to be equal to the speed of the centre of mass. The speed due to rotation about the centre of mass can be expressed using the angular velocity of the wheel about the centre of mass (Equation \ref{eq:angularmomentumrolling:vrot}). For rolling without slipping, we thus have the following relationship between angular velocity and the speed of the centre of mass:
+\begin{align}
+\Aboxed{\omega R &= v_{CM}}\quad \text{(rolling without slipping)}
+\end{align}
+It makes sense for the angular velocity to be related to the speed of the centre of mass. The faster the wheel rotates, the faster the centre of mass will move. If the wheel is slipping with respect to the ground, then the point of contact is no longer stationary relative to the ground, and there is no relation between the angular velocity and the speed of the centre of mass. For rolling with slipping, imagine the motion of your bicycle wheel as you try to ride your bike on a slick sheet of ice.
+
+For rolling without slipping, the magnitude of the linear acceleration of the centre of mass, $a_{CM}$, is similarly related to the magnitude of the angular acceleration of the wheel, $\alpha$, about the centre of mass:
+\begin{align*}
+a_{CM} &= \frac{dv_{CM}}{dt} = \frac{d}{dt}\omega R = R \frac{d\omega}{dt}\\
+\therefore a_{CM} &= R\alpha
+\end{align*}
+
+\begin{checkpoint}
+\begin{MCquestion}{For rolling without slipping (Figure \ref{fig:angularmomentumrolling:wheelground}), the speed of the point on the wheel that is in contact with the ground is 0. What is the speed of the point at the top of the wheel?}
+\item 0.
+\item $v_{CM}$.
+\item $2v_{CM}$.\correct
+\item None of the above.
+\end{MCquestion}
+\end{checkpoint}
+
+
+\begin{example}{\capfig{0.5\textwidth}{figures/AngularMomentumRolling/diskslope.png}{\label{fig:angularmomentumrolling:diskslope}A disk rolling without slipping down an incline.} A disk of mass $M$ and radius $R$ is placed on an incline at a height $h$ above the ground. The incline makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:angularmomentumrolling:diskslope}. If the disk starts at rest and rolls without slipping down the incline, what speed will the centre of mass have when the disk reaches the bottom of the incline? }
+We can use the conservation of mechanical energy to determine the speed of the centre of mass at the bottom of the incline, as there are no non-conservative forces doing work on the disk. If we choose to define gravitational potential energy such that it is zero at the bottom of the incline, we can write the total mechanical energy of the disk at the top of the incline as:
+\begin{align*}
+E = K+U=(0)+Mgh
+\end{align*}
+where the kinetic energy is zero, since the disk starts at rest\footnote{Technically, the potential energy should be taken for the height of the centre of mass, which is a distance $h_{CM}=h+R\cos\theta$ from the ground at the top of the incline, and a height $h'_{CM}=R$ at the bottom of the incline. The net difference in height for the centre of mass is thus $h_{CM}-h'_{CM} = h+R(1-\cos\theta)$. If we assume that $h$ is much bigger than $R$, then this is negligible, otherwise, that is what we should use instead of $h$ for the potential energy.}. At the bottom of the incline, the disk will have only kinetic energy, since the potential energy at the bottom is defined to be zero. The kinetic energy of the disk will have a component from the rotation of the disk about the centre of mass, with angular speed $\omega$, and a component from the translation of the centre of mass with speed $v_{CM}$. The mechanical energy at the bottom of the incline is thus:
+\begin{align*}
+E' = K' + U = K'_{rot}+K'_{trans}+(0)=\frac{1}{2}I_{CM}\omega^2 + \frac{1}{2}Mv_{cm}^2
+\end{align*}
+Since the disk is rolling without slipping, its angular speed is related to the speed of centre of mass:
+\begin{align*}
+\omega = \frac{v_{CM}}{R}
+\end{align*}
+The moment of inertia of the disk about its centre of mass is given by:
+\begin{align*}
+I_{CM}=\frac{1}{2}MR^2
+\end{align*}
+We can thus write the mechanical energy at the bottom of the incline as:
+\begin{align*}
+E' &= \frac{1}{2}I_{CM}\omega^2 + \frac{1}{2}Mv_{cm}^2\\
+&=\frac{1}{2}\left(  \frac{1}{2}MR^2 \right) \left(  \frac{v_{CM}}{R}\right)^2+ \frac{1}{2}Mv_{cm}^2\\
+&=\frac{3}{4}Mv_{cm}^2
+\end{align*}
+Applying conservation of energy allows us to determine the speed of the centre of mass at the bottom of the incline:
+\begin{align*}
+E &= E'\\
+Mgh &= \frac{3}{4}Mv_{cm}^2\\
+\therefore v_{CM} &= \sqrt{\frac{4}{3}gh}
+\end{align*}
+
+\textbf{Discussion:} This example showed how we can use the conservation of energy to model the motion of an object that is rolling without slipping. The constraint of rolling without slipping allowed for the angular speed of the object to be related to the speed of its centre of mass.
+\end{example}
+
+\begin{checkpoint}
+\begin{MCquestion}{A hoop, a disk, and a sphere roll without slipping down an incline. If they are all released at the same time, in what order will they arrive at the bottom?}
+\item Hoop, disk, sphere.
+\item Sphere, disk, hoop. \correct
+\item Disk, sphere, hoop.
+\item Disk, hoop, sphere.
+\end{MCquestion}
+\end{checkpoint}
+
+\subsection{The instantaneous axis of rotation}
+
+When an object is rolling without slipping, we can model its motion as the superposition of rotation about the centre of mass and translational motion of the centre of mass, as in the previous section. However, because the point of contact between the rolling object and the ground is stationary, we can also model the motion as if the object were instantaneously rotating with angular velocity, $\vec \omega$, about a stationary axis through the point of contact. That is, we can model the motion as rotation only, with no translation, if we choose an axis of rotation through the point of contact between the ground and the wheel.
+
+We call the axis through the point of contact the ``instantaneous axis of rotation'', since, instantaneously, it appears as if the whole wheel is rotating about that point. This is illustrated in Figure \ref{fig:angularmomentumrolling:wheelinstant}, which shows, in red, the velocity vector for each point on the edge of the wheel, relative to the instantaneous axis of rotation. Because the axis of rotation is fixed to the ground, the velocity of each point about that axis of rotation corresponds to the same velocity relative to the ground that is depicted in Figure \ref{fig:angularmomentumrolling:wheelground}.
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/wheelinstant.png}{\label{fig:angularmomentumrolling:wheelinstant}A wheel that is rolling without slipping, as viewed if rotating about the instantaneous axis of rotation that passes through the point of contact with the ground.}
+In particular, the angular velocity, $\vec \omega$, about the instantaneous axis of rotation is the same as when we model the motion as translation plus rotation about the centre of mass ,as in the previous section. Indeed, relative to the instantaneous axis of rotation, the centre of mass must still have a velocity $\vec v_{CM}$, which is given by:
+\begin{align*}
+\vec v_{CM} &= \vec\omega \times \vec r_{CM}\\
+\therefore v_{CM} &= \omega R
+\end{align*}
+where $\vec r_{CM}$ is the vector from the axis of rotation to the centre of mass. This is the same condition for rolling without slipping that we found before. Similarly, the velocity of any point on the wheel, relative to the ground, is given by:
+\begin{align*}
+\vec v = \vec\omega \times \vec r
+\end{align*}
+where $\vec r$ is the vector from the axis of rotation to the point of interest (shown in Figure \ref{fig:angularmomentumrolling:wheelinstant} for the point on the right side of the wheel). In particular, the velocity vector (in red) for any point is always perpendicular to the vector $\vec r$ for that point, which was not necessarily obvious when modelling the motion as rotation plus translation, as in Figure \ref{fig:angularmomentumrolling:wheelground}.
+
+
+\begin{example}{\capfig{0.5\textwidth}{figures/AngularMomentumRolling/diskslope.png}{\label{fig:angularmomentumrolling:diskslope2}A disk rolling without slipping down an incline.}A disk of mass $M$ and radius $R$ is placed on an incline at a height $h$ above the ground. The incline makes an angle $\theta$ with respect to the horizontal, as shown in Figure \ref{fig:angularmomentumrolling:diskslope2}. What is the angular acceleration of the disk, about an axis through its centre of mass, as it rolls without slipping down the slope?}
+In order to determine the angular acceleration of the disk about the centre of mass, we need to model the forces that are exerted on the disk. The forces exerted on the disk are:
+\begin{enumerate}
+\item $\vec F_g$, the weight of the disk, exerted downwards at the centre of mass, with magnitude $Mg$.
+\item $\vec N$, a normal force perpendicular to the incline, exerted by the incline at the point of contact with the disk.
+\item $\vec f_s$, a force of static friction parallel to the incline, exerted by the incline at the point of contact with the disk. Without this force, the disk would simply slide down the incline without rotating. 
 \end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part Figure \ref{fig:angularmomentumrolling:CylinderIncline_FBD} shows the forces and their point of application on the cylinder. The only three forces are the normal force ($\vec N$), the weight ($M\vec g$), and the force of static friction ($\vec f_s$).
-\capfig{0.2\textwidth}{figures/AngularMomentumRolling/CylinderIncline_FBD.png}{\label{fig:angularmomentumrolling:CylinderIncline_FBD} }
+These forces are illustrated in Figure \ref{fig:angularmomentumrolling:diskslope_fbd}, along with the acceleration of the centre of mass, and our choice of coordinate system (we choose the $x$ axis parallel to the acceleration of the centre of mass, to facilitate applying Newton's Second Law). 
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/diskslope_fbd.png}{\label{fig:angularmomentumrolling:diskslope_fbd}The forces on the disk rolling without slipping down an incline.}
 
-If we use the centre of mass of the cylinder as the rotation point, then only static friction provides a torque:
+The angular acceleration of the disk about the centre of mass, $\vec \alpha$ is given by Newton's Second Law for rotational dynamics:
 \begin{align*}
-\sum \tau &= f_sR=I\alpha=\frac{1}{2}MR^2\alpha\\
-\therefore f_s=\frac{1}{2}MR\alpha
+\pvec\tau^{ext} = I_{CM}\vec\alpha
 \end{align*}
-We choose a coordinate system such that $x$ is parallel to the acceleration of the centre of mass (positive downwards parallel to the incline) and $y$ is perpendicular to the plane and positive upwards. The sum of the forces in the $x$ and $y$ directions are:
-\begin{align*}
-\sum F_x&=Mg\sin\theta-f_s=Ma_{CM}\\
-\sum F_y&=N-Mg\cos\theta = 0\\
- N&=Mg\cos\theta\
-\end{align*}
-From the $y$ equation, we can solve for the normal force in terms of the weight, and us $f_s=\mu_sN$ in the $x$ equation:
-\begin{align*}
-Mg\sin\theta-\mu_sMg\cos\theta&=Ma_{CM}\\
-\therefore g(\sin\theta-\mu_s\cos\theta) &=a_{cm}
-\end{align*}
-Since this is rolling without slipping, we have $a_{CM}=\alpha R$:
-\begin{align*}
-g(\sin\theta-\mu_s\cos\theta) &=\alpha R\\
-\therefore \alpha &=\frac{g}{R}(\sin\theta-\mu_s\cos\theta)
-\end{align*}
-Re-writing the equation that we had from the torque:
-\begin{align*}
-f_s&=\mu_sMg\cos\theta=\frac{1}{2}MR\alpha\\
-\therefore \alpha&=2\mu_sg\cos\theta\frac{1}{R}
-\end{align*}
-Combining the two expressions for $\alpha$ gives:
-\begin{align*}
-\sin\theta-\mu_s\cos\theta &= 2\mu_s\cos\theta\\
-\sin\theta &=  3\mu_s\cos\theta\\
-\therefore \mu_s &= \frac{1}{3}\tan\theta=\frac{1}{3}\tan(\SI{45}{\degree})=\frac{1}{3}
-\end{align*}
-\part The acceleration vector points downwards and parallel to the plane. Its magnitude is given by:
-\begin{align*}
-a_{CM}&=\alpha R=\frac{2}{3}g\tan\theta\cos\theta\\
-&=\frac{2}{3}(\SI{9.8}{m/s^2})\tan(\SI{45}{\degree})\cos(\SI{45}{\degree})=\SI{4.62}{m/s^2}
-\end{align*}
-\part We can use conservation of energy and determine the speed of the centre of mass of the cylinder at the bottom of the incline. The centre of mass potential energy at the top is $Mgh$ and zero at the bottom. The kinetic energy is zero at the top and has linear and rotational components at the bottom:
-\begin{align*}
-Mgh &= \frac{1}{2}Mv_{CM}^2+\frac{1}{2}I\omega^2
-\end{align*}
-Since the cylinder rolls without slipping, $v_{cm}=\omega R$:
-\begin{align*}
-Mgh &= \frac{1}{2}Mv_{CM}^2+\frac{1}{2}I\frac{v^2_{CM}}{R^2}\\
-Mgh &= \frac{1}{2}Mv_{CM}^2+\frac{1}{2}\frac{1}{2}MR^2\frac{v^2_{CM}}{R^2}\\
-gh &= \frac{1}{2}v_{CM}^2+\frac{1}{4}Mv^2_{CM}\\
-gh &= \frac{3}{4}v_{CM}^2\\
-\therefore v_{CM}&=\sqrt{\frac{4}{3}gh}=\sqrt{\frac{4}{3}(\SI{9.8}{m/s^2})\SI{3.0}{m}}=\SI{6.26}{m/s}
-\end{align*}
-For rolling without slipping, point A has a velocity that is horizontal and to the right, with magnitude:
-\begin{align*}
-v_A=2v_{CM}=2\sqrt{\frac{4}{3}gh}= 2(\SI{6.26}{m/s}) =\SI{12.52}{m/s}
-\end{align*}
-\part For point B, we need to vectorially add the velocity of the centre of mass to the tangential velocity from rolling. We choose a coordinate system where $x$ is horizontal and positive to the right, and $y$ is positive upwards. Thus the velocity of point B is:
-\begin{align*}
-\vec v_B&=v_{CM}\hat i- \omega R\hat j=v_{CM}\hat i- v_{CM}\hat j\\
-&=(\SI{6.26}{m/s})\hat i-(\SI{6.26}{m/s})\hat j
-\end{align*}
-\end{parts}
-\end{solution}
+where $\pvec\tau^{ext}$ is the net external torque on the disk about the centre of mass (which will be in the negative $z$ direction).
 
-%Zaremba 2003 Final exam
-\question A flat circular disk of radius $R$ and mass $M$ has a string wrapped around its rim and is laid flat on a horizontal frictionless table, as in Figure \ref{fig:angularmomentumrolling:DiskAndMass}. The string passes over a frictionless massless pulley and a mass $m$ is suspended from the end. 
-\capfig{0.5\textwidth}{figures/AngularMomentumRolling/DiskAndMass.png}{\label{fig:angularmomentumrolling:DiskAndMass}A disk on frictionless table being pulled on by a falling mass}
-\begin{parts}
-\part What are the linear accelerations of the centre of mass of the disk and of the mass $m$, and the angular acceleration of the disk?
-\part What is the angular speed of the disk after it has completed one revolution (assuming the system was released from rest)?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item $a_M=\frac{m}{M+(3/2)m}g$; $a_m=\frac{3m}{2M+3m}g$
-\item $\omega =\sqrt{4\pi\frac{m}{M+\frac{3}{2}m}\frac{g}{2R}}$
+The only force that can exert a torque about the centre of mass is the force of static friction. Gravity has a lever arm of zero and the normal force is anti-parallel to the vector that goes from the centre of mass to the point where the force is exerted. The net torque about the centre of mass is thus:
+\begin{align*}
+\pvec\tau^{ext} = \vec \tau_{f_s} = \vec r_{f_s}\times \vec f_s= -Rf_s\hat z
+\end{align*}
+The angular acceleration will thus be in the negative $z$ direction, and the magnitude is given by:
+\begin{align*}
+\alpha = \frac{\tau^{ext}}{I_{CM}}=\frac{Rf_s}{\frac{1}{2}MR^2}=\frac{2f_s}{MR}
+\end{align*} 
+However, we do not know the magnitude of the force of static friction. We can use the $x$ and $y$ components of Newton's Second Law to determine it (with acceleration of the centre of mass in the $x$ direction):
+\begin{align*}
+\sum F_x &= F_g\sin\theta - f_s = Ma_{CM}\\
+\sum F_y &= N - F_g\cos\theta = 0
+\end{align*}
+Because the disk is rolling without slipping, the acceleration of the centre of mass is related to the angular acceleration of the disk:
+\begin{align*}
+a_{cm} = \alpha R
+\end{align*}
+The $x$ component of Newton's Second Law can thus be used to determine the magnitude of the force of static friction in terms of the angular acceleration:
+\begin{align*}
+Mg\sin\theta - f_s &= M \alpha R\\
+\therefore f_s &= Mg\sin\theta - M\alpha R
+\end{align*}
+We can then substitute out the force of friction from our previous formula for the angular acceleration:
+\begin{align*}
+\alpha &= \frac{2f_s}{MR}\\
+&=\frac{2Mg\sin\theta - 2M\alpha R}{MR} = \frac{2g\sin\theta}{R} - 2\alpha \\
+\therefore \alpha &= \frac{2g\sin\theta}{3R}
+\end{align*}
+
+Instead of modelling the motion of the disk  as rotation about the centre of mass and translation of the center of mass, we can also model it about the instantaneous axis of rotation.
+
+The angular acceleration about the instantaneous axis of rotation will be the same as the angular acceleration about the centre of mass. About the instantaneous axis of rotation, only the force of gravity can exert a torque, since the normal force and the force of friction both have a lever arm of zero. The torque from the force of gravity, about the instantaneous axis of rotation is:
+\begin{align*}
+\vec \tau_g = -F_gR\sin\theta \hat z = -MgR\sin\theta \hat z 
+\end{align*}
+The torque from the force of gravity is equal to the moment of inertia of the disk about the instantaneous axis of rotation, $I$, multiplied by its angular acceleration:
+\begin{align*}
+\tau ^{ext} = \tau_g &= I\alpha\\
+\therefore \alpha &= \frac{\tau_g}{I} = \frac{MgR\sin\theta}{I}
+\end{align*}
+The moment of inertia about the instantaneous axis of rotation is easily found using the parallel axis theorem:
+\begin{align*}
+I = I_{CM}+MR^2 = \frac{1}{2}MR^2 + MR^2 =\frac{3}{2}MR^2
+\end{align*}
+This allows us to find the angular acceleration of the disk:
+\begin{align*}
+\alpha &= \frac{MgR\sin\theta}{I} = \frac{MgR\sin\theta}{\frac{3}{2}MR^2}\\
+&=\frac{2g\sin\theta}{3R}
+\end{align*}
+as we found previously, but in this case, we did not need to use Newton's Second Law to determine the force of friction. 
+
+\textbf{Discussion:} We saw that we can model the dynamics of the rolling body using either an axis through the centre of mass, or an axis through the instantaneous axis of rotation. The latter was easier in this case, because it did not require using Newton's Second Law.
+
+By using an axis through the centre of mass to model the motion of the disk, it was clear that the force of static friction is required in order for the disk to rotate. Without the force of static friction, the disk would slide along the surface of the incline. The disk could still rotate if there is a force of kinetic friction that causes a torque that rotates the disk. If the surface were completely frictionless, the disk would simply slide down the incline, and we could model it as a sliding block. If the incline is too steep the force of static friction is no longer sufficient to provide the necessary torque required for the angular acceleration to be that which corresponds to rolling without slipping, and the disk would slip.
+\end{example}
+
+\section{Angular momentum}
+In this section, we show that we can define a quantity called ``angular momentum'' as the rotational equivalent of the linear momentum.
+\subsection{Angular momentum of a particle}
+The angular momentum relative to a point of rotation, $\vec L$, of a particle with linear momentum, $\vec p$, is defined as:
+\begin{align}
+\Aboxed{\vec L = \vec r\times \vec p}
+\end{align}
+where $\vec r$ is the vector from the point of rotation to the particle, and the linear momentum, $\vec p$, is defined relative to an inertial frame of reference in which the point of rotation is at rest.
+
+Consider the time-derivative of angular momentum (where we have to use the product rule for derivatives):
+\begin{align*}
+\frac{d\vec L}{dt}  &= \frac{d}{dt} (\vec r\times \vec p)\\
+&=\frac{d\vec r}{dt}\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
+&=\vec v\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
+\end{align*}
+The first term is zero, since $\vec v$ is parallel to $\vec p$ by definition. Recall Newton's Second Law written using linear momentum:
+\begin{align*}
+\frac{d\vec p}{dt} = \pvec F^{net}
+\end{align*}
+where $\pvec F^{net}$ is the net force on the particle relative to the point of rotation. The rate of change of angular momentum is thus given by:
+\begin{align*}
+\frac{d\vec L }{dt} &= \vec r\times\frac{d\vec p}{dt}\\
+&=\vec r\times\pvec F^{net}
+\end{align*}
+where the term on the right is the net torque on the particle. Thus, the rate of change of angular momentum is given by:
+\begin{align}
+\Aboxed{\frac{d\vec L}{dt}   = \pvec \tau^{net}}
+\end{align}
+which is analogous to the linear case, but we used angular momentum instead of linear momentum and net torque instead of net force. The net torque on a particle is thus equal to the rate of change of its angular momentum. In particular, the angular momentum of a particle will remain constant (not change with time) if the net torque on the particle is zero. 
+
+We can also define the angular momentum of a particle using only angular quantities:
+\begin{align*}
+\vec L = \vec r \times \vec p =  m \vec r \times \vec v = mr^2 \vec\omega
+\end{align*}
+where we factored the mass $m$ out of the momentum and used the definition $\vec \omega = 1/r^2(\vec r \times \vec v)$. We can think of $mr^2$ as the moment of inertia, $I$, of the particle and write:
+\begin{align}
+\label{eq:angularmomentumrolling:liw}
+\Aboxed{\vec L  = mr^2 \vec\omega = I \vec\omega}
+\end{align}
+which is a close analogue to the definition of linear momentum, but we use moment of inertia instead of mass and angular velocity instead of velocity. 
+
+The angular momentum is thus parallel to the angular velocity of the particle about the point of rotation. If no net torque is exerted on the particle about that point, then the particle's angular momentum about that point will remain constant. We can also consider the torque and angular momentum about an axis instead of a point; in that case, we would simply take the components of torque and angular momentum that are parallel to that axis. 
+
+\vspace{-0.35cm}
+\begin{example}{\capfig{0.25\textwidth}{figures/AngularMomentumRolling/circle.png}{\label{fig:angularmomentumrolling:circle}A small block attached to a mass-less string moving in a horizontal circle on a table.}
+A small block of mass $m$ attached to a mass-less string is moving along a circle of radius $R$ on a horizontal table, as depicted from above in Figure \ref{fig:angularmomentumrolling:circle}. If the table is frictionless: are the block's linear and/or angular momentum with respect to the axis of rotation conserved? If there is friction between the table and the block, are the block's linear and/or angular momentum with respect to the axis of rotation conserved? What can you say about the kinetic energy of the block in the two cases?}
+
+If there is no friction between the block and the table, then the forces exerted on the block are:
+\begin{enumerate}
+\item $\vec F_g$, the block's weight, exerted downwards, with magnitude $mg$.
+\item $\vec N$, a normal force, exerted upwards, with magnitude $mg$.
+\item $\vec T$, a force of tension, exerted towards the centre of the circle.
 \end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part On the disk, the vertical forces (gravity and normal) just cancel, and since the table is frictionless, we do not need to use the normal force. The only other force on the disk is the tension from the string un-winding. The forces on the disk and mass are shown in Figure \ref{fig:angularmomentumrolling:DiskAndMass_FBD}.
-\capfig{0.2\textwidth}{figures/AngularMomentumRolling/DiskAndMass_FBD.png}{\label{fig:angularmomentumrolling:DiskAndMass_FBD}Forces on the disk (seen from above) and the falling mass.}
-Newton's Second Law, in the horizontal plane for the disk gives:
+All of these forces are perpendicular to the (tangential) displacement of the block along the circle. Thus, there can be no work done on the block and its speed, $v$, must remain constant. The kinetic energy of the block must thus remain constant.
+
+The sum of the forces on the block must be towards the centre of the circle, since the block is in uniform circular motion. The linear momentum of the block cannot be conserved if there is a net force on the block (and clearly, the block's velocity vector changes direction as it goes around the circle). 
+
+The forces of weight and the normal force are both outside of the plane of motion, and thus cannot exert a torque along the axis of rotation. They are also equal and opposite in magnitude so the net torque from those two forces is always zero (since the net force from those forces is zero). The force of tension is always anti-parallel to the vector $\vec r$, from the axis of rotation to the particle, and cannot result in a torque about the rotation axis. Thus, the net torque on the block is zero and its angular momentum must be conserved. 
+
+If there is kinetic friction exerted by the table on the block, then there is an additional force, $\vec f_s$, exerted on the block in the direction opposite of motion (tangent to the circle, in the opposite direction from the block's velocity). 
+
+The force of friction will do negative work on the block, slowing it down and reducing its kinetic energy, which is no longer conserved. The net force on the block is non-zero, so its linear momentum is still not conserved. Finally, the force of friction, which is always perpendicular to $\vec r$, will result in a torque that reduces the angular velocity of the block. The block's angular momentum is thus no longer conserved when there is friction between the table and the block.
+
+\textbf{Discussion: }In this example, we saw that kinetic energy, linear momentum, and angular momentum are all conserved under different conditions. Kinetic energy is conserved if no net work is done on the block. Linear momentum is conserved if the net force on the block is zero. Angular momentum is conserved if the net torque on the block is zero. By introducing angular momentum, we are able to use a new conserved quantity to help us model rotational dynamics.
+\end{example} 
+
+\begin{example}{\capfig{0.3\textwidth}{figures/AngularMomentumRolling/line.png}{\label{fig:angularmomentumrolling:line}A particle moving in a straight line.} A particle is moving with constant velocity $\vec v$ (in a straight line) relative to a coordinate system in an inertial frame of reference, as shown in Figure \ref{fig:angularmomentumrolling:line}. Show that its angular momentum about the origin is conserved. }
+
+In this case, the particle is moving in a straight line, but we can still define its angular momentum relative to the origin. If $\vec r$ is the position vector of the particle relative to the origin, its angular momentum is:
 \begin{align*}
-T=Ma_{M}
+\vec L = \vec r \times \vec p
 \end{align*}
-where $a_M$ is the acceleration of the centre of mass of the disk. If we now write the sum of torques on the disk, we obtain:
+We can take the time derivative of the angular momentum to see if it changes with time:
 \begin{align*}
-\sum \tau &= TR = I\alpha = \frac{1}{2}MR^2\alpha\\
-\therefore T &= \frac{1}{2}MR\alpha
+\frac{d\vec L}{dt} = &= \frac{d}{dt} (\vec r\times \vec p)\\
+&=\frac{d\vec r}{dt}\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
+&=\vec v\times \vec p + \vec r\times\frac{d\vec p}{dt}\\
 \end{align*}
-Equating the values of $T$ with that obtained from the forces, we can find the relation between the angular and linear acceleration of the disk:
+The first term is zero because $\vec v$ and $\vec p$ are parallel (so their cross-product must be zero). The second term is zero because the particle's momentum is constant in time (since its velocity is constant). Thus, the particle's angular momentum does not change with time, and it is conserved.  
+
+\textbf{Discussion:} Of course, we expected this result since no net torque is exerted on the particle. It is however worth highlighting that a particle does not need to be rotating for its angular momentum about a given axis to be defined or conserved; all that matters is that there is no net torque on the particle relative to that axis.
+\end{example} 
+ 
+\subsection{Angular momentum of an object or system}
+Consider a system made of many particles of mass, $m_i$, each with a position, $\vec r_i$, and velocity, $\vec v_i$, relative to a point of rotation that is fixed in an inertial frame of reference. 
+
+We can write Newton's Second Law using the angular momentum, $\vec L_i$, for particle $i$:
 \begin{align*}
-Ma_{M} &= \frac{1}{2}MR\alpha\\
-\therefore \alpha &=\frac{1}{2}\frac{a_M}{R}
+\frac{d\vec L_i}{dt} = \pvec \tau_i^{net}
 \end{align*}
-The acceleration of the falling mass is the same as that of the string, which itself has the same acceleration as the point where it meets the disk. The acceleration of the point on the disk where the string is attached is given by:
+where $\pvec \tau_i^{net}$ is the net torque exerted on particle $i$. We can sum each side of this equation for all of the particles in the system:
 \begin{align*}
-a_m=\alpha R+a_M=\frac{3}{2}a_M
+\frac{d\vec L_1}{dt} + \frac{d\vec L_2}{dt} + \frac{d\vec L_3}{dt} + \dots &= \pvec \tau_1^{net} + \pvec \tau_2^{net} +\pvec \tau_3^{net} + \dots\\
+\therefore \frac{d}{dt} \sum_i\vec L_i &= \sum_i \pvec \tau_i^{net}
 \end{align*}
-The sum of the forces on the falling mass is given by:
+The sum of all of the torques on all of the particles will include a sum over torques that are internal to the system and torques that are external to the system. The sum over internal torques is zero:
 \begin{align*}
-mg-T&=ma_m=\frac{3}{2}a_M\\
-\therefore T&=mg-\frac{3}{2}a_Mma_M
+\sum_i \pvec\tau_i^{net} = \sum_i \pvec\tau_i^{int} + \sum_i \pvec\tau_i^{ext} = \sum_i \pvec\tau_i^{ext} = \pvec\tau^{ext}
 \end{align*}
-We can equate this for the expression for $T$ that we obtained from the sum of the forces on the disk to obtain the linear acceleration of the centre of mass of the disk:
+where we defined, $\pvec\tau^{ext}$, to be the net external torque exerted on the system. We also introduce the total angular momentum of the system, $\vec L$, as the sum of the angular momenta of the individual particles:
 \begin{align*}
-Ma_M &= mg-\frac{3}{2}a_Mma_M\\
-\left(M+\frac{3}{2}m\right) a_M &= mg\\
-\therefore a_M&=\frac{m}{M+\frac{3}{2}m}g\
+\vec L = \sum_i\vec L_i
 \end{align*}
-The acceleration of the falling block and the angular acceleration of the disk are given by:
+The rate of change of the total angular momentum of the system is then given by:
+\begin{align}
+\Aboxed{\frac{d\vec L}{dt} = \pvec \tau^{ext}}
+\end{align}
+
+Up to this point, we did not require that the system be a solid object, so the particles in the system can move relative to each other. For example, the particles could be the Sun, planets, and everything else that is in our Solar System. The total angular momentum of all of the bodies in the Solar System (say, relative to the Sun) is conserved if there is no net torque on the solar system relative to the Sun (i.e. if there is no torque about the Sun exerted on any of the bodies in the system that is not exerted by one of the other bodies in the system).
+
+Now, consider a solid object that is modelled as a system of many particles of mass, $m_i$, at position, $\vec r_i$, with velocity, $\vec v_i$, relative to a fixed axis of rotation. We can define the angular momentum of a single particle as (Equation \ref{eq:angularmomentumrolling:liw}):
 \begin{align*}
-\alpha&=\frac{1}{2}\frac{a_M}{R} = \frac{m}{M+\frac{3}{2}m}\frac{g}{2R}\\
-a_m&=\frac{3}{2}a_M=\frac{3m}{2M+3m}g
+\vec L_i = m_i r_i^2 \vec \omega_i^2
 \end{align*}
-\part Knowing the angular acceleration, $\alpha$, the total displacement, $\Delta \theta = 2\pi$, we can use one of the kinematic equations to get the angular velocity:
+The total momentum of the system is the sum of the angular momenta of the individual particles:
 \begin{align*}
-\omega^2-0 &= 2\alpha\Delta\theta\\
-\therefore \omega^2 &= 4\pi\alpha\\
-\therefore \omega &=\sqrt{4\pi\frac{m}{M+\frac{3}{2}m}\frac{g}{2R}}
+\vec L &= \sum_i\vec L_i = \sum_i  m_i r_i^2 \vec \omega_i^2
 \end{align*}
-\end{parts}
+Because all of the particles are part of the same object, they must all move in unison and have the same angular velocity, $\vec\omega$, relative to the axis of rotation. We can thus define the angular momentum about the rotation axis for a solid object with angular velocity, $\vec\omega$, as:
+\begin{align}
+\Aboxed{\vec L &= \left(\sum_i  m_i r_i^2\right) \vec \omega = I\vec\omega}
+\end{align}
+where we recognized that the sum in parentheses is simply the moment of inertia of the object relative to the axis of rotation. Again, it should be emphasized that this is the total angular momentum of the object about an axis of rotation, and not about a point. 
+
+Visualizing the torque and angular momentum of a system can be challenging because it almost always requires visualizing something in three dimensions. Consider a wheel (e.g. a bicycle wheel) that is spinning about horizontal axle which you hold with your hands, as illustrated in the left panel of Figure \ref{fig:angularmomentumrolling:deltal} (without the hands). Imagine that you are holding onto the axle so that the wheel is front of you, your right hand is to the right of the wheel and your left hand is to the left of the wheel.
+\capfig{0.4\textwidth}{figures/AngularMomentumRolling/deltal.png}{\label{fig:angularmomentumrolling:deltal}A wheel rotating on an axle, with a horizontal angular velocity (left). If you try to tilt the axle as shown in the right panel, changing the angular momentum of the wheel, you will also need to exert a torque in the vertical direction (shown at the bottom right). }
+
+We define a coordinate system as shown so that the wheel is spinning as shown in the left panel, with angular velocity (and angular momentum) in the positive $x$ direction (the top of the wheel is coming towards you).
+
+You then try to lift your right hand while lowering your left hand in order to tilt the rotation axis, as shown in the right panel. In doing so, you change the direction of the angular momentum (and angular velocity) of the wheel such that the angular momentum, $\pvec L'$, now has a vertical component, $\Delta \vec L$, as shown. The torque that is required in order to change the angular momentum is given by:
+\begin{align*}
+\vec \tau = \frac{d\vec L}{dt} \sim \frac{\Delta \vec L}{\Delta t}
+\end{align*}
+where $\Delta t$ is the time that it takes to change the axis of rotation. The torque required in order to change the axis of rotation is directed in the same direction as $\Delta \vec L$ (the positive $y$ direction). That is, you will not be able to simply tilt the axle as shown; if you want to tilt the axle, you will also need to push forward with you right hand and pull backwards with your left hand to exert the required torque (shown in the bottom right of the figure)! If you simply try to tilt the rotation axis, your right hand will be pushed towards you and your left hand away from you, as a reaction to the torque that would otherwise be required to tilt the axis!
+
+\subsection{Conservation of angular momentum}
+In the previous section, we saw that the net external torque that is exerted on an object (or system) is equal to the rate of change of its angular momentum:
+\begin{align*}
+\frac{d\vec L}{dt} = \pvec \tau^{ext}
+\end{align*}
+where the angular momentum and torque are measured about the same axis or point of rotation, fixed in an inertial frame of reference.
+
+The total angular momentum of a system about a point of rotation is conserved (i.e. does not change with time) if there is no net external torque exerted on the system about that point. If one makes the system large enough, then all of the torques can be taken to be internal, and the angular momentum of the system is conserved. The angular momentum of the Universe about a fixed point is thus conserved.
+
+Conservation of angular momentum is another conservation law that we derived from Newton's Second Law. In the modern formulation of physics, we understand that the conservation of angular momentum is associated with rotational symmetry of Newton's Second Law; it does not matter from which ``angle'' we model a system, we can always use Newton's Second Law. Similarly, conservation of linear momentum is associated with translational symmetry and conservation of energy is associated with the fact that Newton's Second Law does not change with time. Angular momentum is fundamentally different than linear momentum and energy, and is conserved under different conditions. The angular momentum of a system about a given axis/point is conserved if there is no net torque on the system about that axis/point.
+
+
+\begin{example}{During a spin, a figure skater brings his arms close to his body and increases his angular velocity from $\omega_1$ to $\omega_2$. By what fraction did his moment of inertia decrease in doing so?}
+We can consider the rotation axis to be vertical through the centre of the skater. When the figure skater is spinning, there is no net external torque on him. Thus, his angular momentum is conserved as he bring his arms in. As he bring his arms in, his moment of inertia decreases, since he is bringing the mass of his arms closer to the axis of rotation. If $I_1$ and $I_2$ are the moments of inertia of the skater before and after brining his arms in, respectively, we can write the angular momentum about his axis of rotation as:
+\begin{align*}
+L_1 &= I_1\omega_1\\
+L_2 &= I_2\omega_2
+\end{align*}
+Since there is no external torque on the skater, the angular momentum is the same before and after he changes his moment of inertia:
+\begin{align*}
+L_1 &= L_2\\
+I_1\omega_1 &= I_2\omega_2\\
+\therefore \frac{I_1}{I_2} &= \frac{\omega_2}{\omega_1}
+\end{align*}
+\textbf{Discussion:} A spinning figure skater is a good example of the conservation of angular momentum. By changing their shape, they can change their moment of inertia and thus their angular velocity. 
+\end{example}
+\vspace{-0.25cm}
+\begin{example}{Show that Kepler's Second Law is equivalent to a statement about conservation of the angular momentum of a planet orbiting the Sun.}
+
+Kepler's Second Law states that in a period of time $\Delta t$, the area, $\Delta A$, that is swept out by a planet is constant, regardless of where it is along its orbit. In other words:
+\begin{align*}
+\frac{\Delta A}{\Delta t} = \text{constant}
+\end{align*}
+ Figure \ref{fig:angularmomentumrolling:kepler} shows a planet in an elliptical orbit around the sun. \capfig{0.5\textwidth}{figures/AngularMomentumRolling/kepler.png}{\label{fig:angularmomentumrolling:kepler}The area swept out by a planet in a period of time $dt$. }
+At some point in time, the planet has a velocity vector $\vec v$ and position vector $\vec r$ relative to the Sun. In a small period of time $dt$, the planet will move along a short distance $vdt$, which we can take as a straight line if $dt$ is small enough. Let $\phi$ be the angle between the velocity and position vectors when these are tail to tail, as illustrated. 
+
+The small amount of area, $dA$, swept out by the planet in a period of time $dt$, is given by the area of the right angle triangle with height $r$ and base $vdt\sin\phi$\footnote{This is only exact in the limit of $dt\to 0$, when the small area from the extra piece outside of the ellipse vanishes.}:
+\begin{align*}
+dA = \frac{1}{2} r vdt\sin\phi
+\end{align*}
+The rate at which the area is swept out is thus:
+\begin{align*}
+\frac{dA}{dt} =  \frac{1}{2} r v\sin\phi
+\end{align*}
+Consider now the magnitude of the planet's angular momentum about the Sun:
+\begin{align*}
+L = rp\sin\phi = rmv\sin\phi
+\end{align*}
+where the mass of the planet is $m$. The rate at which the planet sweeps out the area can be written in terms of the angular momentum of the planet:
+\begin{align*}
+\frac{dA}{dt} &=  \frac{1}{2} r v\sin\phi = \frac{L}{2m}
+\end{align*}
+The only force exerted on the planet is the gravitational force from the Sun. That force is always anti-parallel to the vector $\vec r$ from the Sun to the planet, and cannot result in a torque on the planet about the Sun. Thus, the angular momentum of the planet about the Sun must be conserved, and $L$ is constant. In turn, this means that the rate at which area is swept out by the planet, which is proportional to $L$, is also constant. Thus, Kepler's Second Law is equivalent to saying that the angular momentum of a planet relative to the Sun is constant. 
+\end{example}
+
+\newpage
+\section{Summary}
+\vspace{-0.10cm}
+\begin{chapterSummary}
+If an object is rotating with angular speed, $\omega$, about an axis that is fixed in an inertial frame of reference, the rotational kinetic energy of that object is given by:
+\begin{align*}
+K_{rot} = \frac{1}{2}I\omega^2
+\end{align*}
+where $I$ is the moment of inertia of that object about the axis of rotation.
+
+The net work done by the net torque exerted on an object about a fixed axis or rotation in an inertial frame of reference is equal to object's change in rotational kinetic energy:
+\begin{align*}
+W = \int_{\theta_1}^{\theta_2}\pvec \tau^{net}\cdot d\vec \theta = \frac{1}{2}I\omega_2^2 -\frac{1}{2}I\omega_1^2
+\end{align*}
+If a torque, $\vec \tau$, about a stationary axis is exerted on an object that is rotating with a constant angular velocity, $\vec \omega$, about that axis, then the torque does work at a rate:
+\begin{align*}
+P = \vec \tau \cdot \vec \omega
+\end{align*}
+
+If an object of mass, $M$, is rotating about an axis through its centre of mass, and the centre of mass of is moving with speed, $v_{CM}$, relative to an inertial frame of reference, then the total kinetic energy of the object is given by:
+\begin{align*}
+K_{tot} = K_{rot} + K_{trans} = \frac{1}{2}I_{CM}\omega^2+ \frac{1}{2}Mv_{CM}^2
+\end{align*}
+where, $\omega$, is the angular speed of the object about the centre of mass, and, $I_{CM}$, is the moment of inertia of the object about the centre of mass. The two terms in the kinetic energy come from the rotation about the centre of mass ($K_{rot}$), and the translational motion of the centre of mass ($K_{trans}$).
+
+An object is said to be rolling without slipping on a surface if the point on the object that is in contact with the surface is instantaneously at rest relative to the surface. We can model an object that is rolling without slipping by superimposing rotational motion about the centre of mass with translational motion of the centre of mass. The angular speed, $\omega$, and the angular acceleration, $\alpha$, of the object about an axis through its centre of mass are related to the speed, $v_{CM}$, and linear acceleration, $a_{CM}$, of the centre of mass, respectively:
+\begin{align*}
+v_{CM} &= \omega R\\
+a_{CM} &= \alpha R
+\end{align*}
+These conditions are equivalent to stating that the object is rolling without slipping.
+
+When an object is rolling without slipping, we can also model its motion as if it were instantaneously rotating about an axis that goes through the point of contact between the object and the ground (the instantaneous axis of rotation). The angular speed (and acceleration) about the instantaneous axis of rotation are the same as they are when the object is modelled as rotating about its (moving) centre of mass. 
+
+An object can only be rolling without slipping if there is a force of static friction exerted by the surface on the object. Without this force, the object would slip along the surface.
+
+We can define the angular momentum of a particle, $\vec L$, about a point in an inertial frame of reference as:
+\begin{align*}
+\vec L = \vec r \times \vec p
+\end{align*}
+where, $\vec r$, is the vector from the point to the particle, and, $\vec p$, is the linear momentum of the particle. If the particle has an angular velocity, $\vec\omega$, relative to an axis of rotation its angular momentum about that axis can be written as:
+\begin{align*}
+\vec L = mr^2\vec\omega = I\vec\omega
+\end{align*}
+where, $r$, is the distance between the particle and the axis of rotation, and $I=mr^2$, can be thought of as the moment of inertia of the particle about that axis.
+
+We can write the equivalent of Newton's Second Law for the rotational dynamics of a particle using angular momentum:
+\begin{align*}
+\frac{d\vec L}{dt}=\pvec\tau^{net}
+\end{align*}
+where, $\pvec \tau^{net}$, is the net torque on the particle about the same point used to define angular momentum. That point must be in an inertial frame of reference.
+
+The rate of change of the total angular momentum for a system of particles, $\vec L=\vec L_1 + \vec L_2 +\dots$, about a given point is given by:
+\begin{align*}
+\frac{d\vec L}{dt}=\pvec\tau^{ext}
+\end{align*}
+where, $\pvec\tau^{ext}$, is the net external torque on the system about the point of rotation. If the net external torque of the system is zero, then the total angular momentum of the system is constant (conserved). Again, the point of rotation must be in an inertial frame of reference\footnote{Technically, if the point is the centre of mass, then this is valid even in an accelerating frame of reference.}.
+
+For a solid object, in which all of the particles must move in unison, we can define the angular momentum of the object about a stationary axis to be:
+\begin{align*}
+\vec L = I\vec \omega
+\end{align*}
+where, $\vec\omega$, is the angular velocity of the object about that axis, and, $I$, is the object's corresponding moment of inertia about that axis. 
+
+Many of the relations that exist between linear quantities have an analogue relation between the corresponding angular quantities, as summarized in the table below:
+
+\begin{tabular}{llll}
+\textbf{Name} &\textbf{Linear} & \textbf{Angular} & \textbf{Correspondence}\\
+\hline\hline
+Displacement & $s$ & $\vec \theta$ & $d\vec\theta=\frac{1}{r^2} \vec r\times d\vec s$  \\
+Velocity & $\vec v$ & $\vec \omega$ & $\vec\omega=\frac{1}{r^2} \vec r\times \vec v$, $v_s = \vec\omega\times \vec r$\footnote{This corresponds to the component of velocity perpendicular to $\vec r$.}\\
+Acceleration & $\vec a$ & $\vec \alpha$ & $\vec\alpha=\frac{1}{r^2} \vec r\times \vec a$, $a_s = \vec\alpha\times \vec r$\footnote{This corresponds to the component of acceleration perpendicular to $\vec r$.}\\
+Inertia& $m$ & $I$ & $I=\sum_i m_ir_i^2$ \\
+Momentum& $\vec p=m\vec v$& $\vec L = I\vec \omega$ &$\vec L = \vec r\times \vec p$ \\
+Newton's Second Law&$\pvec F^{ext}=m\vec a_{CM}$ & $\pvec \tau^{ext} = I\vec\alpha$& $\vec F \to \vec\tau$, $m\to I$, $\vec a \to \vec \alpha$\\
+Newton's Second Law& $\frac{d\vec p}{dt} =\pvec F^{ext}$ & $\frac{d\vec L}{dt} =\pvec \tau^{ext}$&$\vec F \to \vec\tau$, $\vec p \to \vec L$ \\
+Kinetic energy&$\frac{1}{2}mv^2$ &$\frac{1}{2}I\omega^2$ &$m\to I$, $v\to \omega$ \\
+Power&$\vec F \cdot \vec v$ &$\vec \tau \cdot \vec\omega$ &$\vec F \to \vec\tau$, $\vec v\to \vec\omega$  \\
+\end{tabular}
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+\medskip
+\begin{multicols}{2}
+\textbf{Rotational kinetic energy of a rotating object:}
+\begin{align*}
+K_{rot} = \frac{1}{2}I\omega^2
+\end{align*}
+\textbf{Total kinetic energy:}
+\begin{align*}
+K_{tot} = K_{rot} + K_{trans} = \frac{1}{2}I_{CM}\omega^2+ \frac{1}{2}Mv_{CM}^2
+\end{align*}
+\textbf{Work:}
+\begin{align*}
+W = \int_{\theta_1}^{\theta_2}\pvec \tau^{net}\cdot d\vec \theta = \frac{1}{2}I\omega_2^2 -\frac{1}{2}I\omega_1^2
+\end{align*}
+\textbf{Power:}
+\begin{align*}
+P = \vec \tau \cdot \vec \omega
+\end{align*}
+\columnbreak
+
+\textbf{Angular momentum:}
+\begin{align*}
+\vec L = \vec r \times \vec p\\
+\vec L = mr^2\vec\omega = I\vec\omega\\
+\frac{d\vec L}{dt}=\pvec\tau^{net}\\
+\frac{d\vec L}{dt}=\pvec\tau^{ext}\\
+\vec L = I\vec \omega\\
+\end{align*}
+\medskip
+\end{multicols}
+\end{importantEquations}
+
+\newpage
+\section{Thinking about the material}
+\subsection{Reflect and research}
+
+\begin{chapteractivity}{Reflect and research}
+{
+\item How can a bicycle move forward? Draw the external forces on the bicycle that are required for the wheels to turn.
+\item Does conservation of angular momentum play a role in being able to remain upright on a bicyle? If yes, how?
+\item How does an anti-lock braking system (ABS) provide better breaking for your car? What is the physics behind this?
+}
+\end{chapteractivity}
+
+\begin{chapteractivity}{To try at home}
+{
+\item Describe how you can qualitatively confirm conservation of angular momentum. 
+}
+\end{chapteractivity}
+
+\begin{chapteractivity}{Reflect and research}
+{
+\item Propose an experiment to measure the critical angle of an incline, above which a given object cannot roll without slipping, and compare this to a model prediction.
+\item Propose an experiment to test the conservation of angular momentum of a rotating object. 
+\item Propose an experiment to test whether an object with constant velocity can impart angular momentum to another object.
+}
+\end{chapteractivity}
+
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+\begin{problem}{soln:angularmomentumrolling:yoyo}{\label{prob:angularmomentumrolling:yoyo} A yo-yo can be modelled as two uniform disks, of radius $R_2$, attached to either side of a smaller uniform disk of radius $R_1$, as in Figure \ref{fig:angularmomentumrolling:yoyo}. We can assume that all three disks have a mass $m$. A mass-less string is wrapped around the smaller disk and then the yo-yo is released. What is the acceleration of the centre of mass of the yo-yo as it falls and the string unwinds?
+
+\capfig{0.5\textwidth}{figures/AngularMomentumRolling/yoyo.png}{\label{fig:angularmomentumrolling:yoyo}Left: Side view of the yo-yo. Right: Front view of the yo-yo, modelled as two disks of radius of $R_2$ attached to either side of a disk of radius $R_1$.}}
+\end{problem}
+
+\begin{problem}{soln:angularmomentumrolling:balldisk}{\label{prob:angularmomentumrolling:balldisk}\capfig{0.3\textwidth}{figures/AngularMomentumRolling/balldisk.png}{\label{fig:angularmomentumrolling:balldisk}A projectile of mass $m$ is about to collide with a disk that can spin about its axis of symmetry. View from above.}
+A projectile of mass $m$ is fired towards a stationary disk of radius $R$ and mass $M$ that lies on a horizontal table, as depicted from above in Figure \ref{fig:angularmomentumrolling:balldisk}. The disk is in the horizontal plane and can rotate about a vertical axis through its centre. The axle about which the disk rotates is attached to the table and cannot move. The projectile's velocity, $\vec v$, is horizontal and such that the projectile embeds itself at the edge of the disk.  What is the angular velocity of the disk, about its centre, after the projectile has embedded itself into the disk? Was the collision elastic? Was linear momentum conserved during the collision?}
+\end{problem}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{prob:angularmomentumrolling:yoyo}\label{soln:angularmomentumrolling:yoyo}
+
+The forces acting on the yo-yo are:
+\begin{itemize}
+\item $\vec F_g$, its weight, with magnitude $3mg$.
+\item $\vec T$, a force of tension from the string.
+\end{itemize}
+The forces, where they are exerted, and our choice of coordinate system are shown in Figure \ref{fig:angularmomentumrolling:yoyo_fbd}.
+\capfig{0.3\textwidth}{figures/AngularMomentumRolling/yoyo_fbd.png}{\label{fig:angularmomentumrolling:yoyo_fbd}Free body diagram for the yo-yo.}
+
+The yo-yo can be modelled as rolling without slipping, as if it were rolling along the string that unwinds. The torque about the centre of mass is provided by the tension in the string. The angular acceleration of the yo-yo, $\alpha$, will be related to the linear acceleration of the centre of mass, $\vec a_{CM}$, since this is rolling without slipping:
+\begin{align*}
+a_{CM}=\alpha R_1
+\end{align*}
+where $R_1$ is the radius that is analogous to rolling motion. Since the torque from the force of gravity is zero, we can write Newton's Second Law for rotational quantities as:
+\begin{align*}
+\vec\tau^{ext}&=I\vec\alpha\\
+TR_1 &= I\alpha
+\end{align*}
+where $TR_1$ is the magnitude of the torque from the force of tension, since the tension is perpendicular to the vector $\vec r$ between the centre of mass and the point where the tension is exerted. The moment of inertia of the yo-yo about its centre of mass is the sum of the moments of inertia of the three disks about their axis of symmetry:
+\begin{align*}
+I=\frac{1}{2}MR_2^2 +\frac{1}{2} MR_2^2+\frac{1}{2}MR_1^2=\frac{1}{2}M(2R_2^2+R_1^2)
+\end{align*}
+We can also write Newton's Second Law in the vertical direction for the yo-yo (of mass $3M$):
+\begin{align*}
+\sum F_y = -F_g + T &= -3Ma_{CM}\\
+-3Mg + T = -3Ma_{CM}
+\end{align*}
+where we $a_{CM}$ is the magnitude of the acceleration of the centre of mass (since we included the sign in the first equation).
+
+We can eliminate the unknown force of tension from the equations by substitution. Using the equation from Newton's Second Law:
+\begin{align*}
+T=3M (g-a_{CM})
+\end{align*}
+and substituting this into the rotational equation:
+\begin{align*}
+TR_1 &= I\alpha\\
+3M (g-a_{CM}) R_1 &=  I\alpha
+\end{align*}
+We can solve for $a_{CM}$ by using the condition for rolling without slipping ($\alpha R_1 = a_{CM}$):
+\begin{align*}
+3M (g-a_{CM}) R_1 &=  I\frac{a_{CM}}{R_1}\\
+\frac{I}{R_1}a_{CM}+3MR_1a_{CM}&= 3MgR_1\\
+a_{CM}\left(\frac{I}{R_1}+3MR_1\right)&= 3MgR_1\\
+a_{CM}&=\frac{3MgR_1}{\frac{I}{R_1}+3MR_1}\\
+&=\frac{3MgR_1}{\frac{\frac{1}{2}M(2R_2^2+R_1^2)}{R_1}+3MR_1}\\
+&=\left(\frac{3R_1^2}{\frac{1}{2}(2R_2^2+R_1^2)+3R_1^2}\right)g\\
+\therefore a_{CM}&=\left( \frac{3R_1^2}{R_2^2+\frac{7}{2}R_1^2}\right)g
+\end{align*}
+
 \end{solution}
 
 
-%Zaremba 2007 Final exam
-\question A uniform disk of mass $M$ and radius $R$ has an angular velocity $\omega_0$ with its axis of rotation in the horizontal plane through its centre of mass. The disk is gently placed on a horizontal surface. The coefficient of kinetic friction between the surface and the disk is $\mu_k$. 
-\capfig{0.4\textwidth}{figures/AngularMomentumRolling/DiskSlipping.png}{\label{fig:angularmomentumrolling:DiskSlipping}A vertical rotating disk gently lowered onto a surface.}
-\begin{parts}
-\part What is the linear acceleration of the centre of mass of the disk, and what is its angular acceleration about its centre of mass?
-\part How far along the surface does the disk travel before it stops sliding?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item $a_{CM}=\mu_kg$, $\alpha=-2\frac{\mu_kg}{R}$
-\item $\frac{1}{18}\frac{R^2\omega_0^2}{\mu_kg}$
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part When the disk touches the surface, there will be a force of kinetic friction between the surface and the disk that will cause an acceleration of the centre of mass and an angular deceleration, as shown in Figure \ref{fig:angularmomentumrolling:DiskSlipping_FBD}
-\capfig{0.1\textwidth}{figures/AngularMomentumRolling/DiskSlipping_FBD.png}{\label{fig:angularmomentumrolling:DiskSlipping_FBD}Forces on the disk as it touches the surface.}
- The angular velocity will decrease until the centre of mass has accelerated enough such that $\omega = v_{CM}$. Since the only force acting on the disk is friction, it will cause both the angular deceleration and the acceleration of the CM. Since the disk is slipping, the angular acceleration, $\alpha$ is not related the acceleration of the CM, $a_{CM}$. The force of kinetic friction is given by:
+
+\begin{solution}{prob:angularmomentumrolling:balldisk}\label{soln:angularmomentumrolling:balldisk}
+We consider the projectile and disk as a system, and a rotation axis that passes through the centre of disk. There are no external torques exerted on the system about the rotation axis, so the angular momentum of the system must be conserved through the collision. Before the collision, only the projectile has angular momentum about the axis of rotation, so the magnitude of the angular momentum before the collision is:
 \begin{align*}
-f = \mu_kN=\mu_kMg
+L = rp\sin\phi
 \end{align*}
-The sum of the forces gives:
+where $\phi$ is the angle between the particle's momentum, $\vec p=m\vec v$, and a vector, $\vec r$, from the axis of rotation to the particle. We can calculate the particle's angular momentum just before the collision, so that $\vec r$ is the vector from the centre of the circle to the point where the particle collides (with magnitude $R$, and perpendicular to $\vec v$). The initial angular momentum of the system is thus:
 \begin{align*}
-f &= Ma_{CM}\\
-\therefore a_{CM}&=\mu_k g
+L=rp=Rmv
 \end{align*}
-And similarly, the sum of torques gives:
+After the collision, the projectile is embedded in the disk. The resulting object has a moment of inertia given by:
 \begin{align*}
--fR&=I\alpha=\frac{1}{2}MR^2\alpha\\
--\mu_kMg&=\frac{1}{2}MR\alpha\\
-\therefore \alpha&=-2\frac{\mu_kg}{R}
-\end{align*}
-\part The disk will stop slipping once $\omega(t)R=v_{CM}(t)$, so we need to find out at which time that happens. The angular velocity and the speed of the CM as a function of time are given by:
+I = I_{disk}+ I_{particle} = \frac{1}{2}MR^2+mR^2
+\end{align*} 
+After the collision, the angular momentum of the disk with the embedded projectile is given by:
 \begin{align*}
-\omega(t)&=\omega_0+\alpha t = \omega_0-2\frac{\mu_kg}{R}t\\
-v_{CM}(t) &= a_{CM}t=\mu_k gt
+L'=I\omega = \left(\frac{1}{2}M+m\right)R^2\omega
 \end{align*}
-The time is then given by:
+Using conservation of angular momentum, the angular velocity of the disk after the collision is:
 \begin{align*}
-\omega(t)R&=v_{CM}(t)\\
-R\omega_0-2\mu_kgt&=\mu_k gt\\
-\therefore t&=\frac{R\omega_0}{3\mu_kg}\\
+L &= L'\\
+Rmv &= \left(\frac{1}{2}M+m\right)R^2\omega\\
+\therefore \omega &= \frac{mv}{\left(\frac{1}{2}M+m\right)R}
 \end{align*}
-The distance travelled by the disk is then:
+We do not expect that mechanical energy is conserved during the collision, since the projectile embeds itself, which must cost energy. The mechanical energy before the collision is given by the kinetic energy of the projectile:
 \begin{align*}
-d &= \frac{1}{2}a_{CM}t^2\\
-&=\frac{1}{2}\mu_k g \left( \frac{R\omega_0}{3\mu_kg}\right)^2\\
-&=\frac{1}{18}\frac{R^2\omega_0^2}{\mu_kg}
+E = \frac{1}{2}mv^2
 \end{align*}
-\end{parts}
+After the collision, the kinetic energy is the rotational kinetic energy of the disk with embedded projectile about the axis of rotation:
+\begin{align*}
+E' &= \frac{1}{2}I\omega^2 = \frac{1}{2} \left(\frac{1}{2}M+m\right)R^2 \left( \frac{mv}{\left(\frac{1}{2}M+m\right)R}\right)^2\\
+&= \frac{1}{2} \frac{m^2}{\left(\frac{1}{2}M+m\right)} v^2
+\end{align*}
+We can see that $E'$ is less than $E$, by taking their ratio:
+\begin{align*}
+\frac{E'}{E} &= \frac{\frac{1}{2} \frac{m^2}{\left(\frac{1}{2}M+m\right)} v^2}{\frac{1}{2}mv^2}\\
+&=\frac{m}{\left(\frac{1}{2}M+m\right)}<1
+\end{align*}
+and we confirm that mechanical energy is not conserved in the collision (and that energy was lost since one had to deform the projectile and disk).
+
+Linear momentum is clearly not conserved since the final linear momentum is zero, whereas before the collision, it is $\vec p=m\vec v$. The centre of mass of the disk+projectile system moves before the collision and not after. There must thus be a net external force that is exerted on the system. That force is exerted by the table onto the axle of disk, as the disk would otherwise recoil when hit with the projectile.
+
+\textbf{Discussion:} In this example, we used conservation of angular momentum to model a collision. The collision is inelastic, because the projectile embeds itself into the disk. The linear momentum is not conserved through the collision because the axle about which the disk rotates must exert a force on the disk to prevent it from recoiling. 
 \end{solution}
 
 
-\question You are in a spaceship of mass $m=\SI{4e3}{kg}$ in a circular orbit around planet Camelid. The planet is spherical with mass $M=\SI{3e24}{kg}$ and radius $R=\SI{6e6}{m}$. You are in a circular orbit of radius $2R$. You wish to take a closer look at the inhabitants of the planet which are able to live with zero atmosphere. You briefly fire the rockets on your ship in the direction opposite to your motion so that you slow down and place yourself on an elliptical orbit that will skim the planet (the perigee will be a distance $R$ from the planet's centre), as shown in Figure \ref{fig:angularmomentumrolling:EarthSkim}. How much work do the rockets need to do in order to place your ship in this new orbit?
-\capfig{0.4\textwidth}{figures/AngularMomentumRolling/EarthSkim.png}{\label{fig:angularmomentumrolling:EarthSkim}An elliptical orbit skimming the planet.}
-\begin{solution}
-The mechanical energy of your spaceship in the circular orbit of radius $2R$ is given by:
-\begin{align*}
-E_{circ}=K+U=\frac{1}{2}mv^2-G\frac{Mm}{2R}
-\end{align*}
-where we have defined gravitational potential energy so that it is zero infinitely far from the planet. The speed in the circular orbit is given by the condition that gravity provide the required centripetal acceleration:
-\begin{align*}
-m\frac{v^2}{2R}&=G\frac{Mm}{4R^2}\\
-\therefore \frac{1}{2}mv^2&=G\frac{M}{4R}
-\end{align*}
-So that the total energy in the circular orbit of radius $2R$ is given by:
-\begin{align*}
-E_{circ}=K+U=G\frac{M}{4R}-G\frac{Mm}{2R}=-G\frac{Mm}{4R}
-\end{align*}
-The work done by the rocket will be the difference in energy between the circular orbit and the elliptical orbit.
-
-After decelerating, you spaceship will be at the apogee of the orbit, with speed $v_A$, and energy:
-\begin{align*}
-E_A=K+U=\frac{1}{2}mv_A^2-G\frac{Mm}{2R}
-\end{align*}
-where we do not know $v_A$. The energy at the perigee of the orbit will be the same (mechanical energy is conserved through the orbit):
-\begin{align*}
-E_P=\frac{1}{2}mv_P^2-G\frac{Mm}{R}
-\end{align*}
-where $v_P$ is the speed of your spaceship at the perigee, which we also do not know.
-
-However, the angular momentum of the spaceship about the planet is also conserved throughout the orbit. The magnitude of the angular momentum of the spaceship relative to the centre of the planet at the apogee is given by:
-\begin{align*}
-L_A=||\vec r_A \times \vec p_A||=2Rmv_A
-\end{align*}
-Similarly, the angular momentum at the perigee is given by:
-\begin{align*}
-L_P=Rmv_P
-\end{align*}
-Conservation of energy and angular momentum thus give us two equations which we can solve for the speeds at the perigee and apogee:
-\begin{align*}
-\frac{1}{2}mv_A^2-G\frac{Mm}{2R} &= \frac{1}{2}mv_P^2-G\frac{Mm}{R} \\
-2Rmv_A &= Rmv_P
-\end{align*}
-The second equation simply yields that the speed at the perigee is twice that at the apogee. We can substitute this into the the energy conservation equation to solve for the speed at the apogee (or more usefully, the kinetic energy at the apogee):
-\begin{align*}
-\frac{1}{2}mv_A^2-G\frac{Mm}{2R} &= \frac{1}{2}mv_P^2-G\frac{Mm}{R}\\
-\frac{1}{2}mv_A^2-G\frac{Mm}{2R} &= 2mv_A^2-G\frac{Mm}{R}\\
-\frac{3}{2}mv_A^2 &= -G\frac{Mm}{2R}+G\frac{Mm}{R}\\
-\therefore \frac{1}{2}mv_A^2&=G\frac{Mm}{6R}
-\end{align*}
-The mechanical energy of the elliptical orbit is thus given by:
-\begin{align*}
-E_A=\frac{1}{2}mv_A^2-G\frac{Mm}{2R}=G\frac{Mm}{6R}-G\frac{Mm}{2R}=-G\frac{Mm}{3R}
-\end{align*}
-The net work done by the rockets is thus the change in energy between the elliptical and circular orbits:
-\begin{align*}
-W &= E_A-E_{circ}=-G\frac{Mm}{3R}+G\frac{Mm}{4R}=-G\frac{Mm}{12R}\\
-&=-(\SI{6.67e-11}{N\cdot m^2/kg^2})\frac{(\SI{3e24}{kg})(\SI{4e3}{kg})}{12(\SI{6e6}{m})}\\
-&=\SI{-1.11e10}{J}
-\end{align*}
-and is negative, as expected.
-
-\end{solution}
-
-
-%Joshua Rinaldo
-\question A cube of mass $m = \SI{8}{kg}$ is fixed at a position along a frictionless surface where it compresses a spring of $k = 60+15x+5x^2$ a distance of $x = \SI{0.8}{m}$, as shown in Figure \ref{fig:angularmomentumrolling:cube_spring}.
-\begin{parts}
-\part If the cube is released from its fixed position, what will its final velocity be?
-\part Suppose that instead of a cube, a sphere is fixed at the position, as shown in Figure \ref{fig:angularmomentumrolling:sphere_spring}. Now, assume that the surface is not frictionless, but instead has a $\mu_s$ sufficient for rolling without slipping. If the sphere is released from its fixed position, what will its final velocity be?
-\capfig{0.4\textwidth}{figures/AngularMomentumRolling/cube_spring}{\label{fig:angularmomentumrolling:cube_spring} A cube compressing a spring.}
-\capfig{0.4\textwidth}{figures/AngularMomentumRolling/sphere_spring}{\label{fig:angularmomentumrolling:sphere_spring} A sphere compressing a spring.}
-In parts a) and b), you will notice a difference in velocity for the cube and sphere. Suppose you are tasked with moving an object which can either be spherical or cubic across a surface. Determine which shape of the two would move across the following surfaces most quickly, and justify your answer:
-\part The surface is a distance $d$, with $\mu_s = 0$ and $\mu_k = 0$.
-\part The surface is a very large distance $d$, with $\mu_s \neq 0$ and $\mu_k \neq 0$.
-\part The surface is a distance $d$, with a very large $\mu_s$ and $\mu_k$.
-\part The surface is a distance $d$, with a very large $\mu_s$ and $\mu_k=0$
-\end{parts}
-\begin{finalanswer}
-	\begin{parts}
-	\part The cube will travel at a velocity of \SI{2.36}{m/s} after being released from its fixed position.
-	\part The sphere will travel at \SI{1.99}{m/s} after being released from its fixed position.
-	\part The cube and the sphere will be reach the distance $d$ at the same time.
-	\part The sphere will reach the distance $d$ most quickly.
-	\part The sphere will reach the distance $d$ most quickly.
-	\part The cube will reach the distance $d$ most quickly.
-	\end{parts}
-\end{finalanswer}
-\begin{solution}
-	\begin{parts}
-	\part We must first find the energy stored in the compressed spring.
-	\begin{align*}
-	W&=\int_{0}^{x}Fdx\\
-	W&=\int_{0}^{0.8}(60x+15x^2+5x^3)dx\\
-	W&=(30x^2+5x^3+\frac{5}{4}x^4)|_0^{0.8}\\
-	W&=\SI{22.272}{J}
-	\end{align*}
-	In the case of the cube, all of the potential energy will be converted to kinetic energy.
-	\begin{align*}
-	W&=\frac{1}{2}mv^2\\
-	\SI{22.272}{J}&=\frac{1}{2}(\SI{8}{kg})v^2\\
-	v&= \sqrt{2(\SI{22.272}{J})\frac{1}{(\SI{8}{kg})}}\\
-	v&= \SI{2.36}{m/s}
-	\end{align*}
-	Therefore, the cube will travel at \SI{2.36}{m/s} after being released from the spring.
-	\part We have already calculated the potential energy stored in the spring, so we begin with the same value of $W = \SI{22.272}{J}$, however, we must take rotational energy into consideration when calculating the final velocity of the sphere.
-	\begin{align*}
-	W&= \frac{1}{2}(mv^2+I_s\omega^2)\\
-	W&= \frac{1}{2}(mv^2+\frac{2}{5}mr^2(\frac{v}{r})^2)\\
-	W&= \frac{1}{2}(mv^2+\frac{2}{5}mv^2)\\
-	\SI{22.272}{J}&=\frac{7}{10}(\SI{8}{kg})v^2\\
-	v&=\sqrt{\frac{10}{7}(\SI{22.272}{J})(\frac{1}{\SI{8}{kg}})}\\
-	v&=\SI{1.99}{m/s}
-	\end{align*}
-	Therefore the sphere will travel at \SI{1.99}{m/s} after being released from the spring.
-	\part If $\mu_s=0$ and $\mu_k=0$, the sphere will not roll at all, and will instead slide along the surface at the same velocity as the cube. Therefore, the cube and the sphere are equally valid choices.
-	\part If $\mu_s \neq 0$ and $\mu_k \neq 0$, the cube will decelerate at a constant rate, eventually coming to a stop before reaching the very large distance $d$. The sphere may slide, causing it to decelerate, but if $\mu_s \neq 0$, then it will eventually stop slipping and will begin to roll at a constant velocity. Therefore, the sphere is the best choice for these conditions.
-	\part If both $\mu_s$ and $\mu_k$ are very large, then the cube will decelerate quickly then come to a stop. The sphere will roll without slipping until reaching the distance $d$. Therefore, the sphere is the best choice for these condition.
-	\part This is the scenario we modelled in parts a) and b) of this question, so simply citing the mathematical outcome is a sufficient explaination. We can also cite the conservation of energy, knowning that there is movement along a rolling sphere which is not translational, making the cube slightly faster than the sphere. Therefore, the cube is the best choice for these conditions.
-	\end{parts}
-\end{solution}
-
-%TODO (from Alex Wright) A truck with muddy tires is driving in front of you, and you notice that your car is getting covered with mud because the mud flaps are in the wrong position. How long should the mud flaps be if the truck is driving at 80 km/h and you follow 2m behind? [Calculate the parabolic trajectory of mud flying off the wheel, and intercept those that could hit the car. Need to specify radius of truck tires, position of mud flap, etc]

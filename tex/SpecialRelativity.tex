@@ -1,308 +1,99 @@
-\section{Special Relativity}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Multiple Choice
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Multiple Choice}
+\chapter{The theory of special relativity}
+\label{chap:N_SpecialRelativity}
+ \vspace{1cm}
+\begin{learningObjectives}
+\item something interesting
+\end{learningObjectives}
 
-%Question submitted by Emily Mendelson
-\question A train is moving at a speed close to the speed of light relative to the Earth. An observer not moving relative to the Earth will see the train:
-\begin{checkboxes}
-\CorrectChoice Become shorter parallel to the direction it is moving. \correct
-\choice Become longer parallel to the direction it is moving.
-\choice Become wider perpendicular to the direction it is moving.
-\choice Become narrower perpendicular to the direction it is moving.
-\choice No changes will be observed.
-\end{checkboxes}
-
-\question How fast does a spaceship need to move relative to a reference frame for the spaceship to appear half as long in that reference frame as it does when at rest (we define length to be parallel to the direction of motion)?
-\begin{checkboxes}
-	\CorrectChoice $\frac{\sqrt 3}{2}c$
-	\choice $\frac{1}{2}c$
-	\choice $\frac{2}{3}c$
-	\choice $\frac{3}{2}c$
-\end{checkboxes}
-
-%Kate
-\question In a stationary reference frame on Earth, a \SI{2}{m} rod is moving at half the speed of light. By how much does its length contract?
-\begin{checkboxes}
-\CorrectChoice \SI{27}{cm} \correct
-\choice \SI{30}{cm}
-\choice \SI{25}{cm}
-\choice It does not contract
-\end{checkboxes}
-
-%Gregory Love (modified)
-\question You measure your car to be \SI{5}{m} long.  How fast must you travel in your car for an outside observer to measure your car as being \SI{4}{m} long? 
-\begin{choices} 
-
-\choice \SI{0.4}{c}
-\CorrectChoice \SI{0.6}{c} \correct
-\choice \SI{0.75}{c}
-\choice \SI{0.8}{c}
-\end{choices}
-
-\question You are on a platform at a train station, standing halfway between two clocks (A and B) that you observe to be synchronized. The clocks each emit a pulse of light when they strike 9:00am (in your reference frame). Since you are equidistant from the clocks, the pulses of light arrive at your location at the same time. At precisely 9:00am in your reference frame, a speeding train goes by at nearly the speed of light. The train travels in a direction parallel to the line joining the two clocks, and you observe that the train first passes in front of clock A, then in front of clock B (i.e. the train goes in the direction from A to B). Your physics professor, riding on the train, waves hello. What does your physics professor see? 
-\begin{checkboxes}
-\choice Clock A emitted a pulse of light at the same time as clock B
-\choice Clock A emitted a pulse of light before clock B
-\CorrectChoice Clock A emitted a pulse of light after clock B \correct
-\end{checkboxes}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% long answer
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Long answers}
-%Giancolli 29-10 -altered
-\question After getting your spaceship back from the Galactic Federation of Planets' impound lot, you decide to start driving your spaceship at the galactic speed limit. You pass by a Galactic Federation police officer, and they measure that you are travelling at 0.81c. The Galactic Federation officer measures your spacecraft to have a length of $L = \SI{3.58}{m}$ and a height of $H = \SI{2.40}{m}$. Given that the spaceship is travelling parallel to its length, determine the following:
-\begin{parts}
-\part What is your spacecraft’s length and height at rest?
-\part How many seconds elapsed on your watch when \SI{15.0}{s} passed on the officer's watch?
-\part How fast did the officer appear to be travelling according you?
-\part How many seconds elapsed on the officer's watch when they saw \SI{20.0}{s} pass on yours?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item The height does not change, the original length is \SI{6.105}{m}.
-\item \SI{8.796}{s}
-\item To you, the officer would appear to be travelling with the same speed, 0.76c, but in the opposite direction
-\item She concludes that \SI{13}{s} elapsed on your watch when \SI{20}{s} elapsed on her watch.
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part The height of the spacecraft does not change, since it is in the direction perpendicular to the motion. The length is contracted according to:
+\subsection{Lorentz transformations}
+In the previous section, we found that the position of an object, $x^A$, in one inertial reference frame can be converted to a position, $x'^A$, in a different inertial reference frame using the equation:
 \begin{align*}
-L&=\frac{1}{\gamma}L_0\\
+x'^A=v'^Bt+x^A
 \end{align*}
-Since you measured a contracted length, $L$, the original length, $L_0$, is given by:
-\begin{align*}
-L_0&=\gamma L=L\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}=(\SI{3.58}{m})\frac{1}{\sqrt{1-0.81^2}}=\SI{6.105}{m}
-\end{align*}
-\part According to the officer, it appears that time goes slower you, so the officer would see your clock tick slower, and would conclude that the elapsed time on your watch is less than \SI{20}{s}. If you measure a time $\Delta t_0$, then the time $\Delta t$ on your watch is given by
-\begin{align*}
-\Delta t = \frac{\Delta t_0}{\gamma}=(\SI{20.0}{s})\sqrt{1-0.81^2}=\SI{8.796}{s}
-\end{align*}
-\part To you, the officer would appear to be travelling with the same speed, 0.76c, but in the opposite direction
-\part You would conclude that it is the officer's watch that runs slower, by the same time dilation as they would observe for you (part (b)). You concluded that \SI{8.796}{s} elapsed on the officer's watch when \SI{20}{s} elapsed on their watch.
-\end{parts}
-\end{solution}
+where $v'^B$ is the velocity of the $x$ frame of reference as measured in the $x'$ frame of reference. We found this by arguing that we could sum the distance from the $x'$ origin to the $x$ origin and the distance from the $x$ origin to the object's position, $x^A$, in the $x$ reference frame. We call this transformation, from $x$ to $x'$, a ``Galilean transformation''. In this section, we briefly introduce the more general way to transform descriptions between reference frames, mostly for completeness.
 
-%Giancolli 29-13 modified
-\question Suppose that an imprecise news report stated that a spaceship from planet Guanaco had just arrived on Earth after travelling for five years at a speed of 0.74c. 
-\begin{parts}
-\part If the report meant 5.0 years of Earth time, how much time elapsed on the ship?
-\part If the report meant 5.0 years of ship time, how much time elapsed on Earth?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item \SI{3.4}{yr}
-\item \SI{7.4}{yr}
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part In the Earth's frame of reference, the clock on the spaceship appears to run slower. Thus, on the spaceship, it will appear that less time has elapsed. Using the time-dilation formula:
-\begin{align*}
-\Delta t_{ship}&=\frac{\Delta t_{Earth}}{\gamma}=\Delta t_{Earth}\sqrt{1-\frac{v^2}{c^2}}\\
-&=(\SI{5.0}{yr})\sqrt{1-0.74^2}=\SI{3.4}{yr}
-\end{align*}
-\part Again, if this is 5 years on the ship, it will appear that a longer time went by on Earth. Using the time dilation formula again, we have:
-\begin{align*}
-\Delta t_{Earth}&=\Delta t_{ship}\gamma=\frac{\Delta t_{ship}}{\sqrt{1-\frac{v^2}{c^2}}}\\
-&=(\SI{5.0}{yr})\frac{1}{\sqrt{1-0.74^2}}=\SI{7.4}{yr}
-\end{align*}
-\end{parts}
-\end{solution}
-
-%Marie, from:  https:\//oyc.yale.edu/sites/default/files/problem\_set\_7\_solutions\_4.pdf
-\question A muon has a life time of \SI{2e-6}{s} in its rest frame. It is created in the atmosphere, \SI{100}{km} above the Earth and moves down towards the Earth at a speed of \SI{2.97e8}{m/s}. 
-\begin{parts}
-\part At what altitude does it decay, if in its rest frame it decayed \SI{2e-6}{s} after being created?
-\part In the frame of the muon, how far did it travel before decaying?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item \SI{95.8}{km}
-\item \SI{590}{m}
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part We can find out how much time went by on Earth, $\Delta t$, when a time $\Delta t_0$ went by in the muon's frame of reference. Using the time dilation formula:
-\begin{align*}
-\Delta t = \gamma \Delta t_0
-\end{align*}
-is the time that went by in the Earth frame. That is, on Earth, it looks like it took longer for the muon to decay than in the frame of reference of the muon. This means the muon travelled a distance $d = v\Delta t =v\gamma\Delta t _0$, as measured by an observer on Earth:
-\begin{align*}
-d = v\gamma\Delta t_0  = \frac{(\SI{2.97e8}{m/s}))(\SI{2e-6}{s})}{\sqrt{1 - \frac{(\SI{2.97e8}{m/s})}{(\SI{3e8}{m/s})}}} = \SI{4.2}{km}
-\end{align*}
-The muon travels \SI{4.2}{km} in the Earth frame of reference before decaying, which occurs at \SI{95.8}{km} above the ground.
-
-\part To determine how far the muon travelled in its frame of reference, $d_0$, we can use the length contraction formula to determine how much the $d=\SI{4.2}{km}$ in the Earth frame was contracted:
-\begin{equation}
-d_0 = \frac{d}{\gamma} = v \Delta t_0 = (\SI{2.97e8}{m/s})(\SI{2e-6}{s}) = \SI{590}{m}
-\end{equation}
-which is equivalent to simply calculating the distance using the muon's velocity and proper time, $\Delta t_0$. 
-\end{parts}
-\end{solution}
-
-%Marie, from:  https:\//oyc.yale.edu/sites/default/files/problem\_set\_7\_solutions\_4.pdf
-\question Two rockets of rest length $L_0$ are approaching the Earth from opposite directions at velocities $\pm$ c/2.  How long does one rocket appear to the other?
-\begin{finalanswer}
-$(3/5)L_0$
-\end{finalanswer}
-\begin{solution}
-In order to determine how contracted one rocket looks to other, we first have to find the relative speed with which one rocket appears to be moving towards the other. We cannot just add the velocities with respect to the Earth, since the rockets are moving relativistically. 
-
-Consider $S$ to be the frame of rocket 1. We wish to find the speed $u$ of rocket 2 in the frame $S$. The Earth moves towards rocket 1 with a speed $v=-0.5c$. In the frame of the Earth, $S'$, rocket 2 moves with a speed $u'=0.5c$. The speed of rocket 2 in the frame $S$ of rocket 1 is thus given by the relativistic addition of velocities formula:
-\begin{align*}
-u=\frac{u'+v}{1+\frac{u'v}{c^2}}=\frac{-0.5c-0.5c}{1+\frac{0.5^2c^2}{c^2}}=\frac{-1}{1+0.5^2}c=-\frac{4}{5}c
-\end{align*}
-That is, rocket 2 appears to be approaching with a speed of $\frac{4}{5}c$ as seen from rocket 1. We can now apply the length contraction formula (with a speed $v=u'=\frac{4}{5}c$) to find $L$ the length of rocket 2 in rocket 1's frame of reference:
-\begin{align*}
-L &= \frac{L_0}{\gamma} =L_0\sqrt{1-\frac{v^2}{c^2}}=L_0\sqrt{1-\frac{16}{25}}= \frac{3}{5}L_0
-\end{align*}
-Thus, one rocket appears to be 3/5 of its rest length to the other rocket.
-\end{solution}
-
-%Taken from University Physics, Volume 3, Chapter 5, Question 44
-\question In a frame at rest with respect to a billiard table, two billiard balls (A and B) of the same mass, $m$, are moving toward each other with the same, very large speed, $v$. After the collision, the two balls come to rest. 
-\begin{parts}
-\part Show that classical momentum, $\vec p=m\vec v$, is conserved in the frame of reference of the billiard table.
-\part Now, use relativistic velocity addition to describe the speeds of the billiard balls from the perspective of a frame that is moving with speed $v$ in the direction of the motion of the first ball (ball A). That is, use relativistic velocity addition to place yourself in a frame, $S'$, where ball A appears to be at rest, and transform the velocities (before and after the collision, from part (a)) for each ball before and after the collision, to determine those velocities in frame $S'$.
-\part Is classical momentum conserved in this moving frame, $S'$? Use the velocities that you found in part (b) to verify whether classical momentum is conserved, and if not, use your result to describe under what condition it is conserved?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item N/A
-\item Before the collision: Ball A: $v'_i=0$, Ball B: \begin{align*}
-u_i'=\frac{-2v}{1-\frac{v^2}{c^2}}
-\end{align*}
-After the collision: \begin{align*}
-v'_f=u'_f=\frac{u_f-v}{1-\frac{vu_f}{c^2}}=-v
-\end{align*}
-\item In Frame \textit{S'}, classical momentum conservation gives:
-\begin{align*}
-mv'_i+mu'_i&=mv'_f+mu'_f\\
-0 + \frac{-2v}{1+\frac{v^2}{c^2}} &= -2v
-\end{align*}
-This holds true for $v<<c$, that is, only in the classical limit, where the speed of the balls, $v$, is small.
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part  We denote the billiard table's frame of reference as $S$. In frame $S$, ball A moves with velocity $+v$, and ball B moves with velocity $-v$. Conservation of momentum gives:
-\begin{align*}
-mv + m(-v) &= 0
-\end{align*}
-Which holds true, since the both balls come to rest after the collision in frame $S$, so the momentum after the collision is also zero.
-
-\part  We denote the frame that is moving with velocity $v$ along with ball A as frame $S'$. We will denote velocities in the $S'$ frame using primes ($'$), and use indices $i$ and $f$ to indicate velocities before and after the collision. We will use $v$ for the velocity of ball A and $u$ for the velocity of ball B. Thus, the velocity of frame $S'$ relative to frame $S$ is $v=v_i$.
-
-In the $S'$ frame, before the collision, ball A moves with a velocity of $v'_i=0$ (since it is initially at rest in frame $S$), and ball B moves with a velocity of $u_i'$ in $S'$. We can use relativistic speed addition using, $u_i$, the original speed of ball B in the frame $S$, and the velocity, $v$, of frame $S'$ relative to $S$, to determine $u'_i$:
-\begin{align*}
-u_i &= \frac{u_i' + v}{1+\frac{vu_i'}{c^2}}
-\end{align*}
-We can solve for $u_i'$ in terms of $u_i$:
+Although most of our common experience is well described by this transformation, Albert Einstein found that it is no longer accurate if the speeds involved in the situation are close to the speed of light. Einstein's Theory of Special Relativity gives the following transformation instead:
 \begin{align}
-\label{eqn:invertuv}
-u_i &=  \frac{u_i' + v}{1+\frac{vu_i'}{c^2}}\nonumber\\
-u_i \left(1+\frac{vu_i'}{c^2}\right)&=u_i'+v\nonumber\\
-u_ic^2+vu_iu_i'&=u_i'c^2+vc^2\nonumber\\
-u_ic^2-vc^2&=u_i'(c^2-vu_i)\nonumber\\
-\therefore u_i'&=\frac{u_ic^2-vc^2}{c^2-vu_i}\nonumber\\
-&=\frac{u_i-v}{1-\frac{vu_i}{c^2}}
+\label{eqn:chap3:LorentzTr}
+x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)\\
+t'&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)
 \end{align}
-We can further identify that $u_i=-v$ (the initial velocity of ball B in the original frame $S$), so that the speed of ball B in frame $S'$ before the collisions is:
-\begin{align*}
-u_i'=\frac{-2v}{1-\frac{v^2}{c^2}}
-\end{align*}
+where $c$ is the speed of light (\SI{3e8}{m/s}). The first thing to note is that this a considerably more complicated expression. The most bizarre aspect is that the two reference frames have different measures of time ($t$ and $t'$). The above transformation, from $x,t$ to $x',t'$, is called a ``Lorentz transformation''. The fact that we have to include time in the transformation is an aspect related to the fact that Einstein's Theory of Special Relativity tells us that we must consider Space-Time as a single entity (rather than thinking of space and time as separate things).
 
+Let us examine a few aspects of the Lorentz transformation. First, if the velocity, $v'^B$, between reference frames is small when compared to the speed of light, $v'^B<<c$, we have:
+\begin{align*}
+\left(\frac{v'^B}{c}\right)^2&<<1\\
+\therefore \frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}} &\sim 1 \\
+\end{align*}
+In this case, we recover the original Galilean transformation:
+\begin{align*}
+x'^A&=\lim_{v_B<<c}\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)=v'^Bt+x^A\\
+t'&=\lim_{v_B<<c}\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)=t
+\end{align*}
+So \textit{a priori}, this aspect of Einstein's Theory of Special Relativity is difficult to test, as we only expect it to deviate from common experience when $v_B$ is comparable to the speed of light. However, in particle accelerators, subatomic particles are regularly accelerated to speeds close to the speed of light, and their position has to be described using Special Relativity. 
 
-After the collision, both ball A and ball B are at rest in frame $S$, so $v_f=u_f=0$. In frame $S'$, both balls will thus have the same velocity $v'_f=u'_f$. We can find $u'_f$ using equation \ref{eqn:invertuv} (but replacing $i\to f$):
-\begin{align*}
-u'_f=\frac{u_f-v}{1-\frac{vu_f}{c^2}}=-v
-\end{align*}
-which makes sense. In the frame $S$, both balls are at rest. In the frame $S'$, the balls will appear to move in the same direction and with the same speed as frame $S$. 
+Suppose that a space ship is carrying Chlo\"e and moving with a speed of $v'^B=0.7c=\SI{2.1}{m/s}$. Suppose that Chlo\"e fires an arrow in the same direction as the space ship's motion, and that she measures the speed of the arrow to be $v^A=0.4c=\SI{0.9e8}{m/s}$. Suppose that the space ship goes by Marcel, who is stationary on Earth, right at the moment that Chlo\"e fires the arrow. Let us define the $x$ axis on the ship so that it is positive in the direction of motion with its origin where  Chlo\"e fired the arrow. Let us define $t=t'=0$ to be the moment when the origin of the space ship x-axis is aligned with the origin of Marcel's $x'$ axis on Earth. The $x'$ axis is also set up to be positive in the direction of the space ship's motion and has the origin such that at $t'=0$
 
-\part In Frame \textit{S'}, classical momentum conservation gives:
+Using Galilean Relativity, the speed of the arrow as measured by Marcel would be found by adding the two velocities, $v'^A=v^A+v'^B=1.1c=\SI{3.3e8}{m/s}$. Using Special Relativity, the situation is a little more difficult. The position as measured in Marcel's reference frame is given by:
 \begin{align*}
-mv'_i+mu'_i&=mv'_f+mu'_f\\
-0 + \frac{-2v}{1+\frac{v^2}{c^2}} &= -2v
+x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)
 \end{align*}
-This holds true for $v<<c$, that is, only in the classical limit, where the speed of the balls, $v$, is small.
-\end{parts}
-\end{solution}
+To obtain the arrow's velocity in Marcel's frame, we need the time derivative of $x'^A$ with respect to $t'$, the time measured in Marcel's frame:
+\begin{align*}
+v'^A=\frac{d}{dt'}x'^A
+\end{align*}
+However, $x'^A$ is written in terms of $t$, not $t'$. However, equation \ref{eqn:chap3:LorentzTr}, tells us how $t$ depends on $t'$; we thus need to treat $t$ as a function of $t'$ and use the Chain Rule:
+\begin{align*}
+v'^A&=\frac{d}{dt'}x'^A(t)\\
+&=\frac{d}{dt}x'^A(t)\left(\frac{dt}{dt'}\right)\\
+&=\frac{d}{dt}\left(\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}} (v'^Bt+x^A)  \right)\left(\frac{dt}{dt'}\right)\\
+&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\frac{d}{dt}\left( (v'^Bt+x^A)  \right)\left(\frac{dt}{dt'}\right)\\
+&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+\frac{d}{dt}x^A \right)\left(\frac{dt}{dt'}\right)\\
+&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+v^A \right)\left(\frac{dt}{dt'}\right)\\
+\end{align*}
+We can differentiate equation \ref{eqn:chap3:LorentzTr} to get $\frac{dt'}{dt}$:
+\begin{align*}
+\frac{dt'}{dt}&=\frac{d}{dt'}\left(\frac{1}{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}\left(t+\frac{v'^Bx^A}{c^2} \right)\right)\\
+&=\frac{1}{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}\left(1+\frac{v'^Bv^A}{c^2} \right)
+\end{align*}
+where we identified $v^A=\frac{dx^A}{dt}$. We can take the inverse to get $\frac{dt}{dt'}$:
+\begin{align*}
+\frac{dt}{dt'}&=\frac{1}{\frac{dt'}{dt}}\\
+&=\frac{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}{1+\frac{v'^Bv^A}{c^2}}
+\end{align*}
+Combining everything, we get the velocity of the arrow as measured in Earth's reference frame by Marcel:
+\begin{align}
+\label{eqn:chap3:LorentzV}
+v'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+v^A \right)\left(\frac{dt}{dt'}\right)\nonumber\\
+\Aboxed{v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}}
+\end{align}
+The above equation tells us how to convert the velocity of the arrow as measured in the space ship ($v^A$) into the velocity as measured on Earth, $v'^A$, when the space ship moves with velocity $v'^B$ as measured on Earth. When $v^A$ and $v'^B$ are small compared to $c$, then this equation reduces to the Galilean version ($v'^A=v'^B+v^A$). However, when the velocities are large this is no longer the case. For the above example, with $v^A=0.4c$, $v'^B=0.7c$, we get:
+\begin{align*}
+v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}\\
+&=\frac{(0.7c)+(0.4c)}{1+\frac{(0.7c)(0.4c)}{c^2}}\\
+&=\frac{1.1}{1+0.28}c\\
+&=0.86c=\SI{2.57e8}{m/s}
+\end{align*}
+which is well short of the $1.1c$ that you would expect from Galilean relativity. Suppose instead that $v^A=c$, that is, Chlo\"e fires the arrow at the speed of light (she sees the arrow move away at the speed of light). Marcel will measure the speed of the arrow to be:
+\begin{align*}
+v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}\\
+&=\frac{v'^B+(1.0c)}{1+\frac{v'^B(1.0c)}{c^2}}\\
+&=\frac{v'^B+c}{1+\frac{v'^B}{c}}\\
+&=c \frac{v'^B+c}{c+v'^B}\\
+&=c
+\end{align*}
+regardless of the speed of the space ship! This is a truly strange result from Einstein's theory. If Chlo\"e fires an arrow at the speed of light, Marcel will also measure the arrow moving at the speed of light, regardless of whether or not the space ship is moving. Indeed, all observers in inertial frames of references would agree that the arrow is moving at the same speed, $c$. Although we showed this result as a consequence of the Lorentz transformation, Einstein developed his Theory of Special Relativity by postulating that the speed of light is the same in all inertial reference frames. The Lorentz transformation is then just a consequence of this postulate. This postulate has several strange consequence that have been \textit{experimentally} verified:
+\begin{itemize}
+\item Moving objects contract. That is, fast moving objects become shorter.
+\item Moving clocks slow down. That is, people moving very fast age slower.
+\item People in different inertial reference frames cannot agree on the order in which events took place. 
+\end{itemize}
+We will explore this in more detail when we take a closer look at Einstein's Special Theory of Relativity.
 
-% Taken from Relativity and Quanta, Chapter 2, Example 2.3
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\question The total energy of a proton is found to be three times its rest energy. The mass of a proton is $m_p=\SI{1.67E-27}{kg}$.
-\begin{parts}
-\part Express the proton's rest energy in electron volts. 
-\part With what speed is the proton moving?
-\part Determine the kinetic energy of the proton in units of \si{MeV}.
-\part What is the proton's momentum, in units of \si{MeV/c}?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item \SI{938}{MeV}
-\item \SI{2.83e8}{m/s}
-\item \SI{1876}{MeV}
-\item \SI{2650}{MeV/c}
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part The proton's rest energy is given by:
-\begin{align*}
-E_0 &= m_pc^2 \\
-&= (\SI{1.67E-27}{kg})(\SI{3.00E8}{m/s})^2 \\
-&= (\SI{1.50E-10}{J})(1 \text{eV} / \SI{1.60E-19}{J}) \\
-&= \SI{938}{MeV}
-\end{align*}
-\part Since the total energy $E$ is three times the rest energy, we have:
-\begin{align*}
-E &= \gamma m_p c^2 \\
-&= 3m_pc^2.
-\end{align*}
-Explicitly writing out $\gamma$:
-\begin{align*}
-3m_pc^2 &= \frac{m_pc^2}{\sqrt{1-(v^2/c^2)}} \\
-3 &= \frac{1}{\sqrt{1-(v^2/c^2)}}.
-\end{align*}
-Solving for the speed, $v$, of the proton:
-\begin{align*}
- 1- \frac{v^2}{c^2}  &= \frac{1}{9} \\
-\frac{v^2}{c^2} &= \frac{8}{9} \\
-v &= \frac{\sqrt{8}}{3}c \\
-v &= \SI{2.83E8}{m/s}
-\end{align*}
-\part The kinetic energy of the proton is:
-\begin{align*}
-K &= E - m_pc^2 \\
-&= 3m_pc^2 - m_pc^2 \\
-&= 2m_pc^2.
-\end{align*}
-Since $m_pc^2 = \SI{938}{MeV}$, we find:
-\begin{align*}
-K &= \SI{1876}{MeV}.
-\end{align*}
-\part  We use the following equation to calculate the momentum:
-\begin{align*}
-E^2 &= p^2c^2 + (m_pc^2)^2.
-\end{align*}
-Thus, we can solve for $p$ as follows:
-\begin{align*}
-(3m_pc^2)^2 &= p^2c^2 + (m_pc^2)^2  \\
-\therefore p^2c^2 &= 9(m_pc^2)^2 - (m_pc^2)^2 = 8(m_pc^2)^2 \\
-\therefore p &= \sqrt{8}\frac{m_pc^2}{c} = \sqrt{8}\frac{(\SI{938}{MeV})}{c} = \SI{2650}{MeV/c}.
-\end{align*}
-\end{parts}
-\end{solution}
+\newpage
+\section{Summary}
+\vspace{2cm}
+\begin{chapterSummary}
+\item Something interesting
+\end{chapterSummary}
