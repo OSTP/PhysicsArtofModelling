@@ -1,23 +1,71 @@
-
 \chapter{Electric potential}
 \label{chapter:potential}
-
+In this chapter, we develop the concept of electric potential energy and electric potential. This will allow us to describe the motion of charges using energy instead of forces. 
 
 \begin{learningObjectives}{
- \item something to learn
+ \item Understand the difference between electrical potential energy and electric potential.
+ \item Understand how to calculate the electric potential difference between two points near a point charge or a distribution of charges. 
+ \item Understand how to use electric potential to determine electrical potential energy.
+ \item Understand how to determine electric potential from electric field.
+ \item Understand how to determine electric field from electric potential.
+ \item Understand how to calculate stored electric potential energy.
  }
 \end{learningObjectives}
 
 \begin{opening}
-\begin{MCquestion}{A question}
-\item a choice
-\item another choice \correct
+\begin{MCquestion}{A proton and an electron are both accelerated by the $\SI{110}{V}$ electric potential difference from your outlet. Which particle has the highest speed?}
+\item The proton.
+\item The electron. \correct
+\item They will have the same speed, since they were accelerated by the same potential difference.
 \end{MCquestion}
 \end{opening}
 
-\section{A section}
+\section{Electric potential and electric potential energy}
+%TODO Review box: sections on conservative forces and the derivation of gravitational potential energy
+Mathematically, Coulomb's Law for the electric force is identical to Newton's Universal Theory of Gravity for the gravitational force, and the electric force is thus conservative. The work done by the electric force on a charge, $q$, when the charge moves from position, $A$, in space to some other position, $B$, cannot depend on the path taken. Since the work done by the electric force only depends on the location of the initial ($A$) and final ($B$) positions, we can define an electrical potential energy function, $U(\vec r)$, that depends on position. The work done by the electric force, $\vec F^E$,  on a charge in going from position, $A$ (defined by position vector $\vec r_A$), to position, $B$ (defined by position vector $\vec r_B$), can be written as:
+\begin{align}
+\label{eqn:potential:potentialwork}
+W=\int_A^B \vec F^E\cdot d\vec r=-\left( U(\vec r_B)-U(\vec r_A) \right)
+\end{align}
+In order to determine the function, $U(\vec r)$, we can choose a path over which the integral for work is easy to calculate. Consider the work done by the electric force from a charge, $+Q$, exerted on a charge, $+q$, when $+q$ moves from a distance $r_A$ to a distance $r_B$ from the centre of $+Q$, as illustrated in Figure \ref{fig:potential:potential}.
+\capfig{0.5\textwidth}{figures/Potential/potential.png}{\label{fig:potential:potential}Calculating the work done on a charge $+q$ by the electric force exerted by charge $+Q$ when charge $+q$ moves from a distance $r_A$ to a distance $r_B$ from the centre of charge $+Q$.}
+Placing $+Q$ at the origin of a coordinate system, the force exerted on charge, $+q$, when it is located at position, $\vec r$, is given by:
+\begin{align*}
+\vec F^E=k\frac{Qq}{r^2}\hat r
+\end{align*}
+The work done by the electric force when $+q$ moves from $A$ to $B$ is given by:
+\begin{align*}
+W&=\int_A^B \vec F^E\cdot d\vec r=\int_{\vec r_A}^{\vec r_B} \left(k\frac{Qq}{r^2}\hat r\right)\cdot d\vec r=kQq \int_{\vec r_A}^{\vec r_B} \frac{1}{r^2}dr\\
+&=kQq \left[\frac{-1}{r} \right]_{\vec r_A}^{\vec r_B}=-\left(\frac{kQq}{r_B}-\frac{kQq}{r_A}\right)
+\end{align*}
+where we noted that since $\vec F^E$ and $d\vec r$ are parallel, their scalar product is simply the product of their magnitudes. By comparing with Equation \ref{eqn:potential:potentialwork}, we can identify the potential energy, $U(\vec r)$, of a charge, $+q$, located at a relative position, $\vec r$, from a charge, $+Q$, as:
+\begin{align*}
+\Aboxed{U(\vec r)=\frac{kQq}{r}+C}
+\end{align*}
+where the potential energy is only defined up to some constant, $C$, which cancels when we take the difference in potential energy between two positions. The potential energy function that we derived for two positive point charges remains the same if one or both of the charges change sign, as the derivation did not depend on the sign of the charges (changing the sign of one charge changes the direction of the force). For example, a positive charge, $+q$, near a negative charge, $-Q$, would have negative electric potential energy with the choice $C=0$. 
 
+As you may recall, we defined the \textbf{electric field}, $\vec E(\vec r)$, to be the \textbf{electric force per unit charge}. By defining an electric field everywhere in space, we were able to easily determine the force on any test charge, $q$, whether it the charge is positive or negative (since the sign of $q$ will change the direction of the force vector, $q\vec E$):
+\begin{align*}
+\vec E(\vec r) &= \frac{\vec F^E(\vec r)}{q}\\
+\therefore \vec F^E(\vec r)&=q\vec E(\vec r)
+\end{align*}
+Similarly, we define the \textbf{electric potential}, $V(\vec r)$, to be the \textbf{electric potential energy per unit charge}. This allows us to define electric potential everywhere in space, and then determine the potential energy of a specific charge, $q$, by simply multiplying $q$ with the electric potential at that position in space.
+\begin{align*}
+\Aboxed{V(\vec r) &= \frac{U(\vec r)}{q}}\\
+\Aboxed{\therefore U(\vec r)&= qV(\vec r)}
+\end{align*}
+The definition of electric potential allows us to easily calculate the potential energy of any test charge, $q$.
+%TODO Checkpoint question: If the electric potential is positive in some region of space, a negative charge will have (A) positive potential energy, (B) negative potential energy - correct, (C) it depends, since only changes in potential energy are meaningful
 
+\subsection{Electric potential and electric field}
+%Discuss how one can just pull E out of the work integral
+\subsection{Equipotential surfaces}
+%
+\subsection{The electronvolt}
+
+\section{Calculating electric potential from charge distributions}
+
+\section{Electrostatic potential energy}
 
 \newpage
 \section{Summary}
