@@ -361,30 +361,91 @@ Because the charges on the large sphere can move around freely, some of them wil
 \begin{align*}
 E_1&=\frac{V}{R_1}\\
 E_2&=\frac{V}{R_2}\\
-\therefore \frac{E_2}{E_1}&=frac{R_2}{R_1}\\
-\therefore E_2&=E_1frac{R_2}{R_1}
+\therefore \frac{E_2}{E_1}&=\frac{R_2}{R_1}\\
+\therefore E_2&=E_1\frac{R_2}{R_1}
 \end{align*}
 and the electric field at the surface of the smaller sphere, $E_2$ is stronger since $R_2>R_1$. We can also compare the surface charge densities on the two spheres:
 \begin{align*}
 E_1&=\frac{\sigma_1}{\epsilon_0}\\
 E_2&=\frac{\sigma_2}{\epsilon_0}\\
-\therefore \frac{\sigma_2}{\sigma_1}&=\frac{E_2}{E_1}=frac{R_2}{R_1}\\
-\therefore \sigma_2&=\sigma_1 frac{R_2}{R_1}
+\therefore \frac{\sigma_2}{\sigma_1}&=\frac{E_2}{E_1}=\frac{R_2}{R_1}\\
+\therefore \sigma_2&=\sigma_1 \frac{R_2}{R_1}
 \end{align*}
 and we find that the charge density is higher on the smaller sphere. Thus, there are more charges per unit area on the smaller sphere than the bigger sphere.
 
 We can generalize this model to describe charges on any charged conducting object. If charges are deposited on a conducting object that is not a sphere, as in Figure \ref{fig:potential:chargeblob}, they will not distribute themselves uniformly. Instead, there will be a higher charge density (charges per unit area), near parts of the object that have a small radius of curvature (sharp points on the object in particular), just as the charge density was higher on the smaller sphere in the composite object described above. As a consequence of the higher concentration of charges near the ``pointier'' parts of the object, the electric field at the surface will be the strongest in those regions.. 
 \capfig{0.5\textwidth}{figures/Potential/chargeblob.png}{\label{fig:potential:chargeblob}On an uneven conductor, charges will accumulate on the sharper points, where the radius of curvature is the smallest.}
 
-In air, if the electric field exceeds a magnitude of approximately $\SI{3e6}{V/m}$, the air is said to ''electrically breakdown''. The strong electric field can remove electron from atoms in the air, ionizing the air and making it conductive. Thus, if the electric field at a point on the surface of a conductor is very strong, the air near that point will break down, and charges will leave the conductor, through the air, to find a location with lower electric potential energy (usually the ground). Electric breakdown is what we usually experience as a spark (or lightning, on a larger scale).
+In air, if the electric field exceeds a magnitude of approximately $\SI{3e6}{V/m}$, the air is said to ''electrically breakdown''. The strong electric field can remove electron from atoms in the air, ionizing the air and making it conductive. Thus, if the electric field at a point on the surface of a conductor is very strong, the air near that point will break down, and charges will leave the conductor, through the air, to find a location with lower electric potential energy (usually the ground). Electric breakdown is what we experience as a spark (or lightning, on a larger scale), and is usually a discrete (and potentially dramatic) event. Corona discharge is another mechanism whereby the strong electric field can make the air conductive, but in this case charges leak into the air more gradually, unlike in the case of electrical break down. Charges leaking into air through Corona discharge will emit a faint blueish light (the ``corona''). 
 
-Objects that are designed to hold a high electric potential (for example the electrodes on high voltage lines) are usually made very carefully so that they have a very smooth surface and no sharp edges. This reduces the risk of breakdown at the surface which would result in a loss of charge. Another type of breakdown, ``Corona discharge'', can also occur in air. This is similar to electric breakdown, but is not as dramatic as a spark, and charges usually leave the conductor at a roughly constant rate instead of all at once in a big spark.
+Objects that are designed to hold a high electric potential (for example the electrodes on high voltage lines) are usually made very carefully so that they have a very smooth surface and no sharp edges. This reduces the risk of breakdown or corona discharge at the surface which would result in a loss of charge.
 
-Corona discharge also occurs when the electric field in air is strong, and is utilized in designing lighting rods. Contrary to popular belief, lightning rods are not designed to attract lightening. Instead, lightning rods are designed to be conductors with a very sharp point, so that corona discharge can occur at their tip. This allows charges to slowly leak off from the Earth into the cloud through Corona discharge, thereby reducing the potential difference between the cloud and Earth so that a lightning strike does not occur. When a lightning strike does occur, it will hit the lightning rod, since the electric field at the top of the rod is the highest and that is the most likely point for the air to break down; but, that is not the goal of the lightning rod!
-
-
-
+Contrary to popular belief, lightning rods are not designed to attract lightening. Instead, lightning rods are designed to be conductors with a very sharp point, so that corona discharge can occur at their tip. This allows charges to slowly leak off from the Earth into the cloud through Corona discharge, thereby reducing the potential difference between the cloud and Earth so that a lightning strike (electrical breakdown) does not occur. When a lightning strike does occur, it will hit the lightning rod, since the electric field at the top of the rod is high and that is the most likely point for the air to break down; but, that is not the goal of the lightning rod!
 \section{Capacitors}
+Capacitors are common electronic devices that are used to store electric charge. Capacitors are often used when one needs a large amount of charge at once (e.g. to create a bright flash for a camera), or when one needs to collect charges in order to measure a quantity of charge. A capacitor is usually constructed with two conducting plates separated by either air or an insulating material.
+ \capfig{0.5\textwidth}{figures/Potential/capacitors.png}{\label{fig:potential:capacitors}Two examples of capacitors. The left panel shows a ``parallel plate'' capacitor, and the right panel shows a cylindrically shaped capacitor obtained by ``rolling up'' a parallel plate capacitor.}
+%TODO  The rolled up capacitor needs to actually be drawn!
+Figure \ref{fig:potential:capacitors} shows two examples of capacitors. The left side shows a ``parallel plate'' capacitor, consisting of two conducting plates separated by air or an insulator. The plates are conducting in order for one to be able to easily add and remove charge to the plates. The plates always equal and opposite charges. The right panel shows a more practical implementation of a capacitor that could be used in a circuit, which is simply made by ``rolling up'' a parallel plate capacitor (with an insulator instead of air separating the plates so that they do not touch). 
+\subsection{Capacitance}
+As long as the quantities of charge involved are not too large, it has been observed that the amount of charge, $Q$, that can be stored on a capacitor\footnote{This is the amount of charge on one of the plates. As a whole, the capacitor is neutral.}, is linearly proportional to the potential difference, $\Delta V$, between the two plates:
+\begin{align*}
+Q&\propto \Delta V\\
+\Aboxed{Q&=C\Delta V}\\
+\end{align*}
+The constant of proportionality, $C$, between charge and potential difference across the capacitor (usually called voltage across the capacitor) is called ``capacitance'', and has S.I. units of ``Farads'', $F$. The capacitance of a particular capacitor is a measure of how much charge it can hold at given voltage and depends on the geometry of the capacitor as well as the materials from which it is made. If too much charge is placed on a capacitor, the material between the two plates will break down, and a spark will 
+
+We can easily calculate the capacitance of the parallel plate capacitors. We model the capacitor as being made of two conducting plates, each with area, $A$, separated by a distance, $L$, and holding charge with magnitude, $Q$. The surface charge density on one of the plates, $\sigma$, is just given by:
+\begin{align*}
+\sigma =\frac{Q}{A}
+\end{align*} 
+In Example \ref{ex:potential:parallelplates}, we found an expression for the potential difference between two parallel plates:
+\begin{align*}
+\Delta V &= \frac{\sigma}{\epsilon_0}L=\left(\frac{L}{A\epsilon_0}\right)Q
+\end{align*}
+Comparing with, $Q=C\Delta V$, the capacitance of the parallel plate capacitor is found to be:
+\begin{align*}
+C=\epsilon_0\frac{A}{L}
+\end{align*}
+It makes sense that the capacitance, the amount of charge that can be stored at a given voltage, increases if the plates have a larger area (more space for charges), and decreases if the plates are further apart (smaller electric field).
+
+Capacitors are used in many touch screens. For example, these might be made of glass (an insulator), with a thin metal coating that one touches to interact with the screen (one of the plates). As you touch the metal plate, you effectively change the capacitance of the screen, which can be sensed and modelled to determine the location of your finger(s). Modern touch screen effectively have many capacitors built directly into the screen, but work on a similar principle. 
+
+\subsection{Dielectric materials}
+In practice, capacitors always have an insulating material between the two plates. The material is chosen to have a higher breakdown voltage than air, so that more charges can be stored before a breakdown occurs. It has also been experimentally observed that the capacitance increases with certain materials, so called ``dielectric materials''. A dielectric material has a ``dielectric constant'', $K$, defined to be the amount by which the capacitance increases:
+\begin{align*}
+C'=KC
+\end{align*}
+where $C'$ is the capacitance with the material in place, and $C$ is the capacitance when there is vacuum between the plates (the dielectric constant of air is very close to 1). Often, rather than the dielectric constant, one uses the ``permittivity'', $\epsilon$, of a material:
+\begin{align*}
+\epsilon=K\epsilon_0
+\end{align*}
+The capacitance of a parallel plate capacitor, with a material that has permittivity, $\epsilon$, is thus given by:
+\begin{align*}
+C=K\epsilon_0\frac{A}{L}=\epsilon\frac{A}{L}
+\end{align*}
+Dielectrics materials are made of molecules that can be polarized (as water), namely molecules that have a non-zero electric dipole moment. When the dielectric material is placed between the plates, the dipoles inside the material align themselves with the electric field from the plates. This leads to a net electric field from the dipoles in the opposite direction of the field from the plates, thus reducing the total electric field between the plates. This, in turn, allows more charges to be held on the plate for a given voltage.
+
+\subsection{Energy stored in a capacitor}
+The charges stored on the capacitor have electrical potential energy: if we connected the positive and negative plates with a conductor, the charges would be allowed to move and gain kinetic energy. We can model the amount of energy stored on the capacitor by considering how much work it would take to place the charges on the capacitor.
+
+Imagine that both plates on the capacitor start as neutral. We then remove an infinitesimal negative charge, with magnitude $dq$, from one plate and place it on the other plate. This required work, since we had to pull this negative charge away from the positive charge that we left on the plate. If the potential difference across the plates is $\Delta V$, then we had to do an amount of work given by:
+\begin{align*}
+dW = Vdq
+\end{align*}
+since the charge $dq$ has now gained potential energy $\Delta Vdq$. The potential difference is however dependent on the (constant) capacitance of the capacitor, and the amount of charge, $q$, already stored on one of the plates:
+\begin{align*}
+q &= C\Delta V\\
+\therefore \Delta V=\frac{q}{C}
+\end{align*}
+In order to determine the work required to transfer a total amount of charge, $Q$, we sum the work in transferring each infinitesimal charge, $dq$:
+\begin{align*}
+W=\int dW=\int_0^Q Vdq=\int_0^Q \frac{q}{C}dq=\frac{1}{2}\frac{Q^2}{C}
+\end{align*}
+Thus, the total potential energy that is stored on a capacitor is given by:
+\begin{align*}
+U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}C\Delta V
+\end{align*}
+where we made use of $Q=C\Delta V$ to show the formula with different choices of constants. In either case, the amount of energy that is stored increases with the amount of charge, the capacitance, and the voltage across the capacitor. Capacitors are useful because this energy can be released quickly, as in the bright flash of light required for flash photography.
 
 \newpage
 \section{Summary}
@@ -418,6 +479,7 @@ The electron volt.
 
 \begin{chapteractivity}{Reflect and research}
 {
+\item Explain how the capacitance can increase when a dielectric material is used.
 \item Explain how a corona ring works.
 }
 \end{chapteractivity}
@@ -438,6 +500,7 @@ The electron volt.
 \section{Sample problems and solutions}
 %TODO Something kinematics related with potential?
 %TODO A solid cylinder with uniform charge density, the electric potential is 100V at the surface, what is it as a function of r (inside and outside) - doesn't have to be a cylinder, but I think sphere is already in the question library
+%TODO Capacitance of two cylindrical electrodes
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
 
