@@ -205,6 +205,8 @@ In general, if the electric field is constant, the change in potential between t
 \begin{align*}
 \Delta V = EL
 \end{align*}
+This equation also highlights that an equivalent S.I. unit for the electric field is $\si{V/m}$ (Volts per metre), which is more commonly used than $\si{N/C}$ (Newtons per Coulomb). 
+
 Since the potential difference, $\Delta V=V(L)-V(0)$, is positive, the plate at $x=L$ is at a higher electric potential than the plate at $x=0$. This makes sense, as a positive charge at rest would move from the positive plate to the negative plate, thus decreasing its potential energy, which corresponds to moving from a region of high electric potential to a region of low electric potential. Conversely, a negative charge at rest would move from the negative plate to the positive plate, decreasing its potential energy, but moving from a region of low electric potential to a region of high electric potential. 
 
 Note that we can only calculate the difference in electric potential between plates, not the actual value of the potential, $V$. If we want to define a specific value of electric potential, we need to choose a location where we define $\SI{0}{V}$ to be. By convention, when possible, one chooses the negative plate to be the location of $\SI{0}{V}$. In order to determine the electric potential anywhere between the two plates, we can calculate the potential difference between the plate at $x=0$ (the one at $\SI{0}{V}$) and some position between the plates along the $x$ axis ($x<L$):
@@ -239,7 +241,7 @@ The electric field is then given by the negative of the derivative of the electr
 \begin{align*}
 \vec E(x) = -\frac{dV(x)}{dx}\hat x
 \end{align*}
-This is very similar to Section \ref{sec:potentialecons:forcefromu}, where we examined how one could use the scalar potential energy, $U(x,y,z)$, to determine the vector for the force associated with that potential energy. The same holds for the electric force, where we can recover the force vector, $\vec F$, from the potential energy, and similarly the electric field from the electric potential. 
+This is very similar to Section \ref{sec:potentialecons:forcefromu}, where we examined how one could use the scalar potential energy, $U(x,y,z)$, to determine the vector for the force associated with that potential energy. The same holds for the electric force, where we can recover the force vector, $\vec F$, from the potential energy, and similarly the electric field from the electric potential. Again, it should be clear why a common S.I. unit for the electric field is $\si{V/m}$ (Volts per meter). 
 
 In three dimensions, if we know the electric potential energy as a function of position, $U(\vec r)=U(x,y,z)$, then the electric force vector is given by:
 \begin{align*}
@@ -382,7 +384,7 @@ Objects that are designed to hold a high electric potential (for example the ele
 
 Contrary to popular belief, lightning rods are not designed to attract lightening. Instead, lightning rods are designed to be conductors with a very sharp point, so that corona discharge can occur at their tip. This allows charges to slowly leak off from the Earth into the cloud through Corona discharge, thereby reducing the potential difference between the cloud and Earth so that a lightning strike (electrical breakdown) does not occur. When a lightning strike does occur, it will hit the lightning rod, since the electric field at the top of the rod is high and that is the most likely point for the air to break down; but, that is not the goal of the lightning rod!
 \section{Capacitors}
-Capacitors are common electronic devices that are used to store electric charge. Capacitors are often used when one needs a large amount of charge at once (e.g. to create a bright flash for a camera), or when one needs to collect charges in order to measure a quantity of charge. A capacitor is usually constructed with two conducting plates separated by either air or an insulating material.
+Capacitors are common electronic devices that are used to store electric charge. Capacitors are often used when one needs a large amount of charge at once (e.g. to create a bright flash for a camera), or when one needs to collect charges in order to measure a quantity of charge. A capacitor is usually constructed with two conducting plates (called ``terminals'' or ``electrodes'') separated by either air or an insulating material.
  \capfig{0.5\textwidth}{figures/Potential/capacitors.png}{\label{fig:potential:capacitors}Two examples of capacitors. The left panel shows a ``parallel plate'' capacitor, and the right panel shows a cylindrically shaped capacitor obtained by ``rolling up'' a parallel plate capacitor.}
 %TODO  The rolled up capacitor needs to actually be drawn!
 Figure \ref{fig:potential:capacitors} shows two examples of capacitors. The left side shows a ``parallel plate'' capacitor, consisting of two conducting plates separated by air or an insulator. The plates are conducting in order for one to be able to easily add and remove charge to the plates. The plates always equal and opposite charges. The right panel shows a more practical implementation of a capacitor that could be used in a circuit, which is simply made by ``rolling up'' a parallel plate capacitor (with an insulator instead of air separating the plates so that they do not touch). 
@@ -451,8 +453,69 @@ where we made use of $Q=C\Delta V$ to show the formula with different choices of
 \section{Summary}
 
 \begin{chapterSummary}
+The electric force is conservative, so we can define a potential energy function, $U(\vec r)$. The potential energy function for a point charge, $q$, at position, $\vec r$, relative to a point charge, $Q$, is given by:
+\begin{align*}
+U(\vec r) = \frac{kQ}{r}q + C
+\end{align*}
+where, $C$, is an arbitrary constant, since only difference in potential energy are physically meaningful (as they correspond to work). Note that the value of the electrical potential energy will depend on the relative sign of $q$ and $Q$. 
 
-The electron volt.
+If a collection of charges are held together, the total electrical potential energy that is stored is called ``electrostatic potential energy''. 
+
+In a similar way as we defined the electric field, $\vec E(\vec r)$, to corresponds to electric force per unit charge, we defined ``electric potential'', $V(\vec r)$, to be electric potential energy per unit charge. We found that the electric potential at a position, $\vec r$, relative to a point charge, $Q$, is given by:
+\begin{align*}
+V(\vec r) = \frac{kQ}{r} + C
+\end{align*}
+and also depends on an arbitrary constant, since only differences in electric potential will lead to differences in potential energy. Note that if we know the value of the electric potential, $V$, at some position in space, $\vec r$, we can immediately determine the electric potential energy, $U$, at that position for any charge, $q$:
+\begin{align*}
+U = qV
+\end{align*}
+This is analogous to determining the force on a charge $q$ when we know the electric field at some point in space:
+\begin{align*}
+\vec F = q \vec E
+\end{align*}
+Differences in electric potential are called ``voltages'', and the S.I. unit of potential is called the ``Volt'' (V). In S.I. units, the electric field is more commonly expressed in Volts per metre (V/m).
+
+When a particle with charge, $q$, crosses a region of space where the electric potential changes by $\Delta V$, its potential energy will change by:
+\begin{align*}
+\Delta U = q\Delta V
+\end{align*}
+In particular, a negative charge will experience a decrease in potential energy when the electric potential increases, whereas a positive charge will experience an increase in potential energy when the electric potential increases. This reflects the fact that the electric force associated with the electric potential will act in opposite directions on a positive and a negative charge. 
+
+In order to describe the energies of particles interacting with electric forces, it is more convenient to use the ``electron volt'' instead of the Joule. An electron volt is defined as the energy that is gained by a charge with a magnitude $e$ (the charge of the proton) when accelerated through a potential difference of $\Delta V=\SI1{}{V}$:
+\begin{align*}
+\SI{1}{eV}&=(e)(\SI{1}{V})=\SI{1.6e-19}{J}
+\end{align*}
+
+The electric potential function can be determined in two different ways:
+\begin{enumerate}
+\item Model the charge distribution as the sum of infinitesimal point charges, $dq$, and add together the electric potentials, $dV$, from all charges, $dq$. This requires that one choose $\SI{0}{V}$ to be located at infinity, so that the $dV$ are all relative to the same point.
+\item Calculate the electric field (either as a integral or from Gauss' Law), and use:
+\begin{align*}
+\Delta V &=V(\vec r_B)-V(\vec r_A)=-\int_A^B  \vec E\cdot d\vec r
+\end{align*}
+\end{enumerate}
+It is worth noting that one needs to be very careful with the signs when using the above integral. In particular note that one take the negative of the integral, from $A$ to $B$, to determine the potential at $B$ minus the potential at $A$. 
+
+Similarly, one can determine the value of the electric field, $\vec E(\vec r)=\vec E(x,y,z)$, if one knows the electric potential $V(\vec r)=V(x,y,z)$:
+\begin{align*}
+\vec E(x,y,z) = -\nabla V =-\die{V}{x}\hat x-\die{V}{y}\hat y-\die{V}{z}\hat z
+\end{align*}
+where, as you recall, $\nabla V$, is called the gradient of the electric potential as a function of position, $V(x,y,z)$. 
+
+The electric potential can be visualized in a number of ways. The most common is to draw contours of constant electric potential, akin to the contours on geographical maps that are used to show regions of constant altitude (i.e. constant gravitational potential energy). Regions of constant electric potential are called ``equipotentials'' can be lines, surfaces or volumes. Equipotentials are always perpendicular to the electric field. In statics (when charges are not moving), the electric field in a conductor must be zero, so that a conductor always forms an equipotential, and the electric field at the surface of a conductor is always perpendicular to the surface.
+
+When charges are placed on a conductor, they will spread out along the outer surface of the conductor. The surface density of charges will be the highest where the conductor has the smallest radius of curvature (e.g. at a sharp point). Consequently, the electric field at the surface of a charged conductor is highest near sharp points. Lightning rods are designed to provide a sharp point, with an electric field that is strong enough to result in corona discharge, allowing charges to slowly leak from the Earth into the cloud, reducing the potential difference between the cloud and the Earth, thereby reducing the risk that an electric breakdown of the air will occur (i.e. a lightning strike). 
+
+Capacitors are devices that are used to store charge. They are usually made using two conducting plates (``terminals'' or ``electrodes'') that hold equal and opposite charge, $Q$, at a fixed potential difference, $\Delta V$ (the potential difference is between the plates). The amount of charge that is stored on the capacitor is observed to be proportional to the potential difference between the terminals:
+\begin{align*}
+Q=C\Delta V
+\end{align*}
+where the constant of proportionality, $C$, is called the ``capacitance'' of the capacitor. The S.I. unit of capacitance is the ``Farad'' (F). The capacitance of a capacitor depends on its geometry (e.g. its size) and the materials that it is made of. Usually, one places a dielectric material between the two conductors to increase the capacitance and reduce the risk of breakdown. If that material has a ``dielectric constant'', $K$, then the capacitance is increased from, $C$, to $C'=KC$, if $C$ corresponds to there being vacuum between the plates. The dielectric constant of air is very close to 1, so a capacitor in air is very similar to a capacitor in vacuum. The energy that is stored in a capacitor is:
+\begin{align*}
+U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}C\Delta V
+\end{align*}
+
+
 \end{chapterSummary}
 
 \newpage
