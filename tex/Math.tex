@@ -1,0 +1,582 @@
+\section{Math: Vectors, Derivatives, Integrals}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Multiple Choice
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple Choice}
+\question What is the angle (in degrees) between the 3-dimensional vectors $\vec a=(4,6,7)$ and $\vec b=(-5,3,17)$ when put tail to tail?
+\begin{checkboxes}
+\choice \SI{45}{\degree}
+\choice \SI{43.7}{\degree}
+\CorrectChoice \SI{49.6}{\degree} \correct
+\choice \SI{90}{\degree}
+\end{checkboxes}
+\begin{solution}
+\begin{align*}
+\vec a \cdot \vec b &= -20 + 18+ 119 &= 117\\
+\cos\theta &= \frac{117}{(10.05)(17.97)}=0.648\\
+\therefore \theta &= \SI{49.6}{\degree}
+\end{align*}
+\end{solution}
+
+\question $\vec a\times \vec b=\vec b \times \vec a$
+\begin{checkboxes}
+\choice True
+\CorrectChoice False \correct
+\end{checkboxes}
+
+
+\question A function, $f(x)$, is plotted and found to have a maximal value at $x=3.5$. What is $f'(x=3.5)$?
+\begin{checkboxes}
+\choice Negative
+\CorrectChoice 0 \correct
+\choice Positive
+\choice Need more information
+\end{checkboxes}
+
+
+\question You find that a rocket is burning fuel at a rate of \SI{100}{kg/s}, and is thus losing mass as it burns the fuel. If $M(t)$ is the mass of the rocket as a function of time, which of the following is correct?
+\begin{checkboxes}
+\choice $\int M dt$+C=\SI{100}{kg/s}
+\choice $\int M dt$+C=-\SI{100}{kg/s}
+\CorrectChoice $\frac{dM}{dt}=-\SI{100}{kg/s}$ \correct
+\choice $\frac{dM}{dt}=\SI{100}{kg/s}$
+\choice $M(t)=\SI{100}{kg/s}$
+\choice $M(t)=-\SI{100}{kg/s}$
+\end{checkboxes}
+
+
+\question You have opened up a coffee shop and found that you can model the rate of money coming into your store (in dollars per hour) as $f(t) = 2t^2$, where $t$ is the time in hours measured from when the store opened. The total amount of money that your store will make in the first 6 hours after opening, $M$, is given by:
+\begin{checkboxes}
+\choice $M=\frac{df}{dt}\big|_{t=6h}$
+\choice $M=\int_{0}^{6h}4t dt$
+\CorrectChoice $M=\int_{0}^{6h}2t^2 dt$ \correct
+\choice $M=2(\SI{6}{h})^2$
+\end{checkboxes}
+
+\question Physical (measurable) quantities can be given by:
+\begin{checkboxes}
+\choice Anti-derivatives
+\choice Indefinite integrals
+\CorrectChoice Definite integrals \correct
+\choice All of the above
+\end{checkboxes}
+
+%Sam Sherman
+\question What is the magnitude of the vector $\vec a = (5,5,1)$?
+\begin{checkboxes}
+\choice 51
+\CorrectChoice 7.14
+\choice 3.32
+\choice 2.54
+\end{checkboxes}
+
+%Nathan Smith
+\question Given two vectors,  $\vec a = (5, -7)$, and $\vec b = (9, 2)$, and knowing that the angle between them is \SI{67}{\degree} when they are placed tail to tail, what is their scalar product?
+\begin{checkboxes}
+\choice 29
+\choice 30
+\CorrectChoice  31
+\choice 32
+\end{checkboxes}
+
+%Modified question from Allyson Smith
+\question You have decided that you dislike the choice of $x$ and $y$ axes of a Cartesian coordinate system given to you by the professor, and decide to define your own coordinate system, with axes $v$ and $w$. If your $v$ axis points in the direction $2\hat x+3\hat y$, and you would like the $w$ axis to be perpendicular to the $v$ axis, in which direction should the $w$ axis point?
+\begin{checkboxes}
+\choice $-2\hat x-3\hat y$
+\CorrectChoice $3\hat x-2\hat y$
+\choice $-3\hat x-2\hat y$
+\choice $2\hat x-3\hat y$
+\end{checkboxes}
+
+\question The derivative of a function $f(x)$ with respect to $x$
+\begin{checkboxes}
+\choice is always positive if $f(x)$ is always positive.
+\choice is always zero if $f(x)$ increases at a constant rate.
+\CorrectChoice is always positive if $f(x)$ increases at a constant rate.
+\choice must be zero at some point if $f(x)$ increases at a constant rate.
+\end{checkboxes}
+
+\question You would like to know the total amount of water that has leaked out of a bucket with a hole in it in  the five minutes since the bucket was filled. You have measured that the bucket leaks water at a rate of $r(t)=\SI{0.5}{litres/min}$
+\begin{checkboxes}
+\choice You need to take the derivative of $r(t)$ evaluated at $t=5$
+\CorrectChoice  You need to take the definite integral of $r(t)$ from $t=0$ to $t=\SI{5}{min}$
+\choice You need to take the indefinite integral of $r(t)$ and evaluate it at $t=\SI{5}{min}$ with the constant of integration evaluated at $t=0$.
+\end{checkboxes}
+
+\question A function $f(x)$ is plotted and found to have a minimum value when $x=5$. The derivative of $f(x)$, $f'(x)$, evaluated at $x=5$ is
+\begin{checkboxes}
+\choice positive.
+\choice negative.
+\CorrectChoice zero.
+\choice Need more information.
+\end{checkboxes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% long answer
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Long answers}
+%Giancolli 3-15 -fixed
+\question The summit of Mount Kilimanjaro lies \SI{5895}{m} above sea level. Suppose you are currently staying at a camp which is located \SI{2411}{m} above sea level. Your GPS says that the summit is \SI{3470}{m} horizontally from the base camp in a direction of \SI{21.1}{\degree} West of North.
+\begin{parts}
+\part What are the components for the displacement vector from base camp to the summit?
+\part What is the magnitude of this vector?
+\part What angle does the vector make with the horizontal?
+\end{parts}
+\textit{Choose the $x$ axis to be East, the $y$ axis to be North, and the $z$ axis to be up}
+
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \begin{align*}
+d_x &= -\SI{1249.2}{m}\\
+d_y &= \SI{3237.3}{m}\\
+d_z &= \SI{3484}{m}
+\end{align*}
+\item \SI{4917.2}{m}
+\item \SI{45.12}{\degree}
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\textbf{a)} \begin{align*}
+d_x &= -(\SI{3470}{m})\sin\SI{21.1}{\degree}=-\SI{1249.2}{m}\\
+d_y &= (\SI{3470}{m})\cos\SI{21.1}{\degree}=\SI{3237.3}{m}\\
+d_z &= (\SI{5895}{m})-(\SI{2411}{m})=\SI{3484}{m}
+\end{align*}
+
+\textbf{b)} \begin{align*}
+d = \sqrt{(\SI{-1249.2}{m})^2+(\SI{3237.3}{m})^2+(\SI{3484}{m})^2}=\SI{4917.2}{m}
+\end{align*}
+
+\textbf{c)} Let $d_{xy}=\SI{3470}{m}$ be the length of the vector projected in the $xy$ plane. We then have:
+\begin{align*}
+\theta = \tan^{-1}\left( \frac{d_z}{d_{xy}} \right)= \tan^{-1}\left( \frac{\SI{3484}{m}}{\SI{3470}{m}} \right) = \SI{45.12}{\degree}
+\end{align*}
+\end{solution}
+
+\question As a summer job during your physics studies, you get hired by a pharmaceutical company in Fiji that is interested in your strong ability to model physical situations. The company is testing a new drug that increases the number of spines on sea urchins from the South Pacific. This is to reduce the number of tourists that spoil their nice beaches. Through careful observation, you have determined that you can model the number of spines on a sea urchin, as $N(t) = \frac{1}{8}t^2+2t+2$, where $t$ is the time, measured in days, from when the drug was administered. The drug is always administered on sea urchins when they are 42 days old.
+\begin{parts}
+\part How many total spines are on a sea urchin 10 days after administering the drug?
+\part How many spines per day are growing on a sea urchin 10 days after administering the drug? 
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item There are about 34.5 spines on the sea urchins after 10 days.
+\item  $4.5$ spines per day growing on the sea urchin.
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\textbf{a)} This corresponds to $N(t)$ evaluated at $t=\SI{10}{\day}$. There are about 34.5 spines on the sea urchins after 10 days.
+
+\textbf{b)} This corresponds to the rate of change of $N(t)$ evaluated at $t=\SI{10}{\day}$:
+\begin{align*}
+\frac{d}{dt}N(t) &= \frac{1}{4}t+2
+\end{align*}
+Evaluated at $t=\SI{10}{\day}$, this gives $4.5$ spines per day growing on the sea urchin.
+\end{solution}
+
+
+\question Your \SI{300}{\litre} bathtub is draining water, and you find that you can model the rate of water draining out as a function of time to be $r(t)=65-2t$, where $r(t)$ is expressed in litres per minute, and $t$ is the time in minutes since you pulled the plug from a full baththub. As times goes by and the water level goes down, the rate of water coming out of the bathtub decreases.
+\begin{parts}
+\part At what rate is water draining out of your bathtub, 5 minutes after pulling the plug, if your bathtub was full?
+\part How many litres drain out in the first 5 minutes after pulling the plug, if your bathtub was full?
+\part At what time does your model break down?
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \SI{55}{\litre/\minute}
+\item Your bathtub drains out completely at \SI{5}{\minute}.
+\item The model breaks down 5 minutes after the bath is empty.
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\textbf{a)} This corresponds to $r(t)$ evaluated at $t=\SI{5}{\minute}$, namely \SI{55}{\litre/\minute}
+
+
+\textbf{b)} The amount of water is given by the integral:
+\begin{align*}
+L &= \int_0^{5}r(t)dt \\
+&=\int_0^{5}(65-2t)dt\\
+&=[65t-t^2]_0^{5}\\
+&=65(5)-(25)= \SI{300}{\litre}
+\end{align*}
+Your bathtub drains out completely at \SI{5}{\minute}
+
+\textbf{c)} The model breaks down 5 minutes after the bath started draining, since the rate is non zero (part a), but the bathtub is empty (part b).
+
+\end{solution}
+
+
+\question In physics, we often make approximations to model physical situations. A common approximation that is made is to approximate a cow as a sphere (the ``spherical cow''). Suppose that a flea is walking along the surface of a spherical cow of radius $r=\SI{1.2}{m}$ and that the position of the flea is given with respect to a coordinate system that is at the centre of the spherical cow. The flea starts where the positive part of the $x$ axis intersects the cow and walks to a position where the $x$, $y$, and $z$ coordinates of its position are all positive and equal. What is the net displacement vector of the flea for this path?
+\capfig{0.4\textwidth}{figures/Math/sphericalcow.png}{\label{fig:math:sphericalcow}A spherical cow}
+\begin{finalanswer}
+$[-(\SI{0.51}{m})\hat i+(\SI{0.69}{m})\hat j+(\SI{0.69}{m})\hat k]$
+\end{finalanswer}
+\begin{solution}
+The flea starts off at a position $(x,y,z)=(1.2,0,0)$ and ends up at position $(x,y,z)=(p,p,p)$, where we do not know the value of $p$. However, since the flea is still on the sphere, we know that:
+\begin{align*}
+p^2+p^2+p^2 = r^2
+\end{align*}
+that is, the length of the position vector is the radius of the sphere. This gives:
+\begin{align*}
+3p^2 &=r^2\\
+p &= \sqrt{\frac{1}{3}r^2}=\sqrt{\frac{1}{3}(\SI{1.2}{m})^2}=\SI{0.69}{m}
+\end{align*}
+The displacement vector, is then:
+\begin{align*}
+\vec d &= [p\hat i+p\hat j +p\hat k]-[(\SI{1.2}{m})\hat i+0\hat j +0\hat k]\\
+&=[(\SI{0.69}{m})\hat i+(\SI{0.69}{m})\hat j +(\SI{0.69}{m})\hat k]-[(\SI{1.2}{m})\hat i+0\hat j +0\hat k]\\
+&=[-(\SI{0.51}{m})\hat i+(\SI{0.69}{m})\hat j+(\SI{0.69}{m})\hat k]
+\end{align*}
+
+\end{solution}
+
+%Giancolli 3-8 -fixed
+\question Let $\vec v_1=2.0\hat i-9\hat j$ and $\vec v_2=1.5\hat i+7.0\hat j$. Determine the magnitude and direction (angle that the vector makes with the $x$ axis)  of:
+\begin{parts}
+	\part $\vec v_1$
+	\part $\vec v_2$
+	\part $\vec v_1+\vec v_2$
+	\part $\vec v_2-\vec v_1$
+\end{parts}
+\begin{finalanswer}
+	\begin{enumerate}[(a)]
+		\item 8.25, \SI{282.5}{\degree}
+		\item 7.16, \SI{77.9}{\degree}
+		\item 4.03, \SI{330.3}{\degree}
+		\item 16.0, \SI{271.9}{\degree}
+	\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+	\textbf{a)} $||\vec v_1||=\sqrt{2^2+(-9)^2}=9.22$, $\theta = \tan^{-1}(\frac{-9}{2})=\SI{282.5}{\degree}$
+	
+	\textbf{b)} $||\vec v_1||=\sqrt{1.5^2+7.0^2}=7.16$, $\theta = \tan^{-1}(\frac{7.0}{1.5})=\SI{77.9}{\degree}$
+	
+	\textbf{c)} $\vec v_1+\vec v_2=3.5\hat i-2.0\hat j$
+	
+	$||\vec v_1+\vec v_2||=\sqrt{3.5^2+(-2.0)^2}=4.03$, $\theta = \tan^{-1}(\frac{-2.0}{3.5})=\SI{330.3}{\degree}$
+	
+	\textbf{d)} $\vec v_2-\vec v_1=-0.5\hat i+16.0\hat j$
+	
+	$||\vec v_2-\vec v_1||=\sqrt{(-0.5)^2+16.0^2}=16.0$, $\theta = \tan^{-1}(\frac{16}{-0.5})=\SI{271.79}{\degree}$ 
+\end{solution}
+
+
+%Openstax University physics 2-82
+\question Figure \ref{fig:math:twovectors} shows two vectors, $\vec G$ and $\vec H$, along with their magnitudes ($G=10.0$, $H=15.0$).
+\capfig{0.4\textwidth}{figures/Math/twovectors.png}{\label{fig:math:twovectors} Two vectors}
+\begin{parts}
+\part Write out the two vectors in component form.
+\part What is the angle between the two vectors, if these are placed with their tails at the same point?
+\part Write out the component form of the vector product, $\vec G \times \vec H$, of these two vectors.
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \begin{align*}
+\vec G &= 6.12\hat i+6.12\hat j +5.0\hat k\\
+\vec H &= -5.3\hat i+9.19\hat j +10.61\hat k\\
+\end{align*}
+\item $\theta = \SI{59.17}{\degree}$
+\item $18.98\hat i -91.43\hat j + 88.68\hat k$
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part The easiest component to figure out is the z component in both cases:
+\begin{align*}
+G_z&=10\cos(\SI{60}{\degree})=5.0\\
+H_z&=15\cos(\SI{45}{\degree})=10.61\\
+\end{align*}
+For the $x$ and $y$ components, we take the projection of the vector in the $xy$ plane, and then project onto the axes:
+\begin{align*}
+G_{xy}&=10\sin(\SI{60}{\degree})=8.66\\
+G_x &= G_{xy}\cos(\SI{45}{\degree})=6.12\\
+G_y &= G_{xy}\sin(\SI{45}{\degree})=6.12\\
+H_{xy}&=15\sin(\SI{45}{\degree})=10.61\\
+H_x &= H_{xy}\cos(\SI{120}{\degree})=-5.30\\
+H_y &= H_{xy}\sin(\SI{120}{\degree})=9.19\\
+\end{align*}
+Finally, giving:
+\begin{align*}
+\vec G &= 6.12\hat i+6.12\hat j +5.0\hat k\\
+\vec H &= -5.3\hat i+9.19\hat j +10.61\hat k\\
+\end{align*}
+\part We can use the scalar product to determine the angle:
+\begin{align*}
+\vec G \cdot \vec H = GH\cos(\theta)
+\end{align*}
+The scalar product is given by:
+\begin{align*}
+\vec G \cdot \vec H &= G_xH_x+G_yH_y+G_zH_z\\
+&= (6.12)(-5.3) + (6.12)(9.19)+ (5.0)(10.61)\\
+&= 76.86
+\end{align*}
+And we thus can find the angle:
+\begin{align*}
+GH\cos(\theta) &= 76.86\\
+\cos(\theta) &= \frac{76.86}{GH}=\frac{76.86}{(10)(15)}=0.512\\
+\therefore \theta &= \SI{59.17}{\degree}
+\end{align*}
+\part For the cross-product, we use the tedious formula:
+\begin{align*}
+\vec G \times \vec H &= (G_yH_z - G_zH_y)\hat i+ (G_zH_x-G_xH_z)\hat j + (G_xH_y-G_yH_x)\hat k\\
+&= 18.98\hat i -91.43\hat j + 88.68\hat k
+\end{align*}
+\end{parts}
+\end{solution}
+
+\question Determine the following:
+\begin{parts}
+\part $\die{}{x}(x^4+3x^3+ax+y)$
+\part $\die{}{y}(x^4+3x^3+ax+y)$
+\part $\frac{d}{dx}\sin(10^x)$
+\part $\die{}{y}\sqrt{x^2+xy+ay^3}$
+\part $\int (ax^2+bx+c)dx$
+\part $\int_0^\pi \cos(x)dx$
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item $4x^3+9x^2+a$
+\item 1
+\item $\cos(10^x)\ln(10)10^x $
+\item $\frac{1}{2\sqrt{x^2+xy+ay^3}}(x+3ay^2)$
+\item $\frac{1}{3}ax^3+\frac{1}{2}bx^2+cx+k$ (don't forget the constant at the end!)
+\item 0
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part Since we are not told that $y$ is an independent variable, we treat it as a constant: $\frac{d}{dx}(x^4+3x^3+ax+y)=4x^3+9x^2+a$
+
+\part Again, since we are not told that $x$ is an independent variable, we treat it as a constant: $\frac{d}{dy}(x^4+3x^3+ax+y)$=1
+
+\part We have to use the Chain Rule:
+\begin{align*}
+\frac{d}{dx}\sin(10^x)=\cos(10^x)\frac{d}{dx}10^x
+\end{align*}
+Note that we can write $10^x$ as:
+\begin{align*}
+10^x = e^{\ln(10)x}
+\end{align*}
+to which we can also apply the Chain Rule
+\begin{align*}
+\frac{d}{dx}\sin(10^x)&=\cos(10^x)\frac{d}{dx}e^{\ln(10)x}\\
+&=\cos(10^x)\ln(10)10^x 
+\end{align*}
+\part Again, with the Chain Rule and treating everything but $y$ as constants:
+\begin{align*}
+\die{}{y}\sqrt{x^2+xy+ay^3} &= \frac{1}{2\sqrt{x^2+xy+ay^3}}\die{}{y}(x^2+xy+ay^3)\\
+&=\frac{1}{2\sqrt{x^2+xy+ay^3}}(x+3ay^2)
+\end{align*}
+\part $\int(ax^2+bx+c)dx=\frac{1}{3}ax^3+\frac{1}{2}bx^2+cx+k$ (don't forget the constant at the end!)
+
+\part $\int_0^\pi \cos(x)dx=[\sin(x)]_0^\pi=\sin(\pi)-\sin(0)=0$
+\end{parts}
+\end{solution}
+
+\question Figure \ref{fig:math:skateramp} shows a skateboarder as she is about to jump off a parabolic ramp (she is moving towards the right in the figure). With the shown coordinate system, and for $x>0$, the ramp can be modelled by the function $y(x) = (\SI{2.0}{m})+(0.5)x+(\SI{0.04}{m^{-1}})x^2$, where $y$ is in the vertical direction. The ramp ends at $x=\SI{5.0}{m}$. Assuming that she is going fast enough to make it to the end of the ramp, which angle will her trajectory make with the horizontal just at the point that she leaves the ramp?
+\capfig{0.6\textwidth}{figures/Math/skateramp.png}{\label{fig:math:skateramp} A skateboarder on a parabolic ramp.}
+\begin{finalanswer}
+\SI{42}{\degree}
+\end{finalanswer}
+\begin{solution}
+The derivative of the function gives the tangent of the angle, so we just need to evaluate it at $x=\SI{5.0}{m}$:
+\begin{align*}
+\frac{d}{dx}[(\SI{2.0}{m})+(0.5)x+(\SI{0.04}{m^{-1}})x^2] &= 0.5+2(\SI{0.04}{m^{-1}})x
+\end{align*}
+Evaluating at $x=\SI{5.0}{m}$, and finding the angle:
+\begin{align*}
+\tan(\theta)&= 0.5+2(\SI{0.04}{m^{-1}})(\SI{5.0}{m})=0.90\\
+\therefore \theta &= \SI{41.99}{\degree}=\SI{42}{\degree}
+\end{align*}
+(of course, the answer is 42).
+\end{solution}
+
+\question The work, $W$, done by a force with magnitude, $F$, exerted on an object, along a distance, $\Delta x$, is defined to be:
+\begin{align*}
+W = F\Delta x
+\end{align*}
+and corresponds to the amount of (kinetic) energy that the force gives to the object. If the force is exerted over a longer distance, it will give more energy to the object, so it makes some intuitive sense. For example, a force of $F=\SI{15}{N}$ exerted on an object over a distance of $\Delta x=\SI{5.0}{m}$, will give the object a kinetic energy of $W=\SI{75}{Nm}$ (note that \si{Nm} are units of energy and equivalent to \si{J}).
+
+If the force depends on position, $F=F(x)$, then to calculate the work done in going from $x=x_a$ to $x=x_b$, we have to divide up the interval between $x_a$ and $x_b$ into many little intervals, of infinitely small length, $dx$. We can then calculate the small amount of work on that interval, $dW$, assuming that the force is constant. We can then sum all of the little works, $dW$, to obtain the total work, $W$, of the force over the interval from  $x=x_a$ to $x=x_b$ .
+
+If the force is given by $F(x)=\frac{1}{x^2}$, what is the work done in going from from $x=x_a$ to $x=x_b$?
+\begin{finalanswer}
+$\frac{1}{x_a}-\frac{1}{x_b}$
+\end{finalanswer}
+\begin{solution}
+We have to sum the work done on each tiny interval, where we assume the force is almost constant. On a tiny interval centred at $x$, the amount of work done is:
+\begin{align*}
+dW = F(x) dx
+\end{align*}
+The total work is the sum of all of the $dW$:
+\begin{align*}
+W = \int dW = \int F(x)dx
+\end{align*}
+Now that we have the work expressed an integral with a variable that we can use to label each interval ($x$), we can put in the limits of the integral and evaluate it:
+\begin{align*}
+W &= \int_{x_a}^{x_b} F(x)dx=\int_{x_a}^{x_b} \frac{1}{x^2}dx\\
+&=\left[-\frac{1}{x}\right]_{x_a}^{x_b}\\
+&=\frac{1}{x_a}-\frac{1}{x_b}
+\end{align*}
+
+\end{solution}
+%Olivia W
+\question Take the following partial derivative:
+\begin{align*}
+\die{}{y}\left(\frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)
+\end{align*}
+\begin{finalanswer}
+$\frac{3kyz}{(x^2+y^2+z^2)^{5/2}}$
+\end{finalanswer}
+\begin{solution}
+We are taking the derivative with respect to $y$. To do this, we treat $x$ and $z$ as constants. We can start by pulling $-kz$ out of the derivative:
+\begin{align*}
+\die{}{y}\left(\frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)&=-kz\die{}{y}\left(\frac{1}{(x^2+y^2+z^2)^{3/2}}\right)
+\end{align*}
+It tends to be easiest if we rewrite the denominator so that it has a negative exponent:
+\begin{align*}
+=-kz\die{}{y}(x^2+y^2+z^2)^{-3/2}
+\end{align*}
+Now we take the partial derivative using the Chain Rule:
+\begin{align*}
+&=-kz(-\frac{3}{2})(x^2+y^2+z^2)^{-5/2} \cdot 2y\\
+&=\frac{3}{2}\cdot \frac{2kyz}{(x^2+y^2+z^2)^{5/2}}\\
+&=\frac{3kyz}{(x^2+y^2+z^2)^{5/2}}
+\end{align*}
+Where in the last two lines we just simplified the expression.
+\end{solution}
+
+%Olivia W
+\question
+Draw the vector sum $\vec a - 2\vec b$ on the graph.
+
+\capfig{0.4\textwidth}{figures/Math/vecsum.png}{\label{fig:math:vecsum}Two vectors, $\vec a$ and $\vec b$.}
+
+\begin{finalanswer}
+\capfig{0.4\textwidth}{figures/Math/vecsumsoln.png}{\label{fig:math:vecsumsoln}The vector sum, $\vec a - 2\vec b$.}
+\end{finalanswer}
+
+\begin{solution}
+\capfig{0.4\textwidth}{figures/Math/vecsumsoln.png}{\label{fig:math:vecsumsoln}The vector sum, $\vec a - 2\vec b$.}
+$\vec a-2\vec b$ is equivalent to $\vec a+(-1)2\vec b$. First we find the vector whose magnitude is twice that of $\vec b$ and in the opposite direction as $\vec b$. Then we place these vectors head to tail to find the sum. 
+
+\end{solution}
+
+\question You find that you can model the rate at which a guanaco eats as
+\begin{align*}
+r(t)=at+b
+\end{align*}
+where $r(t)$ is the amount of kilograms per minute that the guanaco eats and $a$ and $b$ are constants. $t$ is the amount of time in minutes since the guanaco started eating.
+\begin{parts}
+\part What are the units of $a$ and $b$?
+\part Suppose that $a=\num{-0.2}$ and $b=2$ (in the units that you determined in part a)), how many kilograms does the guanaco eat in the first \SI{2}{min}?
+\part After how much time does the guanaco stop eating?
+\end{parts}
+
+\begin{solution}
+\begin{parts}
+\part The units of $a$ must be $\si{kg/min^2}$ and those of $b$ must be $\si{kg/min}$ in order to get the correct units for $r(t)$ (\si{kg/min}).
+\part In a small amount of time, $dt$, the guanaco eats a mass of food $dm$, given by:
+\begin{align*}
+dm = r(t) dt
+\end{align*}
+The total mass, $M$, of food eaten between $t=0$ and $t=\SI{2}{min}$ is found by summing the food eaten over that time interval:
+\begin{align*}
+M&=\int dm=\int_{0}^{\SI{2}{min}}r(t) dt=\int_{0}^{\SI{2}{min}}(at+b)dt=\Bigl[\frac{1}{2}at^2+bt\Bigr]_{0}^{\SI{2}{min}}\\
+&=\frac{1}{2}(\SI{-0.2}{kg/min^2})(\SI{2}{min})^2+(\SI{2}{kg/min})(\SI{2}{min})=\SI{3.6}{kg}
+\end{align*}
+\part The guanaco stops eating when the rate of food ingestion is zero:
+\begin{align*}
+at+b &= 0\\
+\therefore t &= -\frac{b}{a}=\frac{\SI{2}{kg/min}}{\SI{0.2}{kg/min^2}}=\SI{10}{min}
+\end{align*}
+\end{parts}
+\end{solution}
+
+\question You find that the number of customers in a store at a certain time is given by:
+\begin{align*}
+N(t) = a + bt^2 - ct^3
+\end{align*}
+where $t$ is the time in hours since the store opened, and, $N$, is the number of customers in the store at that time. $a$, $b$ and $c$ are constants.
+\begin{parts}
+\part What are the units of $a$, $b$ and $c$?
+\part If $a=\num{5}$, $b=\num{6}$, $c=\num{1}$, (in the units found in part a)) at what time is the number of customers in the store the largest (express your answer in the number of hours since the store opened)?
+\part If $a=\num{5}$, $b=\num{6}$, $c=\num{1}$, at what time are the most customers entering the store (express your answer in the number of hours since the store opened)?
+\end{parts}
+
+\begin{solution}
+\begin{parts}
+\part In order to have no units for $N(t)$ (since it's just a number), $a$ has to be unitless, $b$ has to have units of $\si{hours^{-2}}$ and $c$ must have units of \si{hours^{-3}}
+
+\part The derivative of $N(t)$ with respect to $t$ will be zero when the number of customers is maximal:
+\begin{align*}
+\frac{dN}{dt}=2bt+3ct^2&=0\\
+\therefore t&=-\frac{2b}{3c}=-\frac{2(\SI{6}{hours^{-2}})}{3(\SI{1}{hours^{-3}})}=\SI{4}{hours}
+\end{align*}
+We can verify that this is a maximum by sketching out the function, evaluating the sign of the second derivative at this time, or by evaluating the function at nearby points:
+\begin{align*}
+N(t=\SI{3}{hours})&=32\\
+N(t=\SI{4}{hours})&=37\\
+N(t=\SI{5}{hours})&=30\\
+\end{align*}
+\part We need to determine when the derivative of $N(t)$ is maximal \textit{and} positive. We can take the second derivative of $N(t)$ to determine this. In other words, we want to know when the derivative of $N(t)$ is maximal:
+\begin{align*}
+\frac{d}{dt}(2bt+3ct^2)=2b+6ct&=0\\
+\therefore t &=-\frac{2b}{6c}=\frac{2(\SI{6}{hours^{-2}})}{6(\SI{1}{hours^{-3}})}=\SI{2}{hours}
+\end{align*}
+This occurs before the maximum found in part a), so it corresponds to when the number of customers is increasing.
+
+\end{parts}
+\end{solution}
+
+
+\question You spot a balloon in the distance, and estimate that it is at an altitude of $\SI{500}{m}$ with respect to you, in the North direction from your position. You estimate that the point directly below the balloon, is a distance of $\SI{350}{m}$ from you. Your friend is located on the ground, a distance of \SI{200}{m} from you, in the direction that is \SI{35}{\degree} to the East from the North direction.
+\begin{parts}
+\part What is the displacement vector from your friend to the balloon? Be very clear in your choice of coordinate system.
+\part What angle does the displacement vector make with the horizontal?
+\end{parts}
+
+\begin{solution}
+\begin{parts}
+\part We choose a coordinate system in meters with ourself at the origin, where positive $y$ corresponds to the North direction and positive $x$ to the East direction. The $z$ direction is thus vertical. Using this coordinate system, the positions (coordinates) of the balloon, $\vec r_b$, and your friend, $\vec r_f$, are:
+\begin{align*}
+\vec r_b &= (0,350,500)\\
+\vec r_f &= (200\sin(\SI{35}{\degree}), 200\cos(\SI{35}{\degree}), 0) = (114.7, 163.8, 0)
+\end{align*}
+The displacement vector, from your friend to the balloon is thus given by:
+\begin{align*}
+\vec d = \vec r_b - \vec r_f = (-114.7, 186.2, 500)
+\end{align*}
+\part The angle that the vector makes with the horizontal can be found from:
+\begin{align*}
+\tan\theta &= \frac{500}{\sqrt{(-114.7)^2+(186.2)^2}}=\frac{500}{218.7}=2.3\\
+\therefore \theta &= \SI{66.4}{\degree}
+\end{align*}
+\end{parts}
+\end{solution}
+
+
+
+%written by Alex Friedland. Is this worth putting in? Seems alright, but I don't know if RM would think it is worthy.
+\question This is an excercise where you will derive the formula for the area of a circle.
+\begin{parts}
+\part Derive the formula for the area of a triangle using the general linear equation $y = -\frac{h}{w}x+h$.
+\part Now, use a polar coordinate system to derive the formula of a circle by considering a circle to be the sum of a large number of triangles.
+\end{parts}
+\begin{finalanswer}
+	\begin{parts}
+		\part N/A
+		\part N/A
+	\end{parts}
+\end{finalanswer}
+\begin{solution}
+	
+	
+	
+	
+\end{solution}
+
