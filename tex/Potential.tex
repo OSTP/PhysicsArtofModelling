@@ -279,7 +279,7 @@ r_{10V}&=\frac{kQ}{(\SI{10}{V})}\quad r_{20V}=\frac{kQ}{(\SI{20}{V})}\quad r_{30
 \end{align*}
 
 \section{Calculating electric potential from charge distributions}
-In this section, we give a few example of determining the electric potential for different charge distributions. We have two methods that we can use to calculate the electric potential from a distribution of charges:
+In this section, we give two examples of determining the electric potential for different charge distributions. We have two methods that we can use to calculate the electric potential from a distribution of charges:
 \begin{enumerate}
 \item Model the charge distribution as the sum of infinitesimal point charges, $dq$, and add together the electric potentials, $dV$, from all charges, $dq$. This requires that one choose $\SI{0}{V}$ to be located at infinity, so that the $dV$ are all relative to the same point.
 \item Calculate the electric field (either as a integral or from Gauss' Law), and use:
@@ -287,11 +287,11 @@ In this section, we give a few example of determining the electric potential for
 \Delta V &=V(\vec r_B)-V(\vec r_A)=-\int_A^B  \vec E\cdot d\vec r
 \end{align*}
 \end{enumerate}
-The first method is similar to how we calculated the electric field for distributed charges in chapter \ref{chapter:chargesfields}, but with the simplification that we only need to sum scalars instead of vectors. The idea is that some charge, $q$, will have a total potential energy (relative to infinity) that is the sum of the potential energies that it has from each $dq$. The second method was already introduced in this chapter.
-\begin{example}{\label{ex:potential:ring}A ring of radius $R$ carries a total charge $+Q$. Determine the electric potential a distance $a$ from the centre of the ring, along the axis of symmetry of the ring.}
+The first method is similar to how we calculated the electric field for distributed charges in chapter \ref{chapter:chargesfields}, but with the simplification that we only need to sum scalars instead of vectors. The second method was already introduced in this chapter.
+\begin{example}{\label{ex:potential:ring}A ring of radius $R$ carries a total charge $+Q$. Determine the electric potential a distance $a$ from the centre of the ring, along the axis of symmetry of the ring. Assume that zero electric potential is defined at infinity.}
 Figure \ref{fig:potential:ring} shows a diagram of the ring, and our choice of infinitesimal charge, $dq$. 
 \capfig{0.3\textwidth}{figures/potential/ring.png}{\label{fig:potential:ring}Determining the electric potential on the axis of a ring of radius $R$ carrying charge $Q$.}
-In order to calculate the electric potential at point, $P$, with $\SI{0}{V}$ defined to be at infinity, we first calculate the infinitesimal potential from the infinitesimal point charge, $dq$:
+In order to calculate the electric potential at point, $P$, with $\SI{0}{V}$ defined to be at infinity, we first calculate the infinitesimal potential at $P$ from the infinitesimal point charge, $dq$:
 \begin{align*}
 dV=k\frac{dq}{r}
 \end{align*}
@@ -301,19 +301,19 @@ V=\int dV=\int k\frac{dq}{r} = \frac{k}{r}\int dq=k\frac{Q}{r}=k\frac{Q}{\sqrt{a
 \end{align*}
 where we recognized that $k$ and $r$ are the same for each $dq$, so that they could factor out of the integral. $\int dq=Q$ is then just the sum of the infinitesimal charges, which must add to the charge of the ring.
 
-\textbf{Discussion:} In this example, we determined the electric potential, relative to infinity, a distance $a$ along the axis of a ring of charge. We modelled the ring as being made of many infinitesimal point charges and summed together the electric potentials from those charges relative to infinity in order to get the total potential from the ring. This was much simpler than the electric field, since electric potential is a scalar and we do not need to consider how the components from different $dq$ along the ring will interfere.
+\textbf{Discussion:} In this example, we determined the electric potential, relative to infinity, a distance $a$ from the centre of a charge ring, along its axis of symmetry. We modelled the ring as being made of many infinitesimal point charges, and summed together the infinitesimal electric potentials from those charges relative to infinity. This was much simpler than determining the electric field, since electric potential is a scalar and we do not need to consider how the components from different $dq$ along the ring will cancel.
 \end{example}
 
-\begin{example}{A long, thin, straight wire carries uniform charge per unit length. The electric potential difference between points located at distances $r_B=\SI{2}{cm}$ and $r_A=\SI{1}{cm}$ from the wire is found to be $V(r_B)-V(r_A)=\SI{-100}{V}$. What is the linear charge density on wire, $\lambda$?}
+\begin{example}{A long, thin, straight wire carries uniform charge per unit length, $\lambda$. The electric potential difference between points located at distances $r_B=\SI{2}{cm}$ and $r_A=\SI{1}{cm}$ from the wire is found to be $V(r_B)-V(r_A)=\SI{-100}{V}$. What is the linear charge density on wire, $\lambda$?}
 In this case, we can use Gauss' Law to determine the electric field at a certain distance from the wire. From that, we can calculate the electric potential difference between any two points near the wire, and thus the charge density on the wire.
-
+%TODO Add a figure for this example, showing the two points (can probably just modify the figure for this geometry from Gauss chapter)
 By using a cylindrical surface of length, $L$, and radius, $r$, we can use Gauss' Law to determine the field at a distance, $r$, from the wire:
 \begin{align*}
 \oint \vec E\cdot d\vec A&=\frac{Q^{enc}}{\epsilon_0}\\
 2\pi r L E&= \frac{\lambda L}{\epsilon_0}\\
 \therefore \vec E(r)&=\frac{\lambda}{2\pi\epsilon_0 r}\hat r
 \end{align*}
-Using the electric field, we can calculate the potential difference between two points that are at distances, $r_A$ and $r_B$ from the wire:
+Using the electric field, we can calculate the potential difference between two points that are at distances, $r_A$ and $r_B$, from the wire:
 \begin{align*}
 \Delta V &=V(r_B)-V(r_A)=-\int_{r_A}^{r_B}  \vec E\cdot d\vec r\\
 &=-\int_{r_A}^{r_B}  \left( \frac{\lambda}{2\pi\epsilon_0 r}\hat r \right)\cdot d\vec r=-\frac{\lambda}{2\pi\epsilon_0}\int_{r_A}^{r_B}   \frac{1}{r}\hat r \cdot d\vec r=-\frac{\lambda}{2\pi\epsilon_0}\int_{r_A}^{r_B}   \frac{1}{r}dr\\
@@ -326,7 +326,7 @@ where, in the second last line, we removed the absolute value from the logarithm
 \Delta V &=\frac{\lambda}{2\pi\epsilon_0}\ln\left(\frac{r_A}{r_B}\right)\\
 \therefore \lambda &= \frac{2\pi\epsilon_0\Delta V}{\ln\left(\frac{r_A}{r_B}\right)}=\frac{2\pi(\SI{8.85e-12}{C^2\cdot N^{-1}\cdot m^{-2}})(\SI{-100}{V})}{\ln\left(\frac{1}{2}\right)}=\SI{8.02e-9}{C/m}
 \end{align*}
-where, again, one needs to be very careful with the sign! Note that it also makes sense that the potential difference, $\Delta V =V(r_B)-V(r_A)$, is negative, since $r_A$ is closer to the positively charged wire. A positive charge at rest would move away from the positively charged wire, from $r_A$ to $r_B$, from high potential to low potential.
+where, again, one needs to be very careful with the signs! Note that it also makes sense that the potential difference, $\Delta V =V(r_B)-V(r_A)$, is negative, since $r_A$ is closer to the positively charged wire. A positive charge at rest would move away from the positively charged wire, from $r_A$ to $r_B$, from high potential to low potential.
 
 \textbf{Discussion: }In this example, we showed how to determine the electric potential near an infinitely long charged wire by using the electric field that we determined from Gauss' Law. By knowing the potential difference between two points near the wire, we were then able to infer the charge density on the wire.
 \end{example}
@@ -344,9 +344,9 @@ In particular, the electric field is related to the potential at the surface by:
 \begin{align*}
 E=\frac{V}{R}
 \end{align*}
-Thus, if two spheres are at the same electric potential, the one with the smaller radius will have a stronger electric field at its surface, even if both spheres are at the same potential.
+Thus, if two spheres are at the same electric potential, the one with the smaller radius will have a stronger electric field at its surface.
 
-Because a conducting sphere is symmetrical, the charges will distribute themselves symmetrically around the whole surface of the sphere. The charge per unit area, $\sigma$, at the surface of the sphere is thus given by:
+Because a conducting sphere is symmetric, the charges will distribute themselves symmetrically around the whole surface of the sphere. The charge per unit area, $\sigma$, at the surface of the sphere is thus given by:
 \begin{align*}
 \sigma &= \frac{Q}{4\pi R^2}
 \end{align*}
@@ -354,7 +354,7 @@ The charge density can be related to the electric field at the surface of the sp
 \begin{align*}
 E&=k\frac{Q}{R^2}=k\frac{4\pi R^2\sigma}{R^2}=4\pi\sigma k=\frac{\sigma}{\epsilon_0}
 \end{align*}
-where in the last equality, we used replaced $k$ with $\epsilon_0$ and confirmed the general result from Section \ref{sec:gauss:conductors} on the electric field near a conductor with surface charge, $\sigma$. 
+where in the last equality, we used replaced $k$ with $\epsilon_0$ and confirmed the general result from Section \ref{sec:gauss:conductors}, where we determined the electric field near a conductor with surface charge, $\sigma$. 
 
 Consider a sphere of radius, $R_1$, that carries total charge, $+Q$. A neutral second, smaller, conducting sphere, of radius $R_2$ is then connected to the first sphere, using a conducting wire, as in Figure \ref{fig:potential:twospheres}.
 \capfig{0.5\textwidth}{figures/Potential/twospheres.png}{\label{fig:potential:twospheres}Two conducting spheres are connected by a conducting wire. The charge $Q$ that was originally on the larger sphere distributes itself onto the two spheres.}
@@ -363,40 +363,40 @@ Because the charges on the large sphere can move around freely, some of them wil
 \begin{align*}
 E_1&=\frac{V}{R_1}\\
 E_2&=\frac{V}{R_2}\\
-\therefore \frac{E_2}{E_1}&=\frac{R_2}{R_1}\\
-\therefore E_2&=E_1\frac{R_2}{R_1}
+\therefore \frac{E_2}{E_1}&=\frac{R_1}{R_2}\\
+\therefore E_2&=E_1\frac{R_1}{R_2}
 \end{align*}
-and the electric field at the surface of the smaller sphere, $E_2$ is stronger since $R_2>R_1$. We can also compare the surface charge densities on the two spheres:
+and the electric field at the surface of the smaller sphere, $E_2$ is stronger since $R_2<R_1$. We can also compare the surface charge densities on the two spheres:
 \begin{align*}
 E_1&=\frac{\sigma_1}{\epsilon_0}\\
 E_2&=\frac{\sigma_2}{\epsilon_0}\\
-\therefore \frac{\sigma_2}{\sigma_1}&=\frac{E_2}{E_1}=\frac{R_2}{R_1}\\
-\therefore \sigma_2&=\sigma_1 \frac{R_2}{R_1}
+\therefore \frac{\sigma_2}{\sigma_1}&=\frac{E_2}{E_1}=\frac{R_1}{R_2}\\
+\therefore \sigma_2&=\sigma_1 \frac{R_1}{R_2}
 \end{align*}
 and we find that the charge density is higher on the smaller sphere. Thus, there are more charges per unit area on the smaller sphere than the bigger sphere.
 
-We can generalize this model to describe charges on any charged conducting object. If charges are deposited on a conducting object that is not a sphere, as in Figure \ref{fig:potential:chargeblob}, they will not distribute themselves uniformly. Instead, there will be a higher charge density (charges per unit area), near parts of the object that have a small radius of curvature (sharp points on the object in particular), just as the charge density was higher on the smaller sphere in the composite object described above. As a consequence of the higher concentration of charges near the ``pointier'' parts of the object, the electric field at the surface will be the strongest in those regions.. 
+We can generalize this model to describe charges on any charged conducting object. If charges are deposited on a conducting object that is not a sphere, as in Figure \ref{fig:potential:chargeblob}, they will not distribute themselves uniformly. Instead, there will be a higher charge density (charges per unit area), near parts of the object that have a small radius of curvature (sharp points on the object in particular), just as the charge density was higher on the smaller sphere described above. As a consequence of the higher concentration of charges near the ``pointier'' parts of the object, the electric field at the surface will be the strongest in those regions (as it is stronger at the surface of the smaller sphere described above).
 \capfig{0.5\textwidth}{figures/Potential/chargeblob.png}{\label{fig:potential:chargeblob}On an uneven conductor, charges will accumulate on the sharper points, where the radius of curvature is the smallest.}
 
-In air, if the electric field exceeds a magnitude of approximately $\SI{3e6}{V/m}$, the air is said to ''electrically breakdown''. The strong electric field can remove electron from atoms in the air, ionizing the air and making it conductive. Thus, if the electric field at a point on the surface of a conductor is very strong, the air near that point will break down, and charges will leave the conductor, through the air, to find a location with lower electric potential energy (usually the ground). Electric breakdown is what we experience as a spark (or lightning, on a larger scale), and is usually a discrete (and potentially dramatic) event. Corona discharge is another mechanism whereby the strong electric field can make the air conductive, but in this case charges leak into the air more gradually, unlike in the case of electrical break down. Charges leaking into air through Corona discharge will emit a faint blueish light (the ``corona''). 
+In air, if the electric field exceeds a magnitude of approximately $\SI{3e6}{V/m}$, the air is said to ''electrically breakdown''. The strong electric field can remove electron from atoms in the air, ionizing the air and making it conductive. Thus, if the electric field at a point on the surface of a conductor is very strong, the air near that point will break down, and charges will leave the conductor, through the air, to find a location with lower electric potential energy (usually the ground). Electric breakdown is what we experience as a spark (or lightning, on a larger scale), and is usually a discrete (and potentially dramatic) event. Corona discharge is another mechanism whereby the strong electric field can make the air conductive, but in this case charges leak into the air more gradually, unlike in the case of electrical break down. Charges leaking into air through Corona discharge will emit a faint blueish light (the ``Corona'') as well as an audible hissing sound.
 
 Objects that are designed to hold a high electric potential (for example the electrodes on high voltage lines) are usually made very carefully so that they have a very smooth surface and no sharp edges. This reduces the risk of breakdown or corona discharge at the surface which would result in a loss of charge.
 
 Contrary to popular belief, lightning rods are not designed to attract lightening. Instead, lightning rods are designed to be conductors with a very sharp point, so that corona discharge can occur at their tip. This allows charges to slowly leak off from the Earth into the cloud through Corona discharge, thereby reducing the potential difference between the cloud and Earth so that a lightning strike (electrical breakdown) does not occur. When a lightning strike does occur, it will hit the lightning rod, since the electric field at the top of the rod is high and that is the most likely point for the air to break down; but, that is not the goal of the lightning rod!
 \section{Capacitors}
-Capacitors are common electronic devices that are used to store electric charge. Capacitors are often used when one needs a large amount of charge at once (e.g. to create a bright flash for a camera), or when one needs to collect charges in order to measure a quantity of charge. A capacitor is usually constructed with two conducting plates (called ``terminals'' or ``electrodes'') separated by either air or an insulating material.
+Capacitors are common electronic devices that are used to store electric charge for a variety of applications. A capacitor is usually constructed with two conducting plates (called ``terminals'' or ``electrodes'') separated by either air or an insulating material.
  \capfig{0.5\textwidth}{figures/Potential/capacitors.png}{\label{fig:potential:capacitors}Two examples of capacitors. The left panel shows a ``parallel plate'' capacitor, and the right panel shows a cylindrically shaped capacitor obtained by ``rolling up'' a parallel plate capacitor.}
 %TODO  The rolled up capacitor needs to actually be drawn!
-Figure \ref{fig:potential:capacitors} shows two examples of capacitors. The left side shows a ``parallel plate'' capacitor, consisting of two conducting plates separated by air or an insulator. The plates are conducting in order for one to be able to easily add and remove charge to the plates. The plates always equal and opposite charges. The right panel shows a more practical implementation of a capacitor that could be used in a circuit, which is simply made by ``rolling up'' a parallel plate capacitor (with an insulator instead of air separating the plates so that they do not touch). 
+Figure \ref{fig:potential:capacitors} shows two examples of capacitors. The left panel shows a ``parallel plate'' capacitor, consisting of two conducting plates separated by air or an insulator. The plates are conducting in order for one to be able to easily add and remove charge to the plates. The plates always hold equal and opposite charges. The right panel shows a more practical implementation of a capacitor that could be used in a circuit, which is simply made by ``rolling up'' a parallel plate capacitor (with an insulator instead of air separating the plates so that they do not touch). 
 \subsection{Capacitance}
 As long as the quantities of charge involved are not too large, it has been observed that the amount of charge, $Q$, that can be stored on a capacitor\footnote{This is the amount of charge on one of the plates. As a whole, the capacitor is neutral.}, is linearly proportional to the potential difference, $\Delta V$, between the two plates:
 \begin{align*}
 Q&\propto \Delta V\\
 \Aboxed{Q&=C\Delta V}\\
 \end{align*}
-The constant of proportionality, $C$, between charge and potential difference across the capacitor (usually called voltage across the capacitor) is called ``capacitance'', and has S.I. units of ``Farads'', $F$. The capacitance of a particular capacitor is a measure of how much charge it can hold at given voltage and depends on the geometry of the capacitor as well as the materials from which it is made. If too much charge is placed on a capacitor, the material between the two plates will break down, and a spark will 
+The constant of proportionality, $C$, between charge and potential difference across the capacitor (usually called voltage across the capacitor) is called ``capacitance'', and has S.I. units of ``Farads'', $F$. The capacitance of a particular capacitor is a measure of how much charge it can hold at given voltage and depends on the geometry of the capacitor as well as the material between the terminals. If too much charge is placed on a capacitor, the material between the two plates will break down, and a spark will usually damage the capacitor as well as discharge it.
 
-We can easily calculate the capacitance of the parallel plate capacitors. We model the capacitor as being made of two conducting plates, each with area, $A$, separated by a distance, $L$, and holding charge with magnitude, $Q$. The surface charge density on one of the plates, $\sigma$, is just given by:
+We can easily calculate the capacitance of a parallel plate capacitor. We model the capacitor as being made of two conducting plates, each with area, $A$, separated by a distance, $L$, and holding charge with magnitude, $Q$. The surface charge density on one of the plates, $\sigma$, is just given by:
 \begin{align*}
 \sigma =\frac{Q}{A}
 \end{align*} 
@@ -410,7 +410,7 @@ C=\epsilon_0\frac{A}{L}
 \end{align*}
 It makes sense that the capacitance, the amount of charge that can be stored at a given voltage, increases if the plates have a larger area (more space for charges), and decreases if the plates are further apart (smaller electric field).
 
-Capacitors are used in many touch screens. For example, these might be made of glass (an insulator), with a thin metal coating that one touches to interact with the screen (one of the plates). As you touch the metal plate, you effectively change the capacitance of the screen, which can be sensed and modelled to determine the location of your finger(s). Modern touch screen effectively have many capacitors built directly into the screen, but work on a similar principle. 
+Capacitors are used in many touch screens. For example, these might be made of glass (an insulator), with a thin metal coating that one touches to interact with the screen (one of the plates). As you touch the metal plate, you effectively change the capacitance of the screen, which can be sensed and modelled to determine the location of your finger(s). Modern touch screen have many capacitors built directly into the screen, and function based on this principle. 
 
 \subsection{Dielectric materials}
 In practice, capacitors always have an insulating material between the two plates. The material is chosen to have a higher breakdown voltage than air, so that more charges can be stored before a breakdown occurs. It has also been experimentally observed that the capacitance increases with certain materials, so called ``dielectric materials''. A dielectric material has a ``dielectric constant'', $K$, defined to be the amount by which the capacitance increases:
@@ -421,28 +421,31 @@ where $C$ is the capacitance with the material in place, and $C_0$ is the capaci
 \begin{align*}
 \epsilon=K\epsilon_0
 \end{align*}
-The capacitance of a parallel plate capacitor, with a material that has permittivity, $\epsilon$, is thus given by:
+based on the permittivity of free space, $\epsilon_0$. The capacitance of a parallel plate capacitor, with a material that has permittivity, $\epsilon$, is thus given by:
 \begin{align*}
 C=K\epsilon_0\frac{A}{L}=\epsilon\frac{A}{L}
 \end{align*}
-Dielectrics materials are made of molecules that can be polarized (as water), namely molecules that have a non-zero electric dipole moment. When the dielectric material is placed between the plates, the dipoles inside the material align themselves with the electric field from the plates. This leads to a net electric field from the dipoles in the opposite direction of the field from the plates, thus reducing the total electric field between the plates. This, in turn, allows more charges to be held on the plate for a given voltage. This is illustrated in Figure TODO
-%TODO Figure showing polarized molecules reducing the electric field.
+Dielectrics materials are made of molecules that can be polarized (as water), namely molecules that have a non-zero electric dipole moment. When the dielectric material is placed between the plates, the dipoles inside the material align themselves with the electric field from the plates. This leads to a second electric field, from the dipoles, in the opposite direction of the field from the plates, thus reducing the total electric field between the plates. This, in turn, allows more charges to be held on the plate for a given voltage. This is illustrated in Figure TODO.
+
+%TODO Figure showing polarized molecules reducing the electric field, see Giancolli on Capacitors for inspiration
+
 Note that, in a dielectric material with permittivity, $\epsilon$, Gauss' Law is modified to read:
 \begin{align*}
 \oint \vec E\cdot d\vec A=\frac{Q^{enc}}{\epsilon}
 \end{align*}
+where the permittivity of free space, $\epsilon_0$, is simply replaced with the permittivity of the material, $\epsilon$.
 
 \subsection{Energy stored in a capacitor}
-The charges stored on the capacitor have electrical potential energy: if we connected the positive and negative plates with a conductor, the charges would be allowed to move and gain kinetic energy. We can model the amount of energy stored on the capacitor by considering how much work it would take to place the charges on the capacitor.
+The charges stored on a capacitor have electrical potential energy: if one were to place a conductor between the plates, charges would immediately conduct from one plate to the other and gain kinetic energy. We can model the amount of energy stored on the capacitor by considering how much work it takes to place the charges on the capacitor.
 
-Imagine that both plates on the capacitor start as neutral. We then remove an infinitesimal negative charge, with magnitude $dq$, from one plate and place it on the other plate. This required work, since we had to pull this negative charge away from the positive charge that we left on the plate. If the potential difference across the plates is $\Delta V$, then we had to do an amount of work given by:
+Imagine that both plates on the capacitor start with a charge of magnitude, $q$. We then remove an infinitesimal negative charge, with magnitude $dq$, from the positive plate and place it on the negative plate. This required work, since we had to pull this negative charge away from the positive plate. If the potential difference across the plates is $\Delta V$, then we had to do an amount of work given by:
 \begin{align*}
 dW = Vdq
 \end{align*}
-since the charge $dq$ has now gained potential energy $\Delta Vdq$. The potential difference is however dependent on the (constant) capacitance of the capacitor, and the amount of charge, $q$, already stored on one of the plates:
+since the charge $dq$ has now gained potential energy $\Delta Vdq$. The potential difference is however dependent on the (constant) capacitance of the capacitor, and the amount of charge, $q$, already stored on the plates:
 \begin{align*}
 q &= C\Delta V\\
-\therefore \Delta V=\frac{q}{C}
+\therefore \Delta V&=\frac{q}{C}
 \end{align*}
 In order to determine the work required to transfer a total amount of charge, $Q$, we sum the work in transferring each infinitesimal charge, $dq$:
 \begin{align*}
@@ -450,9 +453,9 @@ W=\int dW=\int_0^Q Vdq=\int_0^Q \frac{q}{C}dq=\frac{1}{2}\frac{Q^2}{C}
 \end{align*}
 Thus, the total potential energy that is stored on a capacitor is given by:
 \begin{align*}
-U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}C\Delta V
+U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}Q(\Delta V)^2=\frac{1}{2}Q\Delta V
 \end{align*}
-where we made use of $Q=C\Delta V$ to show the formula with different choices of constants. In either case, the amount of energy that is stored increases with the amount of charge, the capacitance, and the voltage across the capacitor. Capacitors are useful because this energy can be released quickly, as in the bright flash of light required for flash photography.
+where we made use of $Q=C\Delta V$ to show the formula with different choices of variables. In either case, the amount of energy that is stored increases with the amount of charge, the capacitance, and the voltage across the capacitor. Capacitors are useful because this energy can be released quickly, as in the bright flash of light required for flash photography.
 
 \newpage
 \section{Summary}
@@ -470,7 +473,7 @@ In a similar way as the electric field, $\vec E(\vec r)$, corresponds to electri
 \begin{align*}
 V(\vec r) = \frac{kQ}{r} + C
 \end{align*}
-and also depends on an arbitrary constant, since only differences in electric potential will lead to differences in potential energy. Note that if we know the value of the electric potential, $V$, at some position in space, $\vec r$, we can immediately determine the electric potential energy, $U$, at that position for any charge, $q$:
+and also depends on an arbitrary constant, since only differences in electric potential will lead to differences in potential energy. The value of the electric potential, $V$, at some position in space, $\vec r$, allows us to determine the electric potential energy, $U$, at that position for any charge, $q$:
 \begin{align*}
 U = qV
 \end{align*}
@@ -478,7 +481,7 @@ This is analogous to determining the force on a charge $q$ when we know the elec
 \begin{align*}
 \vec F = q \vec E
 \end{align*}
-Differences in electric potential are called ``voltages'', and the S.I. unit of potential is called the ``Volt'' (V). In S.I. units, the electric field is often expressed in units of Volts per metre (V/m).
+Differences in electric potential are called ``voltages'', and the S.I. unit of potential is called the ``volt'' (V). In S.I. units, the electric field is often expressed in units of volts per metre (V/m).
 
 When a particle with charge, $q$, changes position such that the corresponding change in electric potential is $\Delta V$, the particle's potential energy will change by:
 \begin{align*}
@@ -486,44 +489,44 @@ When a particle with charge, $q$, changes position such that the corresponding c
 \end{align*}
 In particular, a negative charge will experience a decrease in potential energy when the electric potential increases, whereas a positive charge will experience an increase in potential energy when the electric potential increases. This reflects the fact that the electric force associated with the electric potential will act in opposite directions on a positive and a negative charge. 
 
-In order to describe the energies of particles interacting with electric forces, it is more convenient to use the ``electron volt'' instead of the Joule. An electron volt is defined as the energy that is gained by a charge with a magnitude $e$ (the charge of the proton) when accelerated through a potential difference of $\Delta V=\SI1{}{V}$:
+In order to describe the energies of particles interacting with electric forces, it is more convenient to use the ``electron volt'' instead of the Joule. An electron volt is defined as the energy that is gained by a charge with a magnitude $e$ (the magnitude of the charge of the electron) when accelerated through a potential difference of $\Delta V=\SI1{}{V}$:
 \begin{align*}
 \SI{1}{eV}&=(e)(\SI{1}{V})=\SI{1.6e-19}{J}
 \end{align*}
 
 The electric potential function can be determined in two different ways:
 \begin{enumerate}
-\item Model the charge distribution as the sum of infinitesimal point charges, $dq$, and add together the electric potentials, $dV$, from all charges, $dq$. This requires that one choose $\SI{0}{V}$ to be located at infinity, so that the $dV$ are all relative to the same point.
-\item Calculate the electric field (either as a integral or from Gauss' Law), and use:
+\item By modelling the charge distribution as the sum of infinitesimal point charges, $dq$, and adding together the electric potentials, $dV$, from all charges, $dq$. This requires that one choose $\SI{0}{V}$ to be located at infinity, so that the $dV$ are all relative to the same point.
+\item By calculating the electric field (either as a integral or from Gauss' Law), and using:
 \begin{align*}
 \Delta V &=V(\vec r_B)-V(\vec r_A)=-\int_A^B  \vec E\cdot d\vec r
 \end{align*}
 \end{enumerate}
-It is worth noting that one needs to be very careful with the signs when using the above integral. In particular note that one take the negative of the integral, from $A$ to $B$, to determine the potential at $B$ minus the potential at $A$. 
+It is worth noting that one needs to be very careful with the signs when using the above integral. In particular note that one takes the negative of the integral, from $A$ to $B$, to determine the potential at $B$ minus the potential at $A$. 
 
-Similarly, one can determine the value of the electric field, $\vec E(\vec r)=\vec E(x,y,z)$, if one knows the electric potential $V(\vec r)=V(x,y,z)$:
+Similarly, one can determine the value of the electric field, $\vec E(\vec r)=\vec E(x,y,z)$, from the electric potential, $V(\vec r)=V(x,y,z)$:
 \begin{align*}
 \vec E(x,y,z) = -\nabla V =-\die{V}{x}\hat x-\die{V}{y}\hat y-\die{V}{z}\hat z
 \end{align*}
-where, $\nabla V$, is the gradient of the electric potential as a function of position, $V(x,y,z)$. 
+where, $\nabla V$, is the gradient of the electric potential. 
 
-The electric potential can be visualized in a number of ways. The most common is to draw contours of constant electric potential, akin to the contours on geographical maps that are used to show regions of constant altitude (i.e. constant gravitational potential energy). Regions of constant electric potential are called ``equipotentials'', and can be lines, surfaces or volumes. Equipotentials are always perpendicular to the electric field. In electrostatics (when charges are not moving), the electric field in a conductor must be zero, so that a conductor always forms an equipotential, and the electric field at the surface of a conductor is always perpendicular to the surface.
+The electric potential can be visualized in a number of ways. The most common is to draw contours of constant electric potential, akin to the contours on geographical maps that are used to show regions of constant altitude (i.e. constant gravitational potential energy).
+
+Regions of constant electric potential are called ``equipotentials'', and can be lines, surfaces or volumes. Equipotentials are always perpendicular to the electric field. In electrostatics (when charges are not moving), the electric field in a conductor must be zero, so that a conductor always forms an equipotential, and the electric field at the surface of a conductor is always perpendicular to the surface.
 
 When charges are placed on a conductor, they will spread out along the outer surface of the conductor. The surface density of charges will be the highest where the conductor has the smallest radius of curvature (e.g. at a sharp point). Consequently, the electric field at the surface of a charged conductor is highest near sharp points.
-
-Lightning rods are designed to provide a sharp point, where the electric field can become strong enough to result in corona discharge. This allows charges to slowly leak from the Earth into the charged thunder cloud, reducing the potential difference between the cloud and the Earth, thereby reducing the risk that an electric breakdown of the air will occur (i.e. a lightning strike). 
 
 Capacitors are devices that are used to store charge. They are usually made using two conducting plates (``terminals'' or ``electrodes'') that hold equal and opposite charge, $Q$, at a fixed potential difference, $\Delta V$ , between the electrodes. The amount of charge that is stored on the capacitor is observed to be proportional to the potential difference between the electrodes:
 \begin{align*}
 Q=C\Delta V
 \end{align*}
-where the constant of proportionality, $C$, is called the ``capacitance'' of the capacitor. The S.I. unit of capacitance is the ``Farad'' (F). The capacitance of a capacitor depends on its geometry (e.g. its size) and the materials that it is made of.
+where the constant of proportionality, $C$, is called the ``capacitance'' of the capacitor. The S.I. unit of capacitance is the ``Farad'' (F). The capacitance of a capacitor depends on its geometry (e.g. its size) and the materials that it is placed between the electrodes.
 
-Usually, one places a dielectric material between the two conductors in order to increase the capacitance, and to reduce the risk of breakdown. If that material has a ``dielectric constant'', $K$, then the capacitance is given by:
+Usually, one places a dielectric material between the two electrodes in order to increase the capacitance, and to reduce the risk of breakdown. If that material has a ``dielectric constant'', $K$, then the capacitance is given by:
 \begin{align*}
 C=KC_0
 \end{align*}
-where, $C_0$, corresponds to the capacitance when there is vacuum between the electrodes. The dielectric constant of air is very close to 1, so that a capacitor in air is very similar to a capacitor in vacuum. A dielectric material is one that is made of molecules that can be polarized under the presence of an electric field; that is, the molecules have an electric dipole moment. When the molecules in a material are polarized, this reduces the total electric field in the material, which increases the capacitance of the capacitor. Inside a dielectric material, we can define the ``permittivity'', $\epsilon$, as:
+where, $C_0$, corresponds to the capacitance if there were vacuum between the electrodes. The dielectric constant of air is very close to 1, so that a capacitor in air is very similar to a capacitor in vacuum. A dielectric material is one that is made of molecules that can be polarized under the presence of an electric field; that is, the molecules have an electric dipole moment. When the molecules in a material are polarized, this reduces the total electric field in the material, which increases the capacitance of the capacitor. Inside a dielectric material, we can define the ``permittivity'', $\epsilon$, as:
 \begin{align*}
 \epsilon=K\epsilon_0
 \end{align*}
@@ -534,7 +537,7 @@ where $\epsilon_0$ is the permittivity of free space. Within a dielectric materi
 
 Since charges are held at a fixed potential difference on a capacitor, capacitors are a way of storing electric potential energy. The amount of electric potential energy stored in a capacitor with capacitance, $C$, when the capacitor has a potential difference, $\Delta V$, across its electrodes, is given by:
 \begin{align*}
-U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}C\Delta V
+U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}Q\Delta V
 \end{align*}
 
 
