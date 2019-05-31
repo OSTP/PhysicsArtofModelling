@@ -35,6 +35,18 @@ We define a vector, $\vec A$, associated with the surface such that the magnitud
 since this will have the same properties that we described above (e.g. no flux when $\vec E$ and $\vec A$ are perpendicular, flux proportional to number of field lines crossing the surface). Note that the flux is only defined up to an overall sign, as there are two possible choices for the direction of the vector $\vec A$, since it is only required to be perpendicular to the surface. By convention, we usually choose $\vec A$ so that the flux is positive.
 
 %TODO: Checkpoint: MC question about the units of electric flux.
+
+
+
+\begin{checkpoint}\label{cp:gauss:unitsofflux}
+	\begin{MCquestion}{What are the units of electric flux?}
+		\item $Nm/C$
+		\item $Vm \correct$
+		\item $V/m$
+		\item The units of flux depend on the dimensions of the charged object
+	\end{MCquestion}
+\end{checkpoint}
+
 \begin{example}{A uniform electric field is given by: $\vec E=E\cos\theta\hat x+E\sin\theta\hat y $ throughout space. A rectangular surface is defined by the four points $(0,0,0)$, $(0,0,H)$, $(L,0,0)$, $(L,0,H)$. What is the flux of the electric field through the surface?}
 
 The surface that is defined corresponds to a rectangle in the $xz$ plane with area $A=LH$. Since the rectangle lies in the $xz$ plane, a vector perpendicular to the surface will be along the $y$ direction. We choose the positive $y$ direction, since this will give a positive number for the flux (as the electric field has a positive component in the $y$ direction). The vector $\vec A$ is given by:
@@ -431,6 +443,7 @@ This last version has the advantage that it relates a local property of the fiel
 \begin{chapteractivity}{To try in the lab}
 {
 \item Propose an experiment
+
 }
 \end{chapteractivity}
 
@@ -441,17 +454,99 @@ This last version has the advantage that it relates a local property of the fiel
 
 %TODO Surface charge density at the inside and outside of a conducting shell with charge Q at the centre (as in the narrative above). From Gauss' Law, you know that the charge on the inner surace is -Q, and you know that that it has area 4 pi r_in^2. Same for outer surface, highlight that charge density will be different in the two cases (unlike the infinite plane). <-- Maybe too close to the example done in charge on a conductor?
 
-%TODO An example of using the div version of gauss' law (1D line of charge maybe, so rho(x,y,z) -> lambda(x) and then it becomes an ODE? 
+%TODO An example of using the div version of gauss' law (1D line of charge maybe, so rho(x,y,z) -> lambda(x) and then it becomes an ODE?  
 
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-
-}
+Consider a sphere which has a charge density of $\rho = ar^2$ and has a radius $R$. What is the electric field at the distances $0\leq d \leq r$ and $r<d$ from the centre of the sphere? 
+	}
 \end{problem}
+
+\begin{problemParts}{soln:template:ballistic}{\label{prob:template:ballistic} Consider two conducting shells. Both shells have a hollow circle of radius $r$ at their centre. One shell is a square on the outside and the other is a triangle on the outside, both of the outside shapes have a side length of $L$. A point charge is placed at the centre of the hollowed out circle of both shells.}{
+		\item What is the electric field outside of the shells?
+		\item What is the average linear charge density on the inner and outter surfaces of the shells?
+	}
+\capfig{0.8\textwidth}{figures/Gauss/squaretriangle.png}{\label{fig:gauss:squaretriangle} A triangular and square shell, both with a hollowed out circular centre and a point charge.}
+
+\end{problemParts}
+
 
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
 
+First, we must find the total charge of the sphere. To do this, we will need to integrate $\rho$ over the volume of the sphere:
+
+
+\begin{align*}
+Q& = \int_{0}^{R} \rho dV\\
+Q&= \int_{0}^{R} 4\pi r^4 dr\\
+Q& = \frac{4}{5} \pi R^5
+\end{align*}
+
+Now that we have our charge, $Q$, we can find the enclosed charge at any distance $r$ by taking the ratio of the volumes, then multiplying it by the total charge of the sphere:
+
+\begin{align*}
+Q_{enc}& = \frac{Q \frac{4}{3}\pi r^3}{\frac{4}{3}\pi R^3}\\
+Q_{enc}&= \frac{Qr^3}{R^3}\\
+Q_{enc}&=\frac{4\pi r^3 R^2}{5}
+\end{align*}
+
+Now that we have our enclosed charge for any distance $r$, we must apply Gauss' law:
+
+\begin{align*}
+\Phi & = EA = \frac{Q_{enc}}{\epsilon_0}\\
+E(4\pi r^2)&= \frac{4\pi r^3 R^2}{5\epsilon_0}\\
+E &= \frac{r R^2}{5\epsilon_0}
+\end{align*}
+Which gives our answer for the magnitude of the electric field felt at a distance $r$ from the centre of the shell when $0\leq r \leq R$.
+
+To find the electric field at a distance $r$ from the centre of the sphere when $R<r$, we will apply the same technique, but will instead set the enclosed charge to be constant at $r = R$:
+
+\begin{align*}
+	\Phi & = EA = \frac{Q_{enc}}{\epsilon_0}\\
+	E(4\pi r^2)&= \frac{4\pi R^5}{5\epsilon_0}\\
+	E&= \frac{\pi R^5}{5\epsilon_0 r^2}
+\end{align*}
+
+Which gives our final answer.
+
 \end{solution}
 
+
+
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+	
+	\begin{enumerate}
+	
+	\item The conducting shells have no net charge, so the only charge in the system is the point charge $Q$, which means that the electric field outside of the shells is simply $E = \frac{kQ}{r^2}$.
+	
+	\item Let's begin with the shell that has a triangle on the outside. We will use Gauss' law to determine the charge density of the inner and outer shells. To do this, we will draw a circle within the shell, $S_1$ and a triangle outside of the outer shell, $S_2$:
+	
+	
+	\capfig{0.6\textwidth}{figures/Gauss/trianglegauss.png}{\label{fig:gauss:trianglegauss} A solution to the triangular conducting shell}
+	
+	 When considering $S_1$ know that the electric field inside of the shell is $0$, so we also know that the flux will be zero. This means that the point charge on the inside of the shell will be equal and opposite to the sum of the surface charges on the inner shell. From here, we divide the net charge by the circumference of the inner shell to determine the linear charge density:
+	
+	\begin{align*}
+		\lambda_{circle} = \frac{-Q}{2\pi r}
+	\end{align*}
+		
+	When considering $S_2$, we know that the $Q_{enc} = +Q$, which means that the total linear charge on the outer triangle will be $+Q$ such that it cancels the $-Q$ along the inner circle, leaving the point charge, $+Q$. The sum of charges would be $Q_{enc} = Q_{point}+Q_{triangle}-Q_{circle}$. Knowing this, we must divide the total charge on the outter shell by the sum of the length of each of the triangle's sides in order to find the average linear charge density:
+	
+	\begin{align*}
+		\lambda_{circle} = \frac{Q}{3L}
+	\end{align*}
+	
+	Now, we must solve for the inner and outer linear charge densities of the conducting shell with a square outter surface. We will begin this process by drawing a circle within the shell, $S_1$, and a square outside of the shell, $S_2$
+	
+	\capfig{0.6\textwidth}{figures/Gauss/squaregauss.png}{\label{fig:gauss:squaregauss} A solution to the square conducting shell}
+		
+	For $S_1$, the circle is treated as it was while solving the trianglular shell. The electric field is also $0$ within the square conducting shell, so we know that the average linear charge density is $\frac{-Q}{2\pi r}$.
+	
+	When considering $S_2$, we know that $Q_{enc}$ is $+Q$, so we know that the total charge on the square surface of the shell will be $+Q$. This leave us with the following average linear charge density:
+	\begin{align*}
+		\lambda_{square} = \frac{Q}{4L}
+	\end{align*}	
+	\end{enumerate}
+\end{solution}

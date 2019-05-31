@@ -204,9 +204,19 @@ as we found previously. Note that the force on $q$ is in the opposite direction 
 \textbf{Discussion:} In this example, we determined the net electric field by making use of the superposition principle; namely, that we can treat the electric fields from $Q_1$ and $Q_2$ independently, without needing to consider the fact that $Q_1$ and $Q_2$ exert forces on each other. By knowing the electric field at some position in space, we can easily calculate the force vector on any test charge, $q$, placed at that position. Furthermore, the sign of the charge $q$ will determine in which direction the force will point (parallel to $\vec E$ for a positive charge and anti-parallel to $\vec E$ for a negative charge).
 \end{example}
 
+\begin{checkpoint}\label{cp:chargesfields:conductorield}
+	\begin{MCquestion}{Electric field inside of a conductor is zero because... (choose correct explanation).}
+		\item The electrons inside of a conductor arrange themselves to be equal and opposite to the external electric field. \correct
+		\item The charges move so quickly in that there cannot be an electric field.
+		\item The protons inside of a conductor arrange themselves to be equal and opposite to the external electric field.
+		\item External electric fields cannot penetrate conductors.
+	\end{MCquestion}
+\end{checkpoint}
+
 \subsection{Visualizing the electric field}
-Generally, a ``field'' is something that has a different value at different positions in space. The pressure in a fluid under the presences of gravity is a field: the pressure is different at different heights in the fluid. Since pressure is a scalar quantity (a number), we call it a ``scalar field''. The electric field is called a ``vector field'', because it is a vector that is different at each position in space. One way to visualize the electric field is to draw arrows at different positions in space; the length of the arrow is then proportional to the strength of the electric field at that position, and the direction of the arrow then represents the direction of the electric field. The electric field for a point charge is shown using this method in Figure TODO.
+Generally, a ``field'' is something that has a different value at different positions in space. The pressure in a fluid under the presences of gravity is a field: the pressure is different at different heights in the fluid. Since pressure is a scalar quantity (a number), we call it a ``scalar field''. The electric field is called a ``vector field'', because it is a vector that is different at each position in space. One way to visualize the electric field is to draw arrows at different positions in space; the length of the arrow is then proportional to the strength of the electric field at that position, and the direction of the arrow then represents the direction of the electric field. The electric field for a point charge is shown using this method in Figure \ref{fig:ChargesFields:1pos}.
 %TODO A figure of a bunch of arrows point away from a point charge, with amplitude dropping off as 1/r^2.
+\capfig{0.4\textwidth}{figures/ChargesFields/1pos.png}{\label{fig:ChargesFields:1pos} Electric field vectors for many points in space}
 
 One disadvantage of visualizing a vector field with arrows is that the arrows take up space, and it can be challenging to visualize how the field changes magnitude and direction continuously through space. For this reason, one usually uses ``field lines'' to visualize a vector field. Field lines are continuous lines with the following properties:
 \begin{itemize}
@@ -222,8 +232,18 @@ An example of using field lines to represent a vector field in space is shown in
 \item No. \correct
 \end{MCquestion}
 \end{checkpoint}
-Because the electric field vector always points in the direction of the force that would be exerted on a positive charge, electric field lines will point out from a positive charge and into a negative charge. The electric field lines for a combination of positive and negative charges is illustrated in Figure TODO.
-%TODO A figure with 2 positive and 1 negative charge, with correct field lines.
+Because the electric field vector always points in the direction of the force that would be exerted on a positive charge, electric field lines will point out from a positive charge and into a negative charge. The electric field lines for a combination of positive and negative charges is illustrated in Figure \ref{fig:ChargesFields:2pos1neg}.
+
+\capfig{0.5\textwidth}{figures/ChargesFields/2pos1neg.png}{\label{fig:ChargesFields:2pos1neg} Field lines of two positive $q$ charges and one negative $-2q$ charge}
+
+\begin{checkpoint}\label{cp:chargesfields:chooseincorrect}
+	\begin{MCquestion}{Which of the following statements is \underline{incorrect?}}
+		\item As you move away from a negative charge, electric field increases
+		\item As you move towards a negative charge, electric field decreases.
+		\item As you move away from a positive charge, electric field increases \correct
+		\item As you move towards a positive charge, electric field increases
+	\end{MCquestion}
+\end{checkpoint}
 
 \subsection{Electric field from a charge distribution}
 So far, we have only considered Coulomb's Law for point charges (charges that are infinitely small and can be considered to exist at a single point in space). We can use the principle of superposition to determine the electric field from a charged extended/continuous object by modelling that object as being made of many point charges. The electric field from that object is then the sum of the electric field from the point charges that make up that object. 
@@ -285,6 +305,7 @@ In order to determine the electric field at some point from any continuous charg
 \item Identify which variables change as one varies the $dq$ and choose an integration variable to express $dq$ and everything else in terms of that variable and other constants.
 \item Do the sum (integral).
 \end{enumerate}
+
 
 \begin{example}{\label{ex:chargesfields:ring}A ring of radius $R$ carries a total charge $+Q$. Determine the electric field a distance $a$ from the centre of the ring, along the axis of symmetry of the ring.}
 In order to determine the electric field, we carry out the procedure outlined above, and start by drawing a good diagram, as in Figure \ref{fig:chargesfields:ring}, showing: our coordinate system, our choice of $dq$, the electric field element vector $d\vec E$ that corresponds to $dq$, and variables ($r$, $\theta$) to specify the position of $dq$.
@@ -401,7 +422,7 @@ E_x=\lim_{\theta_0\to\frac{\pi}{2}}\frac{2k\lambda}{R}\sin\theta_0=\frac{2k\lamb
 \textbf{Discussion:} In this example, we saw how to apply the principle of superposition to determine the electric field near a finite and a infinite line of charge with constant charge per unit length. We showed that it was relatively straightforward to set up the integral in terms of $dy$, but not so easy to solve the integral. We then showed that by using $\theta$ as the integration variable, we could arrive at a much easier integral. This change of variable corresponds to a physical variable in our problem, but is also the basis for the more abstract ``trig substitution'' method used to solve integrals in calculus.
 \end{example}
 
-\begin{example}{\label{ex:chargesfields:finiteplane}Calculate the electric field a distance, $a$, above a infinite plane that carries uniform charge per unit area, $\sigma$.}
+\begin{example}{\label{ex:chargesfields:squarecircle}Calculate the electric field a distance, $a$, above a infinite plane that carries uniform charge per unit area, $\sigma$.}
 In this case, we need to determine the field above an object that is two dimensional (a plane). In the previous examples (a ring, a line of charge), we modelled a one dimensional object (e.g. the line), as being made of many point charges (0-dimensional objects). We treated those point charges has having an infinitesimal length along the object so that we could sum them together to obtain the object (e.g. $dy$ was the length of the charge for the rod/line of charge).
  
 In order to model the two-dimensional object (the plane), we model it has being the sum of many one dimensional objects. We can model a plane either as a rectangle of width, $W$, and length, $L$, as shown in the left panel of Figure \ref{fig:chargesfields:planecharge} or as a disk of radius, $R$, as shown in the right panel. To model an infinite plane, we can then take the limit of either $L$ and $W$ going to infinity (rectangle), or of $R$ going to infinity (disk). We can model the rectangle as being the sum of many lines of \textbf{finite} length, $L$, and infinitesimal width, $dx$. Similarly, we can model the disk as the sum of infinitesimally thin rings of \textbf{finite} radius, $r$, and thickness, $dr$. In both cases, we know how to model the field from a line of charge (Example \ref{ex:chargesfields:finiteline}) or from a ring (Example \ref{ex:chargesfields:ring}). 
@@ -429,6 +450,20 @@ where we used $\epsilon_0$ in the last equality as the result is a little cleane
 
 \textbf{Discussion:} In this example, we showed how we can model a two-dimensional charge distribution as the sum of one-dimensional charge distributions. In particular, we showed that an infinite plane of charge can be modelled as the sum of many lines charges or of many rings of charge (we chose the latter in the above). We also found that the electric field above an infinite plane of charge does not depend on the distance from the plane; that is, the electric field is constant above an infinite plane of charge. 
 \end{example}
+
+
+\begin{studentOpinion}{Josh}
+	
+	A common source of confusion is the process of solving for the electric field produced by continuous charges. Point charges are well defined in space as being entirely contained within a single point, while continuous charges are objects which occupy 1, 2, or 3 dimensions. Point charges are easily generalized with $\vec E = \frac{kQ}{r^2}\hat r$, but the solution to continuous charges must be written as $E = \int dE$, which typically requires more steps to calculate.
+	
+	When a charge is distributed along more than zero dimensions (i.e: not a point charge), the object containing it must be broken down into many small charges which are written as $dq$. From here, $dq$ is rewritten as a measurement which is most convenient to integrate over. For example: if I wanted to measure $E$ from the top of a rod, it would be most convenient for me to integrate over $x$, but if I were to measure $E$ from the side of a rod, it would be most convenient to integrate over $\theta$.
+	
+	\capfig{0.6\textwidth}{figures/ChargesFields/rodexample.png}{\label{fig:chargesfields:rodexample}Calculating the electric field of a rod from different positions}
+	
+	Choosing the bounds of integration is a skill which is best learned through practice. It is often unintuitive at first, but after looking at examples and attempting problems, it will begin to feel more natural. I reccommend paying close attention to examples \ref{ex:chargesfields:ring}, \ref{ex:chargesfields:finiteline}, and \ref{ex:chargesfields:squarecircle}, and attempting questions which require integration on the Question Library.
+	
+\end{studentOpinion}
+
 \section{The electric dipole}
 Electric dipoles are a specific combination of a positive charge $+Q$ held at a fixed distance, $l$, from an equal and opposite charge, $-Q$, as illustrated in Figure \ref{fig:chargesfields:dipole}. Dipoles can be represented by their ``electric dipole vector'' (or ``electric dipole moment''), $\vec p$, defined to point in the direction \textbf{from the negative charge to the positive charge}, with magnitude:
 \begin{align*}
@@ -501,6 +536,8 @@ We can model the electric field from a continuous charged object (i.e. not a poi
 \item Do the sum (integral).
 \end{enumerate}
 
+
+
 Finally, we introduced the electric dipole, which is an object comprised of two equal and opposite charges, $+Q$ and $-Q$, held at fixed distance, $l$, from each other. One can model an electric dipole using its dipole vector, $\vec p$, defined to point in the direction from $-Q$ to $+Q$, with magnitude:
 \begin{align*}
 p=Ql
@@ -540,34 +577,108 @@ The point of lowest potential energy corresponds to the case when $\vec p$ and $
 
 \begin{chapteractivity}{Reflect and research}
 {
-\item Explain
+\item Which molecule has the largest dipole moment? Why?
+\item How does a laser printer exploit physical properties covered in this chapter?
+\item How does a Van de Graff generator work?
+\item On the 20th of May, 2019, SI base units were redefined. How does this effect Coulomb's constant?
 }
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try at home}
 {
-\item Try
+\item Download the python notebook used to create the field lines in Figure \ref{fig:ChargesFields:2pos1neg} and experiment with changing the position, strength, and number of charges.
+\item Rub your hands or feet along various household items to test their electron affinity. Which household items produce a static charge?
 }
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try in the lab}
 {
-\item Propose an experiment
+\item Propose an experiment to experimentally measure the k constant.
+\item Propose an experiment which would oragnize various materials based on their electron affinity.
 }
 \end{chapteractivity}
 
 \newpage
 \section{Sample problems and solutions}
+
+
+
+
 %TODO: Sample problem: show that for small angles, dipoles oscillate with SHM
-%TODO: Sample problem: Electric field at the centre of a square wire of charge (some segments positive, some negative). No need to have to do the integral, just show that you can use the result in the example to get the field from something more complicated.
+%TODO: Sample problem: Electric field at the centre of a square wire of charge (some segments positive, some negative). No need to have to do the integral, just show that you can use the result in the example to get the field from something more complicated. -written out
+
+
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+Consider four charged rods of length $L$ which are arranged to form a triangle, as shown in Figure \ref{fig:ChargesFields:trianglediagram}. If the charge on each rod is evenly distributed, what is the net electric field at the centre of the triangle?
 
+\capfig{0.4\textwidth}{figures/ChargesFields/trianglediagram.png}{\label{fig:ChargesFields:trianglediagram} A triangle made up of charged rods}
 }
 \end{problem}
+
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic}}
+	
+	
+	Suppose a dipole is in an electric field $\vec E$. Show that the dipole will experience simple harmonic motion if the angle between the dipole vector and the electric field vector is small.
+	
+\end{problem}
+
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
 
+In Example \ref{ex:chargesfields:finiteline}, we determined that the electric field felt by a finite wire is:
+\begin{align*}
+E = \frac{2k\lambda}{R}\sin\theta_0
+\end{align*}
+Which is the formula we must apply to each side of the triangle. 
+
+We can determine geometrically that $\theta_0 = \frac{\pi}{6}$, so we can also find R:
+
+\begin{align*}
+	R = \frac{L}{2}\sin{\theta_0}
+\end{align*}
+
+\capfig{0.6\textwidth}{figures/ChargesFields/trianglesolution.png}{\label{fig:ChargesFields:trianglesolution} Geometrically solving for $\theta_0$ and $R$}
+
+We can now write the equation as follows:
+
+\begin{align*}
+E& = \frac{2k\lambda}{R}\sin(\frac{\pi}{6})\\
+E &= \frac{k\lambda}{R}
+\end{align*}
+Given that the charge $Q$ is evenly distributed along the rod of length $L$, we can rewrite the charge density as $\frac{Q}{L}$, which gives:
+
+\begin{align*}
+E& = \frac{k Q}{RL}\\
+E& = \frac{k Q}{\frac{L\sqrt{3}}{6}L}\\
+E& = \frac{6k Q}{\sqrt{3}L^2}
+\end{align*}
+
+This is the magnitude of the electric field for each side of the triangle. We know that the direction of $\vec E$ for the positively charged sides is at an angle of $\frac{\pi}{6}$ above the horizontal, so now we simply have to sum the vector components of the electric fields
+
+\begin{align*}
+\sum \vec E &= \frac{6k Q}{\sqrt{3}L^2}(\cos({\frac{\pi}{6}}) - \cos({\frac{\pi}{6}}))\hat{x} + \frac{6k Q}{\sqrt{3}L^2}(-1-2\sin({\frac{\pi}{6}}))\hat y\\
+\sum \vec E & = -\frac{12k Q}{\sqrt{3}L^2}\hat y
+\end{align*}
+Which is the final answer.
+\end{solution}
+
+
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+The only net torque on the dipole is from the force from the electric field:
+\begin{align*}
+\tau = -pE\sin\theta 
+\end{align*}
+where we have inserted a minus sign to indicate that this is a restoring torque, in the opposite direction of increasing angle $\theta$. The net torque is equal to the moment of inertia times the angular acceleration:
+\begin{align*}
+-pE\sin\theta &= I\alpha\\
+\therefore \alpha &= -\frac{pE}{I}\sin\theta\sim-\frac{pE}{I}\theta
+\end{align*}
+where in the last equality, we made the small angle approximation ($\sin\theta\sim\theta$). This has the form for simple harmonic motion:
+\begin{align*}
+\frac{d^2\theta}{dt^2}&=-\omega^2 \theta\\
+\omega &=\sqrt{\frac{pE}{I}}
+\end{align*}
 \end{solution}
 
