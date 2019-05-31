@@ -415,9 +415,9 @@ Capacitors are used in many touch screens. For example, these might be made of g
 \subsection{Dielectric materials}
 In practice, capacitors always have an insulating material between the two plates. The material is chosen to have a higher breakdown voltage than air, so that more charges can be stored before a breakdown occurs. It has also been experimentally observed that the capacitance increases with certain materials, so called ``dielectric materials''. A dielectric material has a ``dielectric constant'', $K$, defined to be the amount by which the capacitance increases:
 \begin{align*}
-C'=KC
+C=KC_0
 \end{align*}
-where $C'$ is the capacitance with the material in place, and $C$ is the capacitance when there is vacuum between the plates (the dielectric constant of air is very close to 1). Often, rather than the dielectric constant, one uses the ``permittivity'', $\epsilon$, of a material:
+where $C$ is the capacitance with the material in place, and $C_0$ is the capacitance when there is vacuum between the plates (the dielectric constant of air is very close to 1). Often, rather than the dielectric constant, one uses the ``permittivity'', $\epsilon$, of a material:
 \begin{align*}
 \epsilon=K\epsilon_0
 \end{align*}
@@ -425,7 +425,12 @@ The capacitance of a parallel plate capacitor, with a material that has permitti
 \begin{align*}
 C=K\epsilon_0\frac{A}{L}=\epsilon\frac{A}{L}
 \end{align*}
-Dielectrics materials are made of molecules that can be polarized (as water), namely molecules that have a non-zero electric dipole moment. When the dielectric material is placed between the plates, the dipoles inside the material align themselves with the electric field from the plates. This leads to a net electric field from the dipoles in the opposite direction of the field from the plates, thus reducing the total electric field between the plates. This, in turn, allows more charges to be held on the plate for a given voltage.
+Dielectrics materials are made of molecules that can be polarized (as water), namely molecules that have a non-zero electric dipole moment. When the dielectric material is placed between the plates, the dipoles inside the material align themselves with the electric field from the plates. This leads to a net electric field from the dipoles in the opposite direction of the field from the plates, thus reducing the total electric field between the plates. This, in turn, allows more charges to be held on the plate for a given voltage. This is illustrated in Figure TODO
+%TODO Figure showing polarized molecules reducing the electric field.
+Note that, in a dielectric material with permittivity, $\epsilon$, Gauss' Law is modified to read:
+\begin{align*}
+\oint \vec E\cdot d\vec A=\frac{Q^{enc}}{\epsilon}
+\end{align*}
 
 \subsection{Energy stored in a capacitor}
 The charges stored on the capacitor have electrical potential energy: if we connected the positive and negative plates with a conductor, the charges would be allowed to move and gain kinetic energy. We can model the amount of energy stored on the capacitor by considering how much work it would take to place the charges on the capacitor.
@@ -461,7 +466,7 @@ where, $C$, is an arbitrary constant, since only difference in potential energy 
 
 If a collection of charges are held together, the total electrical potential energy that is stored is called ``electrostatic potential energy''. 
 
-In a similar way as we defined the electric field, $\vec E(\vec r)$, to corresponds to electric force per unit charge, we defined ``electric potential'', $V(\vec r)$, to be electric potential energy per unit charge. We found that the electric potential at a position, $\vec r$, relative to a point charge, $Q$, is given by:
+In a similar way as the electric field, $\vec E(\vec r)$, corresponds to electric force per unit charge, ``electric potential'', $V(\vec r)$, corresponds to electric potential energy per unit charge. The electric potential at a position, $\vec r$, relative to a point charge, $Q$, is given by:
 \begin{align*}
 V(\vec r) = \frac{kQ}{r} + C
 \end{align*}
@@ -473,9 +478,9 @@ This is analogous to determining the force on a charge $q$ when we know the elec
 \begin{align*}
 \vec F = q \vec E
 \end{align*}
-Differences in electric potential are called ``voltages'', and the S.I. unit of potential is called the ``Volt'' (V). In S.I. units, the electric field is more commonly expressed in Volts per metre (V/m).
+Differences in electric potential are called ``voltages'', and the S.I. unit of potential is called the ``Volt'' (V). In S.I. units, the electric field is often expressed in units of Volts per metre (V/m).
 
-When a particle with charge, $q$, crosses a region of space where the electric potential changes by $\Delta V$, its potential energy will change by:
+When a particle with charge, $q$, changes position such that the corresponding change in electric potential is $\Delta V$, the particle's potential energy will change by:
 \begin{align*}
 \Delta U = q\Delta V
 \end{align*}
@@ -500,17 +505,34 @@ Similarly, one can determine the value of the electric field, $\vec E(\vec r)=\v
 \begin{align*}
 \vec E(x,y,z) = -\nabla V =-\die{V}{x}\hat x-\die{V}{y}\hat y-\die{V}{z}\hat z
 \end{align*}
-where, as you recall, $\nabla V$, is called the gradient of the electric potential as a function of position, $V(x,y,z)$. 
+where, $\nabla V$, is the gradient of the electric potential as a function of position, $V(x,y,z)$. 
 
-The electric potential can be visualized in a number of ways. The most common is to draw contours of constant electric potential, akin to the contours on geographical maps that are used to show regions of constant altitude (i.e. constant gravitational potential energy). Regions of constant electric potential are called ``equipotentials'' can be lines, surfaces or volumes. Equipotentials are always perpendicular to the electric field. In statics (when charges are not moving), the electric field in a conductor must be zero, so that a conductor always forms an equipotential, and the electric field at the surface of a conductor is always perpendicular to the surface.
+The electric potential can be visualized in a number of ways. The most common is to draw contours of constant electric potential, akin to the contours on geographical maps that are used to show regions of constant altitude (i.e. constant gravitational potential energy). Regions of constant electric potential are called ``equipotentials'', and can be lines, surfaces or volumes. Equipotentials are always perpendicular to the electric field. In electrostatics (when charges are not moving), the electric field in a conductor must be zero, so that a conductor always forms an equipotential, and the electric field at the surface of a conductor is always perpendicular to the surface.
 
-When charges are placed on a conductor, they will spread out along the outer surface of the conductor. The surface density of charges will be the highest where the conductor has the smallest radius of curvature (e.g. at a sharp point). Consequently, the electric field at the surface of a charged conductor is highest near sharp points. Lightning rods are designed to provide a sharp point, with an electric field that is strong enough to result in corona discharge, allowing charges to slowly leak from the Earth into the cloud, reducing the potential difference between the cloud and the Earth, thereby reducing the risk that an electric breakdown of the air will occur (i.e. a lightning strike). 
+When charges are placed on a conductor, they will spread out along the outer surface of the conductor. The surface density of charges will be the highest where the conductor has the smallest radius of curvature (e.g. at a sharp point). Consequently, the electric field at the surface of a charged conductor is highest near sharp points.
 
-Capacitors are devices that are used to store charge. They are usually made using two conducting plates (``terminals'' or ``electrodes'') that hold equal and opposite charge, $Q$, at a fixed potential difference, $\Delta V$ (the potential difference is between the plates). The amount of charge that is stored on the capacitor is observed to be proportional to the potential difference between the terminals:
+Lightning rods are designed to provide a sharp point, where the electric field can become strong enough to result in corona discharge. This allows charges to slowly leak from the Earth into the charged thunder cloud, reducing the potential difference between the cloud and the Earth, thereby reducing the risk that an electric breakdown of the air will occur (i.e. a lightning strike). 
+
+Capacitors are devices that are used to store charge. They are usually made using two conducting plates (``terminals'' or ``electrodes'') that hold equal and opposite charge, $Q$, at a fixed potential difference, $\Delta V$ , between the electrodes. The amount of charge that is stored on the capacitor is observed to be proportional to the potential difference between the electrodes:
 \begin{align*}
 Q=C\Delta V
 \end{align*}
-where the constant of proportionality, $C$, is called the ``capacitance'' of the capacitor. The S.I. unit of capacitance is the ``Farad'' (F). The capacitance of a capacitor depends on its geometry (e.g. its size) and the materials that it is made of. Usually, one places a dielectric material between the two conductors to increase the capacitance and reduce the risk of breakdown. If that material has a ``dielectric constant'', $K$, then the capacitance is increased from, $C$, to $C'=KC$, if $C$ corresponds to there being vacuum between the plates. The dielectric constant of air is very close to 1, so a capacitor in air is very similar to a capacitor in vacuum. The energy that is stored in a capacitor is:
+where the constant of proportionality, $C$, is called the ``capacitance'' of the capacitor. The S.I. unit of capacitance is the ``Farad'' (F). The capacitance of a capacitor depends on its geometry (e.g. its size) and the materials that it is made of.
+
+Usually, one places a dielectric material between the two conductors in order to increase the capacitance, and to reduce the risk of breakdown. If that material has a ``dielectric constant'', $K$, then the capacitance is given by:
+\begin{align*}
+C=KC_0
+\end{align*}
+where, $C_0$, corresponds to the capacitance when there is vacuum between the electrodes. The dielectric constant of air is very close to 1, so that a capacitor in air is very similar to a capacitor in vacuum. A dielectric material is one that is made of molecules that can be polarized under the presence of an electric field; that is, the molecules have an electric dipole moment. When the molecules in a material are polarized, this reduces the total electric field in the material, which increases the capacitance of the capacitor. Inside a dielectric material, we can define the ``permittivity'', $\epsilon$, as:
+\begin{align*}
+\epsilon=K\epsilon_0
+\end{align*}
+where $\epsilon_0$ is the permittivity of free space. Within a dielectric material, Gauss' Law is modified to:
+\begin{align*}
+\oint \vec E \cdot d\vec A=\frac{Q^{enc}}{\epsilon}
+\end{align*}
+
+Since charges are held at a fixed potential difference on a capacitor, capacitors are a way of storing electric potential energy. The amount of electric potential energy stored in a capacitor with capacitance, $C$, when the capacitor has a potential difference, $\Delta V$, across its electrodes, is given by:
 \begin{align*}
 U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}C\Delta V
 \end{align*}
