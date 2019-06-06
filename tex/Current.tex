@@ -104,7 +104,9 @@ Table TODO shows a list of common materials and their conductivity, resistivity,
 
 %TODO Table showing properties for common materials
 
-\subsection{Ohm's Law and resistance}
+\section{Resistors}
+A conductor with current going through it (or current that could go through it) is generally called a ``resistor'', to emphasize that charges will experience resistance as they travel through the conductor (as they collide with atoms in the conductor). In this section, we describe resistors, how to combine them, and how to model the heat that is generated when charges collide with the atoms in the resistor.
+\subsection{Resistance}
 Consider a macroscopic conductor, with length, $L$, and cross-sectional area, $A$. A potential difference, $\Delta V$, is applied across the length of the conductor, resulting in an electric field, $\vec E$, along its length. To good approximation, one can model the two ends of the conductor as parallel plates, so that the magnitude of the electric field throughout the conductor is constant in magnitude and direction and has strength given by:
 \begin{align*}
 E=\frac{\Delta V}{L}
@@ -117,7 +119,7 @@ j&=\sigma E\\
 Since the current density is a microscopic quantity, we can replace it with the current, $I$, a macroscopic quantity, for the conductor of cross-sectional area, $A$, to find:
 \begin{align*}
 j&=\frac{I}{A}\\
-\therefore I=jA=\sigma\frac{\Delta V}{L}A
+\therefore I&=jA=\sigma\frac{\Delta V}{L}A
 \end{align*}
 This last equation is often written by isolating the potential difference:
 \begin{align*}
@@ -139,12 +141,6 @@ The model for resistance of a resistor to electric current under a fixed potenti
 \Delta P = RQ
 \end{align*} 
 Thus, one can think of electric current by analogy to the incompressible flow of a viscous fluid through a pipe. If the pipe is longer, it opposes more resistance to the flow of liquid, just as a longer resistor has a larger resistance to current. A pipe with a wider cross-section has less resistance to the flow of liquid, just as a resistor with a larger cross sectional area, $A$, has a lower resistance.
-
-\subsection{Superconductors}
-Superconductors are materials that, under certain conditions, have zero resistivity. A resistor made from a superconducting material will thus have zero resistance. It is beyond the scope of this textbook to describe how superconductivity arises in materials, however, it is worth know that these exist. Typically, superconductivity arises in materials when they are cooled to temperatures close to absolute zero, although some materials exihibit superconductivity at much higher temperatures ($\sim\SI{100}{\degree K}$ (TODO Check this!!!). Superconducting materials are often used when one needs a large electric current, such as in a powerful electro-magnet.
-
-\section{Resistors}
-In this section, we develop models to describe how to combine resistors and how to model the heat that is generated in a resistor.
 \subsection{Combining resistors}
 Resistors are the most common component in circuits, and we show below how to model the equivalent resistance of two resistor that are combined in ``parallel'' or in ``series''.
 
@@ -210,6 +206,10 @@ $P$ corresponds to the rate at which energy is dissipated in the resistor, and h
 \end{align*}
 
 One can rate a power supply, such as a battery, by the amount of power that it can deliver. Power supplies are usually designed to supply a fixed potential difference; for example, a $\SI{9}{V}$ battery supplies a constant voltage of $\SI{9}{V}$. If a small resistor is connected across the terminals of the battery, a large current, $I$, will flow through the resistor. In principle, the current through the resistor will be given by Ohm's Law, $I=\Delta V/R$. However, by making the resistance increasingly smaller, the current will increase, and the power dissipated by the resistor, $\Delta V I$, would increase indefinitely. Obviously, this is not possible, as it requires the battery to supply energy at the same ever increasing rate. In practice, as the resistance across a batter is decreased, the current through the resistor will only increase until $\Delta V I$ is equal to the maximal power dissipated by the battery. As the resistance across the battery is further decreased, the voltage across the battery must start to decrease as well, so that the power dissipated in the resistor, $\Delta V I$, does not exceed the power that the battery can supply.
+
+\subsection{Superconductors}
+Superconductors are materials that, under certain conditions, have zero resistivity. A resistor made from a superconducting material will thus have zero resistance. It is beyond the scope of this textbook to describe how superconductivity arises in materials, however, it is worth know that these exist. Typically, superconductivity arises in materials when they are cooled to temperatures close to absolute zero, although some materials exihibit superconductivity at much higher temperatures ($\sim\SI{100}{\degree K}$ (TODO Check this!!!). Superconducting materials are often used when one needs a large electric current, such as in a powerful electro-magnet.
+
                                                          
 \section{Alternating voltages and currents}
 %Description of voltage, current, power through a resistor
