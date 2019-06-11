@@ -1,0 +1,316 @@
+\section{Electric current}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Multiple Choice
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple Choice}
+%Question submitted by Emily Darling
+\question When you stick a fork in an electrical outlet, what is it that can kill you?
+\begin{checkboxes}
+\choice The voltage drop
+\choice Your resistivity
+\CorrectChoice The current flowing through you \correct
+\choice The power delivered
+\end{checkboxes}
+
+%Question on http://www.mcqlearn.com/grade10/physics/current-electricity.php?page=5
+
+\question If resistance of an electric bulb is \SI{500}{\ohm} and voltage across its ends is \SI{250}{V} then power consumed by it is:
+\begin{checkboxes}
+\choice \SI{130}{W}
+\CorrectChoice \SI{125}{W} \correct
+\choice \SI{120}{W}
+\choice \SI{200}{W}
+\end{checkboxes}
+
+%Question submitted by Patrick singal
+\question What is the name of a material in which electrons are free to move?
+\begin{checkboxes}
+\choice Resistor
+\CorrectChoice Conductor \correct
+\choice Transistor
+\choice Insulator
+\end{checkboxes}
+
+%original
+\question What is the resistance of a \SI{60}{W} light designed for your \SI{120}{V} outlet? 
+\begin{checkboxes}
+\choice \SI{2}{\ohm}
+\choice \SI{60}{\ohm}
+\choice \SI{120}{\ohm}
+\CorrectChoice \SI{240}{\ohm} \correct
+\end{checkboxes}
+
+%original
+\question A copper wire conducts a current of \SI{1}{A} when a potential difference of \SI{120}{V} is applied across its length. If the wire is cut so that it is half as long, how much current will it conduct with the same potential difference across of it?
+\begin{checkboxes}
+\choice \SI{0.5}{A}
+\choice \SI{1}{A}
+\CorrectChoice \SI{2}{A} \correct
+\choice \SI{4}{A}
+\end{checkboxes}
+
+%original
+\question A copper wire consumes \SI{10}{W} when a potential difference of \SI{120}{V} is applied across its length. If the wire is cut so that it is half as long, how much power will it consume with the same potential difference across of it?
+\begin{checkboxes}
+\choice \SI{2.5}{W}
+\choice \SI{5}{W}
+\choice \SI{10}{W}
+\CorrectChoice \SI{20}{W} \correct
+\end{checkboxes}
+
+\question A cylindrical conductor is placed in series with a source of constant current, $I$, so that current flows along the axis of symmetry of the cylinder. If the radius of the cylinder is reduced by half of its original value, what happens to the current density in the conductor?
+\begin{checkboxes}
+\CorrectChoice It increases by a factor of 4. \correct
+\choice It increases by a factor of 2.
+\choice It remains the same.
+\choice It is reduced by a factor of 2.
+\choice It is reduced by a factor of 4.
+\end{checkboxes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% long answer
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Long answers}
+ %Original, but needs solution and numbers to be checked, alpha to be given, etc.
+%\question[3] A resistor is connected to a source of constant electrical current. When the resistor is dipped in ice water, the voltage across it is 1.5V. When the resistor is placed in boiling water, the voltage across it is 2.0V. What is the resistor likely made of (assume the measurements were made at sea level)?
+
+
+%Ryan U, modified
+\question A time-dependent current in a section of wire is found to be given by:
+\begin{align*}
+I=a\frac{\ln(bt)}{t^2}
+\end{align*}  
+where $a$ and $b$ are constants that have a value of $2$.
+\begin{parts}
+\part What are the SI units of $a$ and $b$?
+\part How much charge passes through that section of wire between $t=\SI{1}{s}$ and $t=\SI{5}{s}$
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item $a$ has units of $si{As^2}$; $b$ has units of $\si{s^{-1}}$.
+\item \SI{2.065}{C}
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part Since $\ln$ is dimensionless, then $a$ must have units of \si{As^2}. The argument to $\ln$ must also be dimensionless, so the untis of $b$ are \si{s^{-1}}
+\part Since current is the rate at which charges pass through a given cross-section of wire, then the charge is given by the integral of the current:
+\begin{align*}
+I=\frac{dQ}{dt} \quad\to\quad Q=\int I dt
+\end{align*}
+The charge that flows between $t=\SI{1}{s}$ and $t=\SI{5}{s}$ is thus given by:
+\begin{align*} 
+Q&=\int_1^5 I dt \\
+&=\int_1^5 a\frac{\ln(bt)}{t^2} dt\\
+\end{align*}
+We can integrate this by parts:
+\begin{align*}
+\int udv &= uv -\int vdu\\
+u&=a\ln(bt)\to du=ab\frac{1}{bt}=\frac{a}{t}\\
+dv&=1/t^2 \to v=-\frac{1}{t}\\
+\end{align*}
+which gives:
+\begin{align*}
+\int udv &= uv -\int vdu\\
+\therefore\int_1^5 a\frac{\ln(bt)}{t^2} dt &=\left[-\frac{a\ln(bt)}{t}\right]_1^5+\int_1^5\frac{a}{t^2}dt\\
+&=\left[-\frac{a\ln(bt)}{t} - \frac{a}{t} \right]_1^5\\
+&=a\left[-\frac{1}{t}(\ln(bt)+1)\right]_1^5\\
+&=(\SI{2}{As^2})\left[ \frac{1}{(\SI{1}{s})}\left(\ln\left((\SI{2}{s^{-1}})(\SI{1}{s})\right)+1\right) - \frac{1}{(\SI{5}{s})}\left(\ln\left((\SI{2}{s^{-1}})(\SI{5}{s})\right)+1\right) \right]\\
+&=\SI{2.065}{C}
+\end{align*}
+\end{parts}
+\end{solution}
+
+%McLean Final
+\question Figure \ref{fig:current:Cone} shows a \SI{1}{A} current entering a conical section of wire made of a conducting metal. The electron drift speed at the \SI{3.0}{mm} diameter end of the cone is measured to be \SI{4.0e-4}{m/s}. What is the electron drift speed at the \SI{1.0}{mm} diameter end of the wire?
+\capfig{0.4\textwidth}{figures/Current/Cone.png}{\label{fig:current:Cone}Current flowing through a conical section of wire.}
+\begin{finalanswer}
+$v=\SI{3.6e-3}{m/s}$
+\end{finalanswer}
+\begin{solution}
+We can relate the magnitude of the current density, $j$, to the drift velocity using the microscopic model of current:
+\begin{align*}
+j &= nev_d
+\end{align*}
+where $n$ is the (unknown) density of conduction electrons in the metal, $e$ is the charge of an electron, and $v_d$ is the drift velocity. The current density is given by the current divided by the cross-section of the wire, $A$:
+\begin{align*}
+j &=\frac{I}{A}=nev_d\\
+\therefore I&=Anev_d
+\end{align*}
+Since the current must be the same everywhere in the wire, we have:
+\begin{align*}
+I_1 &= I_2\\
+\therefore A_1nev_{d1} &= A_2nev_{d2}\\
+\therefore v_{d2} &=\frac{A_1}{A_2}v_{d1}
+\end{align*}
+where index $1$ refers to the \SI{3}{mm} side of the wire and index $2$ refers to the \SI{1}{mm} side. Plugging in numbers, we find:
+\begin{align*}
+v_{d2} &=\frac{A_1}{A_2}v_{d1} =\frac{\pi r_1^2}{\pi r_2^2}v_{d1}\\
+&=\frac{(\SI{3}{mm})^2}{(\SI{1}{mm})^2}(\SI{4.0e-4}{m/s})=\SI{3.6e-3}{m/s}
+\end{align*} 
+
+\end{solution}
+
+%McLean Final
+\question A \SI{5.0}{mm} diameter proton beam carries a total current of \SI{1.0}{mA}. The current density in the proton beam, which increases with distance from the center, $r$, is given by:
+\begin{align*}
+j(r)=J_0\frac{r}{R}
+\end{align*}
+where $R$ is the radius of the beam. What is the value $J_0$?
+\begin{finalanswer}
+$\SI{76.39}{A/m^2}$
+\end{finalanswer}
+\begin{solution}
+The total current is given by the integral of the current density over the area of the beam:
+\begin{align*}
+I=\int_0^R j(r)dA
+\end{align*}
+where $dA=2\pi r dr$ is the area of a small ring, that when summed will give the area of the beam. Carrying out the integral:
+\begin{align*}
+I&=\int_0^R j(r)dA=\frac{2\pi J_0}{R}\int_0^R r^2 dr=\frac{2\pi J_0}{R}\left[ \frac{1}{3}r^3\right]_0^R=\frac{2}{3}\pi J_0R^2
+\end{align*}
+We can re-arrange to solve for $J_0$, since we know $I$:
+\begin{align*}
+J_0=\frac{3I}{2\pi R^2}=\frac{3(\SI{1e-3}{A})}{2\pi(\SI{2.5e-3}{m})^2}=\SI{76.39}{A/m^2}
+\end{align*}
+\end{solution}
+
+%Giancolli, 25-26 -fixed
+\question You have been tasked with constructing a resistor which has the feature of maintaining the same resistance, \SI{2.88}{k\Omega}, despite changes in temperature. You cleverly design a resistor which combines two resistors in paralell, one resistor being made of carbon ($\alpha = -0.0005$) and the other of nichrome ($\alpha = 0.0004$), where $\alpha$ is specified for a reference temperature of $T_0 = \SI{0}{\degree C}$. What must be the resistace of each resistor be to maintain the combined resistance of \SI{3.7}{k\Omega} at \SI{0}{\degree C}?
+\begin{finalanswer}
+Carbon: $\SI{1280}{\Omega}$; Nichrome: $\SI{1600}{\Omega}$
+\end{finalanswer}
+\begin{solution}
+Using the equation for resistance as a function of resistivity, we can write the resistance as a function of temperature
+\begin{align*}
+R(T)=\rho(T)\frac{L}{A}=\rho_0\frac{L}{A}[1+\alpha(T-T_0)]=R_0[1+\alpha(T-T_0)]
+\end{align*}
+where $R_0$ is the resistance at $T=T_0$.
+
+The total resistance of the combined resistor will be the sum of the resistances of the carbon (subscript $C$) and nichrome (subscript $N$) resistors, since these are in series:
+\begin{align*}
+R(T)&=R_C(T)+R_N(T)=R_{C0}[1+\alpha_C(T-T_0)]+R_{N0}[1+\alpha_N(T-T_0)]\\
+&=R_{C0}(1-\alpha_CT_0)+R_{N0}(1-\alpha_NT_0)+(R_{C0}\alpha_C+R_{N0}\alpha_N)T
+\end{align*}
+where we isolated the term that depend on temperature at the end of the expression.
+
+Since the combined resistance must not depend on temperature, the last term must always be zero:
+\begin{align*}
+(R_{C0}\alpha_C+R_{N0}\alpha_N)T&=0\\
+\therefore R_{N0}=-R_{C0}\frac{\alpha_C}{\alpha_N}
+\end{align*}  
+In addition, we need the total resistance to always be equal to \SI{2880}{\Omega}. Since we have chosen that $T_0$ is equal to $\SI{0}{\degree C}$, we have:
+\begin{align*}
+R(T=\SI{0}{\degree C})&=R_{C0}(1-\alpha_CT_0)+R_{N0}(1-\alpha_NT_0)+(R_{C0}\alpha_C+R_{N0}\alpha_N)T\\
+\therefore\SI{2880}{\Omega}&= R_{C0}+R_{N0}=R_{C0}\left(1-\frac{\alpha_C}{\alpha_N}\right) 
+\end{align*} where we used the expression that we found for $R_{N0}$ in terms of $R_{C0}$.
+
+This allows us to solve for $R_{C0}$ and $R_{N0}$, the values of the two resistors at $\SI{0}{\degree C}$:
+\begin{align*}
+R_{C0}&=\frac{(\SI{2880}{\Omega})}{\left(1-\frac{\alpha_C}{\alpha_N}\right)}=\frac{(\SI{2880}{\Omega})}{\left(1+\frac{\num{0.0005}}{\num{0.0004}}\right)}=\SI{1280}{\Omega}\\
+R_{N0}&=-R_{C0}\frac{\alpha_C}{\alpha_N}=(\SI{1280}{\Omega})\frac{\num{0.0005}}{\num{0.0004}}=\SI{1600}{\Omega}
+\end{align*}
+where we note that this is possible because carbon has a negative temperature coefficient.
+\end{solution}
+
+%Giancolli, 25-30 -fixed
+\question Consider a coaxial cable with one cylinder of radius $r_1$ imbedded in another cylinder of radius $r_2$ as shown in figure \ref{fig:current:coax}. Suppose the cable is constructed with a material that has a resistivity of $\rho$
+\begin{parts}
+\part find an expression for the resistance from one end to the other (current flowing axially, along the axis of symmetry)
+\part find an expression for the resistance between the inner and outer surface (current flowing radially) %This wording was so general I am hvaing a hard time changing it at all.
+\end{parts}
+\capfig{0.4\textwidth}{figures/Current/coax.png}{\label{fig:current:coax}A hollow cylinder of length $l$.}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \begin{align*}
+R=\rho\frac{l}{\pi (r_2^2-r_1^2)}
+\end{align*}
+\item \begin{align*}
+R=\frac{\rho}{2\pi l}\ln\left(\frac{r_2}{r_1} \right)
+\end{align*}
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part The resistance for current flowing axially is given by:
+\begin{align*}
+R=\rho\frac{l}{A}=\rho\frac{l}{\pi (r_2^2-r_1^2)}
+\end{align*}
+\part For the current flowing radially, we have to take into account that the area perpendicular to the current (radius) changes as a function of radius. We thus model the resistor as the sum of a number of thin resistors each shaped as a cylindrical shell. The thickness of each of these small shells is $L=dr$, and their cross-sectional area is $A=2\pi r l$. The resistance of one of these shells is thus:
+\begin{align*}
+dR=\rho\frac{L}{A}=\rho\frac{dr}{2\pi r l}
+\end{align*}
+To find the total resistance, we sum the resistances of each thin shell:
+\begin{align*}
+R&=\int dR=\int_{r_1}^{r_2}\rho\frac{dr}{2\pi r l}=\frac{\rho}{2\pi l}\int_{r_1}^{r_2}\frac{1}{r}dr=\frac{\rho}{2\pi l}\ln\left(\frac{r_2}{r_1} \right)
+\end{align*}
+\end{parts}
+
+\end{solution}
+
+%Giancolli 25-46 -fixed
+\question An innovative witch is tired of attempting to boil her cauldron with an open fire. She creates a machine which draws power from a battery to produce heat. The witch is attempting to heat \SI{800}{ml} of water from \SI{14}{\degree C} to \SI{110}{\degree C} in 17 minutes. The machine the witch created is 85\% efficient at converting electrical power to heat. 
+\begin{parts}
+\part How much current does the machine draw from a \SI{12}{V} battery?
+\part What is the resistance of the witch's machine?
+\end{parts}
+\begin{finalanswer}
+\begin{enumerate}[(a)]
+\item \SI{30.89}{A}
+\item $\SI{0.389}{\Omega}$
+\end{enumerate}
+\end{finalanswer}
+\begin{solution}
+\begin{parts}
+\part First we need to determine how much energy is required to heat \SI{800}{ml} of water from \SI{14}{\degree C} to \SI{110}{\degree C}. One can easily find that the amount of heat required to change the temperature of a mass $m$ of material by a temperature $\Delta T$ is given by:
+\begin{align*}
+E=mC\Delta T
+\end{align*}
+where $C$ is the specific heat capacity of the material. For water at \SI{20}{\degree C} , $C\sim\SI{4184}{J/kg/K}$, and so the required energy is given by:
+\begin{align*}
+E=mC\Delta T=(\SI{0.8}{kg})(\SI{4184}{J/kg/K})(\SI{96}{\degree K})=\SI{321331.2}{J}
+\end{align*}
+For the energy to be delivered in \SI{17}{min}, the required power is given by:
+\begin{align*}
+P=\frac{E}{\Delta T}=\frac{(\SI{321331.2}{J})}{(\SI{1020}{s})}=\SI{315.03}{W}
+\end{align*}
+The power consumed by the water heater, $P^H$, is:
+\begin{align*}
+P^H=IV
+\end{align*}
+where $I$ is the current through the heater and $V=\SI{12}{V}$ is the battery voltage. Since the heater is 85\% efficient in converting electrical power to heat, we have:
+\begin{align*}
+0.85P^H&=\SI{315.03}{W}\\
+0.85IV&=\SI{315.03}{W}\\
+\therefore I&=\frac{(\SI{315.03}{W})}{0.85(\SI{12}{V})}=\SI{30.89}{A}
+\end{align*}
+\part The resistance of the heater is found easily from Ohm's law:
+\begin{align*}
+R=\frac{V}{I}=\frac{(\SI{12}{V})}{(\SI{30.89}{A})}=\SI{0.389}{\Omega}
+\end{align*}
+\end{parts}
+\end{solution}
+
+
+%TODO: Needs a figure, and have to finish the integral...
+%\question[3] A resistor is made in the shape of a truncated cone of length $L$ that is uniform and has a radius of $a$ at one end and a radius of $b$ at the other end. The resistor is made of a material with resistivity $\rho$. What is the resistance of the resistor, when current flows along the axis of symmetry of the resistor?
+%
+%\begin{solution}
+%We model the truncated cone as being the sum of many little disks of radius $r$ and infinitesimal length $dx$. Each little disk has a resistance:
+%\begin{align*}
+%dR = \rho \frac{dL}{A}=\rho \frac{dx}{\pi r^2}
+%\end{align*}
+%The radius of each disk depends on the distance, $x$, along the resistor:
+%\begin{align*}
+%r(x)=a+\frac{b}{L}x
+%\end{align*}
+%The total resistance is thus:
+%\begin{align*}
+%R=\int dr=\int_0^L\rho \frac{dx}{\pi (a+\frac{b}{L}x)^2}=\frac{\rho}{\pi}\int_0^L \frac{dx}{a^2+2\frac{ab}{L}x+\frac{b^2}{L^2}x^2}
+%\end{align*}
+%
+%\end{solution}
