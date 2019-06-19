@@ -612,20 +612,26 @@ U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}Q\Delta V
 \begin{importantEquations}
 \medskip
 \begin{multicols}{2}
-\textbf{Momentum of a point particle:}
+\textbf{Charge stored in a capacitor:}
 \begin{align*}
-\vec p = m\vec v \\
-\frac{d}{dt}\vec p = \sum \vec F = \vec F^{net}
+Q = C\Delta V
+\end{align*}
+
+\textbf{Electric potential energy}
+\begin{align*}
+U=qV
 \end{align*}
 \columnbreak
 \\
-\textbf{Position of the Centre of Mass \\ of a system:}
+\textbf{Electric potential:}
 \begin{align*}
-\vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i 
+\Delta V = V(\vec r_B)-V(\vec r_A)\\
+\Delta V = -\int_{A}^{B}\vec E \cdot d\vec r
 \end{align*}
 \medskip
 \end{multicols}
 \end{importantEquations}
+
 
 \newpage
 \section{Thinking about the material}
@@ -640,7 +646,7 @@ U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}Q\Delta V
 
 \begin{chapteractivity}{To try at home}
 {
-\item Try to release a static discharge from your finger to some metal object. Measure the distance between your finger and the metal object at the time of the discharge. Knowing the breakdown voltage of air, what was the electric field between your finger and the metal object at the time of the discharge?
+\item Try to release a static discharge from your finger to some metal object. Measure the distance between your finger and the metal object at the time of the discharge. Knowing the breakdown voltage of air, what was the potential difference between your finger and the metal object just before the discharge?
 }
 \end{chapteractivity}
 
@@ -655,22 +661,22 @@ U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}Q\Delta V
 \section{Sample problems and solutions}
 
 \subsection{Problems}
-\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-Consider a long cylinder of radius $R = N$ and charge density $\rho = N$. If the electric potential at the surface of the sphere is $V_S = \SI{100}{V}$, then what is the electric potential inside and outside of the cylinder as a function of $r$?}
+\begin{problem}{soln:template:cylinderpotential}{\label{prob:template:cylinderpotential} 
+Consider a long cylinder of radius $R$ and charge density $\rho$. If the electric potential at the surface of the cylinder is $V_S = \SI{100}{V}$, then what is the electric potential inside and outside of the cylinder as a function of $r$?}
 
 \end{problem}
 
-\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-		Consider two nested conducting cylinders of length $L$ which are seperated by the distance between the points $a$ and $b$, which are both measured radially from the centre of the nested cylinders, as shown in Figure \ref{fig:potential:2pos1neg}. If the linear charge density of both cylinders is $\lambda$, what is the capacitance between points $a$ and $b$?}
+\begin{problem}{soln:template:nestedcylinders}{\label{prob:template:nestedcylinders} 
+		Consider two nested conducting cylinders of length $L$ which are seperated by the distance between the points $a$ and $b$, which are both measured radially from the centre of the nested cylinders, as shown in Figure \ref{fig:potential:nestedcylinders}. If the linear charge density of both cylinders is $\lambda$, what is the capacitance between points $a$ and $b$?}
 	
-	
+	\capfig{0.7\textwidth}{figures/Potential/nestedcylinders.png}{\label{fig:potential:nestedcylinders}Two nested cylinders serpated by the distance between the points $a$ and $b$.}
 	
 \end{problem}
 \newpage
 \subsection{Solutions}
-\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+\begin{solution}{prob:template:cylinderpotential}\label{soln:template:cylinderpotential}
 
-	To calculate the electric potential inside and outside of the sphere, we must first calculate the electric field. We will do this using Gauss' Law. We will define our enclosed charge using a cylinder of radius $r$ which is less than $R$ and length $L$:
+	To calculate the electric potential inside and outside of the cylinder, we must first calculate the electric field. We will do this using Gauss' Law. We will define our enclosed charge using a cylinder of radius $r$ which is less than $R$ and length $L$:
 	
 	\begin{align*}
 	\int E dA & = \frac{Q_{enc}}{\epsilon_0}\\
@@ -717,7 +723,7 @@ Consider a long cylinder of radius $R = N$ and charge density $\rho = N$. If the
 	
 \end{solution}
 
-\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+\begin{solution}{prob:template:nestedcylinders}\label{soln:template:nestedcylinders}
 	
 	
 	To begin, we must apply Gauss' law to find the electric field for r where $a\geq r\geq b$. We know that the cylinder of radius $a$ will carry the only enclosed charge between points $a$ and $b$, so we can determine the following:
@@ -727,6 +733,8 @@ Consider a long cylinder of radius $R = N$ and charge density $\rho = N$. If the
 	E(2\pi r L)&= \frac{\lambda L}{\epsilon_0}\\
 	E&= \frac{\lambda}{2\pi \epsilon_0 r}
 	\end{align*}
+	
+	\capfig{0.7\textwidth}{figures/Potential/nestedcylinderssolution.png}{\label{fig:potential:nestedcylinderssolution}Solving for $E$ between two cylinders using Gauss' law.}
 	
 	Now we must find $\Delta V$. To do this, we will integrate $E$ between the points $a$ and $b$:
 	
