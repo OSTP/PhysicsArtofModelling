@@ -1,7 +1,6 @@
 \chapter{Electric current}
 \label{chapter:current}
-In this chapter, we introduce tools to model electric current, namely, the motion of charges inside a conductor. We will also introduce the notion of resistance, as well as the resistor, a common component in electric circuits. This chapter will show how to relate charges moving at the microscopic level to macroscopic quantities such as current and voltage.
-
+In this chapter, we introduce tools to model electric current, namely, the motion of charges inside a conductor. We will also introduce the notion of resistance, as well as the resistor, a common component in electric circuits. This chapter will show how to model charges moving at the microscopic level, and how one can relate these to macroscopic quantities that can be measured, such as charge and voltage.
 \begin{learningObjectives}{
  \item Understand the differences in modelling conductors when charges are stationary or moving.
  \item Understand how to define current and current density.
@@ -24,17 +23,20 @@ In this chapter, we introduce tools to model electric current, namely, the motio
 \section{Current}
 In the preceding chapters, we examined ``electrostatic'' systems; those for which charges are not in motion. In electrostatic systems, the electric field inside of a conductor is zero (by definition, or charges would be moving, since they are free to move in a conductor). We argued that if charges are deposited onto a conductor, they would quickly arrange themselves into a static configuration (on the surface of the conductor). 
 
-Instead, we can build systems were charge move in a conductor. If we apply a fixed potential difference across a conductor, this will result in an electric field inside the conductor and the charges within will move (``conduct''). In general, this requires that there be some sort of circuit formed, whereby charges enter one end of the conductor and exit the other. The most simple circuit that one can construct is to simply connect the two terminals of a battery to the ends of the conductor, as illustrated in Figure TODO. 
+Instead, we can build systems were charge move in a conductor. If we apply a fixed potential difference across a conductor, this will result in an electric field inside the conductor and the charges within will move (``conduct''). In general, this requires that there be some sort of circuit formed, whereby charges enter one end of the conductor and exit the other. The most simple circuit that one can construct is to simply connect the two terminals of a battery to the ends of the conductor, as illustrated in Figure \ref{fig:current:simplecircuit}. 
+%TODO Make the figure much much better :-)
+\capfig{0.4\textwidth}{figures/Current/simplecircuit.png}{\label{fig:current:simplecircuit} A simple circuit is created by connecting the terminals of a battery to the ends of a piece of conducting material. Note that while electrons flow from the negative to the positive terminal of the battery, conventional current is defined as if it were positive charges moving in the opposite direction.}
 
-A battery (as we will see in more detail in Section TODO-REF-NEXT-CHAPTER) is a device that provides a source of charges, and a fixed potential difference. For example, a $\SI{9}{V}$ battery has two terminals with fixed, constant, voltage of $\SI{9}{V}$ between them.
-%TODO A figure showing a simple battey, potential difference, charges going out of battery, into conductor, back out into battery.
-``Electric current'' is defined to be the rate at which charges cross a given plane in a given direction (usually a plane perpendicular to some conductor through which we want to define the current). For a wire or a conductor, we define current, $I$, as the total amount of charge, $\Delta Q$, that flows through any cross-section of the conductor during an amount of time, $\Delta t$:
+A battery (as we will see in more detail in Section TODO-REF-NEXT-CHAPTER) is a device that provides a source of charges, and a fixed potential difference. For example, a $\SI{9}{V}$ battery has two terminals with a constant voltage of $\SI{9}{V}$ between them.
+
+
+``Electric current'' is defined to be the rate at which charges cross a given plane (usually a plane perpendicular to some conductor through which we want to define the current). For a wire or a conductor, we define current, $I$, as the total amount of charge, $\Delta Q$, that flows through any cross-section of the conductor during an amount of time, $\Delta t$:
 \begin{align*}
 \Aboxed{I=\frac{\Delta Q}{\Delta t}=\frac{dQ}{dt}}
 \end{align*}
-where we take a derivative if the rate at which charges flow is not constant in time. The S.I. unit of current is the Ampère (\si{A}), which is a base unit. The Coulomb (charge), is a derived unit ($\SI{1}{C}=\SI{1}{A\cdot s}$). Current is defined to be positive in the direction in which positive charges flow. In almost all cases, it is negative electrons that flow through a material; the current is defined to be in the opposite direction from which the actual electrons are flowing.
+where we take a derivative if the rate at which charges flow is not constant in time. The S.I. unit of current is the Ampère (\si{A}), which is a base unit. The Coulomb (charge), is a derived unit ($\SI{1}{C}=\SI{1}{A\cdot s}$). Current is defined to be positive in the direction in which positive charges flow. In almost all cases, it is negative electrons that flow through a material; the current is defined to be in the opposite direction from which the actual electrons are flowing, as illustrated in Figure \ref{fig:current:simplecircuit}. To distinguish that the current is in the opposite direction of the actual flowing charges, one sometimes uses the term ``conventional current'' to indicate that the current is referring to a flow of positive charges.
 
-Note that the definition of electric current is very similar to the ``flow rate'', $Q$, that we defined as the volume flow of a liquid across a given cross-section (Section REF-TODO). As we continue to develop our description of current, you will notice that there are many similarities between describing the flow of an incompressible fluid and describing the flow of charges in a conductor.
+Note that the definition of electric current is very similar to the ``flow rate'', $Q$, that we defined as the volume flow of a liquid across a given cross-section (Section \ref{sec:fluidmechanics:continuity}). As we continue to develop our description of current, you will notice that there are many similarities between describing the flow of an incompressible fluid and describing the flow of charges in a conductor.
 
 We think of current as a macroscopic quantity, something that we can easily measure in the lab. Current is a measure of the average rate at which charges are moving through the conductor, and not a measure of what is going on at a microscopic level. In order to model the motion of electrons through a conductor, we introduce the ``current density'', $\vec j$:
 \begin{align*}
@@ -47,10 +49,12 @@ I = A(\vec j\cdot \hat n)
 
 \section{Microscopic model of current}
 \label{sec:current:micromodel}
-Consider a cylindrical conductor of cross-sectional area, $A$, and length, $L$, as shown in Figure TODO. A potential difference, $\Delta V$, is applied across the length of the conductor, so that there is an electric field everywhere within the conductor. If the conductor were made of empty space, electron would leave the negative terminal of the battery, convert the potential energy from the battery into kinetic energy, $e\Delta V$, as they accelerate through the potential difference, and arrive at the positive terminal with a high speed. In reality, the conductor is made of matter, and electrons do not accelerate through the conductor. Instead, electrons accelerate over only a short distance before colliding with an atom in the material (rather, a tightly bound electron in the material), losing its kinetic energy to the material, and accelerating again, as illustrated in Figure TODO.
-
+Consider a cylindrical conductor of cross-sectional area, $A$, and length, $L$, as shown in Figure \ref{fig:current:collisions}. A potential difference, $\Delta V$, is applied across the length of the conductor, so that there is an electric field everywhere within the conductor. If the conductor were made of empty space, electrons would leave the negative terminal of the battery, convert the potential energy from the battery into kinetic energy, $e\Delta V$, as they accelerate through the potential difference, and arrive at the positive terminal with a high speed. In reality, the conductor is made of matter, and electrons do not accelerate through the conductor. Instead, electrons accelerate over only a short distance before colliding with an atom in the material (rather, a tightly bound electron in the material), losing its kinetic energy to the material, and accelerating again, as illustrated in Figure \ref{fig:current:collisions}.
+%TODO Improve diagram, ideally show atoms vibrating as a result of the collisions?
+\capfig{0.4\textwidth}{figures/Current/collisions.png}{\label{fig:current:collisions} Electrons moving inside a conductor only ``drift'' on average in the direction anti-parallel to the electric field. In reality, they constantly collide with atoms in the material, transferring their kinetic energy into thermal energy of the conductor.}
 Thus, when the electrons arrive at the positive side of the conductor, they have not gained any kinetic energy. Instead, they lost that kinetic energy to atoms of the conducting material through collisions; those atoms then vibrate which we can measure as an increase in temperature of the material. When current flows through a conductor, that conductor will heat up; this is how the heating elements in your toaster work!
-%TODO Illustration of electron moving through conductor, colliding with atoms, atoms vibrating, drift velocity
+
+
 We model the motion of electrons as charges ``drifting'' through the conductor with a velocity, $\vec v_d$, the ``drift velocity''. In reality, of course, the electrons are only moving on average with the drift velocity, and their instantaneous speed is generally much larger than the drift velocity and can be in any direction, as illustrated above. 
 
 Suppose that, inside the conductor, there are a certain number of electrons per unit volume, $n$, that are available for conduction (the other electrons are too tightly bound to their atoms to conduct). Different materials will have different values of $n$. Consider the motion of the conduction electrons present in a section of length, $l$, of the conductor, as illustrated in Figure \ref{fig:current:microcurrent}.
@@ -76,7 +80,19 @@ which allows us to connect a macroscopic quantity, current, to the microscopic d
 \end{align*}
 where, again, the negative sign indicates that the current density is in the opposite direction from the actual drift velocity of the electrons.
 
-%TODO Example where they calculate drift velocity with realistic numbers. Perhaps compare with actual speed of electrons?
+\begin{example}{A current of $\SI{1}{A}$ is measured in a copper wire with a diameter of $\SI{1}{mm}$. What is the drift velocity of the electrons? Assume that each atom of copper provides one ``free electron'' for conduction.}
+In order to determine the drift velocity of electrons, we need to know the density of free electrons in copper. To do this, we need to determine how many copper atoms there are per unit volume. The density of copper is $\rho=\SI{8.92e3}{kg/m^3}$ and the atomic mass unit of copper is $\SI{63.5}{amu}$ ($\SI{1}{mole}$ of copper weighs $\SI{63.5}{g}$). The number of copper atoms per unit volume is thus:
+\begin{align*}
+n=\frac{(\SI{6.022e23}{mole^{-1}})(\SI{8.92e3}{kg/m^3})}{(\SI{63.5e-3}{kg/mole})}=\SI{8.46e28}{m^{-3}}
+\end{align*}
+Since each copper atom contributes one free electron, this is the same as the density of free electrons. From this, we easily obtain the drift velocity, from the current:
+\begin{align*}
+v_d&=\frac{j}{en}=\frac{I}{Aen}=\frac{(\SI{1}{A})}{\pi(\SI{0.0005}{m})^2(\SI{1.6e-19}{C})(\SI{8.46e28}{m^{-3}})}\\
+&=\SI{9.4e-5}{m/s}\sim\SI{0.1}{mm/s}
+\end{align*}
+The drift velocity is thus very slow, less than one millimetre per second. Note that a copper wire would not actually be able to sustain such a high current density without damage.
+\end{example}
+
 
 \section{Ohm's Law}
 In the previous section, we developed a microscopic model of charges moving in a conductor, but did not describe how this motion is affected by the electric field in the conductor (or equivalently, the potential difference across the conductor). ``Ohm's Law'' states that the current density, $\vec j$, in the conductor is proportional to the electric field, $\vec E$, in the conductor:
@@ -86,6 +102,10 @@ In the previous section, we developed a microscopic model of charges moving in a
 \end{align*}
 where we have introduced the ``conductivity'', $\sigma$, which is a property of the material from which the conductor is made. The conductivity is a measure of how large a current density (and by extension, current) there will be in material given a certain electric field. Materials with a high conductivity are said to be good conductors, as a large current will result from a small electric field. Gold and copper are example of materials with a high conductivity. 
  %TODO Checkpoint question: What is the conductivity of an insulator? 0 (correct), around 1, infinite
+ 
+ 
+%TODO Example something like: http://hyperphysics.phy-astr.gsu.edu/hbase/electric/ohmmic.html#c2 to provide a rough estimate of the speed of the elecrtrons in a copper wire of a given length to compare with their drift speed. 
+ 
 \subsection{Resistivity}
 For convenience, one often describes how well a material conducts charges using the ``resistivity'', $\rho$, which is simply defined as the inverse of conductivity:
 \begin{align*}
@@ -95,14 +115,14 @@ Materials with a high resistivity are poor conductors; they tend to ``resist'' t
 \begin{align*}
 \rho(T)=\rho_0\left[ 1 + \alpha (T-T_0)\right]
 \end{align*}
-where, $\rho_0$, is a reference resistivity, measured at the reference temperature, $T_0$ (usually $\SI{20}{\degree C}$, and $\alpha$ is the ``temperature'' coefficient of the material. The temperature dependence of the resistivity is illustrated in Figure TODO.
-%TODO Labelled figure showing rho(T), rho_0, T_0
-
+where, $\rho_0$, is a reference resistivity, measured at the reference temperature, $T_0$ (usually $\SI{20}{\degree C}$, and $\alpha$ is the ``temperature'' coefficient of the material. The temperature dependence of the resistivity is illustrated in Figure \ref{fig:current:resistivity}.
+\capfig{0.5\textwidth}{figures/Current/resistivity.png}{\label{fig:current:resistivity}A linear model of resistivity can be used for most conductors over a large rang of temperatures.}
+This ``linear model'' (since resistivity increases linearly with temperature) is empirically found to be valid for many materials over a large range of temperatures, although it is not expected to hold at extreme temperatures (either very low or very high). Furthermore, for semi-conducting materials (such as silicon and germanium), resistivity is found to decrease as a function of temperature.
 %TODO Checkpoint question: what is the slope of the resistivity vs temperature shown in Figure TODO? - it's not alpha, but give that as an option!
 
 Table TODO shows a list of common materials and their conductivity, resistivity, and temperature coefficients (defined at a reference temperature $T_0=\SI{20}{\degree C}$.
 
-%TODO Table showing properties for common materials
+%TODO Table showing properties for common materials (resistivity, conductivity, free electron density) - look at a previous chapter with a table in it to get the latex code for a table.
 
 \section{Resistors}
 A conductor with current going through it (or current that could go through it) is generally called a ``resistor'', to emphasize that charges will experience resistance as they travel through the conductor (as they collide with atoms in the conductor). In this section, we describe resistors, how to combine them, and how to model the heat that is generated when charges collide with the atoms in the resistor.
