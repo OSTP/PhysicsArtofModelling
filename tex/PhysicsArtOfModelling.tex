@@ -62,6 +62,7 @@
 \definecolor{TBblue}{rgb}{0.0, 0.58, 0.71}
 \definecolor{TBred}{rgb}{0.8, 0.25, 0.33}
 \definecolor{TBorange}{rgb}{0.89, 0.35, 0.13}
+\definecolor{TBPurple}{rgb}{0.6,0.4,0.8}
 
 %Stuff for writing code:
 
@@ -145,8 +146,8 @@
 %spacing around captions (e.g. caption after a table)
 \captionsetup{belowskip=6pt,aboveskip=4pt}
 
-%\titlespacing*{\chapter}
-%{0pt}{0ex}{0ex}
+\titlespacing*{\chapter}
+{0pt}{0ex}{0ex}
 \titlespacing*{\section}
 {0pt}{4pt-\parskip}{2pt-\parskip}
 \titlespacing*{\subsection}
@@ -369,6 +370,22 @@
 \begin{mdframed}[nobreak=false]\relax #1}{%
 \end{mdframed}}
 
+%%Definitions
+\newenvironment{definitions}[1]{%
+	\mdfsetup{%
+		frametitle={%
+			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+			\node[anchor=west,rectangle,fill=TBPurple, minimum width=5cm,rounded corners=0.2cm]
+			{\strut Important Definitions};},
+		frametitlefont=\color{white}\sffamily\bfseries,
+		innertopmargin=0pt,linecolor=TBPurple,%
+		linewidth=1pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+	}
+	\vspace{10pt}
+	\begin{mdframed}[nobreak=false]\relax #1}{%
+\end{mdframed}}
+
 %%Key Takeaways:
 \newenvironment{chapterSummary}[1]{%
 \mdfsetup{%
@@ -447,15 +464,15 @@
 %Magnetic Force and fields
 %Source of magnetic fields
 %Induction
-%Special relativity
+%\include{SpecialRelativity}
 %Quantum mechanics
 
 
 %
-\appendix
-\renewcommand\chaptername{Appendix}
-\include{Vectors}
-\include{Calculus}
-\include{Labs}
-\include{Python}
+%\appendix
+%\renewcommand\chaptername{Appendix}
+%\include{Vectors}
+%\include{Calculus}
+%\include{Labs}
+%\include{Python}
 \end{document}

@@ -454,7 +454,7 @@ where we used $\epsilon_0$ in the last equality as the result is a little cleane
 
 \begin{studentOpinion}{Josh}
 	
-	A common source of confusion is the process of solving for the electric field produced by continuous charges. Point charges are well defined in space as being entirely contained within a single point, while continuous charges are objects which occupy 1, 2, or 3 dimensions. Point charges are easily generalized with $\vec E = \frac{kQ}{r^2}\hat r$, but the solution to continuous charges must be written as $E = \int dE$, which typically requires more steps to calculate.
+	A common source of confusion is the process of solving for the electric field produced by continuous charges. Point charges are well defined in space as being entirely contained within a single point, while continuous charges are objects which occupy 1, 2, or 3 dimensions. The electric field produced by point charges are easily generalized with $\vec E = \frac{kQ}{r^2}\hat r$, but the solution to continuous charges must be written as $E = \int dE$, which typically requires more steps to calculate.
 	
 	When a charge is distributed along more than zero dimensions (i.e: not a point charge), the object containing it must be broken down into many small charges which are written as $dq$. From here, $dq$ is rewritten as a measurement which is most convenient to integrate over. For example: if I wanted to measure $E$ from the top of a rod, it would be most convenient for me to integrate over $x$, but if I were to measure $E$ from the side of a rod, it would be most convenient to integrate over $\theta$.
 	
@@ -557,20 +557,58 @@ The point of lowest potential energy corresponds to the case when $\vec p$ and $
 \begin{importantEquations}
 \medskip
 \begin{multicols}{2}
-\textbf{Momentum of a point particle:}
+\textbf{Electric field:}
 \begin{align*}
-\vec p = m\vec v \\
-\frac{d}{dt}\vec p = \sum \vec F = \vec F^{net}
+\vec E = k \frac{Q}{r^2}\vec r \\
+\vec E = \int d \vec E \\
+\end{align*}
+\textbf{Electric force:}
+\begin{align*}
+\vec F = q \vec E \\
 \end{align*}
 \columnbreak
 \\
-\textbf{Position of the Centre of Mass \\ of a system:}
+\textbf{Electric dipole moment:}
 \begin{align*}
-\vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i 
+p = Ql \\
+\end{align*}
+\textbf{Torque on a dipole:}
+\begin{align*}
+\vec \tau = \vec p \times \vec E \\
+\end{align*}
+\textbf{Potential energy stored in a dipole:}
+\begin{align*}
+U = -\vec p \cdot \vec E \\
 \end{align*}
 \medskip
 \end{multicols}
 \end{importantEquations}
+
+
+\begin{definitions}
+	\textbf{Charge:}
+	\item An intrinsic property of matter which quantifies the magnitude of force felt by particles that are attracted or repulsed by each other due to the Coulomb force. SI units: \SI{}{C}. Common variable(s): $Q$, $q$.
+	\medskip
+	\item \textbf{Electric field:}
+	\item A field which exerts a force on charged objects and is measured in force per unit charge. SI units: \SI{}{NC^{-1}}. Common variable(s): $\vec E$.
+	\medskip
+	\item \textbf{Coulomb's constant:}
+	\item A fundamental physical constant which relates charge and distance to electric field. SI units: \SI{}{Nm^2C^{-2}}. Common variable(s): $k$.
+	\medskip
+	\item \textbf{Electric dipole moment:}
+	\item A measurement of a dipole's polarity. SI units: \SI{}{Cm}. Common variable(s): $\vec p$.
+	\medskip
+	\item \textbf{Linear charge density:}
+	\item The charge per unit length of an object. SI units: \SI{}{Cm^{-1}}. Common variable(s): $\lambda$.
+	\medskip
+	\item \textbf{Surface charge density:}
+	\item The charge per unit area of an object. SI units: \SI{}{Cm^{-2}}. Common variable(s): $\sigma$.
+	\medskip
+	\item \textbf{Volume charge density:}
+	\item The charge per unit volume of an object. SI units: \SI{}{Cm^{-3}}. Common variable(s): $\rho$.
+	
+\end{definitions}
+
 
 \newpage
 \section{Thinking about the material}
@@ -595,6 +633,7 @@ The point of lowest potential energy corresponds to the case when $\vec p$ and $
 {
 \item Propose an experiment to experimentally measure the k constant.
 \item Propose an experiment which would oragnize various materials based on their electron affinity.
+\item Investigate and model Coulomb's law.
 }
 \end{chapteractivity}
 
@@ -604,19 +643,16 @@ The point of lowest potential energy corresponds to the case when $\vec p$ and $
 
 
 
-%TODO: Sample problem: show that for small angles, dipoles oscillate with SHM
-%TODO: Sample problem: Electric field at the centre of a square wire of charge (some segments positive, some negative). No need to have to do the integral, just show that you can use the result in the example to get the field from something more complicated. -written out
-
 
 \subsection{Problems}
-\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+\begin{problem}{soln:template:trianglecharge}{\label{prob:template:trianglecharge} 
 Consider four charged rods of length $L$ which are arranged to form a triangle, as shown in Figure \ref{fig:ChargesFields:trianglediagram}. If the charge on each rod is evenly distributed, what is the net electric field at the centre of the triangle?
 
 \capfig{0.4\textwidth}{figures/ChargesFields/trianglediagram.png}{\label{fig:ChargesFields:trianglediagram} A triangle made up of charged rods}
 }
 \end{problem}
 
-\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic}}
+\begin{problem}{soln:template:dipoleinfield}{\label{prob:template:dipoleinfield}}
 	
 	
 	Suppose a dipole is in an electric field $\vec E$. Show that the dipole will experience simple harmonic motion if the angle between the dipole vector and the electric field vector is small.
@@ -625,7 +661,7 @@ Consider four charged rods of length $L$ which are arranged to form a triangle, 
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+\begin{solution}{prob:template:trianglecharge}\label{soln:template:trianglecharge}
 
 In Example \ref{ex:chargesfields:finiteline}, we determined that the electric field felt by a finite wire is:
 \begin{align*}
@@ -665,7 +701,7 @@ Which is the final answer.
 \end{solution}
 
 
-\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+\begin{solution}{prob:template:dipoleinfield}\label{soln:template:dipoleinfield}
 The only net torque on the dipole is from the force from the electric field:
 \begin{align*}
 \tau = -pE\sin\theta 
