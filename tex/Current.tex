@@ -1,6 +1,6 @@
 \chapter{Electric current}
 \label{chapter:current}
-In this chapter, we introduce tools to model electric current, namely, the motion of charges inside a conductor. We will also introduce the notion of resistance, as well as the resistor, a common component in electric circuits. This chapter will show how to model charges moving at the microscopic level, and how one can relate these to macroscopic quantities that can be measured, such as charge and voltage.
+In this chapter, we introduce tools to model electric current, namely, the motion of charges inside a conductor. We will show how we can connect the microscopic motion of electrons to macroscopic quantities, such as current and voltage, that can be measured in the laboratory. We will also introduce the notion of resistance, as well as the resistor, a common component in electric circuits. 
 \begin{learningObjectives}{
  \item Understand the differences in modelling conductors when charges are stationary or moving.
  \item Understand how to define current and current density.
@@ -23,49 +23,58 @@ In this chapter, we introduce tools to model electric current, namely, the motio
 \section{Current}
 In the preceding chapters, we examined ``electrostatic'' systems; those for which charges are not in motion. In electrostatic systems, the electric field inside of a conductor is zero (by definition, or charges would be moving, since they are free to move in a conductor). We argued that if charges are deposited onto a conductor, they would quickly arrange themselves into a static configuration (on the surface of the conductor). 
 
-Instead, we can build systems were charge move in a conductor. If we apply a fixed potential difference across a conductor, this will result in an electric field inside the conductor and the charges within will move (``conduct''). In general, this requires that there be some sort of circuit formed, whereby charges enter one end of the conductor and exit the other. The most simple circuit that one can construct is to simply connect the two terminals of a battery to the ends of the conductor, as illustrated in Figure \ref{fig:current:simplecircuit}. 
+Instead, we can build systems were charge move in a conductor. If we apply a fixed potential difference across a conductor, this will result in an electric field inside the conductor and the charges within will move as a result. In general, this requires that there be some sort of circuit formed, whereby charges enter one end of the conductor and exit the other. The most simple circuit that one can construct is to  connect the two terminals of a battery to the ends of a conductor, as illustrated in Figure \ref{fig:current:simplecircuit}. 
 %TODO Make the figure much much better :-)
-\capfig{0.4\textwidth}{figures/Current/simplecircuit.png}{\label{fig:current:simplecircuit} A simple circuit is created by connecting the terminals of a battery to the ends of a piece of conducting material. Note that while electrons flow from the negative to the positive terminal of the battery, conventional current is defined as if it were positive charges moving in the opposite direction.}
+\capfig{0.4\textwidth}{figures/Current/simplecircuit.png}{\label{fig:current:simplecircuit} A simple circuit is created by connecting the terminals of a battery to a conducting material. Note that while electrons flow from the negative to the positive terminal of the battery, conventional current is defined as if it were positive charges moving in the opposite direction.}
 
-A battery (as we will see in more detail in Section TODO-REF-NEXT-CHAPTER) is a device that provides a source of charges, and a fixed potential difference. For example, a $\SI{9}{V}$ battery has two terminals with a constant voltage of $\SI{9}{V}$ between them.
+A battery (as we will see in more detail in Section TODO-REF-NEXT-CHAPTER) is a device that provides a source of charges and a fixed potential difference. For example, a $\SI{9}{V}$ battery has two terminals with a constant voltage of $\SI{9}{V}$ between them.
 
 
-``Electric current'' is defined to be the rate at which charges cross a given plane (usually a plane perpendicular to some conductor through which we want to define the current). For a wire or a conductor, we define current, $I$, as the total amount of charge, $\Delta Q$, that flows through any cross-section of the conductor during an amount of time, $\Delta t$:
+``Electric current'' is defined to be the rate at which charges cross a given plane (usually a plane perpendicular to some conductor through which we want to define the current). We define current, $I$, as the total amount of charge, $\Delta Q$, that flows through any cross-section of the conductor during an amount of time, $\Delta t$:
 \begin{align*}
 \Aboxed{I=\frac{\Delta Q}{\Delta t}=\frac{dQ}{dt}}
 \end{align*}
-where we take a derivative if the rate at which charges flow is not constant in time. The S.I. unit of current is the Ampère (\si{A}), which is a base unit. The Coulomb (charge), is a derived unit ($\SI{1}{C}=\SI{1}{A\cdot s}$). Current is defined to be positive in the direction in which positive charges flow. In almost all cases, it is negative electrons that flow through a material; the current is defined to be in the opposite direction from which the actual electrons are flowing, as illustrated in Figure \ref{fig:current:simplecircuit}. To distinguish that the current is in the opposite direction of the actual flowing charges, one sometimes uses the term ``conventional current'' to indicate that the current is referring to a flow of positive charges.
+where we take a derivative if the rate at which charges flow is not constant in time. The S.I. unit of current is the Amp\`ere (\si{A}), which is a base unit (note that the Coulomb (charge), is a derived unit, $\SI{1}{C}=\SI{1}{A\cdot s}$). Current is defined to be positive in the direction in which positive charges flow. In almost all cases, it is negative electrons that flow through a material; the current is defined to be in the opposite direction from which the actual electrons are flowing, as illustrated in Figure \ref{fig:current:simplecircuit}. To distinguish that the current is in the direction opposite to that of the flowing electrons, one sometimes uses the term ``conventional current'' to indicate that the current is referring to a flow of positive charges.
 
 Note that the definition of electric current is very similar to the ``flow rate'', $Q$, that we defined as the volume flow of a liquid across a given cross-section (Section \ref{sec:fluidmechanics:continuity}). As we continue to develop our description of current, you will notice that there are many similarities between describing the flow of an incompressible fluid and describing the flow of charges in a conductor.
 
-We think of current as a macroscopic quantity, something that we can easily measure in the lab. Current is a measure of the average rate at which charges are moving through the conductor, and not a measure of what is going on at a microscopic level. In order to model the motion of electrons through a conductor, we introduce the ``current density'', $\vec j$:
+We think of current as a macroscopic quantity, something that we can easily measure in the lab. Current is a measure of the average rate at which charges are moving through the conductor, and not a measure of what is going on at a microscopic level. In order to model the motion of charges at the microscopic level, we introduce the ``current density'', $\vec j$:
 \begin{align*}
 \Aboxed{\vec j = \frac{I}{A}\hat n}
 \end{align*}
-where, $I$, is the current through the conductor of cross-sectional area, $A$, and $\hat n$ is a vector perpendicular to the cross-section.  The current density allows us to develop a microscopic description of the current, since it is the electric current per unit area. Given the current density, $\vec j$, one can always determine the current through a surface with area, $A$, and normal vector, $\hat n$:
+where, $I$, is the current that flows through a surface with cross-sectional area, $A$, and $\hat n$ is a vector perpendicular to the surface.  The current density allows us to develop a microscopic description of the current, since it is the electric current per unit area. Given the current density, $\vec j$, one can always determine the current through a surface with area, $A$, and normal vector, $\hat n$:
 \begin{align*}
 I = A(\vec j\cdot \hat n)
 \end{align*}
+\begin{example}{Electric current flows through a conductor with a narrowing cross section, as illustrated in Figure \ref{fig:current:taper}. If the cross-sectional area the conductor is $A_1$ at one end, and $A_2$, at the other end, what is the ratio of the current densities, $j_1/j_2$, at the two ends of the conductor?}
+\capfig{0.5\textwidth}{figures/Current/taper.png}{\label{fig:current:taper} Current flows through a conductor with a cross-section that decreases from $A_1$ to $A_2$.}
+This situation is very similar to the flow of an incompressible fluid. In this case, the number of charges entering the conductor must be equal to the number of charges entering the conductor during a given amount of time. That is, the total current, $I$, must be the same at both ends, since there is no place in the conductor for charges to accumulate. Since the current must be the same on both ends, we can related the current densities at each end:
+\begin{align*}
+j&=\frac{I}{A}\\
+\therefore I&=j_1A_1=j_2A_2\\
+\therefore \frac{j_2}{j_1}&=\frac{A_1}{A_2}
+\end{align*}
+and we find that the current density at the exit of the conductor must be higher than at the entrance. This is similar to the continuity equation in the Fluid Mechanics chapter (Section \ref{sec:fluidmechanics:continuity}), where the current density plays a role analogous to the velocity in the fluids case. 
+\end{example}
 
 \section{Microscopic model of current}
 \label{sec:current:micromodel}
-Consider a cylindrical conductor of cross-sectional area, $A$, and length, $L$, as shown in Figure \ref{fig:current:collisions}. A potential difference, $\Delta V$, is applied across the length of the conductor, so that there is an electric field everywhere within the conductor. If the conductor were made of empty space, electrons would leave the negative terminal of the battery, convert the potential energy from the battery into kinetic energy, $e\Delta V$, as they accelerate through the potential difference, and arrive at the positive terminal with a high speed. In reality, the conductor is made of matter, and electrons do not accelerate through the conductor. Instead, electrons accelerate over only a short distance before colliding with an atom in the material (rather, a tightly bound electron in the material), losing its kinetic energy to the material, and accelerating again, as illustrated in Figure \ref{fig:current:collisions}.
+Consider a cylindrical conductor of cross-sectional area, $A$, and length, $L$, as shown in Figure \ref{fig:current:collisions}. A potential difference, $\Delta V$, is applied across the length of the conductor, so that there is an electric field, $\vec E$, everywhere within the conductor. If the conductor were made of empty space, electrons would enter one end of the conductor, accelerate through the potential difference, and arrive at the other end with a high speed, having gained $e\Delta V$ of kinetic energy. In reality, the conductor is made of matter, and electrons do not accelerate continuously through the whole length of the conductor. Instead, they can only accelerate over a short distance before colliding with an atom in the material (rather, a tightly bound electron in the material), and losing their kinetic energy to the material, before accelerating again. The motion of electrons flowing in a conductor is illustrated in Figure \ref{fig:current:collisions} and shows electrons moving with a wide range of velocities following the collisions, and only an average motion in the direction anti-parallel to the electric field.
 %TODO Improve diagram, ideally show atoms vibrating as a result of the collisions?
 \capfig{0.4\textwidth}{figures/Current/collisions.png}{\label{fig:current:collisions} Electrons moving inside a conductor only ``drift'' on average in the direction anti-parallel to the electric field. In reality, they constantly collide with atoms in the material, transferring their kinetic energy into thermal energy of the conductor.}
-Thus, when the electrons arrive at the positive side of the conductor, they have not gained any kinetic energy. Instead, they lost that kinetic energy to atoms of the conducting material through collisions; those atoms then vibrate which we can measure as an increase in temperature of the material. When current flows through a conductor, that conductor will heat up; this is how the heating elements in your toaster work!
+Thus, when the electrons arrive at the positive side of the conductor, they have not gained any kinetic energy. Instead, they have lost that kinetic energy to atoms of the conducting material through collisions; those atoms then vibrate which we can measure as an increase in temperature of the material. When current flows through a conductor, that conductor will heat up; this is how the heating elements in your toaster work!
 
 
-We model the motion of electrons as charges ``drifting'' through the conductor with a velocity, $\vec v_d$, the ``drift velocity''. In reality, of course, the electrons are only moving on average with the drift velocity, and their instantaneous speed is generally much larger than the drift velocity and can be in any direction, as illustrated above. 
-
-Suppose that, inside the conductor, there are a certain number of electrons per unit volume, $n$, that are available for conduction (the other electrons are too tightly bound to their atoms to conduct). Different materials will have different values of $n$. Consider the motion of the conduction electrons present in a section of length, $l$, of the conductor, as illustrated in Figure \ref{fig:current:microcurrent}.
+We model the motion of electrons as charges ``drifting'' through the conductor with a velocity, $\vec v_d$, the ``drift velocity'', as illustrated in Figure \ref{fig:current:microcurrent}. In reality, of course, the electrons are only moving on average with the drift velocity, and their instantaneous speed is generally much larger than the drift velocity and can be in any direction, as illustrated above. 
 \capfig{0.4\textwidth}{figures/Current/microcurrent.png}{\label{fig:current:microcurrent} A section of electrons of length $l$ drifting through a conductor of cross-sectional area, $A$.}
-The amount of charge, $\Delta Q$, contained in a section of the conductor with length, $l$, is given by:
+
+
+In a conducting material, each atom will generally have one ``free'' electron that is loosely bound and able to easily move through the material. The number of free electrons available for conduction per unit volume, $n$, will depend on the density of the material. Consider, then, the motion of the conduction electrons present in a section of length, $l$, of a conductor, as illustrated in Figure \ref{fig:current:microcurrent}. The amount of charge, $\Delta Q$, contained in a section of the conductor with length, $l$, is given by:
 \begin{align*}
 \Delta Q= -e n Al
 \end{align*}
 where $Al$ is the volume of that section of the conductor, and, $e$, is the magnitude of the charge of the electron. The negative sign is to indicate that the charges are negative (they are electrons). That charge will take an amount of time, $\Delta t$, to flow through a given plane of the conductor, so that we can relate the length of the section, $l$, to the drift speed and $\Delta t$:
 \begin{align*}
-v_d &= \frac{l}{\Delta t}\\
 l&=v_d\Delta t
 \end{align*}
 Thus, the current that flows through a cross-section of the conductor is given by:
@@ -100,7 +109,7 @@ In the previous section, we developed a microscopic model of charges moving in a
 \vec j &\propto \vec E\\
 \Aboxed{\vec j &= \sigma \vec E}
 \end{align*}
-where we have introduced the ``conductivity'', $\sigma$, which is a property of the material from which the conductor is made. The conductivity is a measure of how large a current density (and by extension, current) there will be in material given a certain electric field. Materials with a high conductivity are said to be good conductors, as a large current will result from a small electric field. Gold and copper are example of materials with a high conductivity. 
+where we have introduced the ``conductivity'', $\sigma$, as the constant of proportionality. Conductivity is a property of the material from which the conductor is made, and is a measure of how large a current density (and by extension, current) there will be in material given a certain electric field. Materials with a high conductivity are said to be good conductors, as a large current will result from a small electric field. Gold and copper are example of materials with a high conductivity. 
  %TODO Checkpoint question: What is the conductivity of an insulator? 0 (correct), around 1, infinite
  
  
@@ -111,23 +120,35 @@ For convenience, one often describes how well a material conducts charges using 
 \begin{align*}
 \rho = \frac{1}{\sigma}
 \end{align*}
-Materials with a high resistivity are poor conductors; they tend to ``resist'' the formation of a current when an electric field is applied. Insulators have high resistivity. The resistivity of most (but not all) materials has been observe to depend linearly on the temperature of the material. One can imagine that, as atoms in the material vibrate more, it is more difficult for electrons to conduct through the material as they will interact with more atoms. The resistivity, $\rho$, at a certain temperature, $T$, is usually modelled as follows:
+Materials with a high resistivity are poor conductors; they tend to ``resist'' the formation of a current when an electric field is applied. Insulators have high resistivity.
+
+The resistivity of most (but not all) materials has been observed to increase linearly with the temperature of the material. One can picture that as atoms in the material vibrate more, it is more difficult for electrons to conduct through the material as they will interact with more atoms. The resistivity, $\rho$, at a certain temperature, $T$, is usually modelled as follows:
 \begin{align*}
 \rho(T)=\rho_0\left[ 1 + \alpha (T-T_0)\right]
 \end{align*}
-where, $\rho_0$, is a reference resistivity, measured at the reference temperature, $T_0$ (usually $\SI{20}{\degree C}$, and $\alpha$ is the ``temperature'' coefficient of the material. The temperature dependence of the resistivity is illustrated in Figure \ref{fig:current:resistivity}.
-\capfig{0.5\textwidth}{figures/Current/resistivity.png}{\label{fig:current:resistivity}A linear model of resistivity can be used for most conductors over a large rang of temperatures.}
+where, $\rho_0$, is a ``reference resistivity'' measured at a ``reference temperature'', $T_0$ (usually $\SI{20}{\degree C}$). $\alpha$ is the ``temperature coefficient'' of the material. The temperature dependence of the resistivity is illustrated in Figure \ref{fig:current:resistivity}.
+\capfig{0.5\textwidth}{figures/Current/resistivity.png}{\label{fig:current:resistivity}A linear model of resistivity can be used for most conductors over a large range of temperatures.}
 This ``linear model'' (since resistivity increases linearly with temperature) is empirically found to be valid for many materials over a large range of temperatures, although it is not expected to hold at extreme temperatures (either very low or very high). Furthermore, for semi-conducting materials (such as silicon and germanium), resistivity is found to decrease as a function of temperature.
 %TODO Checkpoint question: what is the slope of the resistivity vs temperature shown in Figure TODO? - it's not alpha, but give that as an option!
 
-Table TODO shows a list of common materials and their conductivity, resistivity, and temperature coefficients (defined at a reference temperature $T_0=\SI{20}{\degree C}$.
+Table \ref{tab:current:materials} shows a list of common materials and their conductivity, resistivity, and temperature coefficients (defined at a reference temperature $T_0=\SI{20}{\degree C}$).
 
-%TODO Table showing properties for common materials (resistivity, conductivity, free electron density) - look at a previous chapter with a table in it to get the latex code for a table.
+\begin{center}
+\begin{tabular}{|l|l|p{100pt}|p{80pt}|}
+\textbf{Material}&\textbf{Resistivity} [\si{\Omega\cdot m}]&\textbf{Temperature coefficient} [\si{\degree C^{-1}}] &\textbf{Free electron density} [\si{m^{-3}}] \\
+\hline
+Copper & \num{1.68e-8} &0.0068 & \num{8.46e28}\\
+\end{tabular}
+\captionof{table}{\label{tab:current:materials} Resistivity, free electron density and temperature coefficients of common materials. All properties are listed for a reference temperature of $\SI{20}{\degree}C$}
+\end{center}
+%TODO Add more materials! Include some semiconductors and insulators for comparison (they will have zero free electron density). 
 
 \section{Resistors}
-A conductor with current going through it (or current that could go through it) is generally called a ``resistor'', to emphasize that charges will experience resistance as they travel through the conductor (as they collide with atoms in the conductor). In this section, we describe resistors, how to combine them, and how to model the heat that is generated when charges collide with the atoms in the resistor.
+A conductor with current going through it (or current that could go through it) is generally called a ``resistor'', to emphasize that charges will experience resistance as they travel through the conductor (as they collide with atoms in the resistor). In this section, we describe resistors, how to combine them, and how to model the heat that is generated when charges collide with the atoms in the resistor.
 \subsection{Resistance}
-Consider a macroscopic conductor, with length, $L$, and cross-sectional area, $A$. A potential difference, $\Delta V$, is applied across the length of the conductor, resulting in an electric field, $\vec E$, along its length. To good approximation, one can model the two ends of the conductor as parallel plates, so that the magnitude of the electric field throughout the conductor is constant in magnitude and direction and has strength given by:
+Consider a resistor, with length, $L$, and cross-sectional area, $A$, made out of a material with resistivity, $\rho$, as illustrated in Figure \ref{fig:current:resistor}.
+\capfig{0.3\textwidth}{figures/Current/resistor.png}{\label{fig:current:resistor}A simple resistor of length, $L$, cross-sectional area, $A$, made from a materials with resistivity, $\rho$. A potential difference, $\Delta V$, is applied across the resistor, leading to an electric field and current in the resistor.}
+A potential difference, $\Delta V$, is applied across the length of the resistor, resulting in an electric field, $\vec E$, within its volume. To good approximation, one can model the two ends of the conductor as parallel plates, so that the magnitude of the electric field throughout the conductor is constant in magnitude and direction and has strength given by:
 \begin{align*}
 E=\frac{\Delta V}{L}
 \end{align*}
@@ -145,29 +166,29 @@ This last equation is often written by isolating the potential difference:
 \begin{align*}
 \Aboxed{\Delta V = \rho \frac{L}{A} I}
 \end{align*}
-where we replaced the inverse of the conductivity with the resistivity. This last equation is the equivalent of Ohm's Law, but written for a macroscopic conductor of length, $L$, cross-sectional area, $A$, and made of a material with resistivity, $rho$. Written in this way, Ohm's Law is a statement that the current through a conductor is proportional to the voltage applied across that conductor. The constant of proportionality, $R$, is called the ``resistance'':
+where we replaced the inverse of the conductivity with the resistivity. This last equation is the equivalent of Ohm's Law, but written for a (macroscopic) resistor of length, $L$, cross-sectional area, $A$, and made of a material with resistivity, $\rho$. Written in this way, Ohm's Law is a statement that the \textbf{current through a resistor is proportional to the voltage applied across it}. The constant of proportionality, $R$, is called the ``resistance'':
 \begin{align*}
 \Aboxed{\Delta V = RI}
 \end{align*}
-This last equation is often called ``Ohm's Law'', even if, technically, Ohm's Law is the relation between current density and electric field. Rather than refer to the object as a conductor, one refers to the object as a ``resistor''. A resistor is a macroscopic object whose ``resistance'' can be characterized by a single value, $R$.. its resistance. The resistance of a resistor can be determined from its macroscopic properties (length and cross-sectional area) and from the material from which it is made (with a given resistivity):
+This last equation is often called ``Ohm's Law'', even if, technically, Ohm's Law is the relation between current density and electric field. A resistor is a macroscopic object whose ``resistance'' can be characterized by a single value, $R$, its resistance. The resistance of a resistor can be determined from its macroscopic properties (length and cross-sectional area) and from the material from which it is made (with a given resistivity):
 \begin{align*}
 \Aboxed{R = \rho \frac{L}{A} }
 \end{align*}
 The (derived) S.I. unit of resistance is the ``Ohm'', (\si{\Omega}).
-%TODO Checkpoint question, what is the SI unit of resistivity (give options in terms of Ohms and base units)
+%TODO Checkpoint question, what is the SI unit of conductivity (give options in terms of Ohms and base units)
 
-The model for resistance of a resistor to electric current under a fixed potential difference, $\Delta V$, is identical to the model that we derived in Section \ref{sec:fluidmechanics:poiseuille} to describe the Poiseuille flow, $Q$, in a pipe with resistance, $R$, under a pressure difference, $\Delta P$:
+The model to describe the resistance of a conductor to the flow of electric current under a fixed potential difference, $\Delta V$, is identical to the model that we derived in Section \ref{sec:fluidmechanics:poiseuille} to describe the Poiseuille flow, $Q$, of an viscous incompressible fluid in a pipe with resistance, $R$, under a pressure difference, $\Delta P$:
 \begin{align*}
 \Delta P = RQ
 \end{align*} 
-Thus, one can think of electric current by analogy to the incompressible flow of a viscous fluid through a pipe. If the pipe is longer, it opposes more resistance to the flow of liquid, just as a longer resistor has a larger resistance to current. A pipe with a wider cross-section has less resistance to the flow of liquid, just as a resistor with a larger cross sectional area, $A$, has a lower resistance.
+Thus, one can think of electric current by analogy to the incompressible flow of a viscous fluid through a pipe. If the pipe is longer, it opposes more resistance to the flow of liquid, just as a longer resistor has a larger resistance to current. A pipe with a larger cross-sectional area has less resistance to the flow of liquid, just as a resistor with a larger cross sectional area, $A$, has a lower resistance.
 \subsection{Combining resistors}
 Resistors are the most common component in circuits, and we show below how to model the equivalent resistance of two resistor that are combined in ``parallel'' or in ``series''.
 
-Figure TODO shows two resistors, $R_1$ and $R_2$, connected in ``series''. A potential difference, $\Delta V$, is applied across the combination of resistors.
+Figure \ref{fig:current:series} shows two resistors, $R_1$ and $R_2$, connected in ``series'', to form an an effective resistor with resistance, $R_{eff}$. A potential difference, $\Delta V$, is applied across the combination of resistors.
+\capfig{0.45\textwidth}{figures/Current/series.png}{\label{fig:current:series}When two resistors are connected in series, the same current flows through each resistor.}
 
-%TODO Figure showing two resistors in series, the potential difference, the same current.
-By analogy with fluid mechanics, the charges that enter resistor, $R_1$, must exit the resistor at the same rate, and then cross the second resistor, $R_2$. In other words, what comes into $R_1$ must come back out of $R_2$, since there is no place for the charges to go. This is the electrical equivalent of ``continuity'' in fluid mechanics. \textbf{When resistors are combined in series, both resistors will have the same current, $I$}.
+By analogy with fluid mechanics, the charges that enter resistor, $R_1$, must exit the resistor at the same rate, and then cross the second resistor, $R_2$. In other words, what comes into $R_1$ must come back out of $R_2$, since there is no place for the charges to go. This is the electrical equivalent of ``continuity'' in fluid mechanics. \textbf{When resistors are combined in series, both resistors will have the same current, $I$, through them}.
 
 Ohm's Law (the macroscopic version), must also be true for each resistor:
 \begin{align*}
@@ -185,9 +206,8 @@ since the potential energy (per unit charge) that is lost in each resistor must 
 \end{align*}
 It makes sense that the equivalent resistance if found by summing the two resistors, when these are in series. If the two resistors are made of the same material and have the same cross-sectional area, combining them in series is equivalent to fabricating a longer resistor with the two lengths added together.
 
-Figure TODO shows two resistors, with resistances $R_1$ and $R_2$, in a parallel combination. A potential difference, $\Delta V$, is applied across the combination of resistors. \textbf{When resistors are combined in parallel, both resistors have the same potential difference across them}.
-%TODO  Figure showing two resistors in parallel, the potential difference, the currents.
-
+Figure \ref{fig:current:parallel} shows two resistors, with resistances $R_1$ and $R_2$, combined in parallel to form an effective resistor with resistance, $R_{eff}$. A potential difference, $\Delta V$, is applied across the combination of resistors. \textbf{When resistors are combined in parallel, both resistors have the same potential difference across them}.
+\capfig{0.4\textwidth}{figures/Current/parallel.png}{\label{fig:current:parallel}When two resistors are connected in parallel, the same voltage is applied across each resistor.}
 Applying Ohm's Law to each resistor, we find that they each have difference currents going through them:
 \begin{align*}
 I_1&=\frac{\Delta V}{R_1}\\
@@ -208,42 +228,54 @@ Thus, the effective resistance, $R_{eff}$, of two resistors connected in paralle
 \begin{align*}
 \Aboxed{R_{eff}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}=\frac{R_1R_2}{R_1+R_2}}\quad \text{(Parallel resistors)}
 \end{align*}
-where the two forms that are given are equivalent. The effective resistance of two resistors in parallel is smaller than the resistance of either resistor. This makes sense, because combining resistors in parallel is analogous to fabricating a single resistance with a larger cross-sectional area, with ``more room'' for charges to flow.
+where the two forms that are given are equivalent. The effective resistance of two resistors in parallel is smaller than the resistance of either resistor. This makes sense, because combining resistors in parallel is analogous to fabricating a single resistance with a larger cross-sectional area, allowing for ``more space'' for the charges to flow.
 
 \subsection{Electrical power dissipated in resistors}
 As we discussed in Section \ref{sec:current:micromodel}, charges that move through a resistor do not gain kinetic energy. Instead, the electric potential energy available from the voltage applied across the resistor is converted into heat, as a result of charges colliding with atoms in the material. The net potential energy, $\Delta U$, available to a single charge, $q$, is given by:
 \begin{align*}
 \Delta U=q\Delta V
 \end{align*}
-If there are many charges going through the resistor, the rate at which they will dissipate energy in the resistor, $P$, is given by:
+If there are many charges going through the resistor, the rate, $P$, at which they will dissipate energy in the resistor is given by:
 \begin{align*}
 P&=\frac{d}{dt}\Delta U=\frac{d}{dt}q\Delta V=I\Delta V\\
 \therefore P&=I\Delta V
 \end{align*}
-$P$ corresponds to the rate at which energy is dissipated in the resistor, and has dimensions of power. Combining this with Ohm's Law, the power that is dissipated in a resistor can be written in different ways:
+where we recognized that $dq/dt=I$. $P$ corresponds to the rate at which energy is dissipated in the resistor, and has dimensions of power. Combining this with Ohm's Law, the power that is dissipated in a resistor can be written in different ways:
 \begin{align*}
-\Aboxed{P=\Delta V I=\frac{(\Delta V)^2}{R}=I^2R}
+\Aboxed{P=I \Delta V=\frac{(\Delta V)^2}{R}=I^2R}
 \end{align*}
+\begin{example}{A hair-dryer is rated as consuming $\SI{1500}{W}$ when connected to an outlet with a $\SI{120}{V}$ potential difference. What is the resistance of the hair-dryer, and how much current goes through it when it is running?}
+Since the power of the hair-dryer and the potential difference across it are known, we can easily determine its resistance:
+\begin{align*}
+P&=\frac{(\Delta V)^2}{R}\\
+\therefore R&=\frac{(\Delta V)^2}{P}=\frac{(\SI{120}{V})^2}{(\SI{1500}{W})}=\SI{9.6}{\Omega}
+\end{align*}
+Similarly, we can determine the current through the hair dryer:
+\begin{align*}
+P&=I\Delta V\\
+\therefore I &=\frac{P}{\Delta V}=\frac{(\SI{1500}{W})}{(\SI{120}{V})}=\SI{12.5}{A}
+\end{align*}
+\textbf{Discussion: }Most household appliances are rated by the electrical power that they consume. This rating assumes that the appliance will be connected to a fixed potential difference ($\SI{120}{V}$ in North America), so it is  straightforward to determine the current that they will draw. This is important, because the current that is drawn by the appliance has to go through the wiring in the house, and if the current is too large, the wiring (which has resistance) will heat up ($P=I^2R$) which could result in an electrical fire. Circuits in a house have safety devices (fuses or breakers) that are designed to interrupt the circuit if the current is too large. 
+\end{example}
 
-One can rate a power supply, such as a battery, by the amount of power that it can deliver. Power supplies are usually designed to supply a fixed potential difference; for example, a $\SI{9}{V}$ battery supplies a constant voltage of $\SI{9}{V}$. If a small resistor is connected across the terminals of the battery, a large current, $I$, will flow through the resistor. In principle, the current through the resistor will be given by Ohm's Law, $I=\Delta V/R$. However, by making the resistance increasingly smaller, the current will increase, and the power dissipated by the resistor, $\Delta V I$, would increase indefinitely. Obviously, this is not possible, as it requires the battery to supply energy at the same ever increasing rate. In practice, as the resistance across a batter is decreased, the current through the resistor will only increase until $\Delta V I$ is equal to the maximal power dissipated by the battery. As the resistance across the battery is further decreased, the voltage across the battery must start to decrease as well, so that the power dissipated in the resistor, $\Delta V I$, does not exceed the power that the battery can supply.
+One can rate a power supply, such as a battery, by the amount of power that it can deliver. Power supplies are usually designed to supply a fixed potential difference; for example, a $\SI{9}{V}$ battery supplies a constant voltage of $\SI{9}{V}$. If a small resistor is connected across the terminals of the battery, a large current, $I$, will flow through the resistor. In principle, the current through the resistor will be given by Ohm's Law, $I=\Delta V/R$. However, by making the resistance increasingly smaller, the current will increase, and the power dissipated by the resistor, $P=I\Delta V $, would increase indefinitely. Obviously, this is not possible, as it requires the battery to supply energy at the same ever increasing rate. In practice, as the resistance is decreased, the current through the resistor will only increase until $I \Delta V$ is equal to the maximal power that can be dissipated by the battery. As the resistance across the battery is further decreased, the voltage across the battery will start to decrease as well, so that the power dissipated in the resistor, $\Delta V I$, does not exceed the power that the battery could possibly supply.
 
 \subsection{Superconductors}
-Superconductors are materials that, under certain conditions, have zero resistivity. A resistor made from a superconducting material will thus have zero resistance. It is beyond the scope of this textbook to describe how superconductivity arises in materials, however, it is worth know that these exist. Typically, superconductivity arises in materials when they are cooled to temperatures close to absolute zero, although some materials exihibit superconductivity at much higher temperatures ($\sim\SI{100}{\degree K}$ (TODO Check this!!!). Superconducting materials are often used when one needs a large electric current, such as in a powerful electro-magnet.
+Superconductors are materials that, under certain conditions, have zero resistivity. A resistor made from a superconducting material will thus have zero resistance. It is beyond the scope of this textbook to describe how superconductivity arises in materials, however, it is worth knowing that these exist. Typically, superconductivity arises in materials when they are cooled to temperatures close to absolute zero, although some materials exhibit superconductivity at much higher temperatures ($\sim\SI{140}{\degree K}$ ($\sim\SI{-130}{\degree C}$). Superconducting materials are often used when one needs a large electric current, such as in a powerful electro-magnet. By having no resistance, a large current can be sustained without dissipating any power. 
 
                                                          
 \section{Alternating voltages and currents}
-%Description of voltage, current, power through a resistor
-So far, we have modelled how current propagates through  resistor under a constant potential difference, $\Delta V$. This is called ``direct current'' (DC) as the charges move in a constant direction through the resistor. Batteries supply fixed voltages, and circuits with batteries will almost always have DC current. The voltage that is supplied between two of the sockets in a household electrical outlet is ``alternating'', and leads to ``alternating current'' (AC), where charges move back and forth, with no net displacement. 
+So far, we have modelled how current propagates through a resistor under a constant potential difference, $\Delta V$. This is called ``direct current'' (DC) as the charges move in a constant direction through the resistor. Batteries supply fixed voltages, and circuits with batteries will almost always have DC current. The voltage that is supplied between two of the sockets in a household electrical outlet is ``alternating'', and leads to ``alternating current'' (AC), where charges move back and forth, with no net displacement. 
 
 The potential difference across a household outlet varies sinusoidally:
 \begin{align*}
 \Delta V (t) = \Delta V_0 \sin(\omega t)
 \end{align*}
-where $\Delta V_0$ is the maximal amplitude of the voltage ($\SI{110}{V}$ in North America, $\SI{220}{V}$ in Europe), and $\omega = 2\pi f$, is the angular frequency of the voltage ($f=\SI{60}{Hz}$ in North America, $f=\SI{50}{Hz}$ in Europe). When a resistor with resistance, $R$, is connected to an AC voltage, the resulting current, given by Ohm's Law, is also alternating:
+where $\Delta V_0$ is the maximal amplitude of the voltage ($\SI{120}{V}$ in North America, $\SI{220}{V}$ in Europe), and $\omega = 2\pi f$, is the angular frequency of the voltage ($f=\SI{60}{Hz}$ in North America, $f=\SI{50}{Hz}$ in Europe). When a resistor with resistance, $R$, is connected to an AC voltage, the resulting current, given by Ohm's Law, is also alternating:
 \begin{align*}
 I(t)=\frac{\Delta V(t)}{R}=\frac{\Delta V_0}{R}\sin(\omega t)=I_0\sin(\omega t)
 \end{align*}
-On average, the alternating current through a resistor is zero. However, this does not mean that zero potential energy is dissipated, since the charges in the resistor will still collide with atoms as this oscillate back and forth within the conductor. We can define the average power, $\bar P$, that is dissipated in the resistor as the  power that is dissipated over one oscillation cycle (with period, $T$). To obtain the latter, we calculate the total energy, $E$, dissipated in the resistor over one cycle so that the power is simply given by $E/T$. We divide the interval of time, $T$, into infinitesimally small intervals, $dt$, so that the infinitesimal energy, $dE$, dissipated in an infinitesimal time, $dt$, is given by:
+On average, the alternating current through a resistor is zero. However, this does not mean that zero  energy is dissipated, since the electrons in the resistor will still collide with atoms as they oscillate back and forth. We can define the average power, $\bar P$, that is dissipated in the resistor as the  power that is dissipated over one oscillation cycle (with period, $T$). To obtain the latter, we calculate the total energy, $E$, dissipated in the resistor over one cycle so that the power is simply given by $E/T$. We divide the interval of time, $T$, into infinitesimally small intervals, $dt$, so that the infinitesimal energy, $dE$, dissipated in an infinitesimal time, $dt$, is given by:
 \begin{align*}
 dE=P(t) dt
 \end{align*}
@@ -255,7 +287,7 @@ so that the power dissipated in one cycle is given by:
 \begin{align*}
 \bar P=\frac{E}{T}=\frac{1}{T}\int_0^T P(t)dt
 \end{align*}
-The instantaneous power, $P(t)=I^2(t)R$, can be substituted for $P(t)$:
+The instantaneous power, $P(t)$, can be described in terms of the instantaneous current, $P(t)=I^2(t)R$, so that the average power can be written as:
 \begin{align*}
 \bar P = \frac{1}{T}\int_0^TP(t)dt=\frac{1}{T}\int_0^TI(t)^2Rdt=RI_0^2\frac{1}{T}\int_0^T\sin^2(\omega t)dt=\frac{1}{2}RI_0^2
 \end{align*}
@@ -266,19 +298,18 @@ I_{rms}&=\frac{I_0}{\sqrt 2}\\
 \end{align*}
 Similarly, one can define the ``root mean square'' voltage, $\Delta V_{rms}$, so that the average power dissipated with alternating current can be written in the same form as for the DC case:
 \begin{align*}
-V_{rms}&=\frac{I_0}{\sqrt 2}\\
+V_{rms}&=\frac{\Delta V_0}{\sqrt 2}\\
 \therefore\bar P&=I_{rms}^2R =\frac{\Delta V_{rms}^2}{R}=I_{rms}\Delta V_{rms}
 \end{align*}
 
 \section{Electrical safety}
 The models that we have developed to describe current can inform us on ways to avoid being injured by electricity in our common lives. The two main hazards associated with electricity are fire and electrocution. Typically, an electrical fire is the result of a large current going through a resistor, as the power dissipated in a resistor is proportional the square of the current through that resistor. If you connect an appliance that draws a large current to your outlets, the wires in your house could heat up enough to cause a fire. This danger is primarily mitigated by using ``fuses'' or ``circuit breakers'' that will interrupt the circuit if the current is too large. A fuse is a simple device with a thin wire (high resistance) that will melt and break if too much current goes through it (which is designed to happen long before the wires in your house start to overheat). A circuit breaker is a resettable switch that opens under a large current. Modern houses do not use fuses any more, since they have to be replaced every time they are ``blown''.
 
-Electrocution is a form of injury that is the result of a current crossing the body. The amount of damage that is caused by the current crossing through the body depends on a variety of factors, including the resistance of the person's skin, whether the current goes their heart, and whether it is AC or DC current. In order to cause injury, the power supply must also be able to supply enough power to provide a large enough current. For example, although a car battery can only supply a $\SI{12}{V}$ potential difference, it is designed to provide enough mechanical power to ``crank'' a car engine, which takes a fair amount of power. Thus, car batteries can provide a large current and can pose a serious electrocution hazard.
+Electrocution is a form of injury that is the result of a current crossing the body; we can think of the body as a resistor connected between the terminals of a battery. Injuries can be caused simply by burns (tissue destroyed), or by muscles contracting involuntarily due to the current. For example, one's muscles may contract in such a way that the person cannot let go of the source of current. If a current of more than about $\SI{80}{mA}$ passes through the mid section of a person, enough current could go through the heart so that it starts to beat irregularly (``ventricular fibrillation'') which can lead to death since blood stops flowing normally. A very large current can cause the heart to simply stop beating, which could sometimes be less dangerous than ventricular fibrillation (if for a short period of time, and of course, the burns will be more severe from a larger current). A ``defibrillator'' is designed to provide such a high current that the heart stops briefly, with the hope that when it starts back, the beats will be regular. This can be used in cases of ventricular fibrillation. One often hears that ``it's current that kills'', which is a statement that being electrocuted by a certain voltage is not a good measure of the resulting injury, since the current will depend on the resistance of the person's body.
 
+The amount of current that will go through a person will depend on the resistance of the person's body. Internal tissues and organs are typically quite conductive and have low resistance. The outer layer of the skin, on the other hand, has a high resistance when dry and helps to limit the current that can go through the body. The resistance of dry skin is usually considerably above $\SI{1e4}{\Omega}$, while it can be much less than $\SI{1e3}{\Omega}$ when wet. With wet skin, a potential difference of $\SI{120}{V}$ (as in a North American outlet) can easily lead to a current above $\SI{100}{mA}$, which could easily be fatal. Note that being barefoot and in contact with the ground is usually a low resistance connection, since there is often a thin layer of sweat on your feet.
 
-
-%current kills....
-
+In North America, electrical outlets have a minimum of two sockets: a ``live'' socket (with an oscillating voltage, usually a black wire\footnote{Never trust the colouring of wires, always test them!}), and a ``neutral'' socket which is connected to the ground and relative to which the oscillating voltage has an amplitude of $\SI{12}{V}$ (usually a white wire). One can obviously be electrocuted by simultaneously touching the wires in both sockets, and usually simply by touching the wire in the live socket, since one's feet are usually connected to ground. Electrocution by directly touching the socket is fairly uncommon, since most people know not to do that (right?!). Usually, one is electrocuted by an appliance with faulty wiring; perhaps the insulation on the live wire is worn out and you touch the wire by mistake, or the wiring in the appliance is faulty, causing the casing of the appliance to be live. In order to mitigate the risk of electrocution from an appliance with faulty wiring, most outlets will have a third socket, the ``dedicated ground''. The dedicated ground wire is connected to the ground inside the socket, and exclusively to the casing of the appliance. Thus, if the live wire were to be in contact with the casing of the appliance, the dedicated ground provides a low resistance path for current to take that is in parallel with your body (so that most current will go through the low resistance path). 
 
 
 \newpage
@@ -313,6 +344,7 @@ Electrocution is a form of injury that is the result of a current crossing the b
 \begin{chapteractivity}{Reflect and research}
 {
 \item Describe how superconductivity arises in certain materials (hint: research ``Cooper pairs'').
+\item What are some example of superconducting materials, and at what temperature do they become superconducting?
 }
 \end{chapteractivity}
 
