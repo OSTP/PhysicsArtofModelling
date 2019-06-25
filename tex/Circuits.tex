@@ -1,23 +1,47 @@
 
 \chapter{Electric circuits}
 \label{chapter:circuits}
-
+In this chapter, we develop the tools to model electric circuits. This will allow us to determine the current and voltages across different elements, resistors and capacitors, within a circuit. We will also discuss how a battery can provide a current at a fixed potential difference, and how one can construct devices to measure current and voltages.
 
 \begin{learningObjectives}{
- \item something to learn
+ \item Understand how a battery works.
+ \item Understand Kirchhoff rules and how to apply them.
+ \item Understand how to model a circuit with resistors and/or capacitors.
+ \item Understand how an ammeter and voltmeter function, and how to model them.
  }
 \end{learningObjectives}
 
 \begin{opening}
-\begin{MCquestion}{A question}
-\item a choice
-\item another choice \correct
+\begin{MCquestion}{If two outlets in your house are connected to the same circuit, are the outlets connected in series or in parallel?}
+\item series
+\item parallel \correct
 \end{MCquestion}
 \end{opening}
 
-\section{A section}
+\section{Batteries}
+%How a battery works, ideal vs real battery, internal resistance
+Energy must be provided in order for charges to move through a circuit, since those charges will expend energy in the form of heat as they move through a resistor. A simple way to provide that energy is to use a battery, which is a device that provides a constant potential difference (a fixed voltage) between its terminals. Luigi Galvani was the first to realize that certain combination of metals placed into contact with each other can lead to an electric potential difference (or rather, they can make the legs of a dead frog twitch, which we now understand to be from the potential difference). Effectively, Galvani created the first ``electrochemical cell''. Alessandro Volta then combined several of these cells together to form the ``voltaic pile'', which is what we would now call a battery (a battery, technically, is a combination of several cells, although one often uses the term battery even if only one cell is involved). 
+\subsection{The electrochemical cell}
+A simple electric cell can be constructed from metals that have different affinities to be dissolved in acid. A simple cell, similar to that originally made by Volta, can be made using zinc and carbon as the ``electrodes'' (Volta used silver instead of carbon) and a solution of dilute sulfuric acid (the liquid is called the ``electrolyte''), as illustrated in Figure \ref{fig:circuits:electriccell}. Before the cell is constructed, the electrodes and the electrolyte are all electrically neutral.
+\capfig{0.5\textwidth}{figures/Circuits/electriccell.png}{\label{fig:circuits:electriccell} A simple electric cell, where zinc ions dissolve in sulfuric acid leaving electrons on the metal.}
+%TODO Is it incorrect to show the electrons entering the solution?
+Once the zinc is immersed in the electrolyte, the zinc atoms tend to dissolve into the electrolyte in the form of zinc ions (doubly charged, Zn$^{2+}$). This leaves an excess of electrons the zinc electrode, resulting in a net negative electric charge. Similarly, the positively charged zinc ions attract electrons from the carbon electrode into the solution, leaving the carbon electrode positively charged. Very quickly, an equilibrium is reached, since at some point, the negative charge of the zinc electrode will electrically attract positive zinc ions, preventing any more zinc ions from dissolving into the solution. Similarly, as the carbon electrode builds a positive charge, that charge will eventually prevent electrons from ``jumping'' into the solution. At this point, there will be a fixed electric potential difference between the two electrodes. 
+
+If the two electrodes are connected with a resistor, the electrons will leave the zinc electrode, cross the resistor, and end up on the positive carbon electrode. This will leave space for more electrons on the zinc electrode, so more zinc ions will dissolve into the solution. Thus, a circuit is formed, where electron travel up the zinc electrode, through the resistor and back down the carbon electrode. At the same time, more and more zinc ions dissolve into the electrolyte, until the zinc electrode is completely dissolved. In practice, the zinc ions travel through the solution and plate onto the carbon electrode (the electrons do not quite ``jump'' into the electrolyte, rather, it is the zinc ions that move in the electrolyte). Since the charge on the electrodes is continuously replenished, the potential difference between the electrodes remains constant.
+
+The electric cell will stop working once the zinc electrode has completely dissolved. Note that there is a maximum current that the cell can supply, which depends on the rate at which the zinc can dissolve into the electrolyte and plate onto the carbon electrode. If the electrodes of the cell are connected with a very low resistance resistor, the resulting current will be too large for the potential difference to be maintained. 
 
 
+\subsection{Ideal and real batteries}
+
+
+\section{Kirchhoff's rules}
+
+\section{Modelling circuits with resistors}
+
+\section{Modelling circuits with capacitors}
+
+\section{Measuring current and voltage}
 
 \newpage
 \section{Summary}
@@ -50,7 +74,8 @@
 
 \begin{chapteractivity}{Reflect and research}
 {
-\item Explain
+\item When did Galvani and Volta experiment with electric cells?
+\item What is the largest voltage that Volta obtained with his voltaic pile?
 }
 \end{chapteractivity}
 
