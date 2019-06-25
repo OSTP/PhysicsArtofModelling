@@ -40,12 +40,18 @@ Note that the definition of electric current is very similar to the ``flow rate'
 
 We think of current as a macroscopic quantity, something that we can easily measure in the lab. Current is a measure of the average rate at which charges are moving through the conductor, and not a measure of what is going on at a microscopic level. In order to model the motion of charges at the microscopic level, we introduce the ``current density'', $\vec j$:
 \begin{align*}
-\Aboxed{\vec j = \frac{I}{A}\hat n}
+\Aboxed{\vec j = \frac{I}{A}\hat E}
 \end{align*}
-where, $I$, is the current that flows through a surface with cross-sectional area, $A$, and $\hat n$ is a vector perpendicular to the surface.  The current density allows us to develop a microscopic description of the current, since it is the electric current per unit area. Given the current density, $\vec j$, one can always determine the current through a surface with area, $A$, and normal vector, $\hat n$:
+where, $I$, is the current that flows through a surface with cross-sectional area, $A$, and $\hat E$ is a unit vector in the direction of the electric field at the point where we are determining the current density. The current density allows us to develop a microscopic description of the current, since it is the electric current per unit area and points in the direction of the electric field at some position. Given the current density, $\vec j$, one can always determine the current through a surface with area, $A$, and normal vector, $\hat n$:
 \begin{align*}
 I = A(\vec j\cdot \hat n)
 \end{align*}
+If the current density changes over the surface, one must take an integral instead:
+\begin{align*}
+I=\int \vec j \cdot d\vec A
+\end{align*}
+where $d\vec A$, is a surface element with area, $A$, and direction given by the normal to the surface at that point. The overall sign of the current will be determined by the direction of the flow of positive charges.
+
 \begin{example}{Electric current flows through a conductor with a narrowing cross section, as illustrated in Figure \ref{fig:current:taper}. If the cross-sectional area the conductor is $A_1$ at one end, and $A_2$, at the other end, what is the ratio of the current densities, $j_1/j_2$, at the two ends of the conductor?}
 \capfig{0.5\textwidth}{figures/Current/taper.png}{\label{fig:current:taper} Current flows through a conductor with a cross-section that decreases from $A_1$ to $A_2$.}
 This situation is very similar to the flow of an incompressible fluid. In this case, the number of charges entering the conductor must be equal to the number of charges entering the conductor during a given amount of time. That is, the total current, $I$, must be the same at both ends, since there is no place in the conductor for charges to accumulate. Since the current must be the same on both ends, we can related the current densities at each end:
@@ -84,10 +90,10 @@ I&=\frac{\Delta Q}{\Delta t}=\frac{-e n Al}{\Delta t}=-enAv_d\\
 \end{align*}
 which allows us to connect a macroscopic quantity, current, to the microscopic description of charges moving. Note that the negative sign reflects the fact that the current (of positive charges) is in the opposite direction from the drift velocity of the (negative) electrons. The current density is directly related to the microscopic quantities, since it does not depend on the (macroscopic) cross-sectional area, $A$, of the conductor:
 \begin{align*}
-\vec j&=\frac{I}{A}\hat n = -en\vec v_d\\
+\vec j&=\frac{I}{A}\hat E = -en\vec v_d\\
 \therefore \Aboxed{\vec j &= -en\vec v_d}
 \end{align*}
-where, again, the negative sign indicates that the current density is in the opposite direction from the actual drift velocity of the electrons.
+where, again, the negative sign indicates that the current density is in the opposite direction from the actual drift velocity of the electrons, which itself is anti-parallel to the electric field.
 
 \begin{example}{A current of $\SI{1}{A}$ is measured in a copper wire with a diameter of $\SI{1}{mm}$. What is the drift velocity of the electrons? Assume that each atom of copper provides one ``free electron'' for conduction.}
 In order to determine the drift velocity of electrons, we need to know the density of free electrons in copper. To do this, we need to determine how many copper atoms there are per unit volume. The density of copper is $\rho=\SI{8.92e3}{kg/m^3}$ and the atomic mass unit of copper is $\SI{63.5}{amu}$ ($\SI{1}{mole}$ of copper weighs $\SI{63.5}{g}$). The number of copper atoms per unit volume is thus:
@@ -104,7 +110,7 @@ The drift velocity is thus very slow, less than one millimetre per second. Note 
 
 
 \section{Ohm's Law}
-In the previous section, we developed a microscopic model of charges moving in a conductor, but did not describe how this motion is affected by the electric field in the conductor (or equivalently, the potential difference across the conductor). ``Ohm's Law'' states that the current density, $\vec j$, in the conductor is proportional to the electric field, $\vec E$, in the conductor:
+In the previous section, we developed a microscopic model of charges moving in a conductor, but did not describe how this motion is affected by the electric field in the conductor (or equivalently, the potential difference across the conductor). ``Ohm's Law'' states that the current density, $\vec j$, at some position in the conductor is proportional to the electric field, $\vec E$, at that same position in the conductor:
 \begin{align*}
 \vec j &\propto \vec E\\
 \Aboxed{\vec j &= \sigma \vec E}
@@ -204,7 +210,10 @@ since the potential energy (per unit charge) that is lost in each resistor must 
 \Delta V &= \Delta V_1 + \Delta V_2=R_1I+R_2I=(R_1+R_2)I=R_{eff}I\\
  \Aboxed{R_{eff}&=R_1+R_2}\quad \text{(Series resistors)}
 \end{align*}
-It makes sense that the equivalent resistance if found by summing the two resistors, when these are in series. If the two resistors are made of the same material and have the same cross-sectional area, combining them in series is equivalent to fabricating a longer resistor with the two lengths added together.
+It makes sense that the equivalent resistance if found by summing the two resistors, when these are in series. If the two resistors are made of the same material and have the same cross-sectional area, combining them in series is equivalent to fabricating a longer resistor with the two lengths added together. The result is easily extended to any number of resistors:
+\begin{align*}
+R_{eff}&=R_1+R_2+R_2+\dots
+\end{align*}
 
 Figure \ref{fig:current:parallel} shows two resistors, with resistances $R_1$ and $R_2$, combined in parallel to form an effective resistor with resistance, $R_{eff}$. A potential difference, $\Delta V$, is applied across the combination of resistors. \textbf{When resistors are combined in parallel, both resistors have the same potential difference across them}.
 \capfig{0.4\textwidth}{figures/Current/parallel.png}{\label{fig:current:parallel}When two resistors are connected in parallel, the same voltage is applied across each resistor.}
@@ -228,7 +237,23 @@ Thus, the effective resistance, $R_{eff}$, of two resistors connected in paralle
 \begin{align*}
 \Aboxed{R_{eff}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}=\frac{R_1R_2}{R_1+R_2}}\quad \text{(Parallel resistors)}
 \end{align*}
-where the two forms that are given are equivalent. The effective resistance of two resistors in parallel is smaller than the resistance of either resistor. This makes sense, because combining resistors in parallel is analogous to fabricating a single resistance with a larger cross-sectional area, allowing for ``more space'' for the charges to flow.
+where the two forms that are given are equivalent. The effective resistance of two resistors in parallel is smaller than the resistance of either resistor. This makes sense, because combining resistors in parallel is analogous to fabricating a single resistance with a larger cross-sectional area, allowing for ``more space'' for the charges to flow. Again, this result is easily extended for more than two resistors:
+\begin{align*}
+R_{eff}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}+\dots}
+\end{align*}
+
+\begin{example}{A $R_2=\SI{2}{\Omega}$ resistor is placed in parallel with a $R_3=\SI{3}{\Omega}$ resistor and the combination is placed in series with a $R_1=\SI{1}{\Omega}$ resistor, as shown in Figure \ref{fig:current:3resistors}. What is the effective resistance of this combination?}
+\capfig{0.4\textwidth}{figures/Current/3resistors.png}{\label{fig:current:3resistors}A combination of three resistors.}
+In order to determine the effective resistance of the combination, we can first combine the resistors $R_2$ and $R_3$ into an effective resistor, $R'$, which we can then combine in series with the resistor $R_1$, to obtain the effective resistance of the three resistors. First, combining the parallel resistors, $R_2$ and $R_3$, we find:
+\begin{align*}
+R'=\frac{R_2R_3}{R_2+R_3}=\frac{6}{5}\si{\Omega}
+\end{align*}
+We can then combine this in series with $R_1$, to obtain the total effective resistance of the combination of three resistors:
+\begin{align*}
+R_{eff}=R_1+R'=\frac{11}{5}\si{\Omega}
+\end{align*}
+\textbf{Discussion: }In this example, we showed how to determine the effective resistance of a combination of series and parallel resistors. We can determine the effective resistance of complex combinations of resistors in the same manner, by first combining subsets of resistors and then including those with other resistors.
+\end{example}
 
 \subsection{Electrical power dissipated in resistors}
 As we discussed in Section \ref{sec:current:micromodel}, charges that move through a resistor do not gain kinetic energy. Instead, the electric potential energy available from the voltage applied across the resistor is converted into heat, as a result of charges colliding with atoms in the material. The net potential energy, $\Delta U$, available to a single charge, $q$, is given by:
@@ -305,19 +330,108 @@ V_{rms}&=\frac{\Delta V_0}{\sqrt 2}\\
 \section{Electrical safety}
 The models that we have developed to describe current can inform us on ways to avoid being injured by electricity in our common lives. The two main hazards associated with electricity are fire and electrocution. Typically, an electrical fire is the result of a large current going through a resistor, as the power dissipated in a resistor is proportional the square of the current through that resistor. If you connect an appliance that draws a large current to your outlets, the wires in your house could heat up enough to cause a fire. This danger is primarily mitigated by using ``fuses'' or ``circuit breakers'' that will interrupt the circuit if the current is too large. A fuse is a simple device with a thin wire (high resistance) that will melt and break if too much current goes through it (which is designed to happen long before the wires in your house start to overheat). A circuit breaker is a resettable switch that opens under a large current. Modern houses do not use fuses any more, since they have to be replaced every time they are ``blown''.
 
-Electrocution is a form of injury that is the result of a current crossing the body; we can think of the body as a resistor connected between the terminals of a battery. Injuries can be caused simply by burns (tissue destroyed), or by muscles contracting involuntarily due to the current. For example, one's muscles may contract in such a way that the person cannot let go of the source of current. If a current of more than about $\SI{80}{mA}$ passes through the mid section of a person, enough current could go through the heart so that it starts to beat irregularly (``ventricular fibrillation'') which can lead to death since blood stops flowing normally. A very large current can cause the heart to simply stop beating, which could sometimes be less dangerous than ventricular fibrillation (if for a short period of time, and of course, the burns will be more severe from a larger current). A ``defibrillator'' is designed to provide such a high current that the heart stops briefly, with the hope that when it starts back, the beats will be regular. This can be used in cases of ventricular fibrillation. One often hears that ``it's current that kills'', which is a statement that being electrocuted by a certain voltage is not a good measure of the resulting injury, since the current will depend on the resistance of the person's body.
+Electrocution is a form of injury that is the result of a current crossing the body; we can think of the body as a resistor connected between the terminals of a battery. Injuries can be caused simply by burns (tissue destroyed), or by muscles contracting involuntarily due to the current. For example, one's muscles may contract in such a way that the person cannot let go of the source of current. If a current of more than about $\SI{80}{mA}$ passes through the mid section of a person, enough current could go through the heart so that it starts to beat very irregularly (``ventricular fibrillation'') which can lead to death since blood stops flowing normally. A very large current can cause the heart to simply stop beating, which could sometimes be less dangerous than ventricular fibrillation (if for a short period of time, and of course, the burns will be more severe from a larger current). A ``defibrillator'' is designed to provide such a high current that the heart stops briefly, with the hope that when it starts back, the beats will be regular. This can be used in cases of ventricular fibrillation. One often hears that ``it's current that kills'', which is a statement that being electrocuted by a certain voltage is not a good measure of the resulting injury, since the current will depend on the resistance of the person's body.
 
 The amount of current that will go through a person will depend on the resistance of the person's body. Internal tissues and organs are typically quite conductive and have low resistance. The outer layer of the skin, on the other hand, has a high resistance when dry and helps to limit the current that can go through the body. The resistance of dry skin is usually considerably above $\SI{1e4}{\Omega}$, while it can be much less than $\SI{1e3}{\Omega}$ when wet. With wet skin, a potential difference of $\SI{120}{V}$ (as in a North American outlet) can easily lead to a current above $\SI{100}{mA}$, which could easily be fatal. Note that being barefoot and in contact with the ground is usually a low resistance connection, since there is often a thin layer of sweat on your feet.
 
 In North America, electrical outlets have a minimum of two sockets: a ``live'' socket (with an oscillating voltage, usually a black wire\footnote{Never trust the colouring of wires, always test them!}), and a ``neutral'' socket which is connected to the ground and relative to which the oscillating voltage has an amplitude of $\SI{12}{V}$ (usually a white wire). One can obviously be electrocuted by simultaneously touching the wires in both sockets, and usually simply by touching the wire in the live socket, since one's feet are usually connected to ground. Electrocution by directly touching the socket is fairly uncommon, since most people know not to do that (right?!). Usually, one is electrocuted by an appliance with faulty wiring; perhaps the insulation on the live wire is worn out and you touch the wire by mistake, or the wiring in the appliance is faulty, causing the casing of the appliance to be live. In order to mitigate the risk of electrocution from an appliance with faulty wiring, most outlets will have a third socket, the ``dedicated ground''. The dedicated ground wire is connected to the ground inside the socket, and to the casing of the appliance, as illustrated in Figure \ref{fig:current:toaster}. Thus, if the live wire were to be in contact with the casing of the appliance, the dedicated ground provides a low resistance path for current to take that is in parallel with your body (so that most current will go through the low resistance path). 
 %TODO Obviously, a much better figure!
-\capfig{0.6\textwidth}{figures/Current/toaster.png}{\label{fig:current:toaster}When an appliance has three prongs on its electrical cable, the middle prong grounds the case to the dedicated ground as a safety measure.}
+\capfig{0.6\textwidth}{figures/Current/toaster.png}{\label{fig:current:toaster}When an appliance has three prongs on its electrical cable, the middle prong grounds the case to the dedicated ground as a safety measure. Note that the live wire is not necessarily the left socket on an outlet!}
 
 \newpage
 \section{Summary}
 
 \begin{chapterSummary}
- Something that was learned
+Electric current, $I$, is defined as the rate at which charges cross some plane (for example a plane perpendicular to a wire) per unit time. That is, if an amount of charge, $\Delta Q$, enters a wire during an amount of time, $\Delta t$, the current, $I$, in that wire is defined to be:
+\begin{align*}
+I=\frac{\Delta Q}{\Delta t}=\frac{dQ}{dt}
+\end{align*}
+where a derivative is taken if the rate at which charges are moving is not constant with time.
+
+Electric current is a macroscopic quantity that can be measured. Conventional current is defined to be positive in the direction in which positive charges flow. In most situations, it is electrons that move inside a conductor, so the current is defined to be positive in the \textit{opposite direction} of the actual motion of the (negative) electrons.
+
+The current density, $\vec j$, is defined to be the current per unit area at some point in a conductor, and is a vector in the direction of the electric field, $\hat E$, at that point:
+\begin{align*}
+\vec j = \frac{I}{A}\hat E
+\end{align*}
+The current density can be related to the microscopic motion of charges within the conductor. If the current density, $\vec j$, is known, the corresponding current, $I$, that crosses a surface with area, $A$, and normal vector, $\hat n$, is given by:
+\begin{align*}
+I=A \vec j\cdot \hat n=\int \vec j \cdot d\vec A
+\end{align*}
+where the integral must be taken if the current density is not constant over the surface.
+
+A conducting material through which current is flowing is called a resistor. When a potential difference is applied across a resistor, the resulting electric field will drive the flow of electrons through the resistor. The electrons will flow with an average ``drift velocity'', $\vec v_d$, which is much slower than the actual motion of the electrons. Inside the resistor, electrons are constantly accelerated before they collide with atoms in the material losing their kinetic energy, and then accelerating again. Thus, the potential energy that is available to the electrons is ``used'' to heat the resistor, and the electrons, on average, drift quite slowly through the resistor.
+
+The current density in a resistor can be related to the drift velocity of the electrons and the ``density of free electrons'' in the material, $n$:
+\begin{align*}
+\vec j = -en\vec v_d
+\end{align*}
+where, $e$,  is the magnitude of the charge of the electrons and the minus sign indicates that the current density is in the opposite direction of the velocity of the (negative) electrons.
+
+Ohm's Law states that the current density, $\vec j$, at some point in the conductor is proportional to the electric field, $\vec E$, at that point:
+\begin{align*}
+\vec j=\sigma \vec E=\frac{1}{\rho}\vec E
+\end{align*}
+where the constant of proportionality, $\sigma$, is called the ``conductivity'' of the material (and is a property of the material through which current is flowing). The resistivity, $\rho$, is a material property that is simply the inverse of the conductivity. Both of these properties are a measure of how large a current (or current density) will exist in a material given a certain electric field. For example, the conductivity of an insulating material is close to zero (and its resistivity close to infinity).
+
+For most materials, resistivity usually increases linearly with temperature:
+\begin{align*}
+\rho(T)=\rho_0[1+\alpha(T-T_0)]
+\end{align*} 
+where $\rho_0$ is the resistivity as measured at some reference temperature, $T_0$ (usually $\SI{20}{\degree C}$), and $\alpha$, is the ``temperature coefficient'' for that material. Note that this model of resistivity does not hold for extreme temperatures (very cold or very hot), and for some materials, resistivity decreases with temperature ($\alpha$ is negative). 
+
+If we apply Ohm's Law to a resistor of length, $L$, cross-sectional area, $A$, made of a material with resistivity, $\rho$, we find that the potential difference applied across the resistor, $\Delta V$, is proportional to the current flowing through the resistor:
+\begin{align*}
+\Delta V =\rho \frac{L}{A} I
+\end{align*}
+The constant of proportionality depends on the material with which the resistor is made (through the resistivity) and on the dimensions of the resistor (through the length and cross-sectional area). The constant of proportionality is called the ``resistance'' of the resistor, $R$:
+\begin{align*}
+R=\rho \frac{L}{A}
+\end{align*}
+Ohm's Law is often written for a resistor as the relationship between the current through the resistor, $I$, and the potential difference across the resistor, $\Delta V$:
+\begin{align*}
+\Delta V = RI
+\end{align*}
+although, technically, Ohm's Law is the relation between current density and electric field.
+
+Resistors can be combined in series, in which case, the effective resistance of the combination is found by adding the resistances of the individual resistors:
+\begin{align*}
+R_{eff}=R_1+R_2+R_2+\dots\quad\text{(Series resistors)}
+\end{align*}
+When combined in parallel, the inverse of the effective resistance is given by the inverse of the sum of the inverse of the resistances of the individual resistors:
+\begin{align*}
+R_{eff}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}+\dots}\quad\text{(Parallel resistors)}
+\end{align*}
+
+As charges move through a resistor of resistance, $R$, under a potential difference, $\Delta V$, and current, $I$, they transfer their kinetic energy into heating up the resistor. The rate at which they transfer the energy, also called the ``power dissipated in the resistor'', is given by:
+\begin{align*}
+P=I \Delta V=\frac{(\Delta V)^2}{R}=I^2R
+\end{align*}
+where the various combinations can be obtained by applying the macroscopic version of Ohm's Law.
+
+The electrical outlets in our daily lives provide an ``alternating'' voltage, $\Delta V(t)$, which oscillates sinusoidally:
+\begin{align*}
+\Delta V(t)=\Delta V_0\sin(\omega t)
+\end{align*}
+with a maximum amplitude, $\Delta V_0$, and an angular frequency, $\omega = 2\pi f$. When this potential difference is applied across a resistor, an alternating current is formed, in which the electrons move back and forth, with no net displacement:
+\begin{align*}
+I(t)=\frac{\Delta V_0}{R}=I_0\sin(\omega t)
+\end{align*}
+Even though there is not net displacement, the electrons will still transfer energy into the resistor in the form of heat. The average rate at which power is dissipated in the resistor is given by:
+\begin{align*}
+\bar P=\frac{1}{2}RI_0^2
+\end{align*}
+We introduce the ``root mean square'' current (voltage), $I_{rms}$ ($\Delta V_{rms}$), as an average effective current (voltage):
+\begin{align*}
+I_{rms}&=\frac{1}{\sqrt 2}I_0\\
+\Delta V_{rms}&=\frac{1}{\sqrt 2}\Delta V_0\\
+\end{align*}
+such that the power can be expressed using a similar formula as in the direct current case, using the root mean square values:
+\begin{align*}
+\bar P = I_{rms}^2R = I_{rms}\Delta V_{rms}=\frac{(\Delta V_{Rms})^2}{R}
+\end{align*}
+There are two main types of hazards associated with the use of electricity: fire and electrocution. Electrical fires can arise when a large current goes through a wire, since this will dissipate a large amount of heat into the wire (which could set fire to its insulation or other nearby flammable items). Electrocution occurs when a current traverses the human body. If a current above $\sim\SI{80}{mA}$ crosses the upper body, this can result in ventricular fibrillation, whereby the heart beats very irregularly. Of course, one can also be burned by a large current. The amount of current through the body is what will ultimately determine the severity of injuries, and is why one often hears that ``it's current that kills''. A large voltage may not lead to a large current if the resistance of the person is large or if the power supply cannot provide a large current at that large voltage.
+
 \end{chapterSummary}
 
 \newpage
@@ -363,6 +477,11 @@ In North America, electrical outlets have a minimum of two sockets: a ``live'' s
 
 \newpage
 \section{Sample problems and solutions}
+%TODO A problem where the resistance of a resistor is given at 2 different temperatures, and you have to find the material by looking at the table of alpha values
+
+%TODO Total current if the current density depends on position (i.e. have to do an integral)? OR power dissipated by some combination of appliances?
+
+
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
 
