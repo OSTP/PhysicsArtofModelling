@@ -31,8 +31,73 @@ If the two electrodes are connected with a resistor, the electrons will leave th
 
 The electric cell will stop working once the zinc electrode has completely dissolved. Note that there is a maximum current that the cell can supply, which depends on the rate at which the zinc can dissolve into the electrolyte and plate onto the carbon electrode. If the electrodes of the cell are connected with a very low resistance resistor, the resulting current will be too large for the potential difference to be maintained. 
 
+\subsection{The ideal battery in a simple circuit}
+As we proceed, we will use the term ``battery'' loosely to refer to a device (such as an electric cell or collection of cells) that can provide a fixed potential difference between two terminals (or electrodes). Figure \ref{fig:circuits:batterysymbol} shows the circuit diagram for a battery, consisting in two vertical bars, with the larger bar indicating the positive terminal of the battery.
+\begin{center}
+\begin{circuitikz}[]
+\draw (2,0) to [battery1, l=$\Delta V$] (0,0);
+     \draw (0.65,0.3) node{$-$};
+     \draw (1.35,0.3) node{$+$};
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:batterysymbol}Circuit diagram symbol for a battery.} 
+\end{center}
+Figure \ref{fig:circuits:resistorsymbol} shows the circuit diagram symbols that are used for a resistor (different symbols are used in North American and in Europe).
+\begin{center}
+\begin{circuitikz}[]
+\draw (2,0) to [R=$R$] (0,0);
+\end{circuitikz}
+\begin{circuitikz}[european]
+\draw (2,0) to [R=$R$] (0,0);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:resistorsymbol}Circuit diagram symbols for a resistor, using the North American convention (left), and the European convention (right).} 
+\end{center}
+Figure \ref{fig:circuits:batteryresistor} shows a circuit diagram for a very simple circuit consisting of a single $\SI{9}{V}$ battery connected to a $\SI{2}{\Omega}$ resistor. When drawing a circuit diagram (or making a real circuit), one connects the various components together (e.g. batteries and resistors) with \textbf{segments of wire that have zero resistance}, even if, in practice, wires always have some resistance. However, since the wires are connected in series with resistors (or other components that have a resistance), one can always include the resistance of the wires by adding it to the resistance of the other components. For example, in Figure \ref{fig:circuits:batteryresistor}, if the wires have a total resistance of $\SI{1}{\Omega}$, we could simply model the circuit as if the resistor had a resistance of $\SI{3}{\Omega}$ instead of $\SI{2}{\Omega}$. In practice, this is usually accounted for when a circuit diagram is made (i.e. any resistors include the resistance of the wires connected to it). 
+\begin{center}
+\begin{circuitikz}[]
+\draw (4,0) node[anchor=north]{b}
+      to [battery1,l=\SI{9}{V},*-*, i<=$I$] (0,0) node[anchor=north]{a}
+      to [short,i<=$I$] (0,2) node[anchor=south]{d} 
+      to [R,l_=\SI{2}{\ohm},i<=$I$,*-*] (4,2) node[anchor=south]{c}
+      to [short,i<=$I$](4,0);  
+     \draw  [->, line width=1mm] (1.65,0.6) -- (2.35,0.6);
+     \draw (1.65,0.3) node{$-$};
+     \draw (2.35,0.3) node{$+$};
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:batteryresistor}A simple circuit, showing a \SI{9}{V} battery and a \SI{2}{\Omega} resistor. For ease in analyzing circuits, we suggest drawing a ``battery arrow'' above batteries that goes from the negative to the positive terminal.} 
+\end{center}
+The circuit in Figure \ref{fig:circuits:batteryresistor} is simple to analyze. In this case, whichever charges exit one terminal of the battery, must pass through the resistor and then enter the other terminal of the battery. We \textbf{always use conventional current} to analyze a circuit. Thus, we model the circuit as if positive charges exit the positive terminal of the battery, go through the resistor, and then enter the negative terminal of the battery.
 
-\subsection{Ideal and real batteries}
+We recommend that you always draw a ``battery arrow'' arrow for each battery in a circuit diagram that indicates the direction in which conventional current would exit the battery if a simple resistor were connected across the battery. In complex circuits, the current may not necessarily flow in the same direction as the battery arrow, and the battery arrow makes it easier to analyze those circuits. We also indicate the current that is flowing in any wire of the circuit by drawing an arrow direction on that wire (labeled $I$ in Figure \ref{fig:circuits:batteryresistor}).
+
+Since the wires have no resistance, the electric potential cannot change through a section of wire. In other words, because the wire has no resistance, the charges/current cannot dissipate any power in the wire ($P=I^2R$), and the charges do not ``loose'' any potential energy (and the potential thus cannot change). The only place where the charges can dissipate energy is inside the resistor. Once the charges have crossed the resistor, the electric potential in the wire is again constant until they reach the other terminal of the battery. Thus, in this simple circuit, the electric potential difference across the resistor is the same as the potential difference across the terminals of the battery. This allows us to apply Ohm's Law (the macroscopic version) to the resistor and determine the current in the circuit:
+\begin{align*}
+\Delta V&=RI\\
+\therefore I&=\frac{\Delta V}{R}=\frac{(\SI{9}{V})}{(\SI{2}{\Omega})}=\SI{4.5}{A}
+\end{align*}
+
+It is helpful to think of circuits in terms of conservation of energy. Charges can only dissipate energy if there is resistance. Thus, charges dissipate no energy in the wires, and the electric potential is always constant along a wire. Batteries provide the energy to ``push'' the charges through a resistor; they convert chemical potential energy into the electrical potential energy of the charges, which then gain kinetic energy and loose that kinetic energy in the form of thermal energy by heating up the resistor.
+
+It is also useful to make the analogy with fluid dynamics; one can think of the battery as a pump that is continuously pushing a viscous incompressible fluid through a pipe with a narrow section, as illustrated in Figure \ref{fig:circuits:watercircuit}. The wide section of the pipe is akin to the wires with no resistance, and the narrow section is akin to the resistor. The pressure difference generated by the pump is analogous to the voltage produced by the battery, and the flow rate of the liquid is analogous to the electric current. The pressure in the pipe does not drop in the wide section, if there is no resistance. The entire pressure drop of the fluid is across the narrow section.
+\capfig{0.4\textwidth}{figures/Circuits/watercircuit.png}{\label{fig:circuits:watercircuit} A fluid dynamics analogue of the circuit in Figure \ref{fig:circuits:batteryresistor}, where a pump plays the role of the battery, and a narrow pipe that of a resistor.}
+\begin{example}{Two resistors, of $\SI{2}{\Omega}$ and $\SI{4}{\Omega}$, respectively, are connected in series to a $\SI{12}{V}$ battery. What is the current through each of the resistors?}
+\end{example}
+
+\subsection{Real batteries in a circuit}
+So far, we have modelled batteries as ``ideal'' devices that provide a fixed potential difference. In reality, this neglects the fact that the components that make the battery will themselves have a resistance. For example, if electrons want to leave the zinc rod in the electric cell illustrated in Figure \ref{fig:circuits:electriccell}, they will loose some energy as they pass through the zinc. Thus, when modelling a battery, it is important to include their ``internal resistance''. This is illustrated in Figure \ref{fig:circuits:realbattery}, which shows the two terminals of a real battery, an ideal battery (with a fixed potential difference, $\Delta V$), and internal resistance, $R$ (which can be drawn on either side of the battery). 
+\begin{center}
+\begin{circuitikz}[]
+\draw (4,0) to [R=internal $R$,*-] (2,0)
+     to [battery1, l=$\Delta V$, -*] (0,0);
+     \draw (0.65,0.3) node{$-$};
+     \draw (1.35,0.3) node{$+$};
+     \draw (0,0) node[anchor=east]{Negative terminal};
+     \draw (4,0) node[anchor=west]{Positive terminal};
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:realbattery}Circuit diagram symbol for a battery.} 
+\end{center}
+It is important to note that the potential difference across the terminals of the real battery is only equal to the potential difference across the ideal battery \textbf{if there is no current flowing through the battery}. If there is a current, $I$, flowing through the internal resistance, the electric potential will decrease by an amount $RI$ across the internal resistance, so that the voltage across the real terminals is no longer the same as the voltage across the terminals of the ideal battery. 
+\begin{example}{When no resistance is connected across a battery, the potential difference across its terminals is measured to be $\SI{6}{V}$. When a $\SI{2}{\Omega}$ resistor is connected across the battery, a current of $\SI{2}{A}$ is measured through the resistor. What is the internal resistance of the battery, and what is the voltage across its terminals when the resistor is connected?}
+\end{example}
 
 
 \section{Kirchhoff's rules}
