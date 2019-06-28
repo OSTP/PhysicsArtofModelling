@@ -1,4 +1,3 @@
-
 \chapter{Electric circuits}
 \label{chapter:circuits}
 In this chapter, we develop the tools to model electric circuits. This will allow us to determine the current and voltages across different elements, resistors and capacitors, within a circuit. We will also discuss how a battery can provide a current at a fixed potential difference, and how one can construct devices to measure current and voltages.
@@ -255,9 +254,9 @@ Figure \ref{fig:circuits:loop} shows a loop (which could be part of a larger cir
 \draw (0,0) node[anchor=east]{a} [battery1,l_=$\Delta V_1$, *-*, i>=$I$] to (3,0) node[anchor=north]{b}
 	  to [battery1, l_=$\Delta V_2$, -*, i>=$I$, invert] node[anchor=west]{c} (6,0)
       to [short, label=, i>=$I$, -*] node[anchor=west]{d} (6,2)
- 	  to [R=$R_1$,-,i>=$I$] node[anchor=south]{e}(4,2)
- 	  to [R=$R_2$,-, i>=$I$]node[anchor=south]{f} (2,2)
- 	  to [R=$R_3$,-, i>=$I$] node[anchor=east]{g}(0,2)
+ 	  to [R=$R_1$,i>=$I$] node[anchor=south]{e}(4,2)
+ 	  to [R=$R_2$,i>=$I$]node[anchor=south]{f} (2,2)
+ 	  to [R=$R_3$,i>=$I$] node[anchor=east]{g}(0,2)
  	  to [short, label=, i>=$I$,*-] (0,0); 
  \draw [->,>=stealth, line width=1mm] (1.85,0.6)--(1.15,0.6);
  \draw [->,>=stealth, line width=1mm] (4.15,0.6)--(4.85,0.6);
@@ -273,27 +272,459 @@ The procedure for applying the loop rule is as follows:
 \item Once you have traced back to the starting point, the resulting sum must be zero.
 \end{enumerate}
 To illustrate the procedure, we trace out the loop $abcedfga$ in Figure \ref{fig:circuits:loop}. We thus start at point $a$ and trace the loop in the counter-clockwise direction. 
-\begin{enumerate}
-\item Between points $a$ and $b$ we encounter a battery, and we are tracing in the opposite direction of that battery's arrow, so we subtract the voltage from that battery ($-\Delta V_1$).
-\item Between points $b$ and $c$, we encounter a battery, and we are tracing in the same direction as that battery's arrow, so we add the voltage from that battery ($+\Delta V_2$).
+\begin{itemize}
+\item Between points $a$ and $b$ we encounter a battery, and we are tracing in the \textbf{opposite direction of that battery's arrow}, so we subtract the voltage from that battery: $-\Delta V_1$.
+\item Between points $b$ and $c$, we encounter a battery, and we are tracing in the \textbf{same direction as that battery's arrow}, so we add the voltage from that battery: $+\Delta V_2$.
 \item Nothing happens to the potential along the wire from $c$ to $d$.
-\item Between points $d$ and $e$, we encounter a resistor, and we are tracing in the same direction as the current through that resistor, so subtract the voltage across that resistor ($\Delta V_{R1}=-R_1I$).
-\item Similarly, we subtract the voltages across resistors $R_2$ and $R_3$, as we are tracing in the same direction as the current through those resistors, ($\Delta V_{R2}=-IR_2$, $\Delta V_{R3}=-IR_3$)
-\end{enumerate}
+\item Between points $d$ and $e$, we encounter a resistor, and we are tracing in the \textbf{same direction as the current through that resistor}, so subtract the voltage across that resistor: $-R_1I$).
+\item Similarly, we subtract the voltages across resistors $R_2$ and $R_3$, as we are tracing in the \textbf{same direction as the current through those resistors}: $-IR_2-IR_3$
+\end{itemize}
 We can now use the loop rule, which states that the sum of the above voltages must be zero:
 \begin{align*}
--\Delta V_1 + \Delta V_2 - R_1I - R_2I - R_3I = 0
+-\Delta V_1 + \Delta V_2 - R_1I - R_2I - R_3I = 0\quad \text{(loop abcedfga)}
 \end{align*}
 This equation then gives us a relation between the various quantities (current, resistors, battery voltages) in the circuit which can be used to model the circuit. Note that we could have combined the three series resistors, and we would have obtained the same equation. 
 %TODO: Checkpoint question: Does the equation above change if we start the loop in a different position or trace the loop in the opposite direction? (Give options like it stays the same if the starting point is different, but not if the direction changes, etc..). Correct: you always get the same equation, regardless of starting point or direction.
 
+\section{Applying Kirchhoff's rule to model circuits}
+In this section, we show how to model a circuit using Kirchhoff's rules. In general, one can consider a circuit to be fully modelled if one can determine the current in each segment of the circuit. We will show how one can apply the same procedure to model any circuit that contains batteries and resistors. The procedure is as follows:
+\begin{enumerate}
+\item Make a good diagram of the circuit.
+\item Simplify any resistors that can easily be combined into effective resistors (in series or in parallel).
+\item Make a new diagram with the effective resistors, showing battery arrows, and labelling all of the nodes so that loops can easily be described.
+\item Make a \textbf{guess} for the directions of the current in each segment.
+\item Write the junction rule equations.
+\item Write the loop equations.
+\item This will lead to $N$ independent equations that one can solve for the $N$ different currents in the circuit.
+\item Once you have determined all of the currents, if some of them are negative numbers, switch the direction of those currents in the diagram (they will be negative if you guessed the direction incorrectly).
+\end{enumerate}
 
+We will illustrate the procedure on the circuit shown in Figure \ref{fig:circuits:bigcircuit}, for which we would like to know the current through each resistor and each battery. The circuit contains 5 resistor ($R_1$-$R_5$), 2 real batteries (with ideal voltages $\Delta V_1$ and $\Delta V_2$), and 2 additional resistors to model the internal resistances of the batteries ($r_1$, $r_2$)
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [R=$r_1$] (1.5,0)
+      to [battery1,l_=$\Delta V_1$] (2.5,0) 
+      to [short] (3.5,0)
+	  to [battery1, l_=$\Delta V_2$, invert] (4.5,0)
+	  to [R=$r_2$] (6,0)
+      to [R=$R_1$] (6,2)
+ 	  to [R=$R_2$](3,2)
+ 	  to [R,l^=$R_4$] (0,2)
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3$] to (3,0);
+ \draw (0,2) [short, label=] to (0,3)
+ 	  to [R=$R_5$] (3,3)
+ 	  to [short, label=] (3,2);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit}A circuit that can be simplified and then solved with Kirchhoff's rules} 
+\end{center}
+%TODO Checkpoint question: How many different currents are there in the circuit in Figure above?
 
-\section{Modelling circuits with resistors}
+\textbf{Simplifying the resistors (step 2):} In this circuit, resistors $r_2$, $R_1$ and $R_2$ are in series, so that they can be combined into an effective resistor, $R_6$:
+\begin{align*}
+R_6=r_2+R_1+R_2
+\end{align*}
+With this simplification, we obtain the circuit illustrated in Figure \ref{fig:circuits:bigcircuit_simp1}
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [R=$r_1$] (1.5,0)
+      to [battery1,l_=$\Delta V_1$] (2.5,0) 
+      to [short] (3,0)
+	  to [battery1, l_=$\Delta V_2$, invert] (6,0)
+	  to [short] (6,2)
+ 	  to [R=$R_6$](3,2)
+ 	  to [R,l^=$R_4$] (0,2)
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3$] to (3,0);
+ \draw (0,2) [short, label=] to (0,3)
+ 	  to [R=$R_5$] (3,3)
+ 	  to [short, label=] (3,2);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_simp1}The resistors $r_2$, $R_1$ and $R_2$ in series from the circuit in Figure \ref{fig:circuits:bigcircuit} have been combined into the effective resistor, $R_6$, to simplify the circuit. } 
+\end{center}
+Next, we note that resistors $R_4$ and $R_5$ are in parallel and can be easily combined into a resistor, $R_7$:
+\begin{align*}
+R_7=\frac{R_4R_5}{R_4+R_5}
+\end{align*}
+which leads to the circuit illustrated in Figure \ref{fig:circuits:bigcircuit_simp2}.
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [R=$r_1$] (1.5,0)
+      to [battery1,l_=$\Delta V_1$] (2.5,0) 
+      to [short] (3,0)
+	  to [battery1, l_=$\Delta V_2$, invert] (6,0)
+	  to [short] (6,2)
+ 	  to [R=$R_6$](3,2)
+ 	  to [R,l^=$R_7$] (0,2)
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3$] to (3,0);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_simp2}The resistors $R_4$ and $R_5$ in parallel from the circuit in Figure \ref{fig:circuits:bigcircuit_simp1} have been combined into the effective resistor, $R_7$, to simplify the circuit. } 
+\end{center}
+Finally, we note that $r_1$ and $R_7$ are in series and can be combined into an effective resistor, $R_8$:
+\begin{align*}
+R_8=r_1+R_7=r_1+\frac{R_4R_5}{R_4+R_5}
+\end{align*}
+leading to circuit illustrated in Figure \ref{fig:circuits:bigcircuit_simp3}, which we have labelled with nodes and battery labels. 
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{a} to [battery1,l_=$\Delta V_1$,*-*] (3,0) node[anchor=north]{b} 
+	  to [battery1, l_=$\Delta V_2$, invert, -*] (6,0) node[anchor=west]{c} 
+	  to [short, -*] (6,2) node[anchor=west]{d} 
+ 	  to [R=$R_6$,-*](3,2) node[anchor=south]{e} 
+ 	  to [R,l^=$R_8$,-*] (0,2) node[anchor=east]{f} 
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3$] to (3,0);
+  \draw [->,>=stealth, line width=1mm] (1.85,0.6)--(1.15,0.6);
+ \draw [->,>=stealth, line width=1mm] (4.15,0.6)--(4.85,0.6);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_simp3}The resistors $r_1$ and $R_7$ in series from the circuit in Figure \ref{fig:circuits:bigcircuit_simp2} have been combined into the effective resistor, $R_8$, to simplify the circuit. } 
+\end{center}
+\textbf{Guessing the directions of the currents (step 4): }Before we can write the equations from Kirchhoff's rules, we need to label the currents in the circuit diagram. In general, it is not always obvious in which way the currents will go, so we make a guess that we can fix later if we guessed wrong. 
+
+In order to guess the current directions, choose one point on the circuit and move along a segment. Label the current in that segment and continue moving through the circuit, splitting up the current when a junction is encountered. Make sure to only have one current per segment. We guess the currents as follows, referring to Figure \ref{fig:circuits:bigcircuit_simp3}:
+\begin{itemize}
+\item We start at point $a$ and move upwards to point $f$. We will call the current in that segment, $I_1$.
+\item Since there is no junction, the current $I_1$ continues through the resistor $R_8$ to point $e$. 
+\item There is a junction at point $e$, so we split the current $I_1$ into currents $I_2$ (towards point $d$), and $I_3$ (downwards to point $b$).
+\item We follow current $I_2$ first; $I_2$ flows from $e$ to $d$, then down to $c$, through the battery $\Delta V_2$, and to point $b$, where there is again junction. 
+\item Current $I_3$ flows down to the junction at point $b$, where it ``meets up'' with current $I_2$. 
+\item Currents $I_2$ and $I_3$ both flow into the junction at point $b$, and the current flowing out of the junction, through the battery $\Delta V_1$ towards point $a$ is again $I_1$, since this current then flows up to point $f$. 
+\end{itemize}  
+You can proceed in an analogous way for any circuit. The final circuit, with currents labelled, is shown in Figure \ref{fig:circuits:bigcircuit_simp}:
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{a} to [short, *-, i<_=$I_1$] (0.75,0) 
+      to [battery1,l_=$\Delta V_1$] (2.25,0) 
+      to [short, -*, i<_=$I_1$] (3,0) node[anchor=north]{b} 
+      to [short, i<_=$I_2$] (3.75,0) 
+	  to [battery1, l_=$\Delta V_2$, invert] (5.25,0)
+	  to [short, -*, i<_=$I_2$] (6,0) node[anchor=west]{c} 
+	  to [short, -*, i<_=$I_2$] (6,3) node[anchor=west]{d} 
+	  to [short, i<_=$I_2$] (5.25,3)
+ 	  to [R=$R_6$](3.75,3) 
+ 	  to [short,-*, i<_=$I_2$] node[anchor=south]{e} (3,3)
+ 	  to [short,i<_=$I_1$] (2.25,3)
+ 	  to [R,l^=$R_8$] (0.75,3) 
+ 	  to [short,-*,i<_=$I_1$] node[anchor=east]{f} (0,3)
+ 	  to [short, label=, i<_=$I_1$] (0,0);
+ \draw (3,3) to [short,i=$I_3$] (3,2.25)
+       to [R=$R_3$] (3,0.75)
+       to [short,i=$I_3$] (3,0);
+  \draw [->,>=stealth, line width=1mm] (1.85,0.6)--(1.15,0.6);
+ \draw [->,>=stealth, line width=1mm] (4.15,0.6)--(4.85,0.6);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_simp}Final and labelled circuit diagram that is simplified from the one in Figure \ref{fig:circuits:bigcircuit}. } 
+\end{center}
+We can now proceed with using Kirchhoff's rules to solve for the values of the currents in the circuit. It is useful to note that there are 3 unknown currents in this circuit; we thus hope that Kirchhoff's rules will give us 3 independent equations.
+
+\textbf{Applying the junction rule (step 5): }In the circuit from Figure \ref{fig:circuits:bigcircuit_simp}, there are two junctions (at points $b$ and $e$), so we will get two equations from the junction rule. To apply the junction rule, the sum of the currents coming into the junction must be equal to the currents going out of the junction:
+\begin{align*}
+\text{incoming currents}&=\text{outgoing currents}&\\
+I_2+I_3 &= I_1 \quad &\text{(junction $b$)}\\
+I_1 &= I_2+I_3 \quad &\text{(junction $e$)}\\
+\end{align*}
+Note that the two equations are not independent (in fact, they are the same). It is generally the case that if there $N$ junctions, one will obtain less than $N$ independent equations (usually, $N-1$ equations will be independent). In this case, the two junctions only gave us one equation. 
+
+\textbf{Applying the loop rule (step 6): } This circuit contains 3 different loops: $abcdefa$, $abefa$, and $bcdeb$, which will lead to 3 equations from the loop rule. We expect that these equations will not be independent, since this would lead to 4 equations and 3 unknowns. Let us start with the loop $abcdefa$:
+\begin{itemize}
+\item From $a$ to $b$, we trace through the battery in the \textbf{opposite direction from the battery arrow}: $-\Delta V_1$.
+\item From $b$ to $c$, we trace through the battery in the \textbf{same direction as the battery arrow}: $+\Delta V_2$.
+\item From $c$ through $d$ and through to $e$ we go through the resistor $R_6$ in the \textbf{opposite direction from the current}, $I_2$, in that resistor: $+I_2R_6$.
+\item From $e$ to $f$, we go through the go through the resistor $R_8$ in the \textbf{opposite direction from the current}, $I_1$, in that resistor: $+I_1R_8$.
+\item And we are back at the starting point, so the sum of the above terms is equal to zero.
+\end{itemize}
+which gives the equation:
+\begin{align*}
+-\Delta V_1+\Delta V_2+I_2R_6+I_1R_8=0\quad\text{(loop abcdefa)}
+\end{align*}
+Similarly, for the loop $abefa$, we obtain:
+\begin{align*}
+-\Delta V_1+I_3R_3+I_1R_8=0\quad\text{(loop abefa)}
+\end{align*}
+and for loop $bcdeb$:
+\begin{align*}
+\Delta V_2+I_2R_6-I_3R_3=0\quad\text{(loop bcdeb)}
+\end{align*}
+Although it appears that we have obtained 3 additional equations, only two of these are independent. For example, if you sum the second and third equations (loops $abefa$, and $bcdeb$), you simply obtain the first equation (loop $abcdefa$). In general, if there are $N$ different loops, one will obtain less than $N$ independent equations (usually $N-1$ independent equations, as we did here).
+%TODO is it always N-1??? 
+
+At this point, we have 3 equations to solve for the 3 unknown currents\footnote{The 3 unknowns do not necessarily have to be the currents, and could be any combination of the currents, battery voltage and resistors, as long as there at most 3 unknown quantities, this circuit can be solved.}:
+\begin{align*}
+I_1 &= I_2+I_3 \quad &\text{(junction $e$)}\\
+-\Delta V_1+\Delta V_2+I_2R_6+I_1R_8&=0\quad&\text{(loop abcdefa)}\\
+-\Delta V_1+I_3R_3+I_1R_8&=0\quad&\text{(loop abefa)}
+\end{align*}
+It is only a matter of some simple math to solve for the 3 unknowns from these 3 equations. 
+
+\begin{example}{Referring to the circuit in Figure \ref{fig:circuits:bigcircuit_vals}, what is the voltage across the real terminal of the battery with ideal voltage $\Delta V_1$ (the voltage between points $a$ and $b$? What is the current through resistor $R_5$?}
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{a} to [R=$r_1{=}\SI{1}{\Omega}$, *-] (1.5,0)
+      to [battery1,l_=$\Delta V_1{=}\SI{12}{V}$,-*] node[anchor=north]{b} (2.5,0) 
+      to [short] (3.5,0)
+	  to [battery1, l_=$\Delta V_2{=}\SI{4}{V}$, invert] (4.5,0)
+	  to [R,l^=$r_2{=}\SI{1}{\Omega}$] (6.5,0)
+      to [R,l_=$R_1{=}\SI{3}{\Omega}$] (6.5,2)
+ 	  to [R,l_=$R_2{=}\SI{4}{\Omega}$](3,2)
+ 	  to [R,l^=$R_4{=}\SI{2}{\Omega}$] (0,2)
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3{=}\SI{4}{\Omega}$] to (3,0);
+ \draw (0,2) [short, label=] to (0,3)
+ 	  to [R=$R_5{=}\SI{2}{\Omega}$] (3,3)
+ 	  to [short, label=] (3,2);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_vals}The same circuit as in Figure \ref{fig:circuits:bigcircuit}, with values filled in.} 
+\end{center}
+Since this circuit is the same that we just analyzed, we know that it can be simplified into the circuit shown in Figure \ref{fig:circuits:bigcircuit_vals_simp}, with resistors:
+\begin{align*}
+R_6&=r_2+R_1+R_2=(\SI{1}{\Omega})+(\SI{3}{\Omega})+(\SI{4}{\Omega})=\SI{8}{\Omega}\\
+R_8&=r_1+\frac{R_4R_5}{R_4+R_5}=(\SI{1}{\Omega})+\frac{(\SI{2}{\Omega})(\SI{2}{\Omega})}{(\SI{2}{\Omega})+(\SI{2}{\Omega})}=\SI{2}{\Omega}
+\end{align*}
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{a} to [short, *-, i<_=$I_1$] (0.75,0) 
+      to [battery1,l_=$\Delta V_1{=}\SI{12}{V}$] (2.25,0) 
+      to [short, -*, i<_=$I_1$] (3,0) node[anchor=north]{b} 
+      to [short, i<_=$I_2$] (3.75,0) 
+	  to [battery1, l_=$\Delta V_2{=}\SI{4}{V}$, invert] (5.25,0)
+	  to [short, -*, i<_=$I_2$] (6,0) node[anchor=west]{c} 
+	  to [short, -*, i<_=$I_2$] (6,3) node[anchor=west]{d} 
+	  to [short, i<_=$I_2$] (5.25,3)
+ 	  to [R=$R_6{=}\SI{8}{\Omega}$](3.75,3) 
+ 	  to [short,-*, i<_=$I_2$] node[anchor=south]{e} (3,3)
+ 	  to [short,i<_=$I_1$] (2.25,3)
+ 	  to [R,l^=$R_8{=}\SI{2}{\Omega}$] (0.75,3) 
+ 	  to [short,-*,i<_=$I_1$] node[anchor=east]{f} (0,3)
+ 	  to [short, label=, i<_=$I_1$] (0,0);
+ \draw (3,3) to [short,i=$I_3$] (3,2.25)
+       to [R=$R_3{=}\SI{4}{\Omega}$] (3,0.75)
+       to [short,i=$I_3$] (3,0);
+  \draw [->,>=stealth, line width=1mm] (1.85,0.6)--(1.15,0.6);
+ \draw [->,>=stealth, line width=1mm] (4.15,0.6)--(4.85,0.6);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_vals_simp}Simplified version of the circuit in Figure \ref{fig:circuits:bigcircuit_vals}.} 
+\end{center}
+From above, we know that this leads to the following three equations:
+\begin{align*}
+I_1 &= I_2+I_3 \quad &\text{(junction $e$)}\\
+-\Delta V_1+\Delta V_2+I_2R_6+I_1R_8&=0\quad&\text{(loop abcdefa)}\\
+-\Delta V_1+I_3R_3+I_1R_8&=0\quad&\text{(loop abefa)}
+\end{align*}
+In order to solve these types of equations, it is usually convenient to place the battery voltages on the right hand side, and the resistor voltages on the left hand side. Although it is generally bad practice to fill numbers into the equations before solving them, it is almost always a good idea when solving the $N$ equations for the $N$ currents. Furthermore, in order to make the equations legible, it is also useful to not write in the units (which is very bad practice in general!). Thus, filling in the values for the resistors and the battery voltages, moving the voltages to the right hand side, we obtain the following system of equations:
+\begin{align*}
+I_1-I_2-I_3&=0  \quad &\text{(junction $e$)}\\
+2I_1+8I_2&=8 \quad&\text{(loop abcdefa)}\\
+2I_1+4I_3&=12 \quad&\text{(loop abefa)}
+\end{align*}
+Subtracting the second equation from the third equation (to eliminate $I_1$):
+\begin{align*}
+4I_3-8I_2&=4\\
+\therefore I_3&=1+2I_2
+\end{align*}
+Substituting this into the junction equation:
+\begin{align*}
+I_1-I_2-I_3&=0\\
+I_1-I_2-1-2I_2&=0\\
+\therefore I_2=\frac{1}{3}(I_1-1)
+\end{align*}
+Finally, substituting this into the equation from loop $abcdefa$, allows us to determine $I_1$ and the other two currents:
+\begin{align*}
+2I_1+8I_2&=8\\
+2I_1+8\left(\frac{1}{3}(I_1-1) \right)&=8\\
+\therefore I_1&=frac{16}{7}=\SI{2.29}{A}\\
+\therefore I_2&=\frac{1}{3}(I_1-1)=\SI{0.43}{A}\\
+\therefore I_3&=1+2I_2=\SI{1.86}{A}\\
+\end{align*}
+In this case, the currents are all positive, so the diagram in Figure \ref{fig:circuits:bigcircuit_vals_simp} is correct and we do not need to reverse the direction of any of the currents. 
+
+We can now determine the potential difference across the real terminals of the battery $\Delta V_1$. The current through the battery is $I_1=\SI{2.29}{A}$, which cause a voltage drop, $\Delta VV_{r1}$, across its internal resistance, $r_1$ of:
+\begin{align*}
+\Delta V_{r1}=I_1r_1=(\SI{2.29}{A})(\SI{1}{\Omega})=\SI{2.29}{V}
+\end{align*} 
+The voltage across the real terminals of the battery is then:
+\begin{align*}
+\Delta V_{real}=\Delta V_1-\Delta V_{r1}=(\SI{12}{V})-(\SI{2.29}{V})=\SI{9.7}{V}
+\end{align*}
+
+The current through the resistor $R_5$ (Figure \ref{fig:circuits:bigcircuit_vals}) requires a little more thought, since we calculated the current, $I_1$ through the effective resistor $R_8$, which we must now ``break apart''. Figure \ref{fig:circuits:bigcircuit_vals_r8} shows the components of $R_8$. 
+\begin{center}
+\begin{circuitikz}
+ \draw (-1.5,0) to [short,label=,o-,i=$I_1$] (-0.75,0)
+ 	   to [R,l_=$r_1{=}\SI{1}{\Omega}$] (1.25,0)
+ 	   to [short,label=,-*,i=$I_1$] (2,0)
+       to [short,i_=$I_5$,label=] (2,1)
+       to [R,l^=$R_5{=}\SI{2}{\Omega}$,i=$I_5$] (4,1)
+       to [short,i=$I_5$,-*,label=] (4,0)
+       to [short,i=$I_1$,-o,label=] (6,0);
+\draw (2,0) to [short,i=$I_4$,label=] (2,-1)
+       to [R,l_=$R_4{=}\SI{2}{\Omega}$,i=$I_4$] (4,-1)
+       to [short,i_=$I_4$,label=] (4,0);       
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_vals_r8}The components of the effective $R_8$ resistor from Figure \ref{fig:circuits:bigcircuit_vals_simp}. The current, $I_1$, coming from the battery goes through $r_1$ and then splits up.} 
+\end{center}
+The current $I_1$, that goes through the $\Delta V_1$ battery also goes through the $r_1$ internal resistance of the battery. That current then splits up into currents, $I_4$ and $I_5$, to go through the resistors $R_4$ and $R_5$. Although it should be obvious that half of $I_1$ will go through each resistor (since these are equal), we can determine this from applying Kirchhoff's rules:
+\begin{align*}
+I_1&=I_4+I_5 \quad&\text{(junction)}\\
+I_5R_5-I_4R_4&=0\quad&\text{(clockwise loop)}
+\end{align*}
+From the loop equation, we have:
+\begin{align*}
+I_5=\frac{R_4}{R_5}I_4=I_4
+\end{align*}
+since $R_4=R_5=\SI{2}{\Omega}$. Since $I_4=I_5$, the junction equation gives:
+\begin{align*}
+I_5=\frac{1}{2}I_1=\SI{1.15}{A}
+\end{align*}
+By solve for $I_4$ and $I_5$, we have now determined all of the currents through all of the segments of the original circuit.
+
+\textbf{Discussion: }In this example, we showed how one can use a simplified circuit to solve the current through the effective resistors in the simplified circuit. Once those currents are known, we showed that it is straightforward to determine the currents through individual resistors that have been combined into effective resistors.  
+\end{example}
+\section{Measuring current and voltage}
+In this section, we describe how one can build devices to measure current and voltage. A device that measures current is called an ``ammeter'' and a device that measured voltage is called a ``voltmeter''. Nowadays, these are usually found within the same physical device (a ``multimeter''), which can also measure resistance (by measuring voltage and current, resistance can easily determined). We will limit our description to the simple ammeter and voltmeter. 
+
+As we will see in Chapter REF-MAGNETIC-FORCE-CHAPTER, it is straightforward to build a device that can measure very small amounts of current, by running the current through a coil in a magnetic field so that the coil can deflect a needle that indicates the amount of current. Such a device is called a ``galvanometer'' and is usually limited to measuring very small current (of order \si{mA}). In this section, we describe how one can use a galvanometer in order to build ammeters to measure large currents, and voltmeters. 
+\subsection{The ammeter}
+An ammeter is built by placing a galvanometer in parallel with a ``shunt'' resistor, $R_s$. The shunt resistor is a small resistor that ``shunts'' (deflects) the current away from the galvanometer, so that most of the current goes through the shunt resistor. This is illustrated in Figure \ref{fig:circuits:ammeter}, which shows the galvanometer (circle with the $G$ inside), the internal resistance of the galvanometer, $R_G$, and the shunt resistor, $R_S$. The actual ammeter would be contained in box and have two connectors (shown as $A$ and $B$ in the figure). 
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{A} to [short, o-*,i=$I$] (2,0)
+          to [short,i=$I_G$] (2,1)
+          to [R, l^=$R_G$] (4,1)
+          to [esource,i>=$I_G$] (6,1)
+          to [short,i=$I_G$] (6,0)
+          to [short, *-o,i=$I$] (8,0) node[anchor=west]{B}
+             (5,1) node[] {G};
+ \draw (2,0) to [short,i=$I_S$] (2,-1)
+       to [R,l_=$R_S$,i=$I_S$] (6,-1)
+       to [short,i_=$I_S$,label=] (6,0);       
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:ammeter}Constructing an ammeter from a galvanometer by placing a shunt resistor.} 
+\end{center}
+By modelling the ammeter, we can determine the total current, $I$, using the values of the resistors and the and the current, $I_G$, measured by the galvanometer. Considering any of the two junctions, and a clockwise loop, we have:
+\begin{align*}
+I&=I_G+I_S \quad&\text{(junction)}\\
+I_GR_G-I_SR_S&=0\quad&\text{(clockwise loop)}
+\therefore I_S=\frac{R_G}{R_S}I_G
+\therefore I = I_G+_S=\left(1+\frac{R_G}{R_S}\right) R_G
+\end{align*}  
+and indeed, we see that most of the current goes through the shunt (since $R_S$ is chosen to be smaller than $R_G$). The ammeter, will have a total resistance, $R_A$, given by:
+\begin{align*}
+R_A=\frac{R_GR_S}{R_G+R_S}
+\end{align*}
+In order to measure the current through a specific segment of a circuit, a ammeter must be placed in series with that segment (so that the current that we want to measure will pass through the ammeter). Figure \ref{fig:circuits:ammeterR} shows how to connect an ammeter (circle with the letter $A$) in order to measure the current through a resistor, $R$.
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [R=$R$,i=$I$, o-] (2,0)
+             to [ammeter,-o] (4,0);     
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:ammeterR}An ammeter is placed in series with a resistor to measure the current through the resistor.} 
+\end{center}
+
+\subsection{The voltmeter}
+A voltmeter is constructed by placing a large resistor, $R_V$, in series with a galvanomenter (that has internal resistance $R_G$), as illustrated in Figure \ref{fig:circuits:voltmeter}. The voltmeter is designed to measure the potential difference between the terminals of the voltmeter (labelled $A$ and $B$ in the Figure).
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{A} to [R=$R_V$, o-,i=$I_G$] (2,0)
+             to [R=$R_G$,i=$I_G$] (4,0)
+             to [esource,-o] (6,0) node[anchor=west]{B};     
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:voltmeter}Constructing an voltmeter from a galvanometer by placing a resistor in series with the galvanometer.} 
+\end{center}
+Given the values of the resistors, and the current measured by the galvanometer, one can easily determine the potential difference between points $A$ and $B$, since the current measured by the galvanometer goes directly through each resistor:
+\begin{align*}
+\Delta V = V_B-V_A=I_G(R_V+R_G)
+\end{align*}
+In order to measure a potential difference across a component, the voltmeter must be placed in parallel with the component. Figure \ref{fig:circuits:voltmeterR} shows how to connect a voltmeter (circle with the letter $V$) in order to measure the voltage across a resistor, $R$.
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [R=$R$, o-o] (3,0)
+       (0.5,0) to [short,*-] (0.5,1.5)
+       to [voltmeter] (2.5,1.5)
+       to [short,-*] (2.5,0);         
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:voltmeterR}An voltmeter is placed in parallel with a resistor to measure the voltage across the resistor.} 
+\end{center}
+
+When using an ammeter or a voltmeter, you will notice that these usually have buttons or dials to choose the range of currents or voltages to be measured. All the dial does is change the value of the shunt or series resistor in order to maintain a given maximum current through the galvanometer.
+\begin{example}{Two resistors with a resistance of $\SI{1}{k\Omega}$ are placed in series with a $\SI{12}{V}$ battery. A voltmeter with a total resistance of $R_V=\SI{10}{k\Omega}$ is used to measure the voltage across one of the resistors. What reading does the voltmeter show?}
+Since the resistors are the same, and in series with the battery, when no voltmeter is connected, the voltage across either resistor is easily shown to be $\SI{6}{V}$. However, by connecting the voltmeter across one of the resistors, we modify the circuit, and we should expect the voltage that is read to be different than $\SI{6}{V}$ (can you tell if it will be larger or smaller?). The circuit, with the voltmeter connected is shown in Figure \ref{fig:circuits:voltmeter2R}.
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [short] (0,2)
+       to [R=$R{=}\SI{1}{k\Omega}$] (3,2)
+       to [R=$R{=}\SI{1}{k\Omega}$] (6,2)
+       to [short] (6,0)
+       to [battery1,l_=$\SI{12}{V}$] (0,0);
+ \draw (0.5,2) to [short,*-] (0.5,3.5)
+       to [voltmeter,l^=$\SI{10}{k\Omega}$] (2.5,3.5)
+       to [short,-*] (2.5,2);         
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:voltmeter2R}When using a voltmeter, the circuit is modified.} 
+\end{center}
+We can model this circuit quite easily by combining the voltmeter (a resistor) in parallel with one of the resistors:
+\begin{align*}
+R_{eff}=\frac{R_VR}{R_V+R}=\frac{(\SI{10}{k\Omega})(\SI{1}{k\Omega})}{(\SI{10}{k\Omega})+(\SI{1}{k\Omega})}=\frac{10}{11}\si{k\Omega}=\SI{0.91}{k\Omega}
+\end{align*}
+The sum of the voltage drops across the effective resistor and the other resistor must equal the potential difference across the batter (really, Kirchhoff's loop rule):
+\begin{align*}
+R_{eff}I+RI&=\Delta V\\
+\therefore I &= \frac{\Delta V}{R_{eff}+R}=\frac{(\SI{12}{V})}{(\SI{0.91}{k\Omega})+(\SI{1}{k\Omega})}=\SI{6.29e-3}{A}
+\end{align*}
+The voltage drop across the effective resistor is the same as the reading on the voltmeter:
+\begin{align*}
+\Delta V_{voltmeter}=IR_eff=(\SI{6.29e-3}{A})(\SI{0.91}{k\Omega})=\SI{5.7}{V}
+\end{align*}
+and the voltmeter reads a smaller current than there would be without the voltmeter.
+
+\textbf{Discussion: }In this example, we saw that by using a voltmeter to measure a voltage in a circuit, we actually disturb the circuit. By placing the voltmeter in parallel with one resistor, we created an effective resistor with a resistance that is lower than the resistance of either the voltmeter or the resistor. This lowered the total resistance of the circuit, which increased the current. A larger current through the second resistor (without the voltmeter) leads to a larger voltage drop than $\SI{6}{V}$ across that resistor. Thus, the voltage drop across the effective resistor will be less than $\SI{6}{V}$, since the two voltage drops need to add to $\SI{12}{V}$.
+
+In general, when using a voltmeter, one needs a voltmeter with a very high resistance in order to minimize the disturbance to the circuit (if the voltmeter has a high resistance, only a small amount of current will be shunted from the resistor). In practice, voltmeters have resistance that are typically of the order of $\SI{1}{M\Omega}$.
+\end{example}
+
 
 \section{Modelling circuits with capacitors}
+%TODO Review box to the section on capacitors.
+So far, we have modelled circuits where the current does not change with time. When a capacitor is included in a circuit, the current will change with time, as the capacitor charges or discharges. The circuit shown in Figure \ref{fig:circuits:RCcircuit} shows an ideal battery\footnote{The model still holds for a real battery, since the internal resistance of the battery can just be included into the resistance of the resistor, $R$.} ($\Delta V$), in series with a resistor ($R$), a capacitor ($C$, two vertical bars) and a switch ($S$) that is open. 
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [short] (0,2)
+       to [R=$R$] (3,2)
+       to [C=$C$] (6,2)
+       to [nos, l_=S] (6,0)
+       to [battery1,v^=$\Delta V$] (0,0);        
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:RCcircuit}A simple circuit with a resistor, battery, and capacitor.} 
+\end{center}
+When the switch is open, no current flows through the circuit. If we assume that the capacitor has no charge on it, once we close the switch, current will start to flow and charges will accumulate on the capacitor. Electrons will leave the negative terminal of the battery, flow through the resistor and accumulate on the left side of the capacitor, which acquires a negative charge. This then pushes electrons off the right hand side of the capacitor, which then becomes positively charged. The electrons that come off the positive side of the capacitor then flow into the positive side of the battery, completing the circuit.
 
-\section{Measuring current and voltage}
+Eventually, the charges on the capacitor will build up to a point were they prevent the further flow of current. Once the left side of the capacitor is at the same potential as the left side of the battery, current will cease to flow. That is, eventually, the potential difference across the capacitor will be equal to the potential across the battery. The current is high when the switch is opened, but eventually goes down to zero as the capacitor charges, and the current is thus time-dependent. 
+
+We can model this simple circuit with the switch closed using Kirchhoff's loop rule. The sum of the voltages across each component must sum to zero:
+\begin{align*}
+\Delta V - IR - \frac{Q}{C} = 0
+\end{align*}
+where we used the fact that the charge, $Q$, on a capacitor is related to the potential difference across the capacitor by $Q=C\Delta V_C$. As you recall, the current is the rate at which charges flow through the circuit, and is thus the rate at which charges accumulate on the capacitor:
+\begin{align*}
+I=\frac{dQ}{dt}
+\end{align*}
+Substituting this into the loop equation, we obtain a separable differential equation for the charge on the capacitor as a function of time, $Q(t)$:
+\begin{align*}
+\Delta V - IR - \frac{Q}{C} &= 0\\
+\Delta V - \frac{dQ}{dt}R - \frac{Q}{C} &= 0\\
+\Delta V - \frac{Q}{C} &= \frac{dQ}{dt}R\\
+C\Delta V - Q &= RC\frac{dQ}{dt}\\
+\therefore \frac{dt}{RC}&=\frac{dQ}{C\Delta V - Q }
+\end{align*}
+This is similar to differential equations that we have solved previously (in fact, it is the same equation as in Example \ref{ex:applyingnewtonslaws:drag} where we looked at the effect of velocity-dependent drag). The solution to the equation, assuming that the switched is closed at $t=0$, is given by an exponential:
+\begin{align*}
+Q(t) = C\Delta V\left( 1 - e^{-\frac{t}{RC}} \right)
+\end{align*}
+Thus, the charge on the capacitor starts at zero when the switch is closed, and grows asymptotically until it reaches a value of $Q=C\Delta V$, which corresponds to the capacitor having the same potential difference across it as the battery. The value $\tau=RC$ is called the ``time constant'' of the RC circuit, and corresponds to the time at which the capacitor will reach about $(1-e^{-1})=63\%$ of its maximal charge. The current as a function of time is given by:
+\begin{align*}
+I(t)=\frac{dQ}{dt}=\frac{\Delta V}{R}e^{-\frac{t}{RC}}
+\end{align*}
+and we can see that at time $t=0$ the current is the same as if there were no capacitor present, and the current then decreases exponentially until it reaches zero.
 
 \newpage
 \section{Summary}
@@ -346,6 +777,9 @@ This equation then gives us a relation between the various quantities (current, 
 
 \newpage
 \section{Sample problems and solutions}
+%TODO a circuit...
+%TODO a problem where the ammeter disturbs the circuit.
+
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
 
