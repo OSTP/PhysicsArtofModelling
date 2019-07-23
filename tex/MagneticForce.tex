@@ -27,6 +27,8 @@ Just as we can model the electric force on a charge by using the electric field 
 Although it may seem that the magnetic force can be described in the same way as the electric force, having two opposite sign ``charges'' (or poles for magnets), it is fundamentally different. As far as we can tell, there are no magnets that have only a North or a South pole. Every magnet must have a North \textit{and} a South pole. This is fundamentally different from the electric force, where an object can have a net positive or negative charge. In the context of magnetism, we say that ``monopoles do not exist'' (an object that has only a North or South pole would be called a monopole). This is illustrated in Figure \ref{fig:magneticforce:magnetcut}, which shows what happens as one tries to cut a bar magnet into two pieces; rather than ending up with a North and a South piece (monopoles), we end up with two bar magnets, each with their own North and South poles.
 
 \capfig{0.4\textwidth}{figures/MagneticForce/magnetcut.png}{\label{fig:magneticforce:magnetcut}When a bar magnet is cut through the middle, one obtains two magnets, each with a North and South pole, rather than a North and a South magnet.}
+
+We model the magnetic force using a magnetic field vector, usually labeled, $\vec B$. The magnitude of the magnetic field has the S.I. units of Teslas (\si{T}). 
  
 We draw magnetic field lines in much the same way that we draw electric field lines. The magnetic field lines are such that the magnetic field vector, $\vec B$, at some point in space is tangent to the field line at that point. The strength of the magnetic field is determined by the density of field lines at that position in space. The direction of the magnetic field, $\vec B$, indicates the direction of the force that is exerted on the North pole of a magnet. Magnetic field lines thus flow away from North poles and towards South poles. Thus far, the magnetic field description is similar to that of the electric field, with North magnetic poles being similar to positive electric charges, and vice versa.  However, because magnetic monopoles do not exist, magnetic field lines do not end (or start) on the pole of a magnet. Rather, magnetic field lines must always form \textbf{closed loops}, as illustrated in Figure \ref{fig:magneticforce:barfield} (where some of the field lines close outside of the figure). Thus, the magnetic field from a bar magnet should be compared to the electric field from an electric dipole (TODO - REF LINK TO DIPOLE SECTION). In order to make the analogy with the electric field, one should thus think of magnetic dipoles as being similar to electric dipoles, rather than the North side of a magnet being similar to a positive charge. 
 %TODO Much better figure, showing the magnetic field from a bar magnet, with closed field lines, etc... Show the B vector at some positions (tangent to the line, magnitude proportional to line density). Show arrows on the field lines. Make the field lines a separate figure/component, as we'll need the lines again for the field from a loop. 
@@ -57,33 +59,227 @@ You should be somewhat bothered by the fact that the force depends on the veloci
 
 Another bothersome issue with the magnetic force is that it appears to depend on the fact that most humans are right-handed. Indeed, the direction of the force requires one to use the right-hand rule, which appears arbitrary. This is a common occurrence in physics, as many quantities are defined using a cross-product. However, no physical quantity can ever depend on our choice of right or left hand for determining cross-products. It turns out that any physical quantity (such as the force on a particle, which will deflect the particle in a clearly identifiable direction that does not depends on human's choice of right and left), always depends on two successive applications of the right-hand rule. In this case, the direction of the magnetic field is also given by a right-hand rule applied to the moving charges that create the field. The successive use of the right hand twice ``cancel'', and one finds that a charge is deflected in the same direction if one uses the left hand to define the magnetic field, and then the left-hand again for the cross-product!
 
-Consider the motion of a charged particle in a region where the magnetic field is uniform (constant in magnitude and direction). If the magnetic field is perpendicular to the velocity vector of the particle, the particle will undergo uniform circular motion. Indeed, the force is always perpendicular to the velocity, and the force is constant in magnitude since both the speed and magnetic field remain constant. These are the only conditions required for uniform circular motion. We can easily determine the radius, $R$, of the circle, since the magnetic force is responsible for the centripetal acceleration:
+Consider the motion of a charged particle in a region where the magnetic field is uniform (constant in magnitude and direction). If the magnetic field is perpendicular to the velocity vector of the particle, the particle will undergo uniform circular motion, as illustrated in Figure \ref{fig:magneticforce:cyclotron}. 
+\capfig{0.4\textwidth}{figures/MagneticForce/cyclotron.png}{\label{fig:magneticforce:cyclotron}The motion of a charged particle in a uniform magnetic field (out of the page) is uniform circular motion.}
+Indeed, the force is always perpendicular to the velocity, and the force is constant in magnitude since both the speed and magnetic field remain constant. These are the only conditions required for uniform circular motion. We can easily determine the radius, $R$, of the circle, since the magnetic force is responsible for the centripetal acceleration:
 \begin{align*}
 F_B &= m\frac{v^2}{R}\\
 qvB &= m\frac{v^2}{R}\\
-\therefore R &= \frac{qB}{mv}
+\therefore R &= \frac{mv}{qB}
 \end{align*}
-
-%Example Mass spec
-
-%Describe helical motion.
-
-
-%describe helical path, 
+The radius is called the ``cyclotron radius''. 
+%TODO Checkpoint question: Is the particle illustrated in Figure \ref{fig:magneticforce:cyclotron} positively or negatively charged? positive, negative, not enough information to tell (correct: positive)
+Referring to Figure \ref{fig:magneticforce:cyclotron}, if the velocity of the particle is in the plane of the page (perpendicular to the magnetic field), as illustrated, the particle will undergo uniform circular motion. If the velocity of the particle has a component that is parallel to the magnetic field (for example a component coming out of the page, towards you), the particle will undergo ``helical motion'' (a spiral). The radius of the helix is determined by the component of the velocity, $\vec v_{\perp}$, that is perpendicular the magnetic field:
+\begin{align*}
+\therefore R &= \frac{mv_{\perp}}{qB}
+\end{align*}
+The charged particle would also have a component of velocity towards you that is constant, resulting in the spiral motion illustrated in Figure \ref{fig:magneticforce:helix}. Note that the distance between two spirals (labeled $h$ in the figure) is called the ``pitch'', and is determined by the component of velocity that is parallel to the magnetic field, $\vec v_\parallel$, since that component is not affected by the magnetic force. 
+\capfig{0.4\textwidth}{figures/MagneticForce/helix.png}{\label{fig:magneticforce:helix}The helical motion of a charged particle with a component of velocity parallel to the magnetic field. The distance, $h$, between spirals is called the ``pitch''.}
+%TODO obviously a much better figure with a pretty spiral and pretty magnetic field going through the plane.
+\begin{example}{\label{ex:magneticforce:massspec}A particle of unknown charge and unknown mass is observed to undergo uniform circular motion with a period, $T$, when traveling perpendicular to a uniform magnetic field, $B$. What is the ratio of the particle's charge to its mass, $q/m$? }
+We can use the period of the motion to determine the speed of the particle in terms of the radius of the circular path:
+\begin{align*}
+v = \frac{2\pi R}{T}
+\end{align*}
+and then use the equation for the cyclotron radius to relate this to the charge-to-mass ratio of the particle:
+\begin{align*}
+R &= \frac{mv}{qB}\\
+  &= \frac{2\pi R m}{qBT}\\
+\therefore \frac{q}{m} &= \frac{2\pi}{BT} 
+\end{align*}
+\textbf{Discussion:} When a charged particle undergoes uniform circular motion in a magnetic field, the radius of the motion depends on the particle's charge-to-mass ratio. This can often be used to measure the mass of, say, an ion, the charge of the ion is known (usually one or two units of the electron charge). A mass spectrometer makes use of this principle in order to determine the composition of a sample. The sample is vaporized and ionized, the ions are then accelerated using an electric potential difference, before they undergo uniform circular motion. Ions of different masses (and same charge) will then undergo circular motion with different radii, which allows their masses to be determined, and thus the composition of the sample to be known.
+\end{example}
 
 \section{The magnetic force on a current-carrying wire}
+%TODO Review box to look at microscopic model of current
+In this section, we examine the force that is exerted by a magnetic field on a wire that carries electric current. Since a current is formed by a moving charges, it is natural to expect that a wire that carries current will experience a force if immersed in a magnetic field. 
 
-\section{Magnetic dipole moment}
-%torque on a loop
+Consider a vertical wire with cross-sectional area, $A$, carrying current, $I$, upwards that is immersed in a uniform magnetic field, $\vec B$, into the page, as illustrated in REF. Inside the wire, on average, electrons have a drift velocity, $\vec v_d$, in the downwards direction (since they move in the direction opposite to that of conventional current).
+\capfig{0.4\textwidth}{figures/MagneticForce/microforce.png}{\label{fig:magneticforce:microforce}A section of wire carries conventional current, $I$, upwards while being immersed in a uniform magnetic field, $\vec B$, into the page. We introduce the vector, $\vec l$, to represent a section of wire of length $l$ carrying current in the direction of $\vec l$.}
+A single electron will experience a magnetic force, $\vec F_e$, given by:
+\begin{align*}
+\vec F_e = -e \vec v_d \times \vec B
+\end{align*}
+A section of wire of length, $l$, will contain $N=nAl$ drifting electrons, where $n$ is the density of free electrons for the wire (the number of electrons per unit volume that are available to produce a current). Thus, the magnetic force on that section of wire will be $N$ times the force on a single electron:
+\begin{align*}
+\vec F = N\vec F_e = nAl (-e \vec v_d \times \vec B)=-nAle \vec v_d \times \vec B
+\end{align*}
+Recall the microscopic model of current to relate the drift velocity to the conventional current in the wire:
+\begin{align*}
+I &= -nAev_d
+\end{align*}
+We also introduce a vector, $\vec l$, with a magnitude equal to the length of the section of wire, and a direction that is parallel to the conventional current (thus anti-parallel to the electron drift velocity). Teh force on the section of the length $l$ of the wire is thus given by:
+\begin{align*}
+\vec F &= -nAle \vec v_d \times \vec B\\
+\Aboxed{ \vec F&= I \vec l \times \vec B}
+\end{align*}
+%TODO See Giancolli Figure 27-11 B - Draw the same diagram, but do not show the direction of the mag field (only N/S poles of magnet), and ask in which direction the force on the wire is exerted. Don't show the current direction either (but show the terminal signs on the battery). Make it different enough from the figure in Giancolli!
+Note that if the wire changes direction relative to the magnetic field, then we can model the wire as being made of many short sections (Figure \ref{fig:magneticforce:bentwire}), of length $dl$, and sum the forces on those sections to get the total force on a section of length, $L$:
+\begin{align*}
+\vec F = \int_0^L I d\vec l \times \vec B
+\end{align*}
+\capfig{0.3\textwidth}{figures/MagneticForce/bentwire.png}{\label{fig:magneticforce:bentwire}The magnetic force on a curved current-carrying wire is obtained by modeling infinitesimal sections of wire of length $d\vec l$, and summing together the forces on those sections.}
+\begin{example}{\label{ex:magneticforce:semicircle}A wire carrying current, $I$, is bent into a semi-circle of radius, $R$, as shown in Figure REF. The wire is immersed in a uniform magnetic field, $\vec B$, that is perpendicular to the plane of the wire, as shown. Using the given coordinate system, what is the net force on the wire? \capfig{0.4\textwidth}{figures/MagneticForce/semicircle.png}{\label{fig:magneticforce:semicircle}A current-carrying wire with a semi-circular section is immersed in a uniform magnetic field.}}
+We can model the wire as being made of three sections: a straight section carrying current in the positive $y$ direction, a curved section, and another straight section carrying current in the negative $y$ direction.
+
+Consider the first straight section, carrying current in the positive $y$ direction. The force on that section of wire, by the right hand rule, will be towards the left (negative $x$ direction):
+\begin{align*}
+F_1 &= I \vec l \times \vec B\\
+&= I (l\hat y) \times (-B\hat z)\\
+&= -IlB (\hat y \times \hat z)=-IlB\hat x
+\end{align*}
+The force exerted on the other straight section of wire will have the same magnitude, but the opposite direction (since the current, and thus the vector $\vec l$, is in the opposite direction). Thus, the forces from the two sections of wire cancel, as illustrated in Figure \ref{fig:magneticforce:semicircle_sol}.
+\capfig{0.4\textwidth}{figures/MagneticForce/semicircle_sol.png}{\label{fig:magneticforce:semicircle_sol}The magnetic force on different sections of wire.}
+In order to calculate the force exerted on the semi-circular section, we need to add together the forces exerted on the infinitesimal sections of the wire that make up that section. Consider the magnetic force on the two infinitesimal sections illustrated in Figure \ref{fig:magneticforce:semicircle_sol}. The $x$ components of the forces will cancel, whereas the $y$ components will add. Thus, the net force on the semi-circular section will be in the positive $y$ direction.
+
+Consider the small force on the section of wire located at an angle, $\theta$, as illustrated in Figure \ref{fig:magneticforce:semicircle_sol}. We can write the vector $d\vec l$ as:
+\begin{align*}
+d\vec l = dl(\sin\theta\hat x + \cos\theta \hat y)
+\end{align*}
+Thus, the infinitesimal force on that section of wire is given by:
+\begin{align*}
+d\vec F &= I d\vec l \times \vec B = I dl(\sin\theta\hat x + \cos\theta \hat y)\times (-B\hat z)\\
+&=-IBdl (\sin\theta\hat x \times \hat z + \cos\theta \hat y \times \hat z)\\
+&=-IBdl (-\sin\theta \hat y + \cos\theta\hat x) \\
+&= IBdl\sin\theta \hat y - IBdL\cos\theta \hat x = dF_y\hat y + dF_x \hat x
+\end{align*} 
+In order to sum together these infinitesimal forces, it is most convenient to use the angle $\theta$ to identify each segment. $d\theta$ is simply related to $dl$, since $dl$ is the length of the circle subtended by the infinitesimal angle $d\theta$:
+\begin{align*}
+dl = Rd\theta
+\end{align*}
+Summing together all of the $y$ components of the infinitesimal forces:
+\begin{align*}
+F_y = \int dF_y = \int_0^\pi IBR\sin\theta d\theta=IBR \int_0^\pi\sin\theta d\theta=2IBR
+\end{align*}
+Note that the $x$ components will sum to zero, as we predicted from symmetry:
+\begin{align*}
+F_x = \int dF_x = -\int_0^\pi IBR\cos\theta d\theta=-IBR \int_0^\pi\cos\theta d\theta=0
+\end{align*}
+The net force on the wire is thus given by:
+\begin{align*}
+\vec F = 2IBR\hat y
+\end{align*}
+\textbf{Discussion: }In this example we found the magnetic force on a curved section of wire. The calculation was simplified by symmetry arguments, as we could use the right hand rule to anticipate that the force would have no component in the $x$ direction. This is because there is as much current flowing in the positive direction as there is in the negative direction. As a corollary, the net magnetic force on any closed loop of current must be zero.
+\end{example}
+
+\section{The torque on a current-carrying loop}
+%TODO Review section: Definition of torque, electric dipoles.
+As noted in example \ref{ex:magneticforce:semicircle}, the net magnetic force on any closed loop immersed in a uniform magnetic field is zero. Consider, for example, the current-carrying rectangular loop of height, $h$, and width, $w$, immersed in a uniform magnetic field, $\vec B$, as illustrated in Figure \ref{fig:magneticforce:rectangleloop}.
+\capfig{0.4\textwidth}{figures/MagneticForce/rectangleloop.png}{\label{fig:magneticforce:rectangleloop}A rectangular loop carrying current in a uniform magnetic field.}
+The magnetic force on the two horizontal sections of the wire are zero, since the current flows parallel to the magnetic field in those sections. In the left vertical section, the magnetic force is out of the page (positive $z$ direction), and is given by:
+\begin{align*}
+\vec F = IhB\hat z
+\end{align*}
+Similarly, the force on the section with current going in the positive $y$ direction will have the same magnitude but the opposite direction. The net force on the loop is thus zero. However, the net torque on the loop about its vertical axis of symmetry (shown by the vertical dashed line) is not zero. The torque is given by:
+\begin{align*}
+\tau &= \vec r\times \vec F + (-\vec r \times - \vec F)\\
+&= 2 \vec r \times F = 2 (-\frac{w}{2}\hat x) \times IhB\hat z = IBwh (-\hat x\times \hat z)\\
+&=IBwh (\hat y)
+\end{align*}
+where $\vec r$ is the vector from the axis of rotation to the location where the force is exerted.
+
+\subsection{Magnetic dipole moment}
+Describing the torque on a loop can be difficult in three dimensions, so we introduce the ``magnetic dipole moment'' to simplify the description.
+
+If a closed loop carries a current, $I$, the magnetic dipole moment vector, $\vec \mu$, is defined such that it has a magnitude:
+\begin{align*}
+\mu = IA
+\end{align*}
+where, $A$, is the area of the loop. The direction of the magnetic dipole moment vector is such that it is perpendicular to the surface defined by the loop. Of the two such possible directions, the direction of the magnetic dipole moment is given by the right-hand rule for axial vectors, by curling the fingers in the direction of the current so that the thumb points in the direction of the magnetic dipole moment. This is illustrated in Figure \ref{fig:magneticforce:momenthand}.
+\capfig{0.4\textwidth}{figures/MagneticForce/momenthand.png}{\label{fig:magneticforce:momenthand}The right hand rule for axial vectors is used to determine the direction of the magnetic dipole moment vector for a loop carrying current, $I$.}
+%TODO We need to do the hand diagram, as this is stolen from the internet (it can just be traced out). Keep the hand diagram as a separate diagram, as well as integrate it to this figure (since it's useful). The other part of the figure should also be improved!
+
+In terms of the magnetic dipole moment, the torque on a loop, with magnetic dipole moment, $\vec mu$, immersed in a magnetic field, $\vec B$, is given by:
+\begin{align*}
+\Aboxed{\vec \tau = \vec \mu \times \vec B}
+\end{align*}
+We can verify that this gives the correct torque for the rectangular loop in Figure \ref{fig:magneticforce:rectangleloop}. The magnetic dipole moment of that loop is given by:
+\begin{align*}
+\vec \mu = IA \hat z = Iwh\hat z
+\end{align*}
+where the direction of the vector is given by the right hand rule for axial vectors (out of the page). The torque on the loop is thus:
+\begin{align*}
+\vec \tau = \vec \mu \times \vec B = (Iwh\hat z) \times (B\hat x) = IBwh (\hat y)
+\end{align*}
+as we found previously.
+
+The magnetic dipole moment can be used to completely model the torque from a magnetic field on the loop. That is, instead of drawing a loop carrying current, we can equivalently simply draw the associated magnetic dipole moment vector. This is useful because the magnetic dipole moment vector behaves in the same way as a bar magnet (with the magnetic dipole moment vector going from South to North). Indeed, a magnetic field will always create a torque that will try to align the magnetic dipole moment with the magnetic field, just as the needle of a compass experience a torque if it is not aligned with the magnetic field of the Earth. The torque from the magnetic field is then zero when the magnetic dipole moment is parallel to the magnetic field (as the cross-product between co-linear vectors is zero). 
+
+Figure \ref{fig:magneticforce:looptorque} shows a way to visualize a current-carrying loop in a magnetic field using its magnetic dipole moment.  
+\capfig{0.4\textwidth}{figures/MagneticForce/looptorque.png}{\label{fig:magneticforce:looptorque}Three loops of current with different orientations relative to a uniform magnetic field. The loops are seen from above, and the current is shown coming in and out of the page on each loop, along with the corresponding magnetic dipole moment vector. }
+Three loops are shown (as lines), seen from above, and the direction of the current in each loop is shown as going in or out of the page. Equivalently, one can simply draw the magnetic dipole moment vector for each loop (perpendicular to the plane of the loop). For the top loop, the magnetic dipole moment is parallel to the magnetic field, so the magnetic field exerts no torque. For the middle loop, the magnetic dipole moment makes an angle $\theta$ with the magnetic field vector, so that the torque on that loop has a magnitude given by $\tau=\mu B \sin\theta$, and points into the page (clockwise rotation). The bottom loop makes an angle of $-\pi/2$ with the magnetic field, which results in a torque in the counter-clockwise direction. In all cases, the torque is such that it always tries to align the magnetic dipole moment vector with the magnetic field, just as if the magnetic dipole moment were a bar magnet.
+
+The electric motor is based on this principle. In an electric motor, a current-carrying coil (many loops) is immersed in a fixed and uniform magnetic field. As current passes through the coil, the coil experiences a torque and rotates. Once the coil has reached a position where its magnetic dipole moment vector is parallel to the magnetic field, the direction of the current is reversed, so that the coil continues to feel a torque for another half turn, until the direction of the current is reversed again. 
+
+
+\begin{example}{Determine the magnetic dipole moment of the electron orbiting a hydrogen atom, if you assume that the electron is in a circular orbit with a radius of $R=\SI{0.5}{\angstrom}$.}
+As the electron orbits around the circle, it results in a circular loop of current, $I$. The current is the rate at which charge passes through a point per unit time. If the electron orbit has a period, $T$, then the equivalent current is given by:
+\begin{align*}
+I=\frac{\Delta Q}{\Delta t} = \frac{e}{T}
+\end{align*}
+The centripetal force on the electron is provided by the Coulomb force, $F_C$, exerted by the proton, which allows us to obtain the orbital speed, and thus the period of the orbit:
+\begin{align*}
+F_C &= m\frac{v^2}{R}\\
+k\frac{e^2}{R^2}&= m\frac{v^2}{R}\\
+\therefore v &=\sqrt{\frac{ke^2}{mR}}\\
+\therefore T &= \frac{2\pi R}{v}
+\end{align*}
+The magnetic dipole moment is then given by:
+\begin{align*}
+\mu &= IA = \frac{e}{T} \pi R^2 = \frac{ev}{2\pi R} \pi R^2=\frac{1}{2} evR\\
+&=\frac{1}{2} e\sqrt{\frac{ke^2}{mR}}R=\frac{1}{2} \sqrt{\frac{ke^4R}{m}}\\
+&=\frac{1}{2} \sqrt{\frac{(\SI{9e9}{N/C^{2}\cdot m^2})(\SI{1.6e-19}{C})^4(\SI{0.5}{\angstrom})}{(\SI{9.1e-31}{kg})}}=\SI{9e24}{A\cdot m^2}
+\end{align*}
+\textbf{Discussion:} In this example we calculated the orbital magnetic dipole moment of the electron in a hydrogen atom. This was a very simple model, since in reality, electrons do not orbit atoms in circular orbits, and one must use quantum mechanics to describe the motion precisely. 
+\end{example}
+
+\subsection{Potential energy for a magnetic moment in a magnetic field}
+The magnetic moment also behaves in the same way as an electric dipole moment behaves in an electric field. We can make a direct analogy between a bar magnet (a magnetic dipole) in a magnetic and an electric dipole in an electric field. We can thus define a potential energy, $U$, for a magnetic dipole moment in a magnetic field:
+\begin{align*}
+\Aboxed{U =-\vec \mu \cdot \vec B =- \mu B \cos\theta}
+\end{align*}
+where $\theta$ is the angle between the magnetic moment and the magnetic field. If a magnetic dipole is not aligned with a magnetic field and it is released, it will start to rotate (gain rotational kinetic energy) until it reaches a minimum in potential energy ($\theta = 0$). The magnetic moment would oscillate back and forth about $\theta =0$ if there are no losses. Note that the point where $\theta = \pi$, is an unstable equilibrium.
 
 \section{The Hall Effect}
+The Hall effect allows one to determine the sign of charge carriers in an electric current; that is, it allows to determine that it is negative electrons that flow in one direction, rather than positive charges flowing in the opposite direction, as we usually assume by using conventional current.
+
+Figure \ref{fig:magneticforce:hallV} shows a simple circuit to illustrate the Hall effect. A flat slab of metal, with width, $w$, is connected to a battery, so that current flows through the slab. The slab is immersed in a uniform magnetic field, $\vec B$. 
+\capfig{0.4\textwidth}{figures/MagneticForce/hallV.png}{\label{fig:magneticforce:hallV}Illustration of the Hall effect, as electrons flow through a slab that is immersed in a magnetic field, the magnetic force pushes them to one side, creating an electric potential difference, $\Delta V_{Hall}$, between the two sides of the slab.}
+As the electrons enter the right-hand side of the slab (Figure \ref{fig:magneticforce:hallV}) and drift towards the left, they will experience an upwards force. As they move to the left through the slab, they also move upwards and ``pile up'' on one side of the slab. There will thus be an excess of negative charge on the top side of the slab, leading to an electric potential difference between the top and the bottom of the slab. This potential difference is called the ``Hall potential''. An equilibrium will be quickly reached as the electric repulsion from the electrons at the top of the slab will prevent more electrons from being deflected upwards due to the magnetic field.
+
+In other word, eventually, the electric force associated with the Hall potential will be equal to the magnetic force. If we model the slab as two parallel plates, with a potential difference, $\Delta V_{Hall}$ between them, the electric field in the slab is constant and given by:
+\begin{align*}
+E= \frac{\Delta V_{Hall}}{w}
+\end{align*}
+The equilibrium condition (that the electric force on an electron is equal to the magnetic force) is given by:
+\begin{align*}
+F_E &= F_B\\
+eE &= ev_dB\\
+\frac{\Delta V_{Hall}}{w} &= v_d B\\
+\therefore \Delta V_{Hall}&= v_d wB
+\end{align*}
+If the drift velocity of electrons is known, then the Hall effect can be used to measure the strength of the magnetic field. This is the most common way to measure magnetic field (and the device to do so is called a Hall probe). Conversely, if the magnetic field is known, the Hall effect can be used to characterize the drift velocity of electrons and other microscopic quantities for the material from which the Hall probe is made.
+
+The Hall effect allows us to determine that it is negative charges that flow, and not positive charges. Indeed, if you consider Figure \ref{fig:magneticforce:hallV}, but replace the electrons with positive charges flowing to the right, those positive charges will be deflected upwards. Thus, if positive charges flow, the top side of the Hall probe becomes positive, whereas it becomes negative it if it negative charges that flow. 
 
 \section{Applications}
-%Velocity selector
-%Mass spec
+In this section, we briefly outline a few applications of the magnetic force.
+\subsection{Velocity selector and mass spectrometer}
+In Example \ref{ex:magneticforce:massspec}, we described how charged particles with different charge-to-mass ratios will undergo uniform circular motion of different radii. This principle is used in mass spectrometers, which are devices that are able to detect trace amounts of material. For example, when your bag gets swiped with a sticky tape at a security check at the airport, that piece of sticky tape is then analyzed by a mass spectrometer. The tape is vaporized in a way to ionize the atoms on the tape. The ions are then accelerated through an electric potential difference and then pass through a region with a magnetic field. The ions typically execute half of a circular orbit before being detected, as illustrated in Figure \ref{fig:magneticforce:massspec}. The charge-to-mass ratio of the ions is determined from the radius of their orbit. Usually, their charge is either one or two times the electron charge, allowing their mass to be determined. 
+\capfig{0.4\textwidth}{figures/MagneticForce/massspec.png}{\label{fig:magneticforce:massspec}Illustration of how a mass spectrometer can separate ions based on their charge-to-mass ratio.}
 
-
-
+In order for the mass spectrometer to function as designed, it is important that all of the charged particles enter the region of magnetic field with the same speed. A velocity selector is a device that combines perpendicular electric and magnetic fields in order to select only particles of a certain speed, regardless of their mass. The velocity selector is illustrated in Figure \ref{fig:magneticforce:vselector}
+\capfig{0.4\textwidth}{figures/MagneticForce/vselector.png}{\label{fig:magneticforce:vselector}Illustration of velocity selector. Only charged particles with a specific speed can make it through without colliding with one of the plates.}
+In a velocity selector, both an electric and a magnetic force are exerted. Figure \ref{fig:magneticforce:vselector} shows a positive particle moving toward the right with speed, $v$. The particle will experience an upwards electric force and a downwards magnetic force. If those two forces are equal, then the particle will move in a straight line. If, instead, one of the forces is larger than the other, the particle will be deflected and hit one of the charged plates. The condition for the two forces to be equal is given by:
+\begin{align*}
+F_B &= F_E\\
+qvB &= qE\\
+\therefore v=\frac{E}{B}
+\end{align*}
+Thus, the electric and magnetic fields can be tuned so that their ratio gives the desired speed. Note that the speed selector works regardless of the sign of the charge or its mass, which makes it ideal to filter the particles entering a mass spectrometer.
+\subsection{Galvanometer}
+\subsection{Cathode ray tube}
+\subsection{Loudspeaker}
 \newpage
 \section{Summary}
 
@@ -118,6 +314,7 @@ qvB &= m\frac{v^2}{R}\\
 \item When was magnetism first discovered?
 \item What is the origin of the word ``magnetism''?
 \item What experimental supports that magnetic monopoles do not exist?
+\item How can one reverse the current in a coil when building an electric motor? What are ``brushes'' in this case?
 }
 \end{chapteractivity}
 
