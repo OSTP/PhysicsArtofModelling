@@ -1,22 +1,76 @@
 \chapter{Source of magnetic field}
 \label{chapter:magneticsource}
-
+In this chapter, we develop the tools to model the magnetic field that is produced by an electric current. 
 
 \begin{learningObjectives}{
- \item something to learn
+ \item Understand how to apply the Biot-Savart Law to determine the magnetic field from an electric current.
+ \item Understand how to apply Ampère's Law.
+ \item Understand how to model a solenoid.
  }
 \end{learningObjectives}
 
 \begin{opening}
-\begin{MCquestion}{A question}
+\begin{MCquestion}{QUESTION }
 \item a choice
 \item another choice \correct
 \end{MCquestion}
 \end{opening}
 
-\section{A section}
+\section{The Biot-Savart Law}
+The Biot-Savart law allows us to determine the magnetic field at some position in space that is due to an electric current. More precisely, the Biot-Savart law allows us to calculate the infinitesimal magnetic field, $d\vec B$, that is created by a small section of wire, $d\vec l$, carrying current, $I$:
+\begin{align*}
+\Aboxed{d\vec B = \frac{\mu_0 I}{4\pi}\frac{d\vec l\times \hat r}{r^2}}
+\end{align*}
+where, $\vec r$, is the vector from the element of wire, $d\vec l$, to the point where we would like to determine the magnetic field, as illustrated in Figure \ref{fig:magneticsource:biotsavart}. $\mu_0$ is a constant of proportionality called the ``permeability of free space'', and has the value $\mu_0=\SI{4\pi e-7}{T\cdot m/A}$.
+\capfig{0.4\textwidth}{figures/MagneticSource/biotsavart.png}{\label{fig:magneticsource:biotsavart}The infinitesimal magnetic field, $d\vec B$, that is created by an infinitesimal section of wire, $d\vec l$, carrying current $I$.}
 
+The Biot-Savart Law has some similarities with the Coulomb Law to calculate the electric field, as the magnitude of the magnetic field decreases as the inverse of the square distance between the source and the field. However, it can only be expressed in differential form (i.e. as an infinitesimal), and it requires working in three dimensions, because of the cross product. It is usually more convenient to use the Biot-Savart Law in the form:
+\begin{align*}
+d\vec B = \frac{\mu_0 I}{4\pi}\frac{d\vec l\times \vec r}{r^3}
+\end{align*}
+where the unit vector $\hat r$ was replaced by $\vec r/r$.
 
+The procedure for applying the Biot-Savart Law is as follows:
+\begin{enumerate}
+\item Make a really good diagram, as you will have to include some 3D aspects.
+\item Choose an infinitesimal section of wire, $d\vec l$.
+\item Determine the vector $\vec r$.
+\item Determine the cross-product, $d\vec l \times \vec r$, which will point in the direction of the magnetic field from that infinitesimal section of wire.
+\item Write out the infinitesimal vector $d\vec B$, and determine its components.
+\item Think about symmetry! As you sum the $d\vec B$, will some components cancel? If yes, you do not need to do those integrals.
+\item Determine the total magnetic field, component by component, by summing (integrating) the components of $d\vec B$ over the wire.
+\end{enumerate}
+
+\subsection{Magnetic field from a straight wire}
+In this section, we use the Biot-Savart Law to determine the magnetic field a distance, $h$, from the centre of a straight wire carrying current, $I$, as illustrated in Figure \ref{fig:magneticsource:bswire}.
+\capfig{0.6\textwidth}{figures/MagneticSource/bswire.png}{\label{fig:magneticsource:bswire}Setting up the model to use the Biot-Savart Law to calculate the magnetic field a distance $h$ from the centre of a current-carrying wire of length $L$.}
+
+We start by choosing an infinitesimal element of wire, $d\vec l$, a distance $y$ above the centre of the wire, as shown (we choose the origin to be located at the centre of the wire). The vector $d\vec l$ is thus given by:
+\begin{align*}
+d\vec l = dl\hat y
+\end{align*}
+The vector, $\vec r$, from $d\vec l$ to the point at which we would like to know the magnetic field is given by:
+\begin{align*}
+\vec r = h\hat x -y\hat y
+\end{align*}
+The cross-product between $d\vec l$ and $\vec r$ is easily found with the right-hand rule to point into the page (corresponding to the negative $z$ direction). The magnitude of the cross-product is given by:
+\begin{align*}
+||d\vec l \times \vec r||=dl r \sin\phi
+\end{align*}
+where $\phi=\pi/2-\theta$ is the angle between $d\vec l$ and $\vec r$. The magnitude of the cross-product can thus be written in terms of $\theta$ as:
+\begin{align*}
+||d\vec l \times \vec r||=dl r \cos\theta
+\end{align*}
+
+\subsection{Magnetic field from a straight wire}
+
+\section{Force between two current-carrying wires}
+
+\section{Ampère's Law}
+%The Law
+%Field from an infinite wire
+%Field in a solenoid
+%Field in a toroid
 
 \newpage
 \section{Summary}
