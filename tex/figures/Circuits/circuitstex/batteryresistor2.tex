@@ -1,0 +1,13 @@
+\begin{center}
+\begin{circuitikz}[]
+\draw (4,0) node[anchor=north]{b}
+      to [battery1,l=\SI{12}{V},*-*, i<=$I$] (0,0) node[anchor=north]{a}
+      to [short,i<=$I$] (0,2) node[anchor=south]{e} 
+      to [R,l_={$R_{eff}{=}\SI{6}{\ohm}$},i<=$I$,*-*] (4,2) node[anchor=south]{c}
+      to [short,i<=$I$](4,0);  
+     \draw  [->,>=stealth, line width=1mm] (1.65,0.6) -- (2.35,0.6);
+     \draw (1.65,0.3) node{$-$};
+     \draw (2.35,0.3) node{$+$};
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:batteryresistor2}The resistors from the circuit in Figure \ref{fig:circuits:tworesistors} have been combined in series to simplify the circuit.} 
+\end{center}

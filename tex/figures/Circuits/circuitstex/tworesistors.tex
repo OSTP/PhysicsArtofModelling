@@ -1,0 +1,14 @@
+\begin{center}
+\begin{circuitikz}[]
+\draw (4,0) node[anchor=north]{b}
+      to [battery1,l=\SI{12}{V},*-*, i<=$I$] (0,0) node[anchor=north]{a}
+      to [short,i<=$I$] (0,2) node[anchor=east]{e} 
+      to [R,l_=\SI{4}{\ohm},i<=$I$,*-]node[anchor=south]{d} (2,2) 
+      to [R,l_=\SI{2}{\ohm},*-*] (4,2) node[anchor=south]{c}
+      to [short,i<=$I$](4,0);  
+     \draw  [->,>=stealth, line width=1mm] (1.65,0.6) -- (2.35,0.6);
+     \draw (1.65,0.3) node{$-$};
+     \draw (2.35,0.3) node{$+$};
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:tworesistors}Two resistors connected in series with a battery} 
+\end{center}

@@ -1,0 +1,24 @@
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{a} to [short, *-, i<_=$I_1$] (0.75,0) 
+      to [battery1,l_=$\Delta V_1{=}\SI{12}{V}$] (2.25,0) 
+      to [short, -*, i<_=$I_1$] (3,0) node[anchor=north]{b} 
+      to [short, i<_=$I_2$] (3.75,0) 
+	  to [battery1, l_=$\Delta V_2{=}\SI{4}{V}$, invert] (5.25,0)
+	  to [short, -*, i<_=$I_2$] (6,0) node[anchor=west]{c} 
+	  to [short, -*, i<_=$I_2$] (6,3) node[anchor=west]{d} 
+	  to [short, i<_=$I_2$] (5.25,3)
+ 	  to [R=$R_6{=}\SI{8}{\Omega}$](3.75,3) 
+ 	  to [short,-*, i<_=$I_2$] node[anchor=south]{e} (3,3)
+ 	  to [short,i<_=$I_1$] (2.25,3)
+ 	  to [R,l^=$R_8{=}\SI{2}{\Omega}$] (0.75,3) 
+ 	  to [short,-*,i<_=$I_1$] node[anchor=east]{f} (0,3)
+ 	  to [short, label=, i<_=$I_1$] (0,0);
+ \draw (3,3) to [short,i=$I_3$] (3,2.25)
+       to [R=$R_3{=}\SI{4}{\Omega}$] (3,0.75)
+       to [short,i=$I_3$] (3,0);
+  \draw [->,>=stealth, line width=1mm] (1.85,0.6)--(1.15,0.6);
+ \draw [->,>=stealth, line width=1mm] (4.15,0.6)--(4.85,0.6);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_vals_simp}Simplified version of the circuit in Figure \ref{fig:circuits:bigcircuit_vals}.} 
+\end{center}

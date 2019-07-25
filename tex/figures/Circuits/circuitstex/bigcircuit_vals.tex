@@ -1,0 +1,18 @@
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{a} to [R=$r_1{=}\SI{1}{\Omega}$, *-] (1.5,0)
+      to [battery1,l_=$\Delta V_1{=}\SI{12}{V}$,-*] node[anchor=north]{b} (2.5,0) 
+      to [short] (3.5,0)
+	  to [battery1, l_=$\Delta V_2{=}\SI{4}{V}$, invert] (4.5,0)
+	  to [R,l^=$r_2{=}\SI{1}{\Omega}$] (6.5,0)
+      to [R,l_=$R_1{=}\SI{3}{\Omega}$] (6.5,2)
+ 	  to [R,l_=$R_2{=}\SI{4}{\Omega}$](3,2)
+ 	  to [R,l^=$R_4{=}\SI{2}{\Omega}$] (0,2)
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3{=}\SI{4}{\Omega}$] to (3,0);
+ \draw (0,2) [short, label=] to (0,3)
+ 	  to [R=$R_5{=}\SI{2}{\Omega}$] (3,3)
+ 	  to [short, label=] (3,2);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_vals}The same circuit as in Figure \ref{fig:circuits:bigcircuit}, with values filled in.} 
+\end{center}
