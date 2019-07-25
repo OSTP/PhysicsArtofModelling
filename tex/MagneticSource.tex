@@ -41,7 +41,7 @@ The procedure for applying the Biot-Savart Law is as follows:
 \item Determine the total magnetic field, component by component, by summing (integrating) the components of $d\vec B$ over the wire.
 \end{enumerate}
 
-\subsection{Magnetic field from a straight wire}
+\subsection{Magnetic field from a straight current-carrying wire}
 In this section, we use the Biot-Savart Law to determine the magnetic field a distance, $h$, from the centre of a straight wire carrying current, $I$, as illustrated in Figure \ref{fig:magneticsource:bswire}.
 \capfig{0.6\textwidth}{figures/MagneticSource/bswire.png}{\label{fig:magneticsource:bswire}Setting up the model to use the Biot-Savart Law to calculate the magnetic field a distance $h$ from the centre of a current-carrying wire of length $L$.}
 
@@ -51,19 +51,83 @@ d\vec l = dl\hat y
 \end{align*}
 The vector, $\vec r$, from $d\vec l$ to the point at which we would like to know the magnetic field is given by:
 \begin{align*}
-\vec r = h\hat x -y\hat y
+\vec r &= r\cos\theta\hat x -r\sin\theta\hat y\\
+r &=\sqrt{h^2+y^2} =\frac{h}{\cos\theta}
 \end{align*}
 The cross-product between $d\vec l$ and $\vec r$ is easily found with the right-hand rule to point into the page (corresponding to the negative $z$ direction). The magnitude of the cross-product is given by:
 \begin{align*}
 ||d\vec l \times \vec r||=dl r \sin\phi
 \end{align*}
-where $\phi=\pi/2-\theta$ is the angle between $d\vec l$ and $\vec r$. The magnitude of the cross-product can thus be written in terms of $\theta$ as:
+where $\phi=\pi/2+\theta$ is the angle between $d\vec l$ and $\vec r$, so that $\sin\phi=\cos\theta$. The cross-product can thus be written in terms of $\theta$ as:
 \begin{align*}
-||d\vec l \times \vec r||=dl r \cos\theta
+d\vec l \times \vec r=-dl r \cos\theta \hat z
 \end{align*}
+Note that we can also determine the cross-product algebraically instead of using the right-hand rule and the magnitude:
+\begin{align*}
+d\vec l \times \vec r &= (dl\hat y) \times (r\cos\theta\hat x -r\sin\theta\hat y)\\
+&=dlr\cos\theta (\hat y \times\hat x) - rdl\sin\theta(\hat y \times \hat y)\\
+&=-dlr\cos\theta \hat z 
+\end{align*}
+The infinitesimal magnetic field element, $d\vec B$, is given by:
+\begin{align*}
+d\vec B = \frac{\mu_0 I}{4\pi}\frac{d\vec l\times \vec r}{r^3}=-\frac{\mu_0 I}{4\pi}\frac{dl\cos\theta}{r^2}\hat z
+\end{align*}
+Any segment along the wire will result in a magnetic field that is into the page (negative $z$ direction), thus there will be no cancellations due to any symmetries. We can now proceed to perform the integral. The two obvious choices of variable to use to label each segment for the integration are $\theta$ and $y$. We will choose to integrate over $\theta$, requiring us to express $dl$ and $r$ in terms of $\theta$ and constants (as those are the only quantities in the integrand that change with $\theta$). In order to express $dl$ in terms of $d\theta$, we first relate $\theta$ to $y$, the position of the wire element:
+\begin{align*}
+y = h\tan\theta\quad \to \quad
+dl = dy = \frac{dy}{d\theta}d\theta = \frac{h}{\cos^2\theta}d\theta
+\end{align*}
+whereas $r$ is given by:
+\begin{align*}
+r=\frac{h}{\cos\theta}\quad \to \quad
+\frac{1}{r^2}&=\frac{\cos^2\theta}{h^2}
+\end{align*}
+Putting this altogether into $d\vec B$:
+\begin{align*}
+d\vec B &=-\frac{\mu_0 I}{4\pi}\frac{dl\cos\theta}{r^2}\hat z = -\frac{\mu_0 I}{4\pi}\left(\frac{h}{\cos^2\theta}d\theta\right) \left( \frac{\cos^2\theta}{h^2} \right)\cos\theta\hat z=-\frac{\mu_0 I}{4\pi h}\cos\theta d\theta \hat z=dB_z\hat z
+\end{align*}
+We can define the angle, $\theta_0$, to be the maximum amplitude of the angle $\theta$ when integrating over the wire (see Figure \ref{fig:magneticsource:bswire}):
+\begin{align*}
+B_z&=\int_{-\theta_0}^{+\theta_0}dB_z= -\frac{\mu_0 I}{4\pi h} \int_{-\theta_0}^{+\theta_0}\cos\theta d\theta=-\frac{\mu_0 I}{4\pi h}(2\sin\theta_0) =-\frac{\mu_0 I}{2\pi h}\sin\theta_0
+\end{align*}
+Using the given dimensions:
+\begin{align*}
+\sin\theta_0&=\frac{L/2}{\sqrt{h^2+\frac{L^2}{4}}}\\
+\end{align*}
+Thus, the magnetic field, $\vec B$, a distance, $h$, from the centre of a wire of length, $L$, carrying current, $I$, is given by:
+\begin{align*}
+\Aboxed{\vec B &= -\frac{\mu_0 I}{2\pi h}\frac{L/2}{\sqrt{h^2+\frac{L^2}{4}}}\hat z}\quad\text{(finite wire)}
+\end{align*}
+The magnetic field must be rotationally symmetric; that is, if the wire is vertical, the magnetic field at a distance $h$ must look the same regardless of the angle from which we view the vertical wire (we should always see the magnetic field going into the page at the point that we use in Figure \ref{fig:magneticsource:bswire}). Thus, the magnetic field lines form circles around the wire, as illustrated in Figure \ref{fig:magneticsource:wirefield}. Note that the direction of the magnetic field is given by the right-hand rule for axial vectors; when you align your thumb with the current, your fingers curl in the direction of the magnetic field.
+%TODO I think this figure can be improved (or changed to be from a different angle), as the field circles don't quite look like they live in the plane.
+\capfig{0.4\textwidth}{figures/MagneticSource/wirefield.png}{\label{fig:magneticsource:wirefield}The magnetic field from a current-carrying wire forms concentric circles centred on the wire.}
 
-\subsection{Magnetic field from a straight wire}
-
+It is of particular interest to investigate the limiting case of an infinitely long wire, in the limit of $L\to\infty$, or equivalently, $\theta_0\to\frac{\pi}{2}$. The latter is easiest to evaluate, since $\sin\theta_0\to 1$. The magnetic field, $\vec B$, a distance, $h$, from an infinite wire carrying current, $I$, is given by:
+\begin{align*}
+\Aboxed{\vec B &= -\frac{\mu_0 I}{2\pi h}}\quad\text{(infinite wire)}
+\end{align*}
+In general, one can often make the approximation that the wire is infinite in length, when the distance $h$, is small compared to the length of the wire. 
+\subsection{Magnetic field from circular current-carrying wire}
+In this section, we examine the magnetic field that is created by a circular current carrying wire. We can determine the shape of the magnetic field, by considering small sections of current as straight wires, that have circular magnetic field lines around them. As we move closer to the centre of the ring, those fields sum together in, as illustrated in Figure \ref{fig:magneticsource:ringfield}. Note that the magnetic field from a ring of current, is very similar to that from a bar magnet (in particular, in the plane perpendicular to the ring that goes through its centre).   
+\capfig{0.4\textwidth}{figures/MagneticSource/ringfield.png}{\label{fig:magneticsource:ringfield}The magnetic field from a current-carrying loop of wire can be thought of as the sum of the field from small straight sections of wire.}
+Below, we use the Biot-Savart Law to derive an expression for the magnitude of the magnetic field at a distance, $h$, from the centre of a ring of radius, $R$, along its axis of symmetry. While the mathematics are much easier than the case for the straight wire, the challenge in this case is to visualize the calculation in three dimensions! Figure \ref{fig:magneticsource:bsring} shows the loop of current, as well as our choice of coordinate system. In particular, we wish to calculate the magnetic field at a distance, $h$, along the $z$ axis. The $x$ axis goes into the page. 
+\capfig{0.4\textwidth}{figures/MagneticSource/bsring.png}{\label{fig:magneticsource:bsring}Diagram to apply the Biot-Savart Law in order to determine the magnetic field along the symmetry axis of a ring carrying current, $I$. The $x$ axis goes into the page.}
+In order to apply the Bio-Savart Law, we choose an element, $d\vec l$, of wire at the top of the ring, as illustrated. At this position, the element, $d\vec l$, points in the positive $x$ direction (into the page):
+\begin{align*}
+d\vec l = dl \hat x
+\end{align*}
+The vector, $\vec r$, from the wire element to the point where we wish to determine the magnetic field is given by:
+\begin{align*}
+\vec r =  - r\sin\theta \hat y+r\cos\theta \hat z
+\end{align*}
+Their cross-product can be evaluated algebraically:
+\begin{align*}
+d\vec l \times \vec r &= (dl \hat x) \times ( - r\sin\theta \hat y+r\cos\theta \hat z)\\
+&=-rdl\sin\theta (\hat x \times \hat y) - rdl\cos\theta (\hat x \times \hat z)\\
+&=-rdl\sin\theta\hat z - rdl\cos\theta (-\hat y)\\
+&=-rdl\sin\theta\hat z + rdl\cos\theta \hat y
+\end{align*}
+so that the element of magnetic field, $d\vec B$, corresponding to that choice of $d\vec l$, will lie in the $y-z$ plane, as illustrated in Figure \ref{fig:magneticsource:bsring}.
 \section{Force between two current-carrying wires}
 
 \section{Ampère's Law}
@@ -115,7 +179,7 @@ where $\phi=\pi/2-\theta$ is the angle between $d\vec l$ and $\vec r$. The magni
 
 \begin{chapteractivity}{To try in the lab}
 {
-\item Propose an experiment
+\item (Simulation) Calculate the magnetic field from a loop of current at all positions in space (not only on the axis of symmetry). 
 }
 \end{chapteractivity}
 
