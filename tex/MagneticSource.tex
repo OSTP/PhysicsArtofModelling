@@ -4,7 +4,7 @@ In this chapter, we develop the tools to model the magnetic field that is produc
 
 \begin{learningObjectives}{
  \item Understand how to apply the Biot-Savart Law to determine the magnetic field from an electric current.
- \item Understand how to apply Ampère's Law.
+ \item Understand how to apply \amperes Law.
  \item Understand how to model a solenoid.
  }
 \end{learningObjectives}
@@ -135,10 +135,10 @@ d\vec B &= \frac{\mu_0 I}{4\pi}\frac{d\vec l\times \vec r}{r^3}= \frac{\mu_0 I}{
 
 As the wire element, $d\vec l$, moves around the circle, the resulting magnetic field element traces a circle centred on the $z$ axis, as illustrated in Figure \ref{figanim:magneticsource:bsring}. Note that a modern PDF viewer is required in order to view this animated figure. Thus, only the $z$ component of the magnetic field will not be cancelled as we sum together the magnetic field elements that come from the different wire elements.
 %TODO Let's try to improve this figure, maybe from a different angle, and probably 8 steps instead of 4.
-\begin{center}
-\animategraphics[autoplay, loop, type=png, width=0.3\textwidth]{1}{figures/MagneticSource/bsring_}{1}{4}
-\captionof{figure}{\label{figanim:magneticsource:bsring} Note: A modern PDF viewer is required to view this animated figure. As the wire element moves around the ring, the tip of the magnetic field element vector traces out a circle. Thus, only the (negative) $z$ component of the magnetic field will not get cancelled when the $d\vec B$ are summed together.}
-\end{center}
+%\begin{center}
+%\animategraphics[autoplay, loop, type=png, width=0.3\textwidth]{1}{figures/MagneticSource/bsring_}{1}{4}
+%\captionof{figure}{\label{figanim:magneticsource:bsring} Note: A modern PDF viewer is required to view this animated figure. As the wire element moves around the ring, the tip of the magnetic field element vector traces out a circle. Thus, only the (negative) $z$ component of the magnetic field will not get cancelled when the $d\vec B$ are summed together.}
+%\end{center}
 The total magnetic field will be in the negative $z$ direction, as anticipated from Figure \ref{fig:magneticsource:ringfield}. Summing together the $z$ components of the infinitesimal magnetic fields:
 \begin{align*}
 dB_z &= -\frac{\mu_0 I}{4\pi r^2}dl\sin\theta\\
@@ -159,14 +159,30 @@ In this case, the math was relatively straightforward (no substitutions to evalu
 \section{Force between two current-carrying wires}
 Consider two infinite parallel straight wires, a distance $h$ apart, carrying upwards currents, $I_1$ and $I_2$, respectively, as illustrated in Figure \ref{fig:magneticsource:twowires}.
 \capfig{0.4\textwidth}{figures/MagneticSource/twowires.png}{\label{fig:magneticsource:twowires}Two parallel current-carrying wires will exert an attractive force on each other, if their currents are in the same direction.}
-The first wire will create a magnetic field, $\vec B_1$, in the shape of circles concentric with the wire. 
+The first wire will create a magnetic field, $\vec B_1$, in the shape of circles concentric with the wire. At the position of the second wire, the magnetic field $B_1$ is into the page, and has a magnitude:
+\begin{align*}
+B_1 = \frac{\mu_0 I_1}{2\pi h}
+\end{align*} 
+Since the second wire carries a current, $I_2$, it will experience a magnetic force, $\vec F_2$, from the magnetic field, $B_1$, that is towards the left (as illustrated in Figure \ref{fig:magneticsource:twowires} and determined from the right-hand rule). The magnetic force, $\vec F_2$, exerted on a section of length, $l$, on the second wire has a magnitude given by:
+\begin{align*}
+F_2 = I_2 ||\vec l \times \vec B_1||=I_2 l B_1 =\frac{\mu_0 I_2 I_1 l}{2\pi h}
+\end{align*}
+where we used the fact that the angle between $\vec l$ and $\vec B$ is $\SI{90}{\degree}$. We expect, from Newton's Third Law, that an equal and opposite force should be exerted on the first wire. Indeed, the second wire will also create a magnetic field, $\vec B_2$, that is out of the page at the location of the first wire, with magnitude:
+\begin{align*}
+B_2 = \frac{\mu_0 I_2}{2\pi h}
+\end{align*}
+This leads to a magnetic force, $\vec F_1$, exerted on the first wire, that points to the right (from the right-hand rule). On a section of length, $l$, of the first wire, the magnetic force from the magnetic field, $\vec B_2$, has magnitude:
+\begin{align*}
+F_1 = I_1 ||\vec l \times \vec B_2||=I_1 l B_2 =\frac{\mu_0 I_1 I_2}{2\pi h}
+\end{align*}
+which does indeed have the same magnitude as the force exerted on the second wire. Thus, when two parallel wires carry current in the same direction, they exert attractive forces on each other. 
+%TODO Checkpoint MC: When two parallel wires carry current in opposite direction, the force between the wires is: attractive/repulsive(correct)/neither?
 
-This magnetic field will exert a force on the second wire, carrying current, $I_2$. 
 
-If another current-carrying straight wire is placed next to the first wire, it will experience a magnetic force from the magnetic field from the first wire. By Newton's Third Law, we also expect that the first wire will experience an equal and opposite force (resulting from the magnetic field of the second wire). 
+The attractive force between two wires used to be the basis for defining the \ampere, the S.I. (base) unit for electric current. Before 2019, the \amperesp was defined to be ``that constant current which, if maintained in two straight parallel conductors of infinite length, of negligible circular cross-section, and placed one metre apart in vacuum, would produce between these conductors a force equal to $\SI{2e-17}{N}$ per metre of length''. Recently, the definition was updated to be based on defining the Coulomb in such a way that the elementary charge has a numerical value of $e=\SI{1.602176634e-19}{C}$, so that the \amperesp corresponds to one Coulomb per second.
 
+\section{\amperes Law}
 
-\section{Ampère's Law}
 %The Law
 %Field from an infinite wire
 %Field in a solenoid
