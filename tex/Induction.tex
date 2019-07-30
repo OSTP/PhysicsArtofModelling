@@ -1,566 +1,384 @@
-\section{Electromagnetic induction}
+\chapter{Electromagnetic Induction}
+\label{chapter:induction}
+In this chapter, we introduce the tools to model the connection between the magnetic and the electric field. In particular, we will see how a changing magnetic field can be used to induce an electric current, which is the basic principle behind the electric generators that power our life. We will also briefly discuss how electromagnetic waves are formed.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Multiple Choice
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Multiple Choice}
+\begin{learningObjectives}{
+ \item Understand how to apply Faraday's Law to determine an induced voltage.
+ \item Understand how to model the induced voltage in a moving conductor.
+ \item Understand how to model an electric generator.
+ \item Understand how electromagnetic induction affects electric motors.
+ \item Understand how to model electric transformers.
+ \item Understand how electromagnetic waves are formed.
+ }
+\end{learningObjectives}
 
-%Kate
-\question A loop of wire lies in the $x-y$ plane in a region with a constant magnetic field, with magnitude $B$, in the positive $z$ direction. Which of the following situations will cause the magnetic flux through the loop to decrease?
-\begin{checkboxes}
-\choice The loop of wire is moved upwards (positive $z$ direction) at a constant velocity.
-\choice The loop of wire is moved to the right (positive $x$ direction) at a constant velocity
-\choice More wire is added to the loop, causing the circumference of the loop to double. 
-\CorrectChoice The loop of wire is rotated such that it becomes oriented in the $y-z$ plane. \correct
-\end{checkboxes}
+\begin{opening}
+\begin{MCquestion}{How does one make electricity with a hydroelectric dam?}
+\item By running water through a coil to induce a current.
+\item By using water to rotate a coil inside of a fixed magnetic field. \correct
+\item By using water to charge a metallic surface by friction, and then maintaining that potential difference.
+\end{MCquestion}
+\end{opening}
 
-%Question submitted by Patrick Singal
-\question Which statement best describes Faraday's law?
-\begin{checkboxes}
-\CorrectChoice A change in the magnetic flux across a surface induces a voltage along the loop enclosing that surface \correct
-\choice A magnetically-induced electric current always creates an opposite force to the one inducing it
-\choice The total electric flux out of a surface is proportional to the charge enclosed by that surface. 
-\end{checkboxes}
+\section{Faraday's Law}
+In this chapter, we examine the connection between the electric field and the magnetic field. In the previous chapter, we described how an electric current produces a magnetic field. In this chapter, we describe how an electric current can be produced (or rather, ``induced'') by a magnetic field. The most important aspect of electromagnetic induction is that it always involves quantities that change with time. That is, a magnetic field needs to change with time, if it is to induce an electric current. In past chapters, we have only dealt with static electric and magnetic fields, static charges (for electric fields), and static currents (for magnetic fields). 
 
-\question A circular loop of radius $r$ and resistance $R$ lies in the $xy$-plane in a region of uniform time-varying magnetic field given by $\vec B(t)=(\SI{-2.5}{T/s})t\hat z$. In which direction does the magnetic moment of the current induced in the loop point at some time $t>0$?
-\begin{checkboxes}
-\CorrectChoice Positive $z$ \correct
-\choice Negative $z$
-\choice Other
-\end{checkboxes}
-
-\question A circular loop of radius $r$ and resistance $R$ lies in the $xy$-plane in a region of uniform time-varying magnetic field given by $\vec B(t)=(\SI{2.5}{T/s})t\hat z$. In which direction does the magnetic moment of the current induced in the loop point at some time $t>0$?
-\begin{checkboxes}
-\choice Positive $z$ 
-\CorrectChoice Negative $z$ \correct
-\choice Other
-\end{checkboxes}
-
-\question A circular loop of radius $r$ and resistance $R$ lies in the $xy$-plane in a region of uniform time-varying magnetic field given by $\vec B(t)=(\SI{20}{T})+(\SI{2.5}{T/s})t\hat z$. In which direction does the magnetic moment of the current induced in the loop point at some time $t>0$?
-\begin{checkboxes}
-\choice Positive $z$ 
-\CorrectChoice Negative $z$ \correct
-\choice Other
-\end{checkboxes}
-
-\question Chlo\"e bought herself a pair of rocket shoes (TODO:reference other example). We want to see if we can use Chlo\"e to charge a cell phone while she rides her rocket shoes. We model Chlo\"e as a thin rigid bar of length $L=\SI{85}{cm}$ that is moving at constant speed $v=\SI{20}{km/h}$ due East (perpendicular to the Earth's magnetic field, assumed to be horizontal in the North direction, $B=\SI{5e-5}{T}$), as in Figure \ref{fig:induction:RocketEMF}. Since she is moving at constant speed, she does not need to lean forward, so we assume the ``Chlo\"e-bar'' is vertical. I've attached a wire that runs from her head to her feet from which I will use the generated emf for my cell phone charger. What is the electric potential difference between the ends of the wire?
-\capfig{0.3\textwidth}{figures/Induction/RocketEMF.png}{\label{fig:induction:RocketEMF}Chlo\"e with a vertical wire.}
-\begin{choices} 
-\CorrectChoice \SI{2.4e-4}{V} \correct
-\choice \SI{4.3e-4}{V}
-\choice \SI{8.5e-4}{V}
-\choice \SI{12.3}{V}
-\end{choices}
-
-\question \label{q:induction:galvanometer} A galvanometer is constructed using a rectangular coil with dimension $2$\,cm$\times3$\,cm with $N=100$ turns. The coil can rotate about an axis that goes through its centre (as in Figure \ref{fig:induction:galvanometer}). The coil is immersed in a magnetic field that is shaped in such a way that the flux of the field through the coil is constant and has a density per unit area $\sigma_\Phi=0.02$\,Wb/m$^2$ (recall, 1\,Wb = 1 T$\cdot$m$^2$, the unit of magnetic flux).  If the coil is rotated by an angle $\theta$, a coil spring provides a restoring torque of $\tau=-\kappa\theta$, where $\kappa$ is the torsional spring constant of the spring. What should the value of $\kappa$ be so that a current $I=1.0\times 10^{-6}$\,A leads to a deflection of $\theta = 45^{\circ}$?
-\capfig{0.9\textwidth}{figures/Induction/galvanometer.png}{\label{fig:induction:galvanometer} Galvanometer in question \ref{q:induction:galvanometer}.}
-\begin{checkboxes}
-\CorrectChoice $1.53\times 10^{-9}$\,Nm/rad \correct
-\choice $1.53\times 10^{-11}$\,Nm/rad
-\choice $2.67\times 10^{-11}$\,Nm/rad
-\choice $2.67\times 10^{-13}$\,Nm/rad
-\end{checkboxes}
-
-\question A magnetic braking system for a car is constructed by attaching a conducting disk (radius $R$ and thickness $h$) to each car wheel. A portion of each disk is near an electromagnet that can be turned on when one needs to brake. The magnetic field from each electromagnet is perpendicular to the surface of each corresponding disk. For a given car speed and a given set of electromagnets, what happens if we make the disks thicker ($h$ bigger)?
-\begin{checkboxes}
-\choice Nothing, the braking torque from the magnetic brakes will be the same.
-\choice The braking torque from the magnetic brakes will be reduced.
-\CorrectChoice The braking torque from the magnetic brakes will be increased. \correct
-\end{checkboxes}
-
-\question \label{q:induction:CoilsRotating} An electric generator is made of $N=100$ coils wrapped around a circle of radius $r=0.2$\,m, and immersed in a magnetic field $B=0.2$\,T. The coils are rotated along an axis that passes through their centre and is perpendicular to the magnetic field (Figure \ref{fig:induction:CoilsRotating}). The coils have negligible resistance and are connected to a heater with total resistance $R=500\,\Omega$ (the connection to the heater is non-restoring; that is, the current in the heater from the generator is alternating). At what frequency must the coils rotate so that the average power dissipated in the heater is 100\,W?
-\capfig{0.4\textwidth}{figures/Induction/CoilsRotating.png}{\label{fig:induction:CoilsRotating} Coils rotating in a magnetic field, question \ref{q:induction:CoilsRotating}.}
-\begin{checkboxes}
-\CorrectChoice 20\,Hz \correct
-\choice 126 \,Hz
-\choice 2002\,Hz
-\choice 12,582\,Hz
-\end{checkboxes}
-\begin{solution}
+Faraday's Law connects the flux of a time-varying magnetic field to an induced voltage (rather than a current). For historical reasons, the induced voltage is also called an induced ``electromotive force'' (emf), even if it is a voltage and not a force. Faraday's Law is as follows:
 \begin{align*}
-\Phi_B(t)&= B\pi r^2\cos(\omega t)\\
-\Delta V(t) &= -N\frac{d\Phi_B(t)}{dt}=NB\pi r^2 \omega \sin(\omega t)\\
-V_0 &= NB\pi r^2 \omega \\
-\bar P&=\frac{1}{2}\frac{V_0^2}{R}=\frac{1}{2}\frac{N^2B^2\pi^2 r^4 \omega^2}{R}\\
-\omega &= \frac{\sqrt{2R\bar P}}{NB\pi r^2} \\
-f&=\frac{\omega}{2\pi}=\frac{\sqrt{R\bar P}}{\sqrt 2 NB\pi^2 r^2}
+\Aboxed{\Delta V = -\frac{d\Phi_B}{dt}}
 \end{align*}
-\end{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% long answer
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Long answers}
-%original
-\question A coil is made of $N$ circular loops of radius $r=\SI{5.0}{cm}$ and has a total resistance $R=\SI{5}{\ohm}$. The axis of the coil is in the $z$ direction such that each loop lies in the $xy$-plane. The coil is in a region of uniform time-varying magnetic field given by:
+where $\Phi_B$ is the flux of the magnetic field through an open surface, defined in the same was as the flux of the electric field (Section \ref{sec:gauss:flux}):
 \begin{align*}
-\vec B(t)=B_0+at\hat z
+\Phi_B = \int_S \vec B\cdot d\vec A
 \end{align*}
-where $B_0=\SI{20}{T}$ and $a=\SI{2.5}{T/s}$.
-\begin{parts}
-\part How many loops, $N$, should the coil have such that the induced voltage across the coil is \SI{120}{V} (round $N$ to the nearest integer, e.g. $1.5\to 2$)?
-\part What is the magnitude of the current induced in the coil?
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item 6112
-\item \SI{24}{A}
+If the magnetic field has a constant magnitude over the surface, $S$, and always makes the same angle with the surface, then the flux can be written as:
+\begin{align*}
+\Phi_B =  \vec B\cdot\vec A
+\end{align*}
+where the magnitude of the vector $\vec A$ is equal to the area of the surface, and the vector $\vec A$ is normal to the surface.
+
+The surface, $S$, is defined by a closed path, and the induced voltage can be thought of as an ideal battery placed in the path that defines the surface. The minus sign indicated in which direction the current associated with the induced voltage would flow. It is important to note that an induced voltage only exists if the flux of the magnetic field changes (since the induced voltage is given by the time-derivative of the flux). Remember, induction is all about time-varying fields! This is better illustrated with an example.
+
+Consider a loop of wire that is immersed in a uniform magnetic field, $\vec B$, that is perpendicular to the plane of the loop, as illustrated in Figure \ref{fig:Induction:faraday}. As time goes by, the magnetic field increases in strength, as shown in going from the left panel to the right panel. The flux of the magnetic field through the loop increases in magnitude, and a voltage is thus induced across the wire (illustrated by the ideal battery on the loop in the right panel), leading to an induced current, $I$.
+\capfig{0.6\textwidth}{figures/Induction/faraday.png}{\label{fig:Induction:faraday} As the magnetic field increases, so does the flux through the loop that is shown. The changing flux results in an induced voltage, which produces an induced current. The induced current produces a magnetic field in a direction to oppose the changing flux.}
+
+When calculating the flux of the magnetic field, we have to choose the surface element vector, $d\vec A$, to be perpendicular to the surface over which we calculate the flux. There are two choices\footnote{Recall that this ambiguity in resolved when using Gauss' Law by always choosing $d\vec A$ to point ``outwards'', which only makes sense when the surface is closed. With an open surface, there is no inside and outside.} (upwards or downwards, as illustrated in Figure \ref{fig:Induction:faraday}), where we chose to define $d\vec A$ to point upwards. Thus, the magnetic flux is positive in both panels, and increases with time. The derivative, $d\vec B/dt$, is thus positive, and the right-hand side of Faraday's equation is negative because of the negative sign in front. Had we chosen to define $d\vec A$ to point downwards, the right-hand side of Faraday's Law would be negative.
+
+We can describe the direction of the induced current, $I$, in terms of its magnetic dipole moment (Section \ref{sec:MagneticForce:dipolemoment}), $\vec\mu_I$, also shown in Figure \ref{fig:Induction:faraday}. The overall sign on the right-hand side of Faraday's Law is determined by our (arbitrary) choice of the direction $d\vec A$. With this choice, we found that the right-hand side of Faraday's Law is negative:
+\begin{align*}
+\Delta V = -\frac{d\Phi_B}{dt}=\text{a negative number}
+\end{align*}
+The overall sign of $\Delta V$ indicates whether the magnetic moment of the induced current is parallel ($\Delta V$ positive) or anti-parallel ($\Delta V$ negative) to $d\vec A$. This allows us to determine the direction of the induced current, and thus the direction of the ideal battery that represents the induced voltage. In general, when possible, it is common to choose the direction of $d\vec A$ to be parallel to the magnetic field vector, so that the flux is positive.
+
+\subsection{Lenz' Law}
+The minus sign in Faraday's Law is sometimes called ``Lenz's Law'', and ultimately comes from the conservation of energy. In Figure \ref{fig:Induction:faraday} above, we found that as the magnetic flux increases through the loop, a current is induced. That induced current will also produce a magnetic field (in the direction of its magnetic dipole moment).
+
+Lenz's Law states that the ``induced current will always be such that the magnetic field that it produces counteracts the changing magnetic field that induced the current''. In Figure \ref{fig:Induction:faraday}, the magnetic field points in the upwards direction, and increases in magnitude with time. The induced current produces a magnetic field that points downwards to counteract the changing magnetic field, and preserve a constant flux through the loop. If this were not the case, the induced current would be in the opposite direction, contributing to the increasing magnetic flux through the loop, inducing more current, producing more flux, inducing more current, etc. Clearly, this would lead to an infinite current and solve the world's energy crisis. Unfortunately, conservation of energy (expressed here as Lenz's Law) prevents this from happening. 
+
+The negative sign in Faraday's Law is not arbitrary (as we saw above, it gives the correct direction for the magnetic moment of the induced current, given our arbitrary choice of direction for $d\vec A$). In practice, one can often use Lenz's Law to determine the direction of the induced current (so that it counteracts the changing flux), and Faraday's Law to determine the magnitude of the induced voltage.
+
+%Checkpoint question: A figure with a changing magnetic field (e.g. pulling a loop out of region magnetic field, or chaning the radius of the loop), determine the direction of the current (clockwise or counter clockwise)
+
+%Checkpoint question: A loop next to a wire with changing current. In which direction is the induced current (see Giancolli Fig 29-11, Exercise B)
+
+\begin{example}{\label{ex:Induction:changingB}A uniform time-varying magnetic field is given by:
+\begin{align*}
+\vec B(t) = B_0(1+at)\hat z
+\end{align*}
+where $B_0$ and $a$ are positive constants. A coil, made of $N$ circular loops of radius, $r$, lies in the $x-y$ plane. If the coil has a total resistance, $R$, what is the magnitude and direction of the current induced in the coil?}
+The coil is made of $N$ loops of wire. Each loop of wire can be treated independently, and each will have its own induced voltage across it. Since each loop is the same, they will all have the same induced voltage, and the total voltage induced across the coil, $\Delta V$, will simply given by:
+\begin{align*}
+\Delta V = -N \frac{d\Phi_B}{dt}
+\end{align*}
+where $\Phi_B$ is the flux through any one of the loops. That is, each loop is similar to an ideal battery, and the coil is similar to placing all of these batteries in series, so that the voltages from each battery sum together.
+
+The coil lies the $x-y$ plane, perpendicular to the increasing magnetic field, similar to the situation depicted in Figure \ref{fig:Induction:faraday}. We choose the vector $d\vec A$, to calculate the flux, to be in the positive $z$ direction (parallel to the magnetic field):
+\begin{align*}
+d\vec A = dA \hat z
+\end{align*}
+
+The flux through one circular loop of radius, $r$, is given by:
+\begin{align*}
+\Phi_B (t) &= \int \vec B \cdot d\vec A =\int ( B_0(1+at)\hat z) \cdot (dA \hat z)\\
+&=B_0(1+at)\int_S dA = B_0(1+at) (\pi r^2)
+\end{align*}
+where in the last line we factored out the magnetic field, which is uniform (does not depend on position), and the integral $int dA$ simply corresponds to the area of the loop (the sum of the area elements). Of course, in this case, we could have simply calculate the flux without the integral:
+\begin{align*}
+\Phi_B (t) = \vec B \cdot \vec A = (B_0(1+at) \hat z)(\pi r^2 \hat z) =  B_0(1+at) (\pi r^2)
+\end{align*}
+
+We can apply Faraday's Law to determine the induced voltage:
+\begin{align*}
+\Delta V &= -N \frac{d\Phi_B}{dt} = -N \frac{d}{dt} B_0(1+at) (\pi r^2)\\
+&=-NB_0a\pi r^2
+\end{align*}
+Since the induced voltage is negative, the magnetic moment of the induced current points in the negative $z$ direction (opposite to our choice of direction for $d\vec A$. This is consistent with Len'z Law, since the magnetic field increases in the positive $z$ direction, the induced current will produce a magnetic field in the negative $z$ direction to counteract the changing flux. The magnitude of the induced current is given by Ohm's Law:
+\begin{align*}
+I = \frac{\Delta V}{R}=\frac{NB_0a\pi r^2}{R}
+\end{align*}
+
+\textbf{Discussion: }In this example, we determined the induced voltage and current in a coil made of $N$ identical loops. We argued that one can sum the induced voltages from the $N$ loops, as these can be thought of as ideal batteries in series. We found that the direction of the induced current as obtained from Faraday's Law was consistent with the expectation from Lenz's Law.
+\end{example}
+
+\section{Induction in a moving conductor}
+If we define a loop of wire, there are two ways in which the flux through that loop can change:
+\begin{enumerate}
+\item The magnetic field can change magnitude or direction, as we saw in Example \ref{ex:Induction:changingB}.
+\item The loop can change size or orientation relative to the magnetic field.
 \end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part We can choose the normal vector, $\vec A$, for the surface to be in the positive $z$ direction, $\vec A=\pi r^2 \hat z$. The flux through one loop of the coil is thus given by:
-\begin{align*}
-\Phi_B(t)=\vec A\cdot \vec B=\pi r^2(B_0+at)
-\end{align*}
-The emf induced in $N$ coils is given by:
-\begin{align*}
-\Delta V=-N\frac{d\Phi_B}{dt}=-N\pi r^2a
-\end{align*}
-If we want $\Delta V=\SI{120}{V}$, then, $N$ is given by:
-\begin{align*}
-N=\left|\frac{\Delta V}{\pi r^2a}\right|=\frac{(\SI{120}{V})}{\pi (\SI{0.05}{m})^2(\SI{2.5}{T/s})}=\num{6112}
-\end{align*}
-\part We just use Ohm's law to find the current, since we know the voltage across the coil and its resistance:
-\begin{align*}
-I=\frac{\Delta V}{R}=\frac{(\SI{120}{V})}{(\SI{5}{\ohm})}=\SI{24}{A}
-\end{align*}
-\end{parts}
-\end{solution}
-%Based on Giancolli 29-25
-\question A square loop of side $a$ is placed a distance $b$ away from an infinitely long wire carrying current $I$, as shown in Figure \ref{fig:induction:LoopWire}
-\capfig{0.2\textwidth}{figures/Induction/LoopWire.png}{\label{fig:induction:LoopWire}A loop of wire next to a current carrying wire.}
-\begin{parts}
-\part Find the magnetic flux through the loop.
-\part If the loop is pulled away from the wire at speed $v$, what voltage difference is induced across the loop? Give a formula for the voltage as a function of time, $V(t)$, given that $b(t) = b_0+vt$.
-\part If the loop has total resistance, $R$, what force, $F(t)$, is required to keep the loop moving at constant speed? Note that the force must do work to pull the loop; that work gets converted into the electric power dissipated in the loop.
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item \begin{align*}
-\Phi_B=\frac{\mu_0 Ia}{2\pi}\ln\left( \frac{b+a}{b} \right)
-\end{align*}
-\item \begin{align*}
-\Delta V(t)=-\frac{\mu_0 Ia^2}{2\pi}\left( \frac{1}{(b_0+vt)(b_0+vt+a)} \right)v
-\end{align*}
-\item \begin{align*}
-F(t)=\frac{\mu_0^2 I^2a^4}{4\pi^2R}\left( \frac{v}{(b_0+vt)^2(b_0+vt+a)^2} \right)
-\end{align*}
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part To determine the flux through the loop, we consider the flux through a small area of the loop, $dA$, a distance $r$ away from the wire, as shown in Figure \ref{fig:LoopWire_sol}.   
+In this section, we examine the latter case, sometimes called ``motional emf'', as the induced voltage is the result of motion from the loop in which the voltage is induced. 
 
-\capfig{0.2\textwidth}{figures/Induction/LoopWire_sol.png}{\label{fig:LoopWire_sol}A small area element in the loop.}
-
-The magnetic field a distance $r$ away from an infinite wire carrying current $I$ is easily found from Amp\`ere's Law:
+\subsection{Motion of a bar on two parallel rails}
+Consider a U-shaped rail in uniform magnetic field on top of which a bar can slide with no friction, as illustrated in Figure \ref{fig:Induction:rail}. The bar of length $L$ moves to the right with a constant speed, $v$. 
+\capfig{0.5\textwidth}{figures/Induction/rail.png}{\label{fig:Induction:rail} A U-shaped rail on top of which a bar of length, $L$, can slide. The system is immersed in a magnetic field that points out of the page. The bar moves to the right with a constant speed $v$.}
+The bar and the rails form a closed loop of area:
 \begin{align*}
-\oint \vec B(r) \cdot d\vec l&=\mu_0 I\\
-\therefore B(r) &=\frac{\mu_0I}{2\pi r}
-\end{align*}
-The magnetic field is in the negative $z$ direction using the coordinate system that is shown. 
-
-The flux through the area element $dA$ is then (choosing $d\vec A$ into the page):
-\begin{align*}
-d\Phi_B=\vec B(r)\cdot d\vec A=B(r)adr=\frac{\mu_0 I}{2\pi r}adr
-\end{align*}
-where the area element vector is parallel to the magnetic field (since the magnetic field is perpendicular to the plane of the loop). The total flux through the loop is given by summing over the entire loop:
-\begin{align*}
-\Phi_B&=\int d\Phi_B=\int_b^{b+a}\frac{\mu_0 Ia}{2\pi r}dr\\
-&=\frac{\mu_0 Ia}{2\pi}\int_b^{b+a}\frac{1}{r}dr=\frac{\mu_0 Ia}{2\pi}\ln\left( \frac{b+a}{b} \right)\\
-\end{align*}
-\part We can find the voltage induced across the loop by taking the time derivative of the flux (Faraday's Law):
-\begin{align*}
-\Delta V(t)&=-\frac{d\Phi_B}{dt}=-\frac{d}{dt}\frac{\mu_0 Ia}{2\pi}\ln\left( \frac{b(t)+a}{b(t)} \right)\\
-&=-\frac{\mu_0 Ia}{2\pi}\frac{d}{dt}\ln\left( \frac{b(t)+a}{b(t)} \right)\\
-&=-\frac{\mu_0 Ia}{2\pi}\frac{d}{db}\ln\left( \frac{b(t)+a}{b(t)} \right)\frac{db}{dt}\\
-&=-\frac{\mu_0 Ia}{2\pi}\left( \frac{b(t)}{b(t)+a} \right)\left(\frac{-a}{b(t)^2}  \right)\frac{db}{dt}\\
-&=\frac{\mu_0 Ia^2}{2\pi}\left( \frac{1}{b(t)(b(t)+a)} \right)\frac{db}{dt}\\
-&=\frac{\mu_0 Ia^2}{2\pi}\left( \frac{1}{(b_0+vt)(b_0+vt+a)} \right)v
-\end{align*}
-which is positive, as expected, since the magnetic moment associated with the induced current is into the page (same direction as $d\vec A$).
-\part If a force $\vec F(t)$ is exerted on an object moving with velocity $\vec v$ we can easily find the rate at which it does work on the object. Over a small amount of time, $dt$, the force will be approximately constant and do an amount of work $dW$ over a distance $d\vec x$. The power is then
-\begin{align*}
-P_F=\frac{dW}{dt}=\frac{d}{dt}\vec F\cdot d\vec x=\vec F\cdot \frac{d\vec x}{dt}=\vec F\cdot \vec v
+A(t)=Lw(t)=Lvt
 \end{align*} 
-The force that is pulling the loop at constant speed is the only source of energy in the system, which is dissipated as electrical power in the loop:
+that increases with time. The magnitude of the flux through the loop will increase with time, resulting in an induced current (clockwise, according to Lenz's Law). At some time, $t$, the flux through the loop is given by:
 \begin{align*}
-P_E&=\frac{\Delta V(t)^2}{R}=P_F=\vec F\cdot \vec v=F(t)v\\
-\therefore F(t)&=\frac{\Delta V(t)^2}{Rv}\\
-&=\frac{\mu_0^2 I^2a^4}{4\pi^2R}\left( \frac{v}{(b_0+vt)^2(b_0+vt+a)^2} \right)
+\Phi_B (t) &=  \vec B \cdot \vec A =BA=BLvt
 \end{align*}
-\end{parts}
+where we chose $\vec A$ to be parallel to the magnetic field vector. 
 
-\end{solution}
-
-%McLean? Smart Physics?? Modified a lot, pretty much consider original!
-\question A right-angle triangular loop of wire is constructed with a base of $b$ and a height $h$, as shown in Figure \ref{fig:induction:TriangleLoop}. The loop is immersed in a uniform magnetic field $B$ which points in the positive z-direction. At time $t=0$, the loop is in the $x-y$ plane, as shown. The loop is rotated with a constant angular speed $\vec\omega=-\omega\hat y$ about an axis that is co-linear with the side that lies in the $y$ direction (its height). The loop of wire has a total resistance $R$.
-\begin{parts}
-\part Write an expression for the current in the loop as a function of time (indicate if the equation is for clockwise or counter-clockwise current, when the loop is viewed at $t=0$, as in the figure)
-\part What is the maximum value of the current in the loop?
-\part What is the average power dissipated by current in the loop?
-\part What (time-dependent) torque must one exert on the loop in order to keep the loop rotating at constant angular speed? Specify the torque vector that one must exert on the loop and show that it is always in the direction of the angular velocity.
-\end{parts}
-\capfig{0.3\textwidth}{figures/Induction/TriangleLoop.png}{\label{fig:induction:TriangleLoop}A triangular loop rotating in a magnetic field.}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item 
+Since we already used Lenz's Law to argue that the current must be in the clockwise direction, we can use Faraday's Law to determine the magnitude of the induced voltage and ignore the negative sign:
 \begin{align*}
-I=\frac{1}{2R}hbB\omega\sin(\omega t)
-\end{align*}
-\item The current can be found from Ohm's law:
-\begin{align*}
-I=\frac{1}{2R}hbB\omega\sin(\omega t)
-\end{align*}
-\item \begin{align*}
-\bar P=\frac{1}{8R}h^2b^2B^2\omega^2
-\end{align*}
-\item The torque exerted by the magnetic field at some time $t$ is:
-\begin{align*}
-\vec \tau_B(t)-IAB\sin(\omega t)(-\hat y)=IAB\sin(\omega t)\hat y
-\end{align*} 
-We must then exert a torque in the opposite direction:
-\begin{align*}
-\vec\tau(t)=-\frac{1}{4R}h^2b^2B^2\omega\sin^2(\omega t)\hat y
-\end{align*}
-which is always in the same direction as the angular velocity, since the $\sin^2(\omega t)$ term will never cause the torque to change direction. 
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part The area of the loop is $A=\frac{1}{2}bh$. At $t=0$, we define the area vector to be in the positive $z$ direction. As the loop rotates, the area vector rotates in the $x-z$ plane, as shown in Figure \ref{fig:induction:TriangleLoop_A}:
-\begin{align*}
-\vec A=A[-\sin(\omega t)\hat x+\cos(\omega t)\hat z]
-\end{align*}
-\capfig{0.3\textwidth}{figures/Induction/TriangleLoop_A.png}{\label{fig:induction:TriangleLoop_A}View of the loop from above, showing the area vector at time $t$.}
-
-The flux through the loop is given by:
-\begin{align*}
-\Phi_B&=\vec B\cdot \vec A=B(\hat z)\cdot A[-\sin(\omega t)\hat x+\cos(\omega t)\hat z]\\
-&=AB\cos(\omega t)
-\end{align*}
-The potential difference across the loop is given by:
-\begin{align*}
-\Delta V&=-\frac{d\Phi_B}{dt}=-\frac{d}{dt}AB\cos(\omega t)\\
-&=AB\omega\sin(\omega t)
-\end{align*}
-The current can be found from Ohm's law:
-\begin{align*}
-I=\frac{\Delta V}{R}=\frac{1}{R}AB\omega\sin(\omega t)=\frac{1}{2R}hbB\omega\sin(\omega t)
-\end{align*}
-At $t=0$, the flux in the loop starts to decrease, so the current will try to restore a magnetic field in the positive $z$ direction, and will thus be in the counter-clockwise direction (as viewed in Figure \ref{fig:induction:TriangleLoop}).
-\part The maximum current is:
-\begin{align*}
-I_0=\frac{1}{2R}hbB\omega
-\end{align*}
-\part The instantaneous power dissipated in the loop at time $t$ is:
-\begin{align*}
-P(t)=I^2(t)R=\frac{1}{4R}h^2b^2B^2\omega^2\sin^2(\omega t)
-\end{align*}
-The only part of the power that depends on time is $\sin^2(\omega t)$, which over one rotational period, $T$, averages to a value of $\frac{1}{2}$:
-\begin{align*}
-\overline{\sin^2(\omega t)}&=\frac{1}{T}\int_0^T\sin^2(\omega t)dt=\frac{\omega}{2\pi}\int_0^{\frac{2\pi}{\omega}}\sin^2(\omega t)dt=\frac{\omega}{2\pi}\int_0^{\frac{2\pi}{\omega}}\sin^2(\omega t)dt\\
-&=\frac{\omega}{2\pi}\int_0^{\frac{2\pi}{\omega}}\frac{1}{2}(1-\cos(2\omega t))dt=\frac{\omega}{2\pi}\frac{1}{2}\left[t-\frac{1}{2\omega}\sin(2\omega t)  \right]_0^{\frac{2\pi}{\omega}}=\frac{1}{2}
-\end{align*}
-where we used the trigonometric identity $\cos2\theta = 1-2\sin^2\theta$. The average power dissipated in the loop is thus:
-\begin{align*}
-\bar P=\frac{1}{8R}h^2b^2B^2\omega^2
-\end{align*}
-\part We can find the torque exerted on the loop by the magnetic field using the magnetic moment created by the induced current in the loop. Note that one must then exert a torque on the loop that is opposite of that exerted by the magnetic field to keep the loop rotating at constant angular velocity.
-
-The magnetic moment of the loop is:
-\begin{align*}
-\vec \mu(t) = I\vec A=IA(-\sin(\omega t)\hat x+\cos(\omega t)\hat z)
-\end{align*}
-where the direction of the vector $\vec A$ is chosen as before so that at $t=0$, the magnetic moment is in the positive $z$ direction, (consistent with what we determined from Lenz's Law in part (a)). The torque exerted by the magnetic field at some time $t$ is:
-\begin{align*}
-\vec \tau_B(t)&=\vec \mu(t)\times\vec B=[IA(-\sin(\omega t)\hat x+\cos(\omega t)\hat z)]\times (B\hat z)\\
-&=-IAB\sin(\omega t)(\hat x\times\hat z)+IAB\cos(\omega t)(\hat z\times\hat z)\\
-&=-IAB\sin(\omega t)(-\hat y)=IAB\sin(\omega t)\hat y
-\end{align*} 
-We must then exert a torque in the opposite direction:
-\begin{align*}
-\vec\tau(t)&=-\vec\tau_B(t)=-IAB\sin(\omega t)\hat y\\
-&=-\left(\frac{1}{2R}hbB\omega\sin(\omega t)\right)AB\sin(\omega t)\hat y\\
-&=-\frac{1}{4R}h^2b^2B^2\omega\sin^2(\omega t)\hat y
-\end{align*}
-which is always in the same direction as the angular velocity, since the $\sin^2(\omega t)$ term will never cause the torque to change direction. 
-\end{parts}
-\end{solution}
-
-%Giancolli 29-12 -fixed.
-\question A rectangular loop of length $l=\SI{0.60}{m}$, width $w = \SI{0.40}{m}$, and resistance $R = \SI{0.49}{\Omega}$ is pulled by a force $\vec{F}$ from a uniform magnetic field $B = \SI{0.80}{T}$, as shown in Figure \ref{fig:induction:LoopForce}. What force must be applied to the rectangular loop in order for it to maintain a constant speed of $v = \SI{2.15}{m/s}$ while it exits the magnetic field?
-\capfig{0.4\textwidth}{figures/Induction/LoopForce.png}{\label{fig:induction:LoopForce}A rectangular loop being pulled out of a magnetic field.}
-\begin{finalanswer}
-\SI{0.493}{N}
-\end{finalanswer}
-\begin{solution}
-As the loop moves out of the magnetic field, the flux through the loop decreases. This induces a counter-clockwise current $I$ that results in a force being exerted on the wire by the magnetic field. The applied force, $\vec F$, will have to be equal in magnitude to that exerted on current carrying wire by the magnetic field.
-
-If we let $l'$ be the length of the loop that is still in the region of magnetic field, then the flux of the magnetic field through the loop is:
-\begin{align*}
-\Phi_B=\vec B\cdot \vec A=Bwl'
-\end{align*}
-since the magnetic field is perpendicular to the plane of the loop. The induced voltage across the loop is given by:
-\begin{align*}
-\Delta V=-\frac{d}{dt}\Phi_B=-\frac{d}{dt}Bwl'=-Bw\frac{dl'}{dt}=Bwv
-\end{align*}
-where we noted that since $l'$ decreases with time, its time derivative is negative and cancels the minus sign from Lenz' Law (so that $v$ is the positive magnitude of the velocity). The current in the loop will be:
-\begin{align*}
-I=\frac{\Delta V}{R}=\frac{Bwv}{R}
-\end{align*}
-and in the counter-clockwise direction, as argued above. Of the 4 section of the loop that could have a magnetic force, the vertical section on the right has no force because it is not in a magnetic field, and the forces on the two horizontal sections cancel each other because they carry currents in opposite directions. This leaves the vertical section of wire on the left, which experiences a magnetic force:
-\begin{align*}
-F&=IwB=\frac{Bwv}{R}wB=\frac{B^2w^2v}{R}\\
-&=\frac{(\SI{0.80}{T})^2(\SI{0.40}{m})^2(\SI{2.15}{m/s})}{(\SI{0.49}{\ohm})}=\SI{0.493}{N}
-\end{align*}
-\end{solution}
-
-%Giancolli 29-54 -fixed
-\question A point charge q = \SI{15}{\mu C} is fixed on the x-axis \SI{12}{cm} from the centre of a uniform circular magnetic field $\vec{B}$, as shown in Figure \ref{fig:induction:ChargeField}. The magnetic field begins to decrease at a rate of \SI{0.08}{T/s}. What is the resulting force vector on the charge?
-\capfig{0.4\textwidth}{figures/Induction/ChargeField.png}{\label{fig:induction:ChargeField}A charge in a region of changing magnetic field.}
-\begin{finalanswer}
-$(\SI{7.2e-8}{N})\hat y$
-\end{finalanswer}
-\begin{solution}
-We need to find the electric field that results from the changing magnetic field:
-\begin{align*}
-\int \vec E\cdot d\vec l=-\frac{d}{dt}\Phi_B
-\end{align*}
-We choose a circular path of radius $r$ to calculate the circulation of the electric field at the position of the charge as well as the flux of the magnetic field through that circle:
-\begin{align*}
-\int \vec E\cdot d\vec l&=E(2\pi r)\\
-\frac{d}{dt}\Phi_B&=\frac{d}{dt}\pi r ^2 B=\pi r^2 \frac{dB}{dt}\\
-\therefore E&=\frac{1}{2\pi r}\pi r^2 \frac{dB}{dt}=\frac{1}{2}r\frac{dB}{dt}
-\end{align*}
-The electric field will be directed in the positive $y$ direction (inducing a current that would restore the magnetic field). The force on the charge is thus:
-\begin{align*}
-\vec F&=q\vec F=q\frac{1}{2}r\frac{dB}{dt}\hat y\\
-&=\frac{1}{2}(\SI{15}{\micro C})(\SI{0.12}{m})(\SI{0.08}{T/s})\hat y\\
-&=(\SI{7.2e-8}{N}) \hat y
-\end{align*}
-\end{solution}
-
-%Modified from a question submitted by Jesse
-\question Two superconducting and frictionless rails a distance $l$ apart are connected by a superconducting wire, as shown in Figure \ref{fig:induction:BarRails}. A platform of mass $m$ connects the two rails and can slide without friction along the rails. The platform has a resistance $R$ between the points where it makes contact with the rails. The rails are infinitely long and a uniform magnetic field is perpendicular to the plane of the rails and the platform at all points in space. If the platform is put in motion with a speed $v$ in the direction opposite of the superconducting wire that connects the rails, show that it will take a time:
-\begin{align*}
-t&=\ln(2)\frac{mR}{l^2B^2}
-\end{align*}
-for the platform to slow down to half of its initial speed.
-\capfig{0.4\textwidth}{figures/Induction/BarRails.png}{\label{fig:induction:BarRails}A platform moving along frictionless rails.}
-\begin{solution}
-As the platform moves on the rails, the flux through a loop that comprises the platform, the two rails and the superconducting wire will change and a current will be induced. Since the flux through the loop increases, a clockwise current will be generated in the loop (as viewed in Figure \ref{fig:induction:BarRails}). The current will be upwards in the platform (as viewed in Figure \ref{fig:induction:BarRails}), resulting in a force towards the right that will slow the platform down. 
-
-Suppose that at $t=0$ the platform was where the superconducting wire is located, then at some time $t$ it will be a distance $vt$ away from the wire. The flux through the loop will be:
-\begin{align*}
-\Phi_B(t)=lvtB
-\end{align*}
-The voltage induced across the loop will be:
-\begin{align*}
-\Delta V=-\frac{d}{dt}\Phi_B(t)=lvB
-\end{align*}
-The current will be given by:
-\begin{align*}
-I=\frac{\Delta V}{R}=\frac{1}{R}lvB
-\end{align*}
-And the force:
-\begin{align*}
-F=IlB=\frac{1}{R}l^2B^2v
-\end{align*}
-We can use Newton's 2nd Law to determine how the speed changes in response to this speed. The tricky part is that the force itself depends on the speed. Writing Newton's 2nd Law, and noting that the force is in the opposite direction of $v$:
-\begin{align*}
-F&=ma=m\frac{dv}{dt}=-\frac{l^2B^2}{R}v\\
-\therefore \frac{dv}{dt}&=-\left(\frac{l^2B^2}{mR}\right)v
-\end{align*}
-which is a differential equation for $v(t)$ (an equation that contains both the function and its derivative). This is a separable differential equation (we can put all of the quantities that depend on $v$ and $t$ on different sides of the equation:
-\begin{align*}
-\frac{dv}{v}=-\left(\frac{l^2B^2}{mR}\right)dt
-\end{align*}
-If we let $v(t=0)=v_0$, we can integrate both sides to find $v(t)$:
-\begin{align*}
-\int_{v_0}^{v(t)}\frac{dv}{v}&=-\left(\frac{l^2B^2}{mR}\right)\int_0^tdt'\\
-\ln\left( \frac{v(t)}{v_0} \right)&=-\left(\frac{l^2B^2}{mR}\right)t\\
-\therefore v(t)&=v_0e^{-\frac{l^2B^2}{mR}t}
-\end{align*}
-So we find that $v(t)$ decreases exponentially with time. We can find the time, $t_1$, at which $v(t)$ has decreased to $\frac{1}{2}v_0$:
-\begin{align*}
-v(t_1)&=v_0e^{-\frac{l^2B^2}{mR}t_1}=\frac{1}{2}v_0\\
-e^{-\frac{l^2B^2}{mR}t_1}&=\frac{1}{2}\\
-\frac{-l^2B^2}{mR}t_1&=\ln\left(\frac{1}{2}  \right)\\
-t_1&=\ln(2)\frac{mR}{l^2B^2}
-\end{align*}
-\end{solution}
-
-%Giancolli 29-38 -fixed
-\question A generator is made up of a square coil with a \SI{35}{cm} side and 600 loops. The coil is set to generate a \SI{100}{V} peak output. If the coil is in a \SI{0.73}{T} magnetic field, at what frequency must the coil rotate to generate the peak output?
-\begin{finalanswer}
-\SI{0.297}{Hz}
-\end{finalanswer}
-\begin{solution}
-We can assume that the coils are set up such that at some point in time, their plane is perpendicular to the magnetic field, which we assume to be constant and in the $x$ direction. We can write their area vector as:
-\begin{align*}
-\vec A=A[\cos(\omega t)\hat x +\sin(\omega t) \hat y]
-\end{align*}
-where $A$ is the area of the square coil, and we assume that the coils rotate about the $z$ axis. We can thus write the flux through the coils as:
-\begin{align*}
-\Phi_B=N\vec A\cdot \vec B=NAB\cos(\omega t)
-\end{align*}
-The induced voltage is:
-\begin{align*}
-\Delta V=-\frac{d\Phi_B}{dt}=-\frac{d}{d}NAB\cos(\omega t)=NAB\omega\sin(\omega t)
-\end{align*}
-The maximum output voltage is:
-\begin{align*}
-V_{max}&=NAB\omega\\
-\therefore \omega &=\frac{V_{max}}{NAB}=\frac{(\SI{100}{V})}{600(\SI{0.35}{m})^2(\SI{0.73}{T})}=\SI{1.86}{rad/s}
-\end{align*}
-The frequency is thus:
-\begin{align*}
-f=\frac{\omega}{2\pi}=\frac{\SI{9.39}{rad/s}}{2\pi}=\SI{0.297}{Hz}
-\end{align*}
-\end{solution}
-
-\question A llama farmer has decided to attempt to steal electrical power from the high voltage line that passes above his property by building an induction coil underneath the power line, as in Figure \ref{fig:induction:EvilFarmer}. The horizontal power line is a height $d=\SI{20}{m}$ above the ground and carries a sinusoidally time-varying current:
-\begin{align*}
-I(t)=I_0\sin(\omega t)
-\end{align*}
-with a frequency of $\SI{60}{Hz}$ and a peak current of $I_0=\SI{10}{A}$. The farmer builds a vertical induction coil that has a length $L=\SI{15}{m}$ and a height $h=\SI{2}{m}$ with $N$ loops, and that is located directly below the power line, as shown.
-\begin{parts}
-\part Assuming that the power line is very long, show that the magnetic field a distance $r$ from the line is given by:
-\begin{align*}
-B(r,t)=(\SI{2e-6}{Tm})\frac{1}{r}\sin(\omega t)
-\end{align*}
-\part Show that the magnetic flux from the power line through one loop of the induction coil is given by:
-\begin{align*}
-\Phi(t)=(\SI{3.161e-6}{Wb})\sin(\omega t)
-\end{align*}
-\part How many loops, $N$, would the farmer need to put in his coil if he is to generate a maximal potential difference of \SI{170}{V} in his induction coil (the voltage in the coil will vary sinusoidally and we want the maximum value to be \SI{170}{V})? Comment on whether this would be practical. 
-\end{parts}
-\capfig{0.6\textwidth}{figures/Induction/EvilFarmer.png}{\label{fig:induction:EvilFarmer}A farmer stealing power.}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item N/A
-\item N/A
-\item 140000 loops. This would not be practical. If the wire had a diameter of \SI{1}{mm}, the coul would be just \SI{140}{m} deep.
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-\begin{parts}
-\part We use Amp\`ere's law to find the magnetic field a distance $r$ away from a current carrying wire. Using a circular amperian loop, we have:
-\begin{align*}
-\oint \vec B(r,t)\cdot d\vec l&=\mu_0 I(t)\\
-B(r,t)(2\pi r)&=\mu_0I_0\sin(\omega t)\\
-\therefore B(r,t)&=\frac{\mu_0I_0}{2\pi r}\sin(\omega t)\\
-&=\frac{4\pi(\SI{1e-7}{TmA^{-1}})(\SI{10}{A})}{2\pi}\frac{1}{r}\sin(\omega t)\\
-&=(\SI{2e-6}{Tm})\frac{1}{r}\sin(\omega t)
+\Delta V = \frac{d \Phi_B}{dt}=\frac{d}{dt}BLvt = BLv
 \end{align*}
 
-\part Since the magnetic field changes with distance from the wire, we need to integrate the flux over the area of the coil to get the total flux. Although the magnetic field changes direction with the oscillating current, it is always perpendicular to the plane of the coil. 
-
-We define a small surface element $dA=Ldr$ with a length $L$ and a height $dr$ that is located a distance $r$ from the power line. The flux through that area element is:
+Suppose that the rails are superconducting (have no resistance), and that the bar has a resistance, $R$. The current through the loop is then given by Ohm's Law:
 \begin{align*}
-d\Phi(r,t)=B(r,t)dA=B(r,t)Ldr
+I=\frac{\Delta V}{R}=\frac{BLv}{R}
 \end{align*}
-The total flux through the coil is thus:
+As the current moves through the bar, it will heat up the bar by dissipating energy at a rate of:
 \begin{align*}
-\Phi(r,t)&=\int d\Phi(r,t) =\int_{d-h}^{d}B(r,t)Ldr=\int_{d-h}^{d}\frac{\mu_0I_0L}{2\pi r}\sin(\omega t)dr\\
-&=\frac{\mu_0I_0L}{2\pi}\sin(\omega t)\int_{d-h}^{d}\frac{1}{r}dr\\
-&=\frac{\mu_0I_0L}{2\pi}\ln\left(\frac{d}{d-h} \right)\sin(\omega t)\\
-&=\frac{4\pi(\SI{1e-7}{TmA^{-1}})(\SI{10}{A})(\SI{15}{m})}{2\pi}\ln\left(\frac{(\SI{20}{m})}{(\SI{18}{m})} \right)\sin(\omega t)\\
-&=(\SI{3.161e-6}{Wb})\sin(\omega t)
+P=I^2 R = \frac{B^2L^2v^2}{R}
 \end{align*}
-\part The induced emf is given by (taking the absolute value, since it is AC current):
+Thus, the bar cannot possibly move at a constant speed by its own, or energy would be produced out of nothing. There must be a force exerted on the bar to keep it moving at constant speed. 
+
+Recall that a current-carrying wire in a magnetic field will experience a force from the magnetic field. In this case, the bar of length $L$, carries current, $I$, in a magnetic field, $\vec B$ (perpendicular to the current), so that the force exerted on the bar is given by:
 \begin{align*}
-\Delta V&=N\frac{d\Phi}{dt}=N\frac{d}{dt}\frac{\mu_0I_0L}{2\pi}\ln\left(\frac{d-h}{h} \right)\sin(\omega t)\\
-&=N\omega\frac{\mu_0I_0L}{2\pi}\ln\left(\frac{d-h}{h} \right)\cos(\omega t)\\
-&=N\omega(\SI{3.161e-6}{Wb})\cos(\omega t)\\
-&=N 2\pi f(\SI{3.161e-6}{Wb})\cos(\omega t)\\
-&=N 2\pi (\SI{60}{Hz})(\SI{3.161e-6}{Wb})\cos(\omega t)\\
-&=N (\SI{1.192e-3}{V})\cos(\omega t)
+\vec F_B = I \vec L \times \vec B
 \end{align*}
-where we replaced the angular frequency, $\omega$, with the given frequency, $f$. If we want the maximum value of the potential difference to be \SI{170}{V}, then the number of loops in the coil is given by:
+and points to the left (right-hand rule). The magnitude of the force is given by:
 \begin{align*}
-N(\SI{1.192e-3}{V})&=\SI{170}{V}\\
-\therefore N&=\frac{(\SI{170}{V})}{(\SI{1.192e-3}{V})}=\num{142665}
+F_B = ILB = \frac{B^2L^2v}{R}
 \end{align*}
-The farmer would need to have just over \num{140000} loops in his coil, which would not be practical (if the wire had a diameter of \SI{1}{mm}, the coil would be \SI{140}{m} deep).
-\end{parts}
-\end{solution}
-
-\question \label{q:induction:Helmholtz} In order to create a region of uniform magnetic field, you use two identical circular coils in the Helmholtz configuration (Figure \ref{fig:induction:HelmholtzCoils}). The coils each have $N=100$ turns and a radius $R=20$\,cm. The centres of the coils are on the z-axis at positions $z=\pm\frac{R}{2}$ and both coils are parallel to the xy-plane. The coils each carry a current, $I=2$\,A, such that the magnetic dipole moment of each coil is in the positive z-direction as shown.
-\capfig{0.5\textwidth}{figures/Induction/HelmholtzCoils.png}{\label{fig:induction:HelmholtzCoils} Helmholtz coils (the x-axis is into the page), Question \ref{q:induction:Helmholtz}a.}
-
-\begin{parts}
-\part Give an expression for the magnetic field along the z-axis and evaluate the strength of the magnetic field at $z=0$.
-
-\part A small circular pickup coil with a single turn and a radius $r=1$\,cm is placed with its centre at the origin of the coordinate system parallel to the Helmoltz coils. The pickup coil has a total resistance, $R_{pickup}=1\,\Omega$, and is rotated at a frequency of 10\,Hz about the x-axis (Figure \ref{fig:induction:HelmholtzCoilsPickup}, the angular velocity is in the positive x direction). At time $t=0$, the pickup coil is in the xy-plane. Assume that the magnetic field from the Helmholtz coils is uniform near the pickup coil, with magnitude $B_0=9.0\times 10^{-4}$\,T.
-
-Make a graph showing the torque that is required to rotate the pickup coil as a function of time. Make your graph as precise as possible (quantitative labels) and make sure it covers at least one rotation period in time.
-
-\capfig{0.5\textwidth}{figures/Induction/HelmholtzCoilsPickup.png}{\label{fig:induction:HelmholtzCoilsPickup} Pickup coil in uniform magnetic field $B_0\hat z$ (the x-axis is into the page). The coil rotates about the x-axis, with angular velocity in the positive x direction. Question \ref{q:induction:Helmholtz}b.}
-\end{parts}
-\begin{finalanswer}
-\begin{enumerate}[(a)]
-\item \begin{align*}
-B^{tot}(z)=\frac{\mu_0NIR^2}{2} \left( \frac{1}{((\frac{R}{2}+z)^2+R^2)^{\frac{3}{2}}}+\frac{1}{((\frac{R}{2}-z)^2+R^2)^{\frac{3}{2}}}\right)
-\end{align*}
-\item \begin{align*}
-\tau=\frac{B_0^2\pi^2 r^4\omega}{R_{pickup}}\sin^2(\omega t)
-\end{align*}
-\capfig{0.5\textwidth}{figures/Induction/taut.png}{\label{fig:induction:taut2} Torque as a function of time.}
-\end{enumerate}
-\end{finalanswer}
-\begin{solution}
-a) We use the Biot-Savart Law to calculate the field a distance $h$ from it centre. The field will clearly be in the z-direction, and we need to sum the z-components $\cos\theta=\frac{R}{r}$:
+Thus, in order for the bar to move at constant velocity towards the right, a force with the same magnitude must be exerted towards the right. In other words, work must be done to pull the bar to the right, by exerting a force with the magnitude, $F_B$. The rate at which that work must be done is given by:
 \begin{align*}
-B(h) &= \frac{\mu_0NI}{4\pi}\int_0^{2\pi R}\frac{dl}{r^2}\cos\theta=\frac{\mu_0NI}{4\pi}\int_0^{2\pi R}\frac{dl}{r^2}\frac{R}{r}=\frac{\mu_0NI}{4\pi}2\pi R\frac{R}{(h^2+R^2)^{\frac{3}{2}}}\\
-&=\frac{\mu_0NIR^2}{2}\frac{1}{(h^2+R^2)^{\frac{3}{2}}}
+P &= \frac{d}{dt}W=\frac{d}{dt}\vec F \cdot dx=\vec F\cdot \frac{dx}{dt}=\vec F\cdot \vec v = Fv
+&=\frac{B^2L^2v^2}{R}
 \end{align*}
-The sum of the fields from both coils, along the z-axis is:
+where we assumed that the bar moves in the positive $x$ direction. This is exactly the rate at which electric energy is dissipated in the bar! In other words, by doing mechanical work on the bar, we can create an induced current that will dissipate that energy at the same rate at which we do work. We can convert mechanical work into electrical energy!
+
+Finally, also note that this problem is closely related to the Hall effect, which is simply a different way to think about this problem. Consider the electrons that are in the bar, as the bar moves at constant speed to the right through the magnetic field (ignore the existence of the U-shaped rail). The electrons will experience a magnetic force that is upwards (consistent with the direction of the induced current discussed above). Eventually, electrons accumulate at the top of the bar, and start preventing more electrons from accumulating there, by producing an electric field, $\vec E$, in the bar. The equilibrium condition is that the magnetic force and the electric force have the same magnitude (and opposite directions):
 \begin{align*}
-B^{tot}(z) &= B(\frac{R}{2}+z)+B(\frac{R}{2}-z)\\
-&=\frac{\mu_0NIR^2}{2} \left( \frac{1}{((\frac{R}{2}+z)^2+R^2)^{\frac{3}{2}}}+\frac{1}{((\frac{R}{2}-z)^2+R^2)^{\frac{3}{2}}}\right)
+qvB &= qE\\
+E &= vB
 \end{align*}
-Evaluating, at $B^{tot}(z=0\,m)=8.99\times 10^{-4}$\,T, and, for reference at $z=5$\,cm $B^{tot}(z=0.05\,m)=8.95\times 10^{-4}$\,T, so we see that it does not vary much.
+The (Hall) potential difference, across the bar of length, $L$, with an electric field, $E$, is given by:
+\begin{align*}
+V = EL = vBL
+\end{align*}
+where we assumed that the electric field is uniform in the bar. This potential difference is identical to the one that we calculated from Faraday's Law. Viewing this example as a different manifestation of the Hall effect provides some insight into what is actually happening at the microscopic level when a current is induced. 
+\subsection{The generator}
+An electrical generator is used to create an alternating induced voltage/current, by rotating a coil inside of a constant and uniform magnetic field. In this case, the current is induced because the angle between the magnetic field and the surface element vector $d\vec A$ changes with time.
+
+Consider a single loop of wire with area $A$, that can rotate in a uniform and constant magnetic field, $\vec B$, as illustrated in Figure \ref{fig:Induction:generator}. 
+\capfig{0.6\textwidth}{figures/Induction/generator.png}{\label{fig:Induction:generator} A coil rotates in a constant and uniform magnetic field. At time $t=0$ (left panel), the coil lies in the $yz$ plane. The coil rotates about the $y$ axis, with a constant angular velocity, $\vec \omega$. At some time $t$ later, the coil has rotated through an angle $\theta = \omega t$ (right panel, as seen from above, looking down on the $xz$ plane).}
+
+Referring to the coordinate system that is illustrated in Figure \ref{fig:Induction:generator}, the coil has a constant angular velocity, $\vec\omega$, in the positive $y$ direction and rotates about the $y$ axis (with the origin at the centre of the coil). At time $t=0$ (left panel), the coil lies in the $yz$ plane, and we choose the vector, $\vec A$, (used to calculate the flux) to be in the positive $x$ direction at time $t=0$. As the coil rotates, so will the vector $\vec A$, which is easier to visualize than the coil. At some time $t$, the vector $\vec A$ will make an angle $\theta=\omega t$ with the $x$ axis. The magnetic field is constant and in the positive $x$ direction, $\vec B = B\hat x$. That is, the angle between the vector $\vec A$ and the magnetic field, $\vec B$, will be given by $\theta = \omega t$. 
+
+At some time, $t$, the vector, $\vec A$, is given by:
+\begin{align*}
+\vec A(t) = A(\cos\theta \hat x -\sin\theta \hat z) = A(\cos(\omega t) \hat x -\sin(\omega t)\hat z)
+\end{align*}
+
+We can calculate the flux of the magnetic field through the loop at some time $t$:
+\begin{align*}
+\Phi_B(t) =  \vec B \cdot \vec A = (B\hat x) \cdot (\cos(\omega t) \hat x -\sin(\omega t)\hat z)=AB\cos(\omega t)
+\end{align*}
+where we did not use the integral for the flux, since the magnetic field is constant over the area of the loop. The induced voltage is given by Faraday's Law:
+\begin{align*}
+\Delta V = - \frac{d\Phi_B}{dt}  =  - \frac{d}{dt}AB\cos(\omega t) =  AB\omega\sin(\omega t)
+\end{align*}
+If the generator includes $N$ loops in a coil, then the induced voltage is given by:
+\begin{align*}
+\Delta V = NAB\omega\sin(\omega t)
+\end{align*}
+As you can see, the voltage oscillates with time, between $\pm NAB\omega$, corresponding to alternating voltage. Furthermore, since the sign of $\Delta V$ changes with time (due to the sine function), the relative orientation between $\vec A$, and the magnetic dipole moment of the induced current, also changes with time, indicating that the induced current in the coil changes direction every half-turn (alternating current).
+
+The generators that produce the alternating voltages that we find in our outlets work on the same principle. For example, in a hydro-electric dam, the water pressure from the height of the dam is used to force water through a turbine (essentially a propeller) that rotates a set of coils inside of a strong permanent magnet. Various controls allow the rotational frequency of the turbine to be adjusted in order to produce alternating current of the desired frequency ($\SI{50}{Hz}$ in most of the world, $\SI{60}{Hz}$ in North America and a few other countries).
+
+Since the generator produces current that can dissipate electrical energy, one must have to do work in order to keep the coil in the generator rotating. As the coil rotates, a current is induced in the coil. A current in a circular loop that is immersed in a magnetic field will experience a torque, $\vec \tau$, given by:
+\begin{align*}
+\vec \tau = \vec \mu \times \vec B
+\end{align*}
+where $\vec mu$ is the magnetic dipole moment of the coil with induced current, $I$. If the coil has a resistance, $R$, then the current in the coil is given by Ohm's Law:
+\begin{align*}
+I = \frac{\Delta V}{R}=\frac{NAB\omega\sin(\omega t)}{R}
+\end{align*}
+The magnetic moment, $\vec \mu$, for the current in the coil is given by:
+\begin{align*}
+\vec \mu &= I\vec A = \frac{NAB\omega\sin(\omega t)}{R} (A(\cos(\omega t) \hat x -\sin(\omega t)\hat z))\\
+&=\frac{NA^2B\omega\sin(\omega t)}{R} (\cos(\omega t) \hat x -\sin(\omega t)\hat z)
+\end{align*}
+The torque exerted by the magnetic field on the coil with the induced current is thus given by:
+\begin{align*}
+\vec \tau &= \vec \mu \times \vec B = \left(\frac{NA^2B\omega\sin(\omega t)}{R} (\cos(\omega t) \hat x -\sin(\omega t)\hat z)\right) \times (B\hat x)\\
+&=\frac{NA^2B^2\omega\sin(\omega t)}{R}(\cos\omega(t)(\hat x \times \hat x)-\sin(\omega t)(\hat z \times \hat x))\\
+&=-\frac{NA^2B^2\omega\sin^2(\omega t)}{R}\hat y
+\end{align*}
+Note that the torque exerted on the loop, is always in the negative $y$ direction, as every term in the torque is either strictly positive ($N$) or squared ($\sin^2(\omega t)$). The torque exerted by the magnetic field on the coil is thus always in the opposite direction of rotation (recall that the coil has an angular velocity in the positive $y$ direction). This is sometimes called ``counter torque''. If we want the coil to maintain a constant angular velocity, then we must exert a torque in the positive $y$ direction to counter the torque from the magnetic field. Note that the torque that we must exert to keep the coil rotating with constant angular velocity is not constant in time (but always in the same direction). 
+
+You can easily verify that the work that you must do by exerting the torque is the same as the electrical power dissipated by the current in the coil of resistance, $R$. The generator is thus a device to convert mechanical work into electrical energy. If the coil has no resistance (or is not connected to something with a resistance), then one does not need to exert a torque for the generator to rotate (but one also is not harnessing any energy). 
+
+\section{Back EMF in an electric motor}
+There are many similarities between electric motors and generators, and in fact, they can be thought of as the same device. In an electric motor, current is passed through a coil in a magnetic field, so that a torque is exerted on the coil, and it starts to rotate. In a generator, one exerts a torque to rotate the coil, thus inducing a current. 
+
+Consider an electric motor. As we supply current to the motor, the coil starts to rotate. But, a rotating coil in a magnetic field results in an induced current. By Lenz's Law, the induced current in the coil of a motor has to be in the direction opposite to the current that we put in, since otherwise, the motor would start to spin infinitely fast. We call this effect ``back emf'', as the motor effectively acts like a battery that opposes current, as illustrated in Figure \ref{fig:induction:backemf}
+\begin{center}
+\begin{circuitikz}[]
+\draw (0,0) to [battery1,l=$\Delta V$,*-*, i<=$I$] (4,0)
+      to [short,i<=$I$] (4,2)
+      to [R,l_=$R_{motor}$,*-] (2,2) 
+      to [battery1,l_=Back emf,-*, invert] (0,2)
+      to [short,i<=$I$](0,0);  
+     \draw (1.65,0.3) node{$+$};
+     \draw (2.35,0.3) node{$-$};
+     \draw (0.65,1.7) node{$+$};
+     \draw (1.35,1.7) node{$-$};
+\end{circuitikz}
+\captionof{figure}{\label{fig:induction:backemf}A simple circuit illustrating how a motor, with resistance, $R$, will generate a ``back emf'', equivalent to a battery that produces a voltage in the direction to oppose the current from the actual battery, $\Delta V$. } 
+\end{center}
+If you connect an electric motor to a voltage source, initially, the motor is at rest, so there will be no back emf and the current through the circuit will be very large (motors have a small resistance, so that the electrical energy is converted into work rather than heating up the motor). As the motor starts to spin faster, the back emf from the motor grows, reducing the current in the circuit. If there is no load on the motor (i.e. the motor can rotate freely with no friction), then the rotational speed of the motor will increase until the back emf exactly matches the voltage supplied to the motor. The motor will then rotate at constant speed, with (almost) no current in the circuit (if the motor slows down, the emf will decrease, and the current will increase to speed up the motor). If there is a load on the motor (because it's making something turn), then the motor will rotate at a speed that is lower than that which would result in zero current, since some of that current is now used by the motor to exert a torque.
+
+You may notice that the lights in your house dim briefly as your refrigerator turns on. This is because your refrigerator uses an electric motor that initially draws a large current when it turns on, large enough to produce a voltage drop in the circuit of your house to observe a dimming of your lights. You may also notice that if you plug the inlet or outlet of a hair dryer, eventually the hair dryer turns off. In this case, by blocking the flow of air, you prevent the motor in the hair dryer from rotating; this results in a large current through its coil, since there is no back emf. Most hair dryers have a circuit breaker that will detect this large current and open the circuit to prevent the coil in the motor from over heating and melting. In general, one should not prevent an electric motor from rotating, as this will result in a large current through the motor that could burn it. 
+
+\section{The induced electric field and Eddy currents}
+So far, we have described electromagnetic induction in terms of the voltage that is produced by a changing magnetic field. This voltage is related to an electric field, which we discuss in this section. In Faraday's  Law, the voltage is induced across a closed loop (and can be thought of as an ideal battery placed in the loop). This is illustrated in Figure \ref{fig:Induction:inducedE} which shows a loop in the plane of the page, and a magnetic field out of the plane of the page.
+\capfig{0.4\textwidth}{figures/Induction/inducedE.png}{\label{fig:Induction:inducedE} A varying magnetic field will induce a circular electric field.}
+%TODO Checkpoint question: In Figure \ref{fig:Induction:inducedE}, with the induced voltage as shown, is the magnetic field increasing or decreasing (correct)?
+As you recall, the electric potential difference between two points, $A$ and $B$, is obtained from the electric field:
+\begin{align*}
+\Delta V = \int_A^B \vec E\cdot d\vec l
+\end{align*}
+In the case of an induced voltage across a loop, the points $A$ and $B$ are the same. The integral is thus over a closed path:
+\begin{align*}
+\Delta V = \oint \vec E\cdot d\vec l
+\end{align*}
+We can include this into Faraday's Law by using the electric field instead of the potential difference:
+\begin{align*}
+\Delta V &=-\frac{d\Phi_B}{dt}\\
+\therefore \;\;\Aboxed{\oint \vec E\cdot d\vec l &= -\frac{d\Phi_B}{dt}}
+\end{align*}
+where the last line is a more general form of Faraday's Law. Note that in the case of electrostatics, where the electric field is produced by a distribution of charges, the integral $\oint \vec E\cdot d\vec l$ must be zero, since the electric force is conservative; the work done over a closed path, which is just a charge $q$ multiplied by that integral, must be zero. The force from an electric field that is induced by a time-varying magnetic field is not conservative!
+
+Faraday's Law as expressed with the electric field is much more general, and implies that a time-varying magnetic field will induce an electric field. This is true independently of there existing a physical wire to carry the induced current. 
+
+\begin{example}{A circular region with radius, $R$, of space contains a magnetic field that is uniform, and decreasing in magnitude with time:
+\begin{align*}
+\vec B(t) = B_0(1-at)\hat z
+\end{align*}
+where $a$ and $B_0$ are positive constants. Determine the electric field at a distance, $r$, from the centre of the region, inside and outside of the region with the magnetic field.}
+Figure \ref{fig:Induction:inducedE2} shows the circular region of magnetic field, as well as a circular path of radius, $r$, that defines the region over which we calculate the flux of the magnetic field.
+\capfig{0.4\textwidth}{figures/Induction/inducedE2.png}{\label{fig:Induction:inducedE2} The induced electric field lines form closed circles when the magnetic field changes.}
+First, we consider the induced electric field in the region with a magnetic field, where $r<R$. We choose a circle of radius $r$ to calculate the flux of the magnetic field. Since the magnetic field is uniform within that region, the flux is given by:
+\begin{align*}
+\Phi_B = \vec B \cdot \vec A = BA = B_0(1-at) \pi r^2
+\end{align*}
+The circulation of the electric field is easily found, since the electric field forms concentric circles:
+\begin{align*}
+\oint \vec E \cdot d\vec l = \oint Edl = E \oint dl = E(2\pi r)
+\end{align*}
+Applying Faraday's Law, the electric field is found to be:
+\begin{align*}
+\oint \vec E\cdot d\vec l &= -\frac{d\Phi_B}{dt}\\
+E(2\pi r) &= -\frac{d}{dt} B_0(1-at) \pi r^2\\
+2E &=  B_0ar\\
+\therefore E&=\frac{B_0a}{2}r\quad\text{(inside the region of magnetic field)}
+\end{align*}
+and we see that inside the region of the magnetic field, the strength of the induced electric field is proportional to the distance from the centre of the region (i.e. it increases linearly with $r$). 
+
+For the region outside where the magnetic field is zero, we again calculate the circulation of the electric field around a circular loop of radius $r>R$:
+\begin{align*}
+\oint \vec E \cdot d\vec l = \oint Edl = E \oint dl = E(2\pi r)
+\end{align*}
+The flux of the magnetic field through that loop is however related to the area of the region with the magnetic field (of radius, $R$):
+\begin{align*}
+\Phi_B = \vec B \cdot \vec A = BA = B_0(1-at) \pi R^2
+\end{align*}
+Again, applying Faraday's Law:
+\begin{align*}
+\oint \vec E\cdot d\vec l &= -\frac{d\Phi_B}{dt}\\
+E(2\pi r) &= -\frac{d}{dt} B_0(1-at) \pi R^2\\
+2Er&=  B_0aR^2\\
+\therefore E&=\frac{B_0aR^2}{2r}\quad\text{(outside the region of magnetic field)}
+\end{align*}
+Outside the region with a magnetic field, the magnitude of the electric field decreases with the distance from the centre of the region.
+
+\textbf{Discussion:} In this example, we determined the electric field that is induced by a varying magnetic field. In this case, the electric field lines form closed circles and result in a non-conservative force. When the electric field is formed by a distribution of electric charges, the field lines begin and end on charges, which is not the case for an induced electric field.
+\end{example}
+\subsection{Magnetic braking}
+When a conducting material moves into a region of magnetic field, small circular electric fields are induced in the material, thus inducing small circular currents, called ``Eddy currents''. The magnetic field can then exert a force on those currents, effectively resulting in a force on the material. This is the principle behind magnetic braking, which is used in some trains and in other applications.
+
+Figure \ref{fig:Induction:magneticbrake} illustrates how a magnetic brake can be used to slow a rotating wheel made of a conducting material (the material must conduct or the induced electric field will not produce any current). The metallic wheel has a small section where a magnetic field can be applied in the direction perpendicular to the plane of the wheel.
+\capfig{0.6\textwidth}{figures/Induction/magneticbrake.png}{\label{fig:Induction:magneticbrake} A rotating wheel made of a conducting material has a small region with a magnetic field. The Eddy currents in the region of changing flux result in a net downwards current at the centre of the region. The magnetic force that is exerted on that current slows down the wheel.}
+In the bottom left part of the wheel, the magnetic flux is increasing, since the material is moving from a region with no magnetic field to a region with a magnetic field. In that part of the region, clockwise Eddy currents will form, as those result in a magnetic field into the page, to counter the increasing magnetic flux (Lenz's Law). The bottom right side of the wheel is leaving the magnetic field, and will thus have Eddy currents in the opposite direction. The currents from both sides add up in the centre, resulting in a net downwards current. The magnetic force on that downwards current is to the left, resulting in a torque that slows the wheel. This is magnetic braking.
+
+Again, this is no more than conservation of energy at play. Since we induce currents by making the wheel move into/out of a region of magnetic field, we must do work, or we would be able to harvest free energy from the Eddy current (e.g. by running them through a light bulb). Any time that we try to move a conductor through a magnetic field, in a way that current is induced, we will have to exert a force and do work. In the case of magnetic braking, the wheel will convert its rotational kinetic energy into heat (the Eddy currents will heat up the wheel). The main issue with magnetic braking is that one needs to be able to dissipate the heat. The main advantage is that there are no parts that wear out, as opposed to braking with friction. In addition, magnetic braking is very smooth, and only acts when there is motion. As soon as the wheel stops rotating, the magnetic flux is constant everywhere and the Eddy currents disappear.
+
+
+%TODO Referring to Figure \ref{fig:Induction:magneticbrake}, would the brake still work if the magnetic field was into the page instead of out of the page? (correct: yes)
+
+\section{Transformers}
+
+\section{Maxwell's equations and electromagnetic waves}
+
+\section{Inductors in circuits}
+
+
+\newpage
+\section{Summary}
+
+\begin{chapterSummary}
+ Something that was learned
+\end{chapterSummary}
+
+\newpage
+\begin{importantEquations}
+\medskip
+\begin{multicols}{2}
+\textbf{Momentum of a point particle:}
+\begin{align*}
+\vec p = m\vec v \\
+\frac{d}{dt}\vec p = \sum \vec F = \vec F^{net}
+\end{align*}
+\columnbreak
 \\
-\\
-b) We can easily calculate the flux in the coil, and thus the induced current:
+\textbf{Position of the Centre of Mass \\ of a system:}
 \begin{align*}
-I^{ind}&=\frac{1}{R_{pickup}}\Delta V=-\frac{1}{R_{pickup}}\frac{d\Phi_B(t)}{dt}=-\frac{1}{R_{pickup}}\frac{d}{dt}B_0\pi r^2\cos(\omega t)\\
-&=\frac{B_0\pi r^2\omega}{R_{pickup}}\sin(\omega t)
+\vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i 
 \end{align*}
-Note that just after $t=0$, the flux through the pickup coil is decreasing, so the magnetic moment associated with the induced current is in the positive z direction.
+\medskip
+\end{multicols}
+\end{importantEquations}
 
-The torque is given by the cross product of the magnetic moment and the magnetic field vector. The torque required to keep the coil turning is in the positive x-direction.
-\begin{align*}
-\tau &= \mu B_0 \sin(\omega t) = I^{ind}\pi r^2 B_0  \sin(\omega t)= \frac{B_0\pi r^2\omega}{R_{pickup}}\sin(\omega t)\pi r^2 B_0  \sin(\omega t)\\
-&=\frac{B_0^2\pi^2 r^4\omega}{R_{pickup}}\sin^2(\omega t)
-\end{align*}
-The maximum torque is $\tau_0=4.06\times 10^{-10}$\,Nm
-\capfig{0.5\textwidth}{figures/Induction/taut.png}{\label{fig:induction:taut} Torque as a function of time.}
+\newpage
+\section{Thinking about the material}
+
+\begin{chapteractivity}{Reflect and research}
+{
+\item Who first discovered induction? Why is it called Faraday's Law?
+\item Give a few examples of applications of magnetic breaking.
+\item How does a microphone make used of electromagnetic induction?
+\item What is magnetic damping?
+}
+\end{chapteractivity}
+
+\begin{chapteractivity}{To try at home}
+{
+\item Try
+}
+\end{chapteractivity}
+
+\begin{chapteractivity}{To try in the lab}
+{
+\item Propose an experiment
+}
+\end{chapteractivity}
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+
+}
+\end{problem}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+
 \end{solution}
-\question You wish to build a little generator for your house using the little stream of water that runs behind it. You construct a coil with $N=\num{1e4}$ circular loops of radius $r=\SI{20}{cm}$, which you attach to a paddle wheel so that it can rotate. You then go on ebay to search for a suitable magnet. Assuming that you want to generate AC voltage with a frequency of $\SI{60}{Hz}$ and a maximum amplitude of $\Delta V=\SI{110}{V}$, how strong a magnetic field do you need? Assume that the magnetic field is uniform through the volume of the coil. 
-\begin{finalanswer}
-	$\SI{2.322e-4}{T}$
-\end{finalanswer}
-\begin{solution}
-	We can write the flux as a function of time as:
-	\begin{align*}
-	\Phi_B = AB\cos(\omega t)
-	\end{align*}
-	where $A=\pi r^2$ is the area of the loop. The induced emf is thus:
-	\begin{align*}
-	\Delta V = -N\frac{d\Phi_B}{dt}=\omega NAB \sin(\omega t)
-	\end{align*}
-	The maximum voltage is given by:
-	\begin{align*}
-	\omega  NAB &= \SI{110}{V}\\
-	\therefore B&=\frac{(\SI{110}{V})}{NA\omega}=\frac{(\SI{110}{V})}{NA2\pi f}\\
-	&=\frac{(\SI{110}{V})}{2\pi^2(10000)(\SI{0.2}{m})^2(\SI{60}{Hz})}=\SI{2.322e-4}{T}
-	\end{align*}
-	
-\end{solution}
+

@@ -46,7 +46,7 @@
 \restylefloat{table}
 \usepackage{multicol}
 \usepackage[shortlabels]{enumitem}
-%\lstset{language=Python,showstringspaces=false,commentstyle=} 
+%\lstset{language=Python,showstringspaces=false,commentstyle=}
 \usepackage{tikz}
 \usepackage[american,smartlabels]{circuitikz}%for drawing circuits
 
@@ -108,7 +108,7 @@
 %Environments for writing code
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
-  
+
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
 \renewcommand{\lstlistingname}{Python Example}
 \renewcommand{\lstlistlistingname}{List of \lstlistingname s}
@@ -179,7 +179,7 @@
 \newenvironment{capfig}[3]{\begin{center}\includegraphics[width=#1]{#2}\captionof{figure}{#3}\end{center}}{}
 
 
-%Wrap figure environments (right or left). Argument #1 (default value 12, specified as optional), is the number of 
+%Wrap figure environments (right or left). Argument #1 (default value 12, specified as optional), is the number of
 %lines that the figure should take.
 %space around wrap figures:
 %\setlength{\intextsep}{20pt}%
@@ -256,24 +256,24 @@
 \newenvironment{problem}[2]
   {\refstepcounter{problem}\textbf{Problem \theproblem: }#2 (\hyperref[#1]{Solution})} %
   {\vspace{2ex}}
-  
+
 \newenvironment{problemParts}[2]
   {\refstepcounter{problem}\textbf{Problem \theproblem: }#2 (\hyperref[#1]{Solution}) %
   \begin{enumerate}[label=\alph*),topsep=-10pt]}%
    {\end{enumerate}}
   {\vspace{2ex}}
-  
+
 \newenvironment{MCquestion}[1]{#1%
    \begin{enumerate}[label=\Alph*),topsep=-10pt]}{%
    \end{enumerate}}
 
-%Example Box with counter  
+%Example Box with counter
 \newcounter{example}[chapter]
 \def\theexample{\thechapter-\arabic{example}}
-\newenvironment{example}[2]{% 
+\newenvironment{example}[2]{%
 \refstepcounter{example}%
 \mdfsetup{%
-    frametitle={% 
+    frametitle={%
         \tikz[baseline=(current bounding box.east),outer sep=0pt]
         \node[anchor=west,rectangle,fill=TBred, minimum width=5cm,rounded corners=0.2cm]
         {\strut Example~\theexample};},
@@ -417,18 +417,18 @@
 {\vspace{2ex}}
 
 \newenvironment{solutionParts}[2]{\refstepcounter{solution}\textbf{Solution to problem \ref{#1}:}
-  \begin{enumerate}[label=\alph*),topsep=-10pt] 
+  \begin{enumerate}[label=\alph*),topsep=-10pt]
    #2
   \end{enumerate}}
   {\vspace{2ex}}
-  
+
 %%Reflect and Research Questions with Counter
 \newcounter{tQuestion}[chapter]
 \def\therQuestion{\thechapter-\arabic{tQuestion}}
 
 \newenvironment{tQuestion}[1]{\refstepcounter{tQuestion}%
     \textbf{Activity~\therQuestion: }#1}
-          
+
 \usepackage[paper=letterpaper,
             %includefoot, % Uncomment to put page number above margin
             marginparwidth=.0in,     % Length of section titles
@@ -440,38 +440,38 @@
 \setcounter{tocdepth}{3}
 
 \begin{document}
-\pagenumbering{gobble}
-\include{CoverPage}
-\pagenumbering{roman}
-\include{Preface}
+%\pagenumbering{gobble}
+%\include{CoverPage}
+%\pagenumbering{roman}
+%\include{Preface}
 \tableofcontents
 \pagenumbering{arabic}
 
 
-\include{Introduction}
-\include{ModelAndExperiment}
-\include{DescribingMotionIn1D}
-\include{DescribingMotionInND}
-\include{NewtonsLaws}
-\include{ApplyingNewtonsLaws}
-\include{WorkEnergy}
-\include{PotentialEcons}
-\include{Gravity}
-\include{MomentumAndCM}
-\include{RotationalDynamics}
-\include{AngularMomentumRolling}
-\include{SimpleHarmonicMotion}
-\include{Waves}
-\include{FluidMechanics}
-\include{ChargesFields}
-\include{Gauss}
-\include{Potential}
-\include{Current}
-\include{Circuits}
-\include{MagneticForce}
-\include{MagneticSource}
-
-%Induction
+%\include{Introduction}
+%\include{ModelAndExperiment}
+%\include{DescribingMotionIn1D}
+%\include{DescribingMotionInND}
+%\include{NewtonsLaws}
+%\include{ApplyingNewtonsLaws}
+%\include{WorkEnergy}
+%\include{PotentialEcons}
+%\include{Gravity}
+%\include{MomentumAndCM}
+%\include{RotationalDynamics}
+%\include{AngularMomentumRolling}
+%\include{SimpleHarmonicMotion}
+%\include{Waves}
+%\include{FluidMechanics}
+%\include{ChargesFields}
+%\include{Gauss}
+%\include{Potential}
+%\include{Current}
+%\include{Circuits}
+%\include{MagneticForce}
+%\include{MagneticSource}
+%
+\include{Induction}
 %\include{SpecialRelativity}
 %Quantum mechanics
 
