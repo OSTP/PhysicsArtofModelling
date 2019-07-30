@@ -1,0 +1,14 @@
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) node[anchor=east]{a} to [battery1,l_=$\Delta V_1$,*-*] (3,0) node[anchor=north]{b} 
+	  to [battery1, l_=$\Delta V_2$, invert, -*] (6,0) node[anchor=west]{c} 
+	  to [short, -*] (6,2) node[anchor=west]{d} 
+ 	  to [R=$R_6$,-*](3,2) node[anchor=south]{e} 
+ 	  to [R,l^=$R_8$,-*] (0,2) node[anchor=east]{f} 
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3$] to (3,0);
+  \draw [->,>=stealth, line width=1mm] (1.85,0.6)--(1.15,0.6);
+ \draw [->,>=stealth, line width=1mm] (4.15,0.6)--(4.85,0.6);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_simp3}The resistors $r_1$ and $R_7$ in series from the circuit in Figure \ref{fig:circuits:bigcircuit_simp2} have been combined into the effective resistor, $R_8$, to simplify the circuit. } 
+\end{center}

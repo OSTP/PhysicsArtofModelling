@@ -1,0 +1,14 @@
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [R=$r_1$] (1.5,0)
+      to [battery1,l_=$\Delta V_1$] (2.5,0) 
+      to [short] (3,0)
+	  to [battery1, l_=$\Delta V_2$, invert] (6,0)
+	  to [short] (6,2)
+ 	  to [R=$R_6$](3,2)
+ 	  to [R,l^=$R_7$] (0,2)
+ 	  to [short, label=] (0,0);
+ \draw (3,2) [R=$R_3$] to (3,0);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:bigcircuit_simp2}The resistors $R_4$ and $R_5$ in parallel from the circuit in Figure \ref{fig:circuits:bigcircuit_simp1} have been combined into the effective resistor, $R_7$, to simplify the circuit. } 
+\end{center}

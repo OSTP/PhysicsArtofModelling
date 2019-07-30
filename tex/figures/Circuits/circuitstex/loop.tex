@@ -1,0 +1,14 @@
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) node[anchor=east]{a} [battery1,l_=$\Delta V_1$, *-*, i>=$I$] to (3,0) node[anchor=north]{b}
+	  to [battery1, l_=$\Delta V_2$, -*, i>=$I$, invert] node[anchor=west]{c} (6,0)
+      to [short, label=, i>=$I$, -*] node[anchor=west]{d} (6,2)
+ 	  to [R=$R_1$,i>=$I$] node[anchor=south]{e}(4,2)
+ 	  to [R=$R_2$,i>=$I$]node[anchor=south]{f} (2,2)
+ 	  to [R=$R_3$,i>=$I$] node[anchor=east]{g}(0,2)
+ 	  to [short, label=, i>=$I$,*-] (0,0); 
+ \draw [->,>=stealth, line width=1mm] (1.85,0.6)--(1.15,0.6);
+ \draw [->,>=stealth, line width=1mm] (4.15,0.6)--(4.85,0.6);
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:loop}A loop with 2 batteries and 3 resistors.} 
+\end{center}
