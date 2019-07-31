@@ -21,13 +21,13 @@ In this chapter, we introduce the tools to model the connection between the magn
 \end{opening}
 
 \section{Faraday's Law}
-In this chapter, we examine the connection between the electric field and the magnetic field. In the previous chapter, we described how an electric current produces a magnetic field. In this chapter, we describe how an electric current can be produced (or rather, ``induced'') by a magnetic field. The most important aspect of electromagnetic induction is that it always involves quantities that change with time. That is, a magnetic field needs to change with time, if it is to induce an electric current. In past chapters, we have only dealt with static electric and magnetic fields, static charges (for electric fields), and static currents (for magnetic fields). 
+In the previous chapter, we described how an electric current produces a magnetic field. In this chapter, we describe how an electric current can be produced (or rather, ``induced'') by a magnetic field. The most important aspect of electromagnetic induction is that it always involves quantities that change with time. In past chapters, we have only dealt with static electric and magnetic fields, static charges (for electric fields), and static currents (for magnetic fields). 
 
 Faraday's Law connects the flux of a time-varying magnetic field to an induced voltage (rather than a current). For historical reasons, the induced voltage is also called an induced ``electromotive force'' (emf), even if it is a voltage and not a force. Faraday's Law is as follows:
 \begin{align*}
 \Aboxed{\Delta V = -\frac{d\Phi_B}{dt}}
 \end{align*}
-where $\Phi_B$ is the flux of the magnetic field through an open surface, defined in the same was as the flux of the electric field (Section \ref{sec:gauss:flux}):
+where $\Delta V$ is the induced voltage, and  $\Phi_B$ is the flux of the magnetic field through an open surface, defined in the same way as the flux of the electric field (Section \ref{sec:gauss:flux}):
 \begin{align*}
 \Phi_B = \int_S \vec B\cdot d\vec A
 \end{align*}
@@ -37,23 +37,29 @@ If the magnetic field has a constant magnitude over the surface, $S$, and always
 \end{align*}
 where the magnitude of the vector $\vec A$ is equal to the area of the surface, and the vector $\vec A$ is normal to the surface.
 
-The surface, $S$, is defined by a closed path, and the induced voltage can be thought of as an ideal battery placed in the path that defines the surface. The minus sign indicated in which direction the current associated with the induced voltage would flow. It is important to note that an induced voltage only exists if the flux of the magnetic field changes (since the induced voltage is given by the time-derivative of the flux). Remember, induction is all about time-varying fields! This is better illustrated with an example.
+The surface, $S$, is defined by a closed path, and the induced voltage can be thought of as an ideal battery placed in the path that defines the surface. The minus sign indicates the direction of the current associated with the induced voltage. It is important to note that an induced voltage only exists if the flux of the magnetic field changes (since the induced voltage is given by the time-derivative of the flux). Remember, induction is all about time-varying fields! This is better illustrated with an example.
 
-Consider a loop of wire that is immersed in a uniform magnetic field, $\vec B$, that is perpendicular to the plane of the loop, as illustrated in Figure \ref{fig:Induction:faraday}. As time goes by, the magnetic field increases in strength, as shown in going from the left panel to the right panel. The flux of the magnetic field through the loop increases in magnitude, and a voltage is thus induced across the wire (illustrated by the ideal battery on the loop in the right panel), leading to an induced current, $I$.
-\capfig{0.6\textwidth}{figures/Induction/faraday.png}{\label{fig:Induction:faraday} As the magnetic field increases, so does the flux through the loop that is shown. The changing flux results in an induced voltage, which produces an induced current. The induced current produces a magnetic field in a direction to oppose the changing flux.}
+Consider a loop of wire that is immersed in a uniform magnetic field, $\vec B$, that is perpendicular to the plane of the loop, as illustrated in Figure \ref{fig:induction:faraday}. As time goes by, the magnetic field increases in strength, as shown in going from the left panel to the right panel. The flux of the magnetic field through the loop increases in magnitude, and a voltage is thus induced across the wire (illustrated by the ideal battery on the loop in the right panel), leading to an induced current, $I$.
+\capfig{0.6\textwidth}{figures/Induction/faraday.png}{\label{fig:induction:faraday} As the magnetic field increases, so does the flux through the loop that is shown. The changing flux results in an induced voltage, which produces an induced current that has a magnetic moment, $\vec \mu_I$. The induced current produces a magnetic field in a direction to oppose the changing flux.}
 
-When calculating the flux of the magnetic field, we have to choose the surface element vector, $d\vec A$, to be perpendicular to the surface over which we calculate the flux. There are two choices\footnote{Recall that this ambiguity in resolved when using Gauss' Law by always choosing $d\vec A$ to point ``outwards'', which only makes sense when the surface is closed. With an open surface, there is no inside and outside.} (upwards or downwards, as illustrated in Figure \ref{fig:Induction:faraday}), where we chose to define $d\vec A$ to point upwards. Thus, the magnetic flux is positive in both panels, and increases with time. The derivative, $d\vec B/dt$, is thus positive, and the right-hand side of Faraday's equation is negative because of the negative sign in front. Had we chosen to define $d\vec A$ to point downwards, the right-hand side of Faraday's Law would be negative.
+When calculating the flux of the magnetic field, we have to choose the surface element vector, $d\vec A$, to be perpendicular to the surface over which we calculate the flux. There are two choices\footnote{Recall that this ambiguity is resolved when using Gauss' Law by always choosing $d\vec A$ to point ``outwards'', which only makes sense when the surface is closed. With an open surface, there is no inside or outside, and we are left with the ambiguity.} (upwards or downwards, referring to Figure \ref{fig:induction:faraday}); we \textbf{chose} to define $d\vec A$ to point upwards. Thus, the magnetic flux is positive in both panels, and increases with time. The derivative, $d\vec B/dt$, is thus positive, and the right-hand side of Faraday's equation is negative because of the negative sign in front. Had we chosen to define $d\vec A$ to point downwards, the right-hand side of Faraday's Law would be negative.
 
-We can describe the direction of the induced current, $I$, in terms of its magnetic dipole moment (Section \ref{sec:MagneticForce:dipolemoment}), $\vec\mu_I$, also shown in Figure \ref{fig:Induction:faraday}. The overall sign on the right-hand side of Faraday's Law is determined by our (arbitrary) choice of the direction $d\vec A$. With this choice, we found that the right-hand side of Faraday's Law is negative:
+We can describe the direction of the induced current, $I$, in terms of its magnetic dipole moment (Section \ref{sec:MagneticForce:dipolemoment}), $\vec\mu_I$, also shown in Figure \ref{fig:induction:faraday}. The overall sign on the right-hand side of Faraday's Law is determined by our (arbitrary) choice of the direction $d\vec A$. With this choice, we found that the right-hand side of Faraday's Law is negative:
 \begin{align*}
 \Delta V = -\frac{d\Phi_B}{dt}=\text{a negative number}
 \end{align*}
-The overall sign of $\Delta V$ indicates whether the magnetic moment of the induced current is parallel ($\Delta V$ positive) or anti-parallel ($\Delta V$ negative) to $d\vec A$. This allows us to determine the direction of the induced current, and thus the direction of the ideal battery that represents the induced voltage. In general, when possible, it is common to choose the direction of $d\vec A$ to be parallel to the magnetic field vector, so that the flux is positive.
+The overall sign of $\Delta V$ indicates whether the magnetic moment of the induced current is parallel ($\Delta V$ positive) or anti-parallel ($\Delta V$ negative) to $d\vec A$. This allows us to determine the direction of the induced current, and thus the direction of the ideal battery that represents the induced voltage. In general, when possible, it is common to choose the direction of $d\vec A$ to be parallel to the magnetic field vector, so that the flux is positive (although this does not guarantee that its derivative is positive).
 
 \subsection{Lenz' Law}
-The minus sign in Faraday's Law is sometimes called ``Lenz's Law'', and ultimately comes from the conservation of energy. In Figure \ref{fig:Induction:faraday} above, we found that as the magnetic flux increases through the loop, a current is induced. That induced current will also produce a magnetic field (in the direction of its magnetic dipole moment).
+The minus sign in Faraday's Law is sometimes called ``Lenz's Law'', and ultimately comes from the conservation of energy. In Figure \ref{fig:induction:faraday} above, we found that as the magnetic flux increases through the loop, a current is induced. That induced current will also produce a magnetic field (in the direction of its magnetic dipole moment $\vec \mu_I$).
 
-Lenz's Law states that the ``induced current will always be such that the magnetic field that it produces counteracts the changing magnetic field that induced the current''. In Figure \ref{fig:Induction:faraday}, the magnetic field points in the upwards direction, and increases in magnitude with time. The induced current produces a magnetic field that points downwards to counteract the changing magnetic field, and preserve a constant flux through the loop. If this were not the case, the induced current would be in the opposite direction, contributing to the increasing magnetic flux through the loop, inducing more current, producing more flux, inducing more current, etc. Clearly, this would lead to an infinite current and solve the world's energy crisis. Unfortunately, conservation of energy (expressed here as Lenz's Law) prevents this from happening. 
+Lenz's Law states that the ``induced current will always be such that the magnetic field that it produces counteracts the changing magnetic field that induced the current''. In Figure \ref{fig:induction:faraday}, the magnetic field points in the upwards direction, and increases in magnitude with time. The induced current produces a magnetic field that points downwards to counteract the changing magnetic field, and preserve a constant flux through the loop. If this were not the case, the induced current would be in the opposite direction, contributing to the increasing magnetic flux through the loop, inducing more current, producing more flux, inducing more current, etc. Clearly, this would lead to an infinite current and solve the world's energy crisis. Unfortunately, conservation of energy (expressed here as Lenz's Law) prevents this from happening. 
+
+You can use Lenz's Law to determine the direction of induced currents. In general:
+\begin{itemize}
+\item If the magnitude of the magnetic \textbf{flux is increasing} in the loop, then the induced current produces a magnetic field that is in the \textbf{opposite direction} from the original magnetic field.
+\item If the magnitude of the magnetic \textbf{flux is decreasing} in the loop, then the induced current produces a magnetic field that is in the \textbf{same direction} as the original magnetic field.
+\end{itemize}
 
 The negative sign in Faraday's Law is not arbitrary (as we saw above, it gives the correct direction for the magnetic moment of the induced current, given our arbitrary choice of direction for $d\vec A$). In practice, one can often use Lenz's Law to determine the direction of the induced current (so that it counteracts the changing flux), and Faraday's Law to determine the magnitude of the induced voltage.
 
@@ -61,38 +67,31 @@ The negative sign in Faraday's Law is not arbitrary (as we saw above, it gives t
 
 %Checkpoint question: A loop next to a wire with changing current. In which direction is the induced current (see Giancolli Fig 29-11, Exercise B)
 
-\begin{example}{\label{ex:Induction:changingB}A uniform time-varying magnetic field is given by:
+\begin{example}{\label{ex:induction:changingB}A uniform time-varying magnetic field is given by:
 \begin{align*}
 \vec B(t) = B_0(1+at)\hat z
 \end{align*}
 where $B_0$ and $a$ are positive constants. A coil, made of $N$ circular loops of radius, $r$, lies in the $x-y$ plane. If the coil has a total resistance, $R$, what is the magnitude and direction of the current induced in the coil?}
-The coil is made of $N$ loops of wire. Each loop of wire can be treated independently, and each will have its own induced voltage across it. Since each loop is the same, they will all have the same induced voltage, and the total voltage induced across the coil, $\Delta V$, will simply given by:
+The coil is made of $N$ loops of wire. Each loop of wire can be treated independently, and each will have its own induced voltage across it. Since each loop is the same, they will all have the same induced voltage, and the total voltage induced across the coil, $\Delta V$, will be given by:
 \begin{align*}
 \Delta V = -N \frac{d\Phi_B}{dt}
 \end{align*}
 where $\Phi_B$ is the flux through any one of the loops. That is, each loop is similar to an ideal battery, and the coil is similar to placing all of these batteries in series, so that the voltages from each battery sum together.
 
-The coil lies the $x-y$ plane, perpendicular to the increasing magnetic field, similar to the situation depicted in Figure \ref{fig:Induction:faraday}. We choose the vector $d\vec A$, to calculate the flux, to be in the positive $z$ direction (parallel to the magnetic field):
+The coil lies the $x-y$ plane, perpendicular to the increasing magnetic field, similar to the situation depicted in Figure \ref{fig:induction:faraday}. Since the magnetic field is uniform over the surface of the coil, we do not need an integral to determine the flux. We define the area vector, $\vec A$, to be in the positive $z$ direction (parallel to the magnetic field):
 \begin{align*}
-d\vec A = dA \hat z
+\vec A = A \hat z = \pi r^2 \hat z
 \end{align*}
-
 The flux through one circular loop of radius, $r$, is given by:
 \begin{align*}
-\Phi_B (t) &= \int \vec B \cdot d\vec A =\int ( B_0(1+at)\hat z) \cdot (dA \hat z)\\
-&=B_0(1+at)\int_S dA = B_0(1+at) (\pi r^2)
+\Phi_B (t) &= \vec B \cdot \vec A = ( B_0(1+at)\hat z) \cdot (\pi r^2 \hat z) =B_0(1+at) (\pi r^2)
 \end{align*}
-where in the last line we factored out the magnetic field, which is uniform (does not depend on position), and the integral $int dA$ simply corresponds to the area of the loop (the sum of the area elements). Of course, in this case, we could have simply calculate the flux without the integral:
-\begin{align*}
-\Phi_B (t) = \vec B \cdot \vec A = (B_0(1+at) \hat z)(\pi r^2 \hat z) =  B_0(1+at) (\pi r^2)
-\end{align*}
-
 We can apply Faraday's Law to determine the induced voltage:
 \begin{align*}
 \Delta V &= -N \frac{d\Phi_B}{dt} = -N \frac{d}{dt} B_0(1+at) (\pi r^2)\\
 &=-NB_0a\pi r^2
 \end{align*}
-Since the induced voltage is negative, the magnetic moment of the induced current points in the negative $z$ direction (opposite to our choice of direction for $d\vec A$. This is consistent with Len'z Law, since the magnetic field increases in the positive $z$ direction, the induced current will produce a magnetic field in the negative $z$ direction to counteract the changing flux. The magnitude of the induced current is given by Ohm's Law:
+Since the induced voltage is negative, the magnetic moment of the induced current points in the negative $z$ direction (opposite to our choice of direction for $\vec A$). This is consistent with Len'z Law, since the magnetic field increases in the positive $z$ direction, the induced current will produce a magnetic field in the negative $z$ direction to counteract the changing flux. The magnitude of the induced current is given by Ohm's Law:
 \begin{align*}
 I = \frac{\Delta V}{R}=\frac{NB_0a\pi r^2}{R}
 \end{align*}
@@ -101,16 +100,16 @@ I = \frac{\Delta V}{R}=\frac{NB_0a\pi r^2}{R}
 \end{example}
 
 \section{Induction in a moving conductor}
-If we define a loop of wire, there are two ways in which the flux through that loop can change:
+If we define a loop of wire, there are two ways in which the magnetic flux through that loop can change:
 \begin{enumerate}
-\item The magnetic field can change magnitude or direction, as we saw in Example \ref{ex:Induction:changingB}.
+\item The magnetic field can change magnitude or direction, as we saw in Example \ref{ex:induction:changingB}.
 \item The loop can change size or orientation relative to the magnetic field.
 \end{enumerate}
 In this section, we examine the latter case, sometimes called ``motional emf'', as the induced voltage is the result of motion from the loop in which the voltage is induced. 
 
 \subsection{Motion of a bar on two parallel rails}
-Consider a U-shaped rail in uniform magnetic field on top of which a bar can slide with no friction, as illustrated in Figure \ref{fig:Induction:rail}. The bar of length $L$ moves to the right with a constant speed, $v$. 
-\capfig{0.5\textwidth}{figures/Induction/rail.png}{\label{fig:Induction:rail} A U-shaped rail on top of which a bar of length, $L$, can slide. The system is immersed in a magnetic field that points out of the page. The bar moves to the right with a constant speed $v$.}
+Consider a U-shaped rail in a uniform magnetic field on top of which a bar can slide with no friction, as illustrated in Figure \ref{fig:induction:rail}. The bar of length $L$ moves to the right with a constant speed, $v$. 
+\capfig{0.5\textwidth}{figures/Induction/rail.png}{\label{fig:induction:rail} A U-shaped rail on top of which a bar of length, $L$, can slide. The system is immersed in a magnetic field that points out of the page. The bar moves to the right with a constant speed $v$.}
 The bar and the rails form a closed loop of area:
 \begin{align*}
 A(t)=Lw(t)=Lvt
@@ -146,12 +145,12 @@ F_B = ILB = \frac{B^2L^2v}{R}
 \end{align*}
 Thus, in order for the bar to move at constant velocity towards the right, a force with the same magnitude must be exerted towards the right. In other words, work must be done to pull the bar to the right, by exerting a force with the magnitude, $F_B$. The rate at which that work must be done is given by:
 \begin{align*}
-P &= \frac{d}{dt}W=\frac{d}{dt}\vec F \cdot dx=\vec F\cdot \frac{dx}{dt}=\vec F\cdot \vec v = Fv
+P &= \frac{d}{dt}W=\frac{d}{dt}\vec F \cdot dx=\vec F\cdot \frac{dx}{dt}=\vec F\cdot \vec v = Fv\\
 &=\frac{B^2L^2v^2}{R}
 \end{align*}
 where we assumed that the bar moves in the positive $x$ direction. This is exactly the rate at which electric energy is dissipated in the bar! In other words, by doing mechanical work on the bar, we can create an induced current that will dissipate that energy at the same rate at which we do work. We can convert mechanical work into electrical energy!
 
-Finally, also note that this problem is closely related to the Hall effect, which is simply a different way to think about this problem. Consider the electrons that are in the bar, as the bar moves at constant speed to the right through the magnetic field (ignore the existence of the U-shaped rail). The electrons will experience a magnetic force that is upwards (consistent with the direction of the induced current discussed above). Eventually, electrons accumulate at the top of the bar, and start preventing more electrons from accumulating there, by producing an electric field, $\vec E$, in the bar. The equilibrium condition is that the magnetic force and the electric force have the same magnitude (and opposite directions):
+Finally, also note that this situation is closely related to the Hall effect, which is simply a different way to think about this problem. Consider the electrons that are in the bar, as the bar moves at constant speed to the right through the magnetic field (ignore the existence of the U-shaped rail). The electrons will experience a magnetic force that is upwards (consistent with the direction of the induced current discussed above). Eventually, electrons accumulate at the top of the bar, and start preventing more electrons from accumulating there, by producing an electric field, $\vec E$, in the bar. The equilibrium condition is that the magnetic force and the electric force have the same magnitude (and opposite directions):
 \begin{align*}
 qvB &= qE\\
 E &= vB
@@ -164,10 +163,10 @@ where we assumed that the electric field is uniform in the bar. This potential d
 \subsection{The generator}
 An electrical generator is used to create an alternating induced voltage/current, by rotating a coil inside of a constant and uniform magnetic field. In this case, the current is induced because the angle between the magnetic field and the surface element vector $d\vec A$ changes with time.
 
-Consider a single loop of wire with area $A$, that can rotate in a uniform and constant magnetic field, $\vec B$, as illustrated in Figure \ref{fig:Induction:generator}. 
-\capfig{0.6\textwidth}{figures/Induction/generator.png}{\label{fig:Induction:generator} A coil rotates in a constant and uniform magnetic field. At time $t=0$ (left panel), the coil lies in the $yz$ plane. The coil rotates about the $y$ axis, with a constant angular velocity, $\vec \omega$. At some time $t$ later, the coil has rotated through an angle $\theta = \omega t$ (right panel, as seen from above, looking down on the $xz$ plane).}
+Consider a single loop of wire with area $A$, that can rotate in a uniform and constant magnetic field, $\vec B$, as illustrated in Figure \ref{fig:induction:generator}. 
+\capfig{0.6\textwidth}{figures/Induction/generator.png}{\label{fig:induction:generator} A loop of wire rotates in a constant and uniform magnetic field. At time $t=0$ (left panel), the loop lies in the $yz$ plane. The loop rotates about the $y$ axis, with a constant angular velocity, $\vec \omega$. At some time $t$ later, the loop has rotated through an angle $\theta = \omega t$ (right panel, as seen from above, looking down on the $xz$ plane).}
 
-Referring to the coordinate system that is illustrated in Figure \ref{fig:Induction:generator}, the coil has a constant angular velocity, $\vec\omega$, in the positive $y$ direction and rotates about the $y$ axis (with the origin at the centre of the coil). At time $t=0$ (left panel), the coil lies in the $yz$ plane, and we choose the vector, $\vec A$, (used to calculate the flux) to be in the positive $x$ direction at time $t=0$. As the coil rotates, so will the vector $\vec A$, which is easier to visualize than the coil. At some time $t$, the vector $\vec A$ will make an angle $\theta=\omega t$ with the $x$ axis. The magnetic field is constant and in the positive $x$ direction, $\vec B = B\hat x$. That is, the angle between the vector $\vec A$ and the magnetic field, $\vec B$, will be given by $\theta = \omega t$. 
+Referring to the coordinate system that is illustrated in Figure \ref{fig:induction:generator}, the loop has a constant angular velocity, $\vec\omega$, in the positive $y$ direction and rotates about the $y$ axis (with the origin at the centre of the coil). At time $t=0$ (left panel), the loop lies in the $yz$ plane, and we choose the vector, $\vec A$, (used to calculate the flux) to be in the positive $x$ direction at time $t=0$. As the coil rotates, so will the vector $\vec A$, which is easier to visualize than the coil. At some time $t$, the vector $\vec A$ will make an angle $\theta=\omega t$ with the $x$ axis. The magnetic field is constant and in the positive $x$ direction, $\vec B = B\hat x$. That is, the angle between the vector $\vec A$ and the magnetic field, $\vec B$, will be given by $\theta = \omega t$. 
 
 At some time, $t$, the vector, $\vec A$, is given by:
 \begin{align*}
@@ -194,7 +193,7 @@ Since the generator produces current that can dissipate electrical energy, one m
 \begin{align*}
 \vec \tau = \vec \mu \times \vec B
 \end{align*}
-where $\vec mu$ is the magnetic dipole moment of the coil with induced current, $I$. If the coil has a resistance, $R$, then the current in the coil is given by Ohm's Law:
+where $\vec \mu$ is the magnetic dipole moment of the coil with induced current, $I$. If the current from the coil dissipates its energy in a system with resistance, $R$, then the current in the coil is given by Ohm's Law:
 \begin{align*}
 I = \frac{\Delta V}{R}=\frac{NAB\omega\sin(\omega t)}{R}
 \end{align*}
@@ -209,9 +208,9 @@ The torque exerted by the magnetic field on the coil with the induced current is
 &=\frac{NA^2B^2\omega\sin(\omega t)}{R}(\cos\omega(t)(\hat x \times \hat x)-\sin(\omega t)(\hat z \times \hat x))\\
 &=-\frac{NA^2B^2\omega\sin^2(\omega t)}{R}\hat y
 \end{align*}
-Note that the torque exerted on the loop, is always in the negative $y$ direction, as every term in the torque is either strictly positive ($N$) or squared ($\sin^2(\omega t)$). The torque exerted by the magnetic field on the coil is thus always in the opposite direction of rotation (recall that the coil has an angular velocity in the positive $y$ direction). This is sometimes called ``counter torque''. If we want the coil to maintain a constant angular velocity, then we must exert a torque in the positive $y$ direction to counter the torque from the magnetic field. Note that the torque that we must exert to keep the coil rotating with constant angular velocity is not constant in time (but always in the same direction). 
+Note that the torque exerted on the loop, is always in the negative $y$ direction, as every term in the torque is either strictly positive ($N,R$) or squared ($\sin^2(\omega t)$). The torque exerted by the magnetic field on the coil is thus always in the opposite direction of rotation (recall that the coil has an angular velocity in the positive $y$ direction). This is sometimes called ``counter torque''. If we want the coil to maintain a constant angular velocity, then we must exert a torque in the positive $y$ direction to counter the torque from the magnetic field. Note that the torque that we must exert to keep the coil rotating with constant angular velocity is not constant in time (but always in the same direction). 
 
-You can easily verify that the work that you must do by exerting the torque is the same as the electrical power dissipated by the current in the coil of resistance, $R$. The generator is thus a device to convert mechanical work into electrical energy. If the coil has no resistance (or is not connected to something with a resistance), then one does not need to exert a torque for the generator to rotate (but one also is not harnessing any energy). 
+You can easily verify that the work that you must do by exerting the torque is the same as the electrical power dissipated by the current in the resistor, $R$. The generator is thus a device to convert mechanical work into electrical energy. If the coil has is not connected to something with a resistance, then one does not need to exert a torque for the generator to rotate (but one also is not harnessing any energy). 
 
 \section{Back EMF in an electric motor}
 There are many similarities between electric motors and generators, and in fact, they can be thought of as the same device. In an electric motor, current is passed through a coil in a magnetic field, so that a torque is exerted on the coil, and it starts to rotate. In a generator, one exerts a torque to rotate the coil, thus inducing a current. 
@@ -229,16 +228,16 @@ Consider an electric motor. As we supply current to the motor, the coil starts t
      \draw (0.65,1.7) node{$+$};
      \draw (1.35,1.7) node{$-$};
 \end{circuitikz}
-\captionof{figure}{\label{fig:induction:backemf}A simple circuit illustrating how a motor, with resistance, $R$, will generate a ``back emf'', equivalent to a battery that produces a voltage in the direction to oppose the current from the actual battery, $\Delta V$. } 
+\captionof{figure}{\label{fig:induction:backemf}A simple circuit illustrating how a motor, with resistance, $R_{motor}$, will generate a ``back emf'', equivalent to a battery that produces a voltage in the direction to oppose the current from the actual battery that is powering the motor, $\Delta V$. } 
 \end{center}
 If you connect an electric motor to a voltage source, initially, the motor is at rest, so there will be no back emf and the current through the circuit will be very large (motors have a small resistance, so that the electrical energy is converted into work rather than heating up the motor). As the motor starts to spin faster, the back emf from the motor grows, reducing the current in the circuit. If there is no load on the motor (i.e. the motor can rotate freely with no friction), then the rotational speed of the motor will increase until the back emf exactly matches the voltage supplied to the motor. The motor will then rotate at constant speed, with (almost) no current in the circuit (if the motor slows down, the emf will decrease, and the current will increase to speed up the motor). If there is a load on the motor (because it's making something turn), then the motor will rotate at a speed that is lower than that which would result in zero current, since some of that current is now used by the motor to exert a torque.
 
-You may notice that the lights in your house dim briefly as your refrigerator turns on. This is because your refrigerator uses an electric motor that initially draws a large current when it turns on, large enough to produce a voltage drop in the circuit of your house to observe a dimming of your lights. You may also notice that if you plug the inlet or outlet of a hair dryer, eventually the hair dryer turns off. In this case, by blocking the flow of air, you prevent the motor in the hair dryer from rotating; this results in a large current through its coil, since there is no back emf. Most hair dryers have a circuit breaker that will detect this large current and open the circuit to prevent the coil in the motor from over heating and melting. In general, one should not prevent an electric motor from rotating, as this will result in a large current through the motor that could burn it. 
+You may notice that the lights in your house dim briefly as your refrigerator turns on. This is because your refrigerator uses an electric motor that initially draws a large current when it turns on, large enough to produce a voltage drop in the circuit of your house to observe a dimming of your lights. You may also notice that if you plug the inlet or outlet of a hair dryer, the hair dryer turns off quickly. In this case, by blocking the flow of air, you prevent the motor in the hair dryer from rotating; this results in a large current through its coil, since there is no back emf. Most hair dryers have a circuit breaker that will detect this large current and open the circuit to prevent the coil in the motor from over heating and melting. In general, one should not prevent an electric motor from rotating, as this will result in a large current through the motor that could melt its internal components. 
 
-\section{The induced electric field and Eddy currents}
-So far, we have described electromagnetic induction in terms of the voltage that is produced by a changing magnetic field. This voltage is related to an electric field, which we discuss in this section. In Faraday's  Law, the voltage is induced across a closed loop (and can be thought of as an ideal battery placed in the loop). This is illustrated in Figure \ref{fig:Induction:inducedE} which shows a loop in the plane of the page, and a magnetic field out of the plane of the page.
-\capfig{0.4\textwidth}{figures/Induction/inducedE.png}{\label{fig:Induction:inducedE} A varying magnetic field will induce a circular electric field.}
-%TODO Checkpoint question: In Figure \ref{fig:Induction:inducedE}, with the induced voltage as shown, is the magnetic field increasing or decreasing (correct)?
+\section{The induced electric field and eddy currents}
+So far, we have described electromagnetic induction in terms of the voltage that is induced by a changing magnetic field. This voltage is related to an electric field, which we discuss in this section. In Faraday's  Law, the voltage is induced across a closed loop (and can be thought of as an ideal battery placed in the loop). This is illustrated in Figure \ref{fig:induction:inducedE} which shows a loop in the plane of the page, and a magnetic field out of the plane of the page.
+\capfig{0.4\textwidth}{figures/Induction/inducedE.png}{\label{fig:induction:inducedE} A varying magnetic field will induce a circular electric field.}
+%TODO Checkpoint question: In Figure \ref{fig:induction:inducedE}, with the induced voltage as shown, is the magnetic field increasing or decreasing (correct)?
 As you recall, the electric potential difference between two points, $A$ and $B$, is obtained from the electric field:
 \begin{align*}
 \Delta V = \int_A^B \vec E\cdot d\vec l
@@ -252,22 +251,22 @@ We can include this into Faraday's Law by using the electric field instead of th
 \Delta V &=-\frac{d\Phi_B}{dt}\\
 \therefore \;\;\Aboxed{\oint \vec E\cdot d\vec l &= -\frac{d\Phi_B}{dt}}
 \end{align*}
-where the last line is a more general form of Faraday's Law. Note that in the case of electrostatics, where the electric field is produced by a distribution of charges, the integral $\oint \vec E\cdot d\vec l$ must be zero, since the electric force is conservative; the work done over a closed path, which is just a charge $q$ multiplied by that integral, must be zero. The force from an electric field that is induced by a time-varying magnetic field is not conservative!
+where the last line is a more general form of Faraday's Law. Note that in the case of electrostatics, where the electric field is produced by a distribution of charges, the integral $\oint \vec E\cdot d\vec l$ must be zero, since the electric force is conservative; the work done by the electric field on a charge $q$ over a closed path, which is just a charge $q$ multiplied by that integral, must be zero. The force from an electric field that is induced by a time-varying magnetic field is not conservative!
 
-Faraday's Law as expressed with the electric field is much more general, and implies that a time-varying magnetic field will induce an electric field. This is true independently of there existing a physical wire to carry the induced current. 
+Faraday's Law as expressed with the electric field is much more general, and implies that a time-varying magnetic field will induce an electric field. This is true, independently of there existing a physical wire to carry the induced current. 
 
 \begin{example}{A circular region with radius, $R$, of space contains a magnetic field that is uniform, and decreasing in magnitude with time:
 \begin{align*}
 \vec B(t) = B_0(1-at)\hat z
 \end{align*}
 where $a$ and $B_0$ are positive constants. Determine the electric field at a distance, $r$, from the centre of the region, inside and outside of the region with the magnetic field.}
-Figure \ref{fig:Induction:inducedE2} shows the circular region of magnetic field, as well as a circular path of radius, $r$, that defines the region over which we calculate the flux of the magnetic field.
-\capfig{0.4\textwidth}{figures/Induction/inducedE2.png}{\label{fig:Induction:inducedE2} The induced electric field lines form closed circles when the magnetic field changes.}
+Figure \ref{fig:induction:inducedE2} shows the circular region of magnetic field, as well as a circular path of radius, $r$, that defines the region over which we calculate the flux of the magnetic field.
+\capfig{0.4\textwidth}{figures/Induction/inducedE2.png}{\label{fig:induction:inducedE2} The induced electric field lines form closed circles when the magnetic field changes.}
 First, we consider the induced electric field in the region with a magnetic field, where $r<R$. We choose a circle of radius $r$ to calculate the flux of the magnetic field. Since the magnetic field is uniform within that region, the flux is given by:
 \begin{align*}
 \Phi_B = \vec B \cdot \vec A = BA = B_0(1-at) \pi r^2
 \end{align*}
-The circulation of the electric field is easily found, since the electric field forms concentric circles:
+The circulation of the electric field is easily found, since the electric field forms concentric circles (by symmetry):
 \begin{align*}
 \oint \vec E \cdot d\vec l = \oint Edl = E \oint dl = E(2\pi r)
 \end{align*}
@@ -278,9 +277,9 @@ E(2\pi r) &= -\frac{d}{dt} B_0(1-at) \pi r^2\\
 2E &=  B_0ar\\
 \therefore E&=\frac{B_0a}{2}r\quad\text{(inside the region of magnetic field)}
 \end{align*}
-and we see that inside the region of the magnetic field, the strength of the induced electric field is proportional to the distance from the centre of the region (i.e. it increases linearly with $r$). 
+and we see that, inside the region with the magnetic field, the strength of the induced electric field is proportional to the distance from the centre of the region (i.e. it increases linearly with $r$). 
 
-For the region outside where the magnetic field is zero, we again calculate the circulation of the electric field around a circular loop of radius $r>R$:
+For the region where the magnetic field is zero, we again calculate the circulation of the electric field around a circular loop of radius $r>R$:
 \begin{align*}
 \oint \vec E \cdot d\vec l = \oint Edl = E \oint dl = E(2\pi r)
 \end{align*}
@@ -300,29 +299,197 @@ Outside the region with a magnetic field, the magnitude of the electric field de
 \textbf{Discussion:} In this example, we determined the electric field that is induced by a varying magnetic field. In this case, the electric field lines form closed circles and result in a non-conservative force. When the electric field is formed by a distribution of electric charges, the field lines begin and end on charges, which is not the case for an induced electric field.
 \end{example}
 \subsection{Magnetic braking}
-When a conducting material moves into a region of magnetic field, small circular electric fields are induced in the material, thus inducing small circular currents, called ``Eddy currents''. The magnetic field can then exert a force on those currents, effectively resulting in a force on the material. This is the principle behind magnetic braking, which is used in some trains and in other applications.
+When a conducting material moves into a region of magnetic field, an electric field forming closed loops is induced in the material, thus inducing small current loops, called ``eddy currents''. The magnetic field can then exert a force on those currents, effectively resulting in a force on the material. This is the principle behind magnetic braking, which is used in some trains and in other applications.
 
-Figure \ref{fig:Induction:magneticbrake} illustrates how a magnetic brake can be used to slow a rotating wheel made of a conducting material (the material must conduct or the induced electric field will not produce any current). The metallic wheel has a small section where a magnetic field can be applied in the direction perpendicular to the plane of the wheel.
-\capfig{0.6\textwidth}{figures/Induction/magneticbrake.png}{\label{fig:Induction:magneticbrake} A rotating wheel made of a conducting material has a small region with a magnetic field. The Eddy currents in the region of changing flux result in a net downwards current at the centre of the region. The magnetic force that is exerted on that current slows down the wheel.}
-In the bottom left part of the wheel, the magnetic flux is increasing, since the material is moving from a region with no magnetic field to a region with a magnetic field. In that part of the region, clockwise Eddy currents will form, as those result in a magnetic field into the page, to counter the increasing magnetic flux (Lenz's Law). The bottom right side of the wheel is leaving the magnetic field, and will thus have Eddy currents in the opposite direction. The currents from both sides add up in the centre, resulting in a net downwards current. The magnetic force on that downwards current is to the left, resulting in a torque that slows the wheel. This is magnetic braking.
+Figure \ref{fig:induction:magneticbrake} illustrates how a magnetic brake can be used to slow a rotating wheel made of a conducting material (the material must conduct or the induced electric field will not produce any current). A magnetic field is produced (e.g. by a fixed permanent magnet) in a direction perpendicular to the wheel, over a small area (shown at the bottom of the wheel in Figure \ref{fig:induction:magneticbrake}).
+\capfig{0.6\textwidth}{figures/Induction/magneticbrake.png}{\label{fig:induction:magneticbrake} A rotating wheel made of a conducting material has a small region with a magnetic field. The eddy currents in the region of changing flux result in a net downwards current at the centre of the region. The magnetic force that is exerted on that current slows down the wheel.}
+In the bottom left part of the wheel, the magnetic flux is increasing, since the material is moving from a region with no magnetic field to a region with a magnetic field. In that part of the region, clockwise eddy currents will form, as those result in a magnetic field into the page, to counter the increasing magnetic flux (Lenz's Law). The bottom right side of the wheel is leaving the magnetic field, and will thus have eddy currents in the opposite direction. The currents from both sides add up in the centre, resulting in a net downwards current. The magnetic force on that downwards current is to the left, resulting in a torque that slows the wheel. This is magnetic braking.
 
-Again, this is no more than conservation of energy at play. Since we induce currents by making the wheel move into/out of a region of magnetic field, we must do work, or we would be able to harvest free energy from the Eddy current (e.g. by running them through a light bulb). Any time that we try to move a conductor through a magnetic field, in a way that current is induced, we will have to exert a force and do work. In the case of magnetic braking, the wheel will convert its rotational kinetic energy into heat (the Eddy currents will heat up the wheel). The main issue with magnetic braking is that one needs to be able to dissipate the heat. The main advantage is that there are no parts that wear out, as opposed to braking with friction. In addition, magnetic braking is very smooth, and only acts when there is motion. As soon as the wheel stops rotating, the magnetic flux is constant everywhere and the Eddy currents disappear.
+Again, this is no more than conservation of energy at play. Since we induce currents by making the wheel move into/out of a region of magnetic field, we must do work, or we would be able to harvest free energy from the eddy current (e.g. by running them through a light bulb). Any time that we try to move a conductor through a magnetic field, in a way that current is induced, we will have to exert a force and do work. In the case of magnetic braking, the wheel will convert its rotational kinetic energy into heat (the eddy currents will heat up the wheel). The main issue with magnetic braking is that one needs to be able to dissipate the heat. The main advantage is that there are no parts that wear out, as opposed to braking with friction. In addition, magnetic braking is very smooth, and only acts when there is motion. As soon as the wheel stops rotating, the magnetic flux is constant everywhere and the eddy currents disappear.
 
-
-%TODO Referring to Figure \ref{fig:Induction:magneticbrake}, would the brake still work if the magnetic field was into the page instead of out of the page? (correct: yes)
+%TODO Referring to Figure \ref{fig:induction:magneticbrake}, would the brake still work if the magnetic field was into the page instead of out of the page? (correct: yes)
 
 \section{Transformers}
+The electric power generated in power stations is transmitted using high-voltage transmission lines, typically with voltages above $\SI{300000}{V}$ for long distances. However, that voltage is not usable in our households, as our appliances expect a voltage around $\SI{120}{V}$ (or $\SI{220}{V}$ in Europe). Transformers use electromagnetic induction to transform one \textbf{alternating voltage} into another. Figure \ref{fig:induction:transformer} illustrates a transformer.
+\capfig{0.5\textwidth}{figures/Induction/transformer.png}{\label{fig:induction:transformer} A transformer converts a primary alternating voltage, $\Delta V_p$, to a secondary alternating voltage, $\Delta V_p$. The magnetic flux produced in one coil is transmitted by an iron core to the secondary coil, where a different voltage is induced, depending on the ratio of the number of windings in each coil.}
+The transformer has two coils, the ``primary'' and the ``secondary'', with different numbers of loops, $N_p$, and $N_s$, respectively. The coils are wrapped around an iron core, which can transmit the magnetic flux generated in the primary coil to the secondary coil. In the transformer, a voltage, $\Delta V_p$, is applied to the primary coil, and transformed into the desired voltage, $\Delta V_s$, in the secondary coil. 
+
+The current in the primary coil creates a magnetic field. Those field lines are transmitted by the iron core into the second coil. A voltage is only induced in the secondary coil if the magnetic flux through the secondary coil changes with time. Thus, transformers only work with alternating voltages, so that the magnetic field created by the primary coil changes continuously. Both coils will have the same magnetic flux, $\Phi_B$, through them, since they have the same area. The voltage in the primary coil is given by Faraday's Law:
+\begin{align*}
+\Delta V_p = N_p \frac{d\Phi_B}{dt}
+\end{align*}
+as is the voltage in the secondary coil:
+\begin{align*}
+\Delta V_s = N_s \frac{d\Phi_B}{dt}
+\end{align*}
+Since the flux (and thus its time-derivative) are the same in both coils, we can isolate the time-derivative in each equation to obtain the relationship between the voltages in the two coils:
+\begin{align*}
+\frac{\Delta V_p}{N_p}&=\frac{\Delta V_s}{N_s}\\
+\therefore \Delta V_s &= \frac{N_p}{N_s}\Delta V_p
+\end{align*}
+Thus, with a transformer, one simply needs to set the ratio of the number of loops in each coil in order to transform one voltage into another.
+%TODO Checkpoint: Which coil will have the highest voltage? The one with the most loops (correct) or the one with the least loops
+%TODO Checkpoint: Which coil will have the highest current? correct: the one with less loops (since P=IV has to be the same in both coils)
+
+\begin{example}{A power plant produces energy at rate of $P=\SI{150}{kW}$, and wishes to transmit this power as efficiently as possible to a town. The power lines between the power plant and the town have a resistance of $R=\SI{0.5}{\Omega}$. Compare the amount of power dissipated in the transmission lines depending on whether the power is transmitted through a voltage of $\SI{300000}{V}$ or $\SI{300}{V}$.}
+We model the transmission of power from the power plant to the town using the circuit shown in Figure \ref{fig:induction:powerplant}.
+\capfig{0.2\textwidth}{figures/Induction/powerplant.png}{\label{fig:induction:powerplant} Circuit for a power plant transmitting power to a town.}
+%TODO The town need to be an original drawing. I think you could probably just to a black trace of some roof tops or something...
+We do not know the resistance of the town, but we can still calculate the power that is dissipated in the transmission lines that have a total resistance of $R=\SI{0.5}{\Omega}$. The power plant produces power, $P$, and transmits it through the lines at a potential difference, $\Delta V$, resulting in a current, $I$:
+\begin{align*}
+P &= I\Delta V\\
+\therefore I &= \frac{P}{\Delta V}
+\end{align*}
+The current, $I$, will dissipate power in the lines at a rate of:
+\begin{align*}
+P_{line} = I^2 R = \frac{P^2}{\Delta V^2}R
+\end{align*}
+With the two different voltages, this corresponds to:
+\begin{align*}
+P_{line}&=\frac{P^2}{\Delta V^2}R=\frac{(\SI{150e3}{W})^2}{(\SI{300000}{V})^2}(\SI{0.5}{\Omega})=\SI{0.1}{W}\\
+P_{line}&=\frac{P^2}{\Delta V^2}R=\frac{(\SI{150e3}{W})^2}{(\SI{300}{V})^2}(\SI{0.5}{\Omega})=\SI{125000}{W}\\
+\end{align*}
+Thus, when the power is transmitted at low voltage, more than 80\% is dissipated in the transmission lines, whereas an insignificant fraction is dissipated when the power is transmitted at high voltage. This is why we need transformers.
+\end{example}
 
 \section{Maxwell's equations and electromagnetic waves}
+This section is meant to be informative, as the material is beyond the scope of this textbook. Nonetheless, it is worth summarizing what we have learned about electricity and magnetism, as Maxwell did. We can summarize the main laws from electromagnetism as follows:
+\begin{align*}
+\oint \vec E\cdot d\vec A &= \frac{Q}{\epsilon_0}&\text{(Gauss' Law)}\\
+\oint \vec B\cdot d\vec A &= 0 &\text{(No magnetic monopoles)}\\
+\oint \vec B\cdot d\vec l &= \mu_0 I^{enc} &\text{(\ampere's Law)}\\
+\oint \vec E\cdot d\vec l &= -\frac{d}{dt}\int \vec B\cdot d\vec A  &\text{(Faraday's Law)}\\
+\end{align*}
+where we wrote the magnetic flux in Faraday's Law using the integral explicitly. As you recall, Gauss' Law is equivalent to Coulomb's Law, relating the electric field to electric charges that produce the electric field. Although we did not explicitly use the second equation, it is the equivalent to Gauss' Law for the magnetic field. The flux of the magnetic field out of a closed surface must always be zero, since there are no magnetic monopoles, so that magnetic field lines never end.
 
-\section{Inductors in circuits}
+When we covered \ampere's Law, we only considered a static current as the source of the magnetic field. However, if there is an electric field present, that is created by charges that are moving, then those can also contribute a current to \ampere's Law:
+\begin{align*}
+\oint \vec E\cdot d\vec A &= \frac{Q}{\epsilon_0}\quad \text{(Gauss' Law)}\\
+\therefore Q &= \epsilon_0 \oint \vec E\cdot d\vec A\\
+\therefore I &= \frac{dQ}{dt} = \epsilon_0\frac{d}{dt} \oint \vec E\cdot d\vec A\\
+\end{align*}
+so that \ampere's Law, in its most general form, is written:
+\begin{align*}
+\oint \vec B\cdot d\vec l &= \mu_0 \left(I^{enc}+\epsilon_0\frac{d}{dt} \oint \vec E\cdot d\vec A\right)\quad \text{(\ampere's Law)}
+\end{align*}
+Writing out the four equations again:
+\begin{align*}
+\oint \vec E\cdot d\vec A &= \frac{Q}{\epsilon_0} &\text{(Gauss' Law)}\\
+\oint \vec B\cdot d\vec A &= 0 &\text{(No magnetic monopoles)}\\
+\oint \vec B\cdot d\vec l &= \mu_0 \left(I^{enc}+\epsilon_0\frac{d}{dt} \oint \vec E\cdot d\vec A\right) &\text{(\ampere's Law)}\\
+\oint \vec E\cdot d\vec l &= -\frac{d}{dt}\int \vec B\cdot d\vec A  &\text{(Faraday's Law)}\\
+\end{align*}
+These four equations are known as Maxwell's equation, and form our most complete theory of classical electromagnetism. It is quite interesting to note the similarities and relations between the electric and magnetic field. Maxwell's equations contain equations for the circulation and the total flux out of a closed surface for both fields. \ampere's Law implies that a changing electric field will produce a magnetic field. Faraday's Law implies that a changing magnetic field produces an electric field. If a point charge oscillates up and down, it will produce a changing electric field, which will produce a changing magnetic field, which will induce a changing magnetic field, etc. This is precisely what an electromagnetic wave is! The light that we see, the wifi signals for our precious phones, the highly penetrating radiation from nuclear reactors are all examples of electromagnetic waves (of different wavelenghts). 
 
+In fact, as Maxwell did, we can obtain the wave equation (Section \ref{sec:waves:waveequation}) from Maxwell's equations. We sketch out the derivation here, but it is definitely beyond the scope of this textbook. However, you're so close to seeing one of the most exciting revelations of physics that it would be a shame to skip! 
+
+We first write out Maxwell's equations in differential form, as we have already shown for Gauss' Law (Section \ref{sec:gauss:interpretation}) and \ampere's Law (Section \ref{sec:magneticsource:interpretation})
+\begin{align*}
+ \nabla \cdot \vec E &= \frac{\rho}{\epsilon_0} &\text{(Gauss' Law)}\\
+ \nabla \cdot \vec B&= 0 &\text{(No magnetic monopoles)}\\
+ \nabla \times \vec B &= \mu_0 \left(\vec j + \epsilon_0\die{\vec E}{t}\right) &\text{(\ampere's Law)}\\
+ \nabla \times \vec E &= -\die{\vec B}{t} &\text{(Faraday's Law)}\\
+\end{align*}
+If we consider a vacuum region in space, with no charges and no currents, these equations reduce to:
+\begin{align*}
+\nabla \cdot \vec E &= 0 &\nabla \cdot \vec B&= 0\\
+\nabla \times \vec B &= \mu_0 \epsilon_0\die{\vec E}{t} & \nabla \times \vec E &= -\die{\vec B}{t}
+\end{align*}
+We will make use of the following identity from vector calculus:
+\begin{align*}
+\nabla \times (\nabla \times \vec E)=\nabla(\nabla\cdot \vec E)-\nabla^2\vec E
+\end{align*}
+where:
+\begin{align*}
+\nabla^2\vec E &= \frac{\partial^2 \vec E}{\partial x^2}+\frac{\partial^2 \vec E}{\partial y^2} + \frac{\partial^2 \vec E}{\partial z^2}\\
+&=\left(\frac{\partial^2 E_x}{\partial x^2}+\frac{\partial^2  E_x}{\partial y^2} + \frac{\partial^2 E_x}{\partial z^2} \right) \hat x+ \left( \frac{\partial^2 E_y}{\partial x^2}+\frac{\partial^2  E_y}{\partial y^2} + \frac{\partial^2 E_y}{\partial z^2} \right) \hat y \\
+&+ \left(\frac{\partial^2 E_z}{\partial x^2}+\frac{\partial^2  E_z}{\partial y^2} + \frac{\partial^2 E_z}{\partial z^2}  \right) \hat z
+\end{align*}
+is called the ``vector Laplacian''.
+
+Consider taking the curl ($\nabla \times$) of the equation that has the curl of the electric field (Faraday's Law):
+\begin{align*}
+\nabla \times (\nabla \times \vec E &= -\die{\vec B}{t})\\
+\nabla(\nabla\cdot \vec E)-\nabla^2\vec E &= -\nabla \times \die{\vec B}{t}\\
+-\nabla^2\vec E &= - \die{}{t} \nabla \times \vec B\\
+-\nabla^2\vec E &= - \die{}{t} \mu_0 \epsilon_0\die{E}{t}\\
+-\nabla^2\vec E &= - \mu_0 \epsilon_0\frac{\partial^2\vec E}{\partial t^2} 
+\end{align*}
+where, in the third line, we made use of Gauss' Law ($\nabla \cdot \vec E=0$), and, in the fourth line, \ampere's Law ($\nabla \times \vec B = \mu_0 \epsilon_0\die{E}{t}$). The last equation that we obtained is a vector equation (the vector Laplacian has three components, as does the time-derivative of $\vec E$ on the right-hand side). Consider the $x$ component of this equation:
+\begin{align*}
+\frac{\partial^2 E_x}{\partial x^2}+\frac{\partial^2  E_x}{\partial y^2} + \frac{\partial^2 E_x}{\partial z^2}  &= \mu_0 \epsilon_0\frac{\partial^2 E_x}{\partial t^2} 
+\end{align*}
+If we define the quantity:
+\begin{align*}
+c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
+\end{align*}
+then, the $x$ component of the equation can be written as:
+\begin{align*}
+\frac{\partial^2 E_x}{\partial x^2}+\frac{\partial^2  E_x}{\partial y^2} + \frac{\partial^2 E_x}{\partial z^2} &= \frac{1}{c^2}\frac{\partial^2 E_x}{\partial t^2} 
+\end{align*}
+which is exactly the wave equation for the component, $E_x$, of the electric field, propagating with a speed, $c$, the speed of light! Thus, the speed of light is directly related to the constant $\epsilon_0$, and $\mu_0$. You can write out similar equations for the $y$ and $z$ components of the electric field, and find the similar equations for the magnetic field if you start by taking the curl of \ampere's Law instead of Faraday's Law. 
+
+We have just shown that electric and magnetic fields can behave as waves, which we now understand to be the waves that are responsible for light, radio waves, gamma rays, infra-red radiation, etc. All of these are types of electromagnetic waves, with different frequencies. Although we did not demonstrate this, the electromagnetic waves that propagate are such that the magnetic and electric field vectors are always perpendicular to each other. Electromagnetic waves also carry energy. Thus, a charge that is oscillating (say on a spring) and creating an electromagnetic wave must necessarily be losing energy (or work must be done to keep the charge oscillating with the same amplitude). Finally, it is worth noting that, according to Quantum Mechanics, light (and the other frequencies of radiation), are really carried by particles called ``photons''. Those particles are strange, since their propagation is described by a wave equation. 
 
 \newpage
 \section{Summary}
 
 \begin{chapterSummary}
- Something that was learned
+Faraday's Law connects a \textbf{changing} magnetic flux to an induced voltage:
+\begin{align*}
+\Delta V = -\frac{d\Phi_B}{dt}
+\end{align*}
+The magnetic flux, $\Phi_B$, is calculated as the flux of the magnetic field through an open surface, $S$:
+\begin{align*}
+\Phi_B = \int_S \vec B\cdot d\vec A
+\end{align*}
+The induced voltage, $\Delta V$, is the potential difference that is induced along the closed path (a ``loop'') that bounds the surface, $S$. If a charge $q$ were to move around that closed path, it would gain (or lose) energy, $q\Delta V$. Note that the potential difference that is induced corresponds to a non-conservative electric force, as a charge can gain/lose energy by moving along a closed path. The induced voltage is often called an induced electromotive force (emf), even if it is a voltage.
+
+The minus sign in Faraday's Law is sometime referred to as ``Lenz'a Law'', since it indicates in which direction the induced voltage will be. It is easiest to think of the closed path as a physical wire (e.g. a loop of wire) through which a current will be induced as a result of the induced voltage. The minus sign is easiest to interpret in terms of the direction of the magnetic dipole moment vector, $\vec \mu$, associated with the induced current (which points in the same direction as the magnetic field that is created by the induced current). 
+
+When calculating the flux of the magnetic field, the surface element vector $d\vec A$, must be perpendicular to the surface, which leaves two possible choices. Once a choice is made, and Faraday's Law has been applied, the sign of $\Delta V$ will indicate if the magnetic dipole moment of the induced current points in the same direction as $d\vec A$ (positive $\Delta V$) or in the opposite direction (negative $\Delta V$).
+
+If $N$ loops of wire are combined together into a coil, the voltages across each loop sum together, so that the voltage induced across the coil is given by:
+\begin{align*}
+\Delta V = -N\frac{d\Phi_B}{dt}
+\end{align*}
+
+Lenz's Law is a statement about conservation of energy. Indeed, the induced current must create a magnetic field that \textbf{opposes} the change in flux, otherwise, the induced current would grow indefinitely. Lenz's Law can be summarized as follows:
+\begin{itemize}
+\item If the magnitude of the magnetic \textbf{flux is increasing} in the loop, then the induced current produces a magnetic field that is in the \textbf{opposite direction} from the original magnetic field.
+\item If the magnitude of the magnetic \textbf{flux is decreasing} in the loop, then the induced current produces a magnetic field that is in the \textbf{same direction} as the original magnetic field.
+\end{itemize}
+
+A voltage is induced along a closed path any time that the flux of the magnetic field through the corresponding surface changes. The flux can change either because the magnetic field is changing, or because the loop is changing (in size or orientiation relative to the magnetic field). In the latter case (changing loop), one speaks of a ``motional emf''. A generator creates a motional emf by rotating a coil (with $N$ loops, each with area, $A$), inside a fixed uniform magnetic field, $\vec B$. The voltage produced by a generator is given by:
+\begin{align*}
+\Delta V = NAB\omega\sin(\omega t)
+\end{align*}
+where $\omega$ is the angular speed of the coil. A generator thus produces alternating voltage/current. The current that is induced in the coil of the generator will dissipate energy as it flows through a resistance, $R$. Thus, one must do work in order to keep the generator spinning. The current induced in the coil of the generator will also result in a magnetic moment, and a ``counter torque'' will be exerted on the coil. One must thus exert a torque in order to keep the generator spinning (and the work done by exerting that torque is converted into the electrical energy dissipated in the resistor). The counter torque on the generator is always in the same direction, and has a magnitude:
+\begin{align*}
+\tau = \frac{NA^2B^2\omega\sin^2(\omega t)}{R}
+\end{align*}
+
+When an electric motor is used, a ``back emf'' is induced in the coil of the motor. The back emf is such that it resists the direction of current (Lenz's Law), or else the motor would spin infinitely fast. As the motor spins faster, the back emf grows, until it reaches an equilibrium. Motors thus draw a large current when they first start up, since at low speed, they have no back emf. If an electric motor is prevented from rotating, the current will be large enough to melt the coil of the motor, if there is no circuit breaker installed.
+
+Since a changing magnetic flux induces a voltage, an electric field is also induced. We can replace the voltage in Faraday's Law with the circulation of the electric field to write a more general version of Faraday's Law:
+\begin{align*}
+\oint \vec E\cdot d\vec l &= -\frac{d\Phi_B}{dt}
+\end{align*}
+The induced electric field forms closed field lines, and is different than the electric field that is produced by a static charge, since the latter will have field lines that start and end on charges. The force associated with the induced electric field is not conservative.
+
+When a metallic object passes through a region of magnetic field, the induced electric field will induce current loops in the material called eddy currents. The magnetic field will also exert a force on these eddy currents to oppose the motion that is creating the currents (Lenz's Law); as the eddy currents dissipate electrical energy in the material, the metallic object must lose kinetic energy unless a force is acting on it. Magnetic brakes make use of this principle.
+
+Transformers are used to convert an alternating voltage, $\Delta V_p$, into a different alternating voltage, $\Delta V_s$. A ``primary'' coil, with $N_p$ windings, creates a changing magnetic flux that is guided (e.g. by an iron core) to a ``secondary'' coil, with $N_s$ windings. Since the two coils will have the same magnetic flux through them, they will have different voltages across the coils. In particular, the voltage in the secondary coil is given by:
+\begin{align*}
+\Delta V_s &= \frac{N_p}{N_s}\Delta V_p
+\end{align*}
+
+Maxwell's four equations form our best classical theory of electromagnetism. Those equations imply that a changing magnetic field produces an electric field (Faraday's Law), while a changing electric field can produce a magnetic field (\ampere's Law). By combining Maxwell's equation (with some heavy vector calculus), one can show that this leads to the formation of electromagnetic waves, that propagate with a speed, $c$, given by:
+\begin{align*}
+c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
+\end{align*}
+
+
 \end{chapterSummary}
 
 \newpage
@@ -353,6 +520,10 @@ Again, this is no more than conservation of energy at play. Since we induce curr
 \item Give a few examples of applications of magnetic breaking.
 \item How does a microphone make used of electromagnetic induction?
 \item What is magnetic damping?
+\item How does an induction stove work?
+\item How does a credit card swipe reader make use of induction?
+\item What is the origin of Maxwell's equations? When did he publish them?
+\item Who was the first to detect electromagnetic waves? How were they produced and detected?
 }
 \end{chapteractivity}
 
@@ -371,6 +542,10 @@ Again, this is no more than conservation of energy at play. Since we induce curr
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
+%TODO a problem like the first example, but with a non-uniform magnetic field given as a function of, say, x and t, so that one must use an integral to get the flux
+%TODO (maybe) a problem to calculate the total work required for one revolution of the generator (int \tau\cdot d\theta)
+%TODO Calculate the voltage induced across the wings of an airplane with some reasonable numbers.
+
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
 
 }
