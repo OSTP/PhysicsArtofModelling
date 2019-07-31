@@ -26,69 +26,11 @@ g(x,y)&=x^2+2y^2\\
 \therefore g(2,3)&=22
 \end{align*}
 
-We can easily visualize a function of 1 variable, for example by plotting it in python (see Appendix \ref{app:python}):
-\begin{python}[caption = Plotting a function of 1 variable]
-#import pacakges for creating arrays of values and for plotting
-import numpy as np #arrays
-import pylab as pl #plotting
+We can easily visualize a function of 1 variable by plotting it, as in Figure \ref{fig:calculus:xsquared}.
+\capfig{0.6\textwidth}{figures/Calculus/xsquared.png}{\label{fig:calculus:xsquared}$f(x)=x^2$ plotted between $x=-5$ and $=+5$.}
 
-#define the function:
-def f(x):
-    return x*x
-    
-#create 100 values of x between -5 and +5
-xvals = np.linspace(-5,5,100)
-
-#Plot the function evaluated at the values of x against the values of x:
-pl.plot(xvals,f(xvals))
-pl.xlabel('x')
-pl.ylabel('f(x)')
-pl.title('f(x)=$x^2$')
-pl.grid()
-pl.show()
-\end{python}
-\begin{poutput}
-(*\capfig{0.6\textwidth}{figures/Calculus/xsquared.png}{\label{fig:calculus:xsquared}$f(x)=x^2$ plotted between $x=-5$ and $=+5$.}*)
-\end{poutput}
-
-Plotting a function of 2 variables is a little trickier, since we need to do it in three dimensions (one axis for $x$, one axis for $y$, and one axis for $g(x,y)$). This can be done in python with a little more work:
-\begin{python}[caption = Plotting a function of 2 variables]
-#import pacakges for creating arrays of values and for plotting
-import numpy as np #arrays
-import pylab as pl #plotting
-#import package for handling 3D graphs:
-from mpl_toolkits.mplot3d import Axes3D
-
-#define the function:
-def g(x,y):
-    return x*x+2*y*y
-    
-#create 100 values of x and y between -5 and +5
-xvals = np.linspace(-5,5,100)
-yvals = np.linspace(-5,5,100)
-#create a grid with the values of x and y:
-X,Y = np.meshgrid(xvals,yvals)
-#evaluate the function everywhere on the grid
-gvals = g(X,Y)
-
-#Plot the function as a surface (create a figure, add 3D, plot it):
-fig = pl.figure(figsize=(10,10))
-ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X,Y,gvals,cmap="Blues")
-#show contours for the surface, projected on xy plane:
-ax.contour(X, Y, gvals,offset=-1,cmap="Blues")
-#add some labels
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('g(x,y)')
-ax.set_title("$g(x,y)=x^2+2y^2$")
-#choose the view point:
-ax.view_init(elev=30, azim=-25)
-pl.show()
-\end{python}
-\begin{poutput}
-(*\capfig{0.6\textwidth}{figures/Calculus/gxy.png}{\label{fig:calculus:gxy}$g(x,y)=x^2+2y^2$ plotted for $x$ between -5 and +5 and for $y$ between -5 and +5. A function of two variables can be visualized as a surface in three dimensions. One can also visualize the function by look at its ``contours'' (the lines drawn in the $xy$ plane). }*)
-\end{poutput}
+Plotting a function of 2 variables is a little trickier, since we need to do it in three dimensions (one axis for $x$, one axis for $y$, and one axis for $g(x,y)$). Figure \ref{fig:calculus:gxy} shows an example of plotting a function of 2 variables.
+\capfig{0.6\textwidth}{figures/Calculus/gxy.png}{\label{fig:calculus:gxy}$g(x,y)=x^2+2y^2$ plotted for $x$ between -5 and +5 and for $y$ between -5 and +5. A function of two variables can be visualized as a surface in three dimensions. One can also visualize the function by look at its ``contours'' (the lines drawn in the $xy$ plane). }
 
 Unfortunately, it becomes difficult to visualize functions of more than 2 variables, although one can usually look at projections of those functions to try and visualize some of the features (for example, contour maps are 2D projections of 3D surfaces, as shown in the xy plane of Figure \ref{fig:calculus:gxy}). When you encounter a function, it is good practice to try and visualize it if you can. For example, ask yourself the following questions:
 \begin{itemize}
