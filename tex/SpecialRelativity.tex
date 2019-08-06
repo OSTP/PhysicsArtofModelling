@@ -1,12 +1,251 @@
 \chapter{The theory of special relativity}
 \label{chap:specialrelativity}
+In this chapter, we introduce the theory of Special Relativity, originally formulated by Albert Einstein in 1905. Along with the development of Quantum Mechanics, Special Relativity marks the start of ``modern physics'', and the introduction of theories to describe our world that are decidedly counter-intuitive. 
  \vspace{1cm}
 \begin{learningObjectives}
-\item something interesting
+{
+\item Understand the motivation for developing the Theory of Special Relativity.
+\item Understand Einstein's postulates and their consequences.
+\item Understand how to apply Einstein's postulates to describe simultaneity.
+\item Understand how to model length contraction and time dilation.
+\item Understand how to model the energy and momentum of a relativistic object.
+\item Understand how to apply Lorentz transformations and make space-time diagrams.
+}
 \end{learningObjectives}
 
-\section{}
+\section{The issue with Maxwell's equations}
+%highlight the issue with Maxwell's equation
+%speed of ligth, Michelson and Morley
+In Chapter \ref{chapter:induction}, we summarized our knowledge of electromagnetism using Maxwell's four equations. As far as we can tell, this is the best description that we have of classic electric and magnetic phenomena (classic in the sense that the equations do not describe the behaviour of particles that are described by Quantum Mechanics). One of the consequences of Maxwell's equation is that they describe the existence of electromagnetic waves that propagate with a speed, $c$, given by:
+\begin{align*}
+c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
+\end{align*} 
+where $\epsilon_0$ and $\mu_0$ are the permittivity and permeability of free-space, respectively. The obvious question to ask about these electromagnetic waves is: ``In what medium do these waves propagate?''. In the late 1800s, it was thought that the Universe was bathed in a substance called the ``luminous ether'' (or just ``ether''), through which electromagnetic waves propagate. It was then thought that the speed, $c$, of these waves was, naturally, measured with respect to the ether. This led to the idea that there exists a special inertial frame of reference in the Universe, corresponding to that frame of reference in which light travels at a speed, $c$. This frame of reference would be at rest relative to the ether.
 
+In the late 1880s, Michelson and Morley developed a clever experiment to measure the speed of the Earth relative to the ether. If the ether exists, and the Earth is moving through it, then a beam of light travelling parallel to the motion of the Earth should travel at a slightly different speed than a beam of light travelling in the perpendicular direction. However, Michelson and Morley conclusively demonstrated that this was not the case. There is no detectable motion of the Earth through a medium in which light (a electromagnetic wave) propagates. There is no ether. This was a very puzzling discovery, with strange implications for Maxwell's equations. 
+
+Let us demonstrate, through a simple example, the ``issue'' with the theory of electromagnetism theory of Maxwell. Rather, it is not an issue, but a very strange implication. Consider two infinitely-long wires, separated by a distance, $r$, each carrying a uniform charge per unit length, $\lambda$, as illustrated in Figure \ref{fig:specialrelativity:twowire_electric}. 
+\capfig{0.3\textwidth}{figures/SpecialRelativity/twowire_electric.png}{\label{fig:specialrelativity:twowire_electric}Two infinitely long charged wires exert a repulsive force on each other.}
+We can easily calculate the magnitude of the repulsive electric force, $\vec F_E$, exerted by one charged wire on a section of length, $l$, of the other wire. The magnitude of the electric field at a distance, $r$, from an infinitely-long wire with charge per unit length, $\lambda$, is given by:
+\begin{align*}
+E = \frac{\lambda}{2\pi \epsilon_0r}
+\end{align*}
+A section of length, $l$, of the other wire carries charge, $q=l\lambda$, so that the force on that section of wire has a magnitude:
+\begin{align*}
+F_E=qE=\lambda l \left( \frac{\lambda}{2\pi \epsilon_0r}\right) = \frac{\lambda^2 l}{2\pi \epsilon_0r}
+\end{align*}
+And the force per unit length, on either one of the wires, has a magnitude:
+\begin{align*}
+\frac{F_E}{l}=\frac{\lambda^2}{2\pi \epsilon_0r}
+\end{align*}
+This is the only force exerted on one of the wires, and will thus allow us to completely specify the motion of that wire (we know all of the forces exerted on the wire, so we can use Newton's Second Law to determine its acceleration and describe its motion).
+
+Consider the same two wires, each carrying charge per unit length, $\lambda$, but as viewed from a frame of reference that is moving downwards (parallel to the wires), with a speed, $v$. In this frame of reference, the infinite wires still have a net charge per unit length, but they also appear to have an upwards moving current.
+\capfig{0.3\textwidth}{figures/SpecialRelativity/twowire_magnetic.png}{\label{fig:specialrelativity:twowire_magnetic}Two infinitely long charged wires as viewed from a down-going frame of reference will appear to have upwards-going currents that will exert an attractive force between the wires.}
+In this new frame of reference, we see two wires with charges on them, moving upwards with speed, $v$. In a length of time, $\Delta t$, we see a length of wire, $\Delta x=v\Delta t$, go by, with total charge, $\Delta Q=\lambda' \Delta x$. This corresponds to a current, $I$, given by:
+\begin{align*}
+I=\frac{\Delta Q}{\Delta t}=\lambda' v
+\end{align*} 
+Thus, in the downward going frame of reference, we see two wires with upwards current in them, and these wires must extract an attractive magnetic force between each other, with magnitude (per unit length):
+\begin{align*}
+\frac{F'_B}{l} = -\frac{\mu_0 I_1I_2}{2\pi r}=-\frac{\mu_0 I^2}{2\pi r}=-\frac{\mu_0 \lambda'^2 v^2}{2\pi r}
+\end{align*}
+where the prime (') on the force indicates that the force is measured in this different inertial frame of reference, and the minus sign indicates that it is in the opposite direction from the repulsive electric force. For reasons explained below, we allowed for the possibility that the charge per unit length, $\lambda$, is different in the moving frame of reference, and thus denoted it by $\lambda'$.
+
+In the downwards going frame of reference, the wires are still charged, and must still exert a repulsive force, with magnitude (per unit length):
+\begin{align*}
+\frac{F'_E}{l}=\frac{\lambda'^2}{2\pi \epsilon_0r}
+\end{align*}
+where, again, we used primes ('), to denote quantities that are measured in the moving frame of reference. The description of how the wires will move cannot depend on our frame of reference (the wires will move under the forces exerted on them regardless of whether we are observing them from a fixed or a moving point, and indeed regardless of whether we observe them at all!). Thus, the net force (per unit length) exerted on a wire cannot depend on our frame of reference. The total repulsive electric force, $F_E$, calculated in the stationary frame of reference must be equal to the sum of the magnetic, $F'_B$, and electric force, $F'_E$, calculated in the moving frame of reference \footnote{This statement is generally true for Special Relativity, because the force is exerted in the direction perpendicular to that of motion.}:
+\begin{align*}
+\frac{F_E}{l}&=\frac{F'_E}{l}+\frac{F'_B}{l}\\
+\frac{\lambda^2}{2\pi \epsilon_0r}&=\frac{\lambda'^2}{2\pi \epsilon_0r}  -\frac{\mu_0 \lambda'^2 v^2}{2\pi r}
+\end{align*}
+where we recognized that the charge per unit length, $\lambda'$, must be different in the moving frame of reference, or the above would give an inconsistent equation (the electric forces would cancel and we would find that the magnetic force is equal to zero). Thus, the repulsive electric force must be larger as observed in the moving frame of reference, or the net force on the wire would be different when evaluated in the two frames of reference.
+
+Before proceeding, let us clearly state our assumptions in modelling the force between the two charged wires:
+\begin{enumerate}
+\item The net force on the wire, allowing us to describe its motion, cannot depend on our frame of reference. We expect the laws of physics to be applicable from any inertial frame of reference.
+\item We assume that Maxwell's equations hold in all inertial frames of reference. In particular, we assume that the constants, $\mu_0$ and $\epsilon_0$, are the same in all inertial reference frames.
+\end{enumerate}
+The first assumption allows us to state that the net force in the two frames of reference must be the same. The second assumption implies that we must change the charge density, $\lambda'$, in the moving frame of reference, since the constants must remain the same, and this is the only quantity that can lead to a different electric force in the moving frame of reference (which is required if the net force is to be the same, according to our first assumption). Let us determine the new charge density, $\lambda'$, in terms of the charge density that is measured at rest. Starting with the requirement that the net force on the wire must not depend on the frame of reference, we find:
+\begin{align*}
+\frac{\lambda^2}{2\pi \epsilon_0r}&=\frac{\lambda'^2}{2\pi \epsilon_0r}  -\frac{\mu_0 \lambda'^2 v^2}{2\pi r}\\
+\lambda^2&=\lambda'^2-\epsilon_0\mu_0\lambda'^2 v^2\\
+\lambda^2&=\lambda'^2(1-\epsilon_0\mu_0v^2)\\
+\therefore \lambda'&=\lambda \frac{1}{\sqrt{\epsilon_0\mu_0-v^2}}
+\end{align*}
+Finally, recognizing that we can use the speed of light, $c$, to replace the combination of constants, $\epsilon_0\mu_0$, we find:
+\begin{align*}
+\lambda'&=\lambda \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+Thus, the charge per unit length on the wire is larger when measured from the moving frame of reference (the factor that multiplies, $\lambda$, is larger than one if $v<c$). It should be somewhat bothersome to you that the charge per unit length depends on the frame of reference in which it is measured, but this is the only way for our two assumptions to hold.
+
+So far, this has just been some math to ensure that ``things work out'', namely that our description of the motion of the wire does not depend on our frame of reference. However, the consequences of what we just derived are profound. We concluded that the charge per unit length on a wire depends on our frame of reference. Imagine drawing two lines on the wire, and imagine that we can actually see the excess charges on the wire (maybe they fluoresce or something). The charge per unit length on the wire is given by counting the number of charges between the two lines and divide that by the distance between the two lines. Now, both an observer at rest with the wire, and one that is moving relative to the wire will agree on the number of charges contained between the two lines. They will both count the same number. Thus, if the observer moving relative to the wire is to measure a larger charge density, then the distance between the lines must be smaller for that observer! To the observer moving relative to the wire, the wire is actually shorter. 
+
+To summarize, by requiring that the laws of physics are the same in all inertial frames of reference, and by requiring that Maxwell's equation are the same in all inertial frames of reference, we conclude that the charge per unit length that is measured on a wire must depend on the frame of reference in which it is measured. Since it cannot be the number of charges on the wire that depends on the frame of reference, it must be the length of the wire that depends on the frame of reference. Thus, either we accept that Maxwell's equations are incorrect, or we accept that they are correct but that they imply that objects shrink in length when they are moving (regardless of whether charges are involved). It turns out that the latter choice provides a better description of nature (and one that has not been invalidated!). 
+
+As an additional consequence of accepting these implications from Maxwell's equations is that the definition of the electric and magnetic fields must depend on the frame of reference. In the example from this section, we saw that what looks like an electric field in the stationary frame of reference, can appears as the combination of a magnetic and electric fields in a moving frame of reference.
+
+\section{Einstein's postulates}
+%Two postulates
+%Simulataneity
+Albert Einstein was the first to provide a complete description of how to deal with the issues that arise from Maxwell's equations when these are examined in different inertial frames of reference. The Theory of Special Relativity, is based on Einstein's two postulates:
+\begin{enumerate}
+\item The laws of physics are the same in all inertial reference frames. There is no experiment that can be performed to determine if one is at rest or moving with constant velocity.
+\item The speed of light propagating in vacuum is the same in all inertial reference frames. Any observer in an inertial frame of reference, regardless of their velocity, will measure that light has a speed of $c$, when it propagates in vacuum. 
+\end{enumerate}
+These postulates are equivalent to the assumptions that we made above to model the force between the two wires (we stated that the constants, $\epsilon_0$ and $\mu_0$, were independent of reference frame, instead of $c$). While the first postulate is perhaps ``acceptable'' to our common sense, the second one grossly defies common intuition. Consider two archers, as illustrated in Figure \ref{fig:specialrelativity:arrow}.
+\capfig{0.5\textwidth}{figures/SpecialRelativity/arrow.png}{\label{fig:specialrelativity:arrow}Two archers can fire an arrow with speed $v_A$. As measured in the frame of reference of the ground (of the target), the arrow fired from the archer that is on the train will have a higher speed.}
+Both archers can fire an arrow with a speed, $v_A$. One archer fires her arrow from the ground, at a target, and that arrow will hit the target with a speed, $v_A$. The other archer is located on a train that is moving with speed $v$, in the same direction that she wishes to shoot her arrow. She measures her arrow to leave her bow with speed, $v_A$, but, as seen from the ground (and from the target), her arrow has a speed $v_A+v$, and it will hit the target with a higher speed, as expected.
+
+Now, consider that the two archers instead fire a pulse of laser light instead of an arrow, as illustrated in Figure \ref{fig:specialrelativity:laser}. 
+\capfig{0.5\textwidth}{figures/SpecialRelativity/laser.png}{\label{fig:specialrelativity:laser}Two archers fire a laser pulse. Regardless of whether the pulse of laser light was fired from a moving train or from the ground, it will have a speed of $c$ in all frames of reference.}
+In this case, according to Einstein's second postulate, the speed of the pulses as measured on the ground (by the target), will be $c$, regardless of whether one of the pulses was fired from a moving train. This is truly strange and not compatible with our experience. Imagine that the train is moving close to the speed of light. The archer on the train would fire a laser pulse that she would observe to move away from her at the speed of light. When observed from the ground, we will see the pulse of light moves away from her very slowly, since she is on a train going almost the speed of light. The paradox is resolved once we realize that time and distance must be different on the train from what they are on the ground!
+
+\subsection{Simultaneity}
+As a first consequence of Einstein's postulates, let us consider the notion of simultaneity. Figure \ref{fig:specialrelativity:platform_rest} shows Alice on the platform of a train station. Alice is midway between two clocks, $A$ and $B$. Both identical clocks were configured so that they send a pulse of laser light when they read ``0''. Since Alice is midway between the clocks, if they emit their pulses of light at the same time, then Alice will see two pulses of light arrive at her location at the same time. She signals that the two pulses of light have reached her at the same time by raising her hands. 
+\capfig{0.8\textwidth}{figures/SpecialRelativity/platform_rest.png}{\label{fig:specialrelativity:platform_rest}Alice is equidistant from two clocks. The clocks fire a laser pulse when they read ``0'', and Alice observes both pulses arriving at her location at the same time, concluding that the pulses were emitted by the clocks at the same time.}
+Brice is located on a train that is travelling with speed, $v$, in the direction from clock $A$ to clock $B$, as illustrated in Figure \ref{fig:specialrelativity:platform_moving}.
+\capfig{0.8\textwidth}{figures/SpecialRelativity/platform_moving.png}{\label{fig:specialrelativity:platform_moving}Brice is on a moving train and sees the two pulses of light arrive at Alice at the same time, as evidenced by her raising her hands. In order for Brice to conclude that the two pulses of light travelled at the same speed, he concludes that the pulse from clock $A$ was emitted earlier.}
+Brice must agree that the two pulses arrived at Alice's location at the same time, since he can also see her raise her hands. In Brice's frame of reference, the two pulses of light must travel with the speed of light, according to Einstein's second postulate. However, since Brice is moving relative to Alice, he will observe that the pulse from clock $A$ must travel further to reach Alice than the pulse from clock $B$. Thus, in order for the pulses to arrive at Alice at the same time, and for all observers to measure the same speed for the pulses of light (Einstein's second postulate), Brice must conclude that clock $A$ fired its pulse of light before clock $B$. 
+
+That is, while Alice measures the clocks to be synchronized and emit pulses at the same time, Brice measures that clock $A$ is running ahead of clock $B$. The two observers, Alice and Brice, in different reference frames, cannot agree on whether two events are simultaneous. Even worse, if a third observer, \chloens, is located on a train going in the opposite direction from Brice's train, she will conclude that the pulse from clock $B$ was emitted earlier than the pulse from clock $A$ for Alice to put her hands up. A consequence of Einstein's postulates is that observers in different frames of reference will not agree on whether two events happen at the same time, and in some cases, as the one we illustrated, the observers will not agree on which event happened first. Think of the implications for causality!
+
+\section{Time dilation}
+Einstein was famous for his ``thought experiments'', which allow us to understand the consequences of our theory for experiments that would be impractical to actually carry out (such as the experiment with Alice and Brice described above, which would be impractical to carry out, since the speed of light is so high that Brice would never notice that clock $A$ emitted the pulse slightly earlier). 
+
+Imagine that we build a clock using a pulse of light travelling (oscillating) back and forth between two mirrors, separated by a distance, $L$, as illustrated in Figure \ref{fig:specialrelativity:clock_rest}.
+\capfig{0.2\textwidth}{figures/SpecialRelativity/clock_rest.png}{\label{fig:specialrelativity:clock_rest}A clock is made by having a pulse of light bounce back and forth between two parallel mirrors separated by a distance, $L$.}
+Since the speed of light is, $c$, the time that it will take for the pulse of light to travel back and forth between the two mirrors, namely the period of the clock, is given by:
+\begin{align*}
+\Delta t = \frac{2L}{c}
+\end{align*}
+where the speed of light, $c$, is given by the total distance travelled by the pulse of light divided by the time taken to do so:
+\begin{align*}
+c=\frac{2L}{\Delta t}
+\end{align*}
+Now, imagine placing this clock on a spaceship that travels with speed, $v$, perpendicular to the direction of the movement of the light, as illustrated in Figure \ref{fig:specialrelativity:clock_moving}, as viewed from the perspective of someone at rest relative to the clock and the spaceship.
+\capfig{0.5\textwidth}{figures/SpecialRelativity/clock_moving.png}{\label{fig:specialrelativity:clock_moving}A clock is made by having a pulse of light bounce back and forth between two parallel mirrors separated by a distance, $L$. When the clock is placed on a spaceship moving with speed, $v$, the light travels a longer distance before completing a full cycle, as observed by someone not travelling with the clock.}
+From the perspective of the person watching the clock go by, the pulse of light travels a larger distance over one clock period, since the mirrors move to the right as the pulse of light moves up and down. However, by Einstein's second postulate, the pulse of light must still travel with the same speed, $c$, so it must take the pulse of light longer to bounce between the two mirrors than it did when the clock is at rest. Let us determine the relationship between the period of the clock, $\Delta t$, measured when the clock is at rest, and the period of the clock, $\Delta t'$, as measured by an observer that sees the clock go by with speed, $v$. 
+
+To the observer that is not moving with the clock, the speed of the pulse of light, which must also be equal to $c$, is given by:
+\begin{align*}
+c&=\frac{2\sqrt{L^2+\left(\frac{v\Delta t'}{2}\right)^2}}{\Delta t'}
+\end{align*}
+where the distance in the numerator was simply found by Pythagoras' theorem, as the spaceship will travel a horizontal distance, $v\Delta t'$, as measured by the observer that is not moving with the spaceship. Squaring this relationship, we can isolate the period of the clock, $\Delta t'$, as measured by the observer that sees the clock move with speed, $v$:
+\begin{align*}
+c^2&=\frac{4L^2}{\Delta t'^2}+v^2\\
+\Delta t'^2 (c^2-v^2)&=4L^2\\
+\therefore \Delta t' &= 2L\frac{1}{\sqrt{c^2-v^2}}=\frac{2L}{c}\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+Note that the term, $2L/c$, is simply the period of the clock as measured in a frame of reference where the clock is stationary. Thus, we can relate the two clock periods:
+\begin{align*}
+\Aboxed{\Delta t' &= \Delta t \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}}
+\end{align*}
+To re-iterate: the period of the clock, $\Delta t'$, as measured in a frame of reference that is moving relative to the clock is longer than the period of the clock, $\Delta t$, as measured in the ``rest frame'' of the clock (the reference frame where the clock is stationary). We call this effect \textbf{``time dilation''}, and it is not just some mathematical curiosity. The clock that we constructed with a pulse of light is real clock; we can use to measure time. That clock will appear to tick slower if it is moving. \textbf{Time goes by slower in moving reference frame}. If a person climbs on a ship that is moving, that person will age at a slower rate than a person that remained on Earth. The equation above allows us to relate the amount of time that went by in one reference frame to the amount of time that went by in a different frame of reference.
+
+We define the time that is measured at rest as the ``proper time''. In our example, $\Delta t$, is the proper time (proper period) for the clock, since it is defined in a frame of reference where the clock is at rest. The ``dilated time'', $\Delta t'$, is measured in a frame of reference that is moving relative to the clock.
+
+The factor by which time is dilated comes up often in Special Relativity, and is called the gamma factor:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+As a corollary to Einstein's postulates, we will see that nothing can ever exceed the speed of light in vacuum. Thus the gamma factor is always greater than 1, since $v$ (the speed between two different inertial frames of reference), must always be smaller than $c$. You may also recognize that the gamma factor appeared in our introductory example with the force between two wires. Here, we derived the gamma factor from kinematical considerations, whereas in the example with the two wires, it came straight out of the equations for electromagnetism.
+%TODO Checkpoint: What is gamma for a speed of 0.75c? Give some numerical options....
+%TODO Checkpoint: What speed corresponds to gamma - 2.5? Give some speeds in terms of the speed of light (0.6c, 0.7c, etc)
+
+Time-dilation is a real effect that has been observed, for example by placing high precisions atomic clocks on an airplane to observe their period slow down. Another example of time-dilation is the fact that we observe many particles called muons at the surface of the Earth. Muons are very similar to electrons, except that they have a larger mass, and that they are unstable (they radioactively decay into an electron and neutrinos, after $\SI{2.2}{\mu s}$). Muons are produced in large amounts when cosmic rays (high energy particles from outside our Solar System) strike the molecules in our upper atmosphere. As the muons travel down towards the Earth, they decay into electrons. Suppose that muons are produced travelling at the speed of light; in that case, they would travel a distance $d=(\SI{3e8}{m/s})(\SI{2.2e-6}{s})=(\SI{660}{m})$, on average, before decaying. However, muons are produced tens of kilometres above the surface of the Earth, travel slower than the speed of light, and yet we are able to detect many muons at the surface of the Earth. At the surface of the Earth, it does not look like there was time for the muons to decay.
+
+We can understand this in terms of time dilation; in the reference frame of the muon, the muon decays after $\Delta t=\SI{2.2}{\mu s}$. In a reference frame from which the muon appears to move with speed, $v$, the ``clock'' that measures how long the muon has existed ticks slower. Thus, from the Earth, even if more than $\SI{2.2}{\mu s}$ elapsed since a muon was produced, we observe that the muon has ``aged'' by less than $\SI{2.2}{\mu s}$, and thus has not decayed.
+
+\begin{example}{A muon travels with a speed of $0.8c$ as observed from the surface of the Earth. As measured in the frame of reference of the Earth, how far has the muon travelled after $\SI{2.2}{\mu s}$ have elapsed in the muon's frame of reference?}
+The muon is travelling with a speed of $v=0.9c$ relative to the Earth, thus the gamma factor is given by:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} =\frac{1}{\sqrt{1-0.8^2}}=2.29
+\end{align*}
+The amount of time that goes by in the frame of reference of the Earth, $\Delta t$, when $\Delta t'=\SI{2.2}{\mu s}$ has gone by in the muon's frame of reference is given by:
+\begin{align*}
+\Delta t' = \gamma \Delta t = (2.29)(\SI{2.2}{\mu s})\SI{5.0}{\mu s}
+\end{align*}
+In the frame of reference of the Earth, the muon has travelled a distance:
+\begin{align*}
+d' = v\Delta t'=(0.9c)(\SI{5.0}{\mu s})=\SI{1350}{m}
+\end{align*}
+\textbf{Discussion: }In this example, we see that an object, such as a muon, that travels with a speed that is 90 percent of the speed of light will have a gamma factor around 2. Thus, time on that object appears to go by about twice as slowly as in a frame of reference that is at rest relative to the object. This is the mechanism that allows muons to exist much longer than $\SI{2.2}{\mu s}$ when they are travelling relative to Earth. Also, in Earth's reference frame, the muons travel a distance of $\SI{1350}{m}$ in the period of time between being produced and decaying. In the reference frame of the muon, only $\SI{2.2}{\mu s}$ elapse as the Earth moves closer to the muon, at the same speed. In the reference frame of the muon, the Earth has travelled a distance:
+\begin{align*}
+d' = v\Delta t=(0.9c)(\SI{2.2}{\mu s})=\SI{594}{m}
+\end{align*}
+Thus, as viewed from the muon's frame of reference, the distance that it travelled between being produced and decaying is about half the distance as measured in the Earth's reference frame. This is called ``length contraction'' and is a necessary consequence of time-dilation. 
+\end{example}
+
+\begin{example}{\label{ex:specialrelativity:alphatrip}A spaceship carrying your friend Alice speeds away at a speed of $0.99c$ towards the nearest start, Proxima Centauri, a distance of $\SI{4.2}{ly}$ (light-years) away. How much time goes by as measured by Alice? How far has the spaceship travelled, according to Alice?.}
+Alice's trip is illustrated in Figure \ref{fig:specialrelativity:alphatrip}, showing the trip as viewed from Earth's and from Alice's frames of reference.
+\capfig{0.8\textwidth}{figures/SpecialRelativity/alphatrip.png}{\label{fig:specialrelativity:alphatrip}Alice travels in a spaceship from the Earth to the star Proxima Centauri. In the Earth frame of reference, the star is $\SI{4.2}{ly}$ away. }
+In Earth's frame of reference, the spaceship travels a distance of $\SI{4.2}{ly}$ at a speed of $0.99c$, which will take a time, $\Delta t'$, given by:
+\begin{align*}
+\Delta t' = \frac{(\SI{4.2}{ly})}{(0.99c)}=\SI{4.2}{y}
+\end{align*}
+which is not surprising, since Alice is travelling at almost the speed of light. This is the time that goes by on planet Earth. Since Alice's spaceship is moving, less time will go by on the spaceship, as the $\SI{4.2}{y}$ is the dilated time measured at Earth, not the proper time measured by Alice. First, we determine the gamma factor:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} =\frac{1}{\sqrt{1-0.99^2}}=7.1
+\end{align*}
+The proper time measured by Alice is:
+\begin{align*}
+\Delta t = \frac{\Delta t}{\gamma}=\SI{0.6}{y}
+\end{align*}
+That is, Alice only ages by $\SI{0.6}{y}$ (about 7 months), while everyone on Earth ages by $\SI{4.2}{y}$!
+
+In Alice's frame of reference, she is still, and Proxima Centauri moves towards her at a speed of $0.99c$. Since her trip only lasts about 7 months ($\SI{0.6}{y}$), Proxima Centauri moves towards her by a distance, $L'$:
+\begin{align*}
+L'=(v)(\Delta t)=(0.99c)(\SI{0.6}{y})=\SI{0.6}{ly}
+\end{align*}
+as illustrated in Figure \ref{fig:specialrelativity:alphatrip}. Thus, Alice concludes that the distance between Earth and Proxima Centauri is only $\SI{0.6}{ly}$ instead of $\SI{4.2}{ly}$. The distance that she observes is contracted compared to the ``proper distance'' between Earth and Proxima, which is measured when the two are at rest.
+
+\textbf{Discussion: }In this example we saw, again, how the time that one measures depends on the frame of reference. In particular, if one can build spaceships that go close to the speed of light, one can cover large distances in the Universe without ageing much. We also saw that length contraction is a necessary corollary to time-dilation. Object appear contracted when they move, relative to their length when they are measured at rest (their ``rest length'' or their ``proper length'').
+\end{example}
+One interesting issue uncovered by Example \ref{ex:specialrelativity:alphatrip} is the so-called ``twin-paradox''. Imagine that Alice has a twin brother, Brice, that remains on Earth. Alice travels to Proxima Centauri and back (return trip), and will have aged by about 14 months, whereas Brice, will have aged by about 8.4 years (using the numbers in Example \ref{ex:specialrelativity:alphatrip}). However, Einstein's first postulate implies that there are no special frames of reference that are at rest. We should be able to think about this situation from the perspective where Alice is at rest, and it is the Earth (with Brice on it), that moves away from her and then back. In this case, Alice is at rest, and she will conclude that it takes about 8.4 years for the Brice to move away and come back, and that Brice would have aged by about 7 months. When Alice and Brice meet up again, clearly Alice cannot be both younger and older than Brice, so which one is it? (You will have to look this up, see associated question in the ``Thinking about the material'' section).
+
+\section{Length contraction}
+As we saw in the examples from the previous section, time dilation implies ``length contraction''. When an object is measured in a frame of reference that is at rest relative to the object, the length of the object, $L$, is called the ``rest length'' or the ``proper length'' of the object. If that object is moving relative to an observer, the observer will measure the object to be shorted, and have a contracted length, $L'$, given by:
+\begin{align*}
+\Aboxed{L'=L\sqrt{1-\frac{v^2}{c^2}} =\frac{L}{\gamma}}
+\end{align*}
+In Example \ref{ex:specialrelativity:alphatrip}, Alice measured a contracted distance between Earth and Proxima Centauri, as she was in a frame of reference that is moving relative to the Earth-Proxima Centauri reference frame. One point that is important to note is that length contraction only occurs along the direction parallel to the direction of motion.
+
+\begin{example}{A square painting hanging in a museum has a side with a length of $\SI{1}{m}$. If you view the stationary painting from a train moving in the horizontal direction at a speed of $0.85c$, what is the surface area of the painting that you measure?}
+Since your train is moving horizontally, only the horizontal dimension of the painting will be contracted. The gamma factor is given by:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} =\frac{1}{\sqrt{1-0.85^2}}=1.9
+\end{align*}
+Thus, the horizontal side of the painting will have a contracted length:
+\begin{align*}
+L'=\frac{L}{\gamma}=\frac{(\SI{1}{m})}{(1.9)}=\SI{0.53}{m}
+\end{align*}
+The area of the painting, as measured in the moving frame of reference, is given by:
+\begin{align*}
+A= (\SI{1}{m})(\SI{0.53}{m})=\SI{0.53}{m^2}
+\end{align*}
+\end{example}
+Length contraction also allows to uncover a potential paradox (the ladder or barn-pole paradox). Consider a train that has a rest length of $\SI{500}{m}$, travelling at a speed such that $\gamma = 2.5$ ($0.92c$). As the train goes by, from Earth, it appears to have a (contracted) length:
+\begin{align*}
+L'_{train}=\frac{(\SI{500}{m})}{2.5}=\SI{200}{m}
+\end{align*}
+Suppose that there is a tunnel on Earth that is exactly $\SI{200}{m}$ long, so that the train, when contracted, will fit in the tunnel. When the train passes, an operator briefly closes (and re-opens) the doors at the ends of the tunnel, and since the train is contracted, it never hits any of the doors, and all is fine.
+
+From the train's frame of reference, the train has a proper length of $\SI{500}{m}$, and the tunnel is contracted to a length of:
+\begin{align*}
+L'_{tunnel}=\frac{(\SI{200}{m})}{(2.5)}=\SI{80}{m}
+\end{align*}
+Thus, from the train's perspective, if the doors of the tunnel are closed, there is no way that it can ever fit in the tunnel, since the tunnel is much shorter than the train. So what happens when the operator on Earth closes the doors of the tunnel to briefly ``capture'' the train? Clearly, people on the Earth and people on the train have to agree whether the train was destroyed by the tunnel doors. The operator on Earth can clearly close both doors of the tunnel when the train is inside and not destroy the train. Hence, people on the train must agree that the train never collided with the doors, and that the doors were closed. The answer to this paradox lies in the fact that simultaneity is relative. The tunnel operate believes that she has closed the two doors of the tunnel at exactly the same time, precisely when the contracted train is lined up with the tunnel. However, to people on the train, in a different frame of reference, the doors did not close at the same time. To people on the train, there was never a time when the train was in the tunnel and both doors were closed!
+%TODO Checkpoint: Referring to the above paradox, to people on the train, which tunnel door closes first? (the one at the exit of the tunnel closes first, then opens, lets the train through, and the entrance door closes just after the end of the train entered the tunnel)
+
+
+\section{Energy and momentum}
+%Relativistic dynamics
+
+\section{Lorentz transformations and space-time}
+%Lorentz transformations, space time diagrams
 
 
 \newpage
@@ -22,7 +261,9 @@
 
 \begin{chapteractivity}{Reflect and research}
 	{
-		\item 
+	\item How did Michelson and Morley demonstrate that the aether does not exist? 
+	\item Why is 1905 the ``year of physics''?
+	\item How do you resolve the twin paradox?
 	}
 \end{chapteractivity}
 
@@ -34,6 +275,6 @@
 
 \begin{chapteractivity}{To try in the lab}
 	{
-		\item Propose an experiment to observe alpha, beta, and gamma radiation.
+		\item Propose an experiment to measure the speed of light.
 	}
 \end{chapteractivity}
