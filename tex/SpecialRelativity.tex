@@ -227,25 +227,179 @@ The area of the painting, as measured in the moving frame of reference, is given
 A= (\SI{1}{m})(\SI{0.53}{m})=\SI{0.53}{m^2}
 \end{align*}
 \end{example}
-Length contraction also allows to uncover a potential paradox (the ladder or barn-pole paradox). Consider a train that has a rest length of $\SI{500}{m}$, travelling at a speed such that $\gamma = 2.5$ ($0.92c$). As the train goes by, from Earth, it appears to have a (contracted) length:
+Length contraction also allows to uncover a potential paradox (the ``barn'', or ``ladder'' or ``barn-pole'' paradox). Consider a train that has a rest length of $\SI{500}{m}$, travelling at a speed such that $\gamma = 2.5$. As the train goes by, from Earth, it appears to have a (contracted) length:
 \begin{align*}
 L'_{train}=\frac{(\SI{500}{m})}{2.5}=\SI{200}{m}
 \end{align*}
+
+%TODO Checkpoint question, at what speed must an object move in order for it appear 1% shorter (Give different options of speed in m/s, the correct one gives 1/gamma = 0.99)
+
 Suppose that there is a tunnel on Earth that is exactly $\SI{200}{m}$ long, so that the train, when contracted, will fit in the tunnel. When the train passes, an operator briefly closes (and re-opens) the doors at the ends of the tunnel, and since the train is contracted, it never hits any of the doors, and all is fine.
 
 From the train's frame of reference, the train has a proper length of $\SI{500}{m}$, and the tunnel is contracted to a length of:
 \begin{align*}
 L'_{tunnel}=\frac{(\SI{200}{m})}{(2.5)}=\SI{80}{m}
 \end{align*}
-Thus, from the train's perspective, if the doors of the tunnel are closed, there is no way that it can ever fit in the tunnel, since the tunnel is much shorter than the train. So what happens when the operator on Earth closes the doors of the tunnel to briefly ``capture'' the train? Clearly, people on the Earth and people on the train have to agree whether the train was destroyed by the tunnel doors. The operator on Earth can clearly close both doors of the tunnel when the train is inside and not destroy the train. Hence, people on the train must agree that the train never collided with the doors, and that the doors were closed. The answer to this paradox lies in the fact that simultaneity is relative. The tunnel operate believes that she has closed the two doors of the tunnel at exactly the same time, precisely when the contracted train is lined up with the tunnel. However, to people on the train, in a different frame of reference, the doors did not close at the same time. To people on the train, there was never a time when the train was in the tunnel and both doors were closed!
+Thus, from the train's perspective, if the doors of the tunnel are closed, there is no way that the $\SI{500}{m}$ long train can ever fit in the $\SI{80}{m}$ long tunnel, as illustrated in Figure \ref{fig:specialrelativity:barn}. So what happens when the operator on Earth closes the doors of the tunnel to briefly ``capture'' the train? 
+\capfig{0.8\textwidth}{figures/SpecialRelativity/barn.png}{\label{fig:specialrelativity:barn}In the ground's reference frame, the contracted train appears to fit inside the tunnel. From the train, the (proper length) train will not fit in the contracted tunnel.}
+Clearly, people on the Earth and people on the train have to agree on whether the train was destroyed by the tunnel doors. The operator on Earth can clearly close both doors of the tunnel when the train is inside and not destroy the train. Hence, people on the train must agree that the train never collided with the doors, and that the doors were closed. The answer to this paradox lies in the fact that simultaneity is relative. The tunnel operator believes that she has closed the two doors of the tunnel at exactly the same time, precisely when the contracted train is lined up with the tunnel. However, to people on the train, in a different frame of reference, the doors did not close at the same time, since events that are simultaneous in one frame of reference are not necessarily simultaneous in a different frame of reference. To people on the train, there was never a time when the train was in the tunnel and both doors were closed at the same time!
 %TODO Checkpoint: Referring to the above paradox, to people on the train, which tunnel door closes first? (the one at the exit of the tunnel closes first, then opens, lets the train through, and the entrance door closes just after the end of the train entered the tunnel)
-
-
-\section{Energy and momentum}
-%Relativistic dynamics
 
 \section{Lorentz transformations and space-time}
 %Lorentz transformations, space time diagrams
+\subsection{Four-dimensional space-time}
+So far, we have seen that our notions of time intervals (the time between two events) and space intervals (the distance between two locations) depend on our frame of reference. We also saw how space and time are connected, for example by the fact that time-dilation must go hand-in-hand with length contraction.
+
+In the context of Special Relativity, we introduce the concept of space-time. To describe the location of an object in space-time, we must specify both the location/position coordinates ($x$, $y$, $z$) \textbf{and} the time ``coordinate'', $t$. Since time, $t$, has the dimension of time, we usually specify the time coordinate by multiplying it by speed of light, $ct$, so that it has dimensions of length. Thus, position in space-time is given by 4 coordinates: $(x,y,z,ct)$.
+
+ 
+\subsection{Space-time diagrams}
+It is practically impossible to visualize situations in three dimensions, so four dimensions is hopeless! However, we can gain a lot of insight into Special Relativity models by using ``space-time diagrams''. In a space time diagram, we use only one of the position coordinates (typically $x$) along with the time coordinate, $ct$, to define the two axes of graph of space-time. Space-time diagrams are analogous to ``position as a function of time'' graphs that one would draw in kinematics, although they are fundamentally different in that, for a space time diagram, the coordinates should be thought of as independent (one is not plotting a dependent variable as a function of an independent variable).
+Figure \ref{fig:specialrelativity:spacetime} shows a space-time diagram for an object that was located at position $x=x_1$ at time $t=t_1$ (location $A$), and at position $x=x_2$ at time $t=t_2$ (location $B$). The path of an object through space-time, indicated by the line that connects $A$ and $B$, is called the ``world line'' of the object.
+\capfig{0.3\textwidth}{figures/SpecialRelativity/spacetime.png}{\label{fig:specialrelativity:spacetime}World line of an object that moved from locations $A$ in space-time to location $B$ in space-time.}
+%TODO Checkpoint Question: What does the world-line of a stationary particle look like?
+% A vertical line (correct)
+% A horizonta line
+% A point
+A pulse of light will always have a world-line that makes a $\SI{45}{\degree}$ angle with the horizontal (space) axis. As we will see, nothing (object or information) can travel faster than the speed of light. Thus, the world line of any object that is not light must always make an angle with the horizontal axis that is greater than $\SI{45}{\degree}$.
+
+A position in space-time is usually called an ``\textbf{event}''. We can draw a set of lines, at $\SI{45}{\degree}$ degrees from the horizontal axis, that intersect at an event in space-time. Those lines define two ``light cones'' corresponding to: (1) locations in space-time in the past that could have had a causal effect on the event (the ``past light cone''), and (2), locations in space-time in the future for which the event can have a causal effect.
+
+Figure \ref{fig:specialrelativity:cones} shows the light cones associated with an event, $A$, in space-time. The past light cone is the only region of space-time in which an event could have had an impact on the event $A$. For example, the event $A$ might be that ``the object is at position $x=x_1$ at time $t=t_1$'', so that the past light cone corresponds to the only locations in space-time that the object could have been in the past. Similarly, the future light-cone defines the locations in space time upon which the event $A$ could have an effect. For example, this could define the possible locations of the object in the future. The regions outside the light cones can never have an effect on the event $A$; they are not causally connected. A signal or object would need to travel faster than the speed of light in order to have an effect on something outside of its light cone. There are locations in space time, in the future of our Universe, that we cannot influence, no matter what we do.
+\capfig{0.3\textwidth}{figures/SpecialRelativity/cones.png}{\label{fig:specialrelativity:cones}The past and future light cones associated with the space-time event, $A$. }
+
+When two events in space-time are within each other's light cones, we say that the space-time interval between them (the line that you draw from one event to the other) is ``time-like''. Time-like events are such that all observers, in any frame of reference, will agree that one event happened before the other. Thus, events that are causally related must have a time-like interval between them (they are connected by a line that makes an angle greater than $\SI{45}{\degree}$ with the horizontal axis). Two events that are outside of each other's light cones are said to be ``space-like''. Events that are connected by space-like intervals cannot be causally related (one cannot cause the other). Observers in different frames of reference will disagree on the time ordering of space-like events. Finally, the space-time interval between events that are on each other's light-cone (connected by a line that makes a $\SI{45}{\degree}$ angle with the x-axis), is said to be ``light-like'' or ``null''. 
+
+\subsection{Lorentz transformations}
+In this section, we consider how to transform the space-time coordinates, $(x,y,z,ct)$, as measured in a frame of reference, $S$, to coordinate $(x',y',z',c't)$, as measured in a frame of reference, $S'$, that is moving with a constant speed, $v$, relative to the frame, $S$. For simplicity, we assume that frame $S'$ is moving with speed $v$ in the $x$ direction, as measured in frame, $S$, and that the origin of the two coordinate systems coincided at time $t=0$. Figure \ref{fig:specialrelativity:translation} shows an illustration of how the two frames of reference are related (note that these are actual coordinate systems, not space-time diagrams).
+\capfig{0.6\textwidth}{figures/SpecialRelativity/translation.png}{\label{fig:specialrelativity:translation}The reference frame $S'$ is moving relative to reference frame, $S$, with speed $v$ in the $x$ direction. At time $t=0$, the origins of the two coordinate systems coincided. }
+If we ignore any of special relativity, then the coordinates in $S'$ are easily related to those in the $S$ frame of reference using the ``Galilean transformations'':
+\begin{align*}
+x' &= x - vt\\
+y' &= y\\
+z' &= z\\
+t' &= t
+\end{align*}
+and this corresponds to transformations that we have implicitly used before considering Special Relativity. These equations also allow us to relate the speeds measured different frames of reference. Suppose that an object has a velocity, $\vec u=(u_x,u_y,u_z)$, as measured in the frame of reference, $S$. We can obtain the components of the velocity vector, $\vec u'$, as measured in the frame of reference, $S'$, by taking the time derivatives of the above equations:
+\begin{align*}
+u'_x &= \frac{dx'}{dt'}=\frac{dx'}{dt}=\frac{d}{dt}(x-vt)=\frac{dx}{dt}-v=u_x - v\\
+u'_y &=\frac{dy'}{dt'}=u_y\\
+u'_z &=\frac{dz'}{dt'}=u_z
+\end{align*}
+which is trivial, since $t=t'$. The transformation above are equivalent (identical) to the rules for transforming velocity that we derived in Section \ref{sec:describingmotionin1D:relativemotion} for kinematics. In Galilean relativity, time is an absolute quantity that does not depend on the frame of reference. In Special Relativity, the time coordinate is different between different frames of reference, so we cannot simply convert a time derivative in $t'$ to a derivative in $t$. Instead, we must use the Lorentz transformations.
+
+We can use the formulas for length contraction and time dilation to derive the Lorentz Transformations. Referring to Figure \ref{fig:specialrelativity:translation}, $x$ refers to the distance between a point in space-time and the distance along the $x$ axis from the origin of the frame, $S$, as measured in frame, $S$. Similarly, $x'$, is the distance to the point in space-time as measured in frame $S'$, from the origin of $S'$. In frame, $S$, the distance $x'$ will be contracted to the length $x'/\gamma$, so that the Galilean transformation for the $x$ coordinate is modified as follows:
+\begin{align*}
+x' &= x - vt\quad\text{(Galilean)}\\
+\frac{x'}{\gamma} &= x - vt\\
+\therefore x'&=\gamma (x-vt)\quad\text{(Lorentz)}
+\end{align*}
+The $y$ and $z$ coordinates are the same between frames of references, since all of the length contraction will take place in the direction of the relative motion between frames of reference, which we chose to be in the $x$ direction.
+
+We can obtain the equation for the time coordinate by considering that, in the $S'$ frame of reference, it is the $x$ coordinate that is contracted to $x/\gamma$. In the $S'$ frame of reference, the distance between the origins of the two systems is $vt'$ (note the prime on $t$). We can thus write the contracted distance $x$, in the $S'$ frame of reference:
+\begin{align*}
+\frac{x}{\gamma}&=vt'+x'\\
+t'&= \frac{1}{v}\left(\frac{x}{\gamma}-x'\right)
+\end{align*}
+We can eliminate $x'$ from the last equation using the Lorentz transformation for $x'$ that we just found:
+\begin{align*}
+t'&= \frac{1}{v}\left(\frac{x}{\gamma}-x'\right)\\
+t'&= \frac{1}{v}\left(\frac{x}{\gamma}-\gamma x+\gamma vt\right)\\
+\frac{t'}{\gamma}&=\frac{1}{v}\left(\frac{x}{\gamma^2}-x+vt\right)\\
+&=\frac{1}{v}\left(x\left(1-\frac{v^2}{c^2}\right)-x+vt\right)\\
+&=\frac{1}{v}\left(-\frac{v^2}{c^2}x+vt\right)\\
+&=t-\frac{vx}{c^2}\\
+\therefore t'&=\gamma\left(t-\frac{vx}{c^2} \right)
+\end{align*}
+where we wrote out the $\gamma$ factor out explicitly in the fourth line. We can summarize the Lorentz transformations as follows:
+\begin{align*}
+x' &=\gamma (x-vt)\\
+y' &= y\\
+z' &= z\\
+t' &=\gamma\left(t-\frac{vx}{c^2} \right)
+\end{align*}
+and the inverse relations are easily found:
+\begin{align*}
+x &=\gamma (x'+vt')\\
+y &= y'\\
+z &= z'\\
+t &=\gamma\left(t'+\frac{vx'}{c^2} \right)
+\end{align*}
+Note that the Lorentz transformations reduce to the Galilean transformations when the speed, $v$, between frames of reference is small (so that $\gamma \sim 1$).
+
+Einstein's second postulate states that the speed of light is independent of the frame of reference. Consider two points in space-time corresponding to the emission ($A$) and the absorption ($B$) of a pulse of light. In the reference frame, $S$, the distance squared in space between these two events must be equal to the distance (squared) corresponding to the light travelling between the time of emission and absorption:
+\begin{align*}
+(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2&= c^2t_A^2-c^2t_B^2\\
+\therefore \Delta x^2 + \Delta y^2 +\Delta z^2&=c^2\Delta t^2
+\end{align*}
+where $(x_A,y_A,z_A,ct_A)$ and $(x_B,y_B,z_B,ct_B)$ are the space-time coordinates of events $A$ and $B$. The above equation must hold in all frame of references (e.g. adding a prime to each coordinate).
+
+We can define, $s$, the ''space-time interval'', between events, $A$ and $B$:
+\begin{align*}
+s^2 = \Delta x^2 + \Delta y^2 +\Delta z^2&-c^2\Delta t^2
+\end{align*}
+which turns out to be ``Lorentz invariant'' (meaning that this value is the same in all reference frames). The space-time interval can be thought of as a ``distance'' in space-time that is the same in all reference frames. If the events $A$ and $B$ corresponds to the emission and absorption of light, then $s=0$, and we say that the interval between $A$ and $B$ is light-like or null. If $s<0$, the events are on a time-like interval, and if $s>0$, the events are separated by a space-like interval.
+
+We can visualize the effect of Lorentz transformations on space-time diagrams, as in Figure \ref{fig:specialrelativity:lorentz}, which shows the space-time diagrams for a reference frame, $S$, and a second reference frame, $S'$, moving with speed $v$ in the $x$ direction relative to $S$.
+\capfig{0.6\textwidth}{figures/SpecialRelativity/lorentz.png}{\label{fig:specialrelativity:lorentz}The reference frame $S'$ is moving relative to reference frame, $S$, with speed $v$ in the $x$ direction. We can illustrate this on a space-time diagram by tilting the axes of the $S'$ coordinate system by an angle $\alpha=v/c$, as shown. }
+The effect of the Lorentz transformation on a space-time diagram is to tilt both the space and time axes ``inwards'', by an angle, $\alpha$, given by:
+\begin{align*}
+\alpha = \frac{v}{c}
+\end{align*}
+Figure \ref{fig:specialrelativity:lorentz} shows a light-like interval between two points, $A$ and $B$, and how to determine the space-time coordinates in the two reference frames. You can think of space-time as the sheet of paper on which events happen. You can then draw different coordinate systems on that piece of paper to describe the position (in space and time) of different events.
+
+\begin{example}{Use a space-time diagram to show how two events at different locations that are simultaneous in one frame of reference are not simultaneous in a reference frame that is moving relative to the one where the events are simultaneous. This is an illustration of the relativity of simultaneity that we uncovered at the beginning of the chapter when examining Alice on a train platform and the two pulses of light.}
+Let $S$ be the frame of reference where events, $A$ and $B$, are simultaneous. These events are connected by a space-like interval, since they are separated in space, but not in time. There is no way for one event to have caused the other. In the frame, $S$, these events are on a horizontal line in a space-time diagram.
+
+Let us define a second reference frame, $S'$, that is moving with speed $v$, relative to $S$. We have illustrated space-time diagrams for the the two reference frames, and the events $A$ and $B$.
+\capfig{0.6\textwidth}{figures/SpecialRelativity/lorentz_simul.png}{\label{fig:specialrelativity:lorentz_simul}In the frame of reference, $S$, the events $A$ and $B$ occur at the same time. In frame, $S'$, event $B$ occurs before event $A$ (since $t_B < t_A$). The two events are space-like, so observers in different frames of reference cannot agree on which happened first.}
+From the space-time diagram, it is clear that, in the frame of reference $S'$, the event $B$ happened first. If the frame of reference $S'$ was moving in the opposite (negative $x$) direction, event $A$ would occur first, and the axes of $S'$ would be tilted in the other direction (so that the opening angle between the axes is greater than $\SI{90}{\degree}$).
+
+\textbf{Discussion: }This example illustrates how space-time diagrams can be used to qualitatively model events in space-time between two different reference frames. In particular, we showed how two events that are simultaneous in one frame ($S$) are not simultaneous in a different frame. For space like events, there are frames of reference where events are simultaneous, or where either one happened first. If two events are separated by a time like interval, there is no frame of reference in which one will disagree in the ordering of the events (although different frames of reference will still measure different lengths of time between events due to time-dilation). For time-like events, the moving frame of reference would have to go faster than the speed of light for the time ordering to be different. This would violate causality, and is a good argument as to why nothing can go faster than the speed of light.
+\end{example}
+
+\subsection{Lorentz addition of velocities}
+In the previous section, we reviewed the Galilean velocity transformations, that allow us to convert a velocity, $\vec u$, as measured in one frame of reference, to a velocity $\pvec u'$, measured in a different frame of reference. We now derive the equivalent relations based on the Lorentz transformation. Again, we assume that frame, $S'$, moves in the $x$ direction with speed, $v$, relative to frame, $S$. 
+
+The $x$ component of the velocity vector, $\vec u'$, for some object in the $S'$ frame of reference is given by:
+\begin{align*}
+u'_x = \frac{d}{dt'} x'
+\end{align*}
+In Galilean relativity, we could simply replace the derivative over $t'$ by a derivative over $t$, since the two are equivalent. This is no longer the case. However, we can use the Chain Rule and the Lorentz transformations to convert a derivative over $t'$ to a derivative over $t$:
+\begin{align*}
+\frac{d}{dt'} &= \frac{dt}{dt'}\frac{d}{dt}\\
+\frac{dt}{dt'} &= \frac{d}{dt'} \gamma\left(t'+\frac{vx'}{c^2} \right)\frac{d}{dt}\\
+&=\gamma \left(1+\frac{v}{c^2}\frac{dx'}{dt'}\right)\frac{d}{dt}\\
+&=\gamma \left(1+\frac{vu'_x}{c^2}\right)\frac{d}{dt}
+\end{align*}
+where we recognized that $\frac{dx'}{dt'}=u'_x$
+
+%%%%%%%%%%%%%%START HERE - CHECL ABOVE %%%%%%%%%%%%%%%%%%%%%%%
+
+ However, we can easily related a time interval in one frame of reference to a time interval in a different frame of reference using time dilation:
+\begin{align*}
+\Delta t' &= \gamma \Delta t\\
+\therefore dt' &= \gamma dt \quad \to \frac{dt'}{dt}=\gamma
+\end{align*}
+where, in the second line, we simply took the limit of an infinitesimally small time interval. The $x$ component of the velocity can thus be written as a derivative over $t$ by using the Chain Rule:
+\begin{align*}
+u'_x = \frac{d}{dt'} x' = \frac{dt}{dt'}\frac{d}{dt} x'=\frac{1}{\gamma}\frac{d}{dt} x'
+\end{align*}
+Using $x'=\gamma (x-vt)$ from the Lorentz transformations, we find:
+\begin{align*}
+u'x&=\gamma\frac{d}{dt} x'=\gamma\frac{d}{dt} \gamma (x-vt)=\gamma^2 (\frac{dx}{dt}-v)\\
+&=\gamma^2 (u_x-v)
+\end{align*}
+
+\section{Relativistic momentum and energy}
+In this section, we show how to define momentum and energy in a way that is consistent with the postulates of Special Relativity. We expect that, since time and space depend on the frame of reference of the observer, so too will the momentum and the energy of an object. Consider a particle of mass $m$, and speed, $\vec u$ (we reserve $\vec v$ to represent the speed between two inertial frames of reference). The classical momentum of the particle is defined as:
+\begin{align*}
+\vec p = m\vec u
+\end{align*}
+and is not a conserved quantity in general.
+%Relativistic dynamics
+
+
 
 
 \newpage
@@ -278,3 +432,19 @@ Thus, from the train's perspective, if the doors of the tunnel are closed, there
 		\item Propose an experiment to measure the speed of light.
 	}
 \end{chapteractivity}
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+%TODO Draw a space-time diagram to illustrate the barn paradox.
+
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+
+}
+\end{problem}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+
+\end{solution}
