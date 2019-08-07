@@ -342,7 +342,7 @@ which turns out to be ``Lorentz invariant'' (meaning that this value is the same
 
 We can visualize the effect of Lorentz transformations on space-time diagrams, as in Figure \ref{fig:specialrelativity:lorentz}, which shows the space-time diagrams for a reference frame, $S$, and a second reference frame, $S'$, moving with speed $v$ in the $x$ direction relative to $S$.
 \capfig{0.6\textwidth}{figures/SpecialRelativity/lorentz.png}{\label{fig:specialrelativity:lorentz}The reference frame $S'$ is moving relative to reference frame, $S$, with speed $v$ in the $x$ direction. We can illustrate this on a space-time diagram by tilting the axes of the $S'$ coordinate system by an angle $\alpha=v/c$, as shown. }
-The effect of the Lorentz transformation on a space-time diagram is to tilt both the space and time axes ``inwards'', by an angle, $\alpha$, given by:
+The effect of the Lorentz transformation on a space-time diagram is to tilt both the space and time axes ``inwards''\footnote{Outwards if the speed is in the negative $x$ direction.}, by an angle, $\alpha$, given by:
 \begin{align*}
 \alpha = \frac{v}{c}
 \end{align*}
@@ -368,28 +368,45 @@ u'_x = \frac{d}{dt'} x'
 In Galilean relativity, we could simply replace the derivative over $t'$ by a derivative over $t$, since the two are equivalent. This is no longer the case. However, we can use the Chain Rule and the Lorentz transformations to convert a derivative over $t'$ to a derivative over $t$:
 \begin{align*}
 \frac{d}{dt'} &= \frac{dt}{dt'}\frac{d}{dt}\\
-\frac{dt}{dt'} &= \frac{d}{dt'} \gamma\left(t'+\frac{vx'}{c^2} \right)\frac{d}{dt}\\
+&= \frac{d}{dt'} \gamma\left(t'+\frac{vx'}{c^2} \right)\frac{d}{dt}\\
 &=\gamma \left(1+\frac{v}{c^2}\frac{dx'}{dt'}\right)\frac{d}{dt}\\
 &=\gamma \left(1+\frac{vu'_x}{c^2}\right)\frac{d}{dt}
 \end{align*}
-where we recognized that $\frac{dx'}{dt'}=u'_x$
-
-%%%%%%%%%%%%%%START HERE - CHECL ABOVE %%%%%%%%%%%%%%%%%%%%%%%
-
- However, we can easily related a time interval in one frame of reference to a time interval in a different frame of reference using time dilation:
+where we recognized that $\frac{dx'}{dt'}=u'_x$. The $x$ component of the velocity, as measured in the $S'$ frame of reference, is then given by:
 \begin{align*}
-\Delta t' &= \gamma \Delta t\\
-\therefore dt' &= \gamma dt \quad \to \frac{dt'}{dt}=\gamma
+u'_x &= \frac{d}{dt'} x' = \gamma \left(1+\frac{vu'_x}{c^2}\right)\frac{d}{dt}x'\\
+&=\gamma \left(1+\frac{vu'_x}{c^2}\right)\frac{d}{dt}\gamma (x-vt)\\
+&=\gamma^2 \left(1+\frac{vu'_x}{c^2}\right)(u_x -v)\\
+\frac{u'_x}{\gamma^2}&=u_x -v +\frac{vu'_xu_x}{c^2}-\frac{v^2u'_x}{c^2}\\
+u'_x\left (1-\frac{v^2}{c^2}\right)&=u_x -v +\frac{vu'_xu_x}{c^2}-\frac{v^2u'_x}{c^2}\\
+u'_x \left( 1- \frac{vu_x}{c^2}\right) &=u_x -v\\
+\therefore \; \Aboxed{u'_x&=\frac{u_x -v}{1- \frac{vu_x}{c^2}}}
 \end{align*}
-where, in the second line, we simply took the limit of an infinitesimally small time interval. The $x$ component of the velocity can thus be written as a derivative over $t$ by using the Chain Rule:
+where we made use of the Lorentz transformation: $x'=\gamma (x-vt)$. We can proceed in a similar way to determine the $y$ and $z$ components. Note that, unlike the Galilean case, all of the velocity components must transform, since the time derivative is involve for each component. Intuitively, we expect all components of velocity to be affected, since one needs to guarantee that the total speed is always below $c$. The velocity transformations for all components are given by the following:
 \begin{align*}
-u'_x = \frac{d}{dt'} x' = \frac{dt}{dt'}\frac{d}{dt} x'=\frac{1}{\gamma}\frac{d}{dt} x'
+u'_x&=\frac{u_x -v}{1- \frac{vu_x}{c^2}}\\
+u'_y &=\frac{u_y}{\gamma\left(1- \frac{vu_x}{c^2}\right)}\\
+u'_z &=\frac{u_z}{\gamma\left(1- \frac{vu_x}{c^2}\right)}
 \end{align*}
-Using $x'=\gamma (x-vt)$ from the Lorentz transformations, we find:
+and the reverse transformations are given by:
 \begin{align*}
-u'x&=\gamma\frac{d}{dt} x'=\gamma\frac{d}{dt} \gamma (x-vt)=\gamma^2 (\frac{dx}{dt}-v)\\
-&=\gamma^2 (u_x-v)
+u_x &=\frac{u'_x +v}{1+ \frac{vu_x}{c^2}}\\
+u_y &=\frac{u'_y}{\gamma\left(1+ \frac{vu_x}{c^2}\right)}\\
+u_z &=\frac{u'_z}{\gamma\left(1+ \frac{vu_x}{c^2}\right)}
 \end{align*}
+\begin{example}{An archer can shoot a very fast arrow with a speed of $0.5c$. The archer is on a train moving with speed, $v=0.7c$, and fires an arrow in the direction of motion. What is the speed of the arrow, as measured in the frame of reference of the ground?}
+Let the train be the frame of reference, $S'$, moving in the positive $x$ direction with speed $v=0.7c$ relative to the frame, $S$, which corresponds to the ground. The speed of the arrow, as seen from the train, is given by:
+\begin{align*}
+u'_x = 0.5c
+\end{align*}
+The speed of the arrow, as measured from the ground, is thus given by:
+\begin{align*}
+u_x &=\frac{u'_x +v}{1+ \frac{vu_x}{c^2}}\\
+&=\frac{(0.5c) +(0.7c)}{1+ \frac{(0.7c)(0.5c)}{c^2}}\\`
+&=\frac{(1.2c)}{1+(0.7)(0.5)}=\frac{1.2}{1.35}c=0.89c
+\end{align*}
+\textbf{Discussion:} By using the Lorentz transformations for velocity, we see that the arrow does not exceed the speed of light. Had we used Galilean relativity, we would have concluded that the arrow has a speed of $1.2c$ when measured from the ground. 
+\end{example}
 
 \section{Relativistic momentum and energy}
 In this section, we show how to define momentum and energy in a way that is consistent with the postulates of Special Relativity. We expect that, since time and space depend on the frame of reference of the observer, so too will the momentum and the energy of an object. Consider a particle of mass $m$, and speed, $\vec u$ (we reserve $\vec v$ to represent the speed between two inertial frames of reference). The classical momentum of the particle is defined as:
@@ -415,9 +432,11 @@ and is not a conserved quantity in general.
 
 \begin{chapteractivity}{Reflect and research}
 	{
-	\item How did Michelson and Morley demonstrate that the aether does not exist? 
+	\item How did Michelson and Morley demonstrate that the ether does not exist? 
 	\item Why is 1905 the ``year of physics''?
-	\item How do you resolve the twin paradox?
+	\item How do you resolve the twin paradox? Can you show it on a space-time diagram?
+	\item What Lorentz do and when?
+	\item Apart from the space-time interval, $s$, what else is Lorentz invariant?
 	}
 \end{chapteractivity}
 
