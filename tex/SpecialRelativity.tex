@@ -159,14 +159,14 @@ Time-dilation is a real effect that has been observed, for example by placing hi
 
 We can understand this in terms of time dilation; in the reference frame of the muon, the muon decays after $\Delta t=\SI{2.2}{\mu s}$. In a reference frame from which the muon appears to move with speed, $v$, the ``clock'' that measures how long the muon has existed ticks slower. Thus, from the Earth, even if more than $\SI{2.2}{\mu s}$ elapsed since a muon was produced, we observe that the muon has ``aged'' by less than $\SI{2.2}{\mu s}$, and thus has not decayed.
 
-\begin{example}{A muon travels with a speed of $0.8c$ as observed from the surface of the Earth. As measured in the frame of reference of the Earth, how far has the muon travelled after $\SI{2.2}{\mu s}$ have elapsed in the muon's frame of reference?}
+\begin{example}{A muon travels with a speed of $0.8c$ as observed from the surface of the Earth. As measured in the frame of reference of the Earth, how far has the muon travelled after $\SI{2.2}{\mu s}$ have elapsed \textbf{in the muon's frame of reference}?}
 The muon is travelling with a speed of $v=0.9c$ relative to the Earth, thus the gamma factor is given by:
 \begin{align*}
 \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} =\frac{1}{\sqrt{1-0.8^2}}=2.29
 \end{align*}
-The amount of time that goes by in the frame of reference of the Earth, $\Delta t$, when $\Delta t'=\SI{2.2}{\mu s}$ has gone by in the muon's frame of reference is given by:
+The amount of time that goes by in the frame of reference of the Earth, $\Delta t$, when $\Delta t'=\SI{2.2}{\mu s}$ has gone by in the muon's frame of reference will be dilated by the gamma factor. $Delta t'$ is the proper time in the muon frame's of reference, which corresponds to a longer time in Earth's frame of reference:
 \begin{align*}
-\Delta t' = \gamma \Delta t = (2.29)(\SI{2.2}{\mu s})\SI{5.0}{\mu s}
+\Delta t = \gamma \Delta t' = (2.29)(\SI{2.2}{\mu s})=\SI{5.0}{\mu s}
 \end{align*}
 In the frame of reference of the Earth, the muon has travelled a distance:
 \begin{align*}
@@ -244,6 +244,19 @@ Thus, from the train's perspective, if the doors of the tunnel are closed, there
 \capfig{0.8\textwidth}{figures/SpecialRelativity/barn.png}{\label{fig:specialrelativity:barn}In the ground's reference frame, the contracted train appears to fit inside the tunnel. From the train, the (proper length) train will not fit in the contracted tunnel.}
 Clearly, people on the Earth and people on the train have to agree on whether the train was destroyed by the tunnel doors. The operator on Earth can clearly close both doors of the tunnel when the train is inside and not destroy the train. Hence, people on the train must agree that the train never collided with the doors, and that the doors were closed. The answer to this paradox lies in the fact that simultaneity is relative. The tunnel operator believes that she has closed the two doors of the tunnel at exactly the same time, precisely when the contracted train is lined up with the tunnel. However, to people on the train, in a different frame of reference, the doors did not close at the same time, since events that are simultaneous in one frame of reference are not necessarily simultaneous in a different frame of reference. To people on the train, there was never a time when the train was in the tunnel and both doors were closed at the same time!
 %TODO Checkpoint: Referring to the above paradox, to people on the train, which tunnel door closes first? (the one at the exit of the tunnel closes first, then opens, lets the train through, and the entrance door closes just after the end of the train entered the tunnel)
+\section{Electric and magnetic fields and Special Relativity}
+In this section, we present one more example to show how Special Relativity is connected to electromagnetism. Consider a wire that carries an electric current towards the left, and a positive charge, $+Q$, located next to the wire, as illustrated in Figure \ref{fig:specialrelativity:current}.
+\capfig{0.4\textwidth}{figures/SpecialRelativity/current.png}{\label{fig:specialrelativity:current}A stationary positive charge, $+Q$, near a wire carrying current towards the left. This leads to a magnetic field out of the page.}
+Inside the wire, negative electrons are moving towards the right, with a drift velocity, $\vec v_d$, while positive ions remain stationary. Since the charge $+Q$ has a velocity of zero, it experiences no magnetic force.
+
+If the charge, $+Q$, has a velocity, $\vec v_d$, towards the right, it will experience a downwards magnetic force, as illustrated in Figure \ref{fig:specialrelativity:current_force}.
+\capfig{0.4\textwidth}{figures/SpecialRelativity/current_force.png}{\label{fig:specialrelativity:current_force}A positive charge, $+Q$, moving towards the right, near a wire carrying current towards the left, will experience a downwards magnetic force, $\vec F_B=Q \vec v_d\times \vec B$.}
+
+Now, consider this from the perspective of the charge, $+Q$. The charge $Q$ is moving towards the right at the same speed as the electrons in the wire. In the reference frame of the charge, $+Q$, there is no current in the wire. Thus, there is no magnetic force. However, it must still experience a downwards force.
+
+In the lab frame of reference, where the electrons and the charge $+Q$ move towards the right at the same speed, the electrons appear closer together (length contracted) than they are in the frame of reference of the electrons (or of the charge $+Q$, since it is moving with the electrons). In the frame of reference of the charge $+Q$, the electrons thus appear to be spaced further apart (less dense). On the other hand, in the frame of reference of $+Q$, the positive ions, which are moving towards the left, appear closer together, as the distance between them is now contracted, as illustrated in Figure \ref{chap:specialrelativity:current_force}.
+\capfig{0.4\textwidth}{figures/SpecialRelativity/current_ions.png}{\label{fig:specialrelativity:current_force}In the frame of reference of the charge $+Q$, the ions appear to move to the left, and thus appear denser, since the distance between ions is contracted. The distance between electrons, on the other hand, is larger in this frame of reference. It thus appears that the wire is positively charged, and would exert a downwards force on the charge, $+Q$.}
+In the frame of reference of the charge $+Q$, the wire no longer appears neutral, but appears to have a net positive charge. This results in an electric field away from the wire that will exert a downwards force on $+Q$. Thus, we see that what looks like a magnetic force in one frame of reference, can look like an electric force in a different frame of reference. There is an intimate connection between what we call an electric and a magnetic field, that is related to Special Relativity. As you recall, Special Relativity is a consequence of Maxwell's equations holding true in difference frames of reference!
 
 \section{Lorentz transformations and space-time}
 %Lorentz transformations, space time diagrams
@@ -409,13 +422,124 @@ u_x &=\frac{u'_x +v}{1+ \frac{vu_x}{c^2}}\\
 \end{example}
 
 \section{Relativistic momentum and energy}
-In this section, we show how to define momentum and energy in a way that is consistent with the postulates of Special Relativity. We expect that, since time and space depend on the frame of reference of the observer, so too will the momentum and the energy of an object. Consider a particle of mass $m$, and speed, $\vec u$ (we reserve $\vec v$ to represent the speed between two inertial frames of reference). The classical momentum of the particle is defined as:
+In this section, we show how to define momentum and energy in a way that is consistent with the postulates of Special Relativity. We expect that, since time and space depend on the frame of reference of the observer, so too will the momentum and the energy of an object. Consider an object of mass $m_0$, moving in a frame of reference, $S$, with velocity, $\vec u$ (we reserve $\vec v$ to represent the speed between two inertial frames of reference), in the $x$ direction. At some time, $t$, the object will be at position, $x$, along the $x$ axis. We define the relativistic momentum as:
 \begin{align*}
-\vec p = m\vec u
+p = m_0\frac{dx}{dt'}
 \end{align*}
-and is not a conserved quantity in general.
-%Relativistic dynamics
+where $t'$ is the time as measured in the rest frame of the object. By defining this in terms of the proper time of the object, all observers will agree on the value of $t'$. In the frame of reference, $S$, (with time $t$) this corresponds to:
+\begin{align*}
+p = m_0\frac{dx}{dt'}=m_0\frac{dt}{dt'}\frac{dx}{dt}=m_0\frac{dt}{dt'}u
+\end{align*}
+where $u$ is the speed of the particle in frame, $S$. We can use time dilation to re-express the derivative:
+\begin{align*}
+\Delta t &= \gamma \Delta t'\\
+\frac{\Delta t}{\Delta t'}&=\gamma\\
+\therefore \frac{dt}{dt'}&=\gamma
+\end{align*}
+where in the last line, we simply took the limit of an infinitesimal time difference. Therefore, the relativistic momentum of the particle, in frame, $S$, can be defined:
+\begin{align*}
+\Aboxed{\vec p = m_0\gamma\vec u =  \frac{m_0\vec u}{\sqrt{1-\frac{u^2}{c^2}}} }
+\end{align*}
+where $\gamma$ is calculated with the same speed, $u$, since that is the speed of reference frame of the object relative to $S$. Note that as the speed, $u$, of the particle approaches the speed of light, the factor of $\gamma$ approaches infinity. This means that an object with a mass can never reach the speed of light, as it would have an infinite momentum. In order to define momentum in a way that resembles the classic definition, one can think of the mass of the object as depending on the speed of the object. We define the rest-mass, $m_0$, of the object as the mass that is measured when the object is at rest. We can then model the mass of the object as increasing with its speed:
+\begin{align*}
+m(u) = \gamma m_0 = \frac{m_0}{\sqrt{1-\frac{u^2}{c^2}}}
+\end{align*}
+so that the relativistic momentum would be defined as:
+\begin{align*}
+\vec p = m(u)\vec u
+\end{align*}
+In this case, we can think of the mass of the object increasing with its speed. The object would acquire infinite mass if it were to reach the speed of light.
 
+With the relativistic definition of momentum, Newton's Second Law can be written as:
+\begin{align*}
+\vec F = \frac{d\vec p}{dt}=\frac{d}{dt}m_0\gamma\vec u 
+\end{align*}
+
+Recall how we first defined kinetic energy, in Section \ref{sec:workenergy:kinetic}, using the Work-Energy Theorem. In particular, we defined the change in kinetic energy of an object as the net work done on that object. We use the same formalism here to redefine kinetic energy, but use the relativistic definition of momentum instead.
+
+The work done by the net force, $vec v$, on an object that goes from a position $A$ to a position $B$, is given by
+\begin{align*}
+W = \int_A^B \vec F\cdot d\vec l=\int_0^t \left(\frac{d}{dt}m_0\gamma\vec u \right)\cdot(\vec u dt)
+\end{align*}
+where we recognized that a infinitesimal segment $d\vec l$ along the path of the object is given by $d\vec l=\vec u dt$. The time derivatives cancel, and we are left with:
+\begin{align*}
+W&=\int_0^t \left(\frac{d}{dt}m_0\gamma\vec u \right)\cdot(\vec u dt)\\
+&=\int d(m_0\gamma \vec u)\cdot \vec u
+\end{align*}
+which we can integrate by parts. We can integrate this over the speed, $u$, and we assume that the object started with a speed of $u=0$ at the beginning of the path and has a speed, $u=U$, at the end of the path:
+\begin{align*}
+W&=\int_0^U d(m_0\gamma \vec u)\cdot \vec u = \Big[\gamma m_0 \vec u\cdot\vec u\Big]_0^U-\int_0^U m_0\gamma u du\\
+&=\gamma m_0 U^2-m_0\int_0^U\frac{udu}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=\gamma m_0 U^2-m_0\Big[ c^2\sqrt{1-\frac{u^2}{c^2}} \Big]_0^U\\
+&=\gamma m_0 U^2-m_0c^2+m_0c^2\sqrt{1-\frac{U^2}{c^2}}\\
+&=\gamma \left(m_0 U^2+m_0c^2\left(1-\frac{U^2}{c^2}\right)\right)-m_0c^2\\
+&=m_0c^2(\gamma -1)	
+\end{align*}
+Since the object started at rest (with a speed $u=0$) the above integral corresponds to what we would call the kinetic energy of the object:
+\begin{align*}
+K=m_0c^2(\gamma -1)=m_0c^2\left(\frac{1}{\sqrt{1-\frac{u^2}{c^2}}}-1\right)
+\end{align*}
+This form for the relativistic kinetic energy of the object is not at all similar to the form that we obtained in classical physics. As the speed of the object approaches the speed of light, the $\gamma$ factor approaches infinity, as does the kinetic energy. Thus, it would take an infinite amount of work to accelerate an object to the speed of light, and again, we see that it is impossible for anything with mass to ever reach the speed of light. The formula above, however, should always be correct, even in the non-relativistic limit, where $v<<c$. We can approximate the gamma factor using the binomial expansion for the case where $x<<1$:
+\begin{align*}
+(1+x)^n\sim 1 + nx +\dots 
+\end{align*}
+So that, when $v<<c$ (and $v^2/c^2<<1$), the gamma factor is approximated by:
+\begin{align*}
+\gamma=\left(1-\frac{u^2}{c^2}\right)^{-\frac{1}{2}}\sim 1+\frac{1}{2}\frac{u^2}{c^2}
+\end{align*}
+In this limit, the relativistic kinetic energy reduces to:
+\begin{align*}
+\lim_{v<<c}K=\lim_{v<<c}m_0c^2(\gamma -1)=m_0c^2\left(1+\frac{1}{2}\frac{u^2}{c^2} - 1  \right)=\frac{1}{2}mu^2
+\end{align*}
+which is the classic definition of kinetic energy. The kinetic energy is also zero when the speed is zero.
+
+The kinetic energy has two terms in it:
+\begin{align*}
+K=m_0c^2\gamma -m_0c^2
+\end{align*}
+The first term increases with speed and behaves as we would expect. The second term is constant, and depends only on the rest mass of the object (we call this term the rest mass energy). We can think of this in slightly different terms. Let us define the total energy, $E$, of the object as:
+\begin{align*}
+E=m_0c^2\gamma\\
+\therefore \;\Aboxed{E = K+m_0c^2}
+\end{align*}
+so that the total energy is just the rest mass energy plus the kinetic energy. This highlights a key aspect of Special Relativity. An object will have energy, $E$, even when it is at rest. That energy, at rest, is called the rest mass energy, and corresponds to energy that an object has by virtue of having mass. This is, of course, Einstein's famous equation:
+\begin{align*}
+\Aboxed{E=m_0c^2}\quad \text{(rest mass energy)}
+\end{align*}
+This equation implies that mass can be thought of as a form of energy. Nuclear reactors function by converting a small amount of mass of uranium atoms into energy (in the form of heat), that is then used to produce high pressure steam to rotate a turbine.
+
+Einstein's relation is often used to express the mass of subatomic particles in terms of energy. For example, an electron has a mass of $\SI{511e3}{eV/c^2}$ in these units. 
+
+\begin{example}{What is the mass of a proton, $m_p=\SI{1.67e-27}{kg}$, in units of $\si{MeV/c^2}$ (where the $M$ stands for ``Mega'', and corresponds to $\SI{1}{MeV}=\SI{1e6}{eV}$)?}
+We can first calculate the rest mass energy of the proton in Joules:
+\begin{align*}
+E=m_pc^2=(\SI{1.67e-27}{kg})(\SI{3e8}{m/s})^2=\SI{1.503e-10}{J}
+\end{align*}
+We can then convert from Joules to electron-volts:
+\begin{align*}
+\frac{(\SI{1.503e-10}{J})}{(\SI{1.6e-19}{J/eV})}=\SI{939.4e6}{eV}=\SI{939.4}{MeV}
+\end{align*}
+The mass of the proton can then be expressed as $m_p=\SI{939.4}{MeV/c^2}$.
+\end{example}
+
+Finally, it is interesting to examine the relationship between the momentum and the energy of a relativistic object. Consider the quantity $c^2p^2$:
+\begin{align*}
+c^2p^2 &= c^2(\gamma m_0 u)^2=c^2\gamma^2m_0^2u^2=c^4\gamma^2m_0^2\frac{u^2}{c^2}=c^4\gamma^2m_0^2\left(1- \frac{1}{\gamma^2}\right)\\
+&=c^4\gamma^2m_0^2 - c^4m_0^2\\
+&=E^2-c^4m_0^2
+\end{align*}
+where we recognized that $c^4\gamma^2m_0^2$ is simply the energy, $E$, squared. This is generally called the ``energy-momentum'' relation and written:
+\begin{align*}
+\Aboxed{E^2=p^2c^2+m_0^2c^4}
+\end{align*}
+An interesting consequence of this relationship is that particles with no mass will still have a momentum. For example, the photon, which is a particle of light and must thus have a mass of zero (or it could not move at the speed of light), will have a momentum given by:
+\begin{align*}
+p=\frac{E}{c}
+\end{align*}
+Thus, one can use light to impart momentum to something. This is how a solar sail, a proposed propulsion mechanism for space travel, operates.
+
+
+%TODO Example of using coordinate transformations, example of magnetic/electric force,  force and impulse.
 
 
 
@@ -435,7 +559,7 @@ and is not a conserved quantity in general.
 	\item How did Michelson and Morley demonstrate that the ether does not exist? 
 	\item Why is 1905 the ``year of physics''?
 	\item How do you resolve the twin paradox? Can you show it on a space-time diagram?
-	\item What Lorentz do and when?
+	\item What did Lorentz do and when?
 	\item Apart from the space-time interval, $s$, what else is Lorentz invariant?
 	}
 \end{chapteractivity}
@@ -455,6 +579,7 @@ and is not a conserved quantity in general.
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
+%TODO Calculate the amount of energy released in a nuclear fusion reaction (give the masses of the inputs and the outputs). For example, the Sun take 4 protons to make a helium nucleus, mass of He minus mass of 4p is the energy released
 %TODO Draw a space-time diagram to illustrate the barn paradox.
 
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
