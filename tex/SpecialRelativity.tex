@@ -1,101 +1,750 @@
-
 \chapter{The theory of special relativity}
-\label{chap:N_SpecialRelativity}
+\label{chap:specialrelativity}
+In this chapter, we introduce the theory of Special Relativity, originally formulated by Albert Einstein in 1905. Along with the development of Quantum Mechanics, Special Relativity marks the start of ``modern physics'', and the introduction of theories to describe our world that are decidedly counter-intuitive. 
  \vspace{1cm}
 \begin{learningObjectives}
-\item something interesting
+{
+\item Understand the motivation for developing the Theory of Special Relativity.
+\item Understand Einstein's postulates and their consequences.
+\item Understand how to apply Einstein's postulates to describe simultaneity.
+\item Understand how to model length contraction and time dilation.
+\item Understand how to apply Lorentz transformations and make space-time diagrams.
+\item Understand how to model the energy and momentum of a relativistic object.
+}
 \end{learningObjectives}
 
+\begin{opening}
+\begin{MCquestion}{Is it possible to time-travel into the future, so that you will be younger than people that are currently older than you?}
+\item Yes, it's possible. \correct
+\item No, it is impossible because it would violate causality.
+\item No, it is impossible because it's a ridiculous idea.
+\end{MCquestion}
+\end{opening}
+
+\section{Introduction: The issue with Maxwell's equations}
+%highlight the issue with Maxwell's equation
+%speed of ligth, Michelson and Morley
+In Chapter \ref{chapter:induction}, we summarized our knowledge of electromagnetism using Maxwell's four equations. As far as we can tell, this is the best description that we have of classical electric and magnetic phenomena (classical in the sense that the equations do not describe the behaviour of particles that are described by Quantum Mechanics). One of the consequences of Maxwell's equations is that they describe the existence of electromagnetic waves that propagate with a speed, $c$, given by:
+\begin{align*}
+c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
+\end{align*} 
+where $\epsilon_0$ and $\mu_0$ are the permittivity and permeability of free-space, respectively. The obvious question to ask about these electromagnetic waves is: ``In what medium do these waves propagate?''. In the late 1800s, it was thought that the Universe was bathed in a substance called the ``luminous ether'' (or just ``ether''), through which electromagnetic waves propagate. It was then thought that the speed, $c$, of these waves was, naturally, measured with respect to the ether. This led to the idea that there exists a special inertial frame of reference in the Universe, corresponding to that frame of reference in which light travels at a speed, $c$. This frame of reference would be at rest relative to the ether.
+
+In the late 1880s, Michelson and Morley developed a clever experiment to measure the speed of the Earth relative to the ether. If the ether exists, and the Earth is moving through it, then a beam of light travelling parallel to the motion of the Earth should travel at a slightly different speed than a beam of light travelling in the perpendicular direction. However, Michelson and Morley conclusively demonstrated that this was not the case. There is no detectable motion of the Earth through a medium in which light (a electromagnetic wave) propagates. There is no ether. This was a very puzzling discovery, with strange implications for Maxwell's equations. 
+
+Let us demonstrate, through a simple example, an ``issue'' with the theory of electromagnetism. Rather, it is not an issue, but a very strange implication. Consider two infinitely-long wires, separated by a distance, $r$, each carrying a uniform charge per unit length, $\lambda$, as illustrated in Figure \ref{fig:specialrelativity:twowire_electric}. 
+\capfig{0.4\textwidth}{figures/SpecialRelativity/twowire_electric.png}{\label{fig:specialrelativity:twowire_electric}Two infinitely long charged wires exert a repulsive electric force on each other.}
+We can easily calculate the magnitude of the repulsive electric force, $\vec F_E$, exerted by one charged wire on a section of length, $l$, of the other wire. The magnitude of the electric field at a distance, $r$, from an infinitely-long wire with charge per unit length, $\lambda$, is given by:
+\begin{align*}
+E = \frac{\lambda}{2\pi \epsilon_0r}
+\end{align*}
+A section of length, $l$, of the other wire carries charge, $q=l\lambda$, so that the force on that section of wire has a magnitude:
+\begin{align*}
+F_E=qE=\lambda l \left( \frac{\lambda}{2\pi \epsilon_0r}\right) = \frac{\lambda^2 l}{2\pi \epsilon_0r}
+\end{align*}
+And the force per unit length, on either one of the wires, has a magnitude:
+\begin{align*}
+\frac{F_E}{l}=\frac{\lambda^2}{2\pi \epsilon_0r}
+\end{align*}
+This is the only force exerted on one of the wires, and will thus allow us to completely specify the motion of that wire (we know all of the forces exerted on the wire, so we can use Newton's Second Law to determine its acceleration and describe its motion).
+
+Consider the same two wires, each carrying charge per unit length but as viewed from a frame of reference that is moving downwards (parallel to the wires), with a speed, $v$. In this frame of reference, the infinite wires still have a net charge per unit length, but they also appear to have an upwards moving current, $I$, since we observe positive charges moving upwards through space.
+\capfig{0.4\textwidth}{figures/SpecialRelativity/twowire_magnetic.png}{\label{fig:specialrelativity:twowire_magnetic}Two infinitely-long charged wires as viewed from a down-going frame of reference will appear to have upwards-going currents that will result in an attractive magnetic force between the wires.}
+In this new frame of reference, we see two wires with charges on them, moving upwards with speed, $v$. In a length of time, $\Delta t$, we see a length of wire, $\Delta x=v\Delta t$, go by, with total charge, $\Delta Q=\lambda' \Delta x$. For reasons that will be clear below, we use a different charge density, $\lambda'$, in the moving frame of reference, although we \textit{expect} that $\lambda'=\lambda$. This corresponds to a current, $I$, given by:
+\begin{align*}
+I=\frac{\Delta Q}{\Delta t}=\lambda'\frac{\Delta x}{\Delta t}=\lambda' v
+\end{align*} 
+Thus, in the downward going frame of reference, we see two wires with upwards current in them, and these wires must extract an attractive magnetic force between each other, with magnitude (per unit length):
+\begin{align*}
+\frac{F'_B}{l} = -\frac{\mu_0 I_1I_2}{2\pi r}=-\frac{\mu_0 I^2}{2\pi r}=-\frac{\mu_0 \lambda'^2 v^2}{2\pi r}
+\end{align*}
+where the prime (') on the force indicates that the force is measured in this different inertial frame of reference, and the minus sign indicates that it is in the opposite direction from the repulsive electric force. 
+
+In the downwards going frame of reference, the wires are still charged, and must still exert a repulsive force, with magnitude (per unit length):
+\begin{align*}
+\frac{F'_E}{l}=\frac{\lambda'^2}{2\pi \epsilon_0r}
+\end{align*}
+where, again, we used primes ('), to denote quantities that are measured in the moving frame of reference.
+
+The description of how the wires will move should not depend on the frame of reference that we choose to model the wires (they will move under the forces exerted on them regardless of whether we are observing them from a fixed or a moving point, and indeed regardless of whether we observe them at all!). Thus, the net force (per unit length) exerted on a wire cannot depend on our frame of reference. The total repulsive electric force, $F_E$, calculated in the stationary frame of reference must be equal to the sum of the magnetic, $F'_B$, and electric force, $F'_E$, calculated in the moving frame of reference \footnote{This statement is generally true for Special Relativity, because the force is exerted in the direction perpendicular to that of motion.}:
+\begin{align*}
+\frac{F_E}{l}&=\frac{F'_E}{l}+\frac{F'_B}{l}\\
+\frac{\lambda^2}{2\pi \epsilon_0r}&=\frac{\lambda'^2}{2\pi \epsilon_0r}  -\frac{\mu_0 \lambda'^2 v^2}{2\pi r}
+\end{align*}
+where we recognized that the charge per unit length, $\lambda'$, must be different in the moving frame of reference, or the above would give an inconsistent equation (the electric forces would cancel and we would find that the magnetic force is equal to zero). Thus, the repulsive electric force must be larger as observed in the moving frame of reference, or the net force on the wire would be different when evaluated in the two frames of reference. This is a truly bizarre conclusion, as we will see.
+
+Before proceeding, let us clearly state our assumptions in modelling the force between the two charged wires:
+\begin{enumerate}
+\item The net force on the wire, allowing us to describe its motion, cannot depend on our frame of reference. We expect the laws of physics to be applicable from any inertial frame of reference.
+\item We assume that Maxwell's equations hold in all inertial frames of reference. In particular, we assume that the constants, $\mu_0$ and $\epsilon_0$, are the same in all inertial reference frames.
+\end{enumerate}
+The first assumption allows us to state that the net force in the two frames of reference must be the same. The second assumption implies that we must change the charge density, $\lambda'$, in the moving frame of reference, since the constants must remain the same, and this is the only quantity that can lead to a different electric force in the moving frame of reference (which is required if the net force is to be the same, according to our first assumption). Let us determine the new charge density, $\lambda'$, in terms of the charge density that is measured at rest. Starting with the requirement that the net force on the wire must not depend on the frame of reference, we find:
+\begin{align*}
+\frac{\lambda^2}{2\pi \epsilon_0r}&=\frac{\lambda'^2}{2\pi \epsilon_0r}  -\frac{\mu_0 \lambda'^2 v^2}{2\pi r}\\
+\lambda^2&=\lambda'^2-\epsilon_0\mu_0\lambda'^2 v^2\\
+\lambda^2&=\lambda'^2(1-\epsilon_0\mu_0v^2)\\
+\therefore \lambda'&=\lambda \frac{1}{\sqrt{\epsilon_0\mu_0-v^2}}
+\end{align*}
+Finally, recognizing that we can use the speed of light, $c$, to replace the combination of constants, $\epsilon_0\mu_0$, we find:
+\begin{align*}
+\lambda'&=\lambda \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+Thus, the charge per unit length on the wire is larger when measured from the moving frame of reference (the factor that multiplies, $\lambda$, is larger than one if $v<c$). It should be somewhat bothersome to you that the charge per unit length depends on the frame of reference in which it is measured, but this is the only way for our two assumptions to hold.
+
+So far, this has just been some math to ensure that ``things work out'', namely that our description of the motion of the wire does not depend on our frame of reference. However, the consequences of what we just derived are profound. We concluded that the charge per unit length on a wire depends on our frame of reference.
+
+Imagine drawing two lines on one of the wires, and imagine that you can actually see the  charges on the wire (maybe they fluoresce or something). The charge per unit length on the wire, $\lambda$, is found by counting the number of charges between the two lines and dividing that by the distance between the two lines. Now, both an observer at rest with the wire, and one that is moving relative to the wire will agree on the number of charges contained between the two lines. They will both count the same number. Thus, if the observer moving relative to the wire is to measure a larger charge density, then the distance between the lines must be smaller for that observer! To the observer moving relative to the wire, the wire is actually shorter. It does not appear to be shorter, it IS shorter!
+
+To summarize, by requiring that the laws of physics are the same in all inertial frames of reference, and by requiring that Maxwell's equation are the same in all inertial frames of reference, we conclude that the charge per unit length that is measured on a wire must depend on the frame of reference in which it is measured. Since it cannot be the number of charges on the wire that depends on the frame of reference, it must be the length of the wire that depends on the frame of reference. Thus, either we accept that Maxwell's equations are incorrect, or we accept that they are correct but that they imply that objects shrink in length when they are moving (regardless of whether charges are involved). It turns out that the latter choice provides a better description of nature (and one that has not been invalidated!). 
+
+As an additional consequence of accepting these implications from Maxwell's equations is that the definition of the electric and magnetic fields must depend on the frame of reference. In the example from this section, we saw that what looks like an electric field in the stationary frame of reference, can appears as the combination of a magnetic and electric fields in a moving frame of reference.
+
+\section{Einstein's postulates}
+%Two postulates
+%Simulataneity
+Albert Einstein was the first to provide a complete description of how to deal with the issues that arise from Maxwell's equations when these are examined in different inertial frames of reference. The Theory of Special Relativity, is based on Einstein's two postulates:
+\begin{enumerate}
+\item The laws of physics are the same in all inertial reference frames. There is no experiment that can be performed to determine whether one is at rest or moving with constant velocity.
+\item The speed of light propagating in vacuum is the same in all inertial reference frames. Any observer in an inertial frame of reference, regardless of their velocity, will measure that light has a speed of $c$, when it propagates in vacuum. 
+\end{enumerate}
+These postulates are equivalent to the assumptions that we made above to model the force between the two wires (we stated that the constants, $\epsilon_0$ and $\mu_0$, were independent of reference frame, instead of $c$). While the first postulate is perhaps ``acceptable'' to our common sense, the second one grossly defies common intuition. Consider two archers, as illustrated in Figure \ref{fig:specialrelativity:arrow}.
+%TODO Much better figures for the archers, use actual people, train, etc!
+\capfig{0.5\textwidth}{figures/SpecialRelativity/arrow.png}{\label{fig:specialrelativity:arrow}Two archers can fire an arrow with speed $v_A$. As measured in the frame of reference of the ground (of the target), the arrow fired from the archer that is on the train will have a higher speed.}
+Both archers can fire an arrow with a speed, $v_A$. One archer fires her arrow from the ground, at a target, and that arrow will hit the target with a speed, $v_A$. The other archer is located on a train that is moving with speed $v$, in the same direction that she wishes to shoot her arrow. She measures her arrow to leave her bow with speed, $v_A$, but, as seen from the ground (and from the target), her arrow has a speed $v_A+v$, and it will hit the target with a higher speed, as expected.
+
+Now, consider that the two archers instead fire a pulse of laser light instead of an arrow, as illustrated in Figure \ref{fig:specialrelativity:laser}. 
+\capfig{0.5\textwidth}{figures/SpecialRelativity/laser.png}{\label{fig:specialrelativity:laser}Two archers fire a laser pulse. Regardless of whether the pulse of laser light was fired from a moving train or from the ground, it will have a speed of $c$ in all frames of reference.}
+In this case, according to Einstein's second postulate, the speed of the pulses as measured on the ground (by the target), will be $c$, regardless of whether one of the pulses was fired from a moving train. This is truly strange and not compatible with our experience. Imagine that the train is moving close to the speed of light. The archer on the train would fire a laser pulse that she would observe to move away from her at the speed of light. When observed from the ground, we will see the pulse of light moves away from her very slowly, since she is on a train going at almost the speed of light. 
+
+\subsection{Simultaneity}
+As a first consequence of Einstein's postulates, let us consider the notion of simultaneity. Figure \ref{fig:specialrelativity:platform_rest} shows Alice on the platform of a train station. Alice is midway between two clocks, $A$ and $B$. Both identical clocks were configured so that they send a pulse of laser light when they read ``0''. Since Alice is midway between the clocks, if they emit their pulses of light at the same time, then Alice will see two pulses of light arrive at her location at the same time. She signals that the two pulses of light have reached her at the same time by raising her hands. 
+%TODO Much better figures for Alice and Brice on the platform and the trains!
+\capfig{0.8\textwidth}{figures/SpecialRelativity/platform_rest.png}{\label{fig:specialrelativity:platform_rest}Alice is equidistant from two clocks. The clocks fire a laser pulse when they read ``0'', and Alice observes both pulses arriving at her location at the same time, concluding that the pulses were emitted by the clocks at the same time.}
+Brice is located on a train that is travelling with speed, $v$, in the direction from clock $A$ to clock $B$, as illustrated in Figure \ref{fig:specialrelativity:platform_moving}.
+\capfig{0.8\textwidth}{figures/SpecialRelativity/platform_moving.png}{\label{fig:specialrelativity:platform_moving}Brice is on a moving train and sees the two pulses of light arrive at Alice at the same time, as evidenced by her raising her hands. In order for Brice to conclude that the two pulses of light travelled at the same speed, he concludes that the pulse from clock $A$ was emitted earlier.}
+Brice must agree that the two pulses arrived at Alice's location at the same time, since he can also see her raise her hands. In Brice's frame of reference, the two pulses of light must travel with the speed of light (Einstein's second postulate). Brice observes clock $B$ travelling towards him, so that the pulse emitted from clock $B$ will not need to travel as far as the pulse from clock $A$, to reach Alice. In order for both pulses to travel at the speed of light, and to reach Alice at the same time, Brice must conclude that the pulse from clock $A$, which is receding away from him, must have been emitted earlier than the pulse of light from clock $B$.
+
+That is, while Alice measures the clocks to be synchronized and emit pulses at the same time, Brice measures that clock $A$ is running ahead of clock $B$. The two observers, Alice and Brice, in different reference frames, cannot agree on whether two events are simultaneous. Even worse, if a third observer, \chloens, is located on a train going in the opposite direction from Brice's train, she will conclude that the pulse from clock $B$ was emitted earlier than the pulse from clock $A$. A consequence of Einstein's postulates is that observers in different frames of reference will not agree on whether two events happen at the same time, and in some cases, as the one we illustrated, the observers will not agree on which event happened first. Think of the implications for causality!
+
+\section{Time dilation}
+Einstein was famous for his ``thought experiments'', which allow us to understand the consequences of a theory by performing thought experiments that would be impractical to actually carry out (such as the experiment with Alice and Brice described above, which would be impractical to carry out, since the speed of light is so high that Brice would never notice that clock $A$ emitted the pulse slightly earlier). 
+
+Imagine that we build a clock using a pulse of light travelling (oscillating) back and forth between two mirrors, separated by a distance, $L$, as illustrated in Figure \ref{fig:specialrelativity:clock_rest}.
+\capfig{0.2\textwidth}{figures/SpecialRelativity/clock_rest.png}{\label{fig:specialrelativity:clock_rest}A clock is made by having a pulse of light bounce back and forth between two parallel mirrors separated by a distance, $L$.}
+Since the speed of light is, $c$, the time that it will take for the pulse of light to travel back and forth between the two mirrors, namely the period of the clock, is given by:
+\begin{align*}
+\Delta t = \frac{2L}{c}
+\end{align*}
+where the speed of light, $c$, is given by the total distance travelled by the pulse of light divided by the time taken to do so:
+\begin{align*}
+c=\frac{2L}{\Delta t}
+\end{align*}
+Now, imagine placing this clock on a spaceship that travels with speed, $v$, perpendicular to the direction of the movement of the light, as illustrated in Figure \ref{fig:specialrelativity:clock_moving}
+\capfig{0.5\textwidth}{figures/SpecialRelativity/clock_moving.png}{\label{fig:specialrelativity:clock_moving}A clock is made by having a pulse of light bounce back and forth between two parallel mirrors separated by a distance, $L$. When the clock is placed on a spaceship moving with speed, $v$, the light travels a longer distance before completing a full cycle, as observed by someone not travelling with the clock.}
+From the perspective of the person watching the clock go by, the pulse of light travels a larger distance over one clock period, since the mirrors move to the right as the pulse of light moves up and down. However, by Einstein's second postulate, the pulse of light must still travel with the same speed, $c$, so it must take the pulse of light longer to bounce between the two mirrors than it did when the clock is at rest. Let us determine the relationship between the period of the clock, $\Delta t$, measured when the clock is at rest, and the period of the clock, $\Delta t'$, as measured by an observer that sees the clock go by with speed, $v$. 
+
+To an observer that sees the clock move by with speed, $v$, the speed of the pulse of light, which must also be equal to $c$, is given by:
+\begin{align*}
+c&=\frac{2\sqrt{L^2+\left(\frac{v\Delta t'}{2}\right)^2}}{\Delta t'}
+\end{align*}
+where the distance in the numerator was simply found by Pythagoras' theorem, as the spaceship will travel a horizontal distance, $v\Delta t'$, as measured by the observer that is not moving with the spaceship. Squaring this relationship, we can isolate the period of the clock, $\Delta t'$, as measured by the observer that sees the clock move with speed, $v$:
+\begin{align*}
+c^2&=\frac{4L^2}{\Delta t'^2}+v^2\\
+\Delta t'^2 (c^2-v^2)&=4L^2\\
+\therefore \Delta t' &= 2L\frac{1}{\sqrt{c^2-v^2}}=\frac{2L}{c}\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+Note that the term, $2L/c$, is simply the period of the clock as measured in a frame of reference where the clock is stationary. Thus, we can relate the two clock periods:
+\begin{align*}
+\Aboxed{\Delta t' &= \Delta t \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}}
+\end{align*}
+To re-iterate: the period of the clock, $\Delta t'$, as measured in a frame of reference that is moving relative to the clock is longer than the period of the clock, $\Delta t$, as measured in the ``rest frame'' of the clock (the reference frame where the clock is stationary). We call this effect \textbf{``time dilation''}, and it is not just some mathematical curiosity. The clock that we imagined with a pulse of light is a real clock that one could actually construct; we could use it to measure time. That clock will appear to tick slower if it is moving. \textbf{Time goes by slower in a moving reference frame}. If a person climbs on a ship that is moving, that person will age at a slower rate than a person that remained on Earth. By travelling at high speeds, you effectively travel into the future, as observed on Earth. The equation above allows us to relate the amount of time that went by in one reference frame to the amount of time that went by in a different frame of reference.
+
+We define the time that is measured at rest as the ``proper time''. In our example, $\Delta t$, is the proper time (proper period) for the clock, since it is defined in a frame of reference where the clock is at rest. The ``dilated time'', $\Delta t'$, is measured in a frame of reference that is moving relative to the clock.
+
+The factor by which time is dilated comes up often in Special Relativity, and is called the gamma factor:
+\begin{align*}
+\Aboxed{\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}}
+\end{align*}
+As a corollary to Einstein's postulates, we will see that nothing can ever exceed the speed of light in vacuum. Thus, the gamma factor is always greater than 1, since $v$ (the speed between the two different inertial frames of reference), must always be smaller than $c$. You may also recognize that the gamma factor appeared in our introductory example with the force between two wires. Here, we derived the gamma factor from kinematical considerations, whereas in the example with the two wires, it came straight out of the equations for electromagnetism.
+%TODO Checkpoint: What is gamma for a speed of 0.75c? Give some numerical options....
+%TODO Checkpoint: What speed corresponds to gamma - 2.5? Give some speeds in terms of the speed of light (0.6c, 0.7c, etc)
+
+Time-dilation is a real effect that has been observed, for example by placing high precisions atomic clocks on an airplane to observe their period slow down. Another example of time-dilation is the fact that we observe many particles called muons at the surface of the Earth. Muons are very similar to electrons, except that they have a larger mass, and that they are unstable (they radioactively decay into an electron and neutrinos, after $\SI{2.2}{\mu s}$). Muons are produced in large amounts when cosmic rays (high energy particles from outside our Solar System) strike the molecules in our upper atmosphere, at altitudes of tens of kilometres. As the muons travel down towards the Earth, they decay.
+
+Suppose that muons are produced travelling at the speed of light; in that case, they would travel a distance $d=(\SI{3e8}{m/s})(\SI{2.2e-6}{s})=(\SI{660}{m})$, on average, before decaying. However, muons are produced tens of kilometres above the surface of the Earth, travel slower than the speed of light, and yet, we are able to detect many muons at the surface of the Earth. We would expect that all muons would have decayed before reaching the surface of the Earth.
+
+We can understand this in terms of time dilation; in the reference frame of the muon, the muon decays after $\Delta t=\SI{2.2}{\mu s}$. In a reference frame from which the muon appears to move with speed, $v$, the ``clock'' that measures how long the muon has existed ticks slower. Thus, from the Earth, we observe that the muon takes longer than $\SI{2.2}{\mu s}$ to decay, giving it time to reach the surface of the Earth.
+
+\begin{example}{A muon travels with a speed of $0.8c$ as observed from the surface of the Earth. As measured in the frame of reference of the Earth, how far has the muon travelled after $\SI{2.2}{\mu s}$ have elapsed \textbf{in the muon's frame of reference}?}
+The muon is travelling with a speed of $v=0.9c$ relative to the Earth, thus the gamma factor is given by:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} =\frac{1}{\sqrt{1-0.8^2}}=2.29
+\end{align*}
+The amount of time that goes by in the frame of reference of the Earth, $\Delta t$, when $\Delta t'=\SI{2.2}{\mu s}$ has gone by in the muon's frame of reference will be dilated by the gamma factor. $\Delta t'$ is the proper time in the muon frame's of reference, which corresponds to a longer time in Earth's frame of reference:
+\begin{align*}
+\Delta t = \gamma \Delta t' = (2.29)(\SI{2.2}{\mu s})=\SI{5.0}{\mu s}
+\end{align*}
+In the frame of reference of the Earth, the muon has travelled a distance:
+\begin{align*}
+d' = v\Delta t'=(0.9c)(\SI{5.0}{\mu s})=\SI{1350}{m}
+\end{align*}
+\textbf{Discussion: }In this example, we see that an object, such as a muon, that travels with a speed that is 90 percent of the speed of light will have a gamma factor around 2. Thus, from the Earth's frame of reference, it appears that the muons ``ages'' at about half of the rate at which one would observed to muon to age if moving along with the muon. This is the mechanism that allows muons to exist much longer than $\SI{2.2}{\mu s}$ when they are travelling relative to the Earth.
+
+Also, in Earth's reference frame, the muons travel a distance of $\SI{1350}{m}$ in the period of time between being produced and decaying. In the reference frame of the muon, only $\SI{2.2}{\mu s}$ elapse as the Earth moves closer to the muon, at the same speed. In the reference frame of the muon, the Earth has travelled a distance:
+\begin{align*}
+d' = v\Delta t=(0.9c)(\SI{2.2}{\mu s})=\SI{594}{m}
+\end{align*}
+Thus, as viewed from the muon's frame of reference, the distance that it travelled between being produced and decaying is about half the distance as measured in the Earth's reference frame. This is called ``length contraction'' and is a necessary consequence of time-dilation. 
+\end{example}
+
+\begin{example}{\label{ex:specialrelativity:alphatrip}A spaceship carrying your friend Alice speeds away at a speed of $0.99c$ towards the nearest star, Proxima Centauri, a distance of $\SI{4.2}{ly}$ (light-years) away. How much time does the trip take as measured by Alice? How far has the spaceship travelled, according to Alice?.}
+Alice's trip is illustrated in Figure \ref{fig:specialrelativity:alphatrip}, showing the trip as viewed from Earth's and from Alice's frames of reference.
+%TODO better figure! Show spaceship with Alice in it, see Gravity chapter for a better Earth and Sun.
+\capfig{0.8\textwidth}{figures/SpecialRelativity/alphatrip.png}{\label{fig:specialrelativity:alphatrip}Alice travels in a spaceship from the Earth to the star Proxima Centauri. In the Earth frame of reference, the star is $\SI{4.2}{ly}$ away. }
+In Earth's frame of reference, the spaceship travels a distance of $\SI{4.2}{ly}$ at a speed of $0.99c$, which will take a time, $\Delta t'$, given by:
+\begin{align*}
+\Delta t' = \frac{(\SI{4.2}{ly})}{(0.99c)}=\SI{4.2}{y}
+\end{align*}
+which is not surprising, since Alice is travelling at almost the speed of light. This is the time that goes by on planet Earth. Since Alice's spaceship is moving, less time will go by on the spaceship, as the $\SI{4.2}{y}$ is the dilated time measured at Earth, not the proper time measured by Alice. First, we determine the gamma factor:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} =\frac{1}{\sqrt{1-0.99^2}}=7.1
+\end{align*}
+The proper time measured by Alice is:
+\begin{align*}
+\Delta t = \frac{\Delta t'}{\gamma}==\frac{(\SI{4.2}{y})}{(7.1)}=\SI{0.6}{y}
+\end{align*}
+That is, Alice only ages by $\SI{0.6}{y}$ (about 7 months), while everyone on Earth ages by $\SI{4.2}{y}$!
+
+In Alice's frame of reference, she is still, and Proxima Centauri moves towards her at a speed of $0.99c$. Since her trip only lasts about 7 months ($\SI{0.6}{y}$), Proxima Centauri moves towards her by a distance, $L'$:
+\begin{align*}
+L'=(v)(\Delta t)=(0.99c)(\SI{0.6}{y})=\SI{0.6}{ly}
+\end{align*}
+as illustrated in Figure \ref{fig:specialrelativity:alphatrip}. Thus, Alice concludes that the distance between Earth and Proxima Centauri is only $\SI{0.6}{ly}$ instead of $\SI{4.2}{ly}$. The distance that she observes is contracted compared to the ``proper distance'' between Earth and Proxima (the distance measured when we are at rest relative to Earth and Proxima).
+
+\textbf{Discussion: }In this example we saw, again, how the time that one measures depends on the frame of reference. In particular, if one can build spaceships that goes close to the speed of light, one can cover large distances in the Universe without ageing much. We also saw that length contraction is a necessary corollary to time-dilation. Objects appear contracted when they move, relative to their length when they are measured at rest (their ``rest length'' or their ``proper length'').
+\end{example}
+One interesting issue uncovered by Example \ref{ex:specialrelativity:alphatrip} is the so-called ``twin-paradox''. Imagine that Alice has a twin brother, Brice, that remains on Earth. Alice travels to Proxima Centauri and back (return trip), and will have aged by about 14 months, whereas Brice, will have aged by about 8.4 years (using the numbers in Example \ref{ex:specialrelativity:alphatrip}). However, Einstein's first postulate implies that there are no special frames of reference that are at rest. We should be able to think about this situation from the perspective where Alice is at rest, and it is the Earth (with Brice on it), that moves away from her and then back. In this case, Alice is at rest, and she will conclude that it takes about 8.4 years for Brice to move away and come back, and that Brice would have aged by about 7 months. When Alice and Brice meet up again, clearly Alice cannot be both younger and older than Brice, so which one is it? (You will have to look this up, see associated question in the ``Thinking about the material'' section).
+
+\section{Length contraction}
+As we saw in the examples from the previous section, time dilation implies ``length contraction''. When an object is measured in a frame of reference that is at rest relative to the object, the length of the object, $L$, is called the ``rest length'' or the ``proper length'' of the object. If that object is moving relative to an observer, the observer will measure the object to be shorter, and have a ``contracted length'', $L'$, given by:
+\begin{align*}
+\Aboxed{L'=L\sqrt{1-\frac{v^2}{c^2}} =\frac{L}{\gamma}}
+\end{align*}
+In Example \ref{ex:specialrelativity:alphatrip}, Alice measured a contracted distance between Earth and Proxima Centauri, as she was in a frame of reference that is moving relative to the Earth-Proxima Centauri reference frame. One point that is important to note is that length contraction only occurs along the direction parallel to the direction of motion.
+
+\begin{example}{A square painting hanging in a museum has a side with a length of $\SI{1}{m}$. If you view the stationary painting from a train moving in the horizontal direction at a speed of $0.85c$, what is the surface area of the painting that you measure?}
+Since your train is moving horizontally, only the horizontal dimension of the painting will be contracted. The gamma factor is given by:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} =\frac{1}{\sqrt{1-0.85^2}}=1.9
+\end{align*}
+Thus, the horizontal side of the painting will have a contracted length:
+\begin{align*}
+L'=\frac{L}{\gamma}=\frac{(\SI{1}{m})}{(1.9)}=\SI{0.53}{m}
+\end{align*}
+The area of the painting, as measured in the moving frame of reference, is given by:
+\begin{align*}
+A= (\SI{1}{m})(\SI{0.53}{m})=\SI{0.53}{m^2}
+\end{align*}
+\end{example}
+Length contraction also allows us to discuss a famous paradox (the ``barn'', or ``ladder'' or ``barn-pole'' paradox). Consider a train that has a rest length of $\SI{500}{m}$, travelling at a speed such that $\gamma = 2.5$. As the train goes by, from Earth, it appears to have a (contracted) length:
+\begin{align*}
+L'_{train}=\frac{(\SI{500}{m})}{2.5}=\SI{200}{m}
+\end{align*}
+
+%TODO Checkpoint question, at what speed must an object move in order for it appear 1% shorter (Give different options of speed in m/s, the correct one gives 1/gamma = 0.99)
+
+Suppose that there is a tunnel on Earth that is exactly $\SI{200}{m}$ long, so that the train, when contracted, will fit in the tunnel. When the train passes, an operator briefly closes (and re-opens) the doors at the ends of the tunnel, and since the train is contracted, it never hits any of the doors, and all is fine.
+
+From the train's frame of reference, the train has a proper length of $\SI{500}{m}$, and the tunnel is contracted to a length of:
+\begin{align*}
+L'_{tunnel}=\frac{(\SI{200}{m})}{(2.5)}=\SI{80}{m}
+\end{align*}
+Thus, from the train's perspective, if the doors of the tunnel are closed, there is no way that the $\SI{500}{m}$ long train can ever fit in the $\SI{80}{m}$ long tunnel, as illustrated in Figure \ref{fig:specialrelativity:barn}. So what happens when the operator on Earth closes the doors of the tunnel to briefly ``capture'' the train? 
+\capfig{0.8\textwidth}{figures/SpecialRelativity/barn.png}{\label{fig:specialrelativity:barn}In the ground's reference frame, the contracted train appears to fit inside the tunnel. From the train, the (proper length) train will not fit in the contracted tunnel.}
+Clearly, people on the Earth and people on the train have to agree on whether the train was destroyed by the tunnel doors. The operator on Earth can clearly close both doors of the tunnel when the train is inside and not destroy the train. Hence, people on the train must agree that the train never collided with the doors, and that the doors were closed. The answer to this paradox lies in the fact that simultaneity is relative. The tunnel operator believes that she has closed the two doors of the tunnel at exactly the same time, precisely when the contracted train is lined up with the tunnel. However, to people on the train, in a different frame of reference, the doors did not close at the same time, since events that are simultaneous in one frame of reference are not necessarily simultaneous in a different frame of reference. To people on the train, there was never a time when the train was in the tunnel and both doors were closed at the same time!
+%TODO Checkpoint: Referring to the above paradox, to people on the train, which tunnel door closes first? (the one at the exit of the tunnel closes first, then opens, lets the train through, and the entrance door closes just after the end of the train entered the tunnel)
+\section{Electric and magnetic fields and Special Relativity}
+In this section, we present one more example to show how Special Relativity is connected to electromagnetism. Consider a wire that carries an electric current towards the left, and a positive charge, $+Q$, located next to the wire, as illustrated in Figure \ref{fig:specialrelativity:current}.
+\capfig{0.5\textwidth}{figures/SpecialRelativity/current.png}{\label{fig:specialrelativity:current}A stationary positive charge, $+Q$, near a wire carrying current towards the left. This leads to a magnetic field out of the page.}
+Inside the wire, negative electrons are moving towards the right, with a drift velocity, $\vec v_d$, while positive ions remain stationary. Since the charge $+Q$ has a velocity of zero, it experiences no magnetic force. Furthermore, the wire appears to be neutral, with no net electric charge.
+
+If the charge, $+Q$, has a velocity, $\vec v_d$, towards the right, it will experience a downwards magnetic force, as illustrated in Figure \ref{fig:specialrelativity:current_force}.
+\capfig{0.5\textwidth}{figures/SpecialRelativity/current_force.png}{\label{fig:specialrelativity:current_force}A positive charge, $+Q$, moving towards the right, near a wire carrying current towards the left, will experience a downwards magnetic force, $\vec F_B=Q \vec v_d\times \vec B$.}
+
+Now, consider this from the perspective of the charge, $+Q$, as illustrated in Figure \ref{fig:specialrelativity:current_ions}. The charge $Q$ is moving towards the right at the same speed as the electrons in the wire. In the reference frame of the charge, $+Q$, the charge has a velocity of zero, and thus will experience no magnetic force. The wire still appears to have a (different) current, $I'$, as the positive ions still move to the left, creating a magnetic field, $\pvec B'$, out of the page.
+
+In the ``lab'' frame of reference, where the electrons and the charge $+Q$ move towards the right at the same speed, $v_d$, the electrons appear closer together (length contracted) than they are in the frame of reference of the electrons (or of the charge $+Q$, since it is moving with the electrons). In the frame of reference of the charge $+Q$, the electrons thus appear to be spaced further apart (less dense). On the other hand, in the frame of reference of $+Q$, the positive ions, which are moving towards the left, appear closer together, as the distance between them is now contracted, as illustrated in Figure \ref{fig:specialrelativity:current_ions}.
+\capfig{0.5\textwidth}{figures/SpecialRelativity/current_ions.png}{\label{fig:specialrelativity:current_ions}In the frame of reference of the charge $+Q$, the charge has a velocity of zero and cannot experience a magnetic force. The ions appear to move to the left, and thus appear denser, since the distance between ions is contracted. The distance between electrons, on the other hand, is larger in this frame of reference. It thus appears that the wire is positively charged, and would exert a downwards electric force on the charge, $+Q$.}
+
+In the frame of reference of the charge $+Q$, the wire no longer appears neutral, but appears to have a net positive charge. This results in an electric field away from the wire that will exert a downwards force on $+Q$. In both frames of reference, we conclude that the charge will experience a downwards force. Whether that force is magnetic or electric depends on the frame of reference! Here, we came to the conclusion by using the notion of length contraction, but, remember that it is in fact length contraction that is a consequence of Maxwell's equations holding in different frames of reference, as we illustrated at the beginning of this chapter. 
+
+In most real-world applications, we do not see the effects of Special Relativity, as the speeds involved must be very high for the gamma factor to be appreciably different from 1. However, as you recall, the drift speed of electrons in a wire is usually (much) less than $\si{mm/s}$, yet, when dealing with the electric and magnetic forces (fields), even the minuscule length contraction of the electrons/ions at those speeds, leads to relativistic effects. This can be thought of in terms of how strong the electric force really is; even a minute change in charge density (due to length contraction) has an appreciable relativistic effect in how we model the dynamics of a charged particle.
+
+\section{Lorentz transformations and space-time}
+%Lorentz transformations, space time diagrams
+\subsection{Four-dimensional space-time}
+So far, we have seen that our notions of time intervals (the time between two events) and space intervals (the distance between two locations) depend on our frame of reference. We also saw how space and time are connected, for example by the fact that time-dilation must go hand-in-hand with length contraction. We also concluded that there is no absolute concept of time, and that time is relative (depends on your frame of reference). 
+
+In the context of Special Relativity, we introduce the concept of space-time. To describe the location of an object in space-time, we must specify both the location/position coordinates ($x$, $y$, $z$) \textbf{and} the time ``coordinate'', $t$. Since time, $t$, has the dimension of time, we usually specify the time coordinate by multiplying it by speed of light, $ct$, so that it has dimensions of length. Thus, position in space-time is given by 4 coordinates: $(x,y,z,ct)$.
+
+ 
+\subsection{Space-time diagrams}
+It is practically impossible to visualize situations in three dimensions, so four dimensions is hopeless! However, we can gain a lot of insight into Special Relativity models by using ``space-time diagrams''. In a space-time diagram, we use only one of the space coordinates (typically $x$) along with the time coordinate, $ct$, to define the two axes of graph of space-time. Space-time diagrams are analogous to ``position as a function of time'' graphs that one would draw in kinematics, although they are fundamentally different in that, for a space-time diagram, the coordinates should be thought of as independent (one is not plotting a dependent variable as a function of an independent variable).
+
+
+Figure \ref{fig:specialrelativity:spacetime} shows a space-time diagram for an object that was located at position $x=x_1$ at time $t=t_1$ (location $A$), and at position $x=x_2$ at time $t=t_2$ (location $B$). The path of an object through space-time, indicated by the line that connects $A$ and $B$, is called the ``world line'' of the object.
+\capfig{0.3\textwidth}{figures/SpecialRelativity/spacetime.png}{\label{fig:specialrelativity:spacetime}World line of an object that moved from locations $A$ in space-time to location $B$ in space-time.}
+%TODO Checkpoint Question: What does the world-line of a stationary particle look like?
+% A vertical line (correct)
+% A horizonta line
+% A point
+A pulse of light will always have a world-line that makes a $\SI{45}{\degree}$ angle with the horizontal (space) axis. As we will see, nothing (object or information) can travel faster than the speed of light. Thus, the world line of any object that travels with a speed below the speed of light must always make an angle with the horizontal axis that is greater than $\SI{45}{\degree}$.
+
+A position in space-time is usually called an ``\textbf{event}''. We can draw a set of lines, at $\SI{45}{\degree}$ degrees from the horizontal axis, that intersect at an event in space-time. Those lines define two ``light cones'' corresponding to: (1) locations in space-time in the past that could have had a causal effect on the event (the ``past light cone''), and (2), locations in space-time in the future for which the event can have a causal effect (the ``future light cone'').
+
+Figure \ref{fig:specialrelativity:cones} shows the light cones associated with an event, $A$, in space-time. The past light cone is the only region of space-time in which an event could have had an impact on the event $A$. For example, the event $A$ might be that ``the object is at position $x=x_1$ at time $t=t_1$'', so that the past light cone corresponds to the only locations in space-time that the object could have been in the past. Similarly, the future light-cone defines the locations in space-time upon which the event $A$ could have an effect. For example, this could define the possible locations of the object in the future. The regions outside the light cones can never have an effect on the event $A$; they are not causally connected. A signal or object would need to travel faster than the speed of light in order to have an effect on something outside of its light cone. There are locations in space-time, in the future of our Universe, that we cannot influence, no matter what we do.
+\capfig{0.3\textwidth}{figures/SpecialRelativity/cones.png}{\label{fig:specialrelativity:cones}The past and future light cones associated with the space-time event, $A$. }
+
+When two events in space-time are within each other's light cones, we say that the space-time interval between them (the line that you draw from one event to the other) is ``time-like''. Time-like events are such that all observers, in any frame of reference, will agree that one event happened before the other. Thus, events that are causally related must have a time-like interval between them (they are connected by a line that makes an angle greater than $\SI{45}{\degree}$ with the horizontal axis).
+
+Two events that are outside of each other's light cones are said to be ``space-like''. Events that are connected by space-like intervals cannot be causally related (one cannot cause the other). Observers in different frames of reference will disagree on the time ordering of space-like events. For example, when Alice observed the two clocks on the platform to emit pulses of light at the same time, Brice disagreed; those two events are connected by a space-like interval.
+
+Finally, the space-time interval between events that are on each other's light-cone (connected by a line that makes a $\SI{45}{\degree}$ angle with the x-axis), is said to be ``light-like'' or ``null''. 
+
 \subsection{Lorentz transformations}
-In the previous section, we found that the position of an object, $x^A$, in one inertial reference frame can be converted to a position, $x'^A$, in a different inertial reference frame using the equation:
+In this section, we consider how to transform the space-time coordinates, $(x,y,z,ct)$, as measured in a frame of reference, $S$, to coordinate $(x',y',z',c't)$, as measured in a frame of reference, $S'$, that is moving with a constant speed, $v$, relative to the frame, $S$. For simplicity, we assume that frame $S'$ is moving with speed $v$ in the positive $x$ direction, as measured in frame, $S$, and that the origin of the two coordinate systems coincided at time $t=0$. Figure \ref{fig:specialrelativity:translation} shows an illustration of how the two frames of reference are related (note that these are actual coordinate systems, not space-time diagrams).
+\capfig{0.6\textwidth}{figures/SpecialRelativity/translation.png}{\label{fig:specialrelativity:translation}The reference frame $S'$ is moving relative to reference frame, $S$, with speed $v$ in the $x$ direction. At time $t=0$, the origins of the two coordinate systems coincided. }
+If we ignore any of Special Relativity, then the coordinates in $S'$ are easily related to those in the $S$ frame of reference using the ``Galilean transformations'':
 \begin{align*}
-x'^A=v'^Bt+x^A
+x' &= x - vt\\
+y' &= y\\
+z' &= z\\
+t' &= t
 \end{align*}
-where $v'^B$ is the velocity of the $x$ frame of reference as measured in the $x'$ frame of reference. We found this by arguing that we could sum the distance from the $x'$ origin to the $x$ origin and the distance from the $x$ origin to the object's position, $x^A$, in the $x$ reference frame. We call this transformation, from $x$ to $x'$, a ``Galilean transformation''. In this section, we briefly introduce the more general way to transform descriptions between reference frames, mostly for completeness.
+and this corresponds to transformations that we have implicitly used before considering Special Relativity. These equations also allow us to relate the speeds measured in different frames of reference. Suppose that an object has a velocity, $\vec u=(u_x,u_y,u_z)$, as measured in the frame of reference, $S$. We can obtain the components of the velocity vector, $\pvec u'$, as measured in the frame of reference, $S'$, by taking the time derivatives of the above equations:
+\begin{align*}
+u'_x &= \frac{dx'}{dt'}=\frac{dx'}{dt}=\frac{d}{dt}(x-vt)=\frac{dx}{dt}-v=u_x - v\\
+u'_y &=\frac{dy'}{dt'}=u_y\\
+u'_z &=\frac{dz'}{dt'}=u_z
+\end{align*}
+which is trivial, since $t=t'$. The transformation above are equivalent (identical) to the rules for transforming velocity that we derived in Section \ref{sec:describingmotionin1D:relativemotion} for kinematics. In Galilean relativity, time is an absolute quantity that does not depend on the frame of reference. In Special Relativity, the time coordinate is different between different frames of reference, so we cannot simply convert a time derivative in $t'$ to a derivative in $t$. Instead, we must use the Lorentz transformations.
 
-Although most of our common experience is well described by this transformation, Albert Einstein found that it is no longer accurate if the speeds involved in the situation are close to the speed of light. Einstein's Theory of Special Relativity gives the following transformation instead:
-\begin{align}
-\label{eqn:chap3:LorentzTr}
-x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)\\
-t'&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)
-\end{align}
-where $c$ is the speed of light (\SI{3e8}{m/s}). The first thing to note is that this a considerably more complicated expression. The most bizarre aspect is that the two reference frames have different measures of time ($t$ and $t'$). The above transformation, from $x,t$ to $x',t'$, is called a ``Lorentz transformation''. The fact that we have to include time in the transformation is an aspect related to the fact that Einstein's Theory of Special Relativity tells us that we must consider Space-Time as a single entity (rather than thinking of space and time as separate things).
+We can use the formulas for length contraction and time dilation to derive the Lorentz Transformations. Referring to Figure \ref{fig:specialrelativity:translation}, $x$ refers to the distance between a point in space-time and the origin of the $x$ axis in the frame, $S$, as measured in frame, $S$. Similarly, $x'$, is the distance to the point in space-time as measured in frame $S'$, from the origin of $S'$. In frame, $S$, the distance $x'$ will be contracted to the length $x'/\gamma$, so that the Galilean transformation for the $x$ coordinate is modified as follows:
+\begin{align*}
+x' &= x - vt\quad\text{(Galilean)}\\
+\frac{x'}{\gamma} &= x - vt\\
+\therefore x'&=\gamma (x-vt)\quad\text{(Lorentz)}
+\end{align*}
+The $y$ and $z$ coordinates are the same between frames of references, since all of the length contraction will take place in the direction of the relative motion between frames of reference, which we chose to be in the $x$ direction.
 
-Let us examine a few aspects of the Lorentz transformation. First, if the velocity, $v'^B$, between reference frames is small when compared to the speed of light, $v'^B<<c$, we have:
+We can obtain the equation for the time coordinate by considering that, in the $S'$ frame of reference, it is the $x$ coordinate that is contracted to $x/\gamma$. In the $S'$ frame of reference, the distance between the origins of the two systems is $vt'$ (note the prime on $t$). We can thus write the contracted distance $x$, in the $S'$ frame of reference:
 \begin{align*}
-\left(\frac{v'^B}{c}\right)^2&<<1\\
-\therefore \frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}} &\sim 1 \\
+\frac{x}{\gamma}&=vt'+x'\\
+t'&= \frac{1}{v}\left(\frac{x}{\gamma}-x'\right)
 \end{align*}
-In this case, we recover the original Galilean transformation:
+We can eliminate $x'$ from the last equation using the Lorentz transformation for $x'$ that we just found:
 \begin{align*}
-x'^A&=\lim_{v_B<<c}\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)=v'^Bt+x^A\\
-t'&=\lim_{v_B<<c}\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left(  t+\frac{v'^Bx^A}{c^2} \right)=t
+t'&= \frac{1}{v}\left(\frac{x}{\gamma}-x'\right)\\
+t'&= \frac{1}{v}\left(\frac{x}{\gamma}-\gamma x+\gamma vt\right)\\
+\frac{t'}{\gamma}&=\frac{1}{v}\left(\frac{x}{\gamma^2}-x+vt\right)\\
+&=\frac{1}{v}\left(x\left(1-\frac{v^2}{c^2}\right)-x+vt\right)\\
+&=\frac{1}{v}\left(-\frac{v^2}{c^2}x+vt\right)\\
+&=t-\frac{vx}{c^2}\\
+\therefore t'&=\gamma\left(t-\frac{vx}{c^2} \right)
 \end{align*}
-So \textit{a priori}, this aspect of Einstein's Theory of Special Relativity is difficult to test, as we only expect it to deviate from common experience when $v_B$ is comparable to the speed of light. However, in particle accelerators, subatomic particles are regularly accelerated to speeds close to the speed of light, and their position has to be described using Special Relativity. 
+where we wrote out the $\gamma$ factor out explicitly in the fourth line. We can summarize the Lorentz transformations as follows:
+\begin{align*}
+x' &=\gamma (x-vt)\\
+y' &= y\\
+z' &= z\\
+t' &=\gamma\left(t-\frac{vx}{c^2} \right)
+\end{align*}
+and the inverse relations are easily found:
+\begin{align*}
+x &=\gamma (x'+vt')\\
+y &= y'\\
+z &= z'\\
+t &=\gamma\left(t'+\frac{vx'}{c^2} \right)
+\end{align*}
+Note that the Lorentz transformations reduce to the Galilean transformations when the speed, $v$, between frames of reference is small (so that $\gamma \sim 1$).
 
-Suppose that a space ship is carrying Chlo\"e and moving with a speed of $v'^B=0.7c=\SI{2.1}{m/s}$. Suppose that Chlo\"e fires an arrow in the same direction as the space ship's motion, and that she measures the speed of the arrow to be $v^A=0.4c=\SI{0.9e8}{m/s}$. Suppose that the space ship goes by Marcel, who is stationary on Earth, right at the moment that Chlo\"e fires the arrow. Let us define the $x$ axis on the ship so that it is positive in the direction of motion with its origin where  Chlo\"e fired the arrow. Let us define $t=t'=0$ to be the moment when the origin of the space ship x-axis is aligned with the origin of Marcel's $x'$ axis on Earth. The $x'$ axis is also set up to be positive in the direction of the space ship's motion and has the origin such that at $t'=0$
+\begin{example}{In a frame, $S$, a pulse of light is emitted (at the speed of light) in the positive $x$ direction, at $t=0$, from the origin. The pulse is then absorbed at time $t$, at position $x=d$. Use the Lorentz transformation to show that, in a frame, $S'$, moving in the positive $x$ direction with speed $v$, relative to $S$, the pulse also travelled at the speed of light.}
+In order to use the Lorentz transformations, we need to define ``events'', with coordinates in space-time, that we can then convert from one frame of reference to another. Let $A$ be the event that corresponds to the emission of the pulse of light, and $B$ the event that corresponds to the absorption of the pulse. In frame, $S$, the coordinates of these events are:
+\begin{align*}
+x_A&=0\\
+t_A&=0\\
+x_B&=d\\
+t_B&=\frac{d}{c}
+\end{align*}
+where in the last line, we used the fact that, in frame, $S$, the pulse travels at the speed of light. Applying the Lorentz transformations, we can find the coordinates of the same events in frame, $S'$:
+\begin{align*}
+x'_A&=\gamma (x_A-vt_A)=0\\
+t'_A&=\gamma\left(t_A-\frac{vx_A}{c^2} \right)=0\\
+x'_B&=\gamma (x_B-vt_B)=\gamma \left(d-v\frac{d}{c}\right)\\
+t'_B&=\gamma\left(t_B-\frac{vx_B}{c^2} \right)=\gamma\left(\frac{d}{c}-\frac{vd}{c^2} \right)
+\end{align*} 
+The speed, $v'_p$, of the pulse of light in frame, $S'$, is given by:
+\begin{align*}
+v'_p&=\frac{(x'_B-x'_A)}{(t'_B-t'_A)}=\frac{\gamma \left(d-v\frac{d}{c}\right)}{\gamma\left(\frac{d}{c}-\frac{vd}{c^2} \right)}\\
+&=\frac{\left(d-v\frac{d}{c}\right)}{\left(\frac{d}{c}-\frac{vd}{c^2} \right)}=c\frac{\left(\frac{d}{c}-v\frac{d}{c^2}\right)}{\left(\frac{d}{c}-\frac{vd}{c^2} \right)}=c
+\end{align*}
+which is the speed of light, as expected. 
 
-Using Galilean Relativity, the speed of the arrow as measured by Marcel would be found by adding the two velocities, $v'^A=v^A+v'^B=1.1c=\SI{3.3e8}{m/s}$. Using Special Relativity, the situation is a little more difficult. The position as measured in Marcel's reference frame is given by:
+\textbf{Discussion: }In this example, we showed how to use the Lorentz transformations, by clearly defining ``events'' and their coordinates in space-time. We saw that the Lorentz transformation are consistent with Einstein's second postulate and that the speed of light is the same all frames of reference. This of course makes sense, as we derived the Lorentz transformations from time dilation and length contraction, which are consequences of the postulate.
+\end{example}
+
+
+Einstein's second postulate states that the speed of light is independent of the frame of reference. Consider two points in space-time corresponding to the emission ($A$) and the absorption ($B$) of a pulse of light. In the reference frame, $S$, the distance squared in space between these two events must be equal to the distance (squared) corresponding to the light travelling between the time of emission and absorption:
 \begin{align*}
-x'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}(v'^Bt+x^A)
+(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2&= c^2t_A^2-c^2t_B^2\\
+\therefore \Delta x^2 + \Delta y^2 +\Delta z^2&=c^2\Delta t^2
 \end{align*}
-To obtain the arrow's velocity in Marcel's frame, we need the time derivative of $x'^A$ with respect to $t'$, the time measured in Marcel's frame:
+where $(x_A,y_A,z_A,ct_A)$ and $(x_B,y_B,z_B,ct_B)$ are the space-time coordinates of events $A$ and $B$. The above equation must hold in all frame of references (e.g. adding a prime to each coordinate), since it is a statement that the speed of light is $c$.
+
+We can define, $s$, the ''space-time interval'', between events, $A$ and $B$:
 \begin{align*}
-v'^A=\frac{d}{dt'}x'^A
+s^2 = \Delta x^2 + \Delta y^2 +\Delta z^2&-c^2\Delta t^2
 \end{align*}
-However, $x'^A$ is written in terms of $t$, not $t'$. However, equation \ref{eqn:chap3:LorentzTr}, tells us how $t$ depends on $t'$; we thus need to treat $t$ as a function of $t'$ and use the Chain Rule:
+which turns out to be ``Lorentz invariant'' (meaning that this value is the same in all reference frames). The space-time interval can be thought of as a ``distance'' in space-time that is the same in all reference frames. If the events $A$ and $B$ corresponds to the emission and absorption of light, then $s=0$, and we say that the interval between $A$ and $B$ is light-like or null. If $s<0$, the events are on a time-like interval, and if $s>0$, the events are separated by a space-like interval.
+
+We can visualize the effect of Lorentz transformations on space-time diagrams, as in Figure \ref{fig:specialrelativity:lorentz}, which shows the space-time diagrams for a reference frame, $S$, and a second reference frame, $S'$, moving with speed $v$ in the $x$ direction relative to $S$.
+\capfig{0.6\textwidth}{figures/SpecialRelativity/lorentz.png}{\label{fig:specialrelativity:lorentz}The reference frame $S'$ is moving relative to reference frame, $S$, with speed $v$ in the $x$ direction. We can illustrate this on a space-time diagram by tilting the axes of the $S'$ coordinate system by an angle $\alpha=v/c$, as shown. }
+The effect of the Lorentz transformation on a space-time diagram is to tilt both the space and time axes ``inwards''\footnote{Outwards if the speed of $S'$ is in the negative $x$ direction relative to $S$.}, by an angle, $\alpha$, given by:
 \begin{align*}
-v'^A&=\frac{d}{dt'}x'^A(t)\\
-&=\frac{d}{dt}x'^A(t)\left(\frac{dt}{dt'}\right)\\
-&=\frac{d}{dt}\left(\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}} (v'^Bt+x^A)  \right)\left(\frac{dt}{dt'}\right)\\
-&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\frac{d}{dt}\left( (v'^Bt+x^A)  \right)\left(\frac{dt}{dt'}\right)\\
-&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+\frac{d}{dt}x^A \right)\left(\frac{dt}{dt'}\right)\\
-&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+v^A \right)\left(\frac{dt}{dt'}\right)\\
+\tan\alpha = \frac{v}{c}
 \end{align*}
-We can differentiate equation \ref{eqn:chap3:LorentzTr} to get $\frac{dt'}{dt}$:
+Figure \ref{fig:specialrelativity:lorentz} shows a light-like interval between two points, $A$ and $B$, and how to determine the space-time coordinates in the two reference frames. You can think of space-time as the sheet of paper on which events happen. You can then draw different coordinate systems on that piece of paper to describe the position (in space and time) of different events.
+
+\begin{example}{Use a space-time diagram to show how two events at different locations that are simultaneous in one frame of reference are not simultaneous in a reference frame that is moving relative to the one where the events are simultaneous. This is an illustration of the relativity of simultaneity that we uncovered at the beginning of the chapter when examining Alice on a train platform and the two pulses of light.}
+Let $S$ be the frame of reference where events, $A$ and $B$, are simultaneous. These events are connected by a space-like interval, since they are separated in space, but not in time. There is no way for one event to have caused the other. In the frame, $S$, these events are on a horizontal line in a space-time diagram.
+
+Let us define a second reference frame, $S'$, that is moving with speed $v$, relative to $S$. We have illustrated space-time diagrams for the the two reference frames, and the events $A$ and $B$, in Figure \ref{fig:specialrelativity:lorentz_simul}.
+\capfig{0.6\textwidth}{figures/SpecialRelativity/lorentz_simul.png}{\label{fig:specialrelativity:lorentz_simul}In the frame of reference, $S$, the events $A$ and $B$ occur at the same time. In frame, $S'$, event $B$ occurs before event $A$ (since $t_B < t_A$). The two events are space-like, so observers in different frames of reference cannot agree on which happened first.}
+From the space-time diagram, it is clear that, in the frame of reference $S'$, the event $B$ happened first. If the frame of reference $S'$ was moving in the opposite (negative $x$) direction, event $A$ would occur first, and the axes of $S'$ would be tilted in the other direction (so that the opening angle between the axes is greater than $\SI{90}{\degree}$).
+
+\textbf{Discussion: }This example illustrates how space-time diagrams can be used to qualitatively model events in space-time between two different reference frames. In particular, we showed how two events that are simultaneous in one frame ($S$) are not simultaneous in a different frame. For events connected by space-like intervals, there exist frames of reference where the events are simultaneous, or where either one happened first. If two events are separated by a time-like interval, there is no frame of reference in which one will disagree in the ordering of the events (although observers in different frames of reference will still measure different lengths of time between events due to time-dilation). For time-like events, the moving frame of reference would have to go faster than the speed of light for the time ordering to be different. This would violate causality, and is a good argument as to why nothing can go faster than the speed of light!
+\end{example}
+
+\subsection{Lorentz addition of velocities}
+In the previous section, we reviewed the Galilean velocity transformations, that allow us to convert a velocity, $\vec u$, as measured in one frame of reference, to a velocity $\pvec u'$, measured in a different frame of reference. We now derive the equivalent relations based on the Lorentz transformation. Again, we assume that frame, $S'$, moves in the positive $x$ direction with speed, $v$, relative to frame, $S$. 
+
+The $x$ component of the velocity vector, $\vec u'$, for some object in the $S'$ frame of reference is given by:
 \begin{align*}
-\frac{dt'}{dt}&=\frac{d}{dt'}\left(\frac{1}{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}\left(t+\frac{v'^Bx^A}{c^2} \right)\right)\\
-&=\frac{1}{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}\left(1+\frac{v'^Bv^A}{c^2} \right)
+u'_x = \frac{d}{dt'} x'
 \end{align*}
-where we identified $v^A=\frac{dx^A}{dt}$. We can take the inverse to get $\frac{dt}{dt'}$:
+In Galilean relativity, we could simply replace the derivative over $t'$ by a derivative over $t$, since the two are equivalent. This is no longer the case. However, we can use the Chain Rule and the Lorentz transformations to convert a derivative over $t'$ to a derivative over $t$:
 \begin{align*}
-\frac{dt}{dt'}&=\frac{1}{\frac{dt'}{dt}}\\
-&=\frac{\sqrt{1+\left(\frac{v'^B}{c}\right)^2}}{1+\frac{v'^Bv^A}{c^2}}
+\frac{d}{dt'} &= \frac{dt}{dt'}\frac{d}{dt}\\
+&= \frac{d}{dt'} \gamma\left(t'+\frac{vx'}{c^2} \right)\frac{d}{dt}\\
+&=\gamma \left(1+\frac{v}{c^2}\frac{dx'}{dt'}\right)\frac{d}{dt}\\
+&=\gamma \left(1+\frac{vu'_x}{c^2}\right)\frac{d}{dt}
 \end{align*}
-Combining everything, we get the velocity of the arrow as measured in Earth's reference frame by Marcel:
-\begin{align}
-\label{eqn:chap3:LorentzV}
-v'^A&=\frac{1}{\sqrt{1-\left(\frac{v'^B}{c}\right)^2}}\left( v'^B+v^A \right)\left(\frac{dt}{dt'}\right)\nonumber\\
-\Aboxed{v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}}
-\end{align}
-The above equation tells us how to convert the velocity of the arrow as measured in the space ship ($v^A$) into the velocity as measured on Earth, $v'^A$, when the space ship moves with velocity $v'^B$ as measured on Earth. When $v^A$ and $v'^B$ are small compared to $c$, then this equation reduces to the Galilean version ($v'^A=v'^B+v^A$). However, when the velocities are large this is no longer the case. For the above example, with $v^A=0.4c$, $v'^B=0.7c$, we get:
+where we recognized that $\frac{dx'}{dt'}=u'_x$. The $x$ component of the velocity, as measured in the $S'$ frame of reference, is then given by:
 \begin{align*}
-v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}\\
-&=\frac{(0.7c)+(0.4c)}{1+\frac{(0.7c)(0.4c)}{c^2}}\\
-&=\frac{1.1}{1+0.28}c\\
-&=0.86c=\SI{2.57e8}{m/s}
+u'_x &= \frac{d}{dt'} x' = \gamma \left(1+\frac{vu'_x}{c^2}\right)\frac{d}{dt}x'\\
+&=\gamma \left(1+\frac{vu'_x}{c^2}\right)\frac{d}{dt}\gamma (x-vt)\\
+&=\gamma^2 \left(1+\frac{vu'_x}{c^2}\right)(u_x -v)\\
+\frac{u'_x}{\gamma^2}&=u_x -v +\frac{vu'_xu_x}{c^2}-\frac{v^2u'_x}{c^2}\\
+u'_x\left (1-\frac{v^2}{c^2}\right)&=u_x -v +\frac{vu'_xu_x}{c^2}-\frac{v^2u'_x}{c^2}\\
+u'_x \left( 1- \frac{vu_x}{c^2}\right) &=u_x -v\\
+\therefore \; \Aboxed{u'_x&=\frac{u_x -v}{1- \frac{vu_x}{c^2}}}
 \end{align*}
-which is well short of the $1.1c$ that you would expect from Galilean relativity. Suppose instead that $v^A=c$, that is, Chlo\"e fires the arrow at the speed of light (she sees the arrow move away at the speed of light). Marcel will measure the speed of the arrow to be:
+where we made use of the Lorentz transformation: $x'=\gamma (x-vt)$. We can proceed in a similar way to determine the $y$ and $z$ components. Note that, unlike the Galilean case, all of the velocity components must transform, since the time derivative is involved for each component. Intuitively, we expect all components of velocity to be affected, since one needs to guarantee that the total speed is always below $c$. The velocity transformations for all components are given by the following:
 \begin{align*}
-v'^A&=\frac{v'^B+v^A}{1+\frac{v'^Bv^A}{c^2}}\\
-&=\frac{v'^B+(1.0c)}{1+\frac{v'^B(1.0c)}{c^2}}\\
-&=\frac{v'^B+c}{1+\frac{v'^B}{c}}\\
-&=c \frac{v'^B+c}{c+v'^B}\\
-&=c
+u'_x&=\frac{u_x -v}{1- \frac{vu_x}{c^2}}\\
+u'_y &=\frac{u_y}{\gamma\left(1- \frac{vu_x}{c^2}\right)}\\
+u'_z &=\frac{u_z}{\gamma\left(1- \frac{vu_x}{c^2}\right)}
 \end{align*}
-regardless of the speed of the space ship! This is a truly strange result from Einstein's theory. If Chlo\"e fires an arrow at the speed of light, Marcel will also measure the arrow moving at the speed of light, regardless of whether or not the space ship is moving. Indeed, all observers in inertial frames of references would agree that the arrow is moving at the same speed, $c$. Although we showed this result as a consequence of the Lorentz transformation, Einstein developed his Theory of Special Relativity by postulating that the speed of light is the same in all inertial reference frames. The Lorentz transformation is then just a consequence of this postulate. This postulate has several strange consequence that have been \textit{experimentally} verified:
-\begin{itemize}
-\item Moving objects contract. That is, fast moving objects become shorter.
-\item Moving clocks slow down. That is, people moving very fast age slower.
-\item People in different inertial reference frames cannot agree on the order in which events took place. 
-\end{itemize}
-We will explore this in more detail when we take a closer look at Einstein's Special Theory of Relativity.
+and the reverse transformations are given by:
+\begin{align*}
+u_x &=\frac{u'_x +v}{1+ \frac{vu_x}{c^2}}\\
+u_y &=\frac{u'_y}{\gamma\left(1+ \frac{vu_x}{c^2}\right)}\\
+u_z &=\frac{u'_z}{\gamma\left(1+ \frac{vu_x}{c^2}\right)}
+\end{align*}
+\begin{example}{An archer can shoot a very fast arrow with a speed of $0.5c$. The archer is on a train moving with speed, $v=0.7c$, and fires an arrow in the direction of motion. What is the speed of the arrow, as measured in the frame of reference of the ground?}
+Let the train be the frame of reference, $S'$, moving in the positive $x$ direction with speed $v=0.7c$ relative to the frame, $S$, which corresponds to the ground. The speed of the arrow, as seen from the train ($S'$), is given by:
+\begin{align*}
+u'_x = 0.5c
+\end{align*}
+The speed of the arrow, as measured from the ground, is thus given by:
+\begin{align*}
+u_x &=\frac{u'_x +v}{1+ \frac{vu_x}{c^2}}\\
+&=\frac{(0.5c) +(0.7c)}{1+ \frac{(0.7c)(0.5c)}{c^2}}\\`
+&=\frac{(1.2c)}{1+(0.7)(0.5)}=\frac{1.2}{1.35}c=0.89c
+\end{align*}
+\textbf{Discussion:} By using the Lorentz transformations for velocity, we see that the arrow does not exceed the speed of light. Had we used Galilean relativity, we would have concluded that the arrow has a speed of $1.2c$ when measured from the ground. 
+\end{example}
+
+\section{Relativistic momentum and energy}
+In this section, we show how to define momentum and energy in a way that is consistent with the postulates of Special Relativity. We expect that, since time and space depend on the frame of reference of the observer, so too will the momentum and the energy of an object. Consider an object of mass $m_0$, moving in a frame of reference, $S$, with velocity, $\vec u$ (we reserve $\vec v$ to represent the speed between two inertial frames of reference), in the $x$ direction. At some time, $t$, the object will be at position, $x$, along the $x$ axis. We define the relativistic momentum as:
+\begin{align*}
+p = m_0\frac{dx}{dt'}
+\end{align*}
+where $t'$ is the time as measured in the rest frame of the object. By defining this in terms of the proper time of the object, all observers will agree on the value of $t'$. In the frame of reference, $S$, (with time $t$) this corresponds to:
+\begin{align*}
+p = m_0\frac{dx}{dt'}=m_0\frac{dt}{dt'}\frac{dx}{dt}=m_0\frac{dt}{dt'}u
+\end{align*}
+where $u$ is the speed of the particle in frame, $S$. We can use time dilation to re-express the derivative:
+\begin{align*}
+\Delta t &= \gamma \Delta t'\\
+\frac{\Delta t}{\Delta t'}&=\gamma\\
+\therefore \frac{dt}{dt'}&=\gamma
+\end{align*}
+where in the last line, we simply took the limit of an infinitesimally short time interval. Therefore, the relativistic momentum of the particle, in frame, $S$, can be defined:
+\begin{align*}
+\Aboxed{\vec p = m_0\gamma\vec u =  \frac{m_0\vec u}{\sqrt{1-\frac{u^2}{c^2}}} }
+\end{align*}
+where $\gamma$ is calculated with the same speed, $u$, since that is the speed of the reference frame of the object relative to $S$. Note that as the speed, $u$, of the particle approaches the speed of light, the factor of $\gamma$ approaches infinity. This means that an object with a mass can never reach the speed of light, as it would have an infinite momentum. In order to define momentum in a way that resembles the classic definition, one can think of the mass of the object as depending on the speed of the object. We define the rest-mass, $m_0$, of the object as the mass that is measured when the object is at rest. We can then model the mass of the object as increasing with its speed:
+\begin{align*}
+m(u) = \gamma m_0 = \frac{m_0}{\sqrt{1-\frac{u^2}{c^2}}}
+\end{align*}
+so that the relativistic momentum would be defined as:
+\begin{align*}
+\vec p = m(u)\vec u
+\end{align*}
+In this case, we can think of the mass of the object as increasing with its speed. The object would acquire infinite mass if it were to reach the speed of light.
+
+With the relativistic definition of momentum, Newton's Second Law can be written as:
+\begin{align*}
+\vec F = \frac{d\vec p}{dt}=\frac{d}{dt}m_0\gamma\vec u 
+\end{align*}
+
+\begin{example}{A constant force of $\SI{1e-22}{N}$ is applied to an electron (with mass $m_e=\SI{9.11e-31}{kg}$) in order to accelerate it from rest to a speed of $u=0.99c$. Compare the length of time over which the force must be applied using classical and relativistic dynamics.}
+In both cases, we can start with Newton's Second Law:
+\begin{align*}
+\vec F &= \frac{d\vec p}{dt}\\
+\therefore \int \vec F dt &= \Delta \vec p = \vec p
+\end{align*}
+where $\vec p$ is the final momentum of the electron (which is different depending on whether we use the classical or the relativistic definition of momentum). Since the force is constant:
+\begin{align*}
+\int \vec F dt&=\vec F \Delta t=\vec p\\
+\therefore \Delta t &=\frac{p}{F}
+\end{align*}
+where $\Delta t$ is the length of time over which the force is applied. With the classical definition of momentum, the time is given by:
+\begin{align*}
+ \Delta t &=\frac{p}{F} = \frac{mu}{F}=\frac{(\SI{9.11e-31}{kg})(0.99)(\SI{3e8}{m/s})}{(\SI{1e-22}{N})}=\SI{2.71}{s}
+\end{align*}
+With the relativistic definition of momentum, we first need the gamma factor:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{u^2}{c^2}}}=\frac{1}{\sqrt{1-(0.99)^2}}=7.1
+\end{align*}
+We can then calculate the time over which the force needs to be applied:
+\begin{align*}
+\Delta t &=\frac{p}{F} = \frac{\gamma m_0u}{F}=\gamma  \frac{m_0u}{F}=(7.1)(\SI{2.71}{s})=\SI{19.2}{s}
+\end{align*}
+\textbf{Discussion: }When using the relativistic definition of momentum, we find that the time over which the force must be applied to reach a given speed is longer. This makes sense, since it will take infinitely long to reach the speed of light. Also, note that the time that is required using relativistic dynamics is just the time-dilated time that is required in classical dynamics.
+\end{example}
+
+Recall how we defined kinetic energy, in Section \ref{sec:workenergy:kinetic}, by defining the change in kinetic energy of an object as the net work done on that object. We use the same formalism here to redefine kinetic energy using relativistic dynamics.
+
+The work done by the net force, $\vec F$, on an object that goes from a position $A$ to a position $B$, is given by
+\begin{align*}
+W = \int_A^B \vec F\cdot d\vec l=\int_0^t \left(\frac{d}{dt}m_0\gamma\vec u \right)\cdot(\vec u dt)
+\end{align*}
+where we recognized that a infinitesimal segment $d\vec l$ along the path of the object is given by $d\vec l=\vec u dt$. The time infinitesimals, $dt$, cancel, and we are left with:
+\begin{align*}
+W&=\int_0^t \left(\frac{d}{dt}m_0\gamma\vec u \right)\cdot(\vec u dt)\\
+&=\int d(m_0\gamma \vec u)\cdot \vec u
+\end{align*}
+which we can integrate by parts. We can integrate this over the speed, $u$, and we assume that the object started with a speed of $u=0$ at the beginning of the path and has a speed, $u=U$, at the end of the path:
+\begin{align*}
+W&=\int_0^U d(m_0\gamma \vec u)\cdot \vec u = \Big[\gamma m_0 \vec u\cdot\vec u\Big]_0^U-\int_0^U m_0\gamma u du\quad\text{(int. by parts)}\\
+&=\gamma m_0 U^2-m_0\int_0^U\frac{udu}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=\gamma m_0 U^2-m_0\Big[ c^2\sqrt{1-\frac{u^2}{c^2}} \Big]_0^U\\
+&=\gamma m_0 U^2-m_0c^2+m_0c^2\sqrt{1-\frac{U^2}{c^2}}\\
+&=\gamma \left(m_0 U^2+m_0c^2\left(1-\frac{U^2}{c^2}\right)\right)-m_0c^2\\
+&=m_0c^2(\gamma -1)	
+\end{align*}
+Since the object started at rest (with a speed $u=0$) the above integral corresponds to what we would call the kinetic energy of the object, with a speed, $u$:
+\begin{align*}
+K=m_0c^2(\gamma -1)=m_0c^2\left(\frac{1}{\sqrt{1-\frac{u^2}{c^2}}}-1\right)
+\end{align*}
+This form for the relativistic kinetic energy of the object is not at all similar to the form that we obtained in classical physics. As the speed of the object approaches the speed of light, the $\gamma$ factor approaches infinity, as does the kinetic energy. Thus, it would take an infinite amount of work to accelerate an object to the speed of light, and again, we see that it is impossible for anything with mass to ever reach the speed of light. The formula above, however, should always be correct, even in the non-relativistic limit, where $v<<c$. We can approximate the gamma factor using the binomial expansion for the case where $x<<1$:
+\begin{align*}
+(1+x)^n\sim 1 + nx +\dots 
+\end{align*}
+So that, when $v<<c$ (and $v^2/c^2<<1$), the gamma factor is approximated by:
+\begin{align*}
+\gamma=\left(1-\frac{u^2}{c^2}\right)^{-\frac{1}{2}}\sim 1+\frac{1}{2}\frac{u^2}{c^2}
+\end{align*}
+In this limit, the relativistic kinetic energy reduces to:
+\begin{align*}
+\lim_{v<<c}K=\lim_{v<<c}m_0c^2(\gamma -1)\sim m_0c^2\left(1+\frac{1}{2}\frac{u^2}{c^2} - 1  \right)=\frac{1}{2}mu^2
+\end{align*}
+which is the classic definition of kinetic energy. The kinetic energy is also zero when the speed is zero.
+
+The kinetic energy has two terms in it:
+\begin{align*}
+K=m_0c^2\gamma -m_0c^2
+\end{align*}
+The first term increases with speed and behaves as we would expect. The second term is constant, and depends only on the rest mass of the object (we call this term the rest mass energy). We can think of this in slightly different terms. Let us define the total energy, $E$, of the object as:
+\begin{align*}
+E=m_0c^2\gamma\\
+\therefore \;\Aboxed{E = K+m_0c^2}
+\end{align*}
+so that the total energy is just the rest mass energy plus the kinetic energy. This highlights a key aspect of Special Relativity. An object will have energy, $E$, even when it is at rest. That energy, at rest, is called the rest mass energy, and corresponds to energy that an object has by virtue of having mass. This is, of course, Einstein's famous equation:
+\begin{align*}
+\Aboxed{E=m_0c^2}\quad \text{(rest mass energy)}
+\end{align*}
+This equation implies that mass can be thought of as a form of energy. Nuclear reactors function by converting a small amount of mass of uranium atoms into energy (in the form of heat), that is then used to produce high pressure steam to rotate a turbine.
+
+Einstein's relation is often used to express the mass of subatomic particles in terms of energy. For example, an electron has a mass of $\SI{511e3}{eV/c^2}$ in these units. 
+
+\begin{example}{What is the mass of a proton, $m_p=\SI{1.67e-27}{kg}$, in units of $\si{MeV/c^2}$ (where the $M$ stands for ``Mega'', and corresponds to $\SI{1}{MeV}=\SI{1e6}{eV}$)?}
+We can first calculate the rest mass energy of the proton in Joules:
+\begin{align*}
+E=m_pc^2=(\SI{1.67e-27}{kg})(\SI{3e8}{m/s})^2=\SI{1.503e-10}{J}
+\end{align*}
+We can then convert from Joules to electron-volts:
+\begin{align*}
+\frac{(\SI{1.503e-10}{J})}{(\SI{1.6e-19}{J/eV})}=\SI{939.4e6}{eV}=\SI{939.4}{MeV}
+\end{align*}
+The mass of the proton can then be expressed as $m_p=\SI{939.4}{MeV/c^2}$.
+\end{example}
+
+Finally, it is interesting to examine the relationship between the momentum and the energy of a relativistic object. Consider the quantity $c^2p^2$:
+\begin{align*}
+c^2p^2 &= c^2(\gamma m_0 u)^2=c^2\gamma^2m_0^2u^2=c^4\gamma^2m_0^2\frac{u^2}{c^2}=c^4\gamma^2m_0^2\left(1- \frac{1}{\gamma^2}\right)\\
+&=c^4\gamma^2m_0^2 - c^4m_0^2\\
+&=E^2-c^4m_0^2
+\end{align*}
+where we recognized that $c^4\gamma^2m_0^2$ is simply the energy, $E$, squared. This is generally called the ``energy-momentum'' relation and written:
+\begin{align*}
+\Aboxed{E^2=p^2c^2+m_0^2c^4}
+\end{align*}
+An interesting consequence of this relationship is that particles with no mass will still have a momentum. For example, the photon, which is a particle of light and must thus have a mass of zero (or it could not move at the speed of light), will have a momentum given by:
+\begin{align*}
+p=\frac{E}{c}
+\end{align*}
+Thus, one can use light to impart momentum to something. This is how a solar sail, a proposed propulsion mechanism for space travel, operates.
+
+\section{Closing remarks}
+In this chapter, we introduced the first hints of how the laws of physics become counter-intuitive, and quite bizarre. One can wrap one's head around Newton's Second Law, $\vec F^{net}=m\vec a$, and develop some intuition as to how an object may behave. However, it is difficult to imagine how people age slower if they travel faster, and how cars become shorter when they are moving. However, as far as we can tell, this is the best way to describe the Universe around us. 
+
+This all goes back to our original statements about physics. The goal is to come up with rules that allow us to describe Nature. It's nice when those rules make sense, but, unfortunately, that is not a requirement. It does appear that the rules that describe Nature do not make sense, at least not based on our common experience, living in a macroscopic world where speeds are much less than the speed of light. With Special Relativity, we introduced the modern framework for modelling dynamics. We have not introduced Quantum Mechanics, which describes how elementary particles behave.
+
+Quantum Mechanics is even less intuitive than Special Relativity, as it implies that particles act as if they are in multiple places at the same time. Even worse, Quantum Mechanics requires us to abandon the concept of determinism that is critical in Classical Mechanics; in Quantum Mechanics, we can only ever determine probabilities. For example, we can only determine the probability that a particle will be at a particular location at a particular time, but we cannot use kinematics and dynamics to predict where it will be at some time based on the forces acting upon it.
+
+If you decide to pursue further studies in physics, you will get to learn more about these theories, which are quite marvellous. It should not bother you that physics is not intuitive, as that is not the purpose. The exciting part of physics is that, even if Nature behaves in an exquisitely weird way, it does appear that this can all be described with a rather limited set of mathematical equations. One can argue that there is beauty in the fact that succinct mathematics can describe a large number of seemingly unrelated phenomena, as Newton's Universal Theory of Gravity was able to describe both the motion of a falling apple and the orbit of the moon.
+
 
 \newpage
 \section{Summary}
 \vspace{2cm}
 \begin{chapterSummary}
-\item Something interesting
+The Theory of Special Relativity is based on Einstein's two postulates:
+\begin{enumerate}
+\item The laws of physics are the same in all inertial reference frames. There is no experiment that can be performed to determine whether one is at rest or moving with constant velocity.
+\item The speed of light propagating in vacuum is the same in all inertial reference frames. Any observer in an inertial frame of reference, regardless of their velocity, will measure that light has a speed of $c$, when it propagates in vacuum. 
+\end{enumerate}
+These postulates are required in order for the equations from electromagnetism to be valid in all inertial frames of reference. However, they lead to very counter-intuitive results. For example, if two events, $A$ and $B$, are simultaneous in one frame of reference, an observer in a different frame of reference will observe event $A$ to happen earlier/later than event $B$ (earlier or later will depend on the direction of motion of the moving observer).  
+
+The Theory of Special Relativity allows us to relate observations made in one inertial frame of reference, $S$, to observations made in a different inertial frame of reference, $S'$, that is moving with constant velocity, $\vec v$, relative to $S$. We always choose to define the $x$ axis in the $S$ and $S'$ frames of reference so that they are both co-linear with the velocity of $S'$, $\vec v$, which is defined to be in the positive $x$ direction in frame, $S$. Furthermore, we assume that the origin of both frames of reference coincided at time $t=0$.
+
+We define the gamma factor, $\gamma$, based on the speed, $v$, of $S'$ relative to $S$:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+The gamma factor is always greater or equal to 1. 
+
+If a time interval, $\Delta t$, is measured in frame, $S$, then a ``dilated'' time interval, $\Delta t'$, will be measured in frame $S'$:
+\begin{align*}
+\Delta t'=\gamma \Delta t
+\end{align*}
+since $\gamma \geq 1$. We call the time that is measured in a frame of reference that we consider ``at rest'' to be the ``proper time'' in that frame of reference. For example, a muon decays in $\SI{2.2}{\mu s}$ when at rest. If a muon moves at high speed, in the frame of reference where the muon is moving, it will take \textit{longer} (time dilation), for the muon to decay. The time $\SI{2.2}{\mu s}$ is the ``proper time'' in the muon's frame of reference.
+
+As a consequence of time dilation, observers in different frames of reference will measure different lengths due to ``length contraction''. If an object has a ``proper length'', $L$, in a frame of reference, $S$, that is at rest relative to the object, the object will have a contracted length, $L'$, in a reference frame, $S'$, moving with speed, $v$, relative to $S$:
+\begin{align*}
+L'&=\frac{L}{\gamma}
+\end{align*} 
+Note that only the dimension of the object that is co-linear with the velocity vector, $\vec v$, is contracted. If you measured the length of a moving car, you would find that it is slightly shorter than what you would measure if the car is at rest.
+
+We also noted that Special Relativity is intimately connected to electromagnetism. In particular, we described how what we model as a magnetic force in one frame of reference might be modelled as an electric force in a different frame of reference.
+
+In order to describe the motion of objects, we found that we need to define a four-dimensional space-time, where positions in space-time are labelled by 4 ``coordinates'', $(x,y,z,ct)$, instead of the usual 3 (space) position coordinates. This is a result of the fact that time is no longer absolute and depends on the frame of reference (e.g. time dilation). 
+
+In space-time, we think in terms of events that occur at specific locations in space and instants in time. We can visualise space-time using ``space-time diagrams'', where one axis corresponds to space ($x$), and the other axis corresponds to time ($ct$). The path of an object through space-time is called its ``world line''. The world-line for a ray of light is a line that makes a $\SI{45}{\degree}$ angle with the space axis. 
+
+For a given event in space-time, we can define past and future ``light cones''. Only events in the past light-cone could have had a causal effect on the event. Similarly, only events in the future light-cone can ever be influenced by that event. Events that can be causally connected (within each other's light cones) are said to be ``time-like''. Events that are outside of each other's light cones are said to be ``space-like''. If two events are time-like, all observers will agree on the order in which the events happened, preserving the notion of causality. Different observers can disagree on the order in which space-like events occurred. 
+
+The Lorentz transformations allow us to convert the coordinates of events in one frame of reference, $S$, to those in a frames, $S'$, moving with constant speed, $v$, relative to $S$:
+\begin{align*}
+x' &=\gamma (x-vt)\\
+y' &= y\\
+z' &= z\\
+t' &=\gamma\left(t-\frac{vx}{c^2} \right)
+\end{align*}
+and the inverse relations are easily found:
+\begin{align*}
+x &=\gamma (x'+vt')\\
+y &= y'\\
+z &= z'\\
+t &=\gamma\left(t'+\frac{vx'}{c^2} \right)
+\end{align*}
+Certain quantities, which are measured to be the same in all frames of reference, are said to be ``Lorentz invariant''. In particular, we can define the space-time interval, $s$, between two events in space-time as:
+\begin{align*}
+s^2 = \Delta x^2 + \Delta y^2 +\Delta z^2&-c^2\Delta t^2
+\end{align*}
+One can think of this as a sort of ``distance'' in space-time, that does not depend on the frame of reference. For example, $s=0$, if the two events are connected by a pulse of light, since the distance travelled must equal $c\Delta t$. In turn, this must be true in all frames of reference, since the speed of light must be the same in all frames of reference.
+
+If an object has a velocity vector, $\vec u$, as measured in frame of reference $S$, then its velocity, $\pvec u'$, in a frame, $S'$, moving with speed, $v$, relative to $S$, is given by:
+\begin{align*}
+u'_x&=\frac{u_x -v}{1- \frac{vu_x}{c^2}}\\
+u'_y &=\frac{u_y}{\gamma\left(1- \frac{vu_x}{c^2}\right)}\\
+u'_z &=\frac{u_z}{\gamma\left(1- \frac{vu_x}{c^2}\right)}
+\end{align*}
+and the reverse transformations are given by:
+\begin{align*}
+u_x &=\frac{u'_x +v}{1+ \frac{vu_x}{c^2}}\\
+u_y &=\frac{u'_y}{\gamma\left(1+ \frac{vu_x}{c^2}\right)}\\
+u_z &=\frac{u'_z}{\gamma\left(1+ \frac{vu_x}{c^2}\right)}
+\end{align*}
+
+In order for momentum and energy to be conserved in Special Relativity, these need to be redefined. If a particles with rest mass, $m_0$, has a velocity, $\vec u$, in an inertial frame of reference, its relativistic momentum, $\vec p$, is defined to be:
+\begin{align*}
+\vec p = \gamma m_0 \vec u
+\end{align*}
+where the gamma factor is evaluated using the speed, $u$:
+\begin{align*}
+\gamma = \frac{1}{\sqrt{1-\frac{u^2}{c^2}}}
+\end{align*}
+This relativistic definition of momentum is equivalent to the classical definition when $u<<c$. We can think of relativistic momentum in the same way as classical momentum, if we model the mass of the object as increasing with its speed:
+\begin{align*}
+m(u)&=\gamma m_0\\
+\therefore \vec p &= m(u) \vec u
+\end{align*}
+where $m_0$ is the mass of the object measured when the object is at rest (its ``rest mass''). An object with a rest mass can never reach the speed of light, as this would correspond to it having infinite momentum (or infinite mass). 
+
+With the relativistic definition of momentum, one can still use Newton's Second Law in the form:
+\begin{align*}
+\vec F = \frac{d\vec p}{dt}
+\end{align*}
+
+We define the total energy, $E$, of an object as:
+\begin{align*}
+E = K + m_0c^2
+\end{align*}
+which  has a contribution from its kinetic energy, $K$, and from its mass (the second term).  The energy that an object has by virtue of having a mass is called ``rest mass energy'', which implies that mass and energy can really be thought of as the same thing; one can convert mass into energy and vice versa (that's how a nuclear reactor works). 
+
+The kinetic energy of an object moving with speed, $u$, is given by:
+\begin{align*}
+K = m_0c^2 (\gamma -1)
+\end{align*}
+where the gamma factor is obtained using the speed, $u$. This relativistic definition of kinetic energy is equivalent to the classical definition when $u<<c$. The total energy of a particle can also be written as:
+\begin{align*}
+E=\gamma m_0 c^2
+\end{align*}
+
+Since energy and mass are simply related by a constant, one can use units of energy to describe the mass of a particle. It is common in particle physics to express the mass of particles in units of $\si{MeV/c^2}$.
+
+Finally, we saw that the relativistic momentum and energy of an object are related:
+\begin{align*}
+E^2 = p^2c^2+m_0^2c^4
+\end{align*}
+In particular, particles of light, which have no mass but have kinetic energy, have non-zero momentum:
+\begin{align*}
+p=\frac{E}{c}
+\end{align*}
 \end{chapterSummary}
 
 
@@ -104,18 +753,43 @@ We will explore this in more detail when we take a closer look at Einstein's Spe
 
 \begin{chapteractivity}{Reflect and research}
 	{
-		\item 
+	\item How did Michelson and Morley demonstrate that the ether does not exist? 
+	\item Why is 1905 the ``year of physics''?
+	\item Give an example of a device that you use that is affected by relativistic effects.
+	\item How do you resolve the twin paradox? Can you show it on a space-time diagram?
+	\item What did Lorentz do and when?
+	\item Apart from the space-time interval, $s$, what else is Lorentz invariant?
+	\item What is Cherenkov radiation?
 	}
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try at home}
 	{
-		\item 
+	\item Build a particle accelerator.
 	}
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try in the lab}
 	{
-		\item Propose an experiment to observe alpha, beta, and gamma radiation.
+	 \item Propose an experiment to measure the speed of light.
+	 \item Propose an experiment to test relativistic effects with electro magnetism.
 	}
 \end{chapteractivity}
+
+\newpage
+\section{Sample problems and solutions}
+\subsection{Problems}
+%TODO Calculate the amount of energy released in a nuclear fusion reaction (give the masses of the inputs and the outputs). For example, the Sun take 4 protons to make a helium nucleus, mass of He minus mass of 4p is the energy released
+%TODO Draw a space-time diagram to illustrate the barn paradox.
+%TODO A proton has a kinetic energy of 10MeV, how far does it travel when a) 1s go by in the proton's reference frame, b) when 1s goes by in the lab reference frame
+
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+
+}
+\end{problem}
+
+\newpage
+\subsection{Solutions}
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+
+\end{solution}
