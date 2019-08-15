@@ -425,6 +425,10 @@ From the space-time diagram, it is clear that, in the frame of reference $S'$, t
 \textbf{Discussion: }This example illustrates how space-time diagrams can be used to qualitatively model events in space-time between two different reference frames. In particular, we showed how two events that are simultaneous in one frame ($S$) are not simultaneous in a different frame. For events connected by space-like intervals, there exist frames of reference where the events are simultaneous, or where either one happened first. If two events are separated by a time-like interval, there is no frame of reference in which one will disagree in the ordering of the events (although observers in different frames of reference will still measure different lengths of time between events due to time-dilation). For time-like events, the moving frame of reference would have to go faster than the speed of light for the time ordering to be different. This would violate causality, and is a good argument as to why nothing can go faster than the speed of light!
 \end{example}
 
+\begin{studentOpinion}{Josh}{}
+	This chapter is where the bubble of intuitive reality is popped, and students (like you and me) are given the oppourunity to peer through the veil of our perception. As amazing and exciting as this is, it can also be incredibly frustrating. Many students rely on intuition to guide them as they problem solve, but hit a wall in special relativity. TO avoid this, I suggest drawing spacetime diagrams and practicing using Lorentz transformations. These tools will help make the process of decoding the strange consequences of Einstein's postulates less awkward.
+\end{studentOpinion}
+
 \subsection{Lorentz addition of velocities}
 In the previous section, we reviewed the Galilean velocity transformations, that allow us to convert a velocity, $\vec u$, as measured in one frame of reference, to a velocity $\pvec u'$, measured in a different frame of reference. We now derive the equivalent relations based on the Lorentz transformation. Again, we assume that frame, $S'$, moves in the positive $x$ direction with speed, $v$, relative to frame, $S$. 
 
@@ -779,17 +783,64 @@ p=\frac{E}{c}
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-%TODO Calculate the amount of energy released in a nuclear fusion reaction (give the masses of the inputs and the outputs). For example, the Sun take 4 protons to make a helium nucleus, mass of He minus mass of 4p is the energy released
+
 %TODO Draw a space-time diagram to illustrate the barn paradox.
 %TODO A proton has a kinetic energy of 10MeV, how far does it travel when a) 1s go by in the proton's reference frame, b) when 1s goes by in the lab reference frame
 
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-
+The sun is powered by nuclear fusion, a process which binds particles into nuclei. Our sun produces large amounts of Helium, which has a mass of $m_H = \SI{4.00150608}{amu}$. The necleus of a helium atom (most often) consists of two protons ($m_p = \SI{1.00727647}{amu}$) and two neutrons ($m_n = \SI{1.0086649}{amu}$). How much energy is released in the fusion of a helium atom?
 }
+\end{problem}
+
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+		A proton is measured by a stationary scientist to have an energy of \SI{2.5e3}{MeV}. How far does the proton travel in one second...
+		\begin{enumerate}[label=\alph*),topsep=-10pt]
+			\item ... of the scientist's reference frame?
+			\item ... of the protons reference frame?
+		\end{enumerate}
+	}
 \end{problem}
 
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+To find the energy released in the fusion of a helium atom, we must calculate the "missing mass" in a helium atom:
+\begin{align*}
+m_{missing} &= 2m_p +2m_n - m_H\\
+m_{missing} &= 2(\SI{1.00727647}{amu}) +2(\SI{1.0086649}{amu}) - \SI{4.00150608}{amu}\\
+m_{missing} &= \SI{0.03037666}{amu}\\
+\end{align*}
+In the fusion of helium, this "missing" mass turns into energy. We can use $E=mc^2$ to calculate the relationship between the mass lost and the energy created:
+\begin{align*}
+m_{missing} &= \SI{0.03037666}{amu} = \SI{5.044162622e-29}{kg}\\
+E_{created} &= m_{missing}c^2\\
+E_{created} &= (\SI{5.044162622e-29}{kg})(\SI{2.998e8}{ms^{-1}})^2\\
+E_{created} &= \SI{4.53e-12}{J}\\
+\end{align*}
+Which is our final answer. The energy produced in this reaction may seem insignificant, but this is the energy produced in a single atom. The energy produced in nuclear fusion is much greater than the energy produced in nuclear fission.
+\end{solution}
 
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+	\begin{enumerate}[label=\alph*),topsep=-10pt]
+	\item From total energy, we can calculate the gamma factor, which will give us the velocity of the proton (in the refernce frame of the scientists):
+	\begin{align*}
+	E &= \gamma m_0 c^2\\
+	\frac{1}{\gamma} &= \frac{m_0c^2}{E}\\
+	\sqrt{1-\frac{v^2}{c^2}} &= \frac{m_0c^2}{E}\\
+	\frac{v^2}{c^2} &= 1 - \frac{m_0^2c^4}{E^2}\\	
+	v &= \sqrt{c^2(1-\frac{m_0c^4}{E^2})}\\
+	v &= \sqrt{(\SI{2.998e8}{ms^{-1}})^2(1-\frac{(\SI{938}{MeVc^{-2}})^2c^4}{(\SI{2.5e3}{MeV})^2})}\\
+	v &= \sqrt{(\SI{2.998e8}{ms^{-1}})^2(1-\frac{(\SI{938}{MeV})^2}{(\SI{2.5e3}{MeV})^2})}\\
+	v&= \SI{2.78e8}{ms^{-1}}\\
+	\end{align*}
+	The scientist would observe that the proton travels \SI{2.78e8}{m} in one second.
+	\item If the scientist were to put a clock on the proton and a clock on themselves, then stopped the proton after one second in their reference frame, the proton's clock would show that one second had not yet passed. This means that the proton will travel further in one second in its reference frame than in one second of the scientist's reference frame. We can calculate how far the proton will travel in one second of its reference frame with the gamma factor:
+	\begin{align*}
+	d & = vt'\\
+	d& = v\gamma t\\
+	d & = \frac{vt}{1-\frac{v^2}{c^}}\\
+	d &= \frac{(\SI{2.78e8}{ms^{-1}})(\SI{1}{s})}{1-\frac{(\SI{2.78e8}{ms^{-1}})^2}{(\SI{2.998e8}{ms^{-1}})^2}}\\
+	
+	\end{align*}
+	\end{enumerate}
 \end{solution}
