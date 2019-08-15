@@ -542,18 +542,57 @@ c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
 \newpage
 \section{Sample problems and solutions}
 \subsection{Problems}
-%TODO a problem like the first example, but with a non-uniform magnetic field given as a function of, say, x and t, so that one must use an integral to get the flux
-%TODO (maybe) a problem to calculate the total work required for one revolution of the generator (int \tau\cdot d\theta)
-%TODO Calculate the voltage induced across the wings of an airplane with some reasonable numbers.
-
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-
+The the 1950s, the Royal Canadian Air Force was in the process of creating an interceptor jet called the Avro Arrow. This jet reached a speed of mach 1.9 ($\SI{652}{ms^{-1}}$), and was considered one of the most advanced airplanes that existed at the time. Suppose the Avro Arrow is travelling at a velocity of $v = \SI{652}{ms^{-1}}$ at an angle of $\theta = \frac{\pi}{6}$ through Earth's magnetic field, $B = \SI{5.2e-5}{T}$, as shown in Figure TODO. Knowing that the Avro Arrow had a wingspan of $l = \SI{15}{m}$, Identify which wing is positively charged, which wing is negatively charged, and calculate the induced voltage across the wings.
 }
 \end{problem}
-
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+		You are part of a research team which is measuring spikes in a magnetic field by placing a coil of radius $r$ which is made up of $N = \SI{1}{}$ loop of wire paralell to the magnetic field and measuring the induced current in the wire. A spike in the strength of the magnetic field causes the coil to have an induced current of $I(t) = (-50t+30)\frac{\pi r^2 e^{-(5t-3)^2}}{R}$. Given that the magnetic field typically has a constant value of $B_0$, what time-dependant function best desribes the magnetic field during the spike in strength?
+	}
+\end{problem}
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
-
+The right-hand rule shows that the induced magnetic force would be pointing towards the port-side of the airplane. This would cause the port-side wing to be positively charged and the starboard-side wing to be negatively charged. 
+Now, we must calculate the potential difference across the wings. The airplane has a wingspan of \SI{15}{m}, so we can say that the area that the Avro Arrow flies over is $A(t) = lvt$. Knowing this, we can set up our equation for magnetic flux:
+\begin{align*}
+\Phi_B(t) &= \vec B \cdot \vec A \\
+\Phi_B(t) &= Blvt\cos\theta \\
+\end{align*}
+From here, we will use Faraday's law to calculate the induced voltage across the wings:
+\begin{align*}
+\Delta V &= \frac{d\Phi_B}{dt}\\
+\Delta V &= \frac{dBlvt\cos\theta}{dt}\\
+\Delta V &= Blv\cos\theta \\
+\Delta V &= (\SI{5.2e-5}{T})(\SI{15}{m})(\SI{652}{ms^{-1}})\cos\frac{\pi}{6}
+\end{align*}
 \end{solution}
-
+\subsection{Solutions}
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+	From the induced current, we can determine the induced voltage:
+	\begin{align*}
+	I(t) &= (-50t+30)\frac{\pi r^2 e^{-(5t-3)^2}}{R}\\
+	I(t) &= \frac{\Delta V}{R}\\
+	\Delta V(t) &=  (-50t+30)\pi r^2 e^{-(5t-3)^2}
+	\end{align*}
+	We know that the induced voltage is the rate of change in magnetic flux:
+	\begin{align*}
+	\Delta V(t) &= \frac{d\Phi_B}{dt}\\
+	 (-50t+30)\pi r^2 e^{-(5t-3)^2} & = \frac{d\Phi_B}{dt}\\
+	\end{align*}
+	Which means we can find the magnetic flux by inegrating our induced voltage over time:
+	\begin{align*}
+	\Phi_B &= \int  (-50t+30)\pi r^2 e^{-(5t-3)^2} dt\\
+	\Phi_B &= \pi r^2 e^{-(5t-3)^2}+C\\
+	\end{align*}
+	We know that $\Phi_B = \vec B \cdot \vec A$, and that $\vec B$ and $\vec A$ are paralell, so we can say that $\Phi_B = BA$. Now we will solve for $B(t)$:
+	\begin{align*}
+	B(t) & = \frac{\Phi_B}{A}\\
+	B(t) &= \frac{\pi r^2 e^{-(5t-3)^2}+C}{\pi r^2}\\
+	B(t) &= e^{-(5t-3)^2} + \frac{C}{\pi r^2}\\
+	\end{align*}
+	The question states that the magnetic field typically has a strength of $B_0$, which means that $B_0 = \frac{C}{\pi r^2}$, which completes our equation:
+	\begin{align*}
+	B(t) &= e^{-(5t-3)^2} + B_0
+	\end{align*}
+\end{solution}
