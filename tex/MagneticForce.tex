@@ -24,7 +24,16 @@ This chapter introduces the tools to model the magnetic force, which is somethin
 Just as we can model the electric force on a charge by using the electric field (e.g. from another charge), we can model the force on a magnet by using a magnetic field (e.g. from another magnet). In your experience, every magnet that you have seen always has a ``North'' pole and a ``South'' pole. Most likely, you have noticed that the North pole of a magnet is attracted to the South pole of another magnet, and that the two North (or South) poles of different magnets repel each other. Thus, the magnetic force is attractive between two opposite poles, and repulsive otherwise.
 
 The Earth itself can be modeled as a giant bar magnet, with North and South magnetic poles. The poles on a magnet are labeled North and South according to which geographic pole of the Earth they are attracted to (a magnetic compass needle has a magnetic North pole on the side that point to the Earth's North geographic pole).
-%TODO Checkpoint question: Is the magnetic North pole of the earth located closer to the Earth's geopgraphic North pole or closer to its geographic South Pole? (correct: South)
+
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{Is the magnetic North pole of the earth located closer to the Earth's geopgraphic North pole or closer to its geographic South Pole?}
+		\item Earth does not have a magnetic field.
+		\item Earth's magnetic North pole is at Earth's geographic North pole.
+		\item Earth's magnetic North pole is at Earth's geographic South pole. \correct
+		\item Earth's magnetic North pole depends on the charge of the observer.
+	\end{MCquestion}
+\end{checkpoint}
 
 It may seem that the magnetic force can be described in the same way as the electric force, having two opposite sign ``charges'' (or poles for magnets), although this is not the case. As far as we can tell, there are no magnets that have only a North or a South pole. Every magnet must have a North \textit{and} a South pole. This is fundamentally different from the electric force, where an object can have a net positive or negative charge. In the context of magnetism, we say that ``monopoles do not exist'' (an object that has only a North or a South pole would be called a monopole). This is illustrated in Figure \ref{fig:magneticforce:magnetcut}, which shows what happens as one cuts a bar magnet into two pieces; rather than ending up with a North and a South piece (monopoles), we end up with two bar magnets, each with their own North and South poles, and so on if we try to subdivide the magnets further.
 
@@ -38,14 +47,16 @@ The magnetic field description is similar to that of the electric field, with No
 
 We will discuss how to model magnetic fields in the next chapter, but it is important to understand that magnetic fields are created by moving electric charges. The electrons in the material that forms a bar magnet are the moving charges that create the magnetic field. As we will see, the magnetic field from a charge moving around in a circle (or a circular loop of current), has exactly the same shape as that of a bar magnet, as illustrated in Figure \ref{fig:magneticforce:loopfield}. We can thus think of charge moving in a circle as a small bar magnet, or more precisely, as a magnetic dipole.
 
-\capfig{0.4\textwidth}{figures/MagneticForce/loopfield.png}{\label{fig:magneticforce:loopfield}The magnetic field lines created by electric charges moving in a circular loop are identical to that from a bar magnet.}
+\capfig{0.4\textwidth}{figures/MagneticForce/loopfield.png}{\label{fig:magneticforce:loopfield}The magnetic field lines moving through the centre of the circle are identical to those of.}
 
 In a magnetic material, the electrons in the material are moving in such a way that the magnetic fields that they generate are all in the same direction. Each atom is like a small magnetic dipole, and all of these are aligned. This allows us to understand why cutting a magnet does not result in two monopoles (Figure \ref{fig:magneticforce:magnetcut}): when we cut the bar magnet, we end up with less material, but each piece of material still contains magnetic dipoles that are aligned with each other, each having a North and South side. Note that it is not the motion of electrons around their nuclei that results in the magnetic field, and that one  requires quantum mechanics and the notion of ``spin'' to describe this all in detail. 
  
 Most materials will respond to magnetic fields, but the behaviour is most evident in ``ferromagnetic'' materials, such as iron (Fe). Ferromagnetic materials can be magnetized by an external magnetic field, effectively transforming them into magnets. One can think of a material as containing many little magnetic dipoles (from the motion of the electrons), which themselves are like bar magnets. If that material is ferromagnetic,  an external magnetic field can act on the little ``bar magnets'', orienting them all in the same way, so that the material as a whole becomes magnetic. For some ferromagnetic materials, that common orientation will remain when the external magnetic field is removed, creating a ``permanent magnet''. For other ferromagnetic materials, the common orientation disappears when the external field is removed; those materials are thus attracted to a magnet, but they cannot form a magnet. 
   
 \section{The magnetic force on a moving charge}
-%TODO Review box linking to appendix section on cross products
+\begin{review}
+	\item Section \ref{sec:Vectors:vectorproduct} on the vector product.
+\end{review}
 When an electric charge, $q$, has a velocity, $\vec v$, relative to a magnetic field, $\vec B$, a magnetic force is exerted on the particle:
 \begin{align*}
 \Aboxed{\vec F_B = q \vec v \times \vec B}
@@ -58,8 +69,24 @@ We can make a few remarks about the magnetic force:
 \item There is no force if the particle's velocity is in the same direction as the magnetic field vector. 
 \item The force increases with charge, speed, and strength of the magnetic field.
 \end{itemize}
-%TODO Checkpoint question. A proton moves East, in Earth's magnetic field, which way is it deflected?
-%TODO Checkpoint question. An electron moves West, in Earth's magnetic field, which way is it deflected?
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{A proton moves East in Earth's magnetic field, which way is it deflected?}
+		\item Away from the Earth. \correct
+		\item Towards the Earth. 
+		\item North.
+		\item South.
+	\end{MCquestion}
+\end{checkpoint}
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{An electron moves West in Earth's magnetic field, which way is it deflected?}
+		\item Away from the Earth. \correct
+		\item Towards the Earth. 
+		\item North.
+		\item South.
+	\end{MCquestion}
+\end{checkpoint}
 
 You should be somewhat bothered by the fact that the force depends on the velocity of the charge, since velocity depends on the frame of reference from which it is measured. The above equation has a strange implication: if we observe an electron moving in a magnetic field, we will see its motion be deflected by the magnetic field. If we move along with the electron, so that it has a velocity of zero in our frame of reference, we should not see the electron being deflected, since the magnetic force would be zero. Clearly, the motion of the electron cannot depend on the frame of reference from which we observe it. Thus, the only way that this equation can make sense is if the magnetic field also depends on our frame of reference. We will revisit this in a subsequent chapter, but for now, remember that this equation only makes sense if the velocity is measured in the same reference frame as that in which the magnetic field is defined.
 
@@ -74,14 +101,22 @@ qvB &= m\frac{v^2}{R}\\
 \therefore R &= \frac{mv}{qB}
 \end{align*}
 The radius is called the ``cyclotron radius''. 
-%TODO Checkpoint question: Is the particle illustrated in Figure \ref{fig:magneticforce:cyclotron} positively or negatively charged? positive, negative, not enough information to tell (correct: positive)
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{Is the particle illustrated in Figure \ref{fig:magneticforce:cyclotron} positively or negatively charged?}
+		\item The particle is positively charged. \correct
+		\item The particle is negatively charged.
+		\item Not enough information to tell.
+		\item The particle has no charge.
+	\end{MCquestion}
+\end{checkpoint}
+
 Referring to Figure \ref{fig:magneticforce:cyclotron}, if the velocity of the particle is in the plane of the page (perpendicular to the magnetic field), as illustrated, the particle will undergo uniform circular motion. If the velocity of the particle has a component that is parallel to the magnetic field (for example a component coming out of the page, towards you), the particle will undergo ``helical motion'' (a spiral). The radius of the helix is determined by the component of the velocity, $\vec v_{\perp}$, that is perpendicular the magnetic field:
 \begin{align*}
 \therefore R &= \frac{mv_{\perp}}{qB}
 \end{align*}
 The charged particle would also have a component of velocity towards you that is constant, resulting in the spiral motion illustrated in Figure \ref{fig:magneticforce:helix}. Note that the distance between two spirals (labeled $h$ in the figure) is called the ``pitch'', and is determined by the component of velocity that is parallel to the magnetic field, $\vec v_\parallel$, since that component is not affected by the magnetic force. 
 \capfig{0.4\textwidth}{figures/MagneticForce/helix.png}{\label{fig:magneticforce:helix}The helical motion of a charged particle with a component of velocity parallel to the magnetic field. The distance, $h$, between spirals is called the ``pitch''.}
-%TODO obviously a much better figure with a pretty spiral and pretty magnetic field going through the plane. The trick might be to draw very few magnetic field lines.
 \begin{example}{\label{ex:magneticforce:massspec}A particle of unknown charge and unknown mass is observed to undergo uniform circular motion with a period, $T$, when traveling perpendicular to a uniform magnetic field, $B$. What is the ratio of the particle's charge to its mass, $q/m$? }
 We can use the period of the motion to determine the speed of the particle in terms of the radius of the circular path:
 \begin{align*}
@@ -97,7 +132,10 @@ R &= \frac{mv}{qB}\\
 \end{example}
 
 \section{The magnetic force on a current-carrying wire}
-%TODO Review box to look at microscopic model of current
+\begin{review}
+	\item Section \ref{sec:current:micromodel} on the microscopic model of current.
+\end{review}
+
 In this section, we examine the force that is exerted by a magnetic field on a wire that carries electric current. Since a current is formed by moving charges, it is natural to expect that a wire that carries current will experience a force if immersed in a magnetic field. 
 
 Consider a vertical wire with cross-sectional area, $A$, carrying current, $I$, upwards that is immersed in a uniform magnetic field, $\vec B$, into the page, as illustrated in Figure \ref{fig:magneticforce:microforce}. Inside the wire, on average, electrons have a drift velocity, $\vec v_d$, in the downwards direction (since they move in the direction opposite to that of conventional current).
@@ -119,7 +157,17 @@ where the minus sign indicates that negative electrons flow in the opposite dire
 \vec F &= -nAle \vec v_d \times \vec B\\
 \Aboxed{ \vec F&= I \vec l \times \vec B}
 \end{align*}
-%TODO See Giancolli Figure 27-11 B - Draw the same diagram, but do not show the direction of the mag field (only N/S poles of magnet), and ask in which direction the force on the wire is exerted. Don't show the current direction either (but show the terminal signs on the battery). Make it different enough from the figure in Giancolli!
+
+\begin{checkpoint}{}
+	\capfig{0.45\textwidth}{figures/MagneticForce/horseshoemagnet.png}{\label{fig:magneticforce:horseshoemagnet}A current carrying wire moving through a magnetic field.}
+	\begin{MCquestion}{What direction would the magnetic force point when the current-carrying wire moves through the magnetic field between the poles of the horseshoe magnet, as shown in Figure \ref{fig:MagneticForce:horseshoemagnet}?}
+		\item Up. \correct
+		\item Down.
+		\item Into the page.
+		\item Out of the page.
+	\end{MCquestion}
+\end{checkpoint}
+
 Note that if the wire changes direction relative to the magnetic field, then we can model the wire as being made of many short sections (Figure \ref{fig:magneticforce:bentwire}), of length $dl$, and sum the forces on those sections to get the total force on a section of length, $L$:
 \begin{align*}
 \vec F = \int_0^L I d\vec l \times \vec B
@@ -169,9 +217,18 @@ The net force on the wire is thus given by:
 \end{align*}
 \textbf{Discussion: }In this example we found the magnetic force on a curved section of current-carrying wire. The calculation was simplified by symmetry arguments, as we could use the right hand rule to anticipate that the force would have no component in the $x$ direction. This is because there is as much current flowing in the positive $y$ direction as there is in the negative $y$ direction, so that the corresponding forces cancel. There is however a net flow of charges in the positive $x$ direction, leading to a net force in the positive $y$ direction. As a corollary, the net magnetic force on any closed loop of current must be zero.
 \end{example}
-
+\begin{studentOpinion}{Josh}{}
+	It is very important to remember what each part of the right-hand rule represents. A trick that I've used to remember what each part of the hand represents is to say it aloud when extending each finger. I say "velocity" as I extend my index finger, "field" as I extend my middle finger, and "force" as I extend my thumb. When doing the right hand rule, it is also important to remember the $q$ in the equation $\vec F_B = q\vec v \times \vec B$. This $q$ could be negative, which would mean that the force acts in the opposite direction.
+	\capfig{0.55\textwidth}{figures/MagneticForce/rhr.png}{\label{fig:magneticforce:rhr}The way that Josh remembers the right hand rule for magnetism.}
+	If you find yourself forgetting the right-hand rule on a test or exam, just remember that you can still find the correct answer by setting up a three-dimensional coordinate system and evaluating the cross product.
+\end{studentOpinion}
 \section{The torque on a current-carrying loop}
-%TODO Review section: Definition of torque, electric dipoles.
+\begin{review}
+	\begin{itemize}
+		\item Section \ref{sec:rotationaldynamics:torque} on torque.
+		\item Section \ref{sec:chargesfields:electricdipole} on electric dipoles.
+	\end{itemize}
+\end{review}
 As noted in example \ref{ex:magneticforce:semicircle}, the net magnetic force on any closed loop immersed in a uniform magnetic field is zero. Consider, for example, the current-carrying rectangular loop of height, $h$, and width, $w$, immersed in a uniform magnetic field, $\vec B$, as illustrated in Figure \ref{fig:magneticforce:rectangleloop} (note that the field is not perpendicular to the plane of the loop, as it was in Example \ref{ex:magneticforce:semicircle}).
 \capfig{0.4\textwidth}{figures/MagneticForce/rectangleloop.png}{\label{fig:magneticforce:rectangleloop}A rectangular loop carrying counter-clockwise current in a uniform magnetic field.}
 The magnetic force on the two horizontal sections of the wire are zero, since the current is co-linear with the magnetic field along those sections. In the left vertical section (with current flowing downwards), the magnetic force is out of the page (positive $z$ direction), and is given by:
@@ -198,7 +255,6 @@ If a closed loop carries a current, $I$, the magnetic dipole moment vector, $\ve
 \end{align*}
 where, $A$, is the area enclosed by the loop. The direction of the magnetic dipole moment vector is such that it is perpendicular to the surface defined by the loop. Of the two such possible directions, the direction of the magnetic dipole moment is given by the right-hand rule for axial vectors, by curling the fingers in the direction of the current so that the thumb points in the direction of the magnetic dipole moment. This is illustrated in Figure \ref{fig:magneticforce:momenthand}.
 \capfig{0.4\textwidth}{figures/MagneticForce/momenthand.png}{\label{fig:magneticforce:momenthand}The right hand rule for axial vectors is used to determine the direction of the magnetic dipole moment vector for a loop carrying current, $I$.}
-%TODO We need to do the hand diagram, as this is stolen from the internet (it can just be traced out). Keep the hand diagram as a separate diagram, as well as integrate it to this figure (since it's useful). The other part of the figure should also be improved!
 
 In terms of the magnetic dipole moment, the torque on a loop, with magnetic dipole moment, $\vec \mu$, immersed in a magnetic field, $\vec B$, is given by:
 \begin{align*}
@@ -295,18 +351,18 @@ The galvanometer makes use of the magnetic force in order to measure electric cu
 \capfig{0.7\textwidth}{figures/MagneticForce/galvanometer.png}{\label{fig:magneticforce:galvanometer}Illustration of a galvanometer. Current passes through the coil, and the coil rotates due to the torque from a magnetic field created by a permanent magnet. The torque from the magnetic force is balanced by a torsional spring.}
 \subsection{Electric motor}
 In an electric motor, a current-carrying coil (many loops) is immersed in a fixed and uniform magnetic field. As current passes through the coil, the coil experiences a torque and rotates. Once the coil has reached a position where its magnetic dipole moment vector is parallel to the magnetic field, the direction of the current is reversed, so that the coil continues to feel a torque for another half turn, until the direction of the current is reversed again. This is illustrated in Figure \ref{fig:magneticforce:dcmotor}.
-%TODO A much bigger figure, try to make it stylistically similar to the galvanometer that Olivia made.
-\capfig{0.3\textwidth}{figures/MagneticForce/dcmotor.png}{\label{fig:magneticforce:dcmotor}Illustration of a DC electric motor. Current circulate in the coil resulting in a torque from the magnetic field. Once the coil is aligned with the magnetic field, the direction of the current in the coil is inverted, so that the coil continues to feel a torque. The current is inverted using mechanical brushes that reverse the leads on the coil every half turn.}
+
+\capfig{0.65\textwidth}{figures/MagneticForce/dcmotor.png}{\label{fig:magneticforce:dcmotor}Illustration of a DC electric motor. Current circulate in the coil resulting in a torque from the magnetic field. Once the coil is aligned with the magnetic field, the direction of the current in the coil is inverted, so that the coil continues to feel a torque. The current is inverted using mechanical brushes that reverse the leads on the coil every half turn.}
 
 \subsection{Cathode ray tube}
 The cathode ray tube is the main component of old televisions and monitors. In those devices, a beam of electrons is accelerated by an electric potential difference. The electrons then hit a phosphorescent screen, that emits light when the electrons collide with the screen. A magnetic field is used to deflect the electron beam to different parts of the screen and create the desired image, in a rapid sweeping motion, fast enough that the human eye cannot detect the sweeping motion. An example of a cathode ray tube is shown in Figure \ref{fig:magneticforce:crt}.
-%TODO Obviously a much better figure!
-\capfig{0.7\textwidth}{figures/MagneticForce/crt.png}{\label{fig:magneticforce:crt}Illustration of a cathode ray tube. A magnetic field is used to deflect a beam of electrons onto a screen. The beam is rapidly swept across the whole screen to create an image.}
+
+\capfig{0.7\textwidth}{figures/MagneticForce/crt.png}{\label{fig:magneticforce:crt}Illustration of a cathode ray tube from a side view (top) and a birds-eye view (bottom). A magnetic field is used to deflect a beam of electrons onto a screen. The beam is rapidly swept across the whole screen to create an image.}
 
 \subsection{Loudspeaker}
 In a loudspeaker, a coil is immersed in a non-uniform magnetic field. The coil is attached to a membrane so that the membrane moves with the coil when a magnetic force is exerted on the coil. AC current circulates in the coil, with the same frequencies as the desired sound. The coil then moves at those frequencies and the membrane then displaces the air, creating the desired sound waves.
-\capfig{0.3\textwidth}{figures/MagneticForce/speaker.png}{\label{fig:magneticforce:speaker}Illustration of a loud speaker. As current moves through the coil, it is pushed up and down by the magnetic force exerted by a permanent magnet. The motion is transferred to a membrane that move the air and creates the sound wave.}
-%TODO Obviously a much better figure!
+\capfig{0.6\textwidth}{figures/MagneticForce/speaker.png}{\label{fig:magneticforce:speaker}Illustration of a loud speaker. As current moves through the coil, it is pushed up and down by the magnetic force exerted by a permanent magnet. The motion is transferred to a membrane that move the air and creates the sound wave.}
+
 
 \newpage
 \section{Summary}
@@ -367,20 +423,33 @@ There are many applications of the magnetic force in our daily lives, including 
 \begin{importantEquations}
 \medskip
 \begin{multicols}{2}
-\textbf{Momentum of a point particle:}
+\textbf{Magnetic force on a moving charge:}
 \begin{align*}
-\vec p = m\vec v \\
-\frac{d}{dt}\vec p = \sum \vec F = \vec F^{net}
+\vec F_B &= q\vec v\times \vec B\\
+d\vec F_B &= I d\vec l \times \vec B
+\end{align*}
+\textbf{The Hall effect:}
+\begin{align*}
+\Delta V_{Hall} &= v_d w B \\
 \end{align*}
 \columnbreak
 \\
-\textbf{Position of the Centre of Mass \\ of a system:}
+\textbf{Magnetic dipole moment:}
 \begin{align*}
-\vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i 
+\mu &= IA
+\end{align*}
+\textbf{Torque from a magnetic field:}
+\begin{align*}
+\vec \tau &= \vec \mu \times \vec B
 \end{align*}
 \medskip
 \end{multicols}
 \end{importantEquations}
+
+\begin{definitions}
+	\textbf{Magnetic dipole moment:} A property of an object which describes the torque it will experience in a magnetic field. SI units: [\SI{}{Cm^2s^{-1}}]. Common variable(s): $\vec \mu$.
+	\item \textbf{Magnetic field:} A field which exerts a force on moving charged objects. SI units: [\SI{}{T}]. Common variable(s): $\vec B$.
+\end{definitions}
 
 \newpage
 \section{Thinking about the material}
@@ -391,38 +460,132 @@ There are many applications of the magnetic force in our daily lives, including 
 \item What is the origin of the word ``magnetism''?
 \item What experimental supports that magnetic monopoles do not exist?
 \item What did J.J. Thomson measure, and how?
+\item How do debit and credit cards use magnetism?
 }
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try at home}
 {
-\item Try
+\item Attempt to construct a compass using household materials.
+\item Attempt to construct an electromagnet with copper wire and a \SI{9}{V} battery. Test your electromagnet with a thin object, such as a nail.
 }
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try in the lab}
 {
-\item Propose an experiment
+\item Propose an experiment to measure the magnitude of Earth's magnetic field.
+\item Attempt to construct a galvanometer. Test its accuracy with an ammeter.
 }
 \end{chapteractivity}
 
 \newpage
 \section{Sample problems and solutions}
-%TODO Model a galvanometer: Given a torsion spring and spring constant, typical magnetic field, number of coils or a given area, what kind of current will create a given deflection? Look up some realistic values. Hopefully this gives a small current, as advertised in the Circuits chapter!
-
-%TODO Calculate the magnetic field required to give a certain deflection (~10cm) in a CRT, for electrons accelerated with a typical potential in a CRT (500V ???)
-
-%TODO Integrate the force to show that the torque on a circular loop of current is given by the magnetic moment (we never proved it, only stated that this was true and showed that it worked with rectangle loop).
 
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-
+A cathode ray tube in a television accelerates an electron over a potential difference of \SI{500}{V}. The electron must be deflected up \SI{3}{cm} before striking the phosphorescent screen, which is \SI{5}{cm} away. What direction and magnitude must the magnetic field have in order to steer the electron towards its destination?
 }
+\end{problem}
+
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+		A galvanometer has a square coil with a side length of $a=\SI{2.5}{cm}$ and $N=\SI{70}{}$ loops between two magnets which generate a radial magnetic field of $B=\SI{8}{mT}$. When a current runs through the coil, it generates a torque which is opposed by a spring with a torsional spring constant of $\kappa = \SI{1.5e-8}{Nm\radian^{-1}}$. If the deflection of the galvanometer's needle is \SI{0.7}{\radian}, what is the current running through the coil?
+	}
+\end{problem}
+
+\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
+		Show that the torque experienced by a circular loop of current is given by the magnetic moment by integrating over the equation $d\vec F = Id\vec l \times \vec B$.
+	}
 \end{problem}
 
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+First, we must determine the initial velocity of the electron. The electron is accelerated over a potential difference of \SI{500}{V}, so we can determine its kinetic energy:
+\begin{align*}
+K &= eV\\
+K &= \frac{1}{2} mv^2 = eV\\
+v &= \sqrt{\frac{2eV}{m}}\\
+v &= \sqrt{\frac{2(\SI{1.602e-19}{C})(\SI{500}{V})}{\SI{9.109e-31}{kg}}}\\
+v &= \SI{1.326e7}{ms^{-1}}
+\end{align*}
+Now that we have the velocity, we must determine the direction of the magnetic field. We know that the electron is moving directly towards the phosphorescent screen (which we will define as $\vec x$) and the electron must be accelerated directly upwards (which we will define as $\vec z$). Knowing this, we can use the right hand rule to quickly determine that the magnetic force will be acting in the $-\vec y$ direction. 
 
+Next, we will determine the magnitude of the magnetic field. We know that the electron must travel \SI{3}{cm} in the $\vec z$ direction in the time that it takes for it to travel \SI{5}{cm} in the $\vec x$ direction. We must first determine how much time it will take to travel \SI{5}{cm} in the $\vec x$ direction:
+\begin{align*}
+t &= \frac{d}{v}\\
+t &= \frac{\SI{0.05}{m}}{\SI{1.326e7}{ms^{-1}}}\\
+t &= \SI{3.771e-9}{s}
+\end{align*}
+We must now determine the acceleration required for the electron to travel \SI{3}{cm} in \SI{3.771e-9}{s}:
+\begin{align*}
+a &= \frac{2d}{t^2}\\
+a &= \SI{4.219e15}{ms^{-2}}
+\end{align*}
+Finally, we will put all of our information into the final equation and solve for $B$:
+\begin{align*}
+F&=qvB\\
+\frac{ma}{qv} &= B\\
+ B&= \frac{(\SI{9.109e-31}{kg})(\SI{4.219e15}{ms^{-2}})}{(\SI{1.602e-19}{C})(\SI{1.326e7}{ms^{-1}})}\\
+ B&= \SI{1.809e-3}{T}
+\end{align*}
+Which is gives our final answer of $\vec B = (0,1.809\times 10^{-3},0)\text{T}$
 \end{solution}
+
+
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+	First, we will determine the magnetic dipole moment of the square coil:
+	\begin{align*}
+	\mu &= NIA\\
+	\mu &=NIa^2\\
+	\end{align*}
+	Now that we have the magnetic dipole moment, we can calculate the torque produced by the square coil:
+	\begin{align*}
+	\vec \tau &= N\mu B sin(\theta)\\
+	\vec \tau &= NIa^2B sin(\frac{\pi}{2})\\
+	\vec \tau &= NIa^2B\\
+	\end{align*}
+	The deflection, $\theta$, for a given current will occur when the torque produced by the wire is equal to the torque produced by the spring. Knowing this, we can complete the derivation by setting the torques as equal to one another, then solving for current:
+	\begin{align*}
+	NIa^2B &= \kappa \theta\\
+	I &= \frac{\kappa \theta}{Na^2B}\\
+	I &= \frac{(\SI{1.5e-8}{Nm(rad)^{-1}}) (\SI{0.7}{rad})}{70(\SI{0.025}{m})^2(\SI{8e-3}{T})}\\
+	I &= \SI{30}{\mu A}
+	\end{align*}
+	Which is our final answer.
+\end{solution}
+
+\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
+	Before we do any integrating, we must first identify each important variable. To do this, we will draw a diagram of a circle in a magnetic field which bests suits this proof. The circular loop could be in any magnetic field, and the current could have any direction, but the arrangement in Figure \ref{fig:magneticforce:proof1} was simply an arbitrary choice.
+	\capfig{0.6\textwidth}{figures/MagneticForce/proof1.png}{\label{fig:magneticforce:proof1}A current carrying wire in a magnetic field.}
+	In order to evaluate the cross product between the current and the magnetic field, the change in direction of the current must be taken into account. This is done by setting a point as $\theta = 0$ and adjusting the direction of the current such that it is dependant on $\theta$ by adding sinusoidal functions:
+	\begin{align*}
+	d\vec F &= Id\vec l \times \vec B\\
+	d\vec F &= I(d l(-\sin\theta \vec x \cos\theta \vec z)) \times  (-B\vec x)\\
+	d\vec F &= -IB\cos\theta dl \vec y\\
+	\end{align*}
+	Now that we have the evaluated cross product, we will convert the equation from cartesian to polar coordinates:
+	\begin{align*}
+	d\vec F &= -IB\cos\theta dl \vec y\\
+	d\vec F &= -IBr\cos\theta d\theta \vec y\\
+	\end{align*}
+	Before we can find the torque, we must find the direction and magnitude of the distance between the force on each section of the wire and the axis of rotation:
+	\capfig{0.6\textwidth}{figures/MagneticForce/proof2.png}{\label{fig:magneticforce:proof2}A current carrying wire in a magnetic field.}
+	We found in Figure \ref{fig:magneticforce:proof2} that the distance from the axis of rotation for each point along the circle over the angle $\theta$ can be expressed as $d = r\cos{\theta}$. The last step before integrating is to take the cross product of the force and its distance from the axis of rotation, which gives $d\tau$:
+	\begin{align*}
+	d\vec F &= -IBr\cos\theta d\theta \vec y\\
+	d\vec \tau &= (\cos\theta r \vec x) \times (-IBr\cos\theta d\theta \vec y) \\
+	d\vec \tau &= -IBr^2 \cos^2\theta d\theta \vec z \\
+	\end{align*}
+	We are now able to integrate. The bounds of this integral cover the entire cirular loop of current, so we will integrate from $0$ to $2\pi$:
+	\begin{align*}
+	\int d\tau &= -IBr^2 \int_{0}^{2\pi}\cos^2\theta d\theta \vec z \\
+	\tau &= -IBr^2 \pi \vec z \\
+	\tau &= -IAB \vec z\\
+	\tau &= -\mu B \vec z\\
+	\end{align*}
+	Which is the magnitude and direction of $\vec \tau = \vec \mu \times \vec B$ for this circle.
+\end{solution}
+
+
+
 
