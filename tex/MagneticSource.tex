@@ -102,7 +102,7 @@ Thus, the magnetic field, $\vec B$, a distance, $h$, from the centre of a wire o
 \Aboxed{\vec B &= -\frac{\mu_0 I}{2\pi h}\frac{L/2}{\sqrt{h^2+\frac{L^2}{4}}}\hat z}\quad\text{(finite wire)}
 \end{align*}
 The magnetic field must be rotationally symmetric; that is, if the wire is vertical, the magnetic field at a distance $h$ must look the same regardless of the angle from which we view the vertical wire (we should always see the magnetic field going into the page at the point that we use in Figure \ref{fig:magneticsource:bswire}). Thus, the magnetic field lines must form circles around the wire, as illustrated in Figure \ref{fig:magneticsource:wirefield}. Note that the direction of the magnetic field is given by the right-hand rule for axial vectors; when you align your thumb with the current, your fingers curl in the direction of the magnetic field.
-%TODO I think this figure can be improved (or changed to be from a different angle), as the field circles don't quite look like they live in the plane.
+
 \capfig{0.4\textwidth}{figures/MagneticSource/wirefield.png}{\label{fig:magneticsource:wirefield}The magnetic field from a current-carrying wire forms concentric circles centred on the wire.}
 
 It is of particular interest to investigate the limiting case of an infinitely long wire, in the limit of $L\to\infty$, or equivalently, $\theta_0\to\frac{\pi}{2}$. The latter is easiest to evaluate, since $\sin\theta_0\to 1$. The magnitude of the magnetic field, $\vec B$, a distance, $h$, from an infinite wire carrying current, $I$, is given by:
@@ -176,6 +176,7 @@ F_1 = I_1 ||\vec l \times \vec B_2||=I_1 l B_2 =\frac{\mu_0 I_1 I_2}{2\pi h}
 \end{align*}
 which does indeed have the same magnitude as the force exerted on the second wire. Thus, when two parallel wires carry current in the same direction, they exert equal and opposite attractive forces on each other. 
 \begin{checkpoint}{}
+	\capfig{0.2\textwidth}{figures/MagneticSource/oppositewires.png}{\label{fig:magneticsource:oppositewires} Two wires that carry current in opposite directions.}
 	\begin{MCquestion}{Two parallel wires carry current in opposite directions, as shown in Figure ... . What is the result of these wires interacting?}
 		\item They will orbit one another.
 		\item The wires will be uneffected by one another.
@@ -186,14 +187,13 @@ which does indeed have the same magnitude as the force exerted on the second wir
 The attractive force between two wires used to be the basis for defining the \ampere, the S.I. (base) unit for electric current. Before 2019, the \amperesp was defined to be ``that constant current which, if maintained in two straight parallel conductors of infinite length, of negligible circular cross-section, and placed one metre apart in vacuum, would produce between these conductors a force equal to $\SI{2e-17}{N}$ per metre of length''. Recently, the definition was updated to be based on defining the Coulomb in such a way that the elementary charge has a numerical value of $e=\SI{1.602176634e-19}{C}$, and the \amperesp corresponds to one Coulomb per second.
 
 The force between two wires is a good system to understand how any physical quantity cannot depend on our choice of the right-hand to define cross-products. As mentioned in the previous chapter, any physical quantity, such as the direction of the force exerted on a wire, will always depend on two successive uses of the right hand. In this system, we first used the right-hand rule for axial vectors to determine the direction of the magnetic field from one of the wires. We then used the right-hand rule to determine the direction of the cross-product to determine the direction of the force on the other wire. You can verify that you get the same answer if you, instead, use your left-hand to define the direction of the magnetic field, and then again for the cross-product. This also highlights that the magnetic field (and the electric field) is just a mathematical tool that we use to, ultimately, describe the motion of charges or compass needles.
-
-%Checpoint question: When current is moving vertically upwards in a straight wire, how to you expect the charges to be distributed radially, as they move longitudinally through the wire?
-%Uniformly in radius (current density does not depend on r)
-%An excess of positive charges on the outside of the cable (correct)
-%An excess of negative charges on the outside of the cable
-%TODO
-
-
+\begin{checkpoint}{}
+	\begin{MCquestion}{When current is moving vertically upwards in a straight wire, how to you expect the charges to be distributed radially, as they move longitudinally through the wire?}
+		\item Uniformly in radius (current density does not depend on r).
+		\item There will be an excess of positive charges on the outside of the cable. \correct
+		\item There will be an excess of negative charges on the outside of the cable.
+	\end{MCquestion}
+\end{checkpoint}
 \section{\ampere's Law}
 \ampere's Law is similar to Gauss' Law, as it allows us to determine the magnetic field that is produced by an electric current in configurations that have a high degree of symmetry. \ampere's Law states:
 \begin{align*}
@@ -242,6 +242,13 @@ At this point, it is clear that $\cos\theta$ cannot be zero, since the right-han
 B = \frac{\mu_0 I}{2\pi h}
 \end{align*}
 as we found previously with the Biot-Savart Law. Again, in analogy with Gauss' Law, one needs to apply some knowledge of symmetry and argue in which direction the magnetic field should point, in order to use \ampere's Law effectively. 
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{\ampere's law proves that the magnetic field at the centre of a current-carrying loop is zero because there is no enclosed current:}
+		\item True.
+		\item False. \correct
+	\end{MCquestion}
+\end{checkpoint}
 
 \begin{example}{A long solid uniform cable of radius, $R$, carries current, $I$, with a current density that is uniform through the cross-section of the cable. Determine the strength of the magnetic field as a function of, $r$, the distance from the centre of the cable, inside \textit{and} outside of the cable.}
 In this case, we need to determine the magnetic field both inside and outside of the cable. Figure \ref{fig:magneticsource:amperecable} shows two circular Amperian loops that we can use to apply \ampere's Law to determine the magnetic field inside and outside of the cable.
@@ -370,6 +377,15 @@ which decreases in magnitude with increasing radius, as long as we are inside th
 	\end{MCquestion}
 \end{checkpoint}
 
+\begin{checkpoint}{}
+	\begin{MCquestion}{What range or position of $r$ encloses the most current in Figure \ref{fig:magneticsource:amperetoroid}?:}
+		\item All $r$ between the $\odot$ and the $\otimes$ symbols. \correct
+		\item The point directly between the $\odot$ and the $\otimes$ symbols.
+		\item All $r$ from the centre of the toroid to the $\odot$ symbols.
+		\item All $r$ beyond the $\otimes$ symbols.
+	\end{MCquestion}
+\end{checkpoint}
+
 \newpage
 \section{Summary}
 
@@ -461,19 +477,21 @@ B=\frac{\mu_0 I}{2} \frac{R^2}{(R^2+h^2)^\frac{3}{2}}
 \begin{chapteractivity}{Reflect and research}
 {
 \item Who discovered \ampere's Law? What did \amperesp discover?
-\item Name three common uses of electromagnets.
+\item What are three common uses of electromagnets.
+\item How does a coilgun work?
 }
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try at home}
 {
-\item Try
+\item Research the current that your household electronics have. Are design choices effected by the magnetic fields generated by the current in these electronics?
 }
 \end{chapteractivity}
 
 \begin{chapteractivity}{To try in the lab}
 {
 \item (Simulation) Calculate the magnetic field from a loop of current at all positions in space (not only on the axis of symmetry). 
+\item Construct a Helmholtz coil.
 }
 \end{chapteractivity}
 
@@ -481,19 +499,20 @@ B=\frac{\mu_0 I}{2} \frac{R^2}{(R^2+h^2)^\frac{3}{2}}
 \section{Sample problems and solutions}
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-A cable carries two currents in opposite directions, as shown in Figure %todo.
-The inner-most wire has a current of $j_1 = \SI{0.25}{A}$ and a radius of $R_1 = \SI{0.02}{m}$. The second wire is seperated from the first wire by an insulator which has a radius $R_2 = \SI{0.03}{m}$. If th second wire has a radius of $r_3 = \SI{0.045}{m}$ and a current of $j_2 = \SI{0.1}{A}$, then what is the magnetic field...
+A cable carries two currents in opposite directions, as shown in Figure \ref{fig:magneticsource:oppositecurrent}. The cable is constructed using a cylindrical wire of radius $R_1$ which carries a current of $I_1$. The wire of radius $R_1$ is surrounded by an insulator of radius $R_2$. The outer wire has a current, $I_2$ in the opposite direction of the inner wire and a radius, $R_2$. As a function of $r$ beginning at the centre of the cable, what is the magnetic field...
 \begin{enumerate}[label=\alph*),topsep=-10pt]
 	\item ...inside of the first wire?
 	\item ...inside of the insulator?
 	\item ...inside of the second wire?
 	\item ...outside of the cable?
 \end{enumerate}
+\capfig{0.5\textwidth}{figures/MagneticSource/oppositecurrent}{\label{figanim:magneticsource:oppositecurrent} A cable which carries two wires that carry current in opposite directions.}
 }
 \end{problem}
 
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-		Helmholtz coils are an arragement of two coils which produce a nearly uniform magnetic field. Suppose two coils of radius $r = \SI{4}{cm}$ carrying a current $I = \SI{1.4}{A}$ in the same direction are seperated by a distance of $d = \SI{4}{cm}$, as shown in Figure... . Plot the magnitude of the magnetic field for both coils through their axis of symmetry, then plot their sum, which is the total magnetic field in the space.
+		Helmholtz coils are an arragement of two coils which produce a nearly uniform magnetic field. Suppose two coils of radius $r = \SI{4}{cm}$ carrying a current $I = \SI{1.4}{A}$ in the same direction are seperated by a distance of $d = \SI{4}{cm}$, as shown in Figure \ref{fig:magneticsource:helmholtzdiagram}. Plot the magnitude of the magnetic field for both coils through their axis of symmetry, then plot their sum, which is the total magnetic field in the space.
+	\capfig{0.45\textwidth}{figures/MagneticSource/helmholtzdiagram}{\label{figanim:magneticsource:helmholtzdiagram} A Helmholtz coil arrangement.}
 	}
 \end{problem}
 
