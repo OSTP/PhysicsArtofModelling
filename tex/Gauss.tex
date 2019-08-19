@@ -507,7 +507,7 @@ Consider a charged sphere of radius, $R$, which has a non-uniform charge density
 \item What is the electric field as a function of distance from the centre of the sphere inside the sphere, $r\leq R$?
 }
 \end{problemParts}
-
+\vspace{0.5cm}
 \begin{problemParts}{soln:template:triangleinshells}{\label{prob:template:triangleinshells} Consider two conducting plates which are illustrated in Figure \ref{fig:gauss:squaretriangle}. Both plates have a hollow circle of radius $r$ at their centre. One plate is a square on the outside and the other is a triangle on the outside, both of the outside shapes have a side length of $L$. A point charge of charge $+Q$ is placed at the centre of the hollowed out circle of both plates.}
 {
  \item What is the electric field outside of the shells?
@@ -521,45 +521,48 @@ Consider a charged sphere of radius, $R$, which has a non-uniform charge density
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{prob:template:chargedsphere}\label{soln:template:chargedsphere}
-
-First, we must find the total charge of the sphere. To do this, we will need to integrate $\rho$ over the volume of the sphere:
-
-
+\begin{solutionParts}{prob:template:chargedsphere}
+{\label{soln:template:chargedsphere}
+\item In order to determine the total charge of the sphere, we divide the sphere into infinitesimal shells of radius $r$, and thickness, $dr$. The volume, $dV$, of one of these infinitesimal shells is their area (given by the area of the surface of a sphere of radius $r$), multiplied by their thickness, $dr$:
 \begin{align*}
-Q& = \int_{0}^{R} \rho dV\\
-Q&= \int_{0}^{R} 4\pi r^4 dr\\
-Q& = \frac{4}{5} \pi R^5
+dV = 4\pi r^2 dr
 \end{align*}
-
-Now that we have our charge, $Q$, we can find the enclosed charge at any distance $r$ by taking the ratio of the volumes, then multiplying it by the total charge of the sphere:
-
+The charge, $dQ$, of one of those shells is given by the charge per unit volume, $\rho(r)$:
 \begin{align*}
-Q_{enc}& = \frac{Q \frac{4}{3}\pi r^3}{\frac{4}{3}\pi R^3}\\
-Q_{enc}&= \frac{Qr^3}{R^3}\\
-Q_{enc}&=\frac{4\pi r^3 R^2}{5}
+dQ = \rho(r) dV = ar^24\pi r^2 dr = 4a\pi r^4 dr
 \end{align*}
-
-Now that we have our enclosed charge for any distance $r$, we must apply Gauss' law:
-
+The total charge of the sphere is found by summing the charge from each shell:
 \begin{align*}
-\Phi & = EA = \frac{Q_{enc}}{\epsilon_0}\\
-E(4\pi r^2)&= \frac{4\pi r^3 R^2}{5\epsilon_0}\\
-E &= \frac{r R^2}{5\epsilon_0}
+Q=\int dQ =\int_0^R4a\pi r^4 dr=\frac{4}{5}a\pi R^5
 \end{align*}
-Which gives our answer for the magnitude of the electric field felt at a distance $r$ from the centre of the shell when $0\leq r \leq R$.
-
-To find the electric field at a distance $r$ from the centre of the sphere when $R<r$, we will apply the same technique, but will instead set the enclosed charge to be constant at $r = R$:
-
+\item Outside of the sphere, we can use a spherical gaussian surface of radius $r$, so that the flux is given by:
 \begin{align*}
-	\Phi & = EA = \frac{Q_{enc}}{\epsilon_0}\\
-	E(4\pi r^2)&= \frac{4\pi R^5}{5\epsilon_0}\\
-	E&= \frac{\pi R^5}{5\epsilon_0 r^2}
+\oint \vec E\cdot d\vec A=4\pi r^2 E
 \end{align*}
-
-Which gives our final answer.
-
-\end{solution}
+The entire charge of the sphere is enclosed. Applying Gauss' Law, we can determine the electric field outside the sphere:
+\begin{align*}
+\oint \vec E\cdot d\vec A&= \frac{Q^{enc}}{\epsilon_0}\\
+4\pi r^2 E&= \frac{4a\pi R^5}{5\epsilon_0}\\
+\therefore E(r)&=\frac{aR^5}{5\epsilon_0r^2}
+\end{align*}
+and we see that the electric field decreases as the radius squared, which makes sense, since from outside the sphere, we do not know how the charge is distributed within.
+\item Inside the volume of the sphere, we still use a gaussian spherical surface of radius, $r$, so that the flux is given by:
+\begin{align*}
+\oint \vec E\cdot d\vec A=4\pi r^2 E
+\end{align*}
+However, inside the sphere, the gaussian surface only encloses the charge up to a radius of $r$, which we find by integration, similar to part a):
+\begin{align*}
+Q^{enc}=\int dQ =\int_0^r 4a\pi r^4 dr=\frac{4}{5}a\pi r^5
+\end{align*}
+Applying Gauss' Law:
+\begin{align*}
+\oint \vec E\cdot d\vec A&= \frac{Q^{enc}}{\epsilon_0}\\
+4\pi r^2 E&= \frac{4a\pi r^5}{5\epsilon_0}\\
+\therefore E(r)&=\frac{ar^3}{5\epsilon_0r^2}
+\end{align*}
+and we find that the electric field is zero at the centre of the sphere and increases with radius cube inside the sphere.
+}
+\end{solutionParts}
 
 
 
