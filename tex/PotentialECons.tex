@@ -79,7 +79,6 @@ In general:
 \item Not enough information
 \end{MCquestion}
 \end{checkpoint}
-
 \begin{example}{\label{ex:potentialecons:gravity}Is the force of gravity on an object of mass $m$, near the surface of the Earth, given by:
 \begin{align*}
 \vec F(x,y,z) =0\hat x + 0\hat y -mg \hat z
@@ -93,23 +92,18 @@ The force is expected to be conservative since it is constant in magnitude and d
 \end{align*}
 and the force is indeed conservative since all three conditions are zero.
 \end{example}
-
-
-\begin{example}{\label{ex:potentialecons:gravitycons}Is the force given by:
+\newpage
+%\vspace{-0.7cm}
+\begin{example}{\label{ex:potentialecons:gravitycons}Is the following force conservative?
 \begin{align*}
 \vec F(x,y,z) = \frac{-k}{r^3}\vec r = \frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\hat x + \frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\hat y + \frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\hat z
-\end{align*}
-conservative?}
+\end{align*}}
 Since the force only depends on position, it \textit{could} be conservative, so we must check using the conditions from Equation \ref{eq:potentialecons:conservative}:
 \begin{align*}
 \die{F_z}{y}-\die{F_y}{z} &= \die{}{y}\left(\frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{z}\left( \frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
-&=\frac{3kz(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3ky(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
-\end{align*}
-\begin{align*}
+&=\frac{3kz(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3ky(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0\\
 \die{F_x}{z}-\die{F_z}{x} &= \die{}{z}\left(\frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{x}\left( \frac{-kz}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
-&=\frac{3kx(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kz(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
-\end{align*}
-\begin{align*}
+&=\frac{3kx(2z)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kz(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0\\
 \die{F_y}{x}-\die{F_x}{y} &= \die{}{x}\left(\frac{-ky}{(x^2+y^2+z^2)^\frac{3}{2}}\right)-\die{}{y}\left( \frac{-kx}{(x^2+y^2+z^2)^\frac{3}{2}}\right)\\
 &=\frac{3ky(2x)}{2(x^2+y^2+z^2)^\frac{5}{2}}-\frac{3kx(2y)}{2(x^2+y^2+z^2)^\frac{5}{2}} = 0
 \end{align*}
@@ -164,9 +158,8 @@ It is important to note that, since it is only the \textbf{difference} in potent
 \item No
 \end{MCquestion}
 \end{checkpoint}
-\vspace{-0.25cm}
-\begin{example}{\capfig{0.5\textwidth}{figures/PotentialECons/table.png}{\label{fig:potentialecons:table} A box moved from the ground up onto a table.}
-Calculate the work done \textbf{by the force of gravity} when a box of mass, $m$, is moved from the ground up onto a table that is a distance $L$ away horizontally and $H$ vertically, as illustrated in Figure \ref{fig:potentialecons:table}. How much work must be done by a person moving the box?}
+\newpage
+\begin{example}{Calculate the work done \textbf{by the force of gravity} when a box of mass, $m$, is moved from the ground up onto a table that is a distance $L$ away horizontally and $H$ vertically, as illustrated in Figure \ref{fig:potentialecons:table}. How much work must be done by a person moving the box?\capfig{0.5\textwidth}{figures/PotentialECons/table.png}{\label{fig:potentialecons:table} A box moved from the ground up onto a table.}}
 Since the force of gravity is conservative, we can use the potential energy function given by:
 \begin{align*}
 U(z)=mgz+C
@@ -193,7 +186,7 @@ W^{net} = 0 &= W_g + W_p\\
 \end{align*}
 \textbf{Discussion:} We find that the person had to do positive work, which makes sense, since they had to exert a force with a component in the direction of motion (upwards). It is also interesting to note that it does not matter if the person exerted a constant force or whether they varied the force that they exerted on the box as they moved it: the amount of work done by the person is fixed to be the negative of the work done by gravity.
 \end{example}
-\newpage
+
 \begin{example}{\label{ex:potentialecons:springpotential}The force exerted by a spring that is extended or compressed by a distance, $x$, is given by Hookes' Law:
 \begin{align*}
 \vec F(x) = -k x\hat x
@@ -482,7 +475,7 @@ Now, say an object's potential energy is described by the function in Figure \re
 
 \begin{checkpoint}
 \begin{MCquestion}{A force, $F(x)$, acts on an object. The potential energy function, $U(x)$, associated with the force is given by $U(x)=a(x-6)^2(x-1)(x-3)+\SI{20}{J}$, where $a$ is a positive constant. $U(x)$ is plotted in Figure \ref{fig:potentialecons:potentialcheckpoint}. Use the ``marble'' method to determine the direction of the force at $x=5$. Confirm your answer by finding the value of the force , $F(x)$, at $x=5$.
-\capfig{0.7\textwidth}{figures/PotentialEcons/potentialcheckpoint.png}{\label{fig:potentialecons:potentialcheckpoint} A potential energy function $U(x)$. The $x$-axis represents the $x$ position and the $y$-axis represents the energy.}}
+\capfig{0.5\textwidth}{figures/PotentialEcons/potentialcheckpoint.png}{\label{fig:potentialecons:potentialcheckpoint} A potential energy function $U(x)$. The $x$-axis represents the $x$ position and the $y$-axis represents the energy.}}
 \item $F(x=5)=-10a$
 \item $F(x=5)=10a$\correct
 \item $F(x=5)=20a$
@@ -658,6 +651,10 @@ L = K - U\\
 \end{multicols}
 \end{importantEquations}
 
+\begin{definitions}
+	\item \textbf{Conservative force:} A force that does no net work when exerted over a closed path.
+	\item \textbf{Potential energy:} A form of energy that an object has by virtue of its position in space. The potential energy is associated with a conservative force, which is exerted in the direction that lowers the potential energy of the object. SI units: [\si{J}]. Common variable(s): $U$.
+\end{definitions}
 
 \newpage
 \section{Thinking about the material}

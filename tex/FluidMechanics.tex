@@ -1,4 +1,3 @@
-
 \chapter{Fluid mechanics}
 \label{chapter:fluidmechanics}
 In this chapter, we introduce the tools required to model the dynamics of fluids. This will allow us to model how objects can float, how water flows through a pipe, and how airplane wings create lift. We will start by introducing the concept of pressure and modelling static fluids (hydrostatics) before developing models for fluids that flow (hydrodynamics). Fluids are generally defined as the phase of matter in which atoms (or molecules) are only loosely bound to each other, such as in gases or liquids.  Most of the formalism that we develop will apply to any fluid (gas, liquid, plasma), although we will often restrict ourselves to modelling the most simple situations (e.g. laminar flow of an incompressible liquid).
@@ -84,7 +83,6 @@ where we used the fact that the force resulting from a pressure is given by the 
 \Aboxed{P(y_2) - P(y_1) = -\rho g (y_2 - y_1)}
 \end{align}
 where the $y$ axis is defined to increase in the upwards direction. Since the pressure in the fluid depends on the location in the fluid, we say that there is a ``pressure gradient'' in the fluid.
-\newpage
 \begin{checkpoint}
 \capfig{0.2\textwidth}{figures/FluidMechanics/straw.png}{\label{fig:fluidmechanics:straw}Holding water in a vertical straw.}
 \begin{MCquestion}{You use your finger to block off the top end of a straw and then remove the straw from a glass of water. What is the most correct description of why the water stays in the straw (Figure \ref{fig:fluidmechanics:straw}) before you release your finger?}
@@ -98,7 +96,7 @@ where the $y$ axis is defined to increase in the upwards direction. Since the pr
 We have assumed that the density of the fluid, $\rho$, is constant, and that the fluid cannot be compressed. This is a very good approximation for a liquid such as water, but not for a gas, whose density will depend on its pressure. If the fluid were a gas (e.g. a column of air in our atmosphere), both the density and the pressure will change as a function of height. We can easily take this into account in our model, if we consider the fluid element to have a very small height, $dy$, instead of the finite height, $h$, as in the derivation above. A fluid element with an infinitesimal height, $dy$, is illustrated in Figure \ref{fig:fluidmechanics:pressure_gravity2}.
 \capfig{0.4\textwidth}{figures/FluidMechanics/pressure_gravity2.png}{\label{fig:fluidmechanics:pressure_gravity2}Pressure gradient from gravity on an infinitesimal fluid element.}
 
- In the very small height, $dy$, the density of the fluid, $\rho$, can be taken to be constant, and the infinitesimal element of fluid will have a mass $dm$:
+In the very small height, $dy$, the density of the fluid, $\rho$, can be taken to be constant, and the infinitesimal element of fluid will have a mass $dm$:
 \begin{align*}
 dm = \rho A dy
 \end{align*}
@@ -168,7 +166,6 @@ If we wish to determine the absolute pressure in the water at some depth, $h$, i
 P(h) = P_0 + \rho g h
 \end{align*}
 where $\rho$ is the density of water. As a consequence, the pressure at any depth, $h$, in a fluid is the same everywhere at that depth in the fluid. 
-\newpage
 \begin{checkpoint}
 \capfig{0.4\textwidth}{figures/FluidMechanics/glasses.png}{\label{fig:fluidmechanics:glasses}Three glasses with different shapes.}
 \begin{MCquestion}{You fill the three glasses in Figure \ref{fig:fluidmechanics:glasses} such that the liquid reaches a height $h$ above the bottom of the glass. What can you say about the pressure of the liquid at the bottom of each glass?}
@@ -179,7 +176,7 @@ where $\rho$ is the density of water. As a consequence, the pressure at any dept
 \item It is only the same for all glasses if we can neglect atmospheric pressure. 
 \end{MCquestion}
 \end{checkpoint}
-
+\vspace{-0.25cm}
 \begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/lift.png}{\label{fig:fluidmechanics:lift}A force exerted on the piston of a hydraulic lift in order to lift a mass $M$.}
 A hydraulic lift exploits Pascal's principle in order to use a small force to exert a large force. The hydraulic lift in Figure \ref{fig:fluidmechanics:lift} shows a lift that is constructed by having a fluid between two vertical movable pistons. The pistons are cylindrical and the diameter of their cross-sections are $D$ and $D/2$. A mass, $M$, is placed on the piston with the larger diameter. What is the magnitude of the force, $\vec F$, that must be applied on the smaller piston in order to lift the mass, $M$?}
 
@@ -220,7 +217,7 @@ P_1 = P_0 + \rho g h
 if we define $h$ to be positive when the side with the pressure $P_0$ is higher (so $h$ is negative in Figure \ref{fig:fluidmechanics:barometer} and $P_1$ is less than $P_0$).
 
 We can also measure the absolute atmospheric pressure if we evacuate the air out of the sealed end of the tube, so that $P_0=0$. When doing so, the difference in height between the fluid on either side of the manometer is a measure of the absolute atmospheric pressure.
-
+\vspace{-0.25cm}
 \begin{example}{\capfig{0.3\textwidth}{figures/FluidMechanics/barometer_abs.png}{\label{fig:fluidmechanics:barometer_abs}A barometer constructed from a manometer to measure absolute atmospheric pressure.}Using a manometer filled with water ($\rho=\SI{1e3}{kg/m^3}$), you construct a barometer to measure the absolute atmospheric pressure by evacuating the air from one side of the manometer, as shown in Figure \ref{fig:fluidmechanics:barometer_abs}. What is the difference in height, $h$, when the atmospheric pressure is ``nominal'', $P_1=\SI{1.013e5}{Pa}$?}
 The pressure, $P_1$, on the open side of the manometer is given by:
 \begin{align*}
@@ -294,7 +291,7 @@ where $\rho_w$ is the density of water. Given the volume, we can now determine t
 \end{align*}
 \textbf{Discussion:} By using Archimedes' Principle, we were able to determine the volume, and thus the density of the object, by comparing measurements of its weight in air and in water. This is similar to the method that Archimedes came up with to determine if a crown owned by a general was made of real gold or if some of the gold had been replaced with an equal weight of silver. Archimedes supposedly went to the baths to ponder how to determine if the crown was made of gold and had his Eureka moment when we he noticed the water level in the bath went up as he went into the bath. He realized that denser gold would displace less water than silver for an equal weight. 
 \end{example}
-\vspace{-0.45cm}
+\vspace{-0.65cm}
 \begin{studentOpinion}{Olivia}
 Whether or not an object will float depends on its density. Let's consider an object that is placed in water. The only forces acting on the object are its weight and the force of buoyancy. We want to know when the net force will be zero. I'm going to write out Newton's Second Law for the object, but writing the mass of the object in terms of its density and volume.
 \begin{align*}
@@ -466,8 +463,9 @@ Bernoulli's principle also describes why the roof can be lifted off of a house i
 \item Yes, there is a net inwards force on the windows from air pressure.
 \end{MCquestion}
 \end{checkpoint}
-\newpage
-\begin{example}{\capfig{0.5\textwidth}{figures/FluidMechanics/watertower.png}{\label{fig:fluidmechanics:watertower}Water leaking out of a horizontal hole in a water tank.} A water tower is constructed so that the bottom of the water tank is a height $h_2$ above the ground, as illustrated in Figure \ref{fig:fluidmechanics:watertower}. The water in the tank is at a height $h_1$ from the bottom of the tank. A leak from a hole is found at the base of the tank (the water flows horizontally out of the hole). What is the horizontal distance, $d$, from the bottom of the tower to where the water from the leak hits the ground? Assume that the water level in the tank is constant and that atmospheric pressure does not change appreciably over the height of the tower.}
+The following examples illustrate how to apply Bernoulli's principle.
+\vspace{-0.25cm}
+\begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/watertower.png}{\label{fig:fluidmechanics:watertower}Water leaking out of a horizontal hole in a water tank.} A water tower is constructed so that the bottom of the water tank is a height $h_2$ above the ground, as illustrated in Figure \ref{fig:fluidmechanics:watertower}. The water in the tank is at a height $h_1$ from the bottom of the tank. A leak from a hole is found at the base of the tank (the water flows horizontally out of the hole). What is the horizontal distance, $d$, from the bottom of the tower to where the water from the leak hits the ground? Assume that the water level in the tank is constant and that atmospheric pressure does not change appreciably over the height of the tower.}
 
 The pressure in the water tank leads to the water exiting the bottom of the tank with a horizontal velocity of magnitude, $v$. That water then undergoes projectile motion on its way to the ground. We can first determine the speed of the water exiting the tank and then use the kinematics for projectile motion to model the distance, $d$. 
 
@@ -597,11 +595,9 @@ Q &= \frac{\Delta P}{R}\\
 \end{align*}
 \textbf{Discussion: }By requiring that the sum of the flows of water through the houses be the same as the flow rate through the main pipe, we were able to model the two houses as a single effective house with resistance $R$. You may notice that this is the same relation as the equivalent resistance for two electrical resistors combined in parallel. This is because the flow of electrical current in a resistor can be modelled using similar tools to those required for modelling the flow of a viscous fluid in a pipe. 
 \end{example}
-
-
 \newpage
 \section{Summary}
-
+\vspace{-0.4cm}
 \begin{chapterSummary}
 The pressure from a force, $\vec F$, exerted over a surface with area, $A$, is a scalar quantity defined as:
 \begin{align*}
@@ -687,18 +683,14 @@ Q&= \frac{\pi r^4}{8\eta L}\Delta P \quad \textrm{(Poiseuille)}
 \end{importantEquations}
 
 \begin{definitions}
-	\textbf{Pressure:} A measurement of force per unit area. SI units: [\SI{}{Pa}]. Common variable(s): $P$.
-	\medskip
-	\item \textbf{Viscosity:} A measurement of a fluid's resistance to deformation. SI units: [\SI{}{Pas}]. Common variable(s): $\eta$.
-	\medskip
-	\item \textbf{Flow rate:} A volume per second measurement of a fluid's movement. SI units: [\SI{}{m^3s^{-1}}]. Common variable(s): $Q$.
-	\medskip
+	\item \textbf{Pressure:} A measurement of force per unit area. SI units: [\SI{}{Pa}]. Common variable(s): $P$.
+	\item \textbf{Viscosity:} A measurement of a fluid's resistance to flow. SI units: [\SI{}{Pas}]. Common variable(s): $\eta$.
+	\item \textbf{Flow rate:} Measurement of a fluid's motion, in volume per unit time. SI units: [\SI{}{m^3s^{-1}}]. Common variable(s): $Q$.
 \end{definitions}
-
-
 \newpage
 \section{Thinking about the material}
-
+End of chapter activities:
+%\vspace{-0.6cm}
 \begin{chapteractivity}{Reflect and research}
 {
 \item Does atmospheric pressure increase or decrease when the weather is nice? How come?
@@ -715,7 +707,7 @@ Q&= \frac{\pi r^4}{8\eta L}\Delta P \quad \textrm{(Poiseuille)}
 \item In your house/building, measure the flow rate between similar faucets at different heights, and compare with what one would expect from the model from Example \ref{ex:fluidmechanics:kitchen}.
 }
 \end{chapteractivity}
-
+\vspace{-0.25cm}
 \begin{chapteractivity}{To try in the lab}
 {
 \item Propose an experiment to build a barometer and track the changes in atmospheric pressure as a function of time, and to compare your measurements to those from a weather station. 
