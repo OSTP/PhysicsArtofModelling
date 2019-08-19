@@ -500,7 +500,7 @@ This last version has the advantage that it relates a local property of the fiel
 
 \subsection{Problems}
 \begin{problemParts}{soln:template:chargedsphere}{\label{prob:template:chargedsphere} 
-Consider a charged sphere of radius, $R$, which has a non-uniform charge density, that varies with radius, as $\rho(r) = ar^2$. What is the electric field at the distances $0\leq d \leq r$ and $r<d$ from the centre of the sphere? }
+Consider a charged sphere of radius, $R$, which has a non-uniform charge density, that varies with radius, as $\rho(r) = ar^2$. }
 {
 \item What is the total charge on the sphere?
 \item What is the electric field as a function of distance from the centre of the sphere outside the sphere, $r>R$?
@@ -508,7 +508,7 @@ Consider a charged sphere of radius, $R$, which has a non-uniform charge density
 }
 \end{problemParts}
 \vspace{0.5cm}
-\begin{problemParts}{soln:template:triangleinshells}{\label{prob:template:triangleinshells} Consider two conducting plates which are illustrated in Figure \ref{fig:gauss:squaretriangle}. Both plates have a hollow circle of radius $r$ at their centre. One plate is a square on the outside and the other is a triangle on the outside, both of the outside shapes have a side length of $L$. A point charge of charge $+Q$ is placed at the centre of the hollowed out circle of both plates.}
+\begin{problemParts}{soln:template:triangleinshells}{\label{prob:template:triangleinshells} Consider two conducting plates which are illustrated in Figure \ref{fig:gauss:squaretriangle}. Both plates have a hollow circle of radius, $R$, at their centre. One plate is a square on the outside and the other is a triangle on the outside, both of the outside shapes have a side length of $L$. A point charge of charge $+Q$ is placed at the centre of the hollowed out circle of both plates.}
 {
  \item What is the electric field outside of the shells?
  \item What is the average linear charge density on the inner and outer surfaces of the shells?
@@ -566,43 +566,34 @@ and we find that the electric field is zero at the centre of the sphere and incr
 
 
 
-\begin{solution}{prob:template:triangleinshells}\label{soln:template:triangleinshells}
-	
-	\begin{enumerate}[(a)]
-	
-	\item The conducting shells have no net charge, so the only charge in the system is the point charge $Q$, which means that the electric field outside of the shells is simply $E = \frac{kQ}{r^2}$.
-	
-	\item Let's begin with the shell that has a triangle on the outside. We will use Gauss' law to determine the charge density of the inner and outer shells. To do this, we will draw a circle within the shell, $S_1$ and a triangle outside of the outer shell, $S_2$ as shown in Figure \ref{fig:gauss:trianglegauss}:
-	
-	
-	\capfig{0.6\textwidth}{figures/Gauss/trianglegauss.png}{\label{fig:gauss:trianglegauss} A solution to the triangular conducting shell.}
-	
-	 When considering $S_1$ know that the electric field inside of the shell is $0$, so we also know that the flux will be zero. This means that the point charge on the inside of the shell will be equal and opposite to the sum of the surface charges on the inner shell. From here, we divide the net charge by the circumference of the inner shell to determine the linear charge density:
-	
+\begin{solutionParts}{prob:template:triangleinshells}
+{\label{soln:template:triangleinshells}
+	\item The conducting shells have no net charge, so the only charge in the system is the point charge $Q$. If we draw a spherical gaussian surface, the only enclosed charge will be $Q$, and we can ignore the charges on the plates. The electric field is thus the field from a point charge:
 	\begin{align*}
-		\lambda_{circle} = \frac{-Q}{2\pi r}
+	E= \frac{kQ}{r^2}
 	\end{align*}
-		
-	When considering $S_2$, we know that the $Q_{enc} = +Q$, which means that the total linear charge on the outer triangle will be $+Q$ such that it cancels the $-Q$ along the inner circle, leaving the point charge, $+Q$. The sum of charges would be $Q_{enc} = Q_{point}+Q_{triangle}-Q_{circle}$. Knowing this, we must divide the total charge on the outter shell by the sum of the length of each of the triangle's sides in order to find the average linear charge density:
-	
+
+	\item Let's begin with the shell that has a triangle on the outside. We will use Gauss' law to determine the charge density of the inner and outer shells. To do this, we will draw a circle within the shell, $S_1$ and a triangle outside of the outer shell, $S_2$ as shown in Figure \ref{fig:gauss:trianglegauss}.
+	\capfig{0.6\textwidth}{figures/Gauss/trianglegauss.png}{\label{fig:gauss:trianglegauss} A solution to the triangular conducting shell.}
+When considering $S_1$, we know that the electric field inside of the (conducting) shell is $0$, so that the flux out of $S_1$ will be zero. This means that the point charge on the inside of the shell will be equal and opposite to the sum of the surface charges on the inner shell. From here, we divide the net charge by the circumference of the inner shell to determine the linear charge density:
+	\begin{align*}
+		\lambda_{circle} = \frac{-Q}{2\pi R}
+	\end{align*}	
+When considering $S_2$, we know that the $Q_{enc} = +Q$, which means that the total linear charge on the outer triangle will be $+Q$ such that it cancels the $-Q$ along the inner circle. The sum of charges would be $Q_{enc} = Q_{point}+Q_{triangle}-Q_{circle}$. Knowing this, we must divide the total charge on the outer surface by the sum of the length of each of the triangle's sides in order to find the average linear charge density:
 	\begin{align*}
 		\lambda_{circle} = \frac{Q}{3L}
 	\end{align*}
-	
-	Now, we must solve for the inner and outer linear charge densities of the conducting shell with a square outter surface. We will begin this process by drawing a circle within the shell, $S_1$, and a square outside of the shell, $S_2$, as shown in Figure \ref{fig:gauss:squaregauss}:
-	
+Now, we consider the inner and outer linear charge densities of the square conducting shell. We choose two gaussian surfaces, $S_1$, and $S_2$, as shown in Figure \ref{fig:gauss:squaregauss}:
 	\capfig{0.6\textwidth}{figures/Gauss/squaregauss.png}{\label{fig:gauss:squaregauss} A solution to the square conducting shell.}
-		
-	For $S_1$, the circle is treated as it was while solving the trianglular shell. The electric field is also $0$ within the square conducting shell, so we know that the average linear charge density is $\frac{-Q}{2\pi r}$.
+For $S_1$, the circle is treated as it was while solving the triangular shell. The electric field is also $0$ within the square conducting shell, so we know that the average linear charge density is $\frac{-Q}{2\pi R}$.
 	
 	When considering $S_2$, we know that $Q_{enc}$ is $+Q$, so we know that the total charge on the square surface of the shell will be $+Q$. This leave us with the following average linear charge density:
 	\begin{align*}
 		\lambda_{square} = \frac{Q}{4L}
 	\end{align*}	
 	
-	\item These plates are charged by the electric field generated by the point charge held within them, which means that the linear charge density of the two plates will be highest at the points along the outer sides which are the shortest distance from the point charge. These points occur in the triangular and square plates at the point which is the greatest distance from their vertices, as shown in Figure \ref{fig:gauss:chargedensity}.
+	\item These plates are charged by the electric field generated by the point charge held within them, which means that the linear charge density of the two plates will be highest at the points along the outer sides which are the shortest distance from the point charge. These points occur in the triangular and square plates at the point which is the closest to the charge, $Q$, as shown in Figure \ref{fig:gauss:chargedensity}.
 	
 	\capfig{0.72\textwidth}{figures/Gauss/chargedensity.png}{\label{fig:gauss:chargedensity} A solution to the square conducting shell.}
-	
-	\end{enumerate}
-\end{solution}
+}
+\end{solutionParts}
