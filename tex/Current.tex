@@ -147,7 +147,7 @@ The resistivity of most (but not all) materials has been observed to increase li
 \rho(T)=\rho_0\left[ 1 + \alpha (T-T_0)\right]
 \end{align*}
 where, $\rho_0$, is a ``reference resistivity'' measured at a ``reference temperature'', $T_0$ (usually $\SI{20}{\degree C}$). $\alpha$ is the ``temperature coefficient'' of the material. The temperature dependence of the resistivity is illustrated in Figure \ref{fig:current:resistivity}.
-\capfig{0.5\textwidth}{figures/Current/resistivity.png}{\label{fig:current:resistivity}A linear model of resistivity can be used for most conductors over a large range of temperatures.}
+\capfig{0.4\textwidth}{figures/Current/resistivity.png}{\label{fig:current:resistivity}A linear model of resistivity can be used for most conductors over a large range of temperatures.}
 This ``linear model'' (since resistivity increases linearly with temperature) is empirically found to be valid for many materials over a large range of temperatures, although it is not expected to hold at extreme temperatures (either very low or very high). Furthermore, for semi-conducting materials (such as silicon and germanium), resistivity is found to decrease as a function of temperature.
 \begin{checkpoint}
 	What is the slope of the resistivity vs temperature as shown in Figure \ref{fig:current:resistivity}?
@@ -163,19 +163,16 @@ Table \ref{tab:current:materials} shows a list of common materials and their con
 \begin{tabular}{|l|l|p{100pt}|p{80pt}|}
 \textbf{Material}&\textbf{Resistivity} [\si{\Omega\cdot m}]&\textbf{Temperature coefficient} [\si{\degree C^{-1}}] &\textbf{Free electron density} [\si{m^{-3}}] \\
 \hline
-Copper & \num{1.68e-8} &0.0039 & \num{8.46e28}\\
 Silver & \num{1.59e-8} &0.0038 & \num{5.86e28}\\
-Gold & \num{2.2e-8} &0.0034 & \num{5.90e28}\\
-Iron & \num{9.71e-8} &0.0050 & \num{17.0e28}\\
+Copper & \num{1.68e-8} &0.0040 & \num{8.46e28}\\
+Gold & \num{2.44e-8} &0.0034 & \num{5.90e28}\\
 Aluminum & \num{2.74e-8} &0.0039 & \num{18.1e28}\\
-Silicon & 0.1-60 &$-0.07$ & \num{0}\\
+Iron & \num{9.70e-8} &0.0050 & \num{17.0e28}\\
+Silicon & 0.1-1000 &-0.0750 & \num{0}\\
 Rubber & $(1\text{-}100)\times 10^{13}$ &0 & \num{0}\\
 Quartz & $7.5\times 10^{17}$ &0 & \num{0}\\
-
-
-
 \end{tabular}
-\captionof{table}{\label{tab:current:materials} Resistivity, free electron density and temperature coefficients of common materials. All properties are listed for a reference temperature of $\SI{20}{\degree}C$}
+\captionof{table}{\label{tab:current:materials} Resistivity, free electron density and temperature coefficients of common materials. All properties are listed for a reference temperature of $\SI{20}{\degree}C$. }
 \end{center}
 
 
@@ -579,8 +576,7 @@ A cylindrical wire as a current density that increases with radius as $j(r) = ar
 \end{problem}
 
 
-\begin{problem}{soln:current:resistor}{\label{prob:current:resistor} 
-A resistor has a resistivity of $\rho_1=\SI{2.275e-8}{\ohm m}$ at a temperature of $T_1=\SI{30}{\degreeCelsius}$ and has a resistivity of $\rho_2=\SI{2.125e-8}{\ohm m}$ at a temperature of $T_2=\SI{10}{\degreeCelsius}$. What material is this resistor made of?
+\begin{problem}{soln:current:resistor}{\label{prob:current:resistor} A resistor is measured to have a resistance of $R_1=\SI{103.4}{\omega}$ at a temperature of $T_1=\SI{30}{\degree C}$, and a resistance of $R_2=\SI{106.8}{\omega}$ at a temperature of $T_1=\SI{40}{\degree C}$. Using the values in Table \ref{tab:current:materials}, determine the material from which the resistor is made.
 }
 \end{problem}
 
@@ -603,19 +599,28 @@ I=\int dI = \int_0^R 2\pi a r^2 dr=\frac{2}{3}\pi aR^3
 \end{solution}
 
 \begin{solution}{prob:current:resistor}\label{soln:current:resistor}
-To determine the material of the resistor, we can find the temperature coefficient, $\alpha$, since we are given measurements of resistivity, $\rho_1$ and $\rho_2$, at two different temperatures, $T_1$, and $T_2$, respectively. The reference temperature is set to be $T_0=\SI{20}{\degreeCelsius}$, so that we can compare with table \ref{tab:current:materials}.
+To determine the material of the resistor, we can find the temperature coefficient, $\alpha$, since we are given measurements of resistance, $R_1$ and $R_2$, at two different temperatures, $T_1$, and $T_2$, respectively. The reference temperature is set to be $T_0=\SI{20}{\degreeCelsius}$, so that we can compare with table \ref{tab:current:materials}.
 
-Using the formula for the resistivity as a function of temperature, evaluated for both temperatures, we have:
+We know that the resistance will vary with temperature, since the resistivity is temperature-dependent. The temperature dependence of resistivity is given by:
 \begin{align*}
-\rho_1&=\rho_0[1+\alpha(T_1-T_0)]\\
-\rho_2&=\rho_0[1+\alpha(T_2-T_0)]\\
-\frac{\rho_1}{\rho_2}&=\frac{1+\alpha(T_1-T_0)}{1+\alpha(T_2-T_0)}\\
-\rho_1 [1+\alpha(T_2-T_0)]&=\rho_2 [1+\alpha(T_1-T_0)]\\
-\alpha \left( \rho_1(T_2-T_0) - \rho_2(T_2-T_0) \right)&=\rho_2-\rho_1\\
-\therefore \alpha &= \frac{\rho_2-\rho_1}{\rho_1(T_2-T_0) - \rho_2(T_1-T_0) }\\
-&=\frac{(\SI{2.125e-8}{\ohm m}) - (\SI{2.275e-8}{\ohm m})}{(\SI{2.275e-8}{\ohm m})((\SI{10}{\degreeCelsius})-(\SI{20}{\degreeCelsius})) - (\SI{2.125e-8}{\ohm m})((\SI{30}{\degreeCelsius})-(\SI{20}{\degreeCelsius})) }
+\rho(T)=\rho_0[1+\alpha(T-T_0)]
 \end{align*}
-
+If the resistor has length, $L$, and cross-sectional area, $A$, it will have resistance, $R$, given by:
+\begin{align*}
+R(T)=\rho(T) \frac{L}{A}=\frac{\rho_0 L}{A}[1+\alpha(T-T_0)]=R_0[1+\alpha(T-T_0)]
+\end{align*}
+where $R_0$ is the resistance at the reference temperature, $T_0$. Since we are given the resistance at two different temperatures, we can determine both $\alpha$ and $R_0$, for a choice of $T_0=\SI{20}{\degree C}$:
+\begin{align*}
+R_1&=R_0[1+\alpha(T_1-T_0)]\\
+R_2&=R_0[1+\alpha(T_2-T_0)]\\
+\therefore\frac{R_1}{R_2}&=\frac{1+\alpha(T_1-T_0)}{1+\alpha(T_2-T_0)}\\
+R_1 [1+\alpha(T_2-T_0)]&=R_2 [1+\alpha(T_1-T_0)]\\
+\alpha \left( R_1(T_2-T_0) - R_2(T_2-T_0) \right)&=R_2-R_1\\
+\therefore \alpha &= \frac{R_2-R_1}{R_1(T_2-T_0) - R_2(T_1-T_0) }\\
+&=\frac{(\SI{106.8}{\ohm}) - (\SI{103.4}{\ohm})}{(\SI{103.4}{\ohm})((\SI{40}{\degreeCelsius})-(\SI{20}{\degreeCelsius})) - (\SI{106.8}{\ohm})((\SI{30}{\degreeCelsius})-(\SI{20}{\degreeCelsius})) }\\
+&=0.0034
+\end{align*}
+Referring to table \ref{tab:current:materials}, the material could likely be gold.
 
 \end{solution}
 
