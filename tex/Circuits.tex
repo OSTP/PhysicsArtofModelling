@@ -1,6 +1,6 @@
 \chapter{Electric circuits}
 \label{chapter:circuits}
-In this chapter, we develop the tools to model electric circuits. This will allow us to determine the current and voltages across different components, resistors and capacitors, within a circuit. We will also discuss how a battery can provide a current at a fixed potential difference, and how one can construct devices to measure current and voltages.
+In this chapter, we develop the tools to model electric circuits. This will allow us to determine the current and voltages across different components, such as resistors and capacitors, within a circuit. We will also discuss how a battery can provide a current at a fixed potential difference, and how one can construct devices to measure current and voltages.
 
 \begin{learningObjectives}{
  \item Understand how a battery works.
@@ -18,7 +18,8 @@ In this chapter, we develop the tools to model electric circuits. This will allo
 \end{opening}
 
 \section{Batteries and simple circuits}
-A battery is an electric component that provides a constant electric potential difference (a fixed voltage) across its terminals. Luigi Galvani was the first to realize that certain combination of metals placed into contact with each other can lead to an electric potential difference (or rather, they can make the legs of a dead frog twitch, which we now understand to be from the potential difference due to the metal). Effectively, Galvani created the first ``electrochemical cell''. Alessandro Volta then combined several of these cells together to form the ``voltaic pile'', which is what we would now call a battery (a battery, technically, is a combination of several cells, a battery of cells, although one often uses the term battery even if only a single electric cell is involved). 
+\label{sec:circuits:batteries}
+A battery is an electric component that provides a constant electric potential difference (a fixed voltage) across its terminals. Luigi Galvani was the first to realize that certain combination of metals placed into contact with each other can lead to an electric potential difference (or rather, they can make the legs of a dead frog twitch, which we now understand to be from the potential difference due to the metals). Effectively, Galvani created the first ``electrochemical cell''. Alessandro Volta then combined several of these cells together to form the ``voltaic pile'', which is what we would now call a battery (a battery, technically, is a combination of several cells, a battery of cells, although one often uses the term battery even if only a single electric cell is involved). 
 \subsection{The electrochemical cell}
 An electric cell can be constructed from metals that have different affinities to be dissolved in acid. A simple cell, similar to that originally made by Volta, can be made using zinc and carbon as the ``electrodes'' (Volta used silver instead of carbon) and a solution of dilute sulfuric acid (the liquid is called the ``electrolyte''), as illustrated in Figure \ref{fig:circuits:electriccell}. Before the cell is constructed, the electrodes and the electrolyte are all electrically neutral.
 \capfig{0.5\textwidth}{figures/Circuits/electriccell.png}{\label{fig:circuits:electriccell} A simple electric cell, where zinc ions dissolve in sulfuric acid leaving electrons on the metal.}
@@ -32,19 +33,19 @@ The electric cell will stop working once the zinc electrode has completely disso
 \subsection{The ideal battery in a circuit}
 As we proceed, we will use the term ``battery'' loosely to refer to a device (such as an electric cell or collection of cells) that can provide a fixed potential difference between two terminals (or electrodes). Figure \ref{fig:circuits:batterysymbol} shows the circuit diagram for a battery, consisting in two (or four) vertical bars, with the larger bar indicating the positive terminal of the battery.
 
-\capfig{0.4\textwidth}{figures/Circuits/circuitspng/batterysymbol.png}{\label{fig:circuits:batterysymbol} Circuit diagram symbols that can be used for a battery.}
+\capfig{0.3\textwidth}{figures/Circuits/circuitspng/batterysymbol.png}{\label{fig:circuits:batterysymbol} Circuit diagram symbols that can be used for a battery.}
 
 Figure \ref{fig:circuits:resistorsymbol} shows the circuit diagram symbols that are used for a resistor (different symbols are used in North American and in Europe).
 
-\capfig{0.4\textwidth}{figures/Circuits/circuitspng/resistorsymbol.png}{\label{fig:circuits:resistorsymbol} Circuit diagram symbols for a resistor, using the North American convention (left), and the European convention (right).}
+\capfig{0.3\textwidth}{figures/Circuits/circuitspng/resistorsymbol.png}{\label{fig:circuits:resistorsymbol} Circuit diagram symbols for a resistor, using the North American convention (left), and the European convention (right).}
 
 Figure \ref{fig:circuits:batteryresistor} shows a circuit diagram for a very simple circuit consisting of a single $\SI{9}{V}$ battery connected to a $\SI{2}{\Omega}$ resistor. When drawing a circuit diagram (or making a real circuit), one connects the various components together (e.g. batteries and resistors) with \textbf{segments of wire that have zero resistance}, even if, in practice, wires always have some resistance. However, since the wires are connected in series with resistors (or other components that have a resistance), one can always include the resistance of the wires by adding it to the resistance of the other components. For example, in Figure \ref{fig:circuits:batteryresistor}, if the wires have a total resistance of $\SI{1}{\Omega}$, we could simply model the circuit as if the resistor had a resistance of $\SI{3}{\Omega}$ instead of $\SI{2}{\Omega}$. In practice, this is usually accounted for when a circuit diagram is made (i.e. any resistors include the resistance of the wires connected to it). 
 
-\capfig{0.4\textwidth}{figures/Circuits/circuitspng/batteryresistor.png}{\label{fig:circuits:batteryresistor} A simple circuit, showing a \SI{9}{V} battery and a \SI{2}{\Omega} resistor. For ease in analyzing circuits, we suggest drawing a ``battery arrow'' above batteries that goes from the negative to the positive terminal.}
+\capfig{0.35\textwidth}{figures/Circuits/circuitspng/batteryresistor.png}{\label{fig:circuits:batteryresistor} A simple circuit, showing a \SI{9}{V} battery and a \SI{2}{\Omega} resistor. For ease in analyzing circuits, we suggest drawing a ``battery arrow'' above batteries that goes from the negative to the positive terminal.}
 
 The circuit in Figure \ref{fig:circuits:batteryresistor} is simple to analyze. In this case, whichever charges exit one terminal of the battery, must pass through the resistor and then enter the other terminal of the battery. We \textbf{always use conventional current} to analyze a circuit. Thus, we model the circuit as if positive charges exit the positive terminal of the battery, go through the resistor, and then enter the negative terminal of the battery.
 
-We recommend that you always draw a ``battery arrow'' for each battery in a circuit diagram to indicate the direction in which the electric potential increases and in which conventional current would exit the battery if a simple resistor were connected across the battery. In complex circuits, the current may not necessarily flow in the same direction as the battery arrow, and the battery arrow makes it easier to analyze those circuits. We also indicate the current that is flowing in any wire of the circuit by drawing an arrow in the direction of current on that wire (labelled $I$ in Figure \ref{fig:circuits:batteryresistor}).
+We recommend that you always draw a ``battery arrow'' for each battery in a circuit diagram to indicate the direction in which the electric potential increases and in which direction the conventional current would exit the battery if a simple resistor were connected across the battery. In complex circuits, the current may not necessarily flow in the same direction as the battery arrow, and the battery arrow makes it easier to analyze those circuits. We also indicate the current that is flowing in any wire of the circuit by drawing an arrow in the direction of current on that wire (labelled $I$ in Figure \ref{fig:circuits:batteryresistor}).
 
 
 It is helpful to think of the value of the electric potential along different parts of a circuit, as illustrated in Figure \ref{fig:circuits:batteryresistor_colour} for the same circuit as in Figure \ref{fig:circuits:batteryresistor}.
@@ -58,7 +59,7 @@ We can apply Ohm's Law (the macroscopic version) to the resistor and determine t
 \therefore I&=\frac{\Delta V}{R}=\frac{(\SI{9}{V})}{(\SI{2}{\Omega})}=\SI{4.5}{A}
 \end{align*}
 
-It is helpful to think of circuits in terms of energy. Charges move along the circuit and their potential energy changes as they go through components, while it remains constant as they move through a wire. If a positive charges enters the negative terminal of a battery and exits the positive terminal, its potential energy will have increased. If that charges then enters a resistor, its potential energy will have decreased when exiting the resistor, since the charge will have used its potential energy to heat up the resistor. Batteries provide the energy to ``push'' the charges through the resistors in the circuit by converting chemical potential energy into the electrical potential energy of the charges.
+It is helpful to think of circuits in terms of energy. Charges move along the circuit and their potential energy changes as they go through components, while it remains constant as they move through a wire. If a positive charges enters the negative terminal of a battery and exits the positive terminal, its potential energy will have increased. If that charge then enters a resistor, its potential energy will decrease as it moves through the resistor, since the charge will ``use'' its potential energy to heat up the resistor. Batteries provide the energy to ``push'' the charges through the resistors in the circuit by converting chemical potential energy into the electrical potential energy of the charges.
 
 It is also useful to make the analogy with fluid dynamics; one can think of the battery as a pump that is continuously pushing a viscous incompressible fluid through a pipe with a narrow section, as illustrated in Figure \ref{fig:circuits:watercircuit}. The wide section of the pipe is akin to the wires with no resistance, and the narrow section is akin to the resistor. The pressure difference generated by the pump is analogous to the voltage produced by the battery, and the flow rate of the liquid is analogous to the electric current. The pressure in the pipe does not drop in the wide section, if there is no resistance. The entire pressure drop of the fluid is across the narrow section, just as the voltage only drops across the resistor.
 \capfig{0.4\textwidth}{figures/Circuits/watercircuit.png}{\label{fig:circuits:watercircuit} A fluid dynamics analogue of the circuit in Figure \ref{fig:circuits:batteryresistor}, where a pump plays the role of the battery, and a narrow pipe that of a resistor.}
@@ -98,34 +99,29 @@ If we then add the potential difference across the $\SI{2}{\Omega}$ resistor to 
 
 \textbf{Discussion: }In this example, we showed how one can model a circuit by combining resistors together into effective resistors to simplify the circuit. We also showed how the potential differences across different components in a circuit must add up to zero (the voltage drops across the resistors must sum to the voltage increase across the battery). 
 \end{example}
-
-
-
-
 \begin{checkpoint}{}
-	\begin{MCquestion}{What is the voltage across a \SI{3}{V} battery connect in series with a \SI{6}{V} battery if the negative terminal of the \SI{6}{V} battery faces the positive terminal of the \SI{3}{V} battery?}
+ \begin{MCquestion}{What is the voltage across the combination of a \SI{3}{V} battery connected in series with a \SI{6}{V} battery, where the negative terminal of the \SI{6}{V} battery faces the positive terminal of the \SI{3}{V} battery?}
 \item \SI{9}{V}. \correct
 \item \SI{6}{V}.
 \item \SI{3}{V}.
 \item \SI{0}{V}.
-	\end{MCquestion}
+ \end{MCquestion}
 \end{checkpoint}
-
 \subsection{The real battery in a circuit}
 So far, we have modelled batteries as ``ideal'' devices that provide a fixed potential difference. In reality, this neglects the fact that the materials that make the battery will themselves have a resistance. For example, if electrons want to leave the zinc rod in the electric cell illustrated in Figure \ref{fig:circuits:electriccell}, they will loose some energy as they pass through the zinc. Thus, when modelling a real battery in a circuit, it is important to include its ``internal resistance'', as a resistor in series with the potential difference. This is illustrated in Figure \ref{fig:circuits:realbattery}, which shows the two terminals of a real battery, an ideal battery (with a fixed potential difference, $\Delta V_{ideal}$), and its internal resistance, $r$ (which can be drawn on either side of the battery). 
 
-\capfig{0.8\textwidth}{figures/Circuits/circuitspng/realbattery.png}{\label{fig:circuits:realbattery} Circuit diagram symbol for a battery.}
+\capfig{0.8\textwidth}{figures/Circuits/circuitspng/realbattery.png}{\label{fig:circuits:realbattery} Model of a real battery, showing an ideal battery in series with a resistor to model the internal resistance of the battery.}
 
-It is important to note that the potential difference across the terminals of the real battery is only equal to the potential difference across the ideal battery \textbf{if there is no current flowing through the battery}. If there is a current, $I$, flowing through the internal resistance, the electric potential will decrease by an amount $Ir$ across the internal resistance, and the voltage across the real terminals will no longer be the same as $\Delta V_{ideal}$. 
-
+It is important to note that the potential difference across the terminals of the real battery is only equal to the potential difference across the ideal battery \textbf{if there is no current flowing through the battery}. If there is a current, $I$, flowing through the internal resistance, the electric potential will decrease by an amount $Ir$ across the internal resistance, and the voltage across the real terminals will be $\Delta V_{ideal}-Ir$. 
+\vspace{-0.25cm}
 \begin{example}{When no resistance is connected across a real battery, the potential difference across its terminals is measured to be $\SI{6}{V}$. When a $R=\SI{2}{\Omega}$ resistor is connected across the battery, a current of $\SI{2}{A}$ is measured through the resistor. What is the internal resistance, $r$, of the battery, and what is the voltage across its terminals when the $R=\SI{2}{\Omega}$ resistor is connected?}
-The real battery can be modelled as an ideal battery with potential difference, $\Delta V_{ideal}$, in series with an internal resistance, $r$. While we do not know the value of the internal resistance, we are told that the potential difference across the terminals of real battery is $\SI{6}{V}$ \textbf{when no current flows through it}. Since no current flows through the internal resistance, the voltage does not drop across the internal resistance, and the voltage across the terminals of the real battery (e.g. Figure \ref{fig:circuits:realbattery}) must thus be equal to the voltage across the terminals of the ideal battery, so that $\Delta V_{ideal}=\SI{6}{V}$.
+The real battery can be modelled as an ideal battery with potential difference, $\Delta V_{ideal}$, in series with an internal resistance, $r$. While we do not know the value of the internal resistance, we are told that the potential difference across the terminals of the real battery is $\SI{6}{V}$ \textbf{when no current flows through it}. Since no current flows through the internal resistance, the voltage does not drop across the internal resistance, and the voltage across the terminals of the real battery (e.g. Figure \ref{fig:circuits:realbattery}) must thus be equal to the voltage across the terminals of the ideal battery, so that $\Delta V_{ideal}=\SI{6}{V}$.
 
 With this information, we can make a circuit diagram for the case when the $\SI{2}{\Omega}$ resistor is connected across the terminals of the real battery, as in Figure \ref{fig:circuits:realbatterycircuit}.
 
 \capfig{0.42\textwidth}{figures/Circuits/circuitspng/realbatterycircuit.png}{\label{fig:circuits:realbatterycircuit} A circuit showing a real battery (with internal resistance $r$) in series with a resistor.}
 
-The terminals of the real battery are located at points $a$ and $c$ of the diagram, whereas the terminals of the ideal battery corresponds to points $a$ and $b$. When no current flows through the internal resistor, there is no voltage drop across that resistor and the potential at $b$ will be equal to the potential at $c$, as we argued above.
+The terminals of the real battery are located at points $a$ and $c$ of the diagram, whereas the terminals of the ideal battery corresponds to points $a$ and $b$. When no current flows through the internal resistor, $r$, there is no voltage drop across that resistor and the potential at $b$ will be equal to the potential at $c$, as we argued above.
 
 The circuit in Figure \ref{fig:circuits:realbatterycircuit} is now identical to that analyzed in Example \ref{ex:circuits:tworesistors}, and can be treated the same way. We can combine the $\SI{2}{\Omega}$ resistor with the internal resistance, $r$, in series to obtain an effective resistor, $R_{eff}=r+R$. The voltage drop across the effective resistor will be the same as the potential difference across the ideal battery, and we can make use of Ohm's Law to find the internal resistance, $r$:
 \begin{align*}
@@ -146,9 +142,8 @@ Again, you can verify that the voltage drops across the two resistors will sum t
 \textbf{Discussion: } Modelling real batteries is not so different from modelling ideal batteries, since one only needs to include an internal resistance into the circuit. The key difference with a real battery is that the voltage across its real terminals depends on what is connected to the battery. In the example above, the battery has a voltage of $\SI{6}{V}$ across its (real) terminals when nothing is connected, but the voltage drops to $\SI{4}{V}$ when a $\SI{2}{\Omega}$ resistor is connected.
 \end{example}
 
-
 \begin{checkpoint}{}
-	\begin{MCquestion}{Suppose you would like to measure the change in voltage across the terminals of a battery by connecting a voltmeter in parallel with a battery. You would like the voltmeter (which acts as a resistor) to interfere with the measurement as little as possible. Would you choose a voltmeter with a high resistance, or a voltmeter with a low resistance?}
+	\begin{MCquestion}{Suppose that you would like to measure the ideal voltage of a real battery by connecting a measurement device (a voltmeter) across its terminals. In order to get the most accurate reading, should you choose a voltmeter with a high resistance, or a voltmeter with a low resistance?}
 		\item High resistance. \correct
 		\item Low resistance.
 		\item It doesn't matter if the voltmeter has a high or low resistance.
@@ -170,17 +165,14 @@ A loop is a closed path that one can trace around the circuit without passing ov
 \end{enumerate}
 Note that it does not matter where one starts on the loop, only that one can identify how many different loops are present in the circuit.
 
-
 \begin{checkpoint}{	}
-
-\capfig{0.45\textwidth}{figures/Circuits/circuitspng/7loop.png}{\label{fig:circuits:7loop}}
-
-	\begin{MCquestion}{How many loops and junctions does the circuit in Figure \ref{fig:circuits:7loop} have?}
-		\item The circuit has five loops and four junctions
-		\item The circuit has three loops and eight junctions
-		\item The circuit has seven loops and four junctions. \correct
-		\item The circuit has four loops and four junctions.
-	\end{MCquestion}
+ \capfig{0.4\textwidth}{figures/Circuits/circuitspng/7loop.png}{\label{fig:circuits:7loop}Circuit layout}
+ \begin{MCquestion}{How many loops and junctions does the circuit in Figure \ref{fig:circuits:7loop} have?}
+ \item The circuit has five loops and four junctions
+ \item The circuit has three loops and eight junctions
+ \item The circuit has seven loops and four junctions. \correct
+ \item The circuit has four loops and four junctions.
+ \end{MCquestion}
 \end{checkpoint}
 
 \subsection{Junction rule}
@@ -188,9 +180,9 @@ The junction rule states that: \textbf{The current entering a junction must be e
 
 This is in fact a simple statement about conservation of charge. If charges are flowing into a junction (from one or more segments of wire in that junction), then the same amount of charges must flow back out of the junction (through one or more different segments of wire).
 
-Consider the junction illustrated in Figure \ref{fig:circuits:junction}, comprised of 5 segments of wire, and thus having 5 currents. As shown, currents $I_1$ and $I_4$ flow into the junction, whereas currents $I_2$, $I_3$ and $I_5$ all flow out of the junction. 
+Consider the junction illustrated in Figure \ref{fig:circuits:junction}, comprised of 5 segments of wire, each carrying a different current. As shown, currents $I_1$ and $I_4$ flow into the junction, whereas currents $I_2$, $I_3$ and $I_5$ all flow out of the junction. 
 
-\capfig{0.4\textwidth}{figures/Circuits/circuitspng/junction.png}{\label{fig:circuits:junction}A junction with 5 segments and 5 currents.}
+\capfig{0.3\textwidth}{figures/Circuits/circuitspng/junction.png}{\label{fig:circuits:junction}A junction with 5 segments and 5 currents.}
 
 The junction rule states that the current entering the junction must equal the current coming out of the junction. This allows us to relate the currents to each other in an equation:
 \begin{align*}
@@ -230,12 +222,11 @@ We can now use the loop rule, which states that the sum of the above voltages mu
 \end{align*}
 This equation then gives us a relation between the various quantities (current, resistors, battery voltages) in the circuit which can be used to model the circuit.  
 
-
-\begin{checkpoint}{1}
-	\begin{MCquestion}{Suppose the equation describing loop abcdefga was calculated from a different starting position and the loop was traced in the opposite direction. Would this prouce a different equation?}
+\begin{checkpoint}{}
+	\begin{MCquestion}{Suppose that the equation describing loop $abcdefga$ (Figure \ref{fig:circuits:loop}) was obtained from a different starting position and the loop was traced in the opposite direction. Would this produce a different equation?}
 		\item Yes, the equation would be incorrect if the loop is traced in the direction opposite to the flow of current.
 		\item Yes, the equation must start from the point $a$ because the creator of the circuit assumes the person calculating current and voltage will begin at point $a$.
-		\item Yes, there is no incorrect starting point, but choosing to trace the circuit in the direction opposite to the current's flow would produce an incorrect equation.
+		\item Yes, there is no incorrect starting point, but choosing to trace the circuit in the direction opposite to the flow of current would produce an incorrect equation.
 		\item No, there is no incorrect direction or starting point. \correct
 	\end{MCquestion}
 \end{checkpoint}
@@ -253,7 +244,7 @@ In this section, we show how to model a circuit using Kirchhoff's rules. In gene
 \item Once you have determined all of the currents, if some of them are negative numbers, switch the direction of those currents in the diagram (they will be negative if you guessed the direction incorrectly).
 \end{enumerate}
 
-We will illustrate the procedure on the circuit shown in Figure \ref{fig:circuits:bigcircuit}, for which we would like to know the current through each resistor and each battery. The circuit contains 5 resistor ($R_1$-$R_5$), 2 real batteries (with ideal voltages $\Delta V_1$ and $\Delta V_2$), and 2 additional resistors to model the internal resistances of the batteries ($r_1$, $r_2$)
+We will illustrate the procedure on the circuit shown in Figure \ref{fig:circuits:bigcircuit}, for which we would like to know the current through each resistor and each battery. The circuit contains 5 resistors ($R_1$-$R_5$), 2 real batteries (with ideal voltages $\Delta V_1$ and $\Delta V_2$), and 2 additional resistors to model the internal resistances of the real batteries ($r_1$, $r_2$)
 
 \capfig{0.42\textwidth}{figures/Circuits/circuitspng/bigcircuit.png}{\label{fig:circuits:bigcircuit}A circuit that can be simplified and then solved with Kirchhoff's rules.}
 
@@ -338,7 +329,7 @@ and for loop $bcdeb$:
 \end{align*}
 Although it appears that we have obtained 3 additional equations, only two of these are independent. For example, if you sum the second and third equations (loops $abefa$, and $bcdeb$), you simply obtain the first equation (loop $abcdefa$). In general, if there are $N$ different loops, one will obtain less than $N$ independent equations (usually $N-1$ independent equations, as we did here).
 
-At this point, we have 3 independent equations that we can solve for the 3 unknown currents\footnote{The 3 unknowns do not necessarily have to be the currents, and could be any combination of the currents, battery voltage and resistors. As long as there at most 3 unknown quantities, this circuit can be solved.}:
+At this point, after choosing one of the junction equations, and two of the loop equations, we have 3 independent equations that we can solve for the 3 unknown currents\footnote{The 3 unknowns do not necessarily have to be the currents, and could be any combination of the currents, battery voltage and resistors. As long as there at most 3 unknown quantities, this circuit can be solved.}:
 \begin{align*}
 I_1 &= I_2+I_3 \quad &\text{(junction $e$)}\\
 -\Delta V_1+\Delta V_2+I_2R_6+I_1R_8&=0\quad&\text{(loop abcdefa)}\\
@@ -357,7 +348,6 @@ R_8&=r_1+\frac{R_4R_5}{R_4+R_5}=(\SI{1}{\Omega})+\frac{(\SI{2}{\Omega})(\SI{2}{\
 \end{align*}
 
 \capfig{0.45\textwidth}{figures/Circuits/circuitspng/bigcircuit_vals_simp.png}{\label{fig:circuits:bigcircuit_vals_simp}Simplified version of the circuit in Figure \ref{fig:circuits:bigcircuit_vals}.}
-
 From above, we know that this leads to the following three equations:
 \begin{align*}
 I_1 &= I_2+I_3 \quad &\text{(junction $e$)}\\
@@ -421,55 +411,42 @@ By solving for $I_4$ and $I_5$, we have now determined all of the currents throu
 
 \textbf{Discussion: }In this example, we showed how one can use a simplified circuit to solve the current through the effective resistors in the simplified circuit. Once those currents are known, we showed that it is straightforward to determine the currents through individual resistors that have been combined into effective resistors.  
 \end{example}
-
-
+\vspace{-0.25cm}
 \begin{studentOpinion}{Josh}{}
-	
-	Solving a circuit can be daunting, especially if the diagram is drawn in an unfamiliar  way. While the circuits in this chapter are designed to be as easy to read as possible, many circuits are much more strange. For example, here is a circuit which you may come across:
-	
-	\capfig{0.45\textwidth}{figures/Circuits/circuitspng/circuit1Josh.png}{\label{fig:circuits:circuit1Josh}A weird looking circuit.}
-
-	
-	The circuit in Figure \ref{fig:circuits:circuit1Josh} May look like it is a difficult circuit to solve, but the diagram can be re-drawn to reveal the simplicity of the circuit:
-	
-	\capfig{0.45\textwidth}{figures/Circuits/circuitspng/circuit2Josh.png}{\label{fig:circuits:circuit2Josh}A much less weird looking circuit.}
-	
-	What used to be a strange kite shape is now just a parallel circuit, which can be further simplified by calculating the effective resistance:
-	
-	\begin{align*}
-	R_{eff} &= (R_1^{-1}+R_2^{-1}+(R_3+R_4)^{-1})^{-1}
-	\end{align*}
-	
-	Which gives a series circuit with only one resistor:
-	
-	\capfig{0.5\textwidth}{figures/Circuits/circuitspng/circuit3Josh.png}{\label{fig:circuits:circuit3Josh}A simple circuit.}
-	
-	Circuits can be drawn in many unique or potentially confusing ways, but knowing how to read the circuit and re-draw it can help make the diagram more legible and the circuit easier to solve.
-	
+Solving a circuit can be daunting, especially if the diagram is drawn in an unfamiliar  way. While the circuits in this chapter are designed to be as easy to read as possible, many circuits are much more strange. For example, here is a circuit which you may come across:
+\capfig{0.45\textwidth}{figures/Circuits/circuitspng/circuit1Josh.png}{\label{fig:circuits:circuit1Josh}A weird looking circuit.}
+The circuit in Figure \ref{fig:circuits:circuit1Josh} May look like it is a difficult circuit to solve, but the diagram can be re-drawn to reveal the simplicity of the circuit:
+\capfig{0.45\textwidth}{figures/Circuits/circuitspng/circuit2Josh.png}{\label{fig:circuits:circuit2Josh}A much less weird looking circuit.}
+What used to be a strange kite shape is now just a parallel circuit, which can be further simplified by calculating the effective resistance:
+\begin{align*}
+R_{eff} &= (R_1^{-1}+R_2^{-1}+(R_3+R_4)^{-1})^{-1}
+\end{align*}
+Which gives a series circuit with only one resistor:
+\capfig{0.5\textwidth}{figures/Circuits/circuitspng/circuit3Josh.png}{\label{fig:circuits:circuit3Josh}A simple circuit.}
+Circuits can be drawn in many unique or potentially confusing ways, but knowing how to read the circuit and re-draw it can help make the diagram more legible and the circuit easier to solve.
 \end{studentOpinion}
-
 
 \section{Measuring current and voltage}
 In this section, we describe how one can build devices to measure current and voltage. A device that measures current is called an ``ammeter'' and a device that measured voltage is called a ``voltmeter''. Nowadays, these are usually found within the same physical device (a ``multimeter''), which can also measure resistance (by measuring voltage and current, resistance can easily determined). We will limit our description to the design of simple analogue ammeters and voltmeters. 
 
-As we will see in Chapter REF-MAGNETIC-FORCE-CHAPTER, it is straightforward to build a device that can measure very small amounts of current, by running the current through a coil in a magnetic field so that the coil can deflect a needle that indicates the amount of current. Such a device is called a ``galvanometer'' and is usually limited to measuring very small current (of order \si{mA}). In this section, we describe how one can use a galvanometer in order to build ammeters to measure large currents, and voltmeters. 
+As we will see in Chapter \ref{chapter:magneticforce}, it is straightforward to build a device that can measure very small amounts of current, by running the current through a coil in a magnetic field so that the coil can deflect a needle that indicates the amount of current. Such a device is called a ``galvanometer'' and is usually limited to measuring very small current (of order \si{mA}). In this section, we describe how one can use a galvanometer in order to build ammeters to measure large currents, and voltmeters. 
 \subsection{The ammeter}
 An ammeter is built by placing a galvanometer in parallel with a ``shunt'' resistor, $R_s$. The shunt resistor is a small resistor that ``shunts'' (deflects) the current away from the galvanometer, so that most of the current goes through the shunt resistor. This is illustrated in Figure \ref{fig:circuits:ammeter}, which shows the galvanometer (circle with the $G$ inside), the internal resistance of the galvanometer, $R_G$, and the shunt resistor, $R_S$. The actual ammeter would be contained in a box and have two connectors (shown as $A$ and $B$ in the figure). 
 
-\capfig{0.55\textwidth}{figures/Circuits/circuitspng/ammeter.png}{\label{fig:circuits:ammeter}Constructing an ammeter from a galvanometer by placing a shunt resistor.}
+\capfig{0.55\textwidth}{figures/Circuits/circuitspng/ammeter.png}{\label{fig:circuits:ammeter}Constructing an ammeter from a galvanometer by placing a ``shunt'' resistor in parallel with the galvanometer.}
 
-By modelling the ammeter, we can determine the total current, $I$, that we would like to measure using the values of the resistors and the and the current, $I_G$, measured by the galvanometer. Considering any of the two junctions, and a clockwise loop, we have:
+By modelling the ammeter, we can determine the total current, $I$, that we would like to measure using the known values of the resistors and the current, $I_G$, measured by the galvanometer. Considering any of the two junctions, and a clockwise loop, we have:
 \begin{align*}
 I&=I_G+I_S \quad&\text{(junction)}\\
 I_GR_G-I_SR_S&=0\quad&\text{(clockwise loop)}\\
 \therefore I_S&=\frac{R_G}{R_S}I_G\\
 \therefore I &= I_G+_S=\left(1+\frac{R_G}{R_S}\right) R_G
 \end{align*}  
-and indeed, we see that most of the current goes through the shunt (since $R_S$ is chosen to be smaller than $R_G$). The ammeter, will have a total resistance, $R_A$, given by:
+which allows us to determine the current, $I$, from the current, $I_G$, measured by the galvanometer. We also see that most of the current goes through the shunt (since $R_S$ is chosen to be smaller than $R_G$). The ammeter, will have a total resistance, $R_A$, given by:
 \begin{align*}
 R_A=\frac{R_GR_S}{R_G+R_S}
 \end{align*}
-In order to measure the current through a specific segment of a circuit, a ammeter must be placed in series with that segment (so that the current that we want to measure will pass through the ammeter). Figure \ref{fig:circuits:ammeterR} shows how to connect an ammeter (circle with the letter $A$) in order to measure the current through a resistor, $R$.
+In order to measure the current through a specific segment of a circuit, an ammeter must be placed in series with that segment (so that the current that we want to measure will pass through the ammeter). Figure \ref{fig:circuits:ammeterR} shows how to connect an ammeter (circle with the letter $A$) in order to measure the current through a resistor, $R$.
 
 \capfig{0.4\textwidth}{figures/Circuits/circuitspng/ammeterR.png}{\label{fig:circuits:ammeterR}An ammeter is placed in series with a resistor to measure the current through the resistor.}
 
@@ -487,6 +464,7 @@ In order to measure a potential difference across a component, the voltmeter mus
 \capfig{0.3\textwidth}{figures/Circuits/circuitspng/voltmeterR.png}{\label{fig:circuits:voltmeterR}A voltmeter is placed in parallel with a resistor to measure the voltage across the resistor.}
 
 When using an ammeter or a voltmeter, you will notice that these usually have buttons or dials to choose the range of currents or voltages to be measured. All the dial does is change the value of the shunt or series resistor in order to maintain a given maximum current through the galvanometer. An ohmmeter, to measure resistance, is simply an ammeter with a built-in fixed potential difference (so that by measuring current across a known potential difference, the resistance of the component can be determined). 
+\vspace{-0.25cm}
 \begin{example}{Two resistors with a resistance of $\SI{1}{k\Omega}$ are placed in series with a $\SI{12}{V}$ battery. A voltmeter with a total resistance of $R_V=\SI{10}{k\Omega}$ is used to measure the voltage across one of the resistors. What reading does the voltmeter show?}
 Since the two resistors have the same resistance, and are in series with the battery, when no voltmeter is connected, the voltage across either resistor is easily shown to be $\SI{6}{V}$. However, by connecting the voltmeter across one of the resistors, we modify the circuit, and we should expect the voltage that is read to be different than $\SI{6}{V}$ (can you tell if it will be larger or smaller?). The circuit, with the voltmeter connected is shown in Figure \ref{fig:circuits:voltmeter2R}.
 
@@ -505,28 +483,24 @@ The voltage drop across the effective resistor is the same as the reading on the
 \begin{align*}
 \Delta V_{voltmeter}=IR_{eff}=(\SI{6.29e-3}{A})(\SI{0.91}{k\Omega})=\SI{5.7}{V}
 \end{align*}
-and the voltmeter reads a smaller current than there would be without the voltmeter.
+and the voltmeter reads a smaller voltage than there would be without the voltmeter.
 
 \textbf{Discussion: }In this example, we saw that by using a voltmeter to measure a voltage in a circuit, we actually disturb the circuit. By placing the voltmeter in parallel with one resistor, we created an effective resistor with a resistance that is lower than the resistance of either the voltmeter or the resistor. This lowered the total resistance of the circuit, which increased the current. A larger current through the second resistor (without the voltmeter) leads to a larger voltage drop than $\SI{6}{V}$ across that resistor. Thus, the voltage drop across the resistor with the voltmeter will be less than $\SI{6}{V}$, as we found, since the two voltage drops need to add to $\SI{12}{V}$.
 
 In general, when using a voltmeter, one needs a voltmeter with a very high resistance in order to minimize the disturbance to the circuit (if the voltmeter has a high resistance, only a small amount of current will be shunted from the resistor). In practice, voltmeters have resistance that are typically of the order of $\SI{1}{M\Omega}$.
 \end{example}
 
-
 \section{Modelling circuits with capacitors}
-
 \begin{review}
 	\begin{itemize}
 		\item Section \ref{sec:potential:capacitors} on capacitors.
 	\end{itemize}
 \end{review}
 So far, we have modelled circuits where the current does not change with time. When a capacitor is included in a circuit, the current will change with time, as the capacitor charges or discharges. The circuit shown in Figure \ref{fig:circuits:RCcircuit} shows an ideal battery\footnote{The model still holds for a real battery, since the internal resistance of the battery can just be included into the resistance of the resistor, $R$.} ($\Delta V$), in series with a resistor ($R$), a capacitor ($C$, two vertical bars) and a switch ($S$) that is open. 
-
 \capfig{0.5\textwidth}{figures/Circuits/circuitspng/RCcircuit.png}{\label{fig:circuits:RCcircuit}A simple circuit with a resistor, battery, and capacitor.}
+When the switch is open, current cannot flow through the circuit. If we assume that the capacitor has no charge on it, once we close the switch, current will start to flow and charges will accumulate on the capacitor. Electrons will leave the negative terminal of the battery, flow through the resistor and accumulate on the left side of the capacitor, which acquires a negative charge. This pushes electrons off of the right hand side of the capacitor, which then becomes positively charged. The electrons from the positive side of the capacitor then flow into the positive side of the battery, completing the circuit.
 
-When the switch is open, no current flows through the circuit. If we assume that the capacitor has no charge on it, once we close the switch, current will start to flow and charges will accumulate on the capacitor. Electrons will leave the negative terminal of the battery, flow through the resistor and accumulate on the left side of the capacitor, which acquires a negative charge. This pushes electrons off of the right hand side of the capacitor, which then becomes positively charged. The electrons from the positive side of the capacitor then flow into the positive side of the battery, completing the circuit.
-
-Eventually, the charges on the capacitor will build up to a point were they prevent the further flow of current. Once the left side of the capacitor is at the same potential as the left side of the battery, current will cease to flow. That is, eventually, the potential difference across the capacitor will be equal to that across the battery. The current is high when the switch is opened, but eventually goes down to zero as the capacitor charges, and the current is thus time-dependent. 
+Eventually, the charges on the capacitor will build up to a point were they prevent any further flow of current. Once the left side of the capacitor is at the same potential as the left side of the battery, current will cease to flow. That is, eventually, the potential difference across the capacitor will be equal to that across the battery, and we can think of this as a circuit used to charge a capacitor. The current is high when the switch is first opened, but eventually goes down to zero as the capacitor charges. The current is thus time-dependent. 
 
 We can model this simple circuit (with the switch closed) using Kirchhoff's loop rule. The sum of the voltages across each component must sum to zero:
 \begin{align*}
@@ -544,7 +518,7 @@ Substituting this into the loop equation, we obtain a separable differential equ
 C\Delta V - Q &= RC\frac{dQ}{dt}\\
 \therefore \frac{dt}{RC}&=\frac{dQ}{C\Delta V - Q }
 \end{align*}
-This is similar to differential equations that we have solved previously (in fact, it is the same equation as in Example \ref{ex:applyingnewtonslaws:drag} where we looked at the effect of velocity-dependent drag). The solution to the equation, assuming that the switched is closed at $t=0$, is given by an exponential:
+This is similar to differential equations that we have solved previously (in fact, it is the same equation as in Example \ref{ex:applyingnewtonslaws:drag} where we looked at the effect of velocity-dependent drag). The solution to the equation, assuming that the switch is closed at $t=0$, is given by an exponential:
 \begin{align*}
 Q(t) = C\Delta V\left( 1 - e^{-\frac{t}{RC}} \right)
 \end{align*}
@@ -555,7 +529,7 @@ I(t)=\frac{dQ}{dt}=\frac{\Delta V}{R}e^{-\frac{t}{RC}}
 and we can see that at time $t=0$ the current is the same as if there were no capacitor present, and the current then decreases exponentially until it reaches zero.
 \newpage
 \section{Summary}
-
+\vspace{-0.25cm}
 \begin{chapterSummary}
 Batteries are usually formed from a collection of electrochemical cells. Batteries provide a constant electric potential difference across their terminals, usually sustained by a chemical reaction, as long as the current through the battery is not too large (or the chemical reactions cannot be sustained). An ideal battery has no resistance and can be modelled as a simple potential difference in a circuit. A real battery includes an internal resistance and be modelled in a circuit as an ideal battery in series with a resistor. The voltage across the terminals of a real battery is equal to the voltage across the terminals of the ideal battery only when no current flows through the internal resistance. 
 
@@ -567,7 +541,7 @@ Kirchhooff's rules allow us to model complex circuits:
  
 The junction rule states that: \textbf{The current entering a junction must be equal to the current exiting a junction.} This is a statement about conservation of charge. If charges are flowing into a junction, then the same amount of charges must flow back out of the junction per unit time.
 
-The loop rule states that: \textbf{The net voltage drop across a loop must be zero.} This is a statement about conservation of energy indicating that as the potential energy of a positive charge increases as it goes through a battery, it will decrease by the same amount if it goes through a resistor that is connected in parallel to that battery.
+The loop rule states that: \textbf{The net voltage drop across a loop must be zero.} This is a statement about conservation of energy indicating that as the potential energy of a positive charge increases as it goes through a battery, it will decrease by the same amount if it goes through a resistor that is connected to the terminals of that battery.
 
 In order to \textbf{apply the loop rule}, we strongly suggest using the following procedure, after having made a clear, labelled diagram showing battery arrows and currents in the circuit:
 \begin{enumerate}
@@ -584,8 +558,8 @@ In general, we suggest the following procedure in order to use Kirchhooff's rule
 \item Simplify any resistors that can easily be combined into effective resistors (in series or in parallel).
 \item Make a new diagram with the effective resistors, showing battery arrows, and labelling all of the nodes so that loops can easily be described.
 \item Make a \textbf{guess} for the directions of the current in each segment.
-\item Write the junction rule equations. In general, you will get $M-1$ independent equations for $M$ loops.
-\item Write the loop equations. In general, you will get $M-1$ independent equations for $M$ loops.
+\item Write the junction rule equations. Usually, you will get $M-1$ independent equations for $M$ loops.
+\item Write the loop equations. Usually, you will get $M-1$ independent equations for $M$ loops.
 \item This will lead to $N$ independent equations that one can solve for the $N$ different currents in the circuit.
 \item Once you have determined all of the currents, if some of them are negative numbers, switch the direction of those currents in the diagram (they will be negative if you guessed the direction incorrectly).
 \end{enumerate}
@@ -594,38 +568,24 @@ Current and voltage measuring devices (ammeters and voltmeters, respectively) ca
 
 A voltmeter is constructed by placing a resistor in series with the galvanometer in order to reduce the current through the galvanometer. The resulting voltmeter must be placed in parallel with a component in a circuit in order to measure the voltage across that component. Note that because voltmeters and ammeters have a non-zero resistance, they will affect the circuit once they are connected.
 
-When a capacitor is placed in a circuit, the current in the circuit will no longer be constant in time. If a capacitor with capacitance, $C$, is placed in a series circuit with a battery and a resistor of resistance, $R$, the capacitor will charge until the voltage across the capacitor is equal to that across the battery. Once the capacitor is charged, current ceases to flow in the circuit. The charges on a capacitor accumulate with a rate that decays exponentially; it will take an infinite amount of time for the capacitor to become fully charged. It will be charged to about 63\% of maximum charge after a period of time, $\tau=RC$, called the time constant of the capacitor.
+When a capacitor is placed in a circuit, the current in the circuit will no longer be constant in time. If an uncharged capacitor with capacitance, $C$, is placed in a series circuit with a battery and a resistor of resistance, $R$, the capacitor will charge until the voltage across the capacitor is equal to that across the battery. Once the capacitor is charged, current ceases to flow in the circuit. The charges on a capacitor accumulate with a rate that decays exponentially; it will take an infinite amount of time for the capacitor to become fully charged. It will be charged to about 63\% of maximum charge after a period of time, $\tau=RC$, called the time constant of the capacitor.
 
 \end{chapterSummary}
 
 \newpage
 \begin{importantEquations}
-\medskip
-\begin{multicols}{2}
-\textbf{Voltage:}
+\textbf{Ohm's Law:}
 \begin{align*}
-V &= IR\\
+\Delta V &= IR
 \end{align*}
-
 \textbf{Junction Rule:}
 \begin{align*}
-I_{in} &= I_{out}
+\sum I_{in} &= \sum I_{out}
 \end{align*}
-
 \textbf{Loop Rule:}
 \begin{align*}
-I_1R_1+I_2R_2+I_3R_3+I_nR_n+\Delta V_1+\Delta V_2+\Delta V_3+\Delta V_n = 0
+\sum_{loop} \Delta V = 0
 \end{align*}
-\columnbreak
-\\
-\textbf{Resistance:}
-\begin{align*}
-\text{In a paralell circuit:}&\\
-R_{total} = (R_1^{-1}+R_2^{-1}+R_3^{-1}+R_n^{-1})^{-1}\\
-\text{In a series circuit:}&\\
-R_{total} = R_1+R_2+R_3+R_n\\
-\end{align*}
-\end{multicols}
 \end{importantEquations}
 
 \newpage
@@ -648,6 +608,7 @@ R_{total} = R_1+R_2+R_3+R_n\\
 \begin{chapteractivity}{To try in the lab}
 {
 \item Propose an experiment to measure the change in current of an RC circuit as a capacitor builds up and releases charge.
+\item Propose an experiment to determine the RC constant for a capacitor charging circuit.
 \item Propose an experiment to measure the resistance of a voltmeter and compare your results with the manufacturer's.
 }
 \end{chapteractivity}
@@ -656,75 +617,102 @@ R_{total} = R_1+R_2+R_3+R_n\\
 \section{Sample problems and solutions}
 
 \subsection{problems}
-\begin{problemParts}{soln:template:ballistic}{\label{prob:template:ballistic} 
-A simple RC circuit as shown in Figure \ref{fig:circuits:capacitorquestion} has a \SI{9}{V} battery and a resistor with a resistance of \SI{12}{\ohm}. The switch is opened at $t = \SI{0}{s}$. The current is then measured to be $I = \SI{0.05}{A}$ at $t = \SI{5}{s}$ after opening the switch.}{
-	\item What is the capacitance of the capacitor?
-	\item What charge did the capacitor hold at $t = \SI{2}{s}$?
-	}
+\begin{problemParts}{soln:circuits:ballistic}{\label{prob:circuits:ballistic} 
+A simple RC circuit as shown in Figure \ref{fig:circuits:RCcircuit} contains a charged capacitor of unknown capacitance, $C$, in series with a resistor, $R=\SI{2}{\Omega}$. When charged, the potential difference across the terminals of the capacitor is $\SI{9}{V}$. 
 
-\capfig{0.45\textwidth}{figures/Circuits/circuitspng/RCcircuit.png}{\label{fig:circuits:RCcircuit}A simple circuit with a resistor, battery, and capacitor.}
-
+At time $t=\SI{0}{s}$, the switch, $S$, is closed, allowing the capacitor to discharge through the resistor. The current is then measured to be $I = \SI{0.05}{A}$ at $t = \SI{5}{s}$ after opening the switch.}
+{
+\item What is the capacitance of the capacitor?
+\item What charge did the capacitor hold at $t = \SI{2}{s}$?
+}
+\begin{center}
+\begin{circuitikz}
+ \draw (0,0) to [short] (0,2)
+       to [R=$R$] (4,2)
+       to [nos, l_=S] (4,0)
+       to [C=$C$] (0,0);        
+\end{circuitikz}
+\captionof{figure}{\label{fig:circuits:RCcircuitCharge}A simple circuit with a resistor and a capacitor.} 
+\end{center}
 \end{problemParts}
 
-\begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic}}
-	A voltmeter with a resistance of $R_V = \SI{20}{k\ohm}$ is attached to a circuit with a battery of unknown voltage and two resistors with a resistance of $R = \SI{2.5}{k\ohm}$ as shown in \ref{fig:circuits:question2circuit}. The voltmeter reads that the voltage drop over one of the resistors is $\Delta V_{vm} = \SI{5.647}{V}$. What is the voltage drop, $V_R$, over each resistor when the voltmeter is removed from the circuit?
-	
-	\capfig{0.45\textwidth}{figures/Circuits/circuitspng/question2circuit.png}{\label{fig:circuits:question2circuit}A circuit with a battery of unknown voltage.}
-	
-	
+\begin{problem}{soln:circuits:ballistic}{\label{prob:circuits:ballistic}}
+A voltmeter with a resistance of $R_V = \SI{20}{k\ohm}$ is attached to a circuit with a battery of unknown voltage and two resistors with a resistance of $R = \SI{2.5}{k\ohm}$ as shown in Figure \ref{fig:circuits:question2circuit}. The voltmeter reads that the voltage drop over one of the resistors is $\Delta V_{vm} = \SI{5.647}{V}$. What is the voltage drop, $V_R$, over each resistor when the voltmeter is removed from the circuit?
+\capfig{0.45\textwidth}{figures/Circuits/circuitspng/question2circuit.png}{\label{fig:circuits:question2circuit}A circuit with a battery of unknown voltage.}
 \end{problem}
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
-	\begin{enumerate}[(a)]
-		\item In order to find the relationship between the capacitance and the current at some time $t$, we must use the following function:
-		\begin{align*}
-		I(t) &= \frac{\Delta V}{R}e^{-\frac{t}{RC}}\\
-		\end{align*}
-		This function describes the rate at which current decreases once the switch has been opened in the circuit. In this case, we have a measurement of current at $t = \SI{5}{s}$, so we must solve for $C$ in the time-dependent function:
-		\begin{align*}
-		I(t) &= \frac{\Delta V}{R}e^{-\frac{t}{RC}}\\
-		I(t)\frac{R}{\Delta V} &= e^{-\frac{t}{RC}}\\
-		ln(I(t)\frac{R}{\Delta V}) &= -\frac{t}{RC}\\
-		ln(I(t)\frac{R}{\Delta V}) &= -\frac{t}{RC}\\
-		C & =  -\frac{t}{Rln(I(t)\frac{R}{\Delta V})}\\
-		C & = -\frac{(\SI{5}{s})}{(\SI{12}{\ohm})ln((\SI{0.05}{A})\frac{\SI{12}{\ohm}}{\SI{9}{V}})}\\
-		C & = \SI{0.1539}{F}
-		\end{align*}
-		The capacitance of the capacitor is \SI{0.1539}{F}.
-		
-		\item To find the charge stored in the capacitor at $t = \SI{2}{s}$, we must use the time dependent equation for charge stored in a capacitor and our calculated capacitance:
-		\begin{align*}
-		Q(t) & = C \Delta V (1-e^{-\frac{-t}{RC}})\\
-		Q(2) &= (\SI{0.1539}{F}) (\SI{9}{V}) (1-e^{-\frac{-\SI{2}{s}}{(\SI{12}{\ohm})(\SI{0.1539}{F})}})\\
-		Q(2) &= \SI{0.9161}{C}
-		\end{align*}
-		Which gives us the correct charge of \SI{0.9161}{C} stored in the capacitor.
-\end{enumerate}
-\end{solution}
+\begin{solutionParts}{prob:circuits:ballistic}
+{\label{soln:circuits:ballistic}
+\item In this case, the capacitor is discharging as a function of time. At time $t=0$, the voltage across the capacitor is $\Delta V=\SI{9}{V}$. We can model this discharging circuit in a similar way as we modelled the charging circuit. 
 
+We start with Kirchhoff's junction rule, which leads to a differential equation for the charge stored on the capacitor, $Q(t)$, as function of time:
+\begin{align*}
+\Delta V - IR &=0\\
+\frac{Q}{C} - IR &=0\\
+\frac{Q}{C} - \frac{dQ}{dt}R &=0\\
+\therefore \frac{dQ}{dt} = -\frac{1}{RC}Q
+\end{align*}
+This differential equation is straightforward to solve, since it says that the derivative of $Q(t)$ is equal to a constant multiplied by $Q(t)$. Thus, $Q(t)$, must be an exponential function:
+\begin{align*}
+Q(t) = Q_0 e^{-\frac{t}{RC}}
+\end{align*}
+where, $Q_0$, is the (unknown) charge on the capacitor at $t=0$. You can easily verify that taking the derivative of this equation will result in the differential equation being satisfied. 
 
+The current, $I(t)$, as a function of time is given by:
+\begin{align*}
+I &=\frac{dQ}{dt}=-\frac{1}{RC}Q=\frac{Q_0}{RC} e^{-\frac{t}{RC}}=I_0e^{-\frac{t}{RC}}
+\end{align*}
+where $I_0=\frac{Q_0}{RC}$ is the current at $t=0$.
 
-\begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
-	In order to find the voltage in the battery, we must first find the current in the loop. We know the voltage drop over the voltmeter and resistor which are connected in paralell, so we must find their effective resistance, then use it to solve for current:
-	\begin{align*}
-	R_{eff} &= \frac{1}{R_V^{-1}+R^{-1}}\\
-	R_{eff} &= \frac{1}{(\SI{20}{k\ohm})^{-1}+(\SI{2.5}{k\ohm})^{-1}}\\
-	R_{eff} &= \SI{2.22}{k\ohm}\\
-	\end{align*}
-	Now that we have the effective resistance as well as the voltage drop, we can solve for current:
-	\begin{align*}
-	I &= \frac{\Delta V_{vm}}{R_{eff}}\\
-	I &= \frac{\SI{5.647}{V}}{\SI{2.22}{k\ohm}}\\
-	I &= \SI{2.541}{mA}\\
-	\end{align*}
-	Now that we have the current, we must sum the voltage drops in both resistors, which will give the battery's voltage:
-	\begin{align*}
-	\Delta V_{battery} &= I(R_{eff}+R)\\
-	\Delta V_{battery} &= (\SI{2.541}{mA})(\SI{2.222}{k\ohm}+\SI{2.5}{k\ohm})\\
-	\Delta V_{battery} &= \SI{12}{V}\\
-	\end{align*}
-	Now that we have the battery's voltage, we can solve for the voltage drop when the voltmeter is removed from the circuit. We know that the supplied voltage will be equal for each resistor, so the voltage drop over each resistor will be \SI{6}{V} when the voltmeter is not present.
+We also know that the current through the resistor at $t=0$ is given by Ohm's Law, since, at that time, the voltage, $\frac{Q_0}{C}=\SI{9}{V}$:
+\begin{align*}
+I_0=\frac{Q_0}{RC}=\frac{(\SI{9}{V})}{(\SI{2}{\Omega})}=\SI{4.5}{A}
+\end{align*}
+
+We then know that the current, at time $t=\SI{5}{s}$, is equal to $I(5)=\SI{0.05}{A}$, allowing us to determine the capacitance:
+\begin{align*}
+I(5)&=I_0e^{-\frac{t}{RC}}\\
+\ln\left( \frac{I(5)}{I_0} \right)&=-\frac{t}{RC}\\
+\therefore C&=\frac{t}{R \ln\left( \frac{I_0}{I(5)} \right)}=\frac{(\SI{5}{s})}{(\SI{2}{\Omega})\ln\left( \frac{(\SI{4.5}{A})}{(\SI{0.05}{A})} \right)}=\SI{0.56}{F}
+\end{align*}
+
+\item To find the charge stored in the capacitor at $t = \SI{2}{s}$, we can use the function $Q(t)$ that we determined before:
+\begin{align*}
+Q(t=\SI{2}{s})=Q_0 e^{-\frac{t}{RC}}
+\end{align*}
+where we can determine, $Q_0$, now that we know the capacitance. $Q_0$ is the charge on the capacitor at time $t=0$, when the voltage across the capacitor is $\SI{9}{V}$:
+\begin{align*}
+Q_0=C\Delta V = (\SI{0.56}{F})(\SI{9}{V})=\SI{5.0}{C}
+\end{align*}
+At $t = \SI{2}{s}$, the charge on the capacitor is thus:
+\begin{align*}
+Q(t = \SI{2}{s})=(\SI{5.0}{C})e^{-\frac{(\SI{2}{s})}{(\SI{2}{\Omega})(\SI{0.56}{F})}}=\SI{0.84}{C}
+\end{align*}
+}
+\end{solutionParts}
+
+\begin{solution}{prob:circuits:ballistic}\label{soln:circuits:ballistic} In order to know the voltage across one of the resistors, we need to determine the voltage that is across the battery. Once we have determined the voltage across the battery, the voltage across one of the resistors will just be half of that across the battery, since the two resistors have the same resistance.
+
+We can model the circuit with the voltmeter in place, since we know the voltage across the parallel combination of the voltmeter and resistor (that voltage which is readout by the voltmeter). We can combine the voltmeter and one of the resistors into a an equivalent resistor, $R_{eff}$:
+\begin{align*}
+R_{eff} &= \frac{1}{R_V^{-1}+R^{-1}}\\
+R_{eff} &= \frac{1}{(\SI{20}{k\ohm})^{-1}+(\SI{2.5}{k\ohm})^{-1}}\\
+R_{eff} &= \SI{2.22}{k\ohm}\\
+\end{align*}
+Now that we have the effective resistance as well as the voltage drop across that effective resistor, we can solve for current through the circuit:
+\begin{align*}
+I &= \frac{\Delta V_{vm}}{R_{eff}}\\
+I &= \frac{\SI{5.647}{V}}{\SI{2.22}{k\ohm}}\\
+I &= \SI{2.541}{mA}\\
+\end{align*}
+Now that we have the current through the circuit, we can determine the voltage drop across the second resistor. By adding that voltage drop to the known voltage across the effective resistor, we can determine the battery voltage:
+\begin{align*}
+\Delta V_{battery} &= I(R_{eff}+R)\\
+\Delta V_{battery} &= (\SI{2.541}{mA})(\SI{2.222}{k\ohm}+\SI{2.5}{k\ohm})\\
+\Delta V_{battery} &= \SI{12}{V}\\
+\end{align*}
+Thus, with no voltmeter present, the voltage across each resistor is $\SI{6}{V}$.
 \end{solution}
 

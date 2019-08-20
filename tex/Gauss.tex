@@ -35,20 +35,16 @@ We define a vector, $\vec A$, associated with the surface such that the magnitud
 \Phi_E=\vec E\cdot \vec A=EA\cos\theta
 \end{align*}
 since this will have the same properties that we described above (e.g. no flux when $\vec E$ and $\vec A$ are perpendicular, flux proportional to number of field lines crossing the surface). Note that the flux is only defined up to an overall sign, as there are two possible choices for the direction of the vector $\vec A$, since it is only required to be perpendicular to the surface. By convention, we usually choose $\vec A$ so that the flux is positive.
-
-
-
-
 \begin{checkpoint}\label{cp:gauss:unitsofflux}
 
-	\begin{MCquestion}{What are the units of electric flux?}
-		\item $Nm/C$
-		\item $Vm \correct$
-		\item $V/m$
-		\item The units of flux depend on the dimensions of the charged object
+	\begin{MCquestion}{What are the S.I. units of electric flux?}
+		\item \si{N\cdot m/C}
+		\item \si{V\cdot m} \correct
+		\item \si{V/m}
+		\item The units of flux depend on the dimensions of the charged object.
 	\end{MCquestion}
 \end{checkpoint}
-
+\vspace{-0.25cm}
 \begin{example}{A uniform electric field is given by: $\vec E=E\cos\theta\hat x+E\sin\theta\hat y $ throughout space. A rectangular surface is defined by the four points $(0,0,0)$, $(0,0,H)$, $(L,0,0)$, $(L,0,H)$. What is the flux of the electric field through the surface?}
 
 The surface that is defined corresponds to a rectangle in the $xz$ plane with area $A=LH$. Since the rectangle lies in the $xz$ plane, a vector perpendicular to the surface will be along the $y$ direction. We choose the positive $y$ direction, since this will give a positive number for the flux (as the electric field has a positive component in the $y$ direction). The vector $\vec A$ is given by:
@@ -74,11 +70,11 @@ However, if the electric field is not constant in magnitude and/or in direction 
 \begin{align*}
 \Aboxed{\Phi_E=\int \vec E\cdot d\vec A}
 \end{align*}
-where, $d\vec A$, is the normal vector for the infinitesimal surface, $dS$. This is illustrated in Figure \ref{fig:gauss:fluxdA}, which shows, in the left panel, a surface for which the electric field changes magnitude along the surface (as the field lines are closer in the lower left part of the surface), and, in the right panel, a scenario in which the direction (and magnitude) of the electric field vary along the surface.
+where, $d\vec A$, is the normal vector for the infinitesimal surface, $dS$. This is illustrated in Figure \ref{fig:gauss:fluxdA}, which shows, in the left panel, a surface for which the electric field changes magnitude along the surface (as the field lines are closer in the lower left part of the surface), and, in the right panel, a scenario in which the direction and magnitude of the electric field vary along the surface.
 
 In order to calculate the flux through the total surface, we first calculate the flux through an infinitesimal surface, $dS$, over which we assume that $\vec E$ is constant in magnitude and direction, and then, we sum (integrate) the fluxes from all of the infinitesimal surfaces together. Remember, the flux through a surface is related to the number of field lines that cross that surface; it thus makes sense to count the lines crossing an infinitesimal surface, $dS$, and then adding those together over all the infinitesimals surfaces to determine the flux through the total surface, $S$.
 \capfig{1\textwidth}{figures/Gauss/fluxdA.png}{\label{fig:gauss:fluxdA} Examples of surfaces that need to be sub-divided in order to determine the net flux through them. The surface on the left must be subdivided because the electric field changes magnitude over the surface, whereas the one on the right needs to be subdivided because the angle between $\vec E$ and $d\vec A$ is not constant (and the magnitude of $\vec E$ also changes along the surface).}
-\begin{example}{An electric field points in the $z$ direction everywhere in space. The magnitude of the electric field depends linearly on the $x$ position in space, so that the electric field vector is given by: $\vec E=(a-bx)\hat z$, where, $a$, and, $b$, are constants. What is the flux of the electric field through a square of side, $L$, that is located in the $xy$ plane?}
+\begin{example}{An electric field points in the $z$ direction everywhere in space. The magnitude of the electric field depends linearly on the $x$ position in space, so that the electric field vector is given by: $\vec E=(a-bx)\hat z$, where, $a$, and, $b$, are constants. What is the flux of the electric field through a square of side, $L$, that is located in the positive $xy$ plane with one of its corners at the origin?}
 We need to calculate the flux of the electric field through a square of side $L$ in the $xy$ plane. The electric field is always in the $z$ direction, so the angle between $\vec E$ and $d\vec A$ (the normal vector for any infinitesimal area element) will remain constant.
 
 We can calculate the flux through the square by dividing up the square into thin strips of length $L$ in the $y$ direction and infinitesimal width $dx$ in the $x$ direction, as illustrated in Figure \ref{fig:gauss:fluxlinx}. In this case, because the electric field does not change with $y$, the dimension of the infinitesimal area element in the $y$ direction is finite ($L$). If the electric field varied both as a function of $x$ and $y$, we would start with area elements that have infinitesimal dimensions in both the $x$ and the $y$ directions. 
@@ -97,27 +93,20 @@ where $\vec E\cdot d\vec A=EdA$, since the angle between $\vec E$ and $\vec A$ i
 \label{sec:gauss:closedsurfaces}
 One can distinguish between a ``closed'' surface and an ``open'' surface. A surface is closed if it completely defines a volume that could, for example, be filled with a liquid.  A closed surface has a clear ``inside'' and an ``outside''. For example, the surface of a sphere, of a cube, or of a cylinder are all examples of closed surfaces. A plane, a triangle, and a disk are, on the other hand, examples of ``open surfaces''.
 
-For a closed surface, one can unambiguously define the direction of the vector $\vec A$ (or $d\vec A$) as the direction that it is perpendicular to the surface and \textbf{points towards the outside}. Thus, the sign of the flux out of a closed surface is meaningful. The flux will be positive if there is a net number of field lines exiting the surface (since $\vec E$ and $\vec A$ will be parallel on average) and the flux will be negative if there is a net number of field lines entering the surface (as $\vec E$ and $\vec A$ will be anti-parallel on average). The flux through a closed surface is thus zero if the number of field lines that enter the surface is the same as the number of field lines that exit the surface.
+For a closed surface, one can unambiguously define the direction of the vector $\vec A$ (or $d\vec A$) as the direction that it is perpendicular to the surface and \textbf{points towards the outside}. Thus, the sign of the flux out of a closed surface is meaningful. The flux will be positive if there is a net number of field lines exiting the volume defined by the surface (since $\vec E$ and $\vec A$ will be parallel on average) and the flux will be negative if there is a net number of field lines entering the volume (as $\vec E$ and $\vec A$ will be anti-parallel on average). The flux through a closed surface is thus zero if the number of field lines that enter the surface is the same as the number of field lines that exit the surface.
 
 When calculating the flux over a closed surface, we use a different integration symbol to show that the surface is closed:
 \begin{align*}
 \Phi_E=\oint \vec E\cdot d\vec A
 \end{align*}
 which is the same integration symbol that we used for indicating a path integral when the initial and final points are the same (see for example Section \ref{sec:potentialecons:conservative}).
-
-
 \begin{checkpoint}\label{cp:gauss:unitsofflux}
-	\capfig{0.6\textwidth}{figures/Gauss/irregularfield.png}{\label{fig:gauss:irregularfield} A non-uniform electric field flowing through an irregularly shaped object}
-		\begin{MCquestion}{A non-uniform electric field $\vec E$ flows through an irregularly-shaped two-dimensional object, as shown in figure \ref{fig:gauss:irregularfield}. The flux through the irregularly-shaped object is...}
-			\item positive
-			
-			\item zero \correct
-			
-			\item negative
-		\end{MCquestion}
-		
-		
-		
+\capfig{0.4\textwidth}{figures/Gauss/irregularfield.png}{\label{fig:gauss:irregularfield} A non-uniform electric field flowing through an irregularly shaped closed surface.}
+\begin{MCquestion}{A non-uniform electric field $\vec E$ flows through an irregularly-shaped closed surface, as shown in figure \ref{fig:gauss:irregularfield}. The flux through the surface is}
+ \item positive.
+ \item zero. \correct
+\item negative.
+\end{MCquestion}
 \end{checkpoint}
 
 \begin{example}{A negative electric charge, $-Q$, is located at the origin of a coordinate system. Calculate the flux of the electric field through a spherical surface of radius, $R$, that is centred at the origin.}\label{ex:gauss:qsphere}
@@ -153,7 +142,7 @@ Gauss' Law is a relation between the net flux through a closed surface and the a
 \end{align*}
 In particular, note that Gauss' Law holds true for \textbf{any} closed surface, and the shape of that surface is not specified in Gauss' Law. That is, we \textbf{can always choose the surface to use} when calculating the flux. For obvious reasons, we often call the surface that we choose a ``gaussian surface''. But again, this surface is simply a mathematical tool, there is no actual property that makes a surface ``gaussian''; it simply means that we chose that surface in order to apply Gauss' Law. In Example \ref{ex:gauss:qsphere} above, we confirmed that Gauss' Law is compatible with Coulomb's Law for the case of a point charge and a spherical gaussian surface. 
 
-Physically, Gauss' Law is a statement that field lines must begin or end on a charge (electric field lines original from positive charges and terminate on negative charges). Recall, flux is a measure of the net number of lines coming out of a surface. If there is a net number of lines coming out of a closed surface (a positive flux), that surface must enclose a positive charge from where those field lines originate. Similarly, if there are the same number of field lines entering a closed surface as there are lines exiting that surface (a flux of zero), then the surface encloses no charge. Gauss' Law simply states that the number of field lines exiting a closed surface is proportional to the amount of charge enclosed by that surface.
+Physically, Gauss' Law is a statement that field lines must begin or end on a charge (electric field lines originate on positive charges and terminate on negative charges). Recall, flux is a measure of the net number of lines coming out of a surface. If there is a net number of lines coming out of a closed surface (a positive flux), that surface must enclose a positive charge from where those field lines originate. Similarly, if there are the same number of field lines entering a closed surface as there are lines exiting that surface (a flux of zero), then the surface encloses no charge. Gauss' Law simply states that the number of field lines exiting a closed surface is proportional to the amount of charge enclosed by that surface.
 
 Primarily, Gauss' Law is a useful tool to determine the magnitude of the electric field from a given charge, or charge distribution. We usually have to use symmetry to determine the direction of the electric field vector. In general, the integral for the flux is difficult to evaluate, and Gauss' Law can only be used analytically in cases with a high degree of symmetry. Specifically, the integral for the flux is easiest to evaluate if:
 \begin{enumerate}
@@ -176,8 +165,8 @@ Ultimately, the points above should dictate the choice of gaussian surface \text
 \item Calculate the amount of charge located within the volume enclosed by the surface, $Q^{enc}$.
 \item Apply Gauss' Law, $\oint \vec E\cdot d\vec A=\frac{Q^{enc}}{\epsilon_0} $.
 \end{enumerate}
-\begin{example}{An insulating sphere of radius, $R$, contains a total charge, $Q$, which is uniformly distributed through out its volume. Determine an expression for the electric field as a function of distance, $r$, from the centre of the sphere.}
-Note that this is identical, mathematically, as the derivation that is done in Section \ref{sec:gravity:gauss} for the case of gravity. 
+\begin{example}{An insulating sphere of radius, $R$, contains a total charge, $Q$, which is uniformly distributed throughout its volume. Determine an expression for the electric field as a function of distance, $r$, from the centre of the sphere.}
+Note that this is identical, mathematically, to the derivation that was done in Section \ref{sec:gravity:gauss} for the case of gravity. 
 
 When applying Gauss' Law, we first need to think about symmetry in order to determine the direction of the electric field vector. We also need to think about all possible regions of space in which we need to determine the electric field. In particular, for this case, we need to determine the electric field both inside ($r\leq R$) and outside ($r\geq R$) of the charged sphere.
 
@@ -187,29 +176,29 @@ Figure \ref{fig:gauss:spheresymmetry} shows the charged sphere of radius $R$. If
 We now need to choose a gaussian surface that will make the flux integral easy to evaluate. Ideally, we can find a surface over which the electric field makes the same angle with the surface and over which the electric field is constant in magnitude. Again, based on the symmetry of the charge distribution, it is clear that a spherical surface of radius, $r$, will satisfy these properties.
 
 We start by applying Gauss' Law outside the charge (with $r\geq R$) to determine the electric field, $\vec E_{out}$. Figure \ref{fig:gauss:spherein} shows our choice of spherical gaussian surface (labelled $S$) of radius, $r$, which is concentric with the spherical charge distribution of radius, $R$, and total charge, $+Q$.
-\capfig{0.4\textwidth}{figures/Gauss/spherein.png}{\label{fig:gauss:spherein} A spherical gaussian surface to determine the electric field outside a sphere of radius, $R$, holding charge, $+Q$.}
+\capfig{0.4\textwidth}{figures/Gauss/spherein.png}{\label{fig:gauss:spherein} A spherical gaussian surface to determine the electric field outside of a sphere of radius, $R$, holding charge, $+Q$.}
 
 In order to apply Gauss' Law, we need to calculate:
 \begin{itemize}
 \item the net flux through the surface.
 \item the charge in the volume enclosed by the surface. 
 \end{itemize}
-The net flux through the surface is found identically as in Example \ref{ex:gauss:qsphere}, and is given by:
+The net flux through the surface is found in the same way as in Example \ref{ex:gauss:qsphere}, and is given by:
 \begin{align*}
 \Phi_E&=\oint \vec E\cdot d\vec A=\oint E dA= E\oint dA=E(4\pi r^2)
 \end{align*}
 where our choice of spherical surface led to $\vec E\cdot d\vec A=EdA$, since $\vec E$ and $d\vec A$ are always parallel. Furthermore, by symmetry, the electric field must be constant in magnitude along the whole surface, or the spherical symmetry would be broken. This allowed us to factor the $E$ out of the integral, leaving us with, $\oint dA$, which is simply the area of our gaussian spherical surface, $4\pi r^2$.
 
-The gaussian surface with $r\geq R$ encloses the whole charged sphere, so the charge enclosed is simply the charge of the sphere, $Q^{inc}=Q$. Applying Gauss' Law allows us to determine the magnitude of the electric field:
+The gaussian surface with $r\geq R$ encloses the whole charged sphere, so the charge enclosed is simply the charge of the sphere, $Q^{enc}=Q$. Applying Gauss' Law allows us to determine the magnitude of the electric field:
 \begin{align*}
 \oint \vec E\cdot d\vec A&=\frac{Q^{enc}}{\epsilon_0} \\
-E(4\pi r^2) &= \frac{Q^{enc}}{\epsilon_0}\\
+E(4\pi r^2) &= \frac{Q}{\epsilon_0}\\
 \therefore E&= \frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}
 \end{align*}
 which is the same as the electric field a distance $r$ from a point charge. Thus, from the outside, a spherical charge distribution leads to the same electric field as if the charge were concentrated at the centre of the sphere.
 
 Next, we determine the magnitude of the electric field inside the charged sphere. In this case, we choose a spherical gaussian surface of radius $r\leq R$, that is concentric with the sphere, as illustrated by the surface labelled, $S$, that is shown in Figure \ref{fig:gauss:sphereout}.
-\capfig{0.4\textwidth}{figures/Gauss/sphereout.png}{\label{fig:gauss:sphereout} A spherical gaussian surface to determine the electric field outside a sphere of radius, $R$, holding charge, $+Q$.}
+\capfig{0.4\textwidth}{figures/Gauss/sphereout.png}{\label{fig:gauss:sphereout} A spherical gaussian surface to determine the electric field inside of a sphere of radius, $R$, holding charge, $+Q$.}
 The flux integral is trivial again, since the electric field always makes the same angle with the gaussian surface, and the magnitude of the electric field is constant in magnitude along the surface:
 \begin{align*}
 \Phi_E&=\oint \vec E\cdot d\vec A=\oint E dA= E\oint dA=E(4\pi r^2)
@@ -225,33 +214,34 @@ Q^{enc}=\frac{4}{3}\pi r^3 \rho=\frac{4}{3}\pi r^3 \frac{Q}{\frac{4}{3}\pi R^3}=
 Finally, we apply Gauss' Law to find the magnitude of the electric field inside the sphere:
 \begin{align*}
 \oint \vec E\cdot d\vec A&=\frac{Q^{enc}}{\epsilon_0} \\
-E(4\pi r^2) &= \frac{Q^{enc}}{\epsilon_0}=\frac{Q}{\epsilon_0}\frac{r^3}{R^3}\\
+E(4\pi r^2) &=\frac{Q}{\epsilon_0}\frac{r^3}{R^3}\\
 \therefore E&= \frac{Q}{4\pi\epsilon_0R^3}r
 \end{align*}
-Note that the electric field increases linearly with radius inside of the charge sphere, and then decreases with radius squared outside of the sphere. Also, note that at the centre of the sphere, the electric field has a magnitude of zero, as expected from symmetry.
+Note that the electric field increases linearly with radius inside of the charged sphere, and then decreases with radius squared outside of the sphere. Also, note that at the centre of the sphere, the electric field has a magnitude of zero, as expected from symmetry.
 
 \textbf{Discussion: } In this example, we showed how to use Gauss' Law to determine the electric field inside and outside of a uniformly charged sphere. We recognized the spherical symmetry of the charge distribution and chose to use a spherical surface in order to apply Gauss' Law. This, in turn, allowed the flux to be easily calculated. We found that outside the sphere, the electric field decreases in magnitude with radius squared, just as if the entire charge were concentrated at the centre of the sphere. Inside the sphere, we found that the electric field is zero at the centre, and increases linearly with radius. 
 \end{example}
-%TODO Checkpoint question, show a picture of charged spherical shell and ask what the electric field is in the centre.
-% Added a different type of question. May add this question while beefing up checkpoint questions.
 
 \begin{checkpoint}\label{cp:gauss:unitsofflux}
-	\capfig{0.4\textwidth}{figures/Gauss/spherecube.png}{\label{fig:gauss:spherecube} A charged spherical shell with a cubic device inside of it.}
-	\begin{MCquestion}{A thin charged spherical shell of radius $r$ has a uniformly distributed charge of $+Q$. Inside of the hollow inside of the shell is a cubic device which measures flux as shown in Figure \ref{fig:gauss:spherecube}. What is the total flux through the cubic device?}
-		
-
-		\item $\frac{Q}{12\pi}$ Vm
-		
-		\item $\frac{Q}{2\pi}$ Vm 
-		
-		\item $ \frac{Q}{6} $ Vm
-		
-		\item $ \SI{0}{Vm}$ \correct
+	\capfig{0.3\textwidth}{figures/Gauss/spherecube.png}{\label{fig:gauss:spherecube} A charged spherical shell with a cubic device inside of it.}
+	\begin{MCquestion}{A thin charged spherical shell carries a uniformly distributed charge of $+Q$. If we place a cube inside the shell, as shown in Figure \ref{fig:gauss:spherecube}, what is the total flux out of the surface of the cube?}
+		\item $\frac{Q}{12\pi}$\SI{}{Vm}.
+		\item $\frac{Q}{2\pi}$\SI{}{Vm}.
+		\item $\frac{Q}{6}$ \SI{}{Vm}.
+		\item $ \SI{0}{Vm}$. \correct
 	\end{MCquestion}
 \end{checkpoint}
 
 \begin{example}{An infinitely long straight wire carries a uniform charge per unit length, $\lambda$. What is the electric field at a distance, $R$, from the wire?}
-We start by making a diagram of the charge distribution, as in Figure \ref{fig:gauss:linecharge}, so that we can use symmetry arguments to determine the direction of the electric field vector. At any point in space, the electric field vector must be radial (point to/from the centre of the wire) and in the plane perpendicular to the wire. If this were not the case, one would be able to look at the electric field to determine a preferred direction (either around the wire, if the field were not radial, or upwards/downwards, if the field were not perpendicular to the wire). 
+We start by making a diagram of the charge distribution, as in Figure \ref{fig:gauss:linecharge}, so that we can use symmetry arguments to determine the direction of the electric field vector. The electric field vector could be either:
+\begin{enumerate}
+\item in the radial direction (point to/from the centre of the wire).
+\item such that electric field lines form concentric circles with the wire.
+\item co-linear with the wire.
+\end{enumerate}
+In all three possibilities above, you would not be able to infer that one particular direction in the plane perpendicular to the wire is preferred. All three possibilities preserver the rotational symmetry of the wire (the wire looks the same from all directions in the plane perpendicular to the wire). 
+
+The second and third options can be eliminated, because we expect the electric field lines to have at least a radial component, since we expect that a negative charge would be attracted to the wire. The electric field will thus look like that illustrated in Figure \ref{fig:gauss:linecharge}.
 \capfig{0.4\textwidth}{figures/Gauss/linecharge.png}{\label{fig:gauss:linecharge} An infinite line of charge carrying uniform charge per unit length, $\lambda$. The left panel shows a side view and the right panel a view from above. The electric field must be in the radial direction or there would be a preferred direction.}
 Next, we need to choose a gaussian surface in order to apply Gauss' Law. A convenient choice is a cylinder (a ``pill box'') of radius, $R$, and length, $L$, as shown in Figure \ref{fig:gauss:fluxlinecharge}, as this goes through a point that is a distance, $R$, from the wire (where we are asked for the electric field). At all points on the cylindrical surface, the electric field vector is either perpendicular or parallel to the surface.
 \capfig{0.4\textwidth}{figures/Gauss/fluxlinecharge.png}{\label{fig:gauss:fluxlinecharge} A cylindrical gaussian surface is used to calculate the flux from an infinite line of charge.}
@@ -265,7 +255,7 @@ The flux through the lids is identically zero, since the electric field is perpe
 \begin{align*}
 \oint \vec E\cdot d\vec A = \int_{side} \vec E\cdot d\vec A =\int_{side} EdA=E\int_{side}dA=E(2\pi R L)
 \end{align*}
-where we recognized that the side surface can be unfolded into a rectangle of height, $L$, and width, $2\pi R$, corresponding to the circumference of the cylinder, so that the area is given by $A=2\pi R L$. 
+where we recognized that the side surface can be unfolded into a rectangle of height, $L$, and width, $2\pi R$, corresponding to the circumference of the cylinder, so that the area of the side of the cylinder is given by $A=2\pi R L$. 
 
 Next, we determine the charge inside the volume enclosed by the surface. Since the cylinder encloses a length, $L$, of wire, the enclosed charge is given by:
 \begin{align*}
@@ -284,29 +274,27 @@ Note that this is the same result that we obtained in Example \ref{ex:chargesfie
 \end{example}
 
 \begin{checkpoint}\label{cp:gauss:gausswire}
-	\begin{MCquestion}{Why can't Gauss' Law be applied to a finite wire?}
-		\item Gauss' Law can be applied to a finite wire.
+	\begin{MCquestion}{Why is it difficult to apply Gauss' Law to a finite wire?}
+		\item It is easy to apply Gauss' Law to a finite wire.
 		\item Because the flux of a finite wire is undefined.
 		\item Because we do not know the charge density of a finite wire.
-		\item Because the symetry argument does not hold. \correct
+		\item Because the symmetry argument does not hold. \correct
 	\end{MCquestion}
 \end{checkpoint}
-
+\vspace{-0.25cm}
 \begin{studentOpinion}{Josh}
 	
-	Gauss' Law allows us to choose a gaussian surface, but which surface should we choose? This is a difficult question to answer, because it is highly circumstancial. Generally, it is useful to choose a gaussian surface which requires the least complex math to solve, and it is often advised to use the symmetry of the charge to avoid taking an integral. If symmetry can be exploited such that $\vec E$ has a constant magnitude at every $d \vec A$ of the gaussian surface, then $\int \vec E \cdot d\vec A$ will be equal to $E A$. This is why gaussian surfaces are often of the same form as the charged object they are enclosing.
+Gauss' Law requires us to choose a ``gaussian'' surface, but which surface should we choose? Generally, it is useful to choose a surface such that the flux can easily be determined, ideally without having to actually do an integral. If symmetry can be exploited such that $\vec E$ has a constant magnitude and direction relative to $d\vec A$ at every location of the gaussian surface, then $\int \vec E \cdot d\vec A$ will be equal to $E A$. This is why gaussian surfaces are often of the same shape as the charged object they are enclosing.
 	
-	For example: if I were to enclose a cylindrical continuous charge, it would be reasonable to enclose the continuously charged cylinder with a cylindrical gaussian surface, as shown in Figure \ref{fig:gauss:choosecylinder}
+For example, if I need to enclose a cylindrical charge, it would be reasonable to enclose the charge with a cylindrical gaussian surface, as shown in Figure \ref{fig:gauss:choosecylinder}
+\capfig{0.3\textwidth}{figures/Gauss/choosecylinder.png}{\label{fig:gauss:choosecylinder}A cylindrical gaussian surface to enclose a cylindrical charge.}
 	
-	\capfig{0.15\textwidth}{figures/Gauss/choosecylinder.png}{\label{fig:gauss:choosecylinder} .}
-	
-	When dealing with point charges which have no shape, it is often the best choice to choose a spherical gaussian surface because the electric field is emitted isotropically from the point charge, as shown in Figure \ref{fig:gauss:choosesphere}
-	
-	\capfig{0.3\textwidth}{figures/Gauss/choosesphere.png}{\label{fig:gauss:choosesphere} .}
-	
-	Finally, there are some cases of less useful choices for gaussian surfaces. While not wrong, they may produce an equation which requires unnecessary integration. These cases will still provide a correct answer if the situation is modelled correctly, but there is often a more simple method of obtaining the answer. Suppose I enclosed a spherical charge with a long cylinder, as shown in Figure \ref{fig:gauss:dontchoosecylinder}. The electric field will be stronger near the middle of the cylinder's length than at the centre of its endcaps, which means that $\vec E$ is not constant in $\int \vec E \cdot d \vec A$, so the integral cannot be simplified to $EA$. A better choice for a gaussian surface in this case would be a sphere, which exploits the symmetry of the charge distribution and provides an $\vec E$ of constant magnitude for all $d \vec A$. Figures \ref{fig:gauss:fluxlinx} and \ref{fig:gauss:fluxdA} give other examples of when we cannot assume $\Phi$ to be equal to $EA$
-	
-	\capfig{0.3\textwidth}{figures/Gauss/dontchoosecylinder.png}{\label{fig:gauss:dontchoosecylinder} .}
+When dealing with point charges which have no shape and are thus spherically symmetric, it makes sense to choose a spherical gaussian surface, as shown in Figure \ref{fig:gauss:choosesphere}, since the electric field is in the radial direction for a point charge.
+\capfig{0.2\textwidth}{figures/Gauss/choosesphere.png}{\label{fig:gauss:choosesphere}. A spherical gaussian surface to enclose a point charge.}
+Finally, there are some cases of less than ideal choices for the gaussian surfaces. While never wrong, they may require rather complicated integrals to determine the flux. These cases will still provide a correct answer if the situation is modelled correctly.
+
+Suppose that I enclose a spherical charge with a cylindrical gaussian surface, as shown in Figure \ref{fig:gauss:dontchoosecylinder}. The electric field will be stronger near the middle of the cylinder's length than at the centre of its endcaps, which means that $\vec E$ is not constant in $\int \vec E \cdot d \vec A$, so the integral cannot be simplified to $EA$. A better choice for a gaussian surface in this case would be a sphere, which exploits the symmetry of the charge distribution and provides results in a $\vec E$ of constant magnitude everywhere along the surface. Figures \ref{fig:gauss:fluxdA} and \ref{fig:gauss:fluxlinx} give other examples of when we cannot assume $\Phi$ to be equal to $EA$.
+\capfig{0.3\textwidth}{figures/Gauss/dontchoosecylinder.png}{\label{fig:gauss:dontchoosecylinder}. A cylindrical surface is not a good choice to enclose a spherical charge.}
 	
 \end{studentOpinion}
 
@@ -336,7 +324,7 @@ which is the same result that we found in Example \ref{ex:chargesfields:finitepl
 
 \section{Charges in a conductor}
 \label{sec:gauss:conductors}
-We can use Gauss' Law to understand how charges arrange themselves on a conductor. Consider (again) an infinite plane that carries a total charge per unit area, $\sigma$, similar to what we considered in Example \ref{ex:gaus:infiniteplate}. In this case, we explicitly consider the plane to be a conductor and to have a finite thickness. If we zoom into the plane, we will see that the charges will migrate to the surface of the plane, as illustrated in Figure \ref{fig:gauss:fluxconductingplane}, where the plane is seen edge on. Thus, the \textbf{charge density at the surface is half of the total charge density} of the plane.
+We can use Gauss' Law to understand how charges arrange themselves on a conductor. Consider (again) an infinite plane that carries a total charge per unit area, $\sigma$, similar to what we considered in Example \ref{ex:gaus:infiniteplate}. In this case, we explicitly consider the plane to be a conductor and to have a finite thickness. If we zoom into the plane, we can illustrate that the charges are located on the surface of the plane, as illustrated in Figure \ref{fig:gauss:fluxconductingplane}, where the plane is seen edge on. Thus, the \textbf{charge density at the surface is half of the total charge density} of the plane.
 \capfig{0.4\textwidth}{figures/Gauss/fluxconductingplane.png}{\label{fig:gauss:fluxconductingplane} Cross-section of a conducting plane where the charges migrate to the surface. A box-shaped gaussian surface is also shown as seen from the side (the third dimension of the box is perpendicular to the plane of the page).}
 To determine the electric field near the plane, we choose a gaussian surface that is a box (as in Example \ref{ex:gaus:infiniteplate}), but require the lower end of the box to go through the plane, as illustrated in Figure \ref{ex:gaus:infiniteplate}. With this choice of gaussian surface, only the top surface (area $a^2$) will have flux through it, since the \textbf{electric field inside a conductor must be zero}\footnote{Since charges can freely move in a conductor, they will move until there is no reason to move. Eventually, the charges accumulate in such a way that the net field in the conductor is zero. For a plane, this means that half of the charges will move to each side, as illustrated.}. The total flux is given by:
 \begin{align*}
@@ -356,9 +344,9 @@ as before, but the factor of 2 now came from the charge density, rather than fro
 \begin{align*}
  E&= \frac{\sigma}{\epsilon_0} \quad \text{(Field near a conducting surface)}
 \end{align*}
-In this case, there is no factor of 2, because the charge density in this equation is the charge density at the surface of the conductor. In the previous equation, the charge density on the surface of the conducing plane was $\frac{\sigma}{2}$.
+In this case, there is no factor of 2, because the charge density in this equation is the charge density of the conductor (not the charge density one side of the surface). In the previous equation, the charge density on the surface of the conducing plane was $\frac{\sigma}{2}$.
 
-Consider, now, a neutral spherical conducting shell, as shown from the side in the left panel of Figure \ref{fig:gauss:sphereshell}. When a charge, $+Q$, is placed at the centre of the shell (right panel), charges inside the shell will move until the field in the shell is identically zero. The negative charges will move towards the inner surface (as they are attracted to $+Q$) and positive charges will be repelled onto the outer surface, under the influence of the electric field created by $+Q$ (shown in the diagram as $\vec E_{Q}$). Eventually, the separation of charges will lead to an electric field (shown in the diagram as $\vec E_{\sigma}$) in the opposite direction. The charges will stop moving once the total electric field in the conductor is zero (when the two fields cancel exactly everywhere in the conductor).
+Consider, now, a neutral spherical conducting shell, as shown from the side in the left panel of Figure \ref{fig:gauss:sphereshell}. When a charge, $+Q$, is placed at the centre of the shell (right panel), charges inside the shell will move until the field inside the conducting material of the shell is identically zero. The negative charges will move towards the inner surface (as they are attracted to $+Q$) and positive charges will be repelled onto the outer surface, under the influence of the electric field created by $+Q$ (shown in the diagram as $\vec E_{Q}$). Eventually, the separation of charges will lead to an electric field (shown in the diagram as $\vec E_{\sigma}$) in the opposite direction. The charges will stop moving once the total electric field in the conductor is zero (when the two fields cancel exactly everywhere in the conductor).
 \capfig{0.6\textwidth}{figures/Gauss/sphereshell.png}{\label{fig:gauss:sphereshell}Left: a neutral conducting spherical shell (seen edge on). Right: A positive charge, $+Q$, placed at the centre of the shell. Charges in the shell will separate in order to keep the electric field inside the conductor zero.}
 We can use Gauss' Law to determine the amount of charge that has accumulated on the inner surface. Consider the gaussian spherical surface, $S_1$, in Figure \ref{fig:gauss:sphereshell}, that is concentric with the shell and has a radius such that the surface is just inside the shell. Since the electric field is zero inside the shell, the flux out of the gaussian surface must be zero. By Gauss' Law, the amount of charge enclosed by the surface must also be zero. Thus, a total charge, $-Q$, will have accumulated on the inner surface of the conductor (since $Q^{enc}=-Q+Q=0$). Because one cannot just create charge from nothing, there must be an equal amount of opposite charge, $+Q$, on the outer surface of the shell. This is true of any conducting material with a cavity inside of it: if you place a charge $+Q$ in the cavity, a charge, $-Q$ will accumulated on the inner surface and a charge, $+Q$, will accumulate on the outer surface.
 
@@ -386,7 +374,7 @@ Note that we found the electric field using Gauss' Law only in this last case, a
 
 \section{Interpretation of Gauss' Law and vector calculus}
 \label{sec:gauss:interpretation}
-In this section, we provide a little more theoretical background and intuition on Gauss' Law, as well as its connection to vector calculus. Very generally, Gauss' Law is a statement that connects a property of a vector field to the ``source'' of that field. We think of mass as the source for the gravitational field, and we think of charge as the source for the electric field. The property of the field that we considered in this case was its ``flux out of a closed surface''.
+In this section, we provide a little more theoretical background and intuition on Gauss' Law, as well as its connection to vector calculus (which is beyond the scope of this textbook, but interesting to have a feeling for). Very generally, Gauss' Law is a statement that connects a property of a vector field to the ``source'' of that field. We think of mass as the source for the gravitational field, and we think of charge as the source for the electric field. The property of the field that we considered in this case was its ``flux out of a closed surface''.
 
 Recall that determining the flux of a field out of a closed surface is equivalent to counting the net number of field lines that exit that closed surface. Field lines must start on a positive charge and must end on a negative charge. Thus, if there is a net number of field lines exiting the surface, there must be a positive charge in the volume defined by the surface (a ``source'' of field lines). If there is a net number of field lines entering the surface, then the volume defined by the surface must enclose a negative charge (a ``sink'' of field lines). Gauss' Law is simply a statement that the number of field lines entering/exiting a closed surface is proportional to the amount of charge enclosed in that volume.
 
@@ -400,7 +388,7 @@ and corresponds to the sum of three partial derivatives evaluated at that positi
 \begin{align*}
 \int_V \nabla \cdot \vec E = \oint_S \vec E \cdot d\vec A
 \end{align*}
-where the $V$ ($S$) on the integral indicate whether the sum (integral) should be carried out over a volume, $V$, or over a closed surface, $S$, as we have practised in this chapter. While it is not important at this level to understand the theorem in detail, the point is that one can convert a ``flux over a closed surface'' into an integral of the divergence of the field. In other words, we can convert a global property (flux) to a local property (divergence). Gauss' Law in terms of divergence can be written as:
+where the $V$ ($S$) on the integral indicates whether the sum (integral) should be carried out over a volume, $V$, or over a closed surface, $S$, as we have practised in this chapter. While it is not important at this level to understand the theorem in detail, the point is that one can convert a ``flux over a closed surface'' into an integral of the divergence of the field. In other words, we can convert a global property (flux) to a local property (divergence). Gauss' Law in terms of divergence can be written as:
 \begin{align*}
 \Aboxed{\nabla \cdot \vec E &= \frac{\rho}{\epsilon_0}}\quad \text{(Local version of Gauss' Law)}
 \end{align*}
@@ -418,9 +406,9 @@ We can define the \textbf{flux} of a uniform and constant vector field, $\vec E$
 \begin{align*}
 \Phi_E = \vec E \cdot \vec A = EA\cos\theta
 \end{align*}
-where, $\vec A$, is a vector that is perpendicular to the surface with a magnitude equal to the area of that surface, and, $\theta$, is the angle between, $\vec A$ and $\vec E$. The flux of a field through a surface is proportional to the number of field lines that cross that surface. If the surface is parallel to the field ($\vec A$ and $\vec E$ are thus perpendicular), the flux through that surface is zero (no field lines cross the surface, the scalar product is zero).
+where, $\vec A$, is a vector that is perpendicular to the surface with a magnitude equal to the area of that surface, and, $\theta$, is the angle between $\vec A$ and $\vec E$. The flux of a field through a surface is proportional to the number of field lines that cross that surface. If the surface is parallel to the field ($\vec A$ and $\vec E$ are thus perpendicular), the flux through that surface is zero (no field lines cross the surface, the scalar product is zero).
 
-If $\vec E$ and $\vec A$ change over the surface ($\vec E$ and/or $\vec A$ change magnitude and/or direction along the surface), then we treat the surface as being made of infinitesimal surface elements over which the two vectors are constant. We define a vector $d\vec A$ to be perpendicular to the surface element with an infinitesimal area, $dA$. The total flux is then obtained by summing the fluxes through each surface element:
+If $\vec E$ and $\vec A$ change over the surface ($\vec E$ and/or $\vec A$ change magnitude and/or direction relative to each other along the surface), then we treat the surface as being made of infinitesimal surface elements over which the two vectors are constant. We define a vector $d\vec A$ to be perpendicular to the surface element with an infinitesimal area, $dA$. The total flux is then obtained by summing the fluxes through each surface element:
 \begin{align*}
 \Phi_E=\int \vec E \cdot d\vec A=\int EdA\cos\theta
 \end{align*}
@@ -430,7 +418,7 @@ In the case of the electric field, Gauss' Law relates the flux of the electric f
 \begin{align*}
 \oint \vec E \cdot d\vec A = \frac{Q^{enc}}{\epsilon_0}
 \end{align*}
-Physically, Gauss' Law is a statement that field lines must begin or end on a charge (electric field lines original from positive charges and terminate on negative charges). If there is a net number of lines coming out of a closed surface (a positive flux), that surface must enclose a positive charge from where those field lines originate. Similarly, if there are the same number of field lines entering a closed surface as there are lines exiting that surface (a flux of zero), then the surface encloses no charge. Gauss' Law states that the number of field lines exiting a closed surface is proportional to the amount of charge enclosed by that surface.
+Physically, Gauss' Law is a statement that field lines must begin or end on a charge (electric field lines originate on positive charges and terminate on negative charges). If there is a net number of lines coming out of a closed surface (a positive flux), that surface must enclose a positive charge from where those field lines originate. Similarly, if there are the same number of field lines entering a closed surface as there are lines exiting that surface (a flux of zero), then the surface encloses no charge. Gauss' Law states that the number of field lines exiting a closed surface is proportional to the amount of charge enclosed by that surface.
 
 Gauss' Law is useful to determine the electric field. However, this can only be done analytically for charge distributions with a very high degree of symmetry. This is because the flux integral is not usually easy to evaluate unless:
 \begin{enumerate}
@@ -479,10 +467,7 @@ This last version has the advantage that it relates a local property of the fiel
 
 
 \begin{definitions}
-	\textbf{Electric flux:} A measurement of an electric field through a closed surface. SI units: [\SI{}{Vm}]. Common variable(s): $\Phi$.
-	\medskip
-	\item \textbf{Vacuum permittivity:} A fundamental physical constant which states the dielectric permittivity of a vacuum. SI units: [\SI{}{Fm^{-1}}]. Common variable(s): $\epsilon_0$.
-
+\item	\textbf{Electric flux:} A measure of the number of electric field lines crossing a surface. SI units: [\si{Vm}]. Common variable(s): $\Phi_E$.
 \end{definitions}
 
 
@@ -492,23 +477,20 @@ This last version has the advantage that it relates a local property of the fiel
 \begin{chapteractivity}{Reflect and research}
 {
 \item Could Gauss' law be applied to magnetism? Why or why not?
+\item What else has Gauss done?
+\item Are there other interaction for which Gauss' Law can be applied?
 \item What are Maxwell's equations? 
 \item How are measurements of flux used in environmental research?
+\item How does one use Gauss' Law to test the $1/r^2$ dependence of Coulomb's Law?
 }
 \end{chapteractivity}
 
-\begin{chapteractivity}{To try at home}
-{
-\item 
-}
-\end{chapteractivity}
 
 \begin{chapteractivity}{To try in the lab}
 {
 \item Propose an experiment to measure the charge of an object using Gauss' law.
 \item Propose an experiment to measure the electric field of a charged object, then compare your experimental results to the theoretical results predicted calculated by Gauss' law.
 \item Simulate the surface charge distribution on the inside and outside of a conducting cubic shell which encloses a point charge.
-
 }
 \end{chapteractivity}
 
@@ -517,15 +499,20 @@ This last version has the advantage that it relates a local property of the fiel
 
 
 \subsection{Problems}
-\begin{problem}{soln:template:chargedsphere}{\label{prob:template:chargedsphere} 
-Consider a sphere which has a charge density of $\rho = ar^2$ and has a radius $R$. What is the electric field at the distances $0\leq d \leq r$ and $r<d$ from the centre of the sphere? 
-	}
-\end{problem}
-
-\begin{problemParts}{soln:template:triangleinshells}{\label{prob:template:triangleinshells} Consider two conducting plates. Both plates have a hollow circle of radius $r$ at their centre. One plate is a square on the outside and the other is a triangle on the outside, both of the outside shapes have a side length of $L$. A point charge of charge $+Q$ is placed at the centre of the hollowed out circle of both plates.}{
-		\item What is the electric field outside of the shells?
-		\item What is the average linear charge density on the inner and outter surfaces of the shells?
-		\item Which sections of the two plates would have the largest charge density?
+\begin{problemParts}{soln:gauss:chargedsphere}{\label{prob:gauss:chargedsphere} 
+Consider a charged sphere of radius, $R$, which has a non-uniform charge density, that varies with radius, as $\rho(r) = ar^2$. }
+{
+\item What is the total charge on the sphere?
+\item What is the electric field as a function of distance from the centre of the sphere outside the sphere, $r>R$?
+\item What is the electric field as a function of distance from the centre of the sphere inside the sphere, $r\leq R$?
+}
+\end{problemParts}
+\vspace{0.5cm}
+\begin{problemParts}{soln:gauss:triangleinshells}{\label{prob:gauss:triangleinshells} Consider two conducting plates which are illustrated in Figure \ref{fig:gauss:squaretriangle}. Both plates have a hollow circle of radius, $R$, at their centre. One plate is a square on the outside and the other is a triangle on the outside, both of the outside shapes have a side length of $L$. A point charge of charge $+Q$ is placed at the centre of the hollowed out circle of both plates.}
+{
+ \item What is the electric field outside of the shells?
+ \item What is the average linear charge density on the inner and outer surfaces of the shells?
+ \item Which sections of the two plates would have the largest charge density?
 	}
 \capfig{0.8\textwidth}{figures/Gauss/squaretriangle.png}{\label{fig:gauss:squaretriangle} A triangular and square shell, both with a hollowed out circular centre and a point charge.}
 
@@ -534,85 +521,79 @@ Consider a sphere which has a charge density of $\rho = ar^2$ and has a radius $
 
 \newpage
 \subsection{Solutions}
-\begin{solution}{prob:template:chargedsphere}\label{soln:template:chargedsphere}
-
-First, we must find the total charge of the sphere. To do this, we will need to integrate $\rho$ over the volume of the sphere:
-
-
+\begin{solutionParts}{prob:gauss:chargedsphere}
+{\label{soln:gauss:chargedsphere}
+\item In order to determine the total charge of the sphere, we divide the sphere into infinitesimal shells of radius $r$, and thickness, $dr$. The volume, $dV$, of one of these infinitesimal shells is their area (given by the area of the surface of a sphere of radius $r$), multiplied by their thickness, $dr$:
 \begin{align*}
-Q& = \int_{0}^{R} \rho dV\\
-Q&= \int_{0}^{R} 4\pi r^4 dr\\
-Q& = \frac{4}{5} \pi R^5
+dV = 4\pi r^2 dr
 \end{align*}
-
-Now that we have our charge, $Q$, we can find the enclosed charge at any distance $r$ by taking the ratio of the volumes, then multiplying it by the total charge of the sphere:
-
+The charge, $dQ$, of one of those shells is given by the charge per unit volume, $\rho(r)$:
 \begin{align*}
-Q_{enc}& = \frac{Q \frac{4}{3}\pi r^3}{\frac{4}{3}\pi R^3}\\
-Q_{enc}&= \frac{Qr^3}{R^3}\\
-Q_{enc}&=\frac{4\pi r^3 R^2}{5}
+dQ = \rho(r) dV = ar^24\pi r^2 dr = 4a\pi r^4 dr
 \end{align*}
-
-Now that we have our enclosed charge for any distance $r$, we must apply Gauss' law:
-
+The total charge of the sphere is found by summing the charge from each shell:
 \begin{align*}
-\Phi & = EA = \frac{Q_{enc}}{\epsilon_0}\\
-E(4\pi r^2)&= \frac{4\pi r^3 R^2}{5\epsilon_0}\\
-E &= \frac{r R^2}{5\epsilon_0}
+Q=\int dQ =\int_0^R4a\pi r^4 dr=\frac{4}{5}a\pi R^5
 \end{align*}
-Which gives our answer for the magnitude of the electric field felt at a distance $r$ from the centre of the shell when $0\leq r \leq R$.
-
-To find the electric field at a distance $r$ from the centre of the sphere when $R<r$, we will apply the same technique, but will instead set the enclosed charge to be constant at $r = R$:
-
+\item Outside of the sphere, we can use a spherical gaussian surface of radius $r$, so that the flux is given by:
 \begin{align*}
-	\Phi & = EA = \frac{Q_{enc}}{\epsilon_0}\\
-	E(4\pi r^2)&= \frac{4\pi R^5}{5\epsilon_0}\\
-	E&= \frac{\pi R^5}{5\epsilon_0 r^2}
+\oint \vec E\cdot d\vec A=4\pi r^2 E
 \end{align*}
+The entire charge of the sphere is enclosed. Applying Gauss' Law, we can determine the electric field outside the sphere:
+\begin{align*}
+\oint \vec E\cdot d\vec A&= \frac{Q^{enc}}{\epsilon_0}\\
+4\pi r^2 E&= \frac{4a\pi R^5}{5\epsilon_0}\\
+\therefore E(r)&=\frac{aR^5}{5\epsilon_0r^2}
+\end{align*}
+and we see that the electric field decreases as the radius squared, which makes sense, since from outside the sphere, we do not know how the charge is distributed within.
+\item Inside the volume of the sphere, we still use a gaussian spherical surface of radius, $r$, so that the flux is given by:
+\begin{align*}
+\oint \vec E\cdot d\vec A=4\pi r^2 E
+\end{align*}
+However, inside the sphere, the gaussian surface only encloses the charge up to a radius of $r$, which we find by integration, similar to part a):
+\begin{align*}
+Q^{enc}=\int dQ =\int_0^r 4a\pi r^4 dr=\frac{4}{5}a\pi r^5
+\end{align*}
+Applying Gauss' Law:
+\begin{align*}
+\oint \vec E\cdot d\vec A&= \frac{Q^{enc}}{\epsilon_0}\\
+4\pi r^2 E&= \frac{4a\pi r^5}{5\epsilon_0}\\
+\therefore E(r)&=\frac{ar^3}{5\epsilon_0r^2}
+\end{align*}
+and we find that the electric field is zero at the centre of the sphere and increases with radius cube inside the sphere.
+}
+\end{solutionParts}
 
-Which gives our final answer.
-
-\end{solution}
 
 
-
-\begin{solution}{prob:template:triangleinshells}\label{soln:template:triangleinshells}
-	
-	\begin{enumerate}[(a)]
-	
-	\item The conducting shells have no net charge, so the only charge in the system is the point charge $Q$, which means that the electric field outside of the shells is simply $E = \frac{kQ}{r^2}$.
-	
-	\item Let's begin with the shell that has a triangle on the outside. We will use Gauss' law to determine the charge density of the inner and outer shells. To do this, we will draw a circle within the shell, $S_1$ and a triangle outside of the outer shell, $S_2$:
-	
-	
-	\capfig{0.6\textwidth}{figures/Gauss/trianglegauss.png}{\label{fig:gauss:trianglegauss} A solution to the triangular conducting shell}
-	
-	 When considering $S_1$ know that the electric field inside of the shell is $0$, so we also know that the flux will be zero. This means that the point charge on the inside of the shell will be equal and opposite to the sum of the surface charges on the inner shell. From here, we divide the net charge by the circumference of the inner shell to determine the linear charge density:
-	
+\begin{solutionParts}{prob:gauss:triangleinshells}
+{\label{soln:gauss:triangleinshells}
+	\item The conducting shells have no net charge, so the only charge in the system is the point charge $Q$. If we draw a spherical gaussian surface, the only enclosed charge will be $Q$, and we can ignore the charges on the plates. The electric field is thus the field from a point charge:
 	\begin{align*}
-		\lambda_{circle} = \frac{-Q}{2\pi r}
+	E= \frac{kQ}{r^2}
 	\end{align*}
-		
-	When considering $S_2$, we know that the $Q_{enc} = +Q$, which means that the total linear charge on the outer triangle will be $+Q$ such that it cancels the $-Q$ along the inner circle, leaving the point charge, $+Q$. The sum of charges would be $Q_{enc} = Q_{point}+Q_{triangle}-Q_{circle}$. Knowing this, we must divide the total charge on the outter shell by the sum of the length of each of the triangle's sides in order to find the average linear charge density:
-	
+
+	\item Let's begin with the shell that has a triangle on the outside. We will use Gauss' law to determine the charge density of the inner and outer shells. To do this, we will draw a circle within the shell, $S_1$ and a triangle outside of the outer shell, $S_2$ as shown in Figure \ref{fig:gauss:trianglegauss}.
+	\capfig{0.6\textwidth}{figures/Gauss/trianglegauss.png}{\label{fig:gauss:trianglegauss} A solution to the triangular conducting shell.}
+When considering $S_1$, we know that the electric field inside of the (conducting) shell is $0$, so that the flux out of $S_1$ will be zero. This means that the point charge on the inside of the shell will be equal and opposite to the sum of the surface charges on the inner shell. From here, we divide the net charge by the circumference of the inner shell to determine the linear charge density:
+	\begin{align*}
+		\lambda_{circle} = \frac{-Q}{2\pi R}
+	\end{align*}	
+When considering $S_2$, we know that the $Q_{enc} = +Q$, which means that the total linear charge on the outer triangle will be $+Q$ such that it cancels the $-Q$ along the inner circle. The sum of charges would be $Q_{enc} = Q_{point}+Q_{triangle}-Q_{circle}$. Knowing this, we must divide the total charge on the outer surface by the sum of the length of each of the triangle's sides in order to find the average linear charge density:
 	\begin{align*}
 		\lambda_{circle} = \frac{Q}{3L}
 	\end{align*}
-	
-	Now, we must solve for the inner and outer linear charge densities of the conducting shell with a square outter surface. We will begin this process by drawing a circle within the shell, $S_1$, and a square outside of the shell, $S_2$
-	
-	\capfig{0.6\textwidth}{figures/Gauss/squaregauss.png}{\label{fig:gauss:squaregauss} A solution to the square conducting shell}
-		
-	For $S_1$, the circle is treated as it was while solving the trianglular shell. The electric field is also $0$ within the square conducting shell, so we know that the average linear charge density is $\frac{-Q}{2\pi r}$.
+Now, we consider the inner and outer linear charge densities of the square conducting shell. We choose two gaussian surfaces, $S_1$, and $S_2$, as shown in Figure \ref{fig:gauss:squaregauss}:
+	\capfig{0.6\textwidth}{figures/Gauss/squaregauss.png}{\label{fig:gauss:squaregauss} A solution to the square conducting shell.}
+For $S_1$, the circle is treated as it was while solving the triangular shell. The electric field is also $0$ within the square conducting shell, so we know that the average linear charge density is $\frac{-Q}{2\pi R}$.
 	
 	When considering $S_2$, we know that $Q_{enc}$ is $+Q$, so we know that the total charge on the square surface of the shell will be $+Q$. This leave us with the following average linear charge density:
 	\begin{align*}
 		\lambda_{square} = \frac{Q}{4L}
 	\end{align*}	
 	
-	\item These plates are charged by the electric field generated by the point charge held within them, which means that the linear charge density of the two plates will be highest at the points along the outer sides which are the shortest distance from the point charge. These points occur in the triangular and square plates at the point which is the greatest distance from their vertices, as shown in Figure \ref{fig:gauss:chargedensity}.
+	\item These plates are charged by the electric field generated by the point charge held within them, which means that the linear charge density of the two plates will be highest at the points along the outer sides which are the shortest distance from the point charge. These points occur in the triangular and square plates at the point which is the closest to the charge, $Q$, as shown in Figure \ref{fig:gauss:chargedensity}.
 	
-	\capfig{0.72\textwidth}{figures/Gauss/chargedensity.png}{\label{fig:gauss:chargedensity} A solution to the square conducting shell}
-	
-	\end{enumerate}
-\end{solution}
+	\capfig{0.72\textwidth}{figures/Gauss/chargedensity.png}{\label{fig:gauss:chargedensity} A solution to the square conducting shell.}
+}
+\end{solutionParts}

@@ -188,41 +188,12 @@ The position vector as a function of time can thus be written as:
            (\SI{-350}{m})\\
          \end{pmatrix}
 \end{align*}
-\textbf{c)} We can plot the trajectory using python:
+\textbf{c)} We can plot the trajectory using python, as in Figure \ref{fig:describingmotioninnd:parabola}.
+\capfig{0.5\textwidth}{figures/DescribingMotionInND/parabola.png}{\label{fig:describingmotioninnd:parabola}Parabolic trajectory of an object with no acceleration in the $x$ direction and a negative acceleration in the $y$ direction.}
 
-\begin{python}[caption=Trajectory in xy plane]
-#import modules that we need
-import numpy as np #for arrays of numbers
-import pylab as pl #for plotting
-
-#define functions for the x and y positions:
-def x(t):
-    return 10*t
-
-def y(t):
-    return 15*t-0.5*10*t**2
-
-#define 10 values of t from 0 to 5 s:
-tvals = np.linspace(0,5,10)
-
-#calculate x and y at those 10 values of t using the functions
-#we defined above:
-xvals = x(tvals)
-yvals = y(tvals)
-
-#plot the result:
-pl.plot(xvals,yvals, marker='o')
-pl.xlabel("x [m]",fontsize=14)
-pl.ylabel("y [m]",fontsize=14)
-pl.title("Trajectory in the xy plane",fontsize=14)
-pl.grid()
-pl.show()
-\end{python}
-\begin{poutput}
-(*\capfig{0.5\textwidth}{figures/DescribingMotionInND/parabola.png}{\label{fig:describingmotioninnd:parabola}Parabolic trajectory of an object with no acceleration in the $x$ direction and a negative acceleration in the $y$ direction.}*)
-\end{poutput}
 As you can see, the trajectory is a parabola, and corresponds to what you would get when throwing an object with an initial velocity with upwards (positive $y$) and horizontal (positive $x$) components. If you look at only the $y$ axis, you will see that the object first goes up, then turns around and goes back down. This is exactly what happens when you throw a ball upwards, independently of whether the object is moving in the $x$ direction. In the $x$ direction, the object just moves with a constant velocity. The points on the graph are drawn for constant time intervals (the time between each point, $\Delta t$ is constant). If you look at the distance between points projected onto the $x$ axis, you will see that they are all equidistant and that along $x$, the motion corresponds to that of an object with constant velocity. 
 \end{example}
+\newpage
 \begin{checkpoint}{\begin{MCquestion}{In example \ref{ex:describingmotioninnd:parabola}, what is the velocity vector exactly at the top of the parabola in Figure \ref{fig:describingmotioninnd:parabola}?}
 \item $\vec v=(\SI{10}{m/s})\hat x+(\SI{15}{m/s})\hat y$
 \item $\vec v=(\SI{15}{m/s})\hat y$
@@ -230,10 +201,10 @@ As you can see, the trajectory is a parabola, and corresponds to what you would 
 \item None of the above.
 \end{MCquestion}}
 \end{checkpoint}
-\newpage
+%\vspace{-1cm}
 \begin{example}{
-A monkey is hanging from a tree branch and you want to feed the monkey by throwing it a banana (Figure \ref{fig:describingmotioninnd:monkeytreeexample}). You know that the monkey is easily frightened and will let go of the tree branch the instant you throw the banana. The monkey is a horizontal distance $d$ away and a height $h$ above the point from which you release the banana when you throw it. At what angle with respect to the horizontal should you throw the banana so that the banana reaches the monkey?
-\capfig{0.6\textwidth}{figures/DescribingMotionInND/MonkeyTreeExample.png}{\label{fig:describingmotioninnd:monkeytreeexample} Feeding a monkey in a tree.}}
+A monkey is hanging from a tree branch and you want to feed the monkey by throwing it a banana (Figure \ref{fig:describingmotioninnd:monkeytreeexample}). You know that the monkey is easily frightened and will let go of the tree branch the instant you throw the banana. The monkey is a horizontal distance $d$ away and a height $h$ above the point from which you release the banana when you throw it. At what angle with respect to the horizontal should you throw the banana so that the banana reaches the monkey? 
+\capfig{0.55\textwidth}{figures/DescribingMotionInND/MonkeyTreeExample.png}{\label{fig:describingmotioninnd:monkeytreeexample} Feeding a monkey in a tree.}}
 This question is asking us to find the angle, $\theta$, between the banana's initial velocity vector, $\vec v_{0B}$, and the horizontal for the banana to hit the monkey. This angle is given by the horizontal ($v_{B0x}$) and vertical ($v_{B0y}$) components of the initial velocity vector of the banana:
 \begin{align*}
 \tan\theta&=\frac{v_{B0y}}{v_{B0x}}
@@ -643,8 +614,7 @@ which is sometimes called the ``angular frequency'' instead of the angular veloc
 \item \SI{500}{Hz}
 \end{MCquestion}}
 \end{checkpoint}
-
-\newpage
+\vspace{-0.5cm}
 \begin{studentOpinion}{Olivia}There's a trick I like to use to remember how linear and angular velocities work. Figure \ref{fig:describingmotioninnd:handcircularmotion} shows your hand in two positions, which we call (1) and (2).
 \capfig{0.7\textwidth}{figures/DescribingMotionInND/HandPolarCoordinates.png}{\label{fig:describingmotioninnd:handcircularmotion} How to use your hand to better understand circular motion} 
 Let's say you want to describe the location of your fingers in (2). Start by putting your hand in position (1). This is the position where $\theta=0$ and $s=0$. Imagine that your wrist (or your thumb, whichever you prefer) is fixed at the origin. If you keep your fingers perpendicular to your hand, they will always point in the positive $s$ direction. 
@@ -789,14 +759,20 @@ f=\frac{1}{T}&=\frac{\omega}{2\pi}
 \end{multicols}
 \end{importantEquations}
 
-
 \begin{definitions}
+    \textbf{Position vector:} A vector, usually labelled, $\vec r$, to describe the position of an object relative to the origin of a coordinate system. In Cartesian coordinates, the position vector is simply given by the $x$, $y$, and $z$ coordinates of the object, $\vec r = x\hat x = y \hat y+ z\hat z$.
 
-	\textbf{Angle:} The angular distance between two points as viewed by an external observer at an arbitrary distance from the two points. SI units: none. Common variable(s): $\theta$, $\phi$.
-	\medskip
-	\item \textbf{Angular velocity:} The rate at which an angle changes with respect to time. SI units: [\SI{}{s^{-1}}]. Common variable(s): $\omega$.
-	\medskip
-	\item \textbf{Angular acceleration:} The rate at which angular velocity changes with respect to time. SI units: [\SI{}{s^{-2}}]. Common variable(s): $\alpha$.
+    \item \textbf{Velocity vector:} A vector, usually labelled, $\vec v$, which corresponds to the time-rate of change (the derivative with respect to time) of the position vector.
+
+    \item \textbf{Acceleration vector:} A vector, usually labelled, $\vec a$, which corresponds to the time-rate of change (the derivative with respect to time) of the velocity vector.
+
+	\item \textbf{Angular position:} The angle that the position vector makes with either the $x$ or $z$ axis. SI units: none. Common variable(s): $\theta$ (angle with the $z$ axis), $\phi$ (angle with the $x$ axis).
+
+	\item \textbf{Angular velocity:} The rate at which an angle changes with respect to time. SI units: [\SI{}{s^{-1}}]. Common variable(s): $\vec \omega$. The angular velocity can be represented by a vector, using the right-hand rule for axial vectors.
+
+	\item \textbf{Angular acceleration:} The rate at which angular velocity changes with respect to time. SI units: [\SI{}{s^{-2}}]. Common variable(s): $\vec \alpha$. The angular acceleration can be represented by a vector, using the right-hand rule for axial vectors. 
+
+	\item \textbf{Uniform circular motion}: The motion of an object with constant speed around a circle.
 \end{definitions}
 
 \newpage
