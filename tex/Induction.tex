@@ -63,9 +63,19 @@ You can use Lenz's Law to determine the direction of induced currents. In genera
 
 The negative sign in Faraday's Law is not arbitrary (as we saw above, it gives the correct direction for the magnetic moment of the induced current, given our arbitrary choice of direction for $d\vec A$). In practice, one can often use Lenz's Law to determine the direction of the induced current (so that it counteracts the changing flux), and Faraday's Law to determine the magnitude of the induced voltage.
 
-%Checkpoint question: A figure with a changing magnetic field (e.g. pulling a loop out of region magnetic field, or chaning the radius of the loop), determine the direction of the current (clockwise or counter clockwise)
+\begin{checkpoint}{}
+	\begin{MCquestion}{A loop is in a magnetic field has an area vector which points in the same direction as the magnetic field. The magnetic field and the area of the loop are both decreasing. The induced voltage in the loop is...}
+		\item Positive.
+		\item Negative. \correct
+	\end{MCquestion}
+\end{checkpoint}
 
-%Checkpoint question: A loop next to a wire with changing current. In which direction is the induced current (see Giancolli Fig 29-11, Exercise B)
+\begin{checkpoint}{}
+	\begin{MCquestion}{A loop is in a magnetic field has an area vector which points in the same direction as the magnetic field. If the area of the loop is increasing, then the induced voltage in the loop is...}
+		\item Positive.
+		\item Negative. \correct
+	\end{MCquestion}
+\end{checkpoint}
 
 \begin{example}{\label{ex:induction:changingB}A uniform time-varying magnetic field is given by:
 \begin{align*}
@@ -237,7 +247,13 @@ You may notice that the lights in your house dim briefly as your refrigerator tu
 \section{The induced electric field and eddy currents}
 So far, we have described electromagnetic induction in terms of the voltage that is induced by a changing magnetic field. This voltage is related to an electric field, which we discuss in this section. In Faraday's  Law, the voltage is induced across a closed loop (and can be thought of as an ideal battery placed in the loop). This is illustrated in Figure \ref{fig:induction:inducedE} which shows a loop in the plane of the page, and a magnetic field out of the plane of the page.
 \capfig{0.4\textwidth}{figures/Induction/inducedE.png}{\label{fig:induction:inducedE} A varying magnetic field will induce a circular electric field.}
-%TODO Checkpoint question: In Figure \ref{fig:induction:inducedE}, with the induced voltage as shown, is the magnetic field increasing or decreasing (correct)?
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{In Figure \ref{fig:induction:inducedE}, with the induced voltage as shown, is the magnetic field increasing or decreasing?}
+		\item The magnetic field is increasing.
+		\item The magnetic field is decreasing. \correct
+	\end{MCquestion}
+\end{checkpoint}
 As you recall, the electric potential difference between two points, $A$ and $B$, is obtained from the electric field:
 \begin{align*}
 \Delta V = \int_A^B \vec E\cdot d\vec l
@@ -307,7 +323,12 @@ In the bottom left part of the wheel, the magnetic flux is increasing, since the
 
 Again, this is no more than conservation of energy at play. Since we induce currents by making the wheel move into/out of a region of magnetic field, we must do work, or we would be able to harvest free energy from the eddy current (e.g. by running them through a light bulb). Any time that we try to move a conductor through a magnetic field, in a way that current is induced, we will have to exert a force and do work. In the case of magnetic braking, the wheel will convert its rotational kinetic energy into heat (the eddy currents will heat up the wheel). The main issue with magnetic braking is that one needs to be able to dissipate the heat. The main advantage is that there are no parts that wear out, as opposed to braking with friction. In addition, magnetic braking is very smooth, and only acts when there is motion. As soon as the wheel stops rotating, the magnetic flux is constant everywhere and the eddy currents disappear.
 
-%TODO Referring to Figure \ref{fig:induction:magneticbrake}, would the brake still work if the magnetic field was into the page instead of out of the page? (correct: yes)
+\begin{checkpoint}{}
+	\begin{MCquestion}{Suppose that the magnetic field in Figure \ref{fig:induction:magneticbrake} pointed into the page. Would the magnetic break still work?}
+		\item Yes. \correct
+		\item No.
+	\end{MCquestion}
+\end{checkpoint}
 
 \section{Transformers}
 The electric power generated in power stations is transmitted using high-voltage transmission lines, typically with voltages above $\SI{300000}{V}$ for long distances. However, that voltage is not usable in our households, as our appliances expect a voltage around $\SI{120}{V}$ (or $\SI{220}{V}$ in Europe). Transformers use electromagnetic induction to transform one \textbf{alternating voltage} into another. Figure \ref{fig:induction:transformer} illustrates a transformer.
@@ -328,13 +349,25 @@ Since the flux (and thus its time-derivative) are the same in both coils, we can
 \therefore \Delta V_s &= \frac{N_p}{N_s}\Delta V_p
 \end{align*}
 Thus, with a transformer, one simply needs to set the ratio of the number of loops in each coil in order to transform one voltage into another.
-%TODO Checkpoint: Which coil will have the highest voltage? The one with the most loops (correct) or the one with the least loops
-%TODO Checkpoint: Which coil will have the highest current? correct: the one with less loops (since P=IV has to be the same in both coils)
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{Which coil in Figure \ref{fig:induction:transformer} has the highest voltage?}
+		\item The one with the most loops. \correct
+		\item The one with the least loops.
+	\end{MCquestion}
+\end{checkpoint}
+
+\begin{checkpoint}{}
+	\begin{MCquestion}{Which coil in Figure \ref{fig:induction:transformer} will have the highest current?}
+		\item The one with the most loops.
+		\item The one with the least loops. \correct
+	\end{MCquestion}
+\end{checkpoint}
 
 \begin{example}{A power plant produces energy at rate of $P=\SI{150}{kW}$, and wishes to transmit this power as efficiently as possible to a town. The power lines between the power plant and the town have a resistance of $R=\SI{0.5}{\Omega}$. Compare the amount of power dissipated in the transmission lines depending on whether the power is transmitted through a voltage of $\SI{300000}{V}$ or $\SI{300}{V}$.}
 We model the transmission of power from the power plant to the town using the circuit shown in Figure \ref{fig:induction:powerplant}.
-\capfig{0.2\textwidth}{figures/Induction/powerplant.png}{\label{fig:induction:powerplant} Circuit for a power plant transmitting power to a town.}
-%TODO The town need to be an original drawing. I think you could probably just to a black trace of some roof tops or something...
+\capfig{0.25\textwidth}{figures/Induction/powerplant.png}{\label{fig:induction:powerplant} Circuit for a power plant transmitting power to a town.}
+
 We do not know the resistance of the town, but we can still calculate the power that is dissipated in the transmission lines that have a total resistance of $R=\SI{0.5}{\Omega}$. The power plant produces power, $P$, and transmits it through the lines at a potential difference, $\Delta V$, resulting in a current, $I$:
 \begin{align*}
 P &= I\Delta V\\
@@ -496,21 +529,27 @@ c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
 \begin{importantEquations}
 \medskip
 \begin{multicols}{2}
-\textbf{Momentum of a point particle:}
+\textbf{Faraday's Law:}
 \begin{align*}
-\vec p = m\vec v \\
-\frac{d}{dt}\vec p = \sum \vec F = \vec F^{net}
+\oint \vec E\cdot d\vec l &= -\frac{d\Phi_B}{dt}
 \end{align*}
 \columnbreak
 \\
-\textbf{Position of the Centre of Mass \\ of a system:}
+\textbf{Voltage produced by a generator:}
 \begin{align*}
-\vec r_{CM} &=\frac{1}{M}\sum_i m_i\vec r_i 
+\Delta V = NAB\omega \sin(\omega t) 
+\end{align*}
+\medskip
+\textbf{Counter torque on a generator:}
+\begin{align*}
+\tau = \frac{NA^2B^2\omega\sin^2(\omega t)}{R}
 \end{align*}
 \medskip
 \end{multicols}
 \end{importantEquations}
-
+\begin{definitions}
+	\textbf{Magnetic flux:} The dot product between a magnetic field and the area of the surface that it moves through. SI units: [\SI{}{Wb}]. Common variable(s): $\Phi_B$.
+\end{definitions}
 \newpage
 \section{Thinking about the material}
 
@@ -527,15 +566,11 @@ c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
 }
 \end{chapteractivity}
 
-\begin{chapteractivity}{To try at home}
-{
-\item Try
-}
-\end{chapteractivity}
-
 \begin{chapteractivity}{To try in the lab}
 {
-\item Propose an experiment
+\item Construct an AC generator.
+\item Propose an experiment to measure Earth's magentic field using Induction.
+\item Propose an experiment to measure a bar magnet's strength using Induction.
 }
 \end{chapteractivity}
 
@@ -543,7 +578,8 @@ c = \frac{1}{\sqrt{\epsilon_0\mu_0}}
 \section{Sample problems and solutions}
 \subsection{Problems}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
-The the 1950s, the Royal Canadian Air Force was in the process of creating an interceptor jet called the Avro Arrow. This jet reached a speed of mach 1.9 ($\SI{652}{ms^{-1}}$), and was considered one of the most advanced airplanes that existed at the time. Suppose the Avro Arrow is travelling at a velocity of $v = \SI{652}{ms^{-1}}$ at an angle of $\theta = \frac{\pi}{6}$ through Earth's magnetic field, $B = \SI{5.2e-5}{T}$, as shown in Figure TODO. Knowing that the Avro Arrow had a wingspan of $l = \SI{15}{m}$, Identify which wing is positively charged, which wing is negatively charged, and calculate the induced voltage across the wings.
+The the 1950s, the Royal Canadian Air Force was in the process of creating an interceptor jet called the Avro Arrow. This jet reached a speed of mach 1.9 ($\SI{652}{ms^{-1}}$), and was considered one of the most advanced airplanes that existed at the time. Suppose the Avro Arrow is travelling at a velocity of $v = \SI{652}{ms^{-1}}$ through Earth's magnetic field, $B = \SI{5.2e-5}{T}$, as shown in Figure \ref{fig:induction:avro}. Knowing that the Avro Arrow had a wingspan of $l = \SI{15}{m}$, Identify which wing is positively charged, which wing is negatively charged, and calculate the induced voltage across the wings.
+\capfig{0.25\textwidth}{figures/Induction/avro.png}{\label{fig:induction:avro} The Avro Arrow moving through a magnetic field.}
 }
 \end{problem}
 \begin{problem}{soln:template:ballistic}{\label{prob:template:ballistic} 
@@ -564,8 +600,10 @@ From here, we will use Faraday's law to calculate the induced voltage across the
 \Delta V &= \frac{d\Phi_B}{dt}\\
 \Delta V &= \frac{dBlvt\cos\theta}{dt}\\
 \Delta V &= Blv\cos\theta \\
-\Delta V &= (\SI{5.2e-5}{T})(\SI{15}{m})(\SI{652}{ms^{-1}})\cos\frac{\pi}{6}
+\Delta V &= (\SI{5.2e-5}{T})(\SI{15}{m})(\SI{652}{ms^{-1}})\\
+\Delta V &= \SI{0.51}{V}
 \end{align*}
+Which is the final answer.
 \end{solution}
 \subsection{Solutions}
 \begin{solution}{prob:template:ballistic}\label{soln:template:ballistic}
