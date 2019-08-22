@@ -1,0 +1,425 @@
+\usepackage{mathtools} % for \Aboxed
+\usepackage{paralist}
+\usepackage{calc}
+\usepackage{subfig}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage[font={small,it}]{caption}
+\usepackage[pdftex]{graphicx} %Does not work in pressbooks!!!
+\usepackage{fancyhdr,lastpage}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{comment}
+\usepackage{ifthen}
+\usepackage{color}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage[explicit]{titlesec}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage[table]{xcolor}
+%\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{titlesec} %for spacing around titles
+\usepackage{caption}
+\usepackage[separate-uncertainty = true]{siunitx}
+\usepackage{float}
+\restylefloat{table}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+%\lstset{language=Python,showstringspaces=false,commentstyle=}
+\usepackage{tikz}
+\usepackage[american,smartlabels]{circuitikz}%for drawing circuits
+
+\usetikzlibrary{arrows}
+
+%%Some math and other shortcuts
+\newcommand{\chloens}{Chlo\"e}
+\newcommand{\chloe}{Chlo\"e~}
+\newcommand{\die}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddt}{\frac{d}{dt}}
+\newcommand{\lagd}{\mathcal{L}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\angstrom}{\textup{\AA}}
+\newcommand{\ampere}{Amp\`ere}
+\newcommand{\amperesp}{Amp\`ere~}
+
+\newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}} % for a vector of a primed quantity, e.g. \vec p ', should be \pvec p'
+
+%Colours
+\definecolor{mygreen}{rgb}{0.2,0.6,0}
+\definecolor{TBgreen}{rgb}{0.0,0.5,0.0}
+\definecolor{TBblue}{rgb}{0.0, 0.58, 0.71}
+\definecolor{TBred}{rgb}{0.8, 0.25, 0.33}
+\definecolor{TBorange}{rgb}{0.89, 0.35, 0.13}
+\definecolor{TBPurple}{rgb}{0.6,0.4,0.8}
+
+%Stuff for writing code:
+
+\lstset{ %
+  belowskip=0pt,
+  aboveskip=0pt,
+  caption=\relax,
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={(*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  otherkeywords={*,...},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{black}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{red},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+%Environments for writing code
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\renewcommand{\lstlistingname}{Python Example}
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+
+\lstnewenvironment{python}[1][]{
+  \lstset{#1, language=Python}%
+  \renewcommand\lstlistingname{Python Code}
+}{}
+
+\lstnewenvironment{poutput}{
+ \lstset{caption=\mbox{}, language=,aboveskip=-3pt}
+ \addtocounter{lstlisting}{-1}
+ \renewcommand\lstlistingname{Output}
+}{}
+
+
+%%Pretty chapter headings:
+\newlength\chapnumb
+\setlength\chapnumb{4cm}
+
+\titleformat{\chapter}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \fontsize{120}{110}\selectfont\thechapter}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \mbox{}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+
+
+%%%spacing around titles
+%\setlength{\parindent}{0pt}
+%\parskip = \baselineskip
+
+%spacing around captions (e.g. caption after a table)
+\captionsetup{belowskip=6pt,aboveskip=4pt}
+
+\titlespacing*{\chapter}
+{0pt}{0ex}{0ex}
+\titlespacing*{\section}
+{0pt}{1ex}{1.5ex}
+\titlespacing*{\subsection}
+{0pt}{1ex}{1.5ex}
+\titlespacing*{\subsubsection}
+{0pt}{1ex}{1.5ex}
+
+%%% Spacing in lists:
+\setlist{nosep}
+
+%%Verticall spacing between table rows
+\renewcommand{\arraystretch}{1.5}
+
+\setlength{\intextsep}{12pt}
+
+%space before itemized list:
+%\setlength{\topsep}{-10pt} %does nothing?
+
+%%Simplifed figure environment:
+
+\newenvironment{capfig}[3]{\begin{center}\includegraphics[width=#1]{#2}\captionof{figure}{#3}\end{center}}{}
+
+
+%Wrap figure environments (right or left). Argument #1 (default value 12, specified as optional), is the number of
+%lines that the figure should take.
+%space around wrap figures:
+%\setlength{\intextsep}{20pt}%
+%\setlength{\columnsep}{5pt}%
+\newenvironment{Rwcapfig}[4][0]{
+\begingroup
+%\setlength{\intextsep}{0pt}%
+\setlength{\columnsep}{10pt}%
+\begin{wrapfigure}[#1]{R}{#2}\centering\includegraphics[width=#2]{#3}\caption{#4}\end{wrapfigure}}{\endgroup}
+
+\newenvironment{rwcapfig}[4][0]{
+\begingroup
+%\setlength{\intextsep}{0pt}%
+\setlength{\columnsep}{10pt}%
+\begin{wrapfigure}[#1]{r}{#2}\centering\includegraphics[width=#2]{#3}\caption{#4}\end{wrapfigure}}{\endgroup}
+
+\newenvironment{Lwcapfig}[4][0]{
+\begingroup
+%\setlength{\intextsep}{0pt}%
+\setlength{\columnsep}{10pt}%
+\begin{wrapfigure}[#1]{L}{#2}\centering\includegraphics[width=#2]{#3}\caption{#4}\end{wrapfigure}}{\endgroup }
+
+
+\newenvironment{lwcapfig}[4][0]{
+\begingroup
+%\setlength{\intextsep}{0pt}%
+\setlength{\columnsep}{10pt}%
+\begin{wrapfigure}[#1]{l}{#2}\centering\includegraphics[width=#2]{#3}\caption{#4}\end{wrapfigure}}{\endgroup }
+
+\newenvironment{lwfig}[3][0]{
+\begingroup
+\setlength{\intextsep}{0pt}%
+\setlength{\columnsep}{10pt}%
+\begin{wrapfigure}[#1]{l}{#2}\centering\includegraphics[width=#2]{#3}\end{wrapfigure}}{\endgroup }
+
+%Environments (in the works) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Environments to Keep
+%%Learning Objectives:
+\newenvironment{learningObjectives}[1]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBblue, minimum width=5cm, rounded corners=0.2cm]
+        {\strut Learning Objectives};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBblue,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}\begin{itemize}[label=\textcolor{TBblue}{\textbullet}] #1 \end{itemize}}{\end{mdframed}}
+
+
+%%Opening Question:
+\newenvironment{opening}[1]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBblue, minimum width=5cm,rounded corners=0.2cm]
+        {\strut Think About It};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBblue,backgroundcolor=TBblue!5,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}[nobreak=true]\relax #1}{%
+\end{mdframed}}
+
+%Problems
+\newcounter{problem}[chapter]
+\def\theproblem{\thechapter-\arabic{problem}}
+
+\newenvironment{problem}[2]
+  {\refstepcounter{problem}\textbf{Problem \theproblem: }#2 (\hyperref[#1]{Solution})} %
+  {\vspace{2ex}}
+
+\newenvironment{problemParts}[2]
+  {\refstepcounter{problem}\textbf{Problem \theproblem: }#2 (\hyperref[#1]{Solution}) %
+  \begin{enumerate}[label=\alph*),topsep=-10pt]}%
+   {\end{enumerate}}
+  {\vspace{2ex}}
+
+\newenvironment{MCquestion}[1]{#1%
+   \begin{enumerate}[label=\Alph*),topsep=-10pt]}{%
+   \end{enumerate}}
+
+%Example Box with counter
+\newcounter{example}[chapter]
+\def\theexample{\thechapter-\arabic{example}}
+\newenvironment{example}[2]{%
+\refstepcounter{example}%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBred, minimum width=5cm,rounded corners=0.2cm]
+        {\strut Example~\theexample};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    skipabove=\strutbox,
+    innertopmargin={0.5cm},
+    linecolor=TBred,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+    %frametitleaboveskip=-\strutbox
+}
+\begin{mdframed}[]\relax #1 \leavevmode \\ \newline { \color{TBred}\textsf{\large Solution}} \\ {\color{TBred}\rule[10pt]{\textwidth}{1pt}}  #2}{%
+\end{mdframed}}
+
+%Review Box
+\newenvironment{review}[1]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBorange, minimum width=5cm,rounded corners=0.2cm]
+        {\strut Review Topics};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBorange,backgroundcolor=TBorange!5,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}[nobreak=true]\relax #1}{%
+\end{mdframed}}
+
+%Reflect and Research
+\newenvironment{chapteractivity}[2]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBgreen!80, minimum width=5cm,rounded corners=0.2cm]
+        {\strut #1};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBgreen!80,backgroundcolor=TBgreen!5,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}\begin{enumerate}[itemsep=1ex] #2
+   \end{enumerate}}
+{\end{mdframed}}
+
+
+
+%%Checkpoint question in a box, with counter:
+\newcounter{checkpoint}[chapter]
+\def\thecheckpoint{\thechapter-\arabic{checkpoint}}
+
+\newenvironment{checkpoint}[1]{%
+\refstepcounter{checkpoint}%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBgreen!80, minimum width=5cm,rounded corners=0.2cm]
+        {\strut Checkpoint~\thecheckpoint};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBgreen!80,backgroundcolor=TBgreen!5,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}[nobreak=true]\relax #1}{%
+\end{mdframed}}
+
+
+%Student Opinion with option for student name
+\newenvironment{studentOpinion}[2]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBorange, minimum width=5cm,rounded corners=0.2cm]
+        {\strut #1's Thoughts};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    linecolor=TBorange,%
+    linewidth=1pt,topline=true,
+    skipabove=\strutbox,
+    innertopmargin={0.5cm},%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}[]\relax #2}{%
+\end{mdframed}}
+
+%%Important Equations:
+\newenvironment{importantEquations}[1]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBblue, minimum width=5cm,rounded corners=0.2cm]
+        {\strut Important Equations};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBblue,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}[nobreak=false]\relax #1}{%
+\end{mdframed}}
+
+%%Definitions
+\newenvironment{definitions}[1]{%
+	\mdfsetup{%
+		frametitle={%
+			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+			\node[anchor=west,rectangle,fill=TBPurple, minimum width=5cm,rounded corners=0.2cm]
+			{\strut Important Definitions};},
+		frametitlefont=\color{white}\sffamily\bfseries,
+		innertopmargin=0pt,linecolor=TBPurple,%
+		linewidth=1pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+	}
+	\vspace{10pt}
+	\begin{mdframed}[nobreak=false]\relax #1}{%
+\end{mdframed}}
+
+%%Key Takeaways:
+\newenvironment{chapterSummary}[1]{%
+\mdfsetup{%
+    frametitle={%
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=west,rectangle,fill=TBblue, minimum width=5cm,rounded corners=0.2cm]
+        {\strut Key Takeaways};},
+    frametitlefont=\color{white}\sffamily\bfseries,
+    innertopmargin=0pt,linecolor=TBblue,backgroundcolor=TBblue!5,%
+    linewidth=1pt,topline=true,%
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+\vspace{10pt}
+\begin{mdframed}[]\relax #1}{%
+\end{mdframed}}
+
+\newcounter{solution}[chapter]
+\def\thesolution{\thechapter-\arabic{solution}}
+
+\newenvironment{solution}[2]{\refstepcounter{solution}\textbf{Solution to problem \ref{#1}:} #2}
+{\vspace{2ex}}
+
+\newenvironment{solutionParts}[2]{\refstepcounter{solution}\textbf{Solution to problem \ref{#1}:}
+  \begin{enumerate}[label=\alph*),topsep=-10pt]
+   #2
+  \end{enumerate}}
+  {\vspace{2ex}}
+
+%%Reflect and Research Questions with Counter
+\newcounter{tQuestion}[chapter]
+\def\therQuestion{\thechapter-\arabic{tQuestion}}
+
+\newenvironment{tQuestion}[1]{\refstepcounter{tQuestion}%
+    \textbf{Activity~\therQuestion: }#1}
+
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=.0in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{3}
