@@ -6,8 +6,8 @@ Download the textbook here: [Introductory Phyiscs: Building Models to Describe O
 In addition to the numerous examples throughout the narrative and two sample problems at the end of each chapter, the textbook includes an extensive question library, which is provided with just questions, or with answers (but not solutions). Solutions can be made available to instructors upon request (in Latex format, along with the questions, making it straightforward to generate assignments with and without solutions). 
 
 Download the question library:
-  * [Question Library (only questions)](https://github.com/OSTP/PhysicsArtofModelling/raw/master/QuestionLibrary_Questionss.pdf)
-  * [Question Library (with most answers, no solutions)](https://github.com/OSTP/PhysicsArtofModelling/raw/master/QuestionLibrary_Answers.pdf)
+  * [Question Library (only questions)](https://github.com/OSTP/PhysicsArtofModelling/raw/master/QuestionLibrary_Questions.pdf)
+  * [Question Library (with most answers)](https://github.com/OSTP/PhysicsArtofModelling/raw/master/QuestionLibrary_Answers.pdf)
 
 
 The textbook is available in PDF, but anyone is welcome to compile their own version including or excluding chapters. This is done by modifying the file /tex/BuildingModelsToDescribeOurWorld.tex. 
