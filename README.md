@@ -1,7 +1,7 @@
 # Introductory Physics: Building models to describe our World
 This is an open-access textbook for calculus-based introductory courses. Anyone that complies with the license is welcome to modify and use this work for their own use, as well as contribute. The textbook is specifically intended for a flipped-classroom approach, wherein students complete readings at home and the material is then discussed in class. The textbook thus contains questions and activities to engage readers. This text also includes a curriculum in experimental physics, detailing the scientific method and process, including chapters that cover writing and reviewing proposals, writing and reviewing reports, analyzing data, and an introduction to python. Finally, this textbook was written with many contributions from students! We hope that you may find it useful, and we are interested to know if you are using it!
 
-[Introductory Phyiscs: Building Models to Describe Our Wordl]("https://github.com/OSTP/PhysicsArtofModelling/blob/master/tex/BuildingModelsToDescribeOurWorld.pdf")
+[Introductory Phyiscs: Building Models to Describe Our World](https://github.com/OSTP/PhysicsArtofModelling/blob/master/tex/BuildingModelsToDescribeOurWorld.pdf)
 
 In addition to the numerous examples throughout the narrative and two sample problems at the end of each chapter, the textbook includes an extensive question library, which is provided with just questions, or with answers (but not solutions). Solutions can be made available to instructors upon request (in Latex format, along with the questions, making it straightforward to generate assignments with and without solutions). 
 
