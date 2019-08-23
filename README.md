@@ -8,7 +8,7 @@ This is an open-access textbook for calculus-based introductory physics courses.
 
 Download the textbook here: [Introductory Phyiscs: Building Models to Describe Our World](https://github.com/OSTP/PhysicsArtofModelling/raw/master/tex/BuildingModelsToDescribeOurWorld.pdf)
 
-In addition to the numerous examples throughout the narrative and two sample problems at the end of each chapter, the textbook includes an extensive question library, which is provided with just questions, or with answers (but not solutions). Solutions can be made available to instructors upon request (in Latex format, along with the questions, making it straightforward to generate assignments with and without solutions). 
+In addition to the numerous examples throughout the narrative and two sample problems at the end of each chapter, the textbook comes with an extensive "question library", which is provided with just questions, or with answers (but not solutions). Solutions can be made available to instructors upon request (in Latex format, along with the questions, making it straightforward to generate assignments with and without solutions). 
 
 Download the question library:
   * [Question Library (only questions)](https://github.com/OSTP/PhysicsArtofModelling/raw/master/QuestionLibrary_Questions.pdf)
