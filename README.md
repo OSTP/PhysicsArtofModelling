@@ -27,7 +27,7 @@ The textbook is available in PDF, but anyone is welcome to compile their own ver
 7. Work and energy
 8. Potential energy and conservation of energy
 9. Gravity
-10. Linear momentum and centre of mass
+10. Linear momentum and the centre of mass
 11. Rotational dynamics
 12. Rotational energy and momentum
 13. Simple harmonic motion
