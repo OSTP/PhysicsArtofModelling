@@ -1,0 +1,32 @@
+\documentclass[12pt, openany]{book}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage[font={small,it}]{caption}
+\usepackage[pdftex]{graphicx} %Does not work in pressbooks!!!
+\usepackage{color}
+\usepackage{caption}
+\usepackage[separate-uncertainty = true]{siunitx}
+\usepackage{tikz}
+\usepackage[american,smartlabels]{circuitikz}%for drawing circuits
+
+\usetikzlibrary{arrows}
+
+\begin{document}
+
+\begin{center}
+\begin{circuitikz}[]
+\draw (0,0) to [battery1,l=$\Delta V$,*-*, i<=$I$] (4,0)
+      to [short,i<=$I$] (4,2)
+      to [R,l_=$R_{motor}$,*-] (2,2) 
+      to [battery1,l_=Back emf,-*, invert] (0,2)
+      to [short,i<=$I$](0,0);  
+     \draw (1.65,0.3) node{$+$};
+     \draw (2.35,0.3) node{$-$};
+     \draw (0.65,1.7) node{$+$};
+     \draw (1.35,1.7) node{$-$};
+\end{circuitikz}
+\captionof{figure}{\label{fig:induction:backemf}A simple circuit illustrating how a motor, with resistance, $R_{motor}$, will generate a ``back emf'', equivalent to a battery that produces a voltage in the direction to oppose the current from the actual battery that is powering the motor, $\Delta V$. } 
+\end{center}
+
+\end{document}

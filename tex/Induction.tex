@@ -233,20 +233,9 @@ You can easily verify that the work that you must do by exerting the torque is t
 There are many similarities between electric motors and generators, and in fact, they can be thought of as the same device. In an electric motor, current is passed through a coil in a magnetic field, so that a torque is exerted on the coil, and it starts to rotate. In a generator, one exerts a torque to rotate the coil, thus inducing a current. 
 
 Consider an electric motor. As we supply current to the motor, the coil starts to rotate. But, a rotating coil in a magnetic field results in an induced current. By Lenz's Law, the induced current in the coil of a motor has to be in the direction opposite to the current that we put in, since otherwise, the motor would start to spin infinitely fast. We call this effect ``back emf'', as the motor effectively acts like a battery that opposes current, as illustrated in Figure \ref{fig:induction:backemf}
-\begin{center}
-\begin{circuitikz}[]
-\draw (0,0) to [battery1,l=$\Delta V$,*-*, i<=$I$] (4,0)
-      to [short,i<=$I$] (4,2)
-      to [R,l_=$R_{motor}$,*-] (2,2) 
-      to [battery1,l_=Back emf,-*, invert] (0,2)
-      to [short,i<=$I$](0,0);  
-     \draw (1.65,0.3) node{$+$};
-     \draw (2.35,0.3) node{$-$};
-     \draw (0.65,1.7) node{$+$};
-     \draw (1.35,1.7) node{$-$};
-\end{circuitikz}
-\captionof{figure}{\label{fig:induction:backemf}A simple circuit illustrating how a motor, with resistance, $R_{motor}$, will generate a ``back emf'', equivalent to a battery that produces a voltage in the direction to oppose the current from the actual battery that is powering the motor, $\Delta V$. } 
-\end{center}
+
+\capfig{0.4\textwidth}{figures/Induction/backemf.png}{\label{fig:induction:backemf}A simple circuit illustrating how a motor, with resistance, $R_{motor}$, will generate a ``back emf'', equivalent to a battery that produces a voltage in the direction to oppose the current from the actual battery that is powering the motor, $\Delta V$.}
+
 If you connect an electric motor to a voltage source, initially, the motor is at rest, so there will be no back emf and the current through the circuit will be very large (motors have a small resistance, so that the electrical energy is converted into work rather than heating up the motor). As the motor starts to spin faster, the back emf from the motor grows, reducing the current in the circuit. If there is no load on the motor (i.e. the motor can rotate freely with no friction), then the rotational speed of the motor will increase until the back emf exactly matches the voltage supplied to the motor. The motor will then rotate at constant speed, with (almost) no current in the circuit (if the motor slows down, the emf will decrease, and the current will increase to speed up the motor). If there is a load on the motor (because it's making something turn), then the motor will rotate at a speed that is lower than that which would result in zero current, since some of that current is now used by the motor to exert a torque.
 
 You may notice that the lights in your house dim briefly as your refrigerator turns on. This is because your refrigerator uses an electric motor that initially draws a large current when it turns on, large enough to produce a voltage drop in the circuit of your house to observe a dimming of your lights. You may also notice that if you plug the inlet or outlet of a hair dryer, the hair dryer turns off quickly. In this case, by blocking the flow of air, you prevent the motor in the hair dryer from rotating; this results in a large current through its coil, since there is no back emf. Most hair dryers have a circuit breaker that will detect this large current and open the circuit to prevent the coil in the motor from over heating and melting. In general, one should not prevent an electric motor from rotating, as this will result in a large current through the motor that could melt its internal components. 
