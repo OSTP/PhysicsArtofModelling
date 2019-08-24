@@ -617,7 +617,7 @@ When a capacitor is placed in a circuit, the current in the circuit will no long
 \section{Sample problems and solutions}
 
 \subsection{problems}
-\begin{problemParts}{soln:circuits:ballistic}{\label{prob:circuits:ballistic} 
+\begin{problemParts}{soln:circuits:capacitor}{\label{prob:circuits:capacitor} 
 A simple RC circuit as shown in Figure \ref{fig:circuits:RCcircuit} contains a charged capacitor of unknown capacitance, $C$, in series with a resistor, $R=\SI{2}{\Omega}$. When charged, the potential difference across the terminals of the capacitor is $\SI{9}{V}$. 
 
 At time $t=\SI{0}{s}$, the switch, $S$, is closed, allowing the capacitor to discharge through the resistor. The current is then measured to be $I = \SI{0.05}{A}$ at $t = \SI{5}{s}$ after opening the switch.}
@@ -629,22 +629,22 @@ At time $t=\SI{0}{s}$, the switch, $S$, is closed, allowing the capacitor to dis
 \begin{circuitikz}
  \draw (0,0) to [short] (0,2)
        to [R=$R$] (4,2)
-       to [nos, l_=S] (4,0)
+       to [nosshape, l_=S] (4,0)
        to [C=$C$] (0,0);        
 \end{circuitikz}
 \captionof{figure}{\label{fig:circuits:RCcircuitCharge}A simple circuit with a resistor and a capacitor.} 
 \end{center}
 \end{problemParts}
 
-\begin{problem}{soln:circuits:ballistic}{\label{prob:circuits:ballistic}}
+\begin{problem}{soln:circuits:voltmeter}{\label{prob:circuits:voltmeter}}
 A voltmeter with a resistance of $R_V = \SI{20}{k\ohm}$ is attached to a circuit with a battery of unknown voltage and two resistors with a resistance of $R = \SI{2.5}{k\ohm}$ as shown in Figure \ref{fig:circuits:question2circuit}. The voltmeter reads that the voltage drop over one of the resistors is $\Delta V_{vm} = \SI{5.647}{V}$. What is the voltage drop, $V_R$, over each resistor when the voltmeter is removed from the circuit?
 \capfig{0.45\textwidth}{figures/Circuits/circuitspng/question2circuit.png}{\label{fig:circuits:question2circuit}A circuit with a battery of unknown voltage.}
 \end{problem}
 
 \newpage
 \subsection{Solutions}
-\begin{solutionParts}{prob:circuits:ballistic}
-{\label{soln:circuits:ballistic}
+\begin{solutionParts}{prob:circuits:capacitor}
+{\label{soln:circuits:capacitor}
 \item In this case, the capacitor is discharging as a function of time. At time $t=0$, the voltage across the capacitor is $\Delta V=\SI{9}{V}$. We can model this discharging circuit in a similar way as we modelled the charging circuit. 
 
 We start with Kirchhoff's junction rule, which leads to a differential equation for the charge stored on the capacitor, $Q(t)$, as function of time:
@@ -693,7 +693,7 @@ Q(t = \SI{2}{s})=(\SI{5.0}{C})e^{-\frac{(\SI{2}{s})}{(\SI{2}{\Omega})(\SI{0.56}{
 }
 \end{solutionParts}
 
-\begin{solution}{prob:circuits:ballistic}\label{soln:circuits:ballistic} In order to know the voltage across one of the resistors, we need to determine the voltage that is across the battery. Once we have determined the voltage across the battery, the voltage across one of the resistors will just be half of that across the battery, since the two resistors have the same resistance.
+\begin{solution}{prob:circuits:voltmeter}\label{soln:circuits:voltmeter} In order to know the voltage across one of the resistors, we need to determine the voltage that is across the battery. Once we have determined the voltage across the battery, the voltage across one of the resistors will just be half of that across the battery, since the two resistors have the same resistance.
 
 We can model the circuit with the voltmeter in place, since we know the voltage across the parallel combination of the voltmeter and resistor (that voltage which is readout by the voltmeter). We can combine the voltmeter and one of the resistors into a an equivalent resistor, $R_{eff}$:
 \begin{align*}
