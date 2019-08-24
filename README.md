@@ -42,10 +42,9 @@ The textbook is available in PDF, but anyone is welcome to compile their own ver
 22. Sources of magnetic field
 23. Electromagnetic induction
 24. The theory of Special Relativity
-
- A. Vectors
- B. Calculus
- C. Guidelines for lab related activities
- D. The python programming language
+25. Appendix A: Vectors
+26. Appendix B: Calculus
+27. Appendix C: Guidelines for lab related activities
+28. Appendix D: The python programming language
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Introductory Physics: Building Models to Describe Our World</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Ryan D. Martin, Emma Neary, Joshua Rinaldo, and Olivia Woodman</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/OSTP/PhysicsArtofModelling" rel="dct:source">https://github.com/OSTP/PhysicsArtofModelling</a>.
