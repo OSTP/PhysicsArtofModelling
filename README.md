@@ -14,7 +14,7 @@ Download the question library:
   * [Question Library (only questions)](https://github.com/OSTP/PhysicsArtofModelling/raw/master/QuestionLibrary_Questions.pdf)
   * [Question Library (with most answers)](https://github.com/OSTP/PhysicsArtofModelling/raw/master/QuestionLibrary_Answers.pdf)
   
-All of the **originals for the figures** in the textbook are included in this github repository. These were all created for the textbook and can be used under the same license as the textbook (there is one picture that is credited to NASA, it's obvious). Within the /tex folder, you will find a figures/ folder that has subfolders for each chapter. Most of the figures were drawn in Microsoft PowerPoint or Tracing. In particulare, the .pptx file will have almost all of the figures in a format that is easy to move into a presentation.
+All of the **originals for the figures** in the textbook are included in this github repository. These were all created for the textbook and can be used under the same license as the textbook (there is one picture that is credited to NASA, it's obvious). Within the /tex folder, you will find a figures/ folder that has subfolders for each chapter. Most of the figures were drawn in Microsoft PowerPoint or Tracing. In particular, the .pptx file will have almost all of the figures in a format that is easy to move into a presentation.
 
 The textbook is available in PDF, but anyone is welcome to compile their own version including or excluding chapters. This is done by modifying the file /tex/BuildingModelsToDescribeOurWorld.tex. 
 
