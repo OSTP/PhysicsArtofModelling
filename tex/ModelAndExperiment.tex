@@ -83,7 +83,7 @@ When we compare two numbers, for example a prediction from a model and a measure
 \begin{checkpoint}
 \begin{MCquestion}{The speed limit on a highway...}
 \item has the dimension of length over time and can be expressed in units of kilometers per hour. \correct
-\item has the dimension of length can and be expressed in units of kilometers per hour.
+\item has the dimension of length and can be expressed in units of kilometers per hour.
 \item has the dimension of time over length and can be expressed in units of meters per second.
 \item has the dimension of time and can be expressed in units of meters.
 \end{MCquestion}
@@ -111,7 +111,7 @@ Dimensionless [1]& unitless [] \\ \hline
 \captionof{table}{\label{tab:modelandexperiment:SIunits} Base dimensions and their SI units with abbreviations.}
 \end{center}
 
-From the base dimensions, one can obtain ``derived'' dimensions such as ``speed'' which is a measure of how fast an object is moving. The dimension of speed is $L/T$ (length over time) and the corresponding SI unit is m/s (meters per second)\footnote{Note that we can also write meters per second as m$\cdot$s$^{-1}$, but we often use a divide by sign if the power of the unit in the denominator is 1.} Many of the derived dimension have corresponding derived SI units which can be expressed in terms of the base SI units. Table \ref{tab:modelandexperiment:derivedSIunits} shows a few derived dimensions and their corresponding SI units and how those SI units are obtained from the base SI units.
+From the base dimensions, one can obtain ``derived'' dimensions such as ``speed'' which is a measure of how fast an object is moving. The dimension of speed is $L/T$ (length over time) and the corresponding SI unit is m/s (meters per second)\footnote{Note that we can also write meters per second as m$\cdot$s$^{-1}$, but we often use a divide by sign if the power of the unit in the denominator is 1.}. Many of the derived dimension have corresponding derived SI units which can be expressed in terms of the base SI units. Table \ref{tab:modelandexperiment:derivedSIunits} shows a few derived dimensions and their corresponding SI units and how those SI units are obtained from the base SI units.
 
 \begin{table}[!h]
 \centering
@@ -241,12 +241,12 @@ T^0&=T^{-2x}T^{z} \rightarrow 0=z-2x
 Solving the sytem of equations, we find that $x=1/5$, $y=-1/5$, and $z=2/5$. 
 So, the combination of $E$, $\rho$, and $t$ that gives us the dimension of length is:
 \begin{align*}
-r\sim E^{1/5}\rho^{-1/5}t^{2/5}\\
+r\propto E^{1/5}\rho^{-1/5}t^{2/5}\\
 \therefore r\propto t^{2/5}
 \end{align*}
 You can also write this equation as:
 \begin{align*}
-r\sim \sqrt[5]{\frac{Et^2}{\rho}}\\
+r\propto \sqrt[5]{\frac{Et^2}{\rho}}\\
 \end{align*}
 Thus, by measuring the blast radius at some time, and knowing the density of the air, you can estimate the energy that was released during the explosion.
 \end{example}
@@ -379,7 +379,7 @@ The other source of uncertainty is called ``systematic''. Systematic uncertainti
 
 As a reminder, we want to emphasize the difference between ``error'' and ``mistake'' in the context of making measurements. ``Uncertainty'' or ``error'' in a measurement comes from the fact that it is impossible to measure anything to infinite accuracy. A ``mistake'' also affects a measurement, but is preventable. If a ``mistake'' occurs in physics, the experiment is generally re-done and the previous data are discarded. The term ``human error'' should never be used in a lab report as it implies that a mistake was made. Instead, if you think that you measured time imprecisely, for example, refer to ``human reaction time'', not ``human error''.
 
-Table \ref{tab:modelandexperiment:uncertainties} shows examples of sources of error that students often call ``human error'' but that should, instead, be described more precisely.
+Table \ref{tab:modelandexperiment:humanerror} shows examples of sources of error that students often call ``human error'' but that should, instead, be described more precisely.
 
 \begin{table}[H]
 \centering
@@ -391,9 +391,9 @@ While taking measurements, your line of sight was not completely parallel to the
 You incorrectly performed calculations. & Mistake! Redo the calculations.\\ \hline
 A draft of wind in the lab slightly altered the direction of your ball rolling down an incline. & This is an environmental effect/error - it could be random or systematic, depending on whether it always had the same effect.\\ \hline
 Your hand slipped while holding the ruler - the object was measured to be twice its original size! & Mistake! Redo this experiment and discard the data.\\ \hline
-When timing an experiment, you don't hit the ''STOP'' button exactly when the experiment stops. & Reaction time error - usually a systematic error (time is usally measured longer than it is).\\ \hline
+When timing an experiment, you don't hit the ''STOP'' button exactly when the experiment stops. & Reaction time error - usually a systematic error (time is usually measured longer than it is).\\ \hline
 \end{tabular}
-\caption{\label{tab:modelandexperiment:uncertainties} Don't use the term ``human error'', instead, use these.}
+\caption{\label{tab:modelandexperiment:humanerror} Don't use the term ``human error'', instead, use these.}
 \end{table}
 
 \subsubsection{Propagating uncertainties}
@@ -665,7 +665,7 @@ Unfortunately, the students spilled ketchup on the left hand side of their equat
 \begin{solution}{prob:modelandexperiment:juggling}\label{soln:modelandexperiment:juggling}
 We can use their equation to determine the dimension of the quantity on the left hand side:
 \begin{align*}
-[?]&=\frac{[v_2^{2}]-[v_1^{2}]}{[a]}=\frac{\frac{L}{T}^{2}-\frac{L}{T}^{2}}{\frac{L}{T^{2}}}= L
+[?]&=\frac{[v_2^{2}]-[v_1^{2}]}{[a]}=\frac{\left(\frac{L}{T}\right)^{2}-\left(\frac{L}{T}^\right){2}}{\frac{L}{T^{2}}}= L
 \end{align*}
 Thus, the dimension of the unknown quantity is length. Given the context, they were likely attempting to model the height at which a vertically thrown ball would travel before stopping.\end{solution}
 
