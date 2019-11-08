@@ -1,0 +1,62 @@
+\documentclass[12pt, openany]{book}
+\usepackage{comment}
+\specialcomment{answer}{\textbf{Answer: }}{}
+
+%Change below to decide whether answers are displayed in the text
+%Decide whether to show answers:
+%Hides the answers to short answer questions
+%\excludecomment{answer}
+%Shows multiple choice answers
+\newcommand{\correct}{\textbf{(Correct)}}
+%Hides multiple choice answers
+%\newcommand{\correct}{}
+
+%All of the environments are defined in the preamble:
+\input{TextbookPreamble}
+
+%Begin the actual document:
+\begin{document}
+\pagenumbering{gobble}
+\include{CoverPage}
+\begin{center}
+\vspace{10cm}
+Compiled on: \today
+\end{center}
+\pagenumbering{roman}
+\include{Preface}
+\tableofcontents
+\pagenumbering{arabic}
+
+\include{Introduction}
+\include{ModelAndExperiment}
+\include{DescribingMotionIn1D}
+\include{DescribingMotionInND}
+\include{NewtonsLaws} 
+\include{ApplyingNewtonsLaws}
+\include{WorkEnergy}
+\include{PotentialEcons}
+\include{Gravity} 
+\include{MomentumAndCM}
+\include{RotationalDynamics}
+\include{AngularMomentumRolling}
+\include{SimpleHarmonicMotion}
+\include{Waves}
+\include{FluidMechanics}
+\include{ChargesFields} 
+\include{Gauss}
+\include{Potential}
+\include{Current}
+\include{Circuits}
+\include{MagneticForce}
+\include{MagneticSource}
+\include{Induction}
+\include{SpecialRelativity}
+%Quantum mechanics
+
+\appendix
+\renewcommand\chaptername{Appendix}
+\include{Vectors}
+\include{Calculus}
+\include{Labs}
+\include{Python}
+\end{document}
