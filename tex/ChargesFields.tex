@@ -65,7 +65,7 @@ If we then disconnect the rod from the ground, it has now acquired an overall po
 \capfig{0.9\textwidth}{figures/ChargesFields/inductioncharge.png}{\label{fig:chargesfields:inductioncharge}Charging by induction: when we connect the polarized rod to the ground, electrons can leave the rod. If we now disconnect the rod from ground, the rod is left with an overall positive charge. }
 
 \section{The Coulomb force}
-Coulomb was the first to provide a detailed quantitative description of the force between charged objects. Nowadays, we use the (derived) SI unit of ``Coulomb'' (C) to represent charge. The ``charge'' of an object corresponds to the net excess (or lack) of electrons on the object. An electron has a charge of $-e=\SI{-1.6e-19}{C}$. Thus, an object with a charge of $\SI{-1}{C}$ has an excess of about $\num{1.6e19}$ electrons on it, which is a very large charge. If an object has an excess of electrons, it is negatively charged and we indicate this with a negative sign on the charge of the object. An object with a (positive) charge of $\SI{1}{C}$ thus has a deficit of $\num{1.6e19}$ electrons.
+Coulomb was the first to provide a detailed quantitative description of the force between charged objects. Nowadays, we use the (derived) SI unit of ``Coulomb'' (C) to represent charge. The ``charge'' of an object corresponds to the net excess (or lack) of electrons on the object. An electron has a charge of $-e=\SI{-1.6e-19}{C}$. Thus, an object with a charge of $\SI{-1}{C}$ has an excess of about $\frac{1}{\num{1.6e19}}=\num{6.25e18}$ electrons on it, which is a very large charge. If an object has an excess of electrons, it is negatively charged and we indicate this with a negative sign on the charge of the object. An object with a (positive) charge of $\SI{1}{C}$ thus has a deficit of $\num{6.25e18}$ electrons.
 
 Through careful studies of the force between two charged spheres, Coulomb observed\footnote{Others had initially observed the inverse square law for the electric force, but Coulomb was the first to formalize the theory.} that:
 \begin{itemize}
@@ -100,11 +100,11 @@ The product $Q_1Q_2$ in the numerator of Coulomb's force is positive if the two 
 \begin{example}{Calculate the magnitude of the electric force between the electron and the proton in a hydrogen atom and compare this to the gravitational force between them.}
 We model this by assuming that the electron and proton are point charges a distance of $\SI{1}{\angstrom}=\SI{1e-10}{m}$ apart (1 \r Angstrom is about the size of the hydrogen atom). The proton and electron have the same charge with magnitude $e=\SI{1.6e-19}{C}$, so the (attractive) electric force between them has a magnitude of:
 \begin{align*}
-F^e = k\frac{Q_1Q_2}{r^2}=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{1.6e-19}{C})(\SI{1.6e-19}{C})}{(\SI{1e-10}{m})^2}=\SI{2.3e-8}{N}
+F_e = k\frac{Q_1Q_2}{r^2}=(\SI{9e9}{N\cdot m^2/C^{2}})\frac{(\SI{1.6e-19}{C})(\SI{1.6e-19}{C})}{(\SI{1e-10}{m})^2}=\SI{2.3e-8}{N}
 \end{align*}
 which is a small number, but acting on a very small mass. In comparison, the force of gravity between an electron ($m_e=\SI{9.1e-31}{kg}$) and a proton ($m_p=\SI{1.7e-27}{kg}$) is given by:
 \begin{align*}
-F^g=G\frac{m_em_p}{r^2}=(\SI{6.7e-11}{Nm^2/kg^2})\frac{(\SI{9.1e-31}{kg})(\SI{1.7e-27}{kg})}{(\SI{1e-10}{m})^2}=\SI{1.04e-47}{N}
+F_g=G\frac{m_em_p}{r^2}=(\SI{6.7e-11}{Nm^2/kg^2})\frac{(\SI{9.1e-31}{kg})(\SI{1.7e-27}{kg})}{(\SI{1e-10}{m})^2}=\SI{1.04e-47}{N}
 \end{align*}
 \textbf{Discussion:} As we can see, the electric force between an electron and a proton is 39 orders of magnitude larger than the gravitational force! This shows that the gravitational force is extremely weak on the scale of particles and has essentially no effect in particle physics. Indeed, the best current theory of particle physics, and the most precisely tested theory in physics, the ``Standard Model'', does not need to include gravity in order to provide a spectacularly precise description of particles. One of the big challenges in theoretical physics is nonetheless to develop a theory that integrates the gravitational force with the other forces.
 \end{example}
@@ -148,7 +148,7 @@ We define the electric field vector, $\vec E$, in an analogous way as we defined
 \end{align*}
 where $\vec r$ is a vector from the position of $M$ to where we want to know the gravitational field. As a result, the force exerted on a ``test mass'', $m$, located at position $\vec r$ relative to mass $M$ is given by:
 \begin{align*}
-\vec F^g=m\vec g= -G\frac{Mm}{r^2}\hat r
+\vec F_g=m\vec g= -G\frac{Mm}{r^2}\hat r
 \end{align*}
 which, of course, is the result from Newton's Theory of Gravity. As you recall, we can define the gravitational field for  any object that is not a point mass (e.g. the Earth), and use that field to find the force exerted by the Earth on any mass $m$, without having to re-calculate the gravitational field each time (which requires an integral or Gauss' Law). 
 
@@ -158,7 +158,7 @@ We proceed in an analogous was to define the ``Electric field'', $\vec E(\vec r)
 \end{align*}
 If we place a ``test charge'', $q$, at position $\vec r$ in space, it will experience a force given by:
 \begin{align*}
-\vec F^e=q\vec E=k\frac{Qq}{r^2}\hat r
+\vec F_e=q\vec E=k\frac{Qq}{r^2}\hat r
 \end{align*}
 just as we find from Coulomb's Law. 
 \begin{checkpoint}\label{cp:chargesfields:edirection}
@@ -259,7 +259,7 @@ The total electric field at the origin will be obtained by summing the electric 
 \therefore E_x &= \int dE\cos\theta\\
 \therefore E_y &= -\int dE\sin\theta\\
 \end{align*}
-We are thus left with two integrals to solve for the $x$ and $y$ components of the electric field, respectively. Before jumping into solving the integrals, it is useful to think about the symmetry of the problem. Specifically, consider a second point charge, $dq'$, located symmetrically about the $x$-axis from charge $dq$, as illustrated in Figure \ref{fig:chargesfields:semicircle_sol}. The charge $dq'$ will create a small electric field $d\vec E'$ as illustrated. When we add together $d\vec E$ and $d\vec E'$, the two $y$ components will cancel, and only the $x$ components will sum together. Similarly, for any $dq$ that we choose, there will always be another $dq'$ such that when we sum together their respective electric fields, the $y$ components will cancel. Thus, by symmetry, we can argue that the net $y$ component of the electric field, $E_y$, must be identically zero. We thus only need to evaluate the $x$ component of $\vec E$:
+We are thus left with two integrals to solve for the $x$ and $y$ components of the electric field, respectively. Before jumping into solving the integrals, it is useful to think about the symmetry of the problem. Specifically, consider a second point charge, $dq'$, located symmetrically about the $x$-axis from charge $dq$, as illustrated in Figure \ref{fig:chargesfields:semicircle_sol}. The charge $dq'$ will create a small electric field $d\pvec E'$ as illustrated. When we add together $d\vec E$ and $d\pvec E'$, the two $y$ components will cancel, and only the $x$ components will sum together. Similarly, for any $dq$ that we choose, there will always be another $dq'$ such that when we sum together their respective electric fields, the $y$ components will cancel. Thus, by symmetry, we can argue that the net $y$ component of the electric field, $E_y$, must be identically zero. We thus only need to evaluate the $x$ component of $\vec E$:
 \begin{align*}
 E_x = \int dE\cos\theta = \int k\frac{dq}{R^2} \cos\theta
 \end{align*}
@@ -496,7 +496,7 @@ which has a negative sign, and we also recognize that this is equivalent to the 
 
 \section{Summary}
 \begin{chapterSummary}
-Objects can acquire a net charge if they acquire a net excess or deficit of electrons. Charges are never created, they are only transferred from one object to another. One can charge an object by friction, conduction, or induction. Materials can be classified broadly as conductors, where electrons can move freely in a material, or conductors, in which electrons remain tightly bound to the atoms in the material. If a conducting object acquires a net charge, those charges will migrate to the surface of the conductor.
+Objects can acquire a net charge if they acquire a net excess or deficit of electrons. Charges are never created, they are only transferred from one object to another. One can charge an object by friction, conduction, or induction. Materials can be classified broadly as conductors, where electrons can move freely in a material, or insulators, in which electrons remain tightly bound to the atoms in the material. If a conducting object acquires a net charge, those charges will migrate to the surface of the conductor.
 
 Coulomb was the first to quantitatively describe the electric force exerted on a point charge, $Q_1$, by a second point charge, $Q_2$, located a distance, $r$, away:
 \begin{align*}
