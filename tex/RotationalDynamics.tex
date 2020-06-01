@@ -33,7 +33,7 @@ Before proceeding, you may wish to review:
 \end{review}
 
 \subsection{Scalar rotational kinematic quantities}
-Recall that we can describe the motion of a particle along a circle of radius, $R$, by using its angular position, $\theta$, its angular velocity, $\omega$, and its angular acceleration, $\alpha$. With a suitable choice of coordinate systen, the angular position can be defined as the angle made by the position vector of the particles, $\vec r$, and the $x$ axis of a coordinate system whose origin is the centre of the circle, as shown in Figure \ref{fig:rotationaldynamics:vcircle}. 
+Recall that we can describe the motion of a particle along a circle of radius, $R$, by using its angular position, $\theta$, its angular velocity, $\omega$, and its angular acceleration, $\alpha$. With a suitable choice of coordinate system, the angular position can be defined as the angle made by the position vector of the particles, $\vec r$, and the $x$ axis of a coordinate system whose origin is the centre of the circle, as shown in Figure \ref{fig:rotationaldynamics:vcircle}. 
 \capfig{0.4\textwidth}{figures/RotationalDynamics/vcircle.png}{\label{fig:rotationaldynamics:vcircle} Angular position for a particle moving around the $z$ axis (out of the page), along a circle of radius $R$ with a centre at the origin.}
 
 The angular velocity, $\omega$, is the rate of the change of the angular position, and the angular acceleration, $\alpha$, is the rate of change of the angular velocity:
@@ -329,12 +329,12 @@ Instead, if the particle were constrained to rotate about the $z$ axis (e.g. if 
 \begin{example}{A force given by $\vec F=F_x\hat x + F_y \hat y + F_z \hat z$ is exerted at a position $\vec r=r_x \hat x + r_y \hat y + r_z\hat z$. Calculate the torque about the $z$ axis as well as the torque about the origin.}
 To calculate the torque about the $z$ axis, we need take the cross-product between the components of the vectors $\vec r$ and $\vec F$ that lie in the $x-y$ plane, since that is the plane perpendicular to the axis of rotation (the $z$ axis). This gives:
 \begin{align*}
-\vec\tau_z =(r_x \hat x + r_y \hat y) \times (F_x\hat x + F_y \hat y) =(r_xF_y-r_yF_y)\hat z
+\vec\tau_z =(r_x \hat x + r_y \hat y) \times (F_x\hat x + F_y \hat y) =(r_xF_y-r_yF_x)\hat z
 \end{align*}
 If instead we want to calculate the torque about the origin, we take the cross-product between the two vectors:
 \begin{align*}
 \vec\tau &=(r_x \hat x + r_y \hat y+ r_z\hat z) \times (F_x\hat x + F_y \hat y+ F_z \hat z)\\
-&=(r_yF_z-r_zF_y)\hat x+(r_zF_x-r_xF_z)\hat y+(r_xF_y-r_yF_y)\hat z
+&=(r_yF_z-r_zF_y)\hat x+(r_zF_x-r_xF_z)\hat y+(r_xF_y-r_yF_x)\hat z
 \end{align*}
 If a particle were located at the given position, the force would cause the particle to (instantaneously) rotate about an axis that goes through the origin and is parallel to the torque vector. 
 
@@ -613,7 +613,7 @@ Before proceeding, you may wish to review Section \ref{sec:newtonslaws:inertialf
 When an object is in dynamic equilibrium, its centre of mass is accelerating, but the object is not rotating when viewed from its centre of mass frame of reference. Thus, the sum of the external forces exerted on the object is not zero, while the net external torque exerted on the object is zero, in the frame of reference of the centre of mass.
 
 
-Consider, for example, a speed skater going around a circular track or radius $R$, and leaning into the centre making an angle $\theta$ with the ice, as depicted in Figure \ref{fig:rotationaldynamics:skater}. The skater's centre of mass is accelerating, because she is going around a circle, so the net force on the skater is not zero. However, in the reference frame of the skater, the skater is not rotating; she is thus in dynamic equilibrium.
+Consider, for example, a speed skater going around a circular track of radius $R$, and leaning into the centre making an angle $\theta$ with the ice, as depicted in Figure \ref{fig:rotationaldynamics:skater}. The skater's centre of mass is accelerating, because she is going around a circle, so the net force on the skater is not zero. However, in the reference frame of the skater, the skater is not rotating; she is thus in dynamic equilibrium.
 \capfig{0.3\textwidth}{figures/RotationalDynamics/skater.png}{\label{fig:rotationaldynamics:skater} A speed skater leaning in as she goes around a circle.}
 
 The forces on the skater are:
@@ -627,7 +627,7 @@ The forces are illustrated in Figure \ref{fig:rotationaldynamics:skater_fbd} alo
 
 The sum of the forces exerted on the skater must be towards the centre of the circle and equal to the mass of the skater times her centripetal acceleration (which is the acceleration of her centre of mass, $\vec a_{CM}$). The $x$ and $y$ components of Newton's Second Law are thus given by:
 \begin{align*}
-\sum F_x &= -f_s = -ma_{CM}- m\frac{v^2}{R}\\
+\sum F_x &= -f_s = -ma_{CM} = m\frac{v^2}{R}\\
 \sum F_y &= N-mg = 0
 \end{align*}
 
@@ -854,22 +854,22 @@ We start by writing out the $x$ and $y$ components of Newton's Second Law (with 
 We can choose the axis about which to calculate the torques. Since all of the forces are in the $xy$ plane, we choose to calculate the torques about an axis parallel to the $z$ axis that goes through the hinge on the wall. The force from the hinge, $\vec R$, will thus result in a torque of zero (since it has a lever arm of zero). The torque from each force about the hinge is given by:
 \begin{align*}
 \vec \tau_M &= \vec r_M \times \vec F_g = \left(\frac{L}{2}\hat x\right) \times (-Mg \hat y) =-Mg\frac{L}{2} \hat z\\
-\vec \tau_T &= \vec r_T \times \vec T = \left(\frac{L}{3}\hat x\right) \times (-T\cos\theta \hat x + T\sin\theta \hat y) =T\sin\theta\frac{L}{3} \hat z\\
+\vec \tau_T &= \vec r_T \times \vec T = \left(\frac{2}{3}L\hat x\right) \times (-T\cos\theta \hat x + T\sin\theta \hat y) =\frac{2}{3}LT\sin\theta \hat z\\
 \vec \tau_m &= \vec r_m \times \vec F_m = (L\hat x) \times (-mg \hat y) =-mgL\hat z\\
 \end{align*}
 The sum of the torques in the $z$ direction must be zero for static equilibrium, which allows us to determine the magnitude of the force of tension:
 \begin{align*}
 \sum \tau_z = \tau_{Mz} + \tau_{Tz}+ \tau_{mz} &=0\\
--Mg\frac{L}{2} + T\sin\theta\frac{L}{3} -mgL &=0\\
--Mg\frac{1}{2} + T\sin\theta\frac{1}{3} -mg &=0\\
-\therefore T&= \frac{3g}{\sin\theta} \left( m + \frac{M}{2}\right)
+-Mg\frac{L}{2} + \frac{2}{3}LT\sin\theta -mgL &=0\\
+-Mg\frac{1}{2} + \frac{2}{3}T\sin\theta -mg &=0\\
+\therefore T&= \frac{3g}{2\sin\theta} \left( m + \frac{M}{2}\right)
 \end{align*}
 Using the $x$ and $y$ components of Newton's Second Law, we can now use the tension to determine the $x$ and $y$ components of the force exerted by the hinge:
 \begin{align*}
-R_x &= T\cos\theta = \frac{3g}{\tan\theta} \left( m + \frac{M}{2}\right)\\
-R_y &= (M+m)g - T\sin\theta = (M+m)g - 3g \left( m + \frac{M}{2}\right)=  -\left( 2m + \frac{M}{2}\right)g
+R_x &= T\cos\theta = \frac{3g}{2\tan\theta} \left( m + \frac{M}{2}\right)\\
+R_y &= (M+m)g - T\sin\theta = (M+m)g - \frac{3}{2}g \left( m + \frac{M}{2}\right)=  \left( \frac{1}{4}M-\frac{1}{2}m\right)g
 \end{align*}
-We find that the $y$ component of the force from the hinge is in the negative $y$ direction, so \textbf{our diagram in Figure \ref{fig:rotationaldynamics:sign_fbd} is wrong}! If you removed the hinge on the wall and instead held that end of the bar with your hand, you would feel that the end of the bar is trying to go into the wall and upwards, as the bar tries to rotate with the opposite end moving downwards due to the weight of the sign. You would have to push in the positive $x$ and negative $y$ direction to keep the bar from moving. 
+We find that the $y$ component of the force from the hinge could be in the positive or negative $y$ direction, depending on the sign of $\left( \frac{1}{4}M-\frac{1}{2}m\right)$. In particular, if $M>2m$, then the force exerted by the hinge, $\vec R$, has a component in the positive $y$ direction, as illustrated in Figure \ref{fig:rotationaldynamics:sign_fbd}. However, if $M<2m$, then the hinge exerts a force that has a negative component in the $y$ direction, unlike that illustrated in the Figure. 
 
 \textbf{Discussion: }In this example, we saw that we needed to use both the sum of the forces and the sum of the torques in order to determine the forces on the bar. 
 \end{solution}
