@@ -152,7 +152,7 @@ where $\vec r$ is a vector from the position of $M$ to where we want to know the
 \end{align*}
 which, of course, is the result from Newton's Theory of Gravity. As you recall, we can define the gravitational field for  any object that is not a point mass (e.g. the Earth), and use that field to find the force exerted by the Earth on any mass $m$, without having to re-calculate the gravitational field each time (which requires an integral or Gauss' Law). 
 
-We proceed in an analogous was to define the ``Electric field'', $\vec E(\vec r)$, as the \textit{electric force per unit charge}. If we have a point charge, $Q$, located at the origin of a coordinate system, then the electric field from that point charge, $\vec E(\vec r)$, at some position, $\vec r$, relative to the origin is given by:
+We proceed in an analogous way to define the ``Electric field'', $\vec E(\vec r)$, as the \textit{electric force per unit charge}. If we have a point charge, $Q$, located at the origin of a coordinate system, then the electric field from that point charge, $\vec E(\vec r)$, at some position, $\vec r$, relative to the origin is given by:
 \begin{align*}
 \Aboxed{\vec E(\vec r) = k\frac{Q}{r^2}\hat r}
 \end{align*}
@@ -462,7 +462,7 @@ Dipoles can be represented by their ``electric dipole vector'' (or ``electric di
 \begin{align*}
 p=Ql
 \end{align*}
-Dipoles arise often in nature, for example, a water molecule can be modelled as a dipole, because the two hydrogen atoms are not symmetrically arranged around the oxygen atom. The electrons in a water molecule tend to stay closer to the oxygen atom, which acquires an excess of 2 electrons, while each proton has a deficit of 1 electron, resulting in a separation of charge (polarization), which can be modelled as a an electric dipole, as in Figure \ref{fig:chargesfields:h20}.
+Dipoles arise often in nature, for example, a water molecule can be modelled as a dipole, because the two hydrogen atoms are not symmetrically arranged around the oxygen atom. The electrons in a water molecule tend to stay closer to the oxygen atom, which acquires an excess of 2 electrons, while each proton has a deficit of 1 electron, resulting in a separation of charge (polarization), which can be modelled as an electric dipole, as in Figure \ref{fig:chargesfields:h20}.
 \capfig{0.2\textwidth}{figures/ChargesFields/h20.png}{\label{fig:chargesfields:h20}A water molecule can be modelled as an electric dipole.}
 When a dipole is immersed in a uniform electric field, as illustrated in Figure \ref{fig:chargesfields:dipoleinfield}, the net force on the dipole is zero because the force on the positive charge will always be equal and in the opposite direction from the force on the negative charge. 
 \capfig{0.6\textwidth}{figures/ChargesFields/dipoleinfield.png}{\label{fig:chargesfields:dipoleinfield}An electric dipole in a uniform electric field.}
@@ -502,7 +502,7 @@ Coulomb was the first to quantitatively describe the electric force exerted on a
 \begin{align*}
 \vec F_{12}=k\frac{Q_1Q_2}{r^2}\hat r_{21}=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{r^2}\hat r_{21}
 \end{align*}
-where $\hat r_{21}$ is the unit vector from  $Q_2$ to $Q_1$. One can write the force using either Coulomb's constant, $k$, or the permittivity of free space, $\epsilon_0$. Coulomb's force is attractive if the product $Q_1Q_2$ is negative, and repulsive if the product is positive. Thus, charges of the same sign exert a repulsive force on each other, whereas opposite charges exert an attractive for on each other. 
+where $\hat r_{21}$ is the unit vector from  $Q_2$ to $Q_1$. One can write the force using either Coulomb's constant, $k$, or the permittivity of free space, $\epsilon_0$. Coulomb's force is attractive if the product $Q_1Q_2$ is negative, and repulsive if the product is positive. Thus, charges of the same sign exert a repulsive force on each other, whereas opposite charges exert an attractive force on each other. 
 
 Mathematically, Coulomb's Law is identical to the gravitational force in Newton's Universal Theory of Gravity, which implies that it is conservative. The electric field vector at some position in space is defined to be the electric force per unit charge at that position in space. That is, at some position in space where the electric field vector is $\vec E$, a charge, $q$, will experience an electric force:
 \begin{align*}
@@ -618,7 +618,7 @@ U = -\vec p \cdot \vec E \\
 
 \subsection{Problems}
 \begin{problem}{soln:template:trianglecharge}{\label{prob:template:trianglecharge} 
-Consider three charged rods of length $L$ which are arranged to form a triangle, as shown in Figure \ref{fig:ChargesFields:trianglediagram}. If the charge on each rod is evenly distributed, what is the net electric field at the centre of the triangle?
+Consider three charged rods of length $L$ which are arranged to form a triangle, as shown in Figure \ref{fig:ChargesFields:trianglediagram}. If the charge on each rod is evenly distributed, what is the net electric field at the centre of the triangle (defined as the intersection of the bisectors)?
 
 \capfig{0.4\textwidth}{figures/ChargesFields/trianglediagram.png}{\label{fig:ChargesFields:trianglediagram} A triangle made up of charged rods}
 }
@@ -626,54 +626,60 @@ Consider three charged rods of length $L$ which are arranged to form a triangle,
 
 \begin{problem}{soln:template:dipoleinfield}{\label{prob:template:dipoleinfield}}
 	
-	
-	Suppose a dipole is in an electric field $\vec E$. Show that the dipole will experience simple harmonic motion if the angle between the dipole vector and the electric field vector is small.
-	
+Suppose that an electric dipole, with electric dipole moment, $\vec p$, is placed in a uniform electric field $\vec E$. In equilibrium, the dipole moment vector, $\vec p$, will be parallel to the electric field vector, $\vec E$. Show that, if the dipole is displaced (rotated) by a small angle away from the equilibrium, the dipole will then experience simple harmonic motion.
 \end{problem}
 
 \newpage
 \subsection{Solutions}
 \begin{solution}{prob:template:trianglecharge}\label{soln:template:trianglecharge}
-We can model the object as the sum of three finite length wires of the length, $L$. In Example \ref{ex:chargesfields:finiteline}, we determined that the electric field produced by a finite wire is:
+We can model the object as the sum of three finite length wires of the length, $L$. In Example \ref{ex:chargesfields:finiteline}, we determined that the electric field produced at a distance, $R$, by a finite wire that subtends an angle $2\theta_0$ is given by:
 \begin{align*}
 E = \frac{2k\lambda}{R}\sin\theta_0
 \end{align*}
-We can determine geometrically that $\theta_0 = \frac{\pi}{6}$, as in Figure \ref{fig:ChargesFields:trianglesolution}. The distance, $R$:
-\begin{align*}R = \frac{L}{2}\sin{\theta_0}
-\end{align*}
-\capfig{0.6\textwidth}{figures/ChargesFields/trianglesolution.png}{\label{fig:ChargesFields:trianglesolution} Geometrically solving for $\theta_0$ and $R$}
-Thus, the field from one wire is given by:
+The angle $\theta_0$ is easily found to be $\theta_0 = \frac{\pi}{3}$, as shown in Figure \ref{fig:ChargesFields:trianglesolution}. The distance, $R$, is similarly found to be given by:
 \begin{align*}
-E&= \frac{2k\lambda}{R}\sin(\frac{\pi}{6})\\
-E &= \frac{k\lambda}{R}
+R = \frac{L}{2}\tan\left(\frac{\pi}{6}\right)=\frac{\sqrt{3}}{6}L
 \end{align*}
-Given that the charge $Q$ is evenly distributed along the rod of length $L$, we can rewrite the charge density as $\frac{Q}{L}$, which gives:
+\capfig{0.6\textwidth}{figures/ChargesFields/trianglesolution.png}{\label{fig:ChargesFields:trianglesolution} Solving for $\theta_0$ and $R$}
+Thus, the magnitude of the electric field from one wire is given by:
 \begin{align*}
-E &= \frac{k Q}{RL} = \frac{k Q}{\frac{L\sqrt{3}}{6}L} = \frac{6k Q}{\sqrt{3}L^2}
+E&= \frac{2k\lambda}{R}\sin\left(\frac{\pi}{3}\right)=\frac{\sqrt{3}k\lambda}{R}=\frac{\sqrt{3}k\lambda}{\frac{\sqrt{3}}{6}L}=\frac{6k\lambda}{L}
 \end{align*}
-This is the magnitude of the electric field for each side of the triangle. The two positive wires will produce electric fields whose vertical components cancel. The negative wire will produce a field that points downwards. Summing together the electric field vectors:
+The charge, $Q$, is evenly distributed along the rod of length, $L$, so that we can rewrite the charge density as $\lambda=\frac{Q}{L}$, which gives:
 \begin{align*}
-\sum \vec E &= \frac{6k Q}{\sqrt{3}L^2}\left(\cos\left({\frac{\pi}{6}}\right) - \cos\left({\frac{\pi}{6}}\right)\right)\hat{x} + \frac{6k Q}{\sqrt{3}L^2}\left(-1-2\sin\left({\frac{\pi}{6}}\right)\right)\hat y\\
-\sum \vec E & = -\frac{12k Q}{\sqrt{3}L^2}\hat y
+E &= \frac{6k\lambda}{L} = \frac{6kQ}{L^2}
 \end{align*}
-Which is the final answer.
+This is the magnitude of the electric field produced by each side of the triangle.
+
+The two positive wires will produce electric fields whose horizontal components ($x$-axis in Figure \ref{fig:ChargesFields:trianglesolution}) cancel. The net electric field from the two positive, $\pvec E^{pos}$, wires will then be in the negative $y$ direction:
+\begin{align*}
+E_{y}^{pos}=-2 \left( \frac{6kQ}{L^2}  \right) \cos\left(\frac{\pi}{3} \right)=-\frac{6kQ}{L^2}
+\end{align*}
+The negative wire will also produce a field, $\pvec E^{neg}$, in the negative $y$ direction (the only component of the field is in the $y$ direction):
+\begin{align*}
+E_{y}^{neg}=- \frac{6kQ}{L^2}
+\end{align*}
+Thus, the total field at the centre of the triangle, when(vectorially) adding the fields from the two positive wires and the negative wire is given by:
+\begin{align*}
+\vec E = \left(-\frac{6kQ}{L^2} - \frac{6kQ}{L^2} \right)\hat y=- \frac{12kQ}{L^2}\hat y
+\end{align*}
 \end{solution}
 
 
 \begin{solution}{prob:template:dipoleinfield}\label{soln:template:dipoleinfield}
-The only net torque on the dipole is from the force from the electric field:
+When the dipole is rotated from the equilibrium position by an angle $\theta$, it will experience a restoring torque exerted by the electric field, with magnitude:
 \begin{align*}
 \tau = -pE\sin\theta 
 \end{align*}
-where we have inserted a minus sign to indicate that this is a restoring torque, in the opposite direction of increasing angle $\theta$. The net torque is equal to the moment of inertia times the angular acceleration:
+where we have inserted a minus sign to indicate that this is a restoring torque, in the opposite direction of increasing angle $\theta$. The net torque is then equal to the moment of inertia times the angular acceleration of the dipole (Newton's Second Law applied for rotation):
 \begin{align*}
 -pE\sin\theta &= I\alpha\\
 \therefore \alpha &= -\frac{pE}{I}\sin\theta\sim-\frac{pE}{I}\theta
 \end{align*}
-where in the last equality, we made the small angle approximation ($\sin\theta\sim\theta$). This has the form for simple harmonic motion:
+where in the last equality, we made the small angle approximation ($\sin\theta\sim\theta$). This has the form for simple harmonic motion, with angular frequency, $\omega$:
 \begin{align*}
 \frac{d^2\theta}{dt^2}&=-\omega^2 \theta\\
-\omega &=\sqrt{\frac{pE}{I}}
+\alpha=\omega &=\sqrt{\frac{pE}{I}}
 \end{align*}
 \end{solution}
 
