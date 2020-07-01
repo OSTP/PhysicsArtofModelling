@@ -31,34 +31,35 @@ In this chapter, we develop the concept of electric potential energy and electri
 	\end{itemize}
 \end{review}
 
-Mathematically, Coulomb's Law for the electric force is identical to Newton's Universal Theory of Gravity for the gravitational force. The electric force is thus conservative, and the work done by the electric force on a charge, $q$, when the charge moves from position, $A$, in space to some other position, $B$, cannot depend on the path taken. Since the work done by the electric force only depends on the location of the initial ($A$) and final ($B$) positions, we can define an electrical potential energy function, $U(\vec r)$, that depends on position, $\vec r$. The work done by the electric force, $\vec F^E$,  on a charge in going from position, $A$ (defined by position vector, $\vec r_A$), to position, $B$ (defined by position vector, $\vec r_B$), can be written as:
+Mathematically, Coulomb's Law for the electric force is identical to Newton's Universal Theory of Gravity for the gravitational force. The electric force is thus conservative, and the work done by the electric force on a charge, $q$, when the charge moves from position $A$ in space to some other position $B$, cannot depend on the path taken. Since the work done by the electric force only depends on the location of the initial ($A$) and final ($B$) positions, we can define an electrical potential energy function, $U(\vec r)$, that depends on position, $\vec r$. The work done by the electric force, $\vec F^E$,  on a charge in going from position $A$ (defined by position vector, $\vec r_A$), to position $B$ (defined by position vector, $\vec r_B$), can be written as:
 \begin{align}
 \label{eqn:potential:potentialwork}
 W=\int_A^B \vec F^E\cdot d\vec r=-\Delta U=-\left[ U(\vec r_B)-U(\vec r_A) \right]
 \end{align}
-In order to determine the function, $U(\vec r)$, we can choose a path over which the integral for work is easy to calculate. Consider the work done by the electric force from a point charge, $+Q$, exerted on a charge, $+q$, when $+q$ moves from a distance $r_A$ to a distance $r_B$ from the centre of $+Q$, as illustrated in Figure \ref{fig:potential:potential}.
+In order to determine the function, $U(\vec r)$, we can choose a path over which the integral for work is easy to calculate. Consider a point charge, $+Q$, that exerts an electric force on another charge, $+q$, as in Figure \ref{fig:potential:potential}. We will calculate work done by the electric force as it moves $+q$ from a distance $r_A$ to a distance $r_B$ from the centre of $+Q$.
+
 \capfig{0.5\textwidth}{figures/Potential/potential.png}{\label{fig:potential:potential}Calculating the work done on a charge $+q$ by the electric force exerted by charge $+Q$ when charge $+q$ moves from a distance $r_A$ to a distance $r_B$ from the centre of charge $+Q$.}
-Placing $+Q$ at the origin of a coordinate system, the force exerted on charge, $+q$, when it is located at position, $\vec r$, is given by:
+Placing $+Q$ at the origin of a coordinate system, the force exerted on $+q$, when it is located at position $\vec r$, is given by:
 \begin{align*}
 \vec F^E=k\frac{Qq}{r^2}\hat r
 \end{align*}
-The work done by the electric force when $+q$ moves from $A$ to $B$ is given by:
+The work done by the electric force when $+q$ moves from $r_A$ to $r_B$ is given by:
 \begin{align*}
 W&=\int_A^B \vec F^E\cdot d\vec r=\int_{\vec r_A}^{\vec r_B} \left(k\frac{Qq}{r^2}\hat r\right)\cdot d\vec r=kQq \int_{r_A}^{r_B} \frac{1}{r^2}dr\\
 &=kQq \left[\frac{-1}{r} \right]_{r_A}^{r_B}=-\left(\frac{kQq}{r_B}-\frac{kQq}{r_A}\right)
 \end{align*}
-where we noted that since $\vec F^E$ and $d\vec r$ are parallel, their scalar product is simply the product of their magnitudes. By comparing with Equation \ref{eqn:potential:potentialwork}, we can identify the potential energy, $U(\vec r)$, of a charge, $+q$, located at a relative position, $\vec r$, from a point charge, $+Q$, as:
+where we noted that, since $\vec F^E$ and $d\vec r$ are parallel, their scalar product is simply the product of their magnitudes. By comparing with Equation \ref{eqn:potential:potentialwork}, we can identify the potential energy, $U(\vec r)$, of a charge, $+q$, located at a relative position, $\vec r$, from a point charge, $+Q$, as:
 \begin{align*}
 \Aboxed{U(\vec r)=\frac{kQq}{r}+C}
 \end{align*}
 where the potential energy is only defined up to some constant, $C$, which cancels when we take the difference in potential energy between two positions. Note that this is very similar to the function for the gravitational potential energy of a mass, $m$, a distance, $r$, from a mass, $M$ (see Section \ref{sec:gravity:potentialenergy}).
 
-The potential energy function that we derived above remains the same if one or both of the charges change sign, as the derivation did not depend on the sign of the charges, $q$ and $Q$, as changing the sign of one charge changes the direction of the force. For example, a positive charge, $+q$, near a negative charge, $-Q$, would have negative electric potential energy with the choice $C=0$, in exact analogy with gravity.
+The potential energy function that we derived above remains the same if one or both of the charges change sign. The only difference in the derivation would be that the direction of the force, $\vec F^E$, could change. For example, a positive charge, $+q$, near a negative charge, $-Q$, would have negative electric potential energy with the choice $C=0$, in exact analogy with gravity.
 
 \subsection{Electrostatic potential energy}
-When we hold two positive charges together a distance, $r$, apart, we need to exert a force on the charges in order to keep the charges in place (as they repel each other). If we release the charges, they will move apart from each other, and eventually all of the stored electric potential energy is converted into kinetic energy. The energy that was originally stored in this ``system'' of two charges is called ``electrostatic potential energy''. In this section, we show how to model the energy stored in a collection of point charges.
+When we hold two positive charges together a distance, $r$, apart, we need to exert a force on the charges in order to keep the charges in place (as they repel each other). If we release the charges, they will move apart from each other until all of the stored electric potential energy is converted into kinetic energy. The energy that was originally stored in this ``system'' of two charges is called ``electrostatic potential energy''. In this section, we show how to model the energy stored in a collection of point charges.
 
-Consider a single positive charge, $q_1$, located at the origin of empty space. Since there are no other charges present, it does not ``cost'' us any energy to place that charge there - we do not need to do any work. If we now bring in a second positive charge, $q_2$, and place it a distance, $r_{12}$, from $q_1$ (Figure \ref{fig:potential:electrostaticenergy}), we will need to do work since $q_1$ exerts a force on $q_2$. If we define zero potential energy to be at infinity (choosing $C=0$ for electric potential energy), the work, $W_{q2}$, that we must do on $q_2$ to bring it from infinity to a distance, $r_{12}$, from $q_1$ is given by the corresponding change in potential energy of $q_2$:
+Consider a single positive charge, $q_1$, located at the origin of empty space. Since there are no other charges present, it does not ``cost'' us any energy to place that charge there - we do not need to do any work. If we now bring in a second positive charge, $q_2$, and place it a distance, $r_{12}$, from $q_1$ (Figure \ref{fig:potential:electrostaticenergy}), we will need to do work since $q_1$ exerts a force on $q_2$. We define zero potential energy to be at infinity, which means choosing $C=0$ for electric potential energy. The work, $W_{q2}$, that we must do on $q_2$ to bring it from infinity to a distance, $r_{12}$, from $q_1$ is given by the corresponding change in potential energy of $q_2$:
 \begin{align*}
 W_{q2}=\Delta U=U_{final}-U_{initial}=k\frac{q_1q_2}{r_{12}}-0=k\frac{q_1q_2}{r_{12}}
 \end{align*}
@@ -95,11 +96,12 @@ Similarly, we define the \textbf{electric potential}, $V(\vec r)$, to be the \te
 V(\vec r) &= \frac{ U(\vec r)}{q}\\
 \therefore U(\vec r)&= q V(\vec r)
 \end{align*}
-The S.I. unit for electric potential is the ``volt'', (V). Electric potential, $V(\vec r)$, is a scalar field whose value is ``the electric potential'' at that position in space. A positive charge, $q=\SI{1}{C}$, will thus have a potential energy of $U=\SI{10}{J}$ if it is located at a position in space where the electric potential is $V=\SI{10}{V}$, since $U=qV$. Similarly, a negative charge, $q=\SI{-1}{C}$, will have negative potential energy, $U=\SI{-10}{J}$, at the same location.
+The S.I. unit for electric potential is the ``volt'' (V). Electric potential, $V(\vec r)$, is a scalar field whose value is ``the electric potential'' at that position in space. Say that the electric potential at a position in space is  $V=\SI{10}{V}$. The above formula tells us that a positive charge $q=\SI{1}{C}$, located at that position, will have a potential energy of $U=\SI{10}{J}$. Similarly, a negative charge, $q=\SI{-1}{C}$, will have negative potential energy, $U=\SI{-10}{J}$, at the same location.
 
-Since only differences in potential energy are physically meaningful (as change in potential energy is related to work), \textbf{only changes in electrical potential are physically meaningful} (as electric potential is related to electric potential energy). A difference in electric potential is commonly called a ``voltage''. One often makes a clear choice of where the electric potential is zero (typically the ground, or infinitely far away), so that the term voltage is used to describe potential, $V$, instead of difference in potential, $\Delta V$; this should only be done when it is clear where the location of zero electric potential is defined.
+Since only \textit{differences} in potential energy are physically meaningful, \textbf{only changes in electrical potential are physically meaningful}. A difference in electric potential is commonly called a ``voltage''. One often makes a clear choice of where the electric potential is zero (typically the ground, or infinitely far away), so that the term voltage is used to describe potential, $V$, instead of difference in potential, $\Delta V$; this should only be done when it is clear where the location of zero electric potential is defined.
 
-We can describe a free-falling mass by stating that the mass moves from a region where it has high gravitational potential energy to a region of lower gravitational potential energy under the influence of the force of gravity (the force associated with a potential energy always acts in the direction to decreases potential energy). The same is true for electrical potential energy: \textbf{charges will always experience a force in a direction to decrease their electrical potential energy}. However, positive charges will experience a force driving them from regions of high electric potential to regions of low electric potential, whereas negative charges will experience a force driving them from regions of low electric potential to regions of higher electric potential. This is because, for negative charges, the change in potential energy associated with moving through space, $\Delta U$, will be the negative of the corresponding change in electric potential, $\Delta U=q\Delta V$, since the charge, $q$, is negative. 
+We can describe a free-falling mass by stating that the mass moves from a region where it has high gravitational potential energy to a region of lower gravitational potential energy under the influence of gravity (the force associated with a potential energy always acts in the direction to decreases potential energy). The same is true for electrical potential energy: \textbf{charges will always experience a force in a direction to decrease their electrical potential energy}. However, positive charges will experience a force driving them from regions of high electric potential to regions of low electric potential, whereas negative charges will experience a force driving them from regions of low electric potential to regions of higher electric potential. This is because, for negative charges, the change in potential energy associated with moving through space, $\Delta U$, will be the negative of the corresponding change in electric potential, $\Delta U=q\Delta V$, since the charge, $q$, is negative. 
+%TODO: kind of confusing
 
 \begin{checkpoint}
 	\begin{MCquestion}{Electric potential increases along the $x$ axis. A proton and an electron are placed at rest at the origin; in which direction do the charges move when released?}
@@ -214,14 +216,14 @@ and we note that we can write a function for the electric potential, $V(\vec r)$
 \begin{align*}
 V(\vec r)=\frac{kQ}{r}+C
 \end{align*}
-where $C$ is an arbitrary constant. This, of course, is identical to the result that we obtained earlier, for the potential energy of a charge, $q$, a distance, $r$, from $Q$. 
+where $C$ is an arbitrary constant. This, of course, is identical to the result that we obtained earlier, for the potential energy of a charge, $q$, a distance, $r$, from $Q$: 
 \begin{align*}
 U(\vec r)=qV(\vec r)=\frac{kQq}{r}+C'
 \end{align*}
 where the constant, $C'=qC$, does not have any physical impact. Often, as is the case for gravity, one chooses the constant $C=0$. This choice corresponds to defining potential energy to be zero at infinity. Equivalently, this corresponds to choosing infinity to be at an electric potential of $\SI{0}{V}$.
 
 \begin{checkpoint}
-	\begin{MCquestion}{What causes a positively charged particle to gain speed when it is accelerated through a potential difference?:}
+	\begin{MCquestion}{What causes a positively charged particle to gain speed when it is accelerated through a potential difference?}
 		\item The particle accelerates because it loses potential energy as it moves from high to low potential. \correct
 		\item The particle accelerates because it loses potential energy as it moves from low to high potential
 		\item The particle accelerates because it gains potential energy.
@@ -229,6 +231,17 @@ where the constant, $C'=qC$, does not have any physical impact. Often, as is the
 	\end{MCquestion}
 \end{checkpoint}
 \vspace{-0.25cm}
+
+\begin{studentOpinion}{Olivia}
+Below, I've included a grid I like to use when trying to remember how electric field ($\vec E$), electric force ($\vec F$), electric potential ($V$), and electric potential energy ($U$) relate to one another. 
+
+\capfig{0.4\textwidth}{figures/Potential/eqn_gridcrop.png}{\label{fig:potential:eqn_grid}A visual guide showing how to get one formula from another.}
+
+For example, let's say you are given the electric field and want to find the electric potential energy for a charge $q$. You would start at $\vec E$ and follow the operations on the arrows to get to $U$, i.e. you would perform the line integral and then multiply by $q$, or vice versa. Of course, when you reverse directions (e.g. to go from $U$ to $\vec E$), you have to reverse the operations of the arrows. We will see what the reverse operation of the line integral is in Section \ref{sec:potential:fieldfrompotential}. Figure \ref{fig:potential:eqn_grid_point} shows how this grid would be filled out if you were dealing with two point charges, $Q$ and $q$, as we have seen so far in this chapter. 
+\capfig{0.4\textwidth}{figures/Potential/eqn_grid_pointcrop.png}{\label{fig:potential:eqn_grid_point}How you would use the guide in the case of a point charge, $Q$, exerting a force on another point charge, $q$.}
+
+\end{studentOpinion}
+
 \begin{example}{What is the electric potential at the edge of a hydrogen atom (a distance of \SI{1}{\angstrom} from the proton), if one sets \SI{0}{V} at infinity? If an electron is located at a distance of \SI{1}{\angstrom} from the proton, how much energy is required to remove the electron; that is, how much energy is required to ionize the hydrogen atom?}
 We can easily calculate the electric potential, a distance of $\SI{1}{\angstrom}$ from a proton, since this corresponds to the potential from a point charge (with $C=0$):
 \begin{align*}
@@ -284,7 +297,7 @@ In general, we can write the electric potential in a region of constant electric
 \begin{align*}
 V(x)=Ex + C
 \end{align*} 
-This scenario is very similar to the gravitational force near the surface of the Earth, where the gravitational field is (almost) constant. If you choose to define zero gravitational potential energy at the surface of the Earth, then, as you move up a distance $h$ from the ground, your gravitational potential energy increases linearly with $h$ ($U(h)=mgh$). In our case, we defined zero electrical potential energy to correspond to the location of the negative plate (the negative plate is thus like the surface of the Earth, with a constant electric field pointing towards it). As a positive charge moves a distance $h$ away from the negative plate, it gains electric potential energy, $U(h)=qV(h)=qEh$, linearly with distance from the plate. If we release that positive charge, it will ``fall'' back onto the negative plate. The main difference with gravity, is that we can also have negative charges, which under gravity, would be similar to ``negative masses'' (it's not a thing), which would ``fall upwards'' (towards the positive plate).  
+This scenario is very similar to the gravitational force near the surface of the Earth, where the gravitational field is (almost) constant. If you choose to define zero gravitational potential energy at the surface of the Earth then, as you move up a distance $h$ from the ground, your gravitational potential energy increases linearly with $h$ ($U(h)=mgh$). In our case, we defined zero electrical potential energy to correspond to the location of the negative plate (the negative plate is thus like the surface of the Earth, with a constant electric field pointing towards it). As a positive charge moves a distance $h$ away from the negative plate, it gains electric potential energy, $U(h)=qV(h)=qEh$, linearly with distance from the plate. If we release that positive charge, it will ``fall'' back onto the negative plate. The main difference with gravity, is that we can also have negative charges, which under gravity, would be similar to ``negative masses'' (it's not a thing), which would ``fall upwards'' (towards the positive plate).  
 
 \textbf{Discussion:} In this example, we examined the electric field between two parallel plates with opposite charges on them, and saw that the field is constant and uniform between the plates and zero outside (except for a small region near the edge of the plates where the assumption of infinitely large plates breaks down). We found that the electric potential decreases linearly as a function of distance from one of the plates. Because the electric field is constant between the two plates, the electric force on a charge can be treated in a similar way as the gravitational force on a mass near the surface of the Earth. The resulting electric potential is linear in the distance from the negative plate, just as $mgh$ is linear in $h$, the distance to the surface of the Earth. Parallel plates are often used to accelerate charges, so they are useful to understand. 
 \end{example}
@@ -300,7 +313,7 @@ This scenario is very similar to the gravitational force near the surface of the
 \end{checkpoint}
 
 
-\subsection{Electric field from electric potential}
+\subsection{Electric field from electric potential}\label{sec:potential:fieldfrompotential}
 
 
 \begin{review}
@@ -331,25 +344,25 @@ Similarly, but using force per unit charge (i.e. electric field) and potential e
 where, as you recall, $\nabla V$, is called the gradient of the scalar field, $V(x,y,z)$. The gradient is a vector that points in the direction of maximal increase of the value of $V(x,y,z)$. For a positive charge, this corresponds to the direction of maximal increase in potential energy. A positive charge will experience a force in the opposite direction (in the direction where the potential energy decreases the fastest), and the electric field is thus in the opposite direction from the gradient of the electric potential.
 
 \subsection{Equipotential surfaces}
-We can visualize electric potential in several ways, since it is a scalar field (it has a single value that can differ everywhere in space). Figure \ref{fig:potential:1pos} shows the electric potential near a positive charge, $+Q$, where one has chosen $\SI{0}{V}$ to be located at infinity. The right panel shows the electric potential as a ``surface plot'', where the vertical direction is the value of the electric potential. The left panel shows a ``heat map'' of the electric potential, where the colour corresponds to the value of the electric potential.
+We can visualize electric potential in several ways, since it is a scalar field (it has a single value that can differ everywhere in space). Figure \ref{fig:potential:1pos} shows the electric potential near a positive charge, $+Q$, where we have chosen $\SI{0}{V}$ to be located at infinity. The right panel shows the electric potential as a ``surface plot'', where the vertical direction is the value of the electric potential. The left panel shows a ``heat map'' of the electric potential, where the colour corresponds to the value of the electric potential.
 
 \capfig{\textwidth}{figures/Potential/1pos.png}{\label{fig:potential:1pos}Electric potential heat map (left) and surface plot (right) near a single positive charge.}
 
-The most common way to visualize the electric potential is to draw ``contour lines'', similar to how one draws contour lines on a geographical map. On a geographical map, contours correspond to lines of constant altitude, which are also lines of constant gravitational potential energy. Similarly, we can draw lines of constant electric potential to visualize the electric potential. Lines of constant potential are called ``equipotential lines''. In general, in three dimensions, regions of constant electric potential can be surfaces or volumes, called ``equipotential surfaces/volumes''. In Example \ref{ex:potential:parallelplates} (with the parallel plates) each of the plates forms an equipotential surface (e.g. the electric potential was fixed to $\SI{0}{V}$ everywhere on the negative plate). 
+The most common way to visualize the electric potential is to draw ``contour lines'', similar to how one draws contour lines on a geographical map. On a geographical map, contours correspond to lines of constant altitude, which are also lines of constant gravitational potential energy. Similarly, we can draw lines of constant electric potential. Lines of constant potential are called ``equipotential lines''. In three dimensions, regions of constant electric potential can be surfaces or volumes, called ``equipotential surfaces/volumes''. 
 
-Recall that, at some point in space, the electric field vector always points in the opposite direction of the gradient of the electric potential. Namely, the electric field points in the direction in which the electric potential decreases the fastest. That direction must be perpendicular to the direction in which the electric potential does not change; in other words, the \textbf{electric field vector is always perpendicular to equipotential lines/surfaces}. More intuitively, one can think about a charge moving along an equipotential. By definition, the electric potential energy of the charge does not change if its moves along an equipotential. As a result, the electric force/field cannot do any work on the charge, and must thus be perpendicular to the path of the charge (which we chose to be an equipotential).
 
-Conducting materials are always equipotential surfaces (or volumes) if charges are not moving inside the conductor. The electric field inside a conductor is always zero (in electrostatics, when charges are not moving), and thus, a charge moving through a conductor experiences no electric force and its electrical potential energy will be constant; in other words, the entire conductor is an equipotential. Similarly, because the electric field must always be perpendicular to an equipotential, electric field lines are always perpendicular to the surface of a conductor (in electrostatics).
+The \textbf{electric field vector is always perpendicular to equipotential lines/surfaces}. At any point in space, the electric field vector points opposite to the gradient of the electric potential, since $\vec E=-\nabla V$. This means that the electric field points in the direction where the potential decreases the fastest, which must be perpendicular to the direction where the potential stays the same (i.e. the equipotential lines). Another way to think about this is to consider a charge moving along an equipotential. By definition, the electric potential energy of the charge does not change if its moves along an equipotential. As a result, the electric force/field cannot do any work on the charge, and so must be perpendicular to the path of the charge.
 
-In order to draw equipotential lines, one can start by drawing electric field lines, and then draw (closed) contour lines that are everywhere perpendicular to the electric field lines. This is illustrated in Figure \ref{fig:potential:2pos1neg}. 
+
+In order to draw equipotential lines, you can start by drawing electric field lines, and then draw (closed) contour lines that are everywhere perpendicular to the electric field lines. This is illustrated in Figure \ref{fig:potential:2pos1neg}. 
 
 \capfig{\textwidth}{figures/Potential/2pos1neg.png}{\label{fig:potential:2pos1neg}The electric field and equipotential lines caused by two $+2q$ charges and one $-3q$ charge (left) and its corresponding electric potential heatmap (right).}
 
-In general, it is preferable to draw equipotential lines that are separated by equal increments in electric potential (just as on a geographical map, the contour lines correspond to constant increments in altitude). This requires knowing a functional form for the electric potential. For example, the equipotential lines for a point charge located at the origin consist in concentric circles centred at the origin (in three dimensions, this results in concentric spherical equipotential surfaces). If we define $\SI{0}{V}$ to be at infinity, the electric potential is given by:
+In general, it is preferable to draw equipotential lines at equal increments of potential (e.g. every \SI{10}{V}). For example, the equipotential lines for a point charge located at the origin consist of concentric circles centred at the origin (in three dimensions, this results in concentric spherical equipotential surfaces). If we define $\SI{0}{V}$ to be at infinity, the electric potential is given by:
 \begin{align*}
 V(r)=\frac{kQ}{r}
 \end{align*}
-In order to draw equipotential lines every, say, $\SI{10}{V}$, the radii of the corresponding equipotential circles, for $V=\SI{10}{V}$, $V=\SI{20}{V}$, $V=\SI{30}{V}$, etc., are given by:
+In order to draw equipotential lines every $\SI{10}{V}$, the radii of the corresponding equipotential circles, for $V=\SI{10}{V}$, $V=\SI{20}{V}$, $V=\SI{30}{V}$, etc., are given by:
 \begin{align*}
 r&=\frac{kQ}{V}\\
 r_{10V}&=\frac{kQ}{(\SI{10}{V})}\quad r_{20V}=\frac{kQ}{(\SI{20}{V})}\quad r_{30V}=\frac{kQ}{(\SI{30}{V})}\quad \dots
@@ -412,7 +425,10 @@ where, again, one needs to be very careful with the signs! Note that it also mak
 \end{example}
 
 \section{Electric field and potential at the surface of a conductor}
-If we consider a conducting sphere of radius, $R$, with charge, $+Q$, the electric field at the surface of the sphere is given by:
+
+Conducting materials are always equipotential surfaces (or volumes) if charges are not moving inside the conductor. This is because the electric field inside a conductor is always zero and thus, a charge moving through a conductor experiences no electric force and its electrical potential energy will be constant. Similarly, because the electric field must always be perpendicular to an equipotential, electric field lines are always perpendicular to the surface of a conductor (in electrostatics).
+
+If we consider a conducting sphere of radius $R$ and charge $+Q$, the electric field at the surface of the sphere is given by:
 \begin{align*}
 E=k\frac{Q}{R^2}
 \end{align*}
@@ -434,12 +450,12 @@ The charge density can be related to the electric field at the surface of the sp
 \begin{align*}
 E&=k\frac{Q}{R^2}=k\frac{4\pi R^2\sigma}{R^2}=4\pi\sigma k=\frac{\sigma}{\epsilon_0}
 \end{align*}
-where in the last equality, we used $k$ with $\epsilon_0$ and confirmed the general result from Section \ref{sec:gauss:conductors}, where we determined the electric field near a conductor with surface charge, $\sigma$. 
+where in the last equality, we used $k$ with $\epsilon_0$ and confirmed the general result from Section \ref{sec:gauss:conductors}, where we determined the electric field near a conductor with surface charge $\sigma$. 
 
-Consider a sphere of radius, $R_1$, that carries total charge, $+Q$. A neutral second, smaller, conducting sphere, of radius $R_2$ is then connected to the first sphere, using a conducting wire, as in Figure \ref{fig:potential:twospheres}.
+Consider a sphere of radius $R_1$ that carries total charge, $+Q$. A neutral second, smaller, conducting sphere, of radius $R_2$, is then connected to the first sphere, using a conducting wire, as in Figure \ref{fig:potential:twospheres}.
 \capfig{0.5\textwidth}{figures/Potential/twospheres.png}{\label{fig:potential:twospheres}Two conducting spheres are connected by a conducting wire. The charge $Q$ that was originally on the larger sphere distributes itself onto the two spheres.}
 
-Because the charges on the large sphere can move around freely, some of them will move to the smaller sphere. Very quickly, the charges will stop moving and the spheres of radius, $R_1$ and $R_2$, will end up carrying charges, $Q_1$ and $Q_2$, respectively (we assume that the wire is small enough that negligible amounts of charge are distributed on the wire). Since the two conducting spheres are connected by a conductor, they form an equipotential, and are thus at the same voltage, $V$, relative to infinity. Since the two spheres are at the same electric potential, the electric field at the surface of each sphere are related:
+Because the charges on the large sphere can move around freely, some of them will move to the smaller sphere. Very quickly, the charges will stop moving and the spheres of radius $R_1$ and $R_2$ will end up carrying charges $Q_1$ and $Q_2$, respectively (we assume that the wire is small enough that negligible amounts of charge are distributed on the wire). Since the two conducting spheres are connected by a conductor, they form an equipotential, and are thus at the same voltage, $V$, relative to infinity. Since the two spheres are at the same electric potential, the electric field at the surface of each sphere are related:
 \begin{align*}
 E_1&=\frac{V}{R_1}\\
 E_2&=\frac{V}{R_2}\\
@@ -455,14 +471,14 @@ E_2&=\frac{\sigma_2}{\epsilon_0}\\
 \end{align*}
 and we find that the charge density is higher on the smaller sphere. Thus, there are more charges per unit area on the smaller sphere than the bigger sphere.
 
-We can generalize this model to describe charges on any charged conducting object. If charges are deposited on a conducting object that is not a sphere, as in Figure \ref{fig:potential:chargeblob}, they will not distribute themselves uniformly. Instead, there will be a higher charge density (charges per unit area), near parts of the object that have a small radius of curvature (sharp points on the object in particular), just as the charge density was higher on the smaller sphere described above. As a consequence of the higher concentration of charges near the ``pointier'' parts of the object, the electric field at the surface will be the strongest in those regions (as it is stronger at the surface of the smaller sphere described above).
+We can generalize this model to describe charges on any charged conducting object. If charges are deposited on a conducting object that is not a sphere, as in Figure \ref{fig:potential:chargeblob}, they will not distribute themselves uniformly. Instead, there will be a higher charge density (charges per unit area), near parts of the object that have a small radius of curvature, just as the charge density was higher on the smaller sphere described above. As a consequence of the higher concentration of charges near the ``pointier'' parts of the object, the electric field at the surface will be the strongest in those regions.
 \capfig{0.65\textwidth}{figures/Potential/chargeblob.png}{\label{fig:potential:chargeblob}On an uneven conductor, charges will accumulate on the sharper points, where the radius of curvature is the smallest.}
 
-In air, if the electric field exceeds a magnitude of approximately $\SI{3e6}{V/m}$, the air is said to ''electrically breakdown''. The strong electric field can remove electron from atoms in the air, ionizing the air in a chain reaction and making it conductive. Thus, if the electric field at a point on the surface of a conductor is very strong, the air near that point will break down, and charges will leave the conductor, through the air, to find a location with lower electric potential energy (usually the ground). Electric breakdown is what we experience as a spark (or lightning, on a larger scale), and is usually a discrete (and potentially dramatic) event. Corona discharge is another mechanism whereby the strong electric field can make the air conductive, but in this case charges leak into the air more gradually, unlike in the case of electrical break down. Charges leaking into air through Corona discharge will emit a faint blueish light (the ``Corona'') as well as an audible hissing sound.
+In air, if the electric field exceeds a magnitude of approximately $\SI{3e6}{V/m}$, the air is said to ``electrically break down''. The strong electric field can remove electrons from atoms in the air, ionizing the air in a chain reaction and making it conductive. Thus, if the electric field at a point on the surface of a conductor is very strong, the air near that point will break down, and charges will leave the conductor, through the air, to find a location with lower electric potential energy (usually the ground). Electric breakdown is what we experience as a spark (or lightning, on a larger scale), and is usually a discrete (and potentially dramatic) event. Corona discharge is another mechanism whereby the strong electric field can make the air conductive, but in this case, charges leak into the air more gradually, unlike in the case of electrical break down. Charges leaking into air through Corona discharge will emit a faint blueish light (the ``Corona'') as well as an audible hissing sound.
 
-Objects that are designed to hold a high electric potential (for example the electrodes on high voltage lines) are usually made very carefully so that they have a very smooth surface and no sharp edges. This reduces the risk of breakdown or corona discharge at the surface which would result in a loss of charge.
+Objects that are designed to hold a high electric potential (for example the electrodes on high voltage lines) are usually made very carefully so that they have a very smooth surface and no sharp edges. This reduces the risk of breakdown or Corona discharge at the surface which would result in a loss of charge.
 
-Contrary to popular belief, lightning rods are not designed to attract lightening. Instead, lightning rods are designed to be conductors with a very sharp point, so that corona discharge can occur at their tip. This allows charges to slowly leak off from the Earth into the cloud through Corona discharge, thereby reducing the potential difference between the cloud and Earth so that a lightning strike (electrical breakdown) does not occur. When a lightning strike does occur, it will hit the lightning rod, since the electric field at the top of the rod is high and that is the most likely point for the air to break down; but, that is not the goal of the lightning rod!
+Contrary to popular belief, lightning rods are not designed to attract lightening. Instead, lightning rods are designed to be conductors with a very sharp point, so that Corona discharge can occur at their tip. This allows charges to slowly leak off from the Earth into the cloud through Corona discharge, thereby reducing the potential difference between the cloud and Earth so that a lightning strike (electrical breakdown) does not occur. When a lightning strike does occur, it will hit the lightning rod, since the electric field at the top of the rod is high and that is the most likely point for the air to break down; but, that is not the goal of the lightning rod!
 \newpage
 \section{Capacitors}
 \label{sec:potential:capacitors}
@@ -476,7 +492,7 @@ As long as the quantities of charge involved are not too large, it has been obse
 Q&\propto \Delta V\\
 \Aboxed{Q&=C\Delta V}\\
 \end{align*}
-The constant of proportionality, $C$, between charge and potential difference across the capacitor (usually called voltage across the capacitor) is called ``capacitance'', and has S.I. units of ``Farads'', $F$. The capacitance of a particular capacitor is a measure of how much charge it can hold at given voltage and depends on the geometry of the capacitor as well as the material between the terminals. If too much charge is placed on a capacitor, the material between the two plates will break down, and a spark will usually damage the capacitor as well as discharge it.
+The constant of proportionality, $C$, between charge and potential difference across the capacitor (usually called voltage across the capacitor) is called ``capacitance'', and has S.I. units of ``Farads'' ($F$). The capacitance of a particular capacitor is a measure of how much charge it can hold at given voltage and depends on the geometry of the capacitor as well as the material between the terminals. If too much charge is placed on a capacitor, the material between the two plates will break down, and a spark will usually damage the capacitor as well as discharge it.
 
 We can easily calculate the capacitance of a parallel plate capacitor. We model the capacitor as being made of two conducting plates, each with area, $A$, separated by a distance, $L$, and holding charge with magnitude, $Q$. The surface charge density on one of the plates, $\sigma$, is just given by:
 \begin{align*}
@@ -490,9 +506,9 @@ Comparing with, $Q=C\Delta V$, the capacitance of the parallel plate capacitor i
 \begin{align*}
 C=\epsilon_0\frac{A}{L}
 \end{align*}
-It makes sense that the capacitance, the amount of charge that can be stored at a given voltage, increases if the plates have a larger area (more space for charges), and decreases if the plates are further apart (smaller electric field).
+It makes sense that the capacitance, the amount of charge that can be stored at a given voltage, increases if the plates have a larger area (more space for charges), and decreases if the plates are further apart . %todo: ask (smaller electric field).
 
-Capacitors are used in many touch screens. For example, these might be made of glass (an insulator), with a thin metal coating that one touches to interact with the screen (one of the plates). As you touch the metal plate, you effectively change the capacitance of the screen, which can be sensed and modelled to determine the location of your finger(s). Modern touch screen have many capacitors built directly into the screen, and function based on this principle. 
+Capacitors are used in many touch screens. For example, these might be made of glass (an insulator), with a thin metal coating that one touches to interact with the screen (one of the plates). As you touch the metal plate, you effectively change the capacitance of the screen, which can be sensed and modelled to determine the location of your finger(s). Modern touch screens have many capacitors built directly into the screen, and function based on this principle. 
 
 \begin{checkpoint}
 	\begin{MCquestion}{A capacitor holds 0.2C of charge when it has a potential difference of 500V between its plates. If the same capacitor holds 0.15C of charge, what is the potential difference between its plates?}
@@ -508,7 +524,7 @@ In practice, capacitors always have an insulating material between the two plate
 \begin{align*}
 C=KC_0
 \end{align*}
-where $C$ is the capacitance with the material in place, and $C_0$ is the capacitance when there is vacuum between the plates (the dielectric constant of air is very close to 1). Often, rather than the dielectric constant, one uses the ``permittivity'', $\epsilon$, of a material:
+where $C$ is the capacitance with the material in place, and $C_0$ is the capacitance when there is a vacuum between the plates (the dielectric constant of air is very close to 1). Often, rather than the dielectric constant, one uses the ``permittivity'', $\epsilon$, of a material:
 \begin{align*}
 \epsilon=K\epsilon_0
 \end{align*}
@@ -516,24 +532,24 @@ based on the permittivity of free space, $\epsilon_0$. The capacitance of a para
 \begin{align*}
 C=K\epsilon_0\frac{A}{L}=\epsilon\frac{A}{L}
 \end{align*}
-Dielectrics materials are made of molecules that can be polarized (as water), namely molecules that have a non-zero electric dipole moment. When the dielectric material is placed between the plates, the dipoles inside the material align themselves with the electric field from the plates. This leads to a second electric field, from the dipoles, in the opposite direction of the field from the plates, thus reducing the total electric field between the plates. This, in turn, allows more charges to be held on the plate for a given voltage. This is illustrated in Figure \ref{fig:potential:polarizeddipoles}
+Dielectric materials are made of molecules that can be polarized (such as water), namely molecules that have a non-zero electric dipole moment. When the dielectric material is placed between the plates, the dipoles inside the material align themselves with the electric field from the plates. This leads to a second electric field, from the dipoles, in the opposite direction of the field from the plates, thus reducing the total electric field between the plates. This, in turn, allows more charges to be held on the plate for a given voltage. This is illustrated in Figure \ref{fig:potential:polarizeddipoles}
 
 \capfig{0.8\textwidth}{figures/Potential/polarizeddipoles.png}{\label{fig:potential:polarizeddipoles} A dielectric material is placed between the two plates of a capacitor. The electric dipoles in the dielectric have random orientations when the plates are neutral (left panel). When the plates are charged (right panel), the dipoles align themselves with the field from the plates, allowing more charge to be on the plates at a given potential difference. }
 
-Note that, in a dielectric material with permittivity, $\epsilon$, Gauss' Law is modified to read:
+Note that, in a dielectric material with permittivity $\epsilon$, Gauss's Law is modified to read:
 \begin{align*}
 \oint \vec E\cdot d\vec A=\frac{Q^{enc}}{\epsilon}
 \end{align*}
 where the permittivity of free space, $\epsilon_0$, is simply replaced with the permittivity of the material, $\epsilon$.
 
 \subsection{Energy stored in a capacitor}
-The charges stored on a capacitor have electrical potential energy: if one were to place a conductor between the plates, charges would immediately conduct from one plate to the other and gain kinetic energy. We can model the amount of energy stored on the capacitor by considering how much work it takes to place the charges on the capacitor.
+The charges stored on a capacitor have electric potential energy: if one were to place a conductor between the plates, charges would immediately conduct from one plate to the other and gain kinetic energy. We can model the amount of energy stored on the capacitor by considering how much work it takes to place the charges on the capacitor.
 
-Imagine that both plates on the capacitor start with a charge of magnitude, $q$. We then remove an infinitesimal negative charge, with magnitude $dq$, from the positive plate and place it on the negative plate. This required work, since we had to pull this negative charge away from the positive plate. If the potential difference across the plates is $\Delta V$, then we had to do an amount of work given by:
+Imagine that both plates on the capacitor start with a charge of magnitude $q$. We then remove an infinitesimal negative charge, with magnitude $dq$, from the positive plate and place it on the negative plate. This required work, since we had to pull this negative charge away from the positive plate. If the potential difference across the plates is $\Delta V$, then we had to do an amount of work given by:
 \begin{align*}
 dW = \Delta Vdq
 \end{align*}
-since the charge $dq$ has now gained potential energy, $\Delta Vdq$. The potential difference is however dependent on the (constant) capacitance of the capacitor, and the amount of charge, $q$, already stored on the plates:
+since the charge $dq$ has now gained potential energy, $\Delta Vdq$. The potential difference is dependent on the (constant) capacitance of the capacitor, and the amount of charge, $q$, already stored on the plates:
 \begin{align*}
 q &= C\Delta V\\
 \therefore \Delta V&=\frac{q}{C}
@@ -552,15 +568,15 @@ where we made use of $Q=C\Delta V$ to show the formula with different choices of
 \section{Summary}
 
 \begin{chapterSummary}
-The electric force is conservative, so we can define a potential energy function, $U(\vec r)$. The potential energy function for a point charge, $q$, at position, $\vec r$, relative to a point charge, $Q$, is given by:
+The electric force is conservative, so we can define a potential energy function, $U(\vec r)$. The potential energy function for a point charge, $q$, at position $\vec r$, relative to a point charge, $Q$, is given by:
 \begin{align*}
 U(\vec r) = \frac{kQ}{r}q + C
 \end{align*}
-where, $C$, is an arbitrary constant, since only difference in potential energy are physically meaningful (as they correspond to work). Note that the sign of the electrical potential energy will depend on the relative sign of $q$ and $Q$. 
+where $C$ is an arbitrary constant, since only differences in potential energy are physically meaningful (as they correspond to work). Note that the sign of the electrical potential energy will depend on the relative sign of $q$ and $Q$. 
 
 If a collection of charges are held together, the total electrical potential energy that is stored is called ``electrostatic potential energy''. 
 
-In a similar way as the electric field, $\vec E(\vec r)$, corresponds to electric force per unit charge, ``electric potential'', $V(\vec r)$, corresponds to electric potential energy per unit charge. The electric potential at a position, $\vec r$, relative to a point charge, $Q$, is given by:
+Similarly to how the electric field, $\vec E(\vec r)$, corresponds to electric force per unit charge, ``electric potential'', $V(\vec r)$, corresponds to electric potential energy per unit charge. The electric potential at a position, $\vec r$, relative to a point charge, $Q$, is given by:
 \begin{align*}
 V(\vec r) =\frac{U(\vec r)}{q}= \frac{kQ}{r} + C'
 \end{align*}
@@ -568,13 +584,13 @@ and also depends on an arbitrary constant, $C'$, since only differences in elect
 \begin{align*}
 U = qV
 \end{align*}
-This is analogous to determining the force on a charge $q$ when we know the electric field at some point in space:
+This is analogous to determining the force on a charge, $q$, when we know the electric field at some point in space:
 \begin{align*}
 \vec F = q \vec E
 \end{align*}
 Differences in electric potential are called ``voltages'', and the S.I. unit of potential is called the ``volt'' (V). In S.I. units, the electric field is often expressed in units of volts per metre (V/m).
 
-When a particle with charge, $q$, changes position such that the corresponding change in electric potential is $\Delta V$, the particle's potential energy will change by:
+When a particle with charge $q$ changes position such that the corresponding change in electric potential is $\Delta V$, the particle's potential energy will change by:
 \begin{align*}
 \Delta U = q\Delta V
 \end{align*}
@@ -719,7 +735,7 @@ U = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}C(\Delta V)^2=\frac{1}{2}Q\Delta V
 
 \subsection{Problems}
 \begin{problem}{soln:potential:cylinderpotential}{\label{prob:potential:cylinderpotential} 
-A long cylinder of radius, $R$, carries a uniform charge per unit volume density, $\rho$. If the electric potential at the surface of the cylinder is $V_S = \SI{100}{V}$, then what is the electric potential inside and outside of the cylinder as a function of $r$, the distance from the centre of the cylinder?}
+A long cylinder of radius $R$ carries a uniform charge per unit volume density, $\rho$. The electric potential at the surface of the cylinder is $V_S = \SI{100}{V}$, where we have chosen $V=0$ at infinity. What is the electric potential inside and outside of the cylinder as a function of $r$, the distance from the centre of the cylinder?}
 \end{problem}
 
 \begin{problem}{soln:potential:nestedcylinders}{\label{prob:potential:nestedcylinders} A capacitor is constructed by placing a concentric conducting cylindrical shell of negligible thickness and inner radius, $R_B$, around a solid conducting cylinder of radius, $R_A$, as illustrated in Figure igure \ref{fig:potential:nestedcylinders}. What is the capacitance of this capacitor, where the solid cylinder and the cylindrical shell form the two electrodes?
@@ -731,7 +747,7 @@ A long cylinder of radius, $R$, carries a uniform charge per unit volume density
 \begin{solution}{prob:potential:cylinderpotential}\label{soln:potential:cylinderpotential}
 To determine the electric potential inside and outside of the cylinder, we can use the electric field, which we must first determine. We will do this using Gauss' Law. We will use a gaussian surface that is a cylinder of radius, $r$, and length, $L$. In both regions, the flux of the electric field will be given by:
 \begin{align*}
-\int E dA  = E 2\pi rL
+\int E\cdot dA  = E 2\pi rL
 \end{align*}
 since the electric field points in the radial direction, away from the centre of the cylinder. Outside of the cylinder ($r>R$), the total charge enclosed is the total charge on a length, $L$, of the cylinder, which has a volume, $\pi R^2 L$:
 \begin{align*}
@@ -739,7 +755,7 @@ Q^{enc}=\rho \pi R^2 L
 \end{align*} 
 Thus, applying Gauss' Law outside the cylinder, gives the electric field for $r>R$:
 \begin{align*}
-\int E dA &= \frac{Q_{enc}}{\epsilon_0}\\
+\int E\cdot dA &= \frac{Q_{enc}}{\epsilon_0}\\
 E 2\pi rL &= \frac{\rho \pi R^2 L}{\epsilon_0}\\
 \therefore E(r) &= \frac{\rho R^2}{2\epsilon_0r}\quad(r\geq R)
 \end{align*}
@@ -749,31 +765,35 @@ Q^{enc}=\rho \pi r^2 L
 \end{align*}
 Applying Gauss' Law, the electric field inside the cylinder is given by:
 \begin{align*}
-\int E dA &= \frac{Q_{enc}}{\epsilon_0}\\
+\int E\cdot dA &= \frac{Q_{enc}}{\epsilon_0}\\
 E 2\pi rL &= \frac{\rho \pi r^2 L}{\epsilon_0}\\
 \therefore E(r) &= \frac{\rho r}{2\epsilon_0}\quad(r<R)
 \end{align*}
-Given the electric field everywhere in space, we can now determine the electric potential.  We will begin by calculating the electric potential anywhere in the cylinder, $V(r)$, using the potential difference between that point and the surface of the cylinder:
+Now that we have found the electric field, we can determine the electric potential. What we really want to find is the change in potential when moving a positive point charge from infinity (our \SI{0}{V} point) to the point of interest. We know that the potential at the surface (meaning the potential difference between infinity and the surface) is $V_S=\SI{100}{V}$. To find the potential at any point, all we have to do is calculate the potential difference between the surface and the point of interest, and add that to $V_S$.
+
+We will start with the potential inside the cylinder, $r<R$:
 \begin{align*}
-\Delta V &= V_S - V(r) = -\int_{r}^{R} \vec E\cdot d \vec r\\
-&= -\int_{r}^{R} \frac{\rho r}{2\epsilon_0} \hat r \cdot d \vec r\\
-&= -\int_{r}^{R} \frac{\rho r}{2\epsilon_0} dr\\
-&= -\frac{\rho (R^2-r^2)}{4\epsilon_0}\\
+\Delta V_{r<R} &= V(r)-V_S = -\int_{R}^{r} \vec E\cdot d \vec r\\
+&= -\int_{R}^{r} \frac{\rho r}{2\epsilon_0} \hat r \cdot d \vec r\\
+&= -\int_{R}^{r} \frac{\rho r}{2\epsilon_0} dr\\
+&= -\frac{\rho (r^2-R^2)}{4\epsilon_0}\\
+&= \frac{\rho (R^2-r^2)}{4\epsilon_0}\\
 \therefore V(r) &= V_S + \frac{\rho (R^2-r^2)}{4\epsilon_0}\\
 &=\SI{100}{V}+\frac{\rho (R^2-r^2)}{4\epsilon_0}
 \end{align*}
-Thus, everywhere inside the cylinder, the electric potential is larger than $\SI{100}{V}$, since $R^2-r^2>0$. This makes sense, as the electric field points away from the centre, and positive charges will decrease their potential energy by moving further from the centre.
+Thus, everywhere inside the cylinder, the electric potential is larger than $\SI{100}{V}$, since $R^2-r^2>0$. 
 
-We proceed in the same way to determine the difference in potential between a point at a distance, $r>R$, and the potential, $V_S$, at the surface of the cylinder:
+We proceed in the same way to determine the potential at position $r$ outside the cylinder, $r>R$:
 \begin{align*}
-\Delta V &=  V(r) - V_S = -\int_{R}^{r} \vec E\cdot d \vec r\\
+\Delta V_{r>R} &=  V(r) - V_S = -\int_{R}^{r} \vec E\cdot d \vec r\\
 &= -\int_{R}^{r} \frac{\rho R^2}{2\epsilon_0r} \hat r \cdot d \vec r\\
 &= - \frac{\rho R^2}{2\epsilon_0} \int_{R}^{r} \frac{1}{r}dr\\
-&=- \frac{\rho R^2}{2\epsilon_0} \ln \left( \frac{R}{r} \right)\\
-\therefore V(r) &= V_S - \frac{\rho R^2}{2\epsilon_0} \ln \left( \frac{R}{r} \right)\\
-&= \SI{100}{V} - \frac{\rho R^2}{2\epsilon_0} \ln \left( \frac{R}{r} \right)
+&=- \frac{\rho R^2}{2\epsilon_0}(\ln r-\ln R)\\
+&=- \frac{\rho R^2}{2\epsilon_0}\ln\left( \frac{r}{R} \right)\\
+\therefore V(r) &= V_S - \frac{\rho R^2}{2\epsilon_0} \ln \left( \frac{r}{R} \right)\\
+&= \SI{100}{V} - \frac{\rho R^2}{2\epsilon_0} \ln \left( \frac{r}{R} \right)
 \end{align*}
-We find that, outside the cylinder, the electric potential decreases from $\SI{100}{V}$ as one moves away from the cylinder, as expected.
+Since $r>R$, $\ln (r/R)$ is positive, so the electric potential decreases from as you move away from the cylinder, as expected.
 \end{solution}
 
 \begin{solution}{prob:potential:nestedcylinders}\label{soln:potential:nestedcylinders} We will determine the capacitance by relating the potential difference between the electrodes to the charge stored on the electrodes. By using Gauss' Law, we can determine the electric field between the electrodes based on the charge on those electrodes, and from there, we can determine the potential difference. We will ignore the fact that the cylinder has a finite length and that Gauss' Law will not hold near the edges of the cylinder, where the electric field is no longer exactly in the radial direction.
