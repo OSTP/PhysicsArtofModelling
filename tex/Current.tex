@@ -210,8 +210,7 @@ This last equation is often called ``Ohm's Law'', even if, technically, Ohm's La
 The (derived) S.I. unit of resistance is the ``Ohm'', (\si{\Omega}).
 
 \begin{studentOpinion}{Olivia}
-Resistivity vs Resistance: Both resistance and resistivity tell us how strongly a material or conductor opposes the flow of current. The difference is that the resistivity is a fundamental property of a material (and is microscopic), whereas resistance depends on the size and shape of the conductor, \textit{as well as} the resistivity (and is macroscopic). It is tempting to think about resistivity as the resistance density, because it is similar to the concepts of mass density and charge density. However, we have to be careful because resistivity is not resistance per unit volume ($\rho \neq R/(A\cdot L)$), and is instead related to resistance by $
-\rho=R\cdot (A/L)$.
+Resistivity vs Resistance: Both resistance and resistivity tell us how strongly a material or conductor opposes the flow of current. The difference is that the resistivity is a fundamental property of a material (and is microscopic), whereas resistance depends on the size and shape of the conductor, \textit{as well as} the resistivity (and is macroscopic). It is tempting to think about resistivity as the resistance density, because it is similar to the concepts of mass density and charge density. However, we have to be careful because resistivity is not resistance per unit volume ($\rho \neq R/(A\cdot L)$), and is instead related to resistance by $\rho=R\cdot (A/L)$.
 
 
 \end{studentOpinion}
@@ -258,6 +257,16 @@ It makes sense that the equivalent resistance is found by summing the two resist
 R_{eff}&=R_1+R_2+R_2+\dots
 \end{align*}
 
+\begin{studentOpinion}{Olivia}
+The comparison to fluid mechanics can very useful. In the left panel of Figure \ref{fig:current:waterseries}, I've shown what the series circuit from Figure \ref{fig:current:series} would look like in the fluid mechanics analogy. Here, I have replaced the current with the fluid flow, $Q$, and the voltage with the pressure differential, $\Delta P$. The resistors are now narrow portions of the pipe, with resistances $R_1$ and $R_2$. There are a couple things we can see from this:
+\begin{enumerate}
+\item The flow is the same at every point along the circuit, because there is only one path the water can take, and there is no build up of water at any point.
+\item The effective resistance is the sum of $R_1$ and $R_2$, because the resistance from the two narrow sections is equivalent to the resistance of one long narrow section, as displayed in the right panel of Figure \ref{fig:current:waterseries}.
+\end{enumerate}
+\capfig{0.7\textwidth}{figures/Current/waterseries.png}{\label{fig:current:waterseries}Left panel: What a series circuit would look like in the context of fluid mechanics. Right panel: The two resistors can be thought of as a single resistor with effective resistance $R_{eff}=R_1+R_2$.}
+\end{studentOpinion}
+
+
 Figure \ref{fig:current:parallel} shows two resistors, with resistances $R_1$ and $R_2$, combined in parallel to form an effective resistor with resistance, $R_{eff}$. A potential difference, $\Delta V$, is applied across the combination of resistors. \textbf{When resistors are combined in parallel, both resistors have the same potential difference across them}.
 \capfig{0.4\textwidth}{figures/Current/parallel.png}{\label{fig:current:parallel}When two resistors are connected in parallel, the same voltage is applied across each resistor.}
 Applying Ohm's Law to each resistor, we find that they each have difference currents going through them:
@@ -284,6 +293,15 @@ where the two forms that are given are equivalent. The effective resistance of t
 R_{eff}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}+\dots}
 \end{align*}
 
+\begin{studentOpinion}{Olivia}
+Once again, we can use the comparison to fluid mechanics. The left panel of Figure \ref{fig:current:waterparallel} shows what the parallel circuit in Figure \ref{fig:current:parallel} would look like in the fluid mechanics analogy. Again, there are a couple things we can take from this:
+\begin{enumerate}
+\item Now there are two paths that the water can take, so the flow through $R_1$ will not necessarily be the same as that though $R_2$. However, since there are only two paths to take, the total flow must be equal to the sum of the flow through each resistor (i.e. $Q=Q_1+Q_2$).
+\item The effective resistance is lower than the individual resistances $R_1$ and $R_2$. The two narrow resistors are equivalent to one wider resistor, as in Figure \ref{fig:current:waterparallel}.
+\end{enumerate}
+\capfig{0.7\textwidth}{figures/Current/waterparallel.png}{\label{fig:current:waterparallel}Left panel: What a parallel circuit would look like in the context of fluid mechanics. Right panel: The two resistors can be thought of as a single, wide resistor with effective resistance $R_{eff}=(1/R_1)+(1/R_2)$.}
+\end{studentOpinion}
+
 \begin{example}{A $R_2=\SI{2}{\Omega}$ resistor is placed in parallel with a $R_3=\SI{3}{\Omega}$ resistor and the combination is placed in series with a $R_1=\SI{1}{\Omega}$ resistor, as shown in Figure \ref{fig:current:3resistors}. What is the effective resistance of this combination?}
 \capfig{0.4\textwidth}{figures/Current/3resistors.png}{\label{fig:current:3resistors}A combination of three resistors.}
 In order to determine the effective resistance of the combination, we can first combine the parallel resistors $R_2$ and $R_3$ into an effective resistor, $R'$, which we can then combine in series with the resistor $R_1$, to obtain the effective resistance of the three resistors. First, combining the parallel resistors, $R_2$ and $R_3$, we find:
@@ -296,6 +314,7 @@ R_{eff}=R_1+R'=\frac{11}{5}\si{\Omega}
 \end{align*}
 \textbf{Discussion: }In this example, we showed how to determine the effective resistance of a combination of series and parallel resistors. We can determine the effective resistance of complex combinations of resistors in the same manner, by first combining subsets of resistors and then including those with other resistors.
 \end{example}
+
 
 \subsection{Electrical power dissipated in resistors}
 As we discussed in Section \ref{sec:current:micromodel}, charges that move through a resistor do not gain kinetic energy. Instead, the electric potential energy available from the voltage applied across the resistor is converted into heat, as a result of charges colliding with atoms in the material. The net potential energy, $\Delta U$, available to a single charge, $q$, is given by:
