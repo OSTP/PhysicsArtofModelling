@@ -4,7 +4,7 @@ In this chapter, we develop the tools to model electric circuits. This will allo
 
 \begin{learningObjectives}{
  \item Understand how a battery works.
- \item Understand Kirchhoff rules and how to apply them.
+ \item Understand Kirchhoff's rules and how to apply them.
  \item Understand how to model a circuit with resistors and/or capacitors.
  \item Understand how an ammeter and voltmeter function, and how to model them.
  }
@@ -19,9 +19,9 @@ In this chapter, we develop the tools to model electric circuits. This will allo
 
 \section{Batteries and simple circuits}
 \label{sec:circuits:batteries}
-A battery is an electric component that provides a constant electric potential difference (a fixed voltage) across its terminals. Luigi Galvani was the first to realize that certain combination of metals placed into contact with each other can lead to an electric potential difference (or rather, they can make the legs of a dead frog twitch, which we now understand to be from the potential difference due to the metals). Effectively, Galvani created the first ``electrochemical cell''. Alessandro Volta then combined several of these cells together to form the ``voltaic pile'', which is what we would now call a battery (a battery, technically, is a combination of several cells, a battery of cells, although one often uses the term battery even if only a single electric cell is involved). 
+A battery is an electric component that provides a constant electric potential difference (a fixed voltage) across its terminals. Luigi Galvani was the first to realize that certain combinations of metals placed into contact with each other can lead to an electric potential difference (or rather, he realized that they can make the legs of a dead frog twitch, which we now understand to be from the potential difference due to the metals). Effectively, Galvani created the first ``electrochemical cell''. Alessandro Volta then combined several of these cells together to form the ``voltaic pile'', which is what we would now call a battery (a battery is technically a combination of several cells, or a ``battery of cells'', although one often uses the term battery even if only a single electric cell is involved). 
 \subsection{The electrochemical cell}
-An electric cell can be constructed from metals that have different affinities to be dissolved in acid. A simple cell, similar to that originally made by Volta, can be made using zinc and carbon as the ``electrodes'' (Volta used silver instead of carbon) and a solution of dilute sulfuric acid (the liquid is called the ``electrolyte''), as illustrated in Figure \ref{fig:circuits:electriccell}. Before the cell is constructed, the electrodes and the electrolyte are all electrically neutral.
+An electric cell can be constructed from metals that have different affinities to be dissolved in acid. A simple cell, similar to that originally made by Volta, is comprised of two metal electrodes placed in a liquid called electrolyte, as illustrated in Figure \ref{fig:circuits:electriccell}. Common materials used are carbon (Volta used silver) and zinc for the electrodes, and sulfuric acid for the electrolyte. Before the cell is constructed, the electrodes and the electrolyte are all electrically neutral.
 \capfig{0.5\textwidth}{figures/Circuits/electriccell.png}{\label{fig:circuits:electriccell} A simple electric cell, where zinc ions dissolve in sulfuric acid leaving electrons on the metal.}
 %TODO Is it incorrect to show the electrons entering the solution?
 Once the zinc is immersed in the electrolyte, the zinc atoms tend to dissolve into the electrolyte in the form of zinc ions (doubly charged, Zn$^{2+}$). This leaves an excess of electrons on the zinc electrode, resulting in a net negative electric charge. Similarly, the positively charged zinc ions attract electrons from the carbon electrode into the solution, leaving the carbon electrode positively charged. Very quickly, an equilibrium is reached, since at some point, the negative charge of the zinc electrode will electrically attract positive zinc ions, preventing any more zinc ions from dissolving into the solution. Similarly, as the carbon electrode builds a positive charge, that charge will eventually prevent electrons from ``jumping'' into the solution. At this point, there will be a fixed electric potential difference between the two electrodes (terminals) of the battery. 
@@ -31,7 +31,7 @@ If the two electrodes are connected together through a resistor, the electrons w
 The electric cell will stop working once the zinc electrode has completely dissolved (this is what happens when your battery is dead). Note that there is also a maximum current that the cell can supply, which depends on the rate at which the zinc can dissolve into the electrolyte and plate onto the carbon electrode. If the electrodes of the cell are connected with a very low resistance resistor, the resulting current will be too large for the potential difference to be maintained. Most electric cells work in similar ways, although the chemical reactions can be much more complex. Sometimes, the chemical reaction is reversible; one could use a different battery to apply a negative voltage to the carbon electrode to reverse the reaction and plate the zinc back onto the zinc electrode, thus ``recharging the battery'' (and converting electric energy back into stored chemical potential energy). 
 
 \subsection{The ideal battery in a circuit}
-As we proceed, we will use the term ``battery'' loosely to refer to a device (such as an electric cell or collection of cells) that can provide a fixed potential difference between two terminals (or electrodes). Figure \ref{fig:circuits:batterysymbol} shows the circuit diagram for a battery, consisting in two (or four) vertical bars, with the larger bar indicating the positive terminal of the battery.
+As we proceed, we will use the term ``battery'' loosely to refer to a device (such as an electric cell or collection of cells) that can provide a fixed potential difference between two terminals (or electrodes). Figure \ref{fig:circuits:batterysymbol} shows the circuit diagram for a battery, consisting of two (or four) vertical bars, with the larger bar indicating the positive terminal of the battery.
 
 \capfig{0.3\textwidth}{figures/Circuits/circuitspng/batterysymbol.png}{\label{fig:circuits:batterysymbol} Circuit diagram symbols that can be used for a battery.}
 
@@ -43,14 +43,15 @@ Figure \ref{fig:circuits:batteryresistor} shows a circuit diagram for a very sim
 
 \capfig{0.35\textwidth}{figures/Circuits/circuitspng/batteryresistor.png}{\label{fig:circuits:batteryresistor} A simple circuit, showing a \SI{9}{V} battery and a \SI{2}{\Omega} resistor. For ease in analyzing circuits, we suggest drawing a ``battery arrow'' above batteries that goes from the negative to the positive terminal.}
 
-The circuit in Figure \ref{fig:circuits:batteryresistor} is simple to analyze. In this case, whichever charges exit one terminal of the battery, must pass through the resistor and then enter the other terminal of the battery. We \textbf{always use conventional current} to analyze a circuit. Thus, we model the circuit as if positive charges exit the positive terminal of the battery, go through the resistor, and then enter the negative terminal of the battery.
+The circuit in Figure \ref{fig:circuits:batteryresistor} is simple to analyze. In this case, whichever charges exit one terminal of the battery must pass through the resistor and then enter the other terminal of the battery. We \textbf{always use conventional current} to analyze a circuit. Thus, we model the circuit as if positive charges exit the positive terminal of the battery, go through the resistor, and then enter the negative terminal of the battery.
 
-We recommend that you always draw a ``battery arrow'' for each battery in a circuit diagram to indicate the direction in which the electric potential increases and in which direction the conventional current would exit the battery if a simple resistor were connected across the battery. In complex circuits, the current may not necessarily flow in the same direction as the battery arrow, and the battery arrow makes it easier to analyze those circuits. We also indicate the current that is flowing in any wire of the circuit by drawing an arrow in the direction of current on that wire (labelled $I$ in Figure \ref{fig:circuits:batteryresistor}).
+We recommend that you always draw a ``battery arrow'' for each battery in a circuit diagram to indicate the direction in which the electric potential increases and in which direction the conventional current would exit the battery if a simple resistor were connected across the battery. We also indicate the current that is flowing in any wire of the circuit by drawing an arrow in the direction of current on that wire (labelled $I$ in Figure \ref{fig:circuits:batteryresistor}).
+%In complex circuits, the current may not necessarily flow in the same direction as the battery arrow, and the battery arrow makes it easier to analyze those circuits.
 
-
-It is helpful to think of the value of the electric potential along different parts of a circuit, as illustrated in Figure \ref{fig:circuits:batteryresistor_colour} for the same circuit as in Figure \ref{fig:circuits:batteryresistor}.
+It is helpful to think about the value of the electric potential along different parts of a circuit. Below (Figure \ref{fig:circuits:batteryresistor_colour}), we have taken the circuit from Figure \ref{fig:circuits:batteryresistor} and highlighted regions where the electric potential is constant.
 \capfig{0.4\textwidth}{figures/Circuits/batteryresistor_colour.png}{\label{fig:circuits:batteryresistor_colour} The same circuit as in Figure \ref{fig:circuits:batteryresistor} showing the two regions over which the electric potential is constant.}
-Since the wires have no resistance, the electric potential is constant along a wire. In other words, because the wire has no resistance, the charges/current cannot dissipate any power in the wire ($P=I^2R$), and the charges do not ``lose'' any potential energy (and the potential thus cannot change). The only place where the charges can dissipate energy is inside the resistor. Once the charges have crossed the resistor, the electric potential in the wire is again constant until they reach the other terminal of the battery. Thus, in this simple circuit, the electric potential difference across the resistor is the same as the potential difference across the terminals of the battery.  This is shown by the coloured areas in Figure \ref{fig:circuits:batteryresistor_colour}. If we choose $\SI{0}{V}$ to be defined at the negative terminal of the battery, then the potential is $\SI{9}{V}$ everywhere in the red area (to the right of the resistor), and $\SI{0}{V}$ everywhere in the grey area (to the left of the resistor). 
+
+Since the wires have no resistance, the electric potential is constant along a wire. In other words, because the wire has no resistance, the charges/current cannot dissipate any power in the wire ($P=I^2R$), and the charges do not ``lose'' any potential energy (and so the potential cannot change). The only place where the charges can dissipate energy is inside the resistor. Once the charges have crossed the resistor, the electric potential in the wire is again constant until they reach the other terminal of the battery. Thus, in this simple circuit, the electric potential difference across the resistor is the same as the potential difference across the terminals of the battery.  This is shown by the coloured areas in Figure \ref{fig:circuits:batteryresistor_colour}. If we choose $\SI{0}{V}$ to be defined at the negative terminal of the battery, then the potential is $\SI{9}{V}$ everywhere in the red area (to the right of the resistor), and $\SI{0}{V}$ everywhere in the grey area (to the left of the resistor). 
 
 
 We can apply Ohm's Law (the macroscopic version) to the resistor and determine the current in the circuit, since we know the potential difference across the resistor:
@@ -114,14 +115,14 @@ So far, we have modelled batteries as ``ideal'' devices that provide a fixed pot
 
 It is important to note that the potential difference across the terminals of the real battery is only equal to the potential difference across the ideal battery \textbf{if there is no current flowing through the battery}. If there is a current, $I$, flowing through the internal resistance, the electric potential will decrease by an amount $Ir$ across the internal resistance, and the voltage across the real terminals will be $\Delta V_{ideal}-Ir$. 
 \vspace{-0.25cm}
-\begin{example}{When no resistance is connected across a real battery, the potential difference across its terminals is measured to be $\SI{6}{V}$. When a $R=\SI{2}{\Omega}$ resistor is connected across the battery, a current of $\SI{2}{A}$ is measured through the resistor. What is the internal resistance, $r$, of the battery, and what is the voltage across its terminals when the $R=\SI{2}{\Omega}$ resistor is connected?}
+\begin{example}{When no resistance is connected across a real battery, the potential difference across its terminals is measured to be $\SI{6}{V}$. When an $R=\SI{2}{\Omega}$ resistor is connected across the battery, a current of $\SI{2}{A}$ is measured through the resistor. What is the internal resistance, $r$, of the battery, and what is the voltage across its terminals when the $R=\SI{2}{\Omega}$ resistor is connected?}
 The real battery can be modelled as an ideal battery with potential difference, $\Delta V_{ideal}$, in series with an internal resistance, $r$. While we do not know the value of the internal resistance, we are told that the potential difference across the terminals of the real battery is $\SI{6}{V}$ \textbf{when no current flows through it}. Since no current flows through the internal resistance, the voltage does not drop across the internal resistance, and the voltage across the terminals of the real battery (e.g. Figure \ref{fig:circuits:realbattery}) must thus be equal to the voltage across the terminals of the ideal battery, so that $\Delta V_{ideal}=\SI{6}{V}$.
 
 With this information, we can make a circuit diagram for the case when the $\SI{2}{\Omega}$ resistor is connected across the terminals of the real battery, as in Figure \ref{fig:circuits:realbatterycircuit}.
 
 \capfig{0.42\textwidth}{figures/Circuits/circuitspng/realbatterycircuit.png}{\label{fig:circuits:realbatterycircuit} A circuit showing a real battery (with internal resistance $r$) in series with a resistor.}
 
-The terminals of the real battery are located at points $a$ and $c$ of the diagram, whereas the terminals of the ideal battery corresponds to points $a$ and $b$. When no current flows through the internal resistor, $r$, there is no voltage drop across that resistor and the potential at $b$ will be equal to the potential at $c$, as we argued above.
+The terminals of the real battery are located at points $a$ and $c$ of the diagram, whereas the terminals of the ideal battery correspond to points $a$ and $b$. When no current flows through the internal resistor, $r$, there is no voltage drop across that resistor and the potential at $b$ will be equal to the potential at $c$, as we argued above.
 
 The circuit in Figure \ref{fig:circuits:realbatterycircuit} is now identical to that analyzed in Example \ref{ex:circuits:tworesistors}, and can be treated the same way. We can combine the $\SI{2}{\Omega}$ resistor with the internal resistance, $r$, in series to obtain an effective resistor, $R_{eff}=r+R$. The voltage drop across the effective resistor will be the same as the potential difference across the ideal battery, and we can make use of Ohm's Law to find the internal resistance, $r$:
 \begin{align*}
@@ -163,8 +164,9 @@ A loop is a closed path that one can trace around the circuit without passing ov
 \item $abcefda$
 \item $dcefd$
 \end{enumerate}
-Note that it does not matter where one starts on the loop, only that one can identify how many different loops are present in the circuit.
-
+Note that it does not matter where one starts on the loop, only that one can identify how many different loops are present in the circuit. %The loops are shown more explicitly in Figure \ref{fig:circuits:looplabel}.
+%\capfig{0.4\textwidth}{figures/Circuits/circuitspng/looplabel.png}{\label{fig:circuits:looplabel}The three loops in the circuit.}
+ 
 \begin{checkpoint}{	}
  \capfig{0.4\textwidth}{figures/Circuits/circuitspng/7loop.png}{\label{fig:circuits:7loop}Circuit layout}
  \begin{MCquestion}{How many loops and junctions does the circuit in Figure \ref{fig:circuits:7loop} have?}
@@ -231,7 +233,14 @@ This equation then gives us a relation between the various quantities (current, 
 	\end{MCquestion}
 \end{checkpoint}
 
-\section{Applying Kirchhoff's rule to model circuits}
+\begin{studentOpinion}{Olivia}
+One way to conceptualize Kirchhoff's loop rule is to draw an analogy to gravity. Imagine that the circuit in Figure \ref{fig:circuits:loop} operates like a roller coaster, as shown in Figure \ref{fig:circuits:rollercoaster}. Each battery is like the mechanical lift that brings the cart to the top of the hill, where the battery arrow points in the uphill direction. 
+\capfig{0.5\textwidth}{figures/Circuits/rollercoaster.png}{\label{fig:circuits:rollercoaster}The circuit from Figure \ref{fig:circuits:loop} using the roller coaster analogy.}
+
+This time, we'll start at point $b$ and go counter clockwise. In this analogy, Kirchhoff's loop rule says that when the roller coaster cart comes back around to $b$, it needs to have the same gravitational potential it started with (since it will be at the same elevation). Let's follow it's journey around the loop. It starts at $b$, then goes through a battery and gets lifted uphill. The cart moves along the track (in the direction of the current) and loses potential energy whenever it goes down a hill (meaning through a resistor). When the cart comes around the left side of the circuit, it encounters another battery. This time, the cart is moving \textit{opposite} to the battery arrow, so the cart goes downhill instead of getting lifted uphill. When it gets back to $b$, it has the same potential it started with. Note that, if we are moving in the direction opposite to the current, this is like going backwards through the roller coaster. Instead of going downhill through each resistor, you would have to go uphill, and thus gain potential energy.
+\end{studentOpinion}
+
+\section{Applying Kirchhoff's rules to model circuits}
 In this section, we show how to model a circuit using Kirchhoff's rules. In general, one can consider a circuit to be fully modelled if one can determine the current in each segment of the circuit. We will show how one can apply the same procedure to model any circuit that contains batteries and resistors. The procedure is as follows:
 \begin{enumerate}
 \item Make a good diagram of the circuit.
@@ -279,7 +288,7 @@ R_8=r_1+R_7=r_1+\frac{R_4R_5}{R_4+R_5}
 \end{align*}
 leading to the simplified circuit illustrated in Figure \ref{fig:circuits:bigcircuit_simp3}, which we have labelled with nodes and battery labels. 
 
-\capfig{0.45\textwidth}{figures/Circuits/circuitspng/bigcircuit_simp3.png}{\label{fig:circuits:bigcircuit_simp3}The resistors $r_1$ and $R_7$ in series from the circuit in Figure \ref{fig:circuits:bigcircuit_simp2} have been combined into the effective resistor, $R_8$, to simplify the circuit.}
+\capfig{0.45\textwidth}{figures/Circuits/circuitspng/bigcircuit_simp3.png}{\label{fig:circuits:bigcircuit_simp3}The resistors $r_1$ and $R_7$ from the circuit in Figure \ref{fig:circuits:bigcircuit_simp2} have been combined into an effective resistor, $R_8$, to simplify the circuit.}
 
 \textbf{Guessing the directions of the currents (step 4): }Before we can write the equations from Kirchhoff's rules, we need to label the currents in the circuit diagram. In general, it is not always obvious in which way the currents will go, so we make a guess that we can fix later if we guessed wrong. 
 
@@ -297,7 +306,7 @@ You can proceed in an analogous way for any circuit. The final circuit, with cur
 
 \capfig{0.45\textwidth}{figures/Circuits/circuitspng/bigcircuit_simp.png}{\label{fig:circuits:bigcircuit_simp}Final and labelled circuit diagram that is simplified from the one in Figure \ref{fig:circuits:bigcircuit}.}
 
-We can now proceed with using Kirchhoff's rules to solve for the values of the currents in the circuit. It is useful to note that there are 3 unknown currents in this circuit; we thus hope that Kirchhoff's rules will give us 3 independent equations.
+We can now proceed using Kirchhoff's rules to solve for the values of the currents in the circuit. It is useful to note that there are 3 unknown currents in this circuit; we thus hope that Kirchhoff's rules will give us 3 independent equations.
 
 \textbf{Applying the junction rule (step 5): }In the circuit from Figure \ref{fig:circuits:bigcircuit_simp}, there are two junctions (at points $b$ and $e$), so we will get two equations from the junction rule. To apply the junction rule, the sum of the currents coming into the junction must be equal to the currents going out of the junction:
 \begin{align*}
