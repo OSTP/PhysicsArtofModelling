@@ -438,7 +438,7 @@ Circuits can be drawn in many unique or potentially confusing ways, but knowing 
 \section{Measuring current and voltage}
 In this section, we describe how one can build devices to measure current and voltage. A device that measures current is called an ``ammeter'' and a device that measured voltage is called a ``voltmeter''. Nowadays, these are usually found within the same physical device (a ``multimeter''), which can also measure resistance (by measuring voltage and current, resistance can easily determined). We will limit our description to the design of simple analogue ammeters and voltmeters. 
 
-As we will see in Chapter \ref{chapter:magneticforce}, it is straightforward to build a device that can measure very small amounts of current, by running the current through a coil in a magnetic field so that the coil can deflect a needle that indicates the amount of current. Such a device is called a ``galvanometer'' and is usually limited to measuring very small current (of order \si{mA}). In this section, we describe how one can use a galvanometer in order to build ammeters to measure large currents, and voltmeters. 
+As we will see in Chapter \ref{chapter:magneticforce}, it is straightforward to build a device that can measure very small amounts of current, by running the current through a coil in a magnetic field so that the coil can deflect a needle that indicates the amount of current. Such a device is called a ``galvanometer'' and is usually limited to measuring very small current (of order \si{mA}). In this section, we describe how one can use a galvanometer in order to build both ammeters to measure large currents and voltmeters. 
 \subsection{The ammeter}
 An ammeter is built by placing a galvanometer in parallel with a ``shunt'' resistor, $R_s$. The shunt resistor is a small resistor that ``shunts'' (deflects) the current away from the galvanometer, so that most of the current goes through the shunt resistor. This is illustrated in Figure \ref{fig:circuits:ammeter}, which shows the galvanometer (circle with the $G$ inside), the internal resistance of the galvanometer, $R_G$, and the shunt resistor, $R_S$. The actual ammeter would be contained in a box and have two connectors (shown as $A$ and $B$ in the figure). 
 
@@ -451,7 +451,7 @@ I_GR_G-I_SR_S&=0\quad&\text{(clockwise loop)}\\
 \therefore I_S&=\frac{R_G}{R_S}I_G\\
 \therefore I &= I_G+I_S=\left(1+\frac{R_G}{R_S}\right) I_G
 \end{align*}  
-which allows us to determine the current, $I$, from the current, $I_G$, measured by the galvanometer. We also see that most of the current goes through the shunt (since $R_S$ is chosen to be smaller than $R_G$). The ammeter, will have a total resistance, $R_A$, given by:
+which allows us to determine the current $I$ from the current $I_G$, measured by the galvanometer. We also see that most of the current goes through the shunt (since $R_S$ is chosen to be smaller than $R_G$). The ammeter will have a total resistance, $R_A$, given by:
 \begin{align*}
 R_A=\frac{R_GR_S}{R_G+R_S}
 \end{align*}
@@ -475,7 +475,7 @@ In order to measure a potential difference across a component, the voltmeter mus
 When using an ammeter or a voltmeter, you will notice that these usually have buttons or dials to choose the range of currents or voltages to be measured. All the dial does is change the value of the shunt or series resistor in order to maintain a given maximum current through the galvanometer. An ohmmeter, to measure resistance, is simply an ammeter with a built-in fixed potential difference (so that by measuring current across a known potential difference, the resistance of the component can be determined). 
 \vspace{-0.25cm}
 \begin{example}{Two resistors with a resistance of $\SI{1}{k\Omega}$ are placed in series with a $\SI{12}{V}$ battery. A voltmeter with a total resistance of $R_V=\SI{10}{k\Omega}$ is used to measure the voltage across one of the resistors. What reading does the voltmeter show?}
-Since the two resistors have the same resistance, and are in series with the battery, when no voltmeter is connected, the voltage across either resistor is easily shown to be $\SI{6}{V}$. However, by connecting the voltmeter across one of the resistors, we modify the circuit, and we should expect the voltage that is read to be different than $\SI{6}{V}$ (can you tell if it will be larger or smaller?). The circuit, with the voltmeter connected is shown in Figure \ref{fig:circuits:voltmeter2R}.
+Since the two resistors have the same resistance, and are in series with the battery, when no voltmeter is connected, the voltage across either resistor is easily shown to be $\SI{6}{V}$. However, by connecting the voltmeter across one of the resistors, we modify the circuit, and we should expect the voltage that is read to be different than $\SI{6}{V}$ (can you tell if it will be larger or smaller?). The circuit, with the voltmeter connected, is shown in Figure \ref{fig:circuits:voltmeter2R}.
 
 \capfig{0.42\textwidth}{figures/Circuits/circuitspng/voltmeter2R.png}{\label{fig:circuits:voltmeter2R}When using a voltmeter, the circuit is modified.}
 
@@ -625,7 +625,7 @@ When a capacitor is placed in a circuit, the current in the circuit will no long
 \newpage
 \section{Sample problems and solutions}
 
-\subsection{problems}
+\subsection{Problems}
 \begin{problemParts}{soln:circuits:capacitor}{\label{prob:circuits:capacitor} 
 A simple RC circuit as shown in Figure \ref{fig:circuits:RCcircuit} contains a charged capacitor of unknown capacitance, $C$, in series with a resistor, $R=\SI{2}{\Omega}$. When charged, the potential difference across the terminals of the capacitor is $\SI{9}{V}$. 
 
@@ -648,24 +648,24 @@ A voltmeter with a resistance of $R_V = \SI{20}{k\ohm}$ is attached to a circuit
 {\label{soln:circuits:capacitor}
 \item In this case, the capacitor is discharging as a function of time. At time $t=0$, the voltage across the capacitor is $\Delta V=\SI{9}{V}$. We can model this discharging circuit in a similar way as we modelled the charging circuit. 
 
-We start with Kirchhoff's junction rule, which leads to a differential equation for the charge stored on the capacitor, $Q(t)$, as function of time:
+We start with Kirchhoff's loop rule, which leads to a differential equation for the charge stored on the capacitor as function of time, $Q(t)$:
 \begin{align*}
 \Delta V - IR &=0\\
 \frac{Q}{C} - IR &=0\\
 \frac{Q}{C} - \frac{dQ}{dt}R &=0\\
 \therefore \frac{dQ}{dt} = -\frac{1}{RC}Q
 \end{align*}
-This differential equation is straightforward to solve, since it says that the derivative of $Q(t)$ is equal to a constant multiplied by $Q(t)$. Thus, $Q(t)$, must be an exponential function:
+This differential equation is straightforward to solve, since it says that the derivative of $Q(t)$ is equal to a constant multiplied by $Q(t)$. Thus, $Q(t)$ must be an exponential function:
 \begin{align*}
 Q(t) = Q_0 e^{-\frac{t}{RC}}
 \end{align*}
-where, $Q_0$, is the (unknown) charge on the capacitor at $t=0$. You can easily verify that taking the derivative of this equation will result in the differential equation being satisfied. 
+where $Q_0$ is the (unknown) charge on the capacitor at $t=0$. You can easily verify that taking the derivative of this equation will result in the differential equation being satisfied. \\
 
-The current, $I(t)$, as a function of time is given by:
+Now that we have an equation for the charge as a function of time, it is straightforward to find the current, since it is just the time derivative of the charge. The current as a function of time, $I(t)$, is given by:
 \begin{align*}
 I &=\frac{dQ}{dt}=-\frac{1}{RC}Q=\frac{Q_0}{RC} e^{-\frac{t}{RC}}=I_0e^{-\frac{t}{RC}}
 \end{align*}
-where $I_0=\frac{Q_0}{RC}$ is the current at $t=0$.
+where $I_0=\frac{Q_0}{RC}$ is the current at $t=0$.\\
 
 We also know that the current through the resistor at $t=0$ is given by Ohm's Law, since, at that time, the voltage, $\frac{Q_0}{C}=\SI{9}{V}$:
 \begin{align*}
@@ -683,7 +683,7 @@ I(5)&=I_0e^{-\frac{t}{RC}}\\
 \begin{align*}
 Q(t=\SI{2}{s})=Q_0 e^{-\frac{t}{RC}}
 \end{align*}
-where we can determine, $Q_0$, now that we know the capacitance. $Q_0$ is the charge on the capacitor at time $t=0$, when the voltage across the capacitor is $\SI{9}{V}$:
+where we can determine $Q_0$, now that we know the capacitance. $Q_0$ is the charge on the capacitor at time $t=0$, when the voltage across the capacitor is $\SI{9}{V}$:
 \begin{align*}
 Q_0=C\Delta V = (\SI{0.56}{F})(\SI{9}{V})=\SI{5.0}{C}
 \end{align*}
@@ -708,7 +708,8 @@ I &= \frac{\Delta V_{vm}}{R_{eff}}\\
 I &= \frac{\SI{5.647}{V}}{\SI{2.22}{k\ohm}}\\
 I &= \SI{2.541}{mA}\\
 \end{align*}
-Now that we have the current through the circuit, we can determine the voltage drop across the second resistor. By adding that voltage drop to the known voltage across the effective resistor, we can determine the battery voltage:
+
+Now that we have the current, we can combine the known resistances and determine the voltage drop across the battery. 
 \begin{align*}
 \Delta V_{battery} &= I(R_{eff}+R)\\
 \Delta V_{battery} &= (\SI{2.541}{mA})(\SI{2.222}{k\ohm}+\SI{2.5}{k\ohm})\\
