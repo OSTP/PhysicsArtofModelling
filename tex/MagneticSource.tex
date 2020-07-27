@@ -18,14 +18,14 @@ In this chapter, we develop the tools to model the magnetic field that is produc
 \end{opening}
 
 \section{The Biot-Savart Law}
-The Biot-Savart law allows us to determine the magnetic field at some position in space that is due to an electric current. More precisely, the Biot-Savart law allows us to calculate the infinitesimal magnetic field, $d\vec B$, that is produced by a small section of wire, $d\vec l$, carrying current, $I$, such that $d\vec l$ is co-linear with the wire and points in the direction of the electric current:
+The Biot-Savart law allows us to determine the magnetic field at some position in space that is due to an electric current. More precisely, the Biot-Savart law allows us to calculate the infinitesimal magnetic field, $d\vec B$, that is produced by a small section of wire, $d\vec l$, carrying a current, $I$, such that $d\vec l$ is co-linear with the wire and points in the direction of the electric current:
 \begin{align*}
 \Aboxed{d\vec B = \frac{\mu_0 I}{4\pi}\frac{d\vec l\times \hat r}{r^2}}
 \end{align*}
-where, $\vec r$, is the vector from the element of wire, $d\vec l$, to the point where we would like to determine the magnetic field, as illustrated in Figure \ref{fig:magneticsource:biotsavart}. $\mu_0$ is a constant of proportionality called the ``permeability of free space'', and has the value $\mu_0=\SI{4\pi e-7}{T\cdot m/A}$.
+where $\vec r$ is the vector from the element of wire, $d\vec l$, to the point where we would like to determine the magnetic field, as illustrated in Figure \ref{fig:magneticsource:biotsavart}. $\mu_0$ is a constant of proportionality called the ``permeability of free space'', and has the value $\mu_0=\SI{4\pi e-7}{T\cdot m/A}$.
 \capfig{0.5\textwidth}{figures/MagneticSource/biotsavart.png}{\label{fig:magneticsource:biotsavart}The infinitesimal magnetic field, $d\vec B$, that is created by an infinitesimal section of wire, $d\vec l$, carrying current $I$. Note that the vector, $\vec r$, goes from $d\vec l$ to the point where we wish to calculate the field.}
 
-The Biot-Savart Law has some similarities with the Coulomb Law to calculate the electric field, as the magnitude of the magnetic field decreases as the inverse of the square distance between the source and the field. However, it can only be expressed in differential form (i.e. as an infinitesimal), and it requires working in three dimensions, because of the cross product. It is usually more convenient to use the Biot-Savart Law in the form:
+The Biot-Savart Law has some similarities with the Coulomb Law to calculate the electric field, as the magnitude of the magnetic field decreases as the inverse of the square distance between the source and the field. However, it can only be expressed in differential form (i.e. as an infinitesimal) and it requires working in three dimensions because of the cross product. It is usually more convenient to use the Biot-Savart Law in the form:
 \begin{align*}
 d\vec B = \frac{\mu_0 I}{4\pi}\frac{d\vec l\times \vec r}{r^3}
 \end{align*}
@@ -43,7 +43,7 @@ The procedure for applying the Biot-Savart Law is as follows:
 \end{enumerate}
 
 \subsection{Magnetic field from a straight current-carrying wire}
-In this section, we use the Biot-Savart Law to determine the magnetic field a distance, $h$, from the centre of a finite straight wire of length, $L$, carrying current, $I$, as illustrated in Figure \ref{fig:magneticsource:bswire}.
+In this section, we use the Biot-Savart Law to determine the magnetic field a distance, $h$, from the centre of a finite straight wire of length $L$, carrying current $I$, as illustrated in Figure \ref{fig:magneticsource:bswire}.
 \capfig{0.7\textwidth}{figures/MagneticSource/bswire.png}{\label{fig:magneticsource:bswire}Setting up the model to use the Biot-Savart Law to calculate the magnetic field a distance $h$ from the centre of a current-carrying wire of length $L$.}
 
 We start by choosing an infinitesimal element of wire, $d\vec l$, a distance $y$ above the centre of the wire, as shown (we choose the origin to be located at the centre of the wire). The vector $d\vec l$ is thus given by:
@@ -135,8 +135,8 @@ so that the element of magnetic field, $d\vec B$, corresponding to that choice o
 d\vec B &= \frac{\mu_0 I}{4\pi}\frac{d\vec l\times \vec r}{r^3}= \frac{\mu_0 I}{4\pi r^3}(-rdl\sin\theta\hat z - rdl\cos\theta \hat y )\\
 &=\frac{\mu_0 I}{4\pi r^2}(-dl\sin\theta \hat z - dl\cos\theta \hat y)=dB_z\hat z + dB_y \hat y
 \end{align*}
-As the wire element, $d\vec l$, moves around the circle, the tip of the resulting magnetic field vector element traces a circle centred on the $z$ axis, as illustrated in Figure \ref{fig:magneticsource:bsring_all}. Note that, in general, $d\vec B$ will also have an $x$ component. Thus, only the $z$ component of the magnetic field will not be cancelled when we sum together the magnetic field elements that come from the different wire elements.
-\capfig{0.9\textwidth}{figures/MagneticSource/bsring_all}{\label{fig:magneticsource:bsring_all}As the wire element, $d\vec l$, moves along the ring, the tip of corresponding magnetic field element vector, $d\vec B$, describes a circle centred on the $z$ axis. Thus, only the (negative) $z$ component of $d\vec B$ will survive when these are all added together.}
+As the wire element, $d\vec l$, moves around the circle, the tip of the resulting magnetic field vector element traces a circle centred on the $z$ axis, as illustrated in Figure \ref{fig:magneticsource:bsring_all}. Note that, in general, $d\vec B$ will also have an $x$ component (the $x$ component was only 0 before because we chose $d\vec l$ to be at the top of the ring). When we sum together the magnetic field elements, the $x$ and $y$ components will cancel, so that we are left with the $z$ component.
+\capfig{0.9\textwidth}{figures/MagneticSource/bsring_all2}{\label{fig:magneticsource:bsring_all}As the wire element, $d\vec l$, moves along the ring, the tip of corresponding magnetic field element vector, $d\vec B$, describes a circle centred on the $z$ axis. Thus, only the (negative) $z$ component of $d\vec B$ will survive when these are all added together.}
 
 The total magnetic field will be in the negative $z$ direction, as anticipated from Figure \ref{fig:magneticsource:ringfield}. Summing together the $z$ components of the infinitesimal magnetic fields:
 \begin{align*}
@@ -183,6 +183,8 @@ This leads to a magnetic force, $\vec F_1$, exerted on the first wire, that poin
 F_1 = I_1 ||\vec l \times \vec B_2||=I_1 l B_2 =\frac{\mu_0 I_1 I_2}{2\pi h}
 \end{align*}
 which does indeed have the same magnitude as the force exerted on the second wire. Thus, when two parallel wires carry current in the same direction, they exert equal and opposite attractive forces on each other. 
+
+
 \begin{checkpoint}{}
 	\capfig{0.2\textwidth}{figures/MagneticSource/oppositewires.png}{\label{fig:magneticsource:oppositewires} Two wires that carry current in opposite directions.}
 	\begin{MCquestion}{Two parallel wires carry current in opposite directions, as shown in Figure \ref{fig:magneticsource:oppositewires}. What force do they exert on each other?}
@@ -194,6 +196,19 @@ which does indeed have the same magnitude as the force exerted on the second wir
 The attractive force between two wires used to be the basis for defining the \ampere, the S.I. (base) unit for electric current. Before 2019, the \amperesp was defined to be ``that constant current which, if maintained in two straight parallel conductors of infinite length, of negligible circular cross-section, and placed one metre apart in vacuum, would produce between these conductors a force equal to $\SI{2e-17}{N}$ per metre of length''. Recently, the definition was updated to be based on defining the Coulomb in such a way that the elementary charge has a numerical value of $e=\SI{1.602176634e-19}{C}$, and the \amperesp corresponds to one Coulomb per second.
 
 The force between two wires is a good system to understand how any physical quantity cannot depend on our choice of the right-hand to define cross-products. As mentioned in the previous chapter, any physical quantity, such as the direction of the force exerted on a wire, will always depend on two successive uses of the right hand. In this system, we first used the right-hand rule for axial vectors to determine the direction of the magnetic field from one of the wires. We then used the right-hand rule to determine the direction of the cross-product to determine the direction of the force on the other wire. You can verify that you get the same answer if you, instead, use your left-hand to define the direction of the magnetic field (which will be in the opposite direction), and then again for the cross-product. This also highlights that the magnetic field (and the electric field) is just a mathematical tool that we use to, ultimately, describe the motion of charges or compass needles.
+
+\begin{studentOpinion}{Olivia}
+For this problem we can determine whether the force is attractive or repulsive by finding the direction of $\vec{F_2}$, the force on wire 2, and the direction of $\vec{F_1}$, the force on wire 1. Figure \ref{fig:magneticsource:2wires_steps} shows how to find the directions of $\vec{F_1}$ and $\vec{F_2}$ step by step using the right hand rules. The process is as follows: 
+\begin{enumerate}[label=(\alph*)]
+\item Use the axial right hand rule to find the magnetic field at wire 2 due to the current in wire 1.
+\item Use the right hand rule to find the direction of the force on wire 2 due to its current and the magnetic field $\vec{B_1}$. 
+\item Use the axial right hand rule to find the magnetic field at wire 1 due to the current in wire 2.
+\item Use the right hand rule to find the direction of the force on wire 1 due to its current and the magnetic field $\vec{B_2}$. 
+\end{enumerate}
+\capfig{0.8\textwidth}{figures/MagneticSource/2wire_rhr.png}{\label{fig:magneticsource:2wires_steps} (a) Axial right hand rule to find $\vec{B_1}$. (b) Right hand rule to find $\vec{F_2}$. (c) Axial right hand rule to find $\vec{B_2}$. (d) Right hand rule to find $\vec{F_1}$.}
+Both $\vec{F_1}$ and $\vec{F_2}$ point towards the centre, and the force is attractive. See what happens when you use your left hand!
+\end{studentOpinion}
+
 \begin{checkpoint}{}
 	\begin{MCquestion}{When current is flowing in a straight cable, how to you expect the charges to be distributed radially through the cross-section of the cable?}
 		\item Uniformly in radius (current density does not depend on $r$).
@@ -232,14 +247,14 @@ where $\theta$ is the angle between $\vec B$ and $d\vec l$.
 Choosing a path that meets these two conditions is only possible if there is a high degree of symmetry.
 
 Consider an infinitely long straight wire, carrying current, $I$, out of the page, as illustrated in Figure \ref{fig:magneticsource:amperewire}. The magnetic field from the wire must look the same regardless of the angle from which we view the wire (``azimuthal symmetry''). Thus, the magnetic field must either form concentric circles around the wire (which we know is the case from the Biot-Savart Law) or it must be in the radial direction (pointing towards or away from the wire). These two possibilities are illustrated in Figure \ref{fig:magneticsource:amperewire}, and we will pretend, for now, that we do not know which is correct.
-\capfig{0.6\textwidth}{figures/MagneticSource/amperewire.png}{\label{fig:magneticsource:amperewire}By symmetry, the magnetic field from an current-carrying infinite wire (illustrated with current coming out of the page), must either form concentric circles (left panel), or be in the radial direction (right panel). We know that the former (circles, left panel) is the correct choice. The dotted lines show ``Amperian loops'' that one can use to calculate the integral in \ampere's Law.}
+\capfig{0.6\textwidth}{figures/MagneticSource/amperewire.png}{\label{fig:magneticsource:amperewire}By symmetry, the magnetic field from a current-carrying infinite wire (illustrated with current coming out of the page), must either form concentric circles (left panel), or be in the radial direction (right panel). We know that the former (circles, left panel) is the correct choice. The dotted lines show ``Amperian loops'' that one can use to calculate the integral in \ampere's Law.}
 In order to apply \ampere's Law, we choose an Amperian loop (instead of a ``Gaussian surface''). In the case of an infinite current-carrying wire, a circle that is concentric with the wire will meet the properties above, regardless of the two possible configurations of the magnetic field: with a circular Amperian loop, the angle between the magnetic field and the element $d\vec l$ is constant along the entire loop, and the magnitude of the magnetic field is constant along the loop. Our choice of loop is illustrated in Figure \ref{fig:magneticsource:amperewireloop}, where we have illustrated the magnetic field for the case where it forms concentric circles. 
 \capfig{0.5\textwidth}{figures/MagneticSource/amperewireloop.png}{\label{fig:magneticsource:amperewireloop}An Amperian loop that is a circle of radius, $h$, will allow us to determine the magnetic field at a distance, $h$, from an infinitely-long current-carrying wire.}
 The circulation of the magnetic field along a circular path of radius, $h$, is given by:
 \begin{align*}
 \oint  \vec B \cdot d\vec l = \oint B dl \cos\theta = \cos\theta \oint B dl=B\cos\theta \oint dl=B\cos\theta (2\pi h)
 \end{align*}
-where $\cos\theta$ is 1 if the field forms circles (correct) or 0 if the field is radial (incorrect). We can now evaluate the current that is enclosed by the Amperian loop. The current that is enclosed is given by the net current that traverses the surface defined by the Amperian loop (in this case, a circle of radius $h$). Since the loop encloses the entire wire, the enclosed current is simply, $I$. Applying \ampere's Law:
+where $\cos\theta$ is 1 if the field forms circles (correct) or 0 if the field is radial (incorrect). We can now evaluate the current that is enclosed by the Amperian loop. The current that is enclosed is given by the net current that traverses the surface defined by the Amperian loop (in this case, a circle of radius $h$). Since the loop encloses the entire wire, the enclosed current is simply $I$. Applying \ampere's Law:
 \begin{align*}
 \oint \vec B \cdot d\vec l &=\mu_0 I^{enc}\\
 B\cos\theta (2\pi h) &= \mu_0 I
@@ -257,7 +272,34 @@ as we found previously with the Biot-Savart Law. Again, in analogy with Gauss' L
 	\end{MCquestion}
 \end{checkpoint}
 
-\begin{example}{A long solid uniform cable of radius, $R$, carries current, $I$, with a current density that is uniform through the cross-section of the cable. Determine the strength of the magnetic field as a function of, $r$, the distance from the centre of the cable, inside \textit{and} outside of the cable.}
+
+\begin{studentOpinion}{Olivia}
+Let's compare Ampere's law to Gauss's law. In the chapter on Gauss's law, I showed that when we are dealing with a high degree of symmetry, we are able to write:
+\begin{align*}
+\oint \vec{E}\cdot d\vec{A}=\frac{Q^{enc}}{\epsilon_0}\rightarrow EA=\frac{Q^{enc}}{\epsilon_0}
+\end{align*}
+where $E$ is the magnitude of the electric field, $A$ is the surface area of the Gaussian surface, and $Q^{enc}/\epsilon_0$ gives us the flux. So, to find the electric field at any point on the surface, we use
+\begin{align*}
+E=\frac{Q^{enc}/\epsilon_0}{A}.
+\end{align*}
+In other words, the electric field is the flux per unit area. \ampere's law is very similar, except that instead of flux, we have the new concept of ``circulation'' and instead of a surface integral, we have a line integral. When we have a high degree of symmetry in \ampere's law, we are often able to write:
+\begin{align*}
+\oint \vec{B}\cdot d\vec{l}=\mu_0 I^{enc}\rightarrow Bl=\mu_0 I^{enc}
+\end{align*}
+where $B$ is the magnitude of the magnetic field, $l$ is the length of the Amperian loop, and $\mu_0 I^{enc}$ gives us the circulation. To find the magnetic field, we use
+\begin{align*}
+B=\frac{\mu_0 I^{enc}}{l},
+\end{align*}
+so the magnetic field is like the circulation per unit length.
+
+In the left panel of Figure \ref{fig:magneticsource:amperecirculation}, I have shown two Amperian loops with different radii, for the example of the straight wire with a current coming out of the page. \ampere's law tells us that the circulation will be the same along each path. However, because the inner loop is smaller, the circulation per unit length (the magnetic field) will be larger at each point. This is represented in the right panel, where the length of the vectors is proportional to the magnetic field strength.  
+
+\capfig{0.6\textwidth}{figures/MagneticSource/Ampere_circulation.png}{\label{fig:magneticsource:amperecirculation}Left: 2 Amperian loops around a current carrying wire. Right: Magnetic field vectors around each loop.}
+
+\end{studentOpinion}
+
+
+\begin{example}{A long solid uniform cable of radius, $R$, carries current, $I$, with a current density that is uniform through the cross-section of the cable. Determine the strength of the magnetic field as a function of $r$, the distance from the centre of the cable, inside \textit{and} outside of the cable.}
 In this case, we need to determine the magnetic field both inside and outside of the cable. Figure \ref{fig:magneticsource:amperecable} shows two circular Amperian loops that we can use to apply \ampere's Law to determine the magnetic field inside and outside of the cable.
 \capfig{0.4\textwidth}{figures/MagneticSource/amperecable.png}{\label{fig:magneticsource:amperecable}Two circular Amperian loops to determine the magnitude of the magnetic field inside and outside of a current-carrying cable of radius, $R$ (with uniform current coming out of the page).}
 By symmetry, and following the discussion in this chapter, we know that the magnetic field must form concentric circles, both inside and outside of the cable. Outside the cable, we proceed in the same fashion as above, choosing an Amperian loop of radius, $r>R$, such that the circulation is given by:
@@ -333,6 +375,11 @@ Since \ampere's Law in differential form is a vector equation (both sides are ve
 \left(\die{B_z}{y}-\die{B_y}{z}\right) &=\mu_0j_x
 \end{align*}
 that is in general difficult to solve without a computer (and all three equations are required, as these are ``coupled'', since a given component of the magnetic field appears in two of three equations).
+
+
+
+
+
 \section{Solenoids and toroids}
 In order to create strong magnetic fields, the most practical method is to combine many loops of current together into a ``solenoid'' (a coil). Electromagnets function on this principle and are ubiquitous in our lives. Figure \ref{fig:magneticsource:solenoid1} shows the magnetic field from a single loop of current.  
 \capfig{0.3\textwidth}{figures/MagneticSource/solenoid1.png}{\label{fig:magneticsource:solenoid1}The magnetic field from a single loop of current.}
