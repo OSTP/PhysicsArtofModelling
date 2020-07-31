@@ -274,11 +274,15 @@ as we found previously with the Biot-Savart Law. Again, in analogy with Gauss' L
 
 
 \begin{studentOpinion}{Olivia}
-Let's compare Ampere's law to Gauss's law. In the chapter on Gauss's law, I showed that when we are dealing with a high degree of symmetry, we are able to write:
+Let's compare Ampere's law to Gauss's law. Recall that Gauss's law is given by:
 \begin{align*}
-\oint \vec{E}\cdot d\vec{A}=\frac{Q^{enc}}{\epsilon_0}\rightarrow EA=\frac{Q^{enc}}{\epsilon_0}
+\oint \vec{E}\cdot d\vec{A}=\frac{Q^{enc}}{\epsilon_0}.
 \end{align*}
-where $E$ is the magnitude of the electric field, $A$ is the surface area of the Gaussian surface, and $Q^{enc}/\epsilon_0$ gives us the flux. So, to find the electric field at any point on the surface, we use
+We want to construct a Gaussian surface such that we can write this as 
+\begin{align*}
+EA=\frac{Q^{enc}}{\epsilon_0}
+\end{align*}
+where $A$ is the surface area that is perpendicular to the field lines and $E$ is the (constant) magnitude of the electric field over the surface. The flux is given by $Q^{enc}/\epsilon_0$. To find the electric field at any point on the surface, we use
 \begin{align*}
 E=\frac{Q^{enc}/\epsilon_0}{A}.
 \end{align*}
@@ -286,7 +290,7 @@ In other words, the electric field is the flux per unit area. \ampere's law is v
 \begin{align*}
 \oint \vec{B}\cdot d\vec{l}=\mu_0 I^{enc}\rightarrow Bl=\mu_0 I^{enc}
 \end{align*}
-where $B$ is the magnitude of the magnetic field, $l$ is the length of the Amperian loop, and $\mu_0 I^{enc}$ gives us the circulation. To find the magnetic field, we use
+where $l$ is the length of the Amperian loop that is parallel to the field, $B$ is the magnitude of the magnetic field, and $\mu_0 I^{enc}$ gives us the circulation. To find the magnetic field, we use
 \begin{align*}
 B=\frac{\mu_0 I^{enc}}{l},
 \end{align*}
@@ -574,7 +578,7 @@ A square loop of wire with side length, $L$, carries current, $I$, as shown in F
 \end{problem}
 
 \begin{problem}{soln:magneticsource:helmholtz}{\label{prob:magneticsource:helmholtz} 
-Helmholtz coils are an arrangement of two parallel loops of current which produce a nearly uniform magnetic field. Helmholtz coils are formed by two identical circular loops of radius, $R$, carrying the same current, $I$, where the centres of the coils are separated by the distance, $R$, as illustrated in Figure \ref{fig:magneticsource:helmholtzdiagram}. Determine the magnetic field as a function of $z$, along the axis of symmetry of the coils, where the origin is located half way between the two coils. Make a plot of the magnetic field as a function of $z$ from each coil, as well as the total electric field to show that it is close to uniform between the coils.
+Helmholtz coils are an arrangement of two parallel loops of current that produce a nearly uniform magnetic field. Helmholtz coils are formed by two identical circular loops of radius $R$, carrying the same current, $I$, where the centres of the coils are separated by a distance, $R$, as illustrated in Figure \ref{fig:magneticsource:helmholtzdiagram}. Determine the magnetic field as a function of $z$, along the axis of symmetry of the coils, where the origin is located half way between the two coils. Make a plot of the magnetic field as a function of $z$ from each coil, as well as the total magnetic field to show that it is close to uniform between the coils.
 \capfig{0.4\textwidth}{figures/MagneticSource/helmholtzdiagram}{\label{fig:magneticsource:helmholtzdiagram} A Helmholtz coil arrangement.}
 }
 \end{problem}
@@ -599,7 +603,7 @@ We know that the magnetic field at a distance, $h$, from the centre of a loop of
 \end{align*}
 For the two coils in the Helmholtz configuration, the magnetic field from each coil will be in the same direction. The centre of the two coils are located at $z=\pm\frac{R}{2}$. Thus, if we are located at position, $z$, along the $z$ axis, one coil will be at a distance of $z+\frac{R}{2}$, and the other at a distance $z-\frac{R}{2}$. The total magnetic field as a function of $z$ is then given by:
 \begin{align*}
-B^{tot}(z) &= B\left(z+\frac{R}{2}\right)+B\left(z+\frac{R}{2}\right)\\
+B^{tot}(z) &= B\left(z+\frac{R}{2}\right)+B\left(z-\frac{R}{2}\right)\\
 &=\frac{\mu_0 I}{2}\frac{R^2}{(R^2+\left(z+\frac{R}{2}\right)^2)^{\frac{3}{2}}}+\frac{\mu_0 I}{2}\frac{R^2}{(R^2+\left(z-\frac{R}{2}\right)^2)^{\frac{3}{2}}}
 \end{align*}
 We can plot this function, as well as the two individual terms using python. For information, we show the code below. In order to make the plot, we need to choose some reasonable values for the radius of the coils and the current through the coils, for example:
