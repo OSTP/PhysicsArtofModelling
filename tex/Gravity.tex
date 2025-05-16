@@ -85,15 +85,43 @@ We should be clear that the theory of gravity is a different theory than Newton'
 
 Newton's Universal Theory of Gravity states that if two bodies, with masses $M_1$ and $M_2$, located at positions $\vec r_1$ and $\vec r_2$, respectively, are separated by a distance, $r$, then $M_2$ will exert an attractive force on $M_1$, $\vec F_{12}$, given by:
 \begin{align}
-\vec F_{12}=-G\frac{M_1M_2}{r^2}\hat r_{21}
+\vec F_{12}=-G\frac{M_1M_2}{r^2}\hat r_{12}
 \end{align}
-where $\hat r_{21}$ is the unit vector from $M_2$ to $M_1$:
+where $\hat r_{12}$ is the unit vector from $M_2$ to $M_1$:
 \begin{align*}
-\vec r_{21} &= \vec r_2 - \vec r_1\\
-\hat r_{21} &= \frac{1}{r} \vec r_{21}
+\vec r_{12} &= \vec r_1 - \vec r_1\\
+\hat r_{12} &= \frac{1}{r} \vec r_{12}
 \end{align*}
 as shown in Figure \ref{fig:gravity:gvectors}. $\vec F_{12}$ should be read as ``the force on body 1 from body 2''. $G=\SI{6.67e-11}{Nm^2/kg^2}$ is Newton's Universal Constant of Gravity. It should be noted that Newton's theory for the force of gravity written in this form only applies to either point masses (separated by a distance $r$) or spherical bodies whose centres are separated by a distance $r$ that is larger than the radius of either sphere.
-\capfig{0.4\textwidth}{figures/Gravity/gvectors.png}{\label{fig:gravity:gvectors}Illustration of the vectors involved in Newton's Universal Theory of Gravity.}
+
+\begin{center}
+\begin{tikzpicture}
+\tikzmath{
+\L=4;
+}
+\scalebox{1}{
+
+\coordinate (M1) at (0.2*\L, 0.6*\L);
+\coordinate (M2) at (0.8*\L, 0.75*\L);
+
+\draw[-latex,line width=1.5] (0,0) -- (\L,0) node[below]{$x$};
+\draw[-latex,line width=1.5] (0,0) -- (0,\L) node[left]{$y$};
+
+\fill (M1) circle (3pt) node[above left]{$M_1$};
+\fill (M2) circle (3pt) node[above right]{$M_2$};
+
+\draw[-latex,line width=1] (0,0) -- (M1) node[midway,right] {$\vec r_1$};
+\draw[-latex,line width=1] (0,0) -- (M2) node[midway,right] {$\vec r_2$};
+
+\draw[-latex,line width=2, color=myred] ($(M1)+(0,0.3)$) -- ($(M1)!0.4!(M2)+(0,0.3)$) node[above] {$\vec F_{12}$};
+\draw[-latex,line width=1.5, color=myblue!60] (M2) -- (M1) node[midway,below] {$\vec r_{12}$};
+
+}
+
+\end{tikzpicture}
+\captionof*{figure}{\label{fig:gravity:gvectors} \textit{Vectors in Newton's Universal Theory of Gravity. The force on $M_1$ is in the opposite direction of $\vec r_{12}$.}}
+\end{center}
+%\capfig{0.4\textwidth}{figures/Gravity/gvectors.png}{\label{fig:gravity:gvectors}Illustration of the vectors involved in Newton's Universal Theory of Gravity.}
 
 Originally, Newton argued that the force of gravity would be proportional to the masses of the bodies, and inversely proportional to the square of the distance between them:
 \begin{align*}
