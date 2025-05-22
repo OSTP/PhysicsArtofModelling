@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=3.;
+\u=\L/2;
+}
+\scalebox{1.0}{
+
+ \coordinate (P) at (0.2*\L,0.3*\L);
+ \coordinate (PA) at ($(P)+(0.7*\u,\u)$);
+ \coordinate (PB) at ($(P)+(1.0*\u,0.3*\u)$);
+
+ %axes:
+ \draw[-latex, line width=1.5pt] (0,0) -- (1.25*\L,0) node[below]{$x$}; 
+ \draw[-latex, line width=1.5pt] (0,0) -- (0,\L) node[left]{$y$}; 
+ 
+ \draw[-latex,line width=2pt] (P) -- (PA) node[midway,left]{$\vec a$};
+ \draw[-latex,line width=2pt] (P) -- (PB) node[midway,below]{$\vec b$};
+ 
+ \node at ($(P)+(0.5*\u,0.4*\u)$){$\theta$};
+ \path[clip] (P) -- (PA) -- (PB) -- cycle;
+ \draw ($(P)+(0.5*\u,0)$) arc (0:90:0.5*\u);
+
+ 
+
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{The scalar product between vectors depends on the angle between them when they are placed tail to tail.}}

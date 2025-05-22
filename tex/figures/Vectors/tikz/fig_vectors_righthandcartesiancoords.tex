@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\R=1.5;
+\f=0.5;
+\fx=\f+1;
+}
+\scalebox{1.0}{
+
+\coordinate (P) at (0.8*\R,0.7*\R);
+\coordinate (PP) at (0.8*\R,-0.5*\R);
+\coordinate (PX) at (0.8*\R*\fx,0);
+\coordinate (PZ) at (-\f*0.8*\R,-0.5*\R);
+ %axes:
+ \draw[-latex, line width=1.5pt] (0,0) -- (1.75*\R,0) node[below]{$x$}; 
+ \draw[-latex, line width=1.5pt] (0,0) -- (0,1.75*\R) node[left]{$y$}; 
+ \draw[-latex, line width=1.5pt] (0,0) -- (-\f*1.75*\R,-\f*1.75*\R) node[left]{$z$};  
+ 
+ %point
+ \fill (P) circle(2pt);
+ \node[right] at (P) {$P$};
+ 
+ %dotted lines
+ \draw[dashed,color=red,line width=1.2pt] (P) -- (PP) node[midway,right]{$y_P$};
+ \draw[dashed,color=red,line width=1.2pt] (PP) -- (PX) node[midway,right]{$z_P$};
+ \draw[dashed,color=red,line width=1.2pt] (PP) -- (PZ) node[midway,below]{$x_P$};
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{A \textbf{right-handed} Cartesian coordinate system, where $\hat x \times \hat y = \hat z$. ($\hat z$ is out of the page). The point $P$ has coordinates $(x_P,y_P,z_P)$.}}

@@ -1,0 +1,24 @@
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=2.5;
+\v=1.5;
+}
+\scalebox{1.0}{
+
+ \coordinate (P1) at (1.1*\L,0.7*\L);
+ \coordinate (P2) at ($(P1)+(-0.5*\L,-0.5*\L)$);
+ 
+ %axes:
+ \draw[-latex, line width=1.5pt] (0,0) -- (1.2*\L,0) node[below]{$x$}; 
+ \draw[-latex, line width=1.5pt] (0,0) -- (0,\L) node[left]{$y$}; 
+ 
+ \draw[-latex,line width=2pt] (P1) -- ($(P1)+(150:\v)$) node[midway,below]{$\vec v$};
+ \draw[dashed,line width=1pt,color=red] ($(P1)+(150:\v)$) -- ($(P1)+(150:\v)+cos(30)*(\v,0)$) node[midway, above] {$v_x$};
+ \draw[dashed,line width=1pt,color=red] ($(P1)+(150:\v)+cos(30)*(\v,0)$) --(P1) node[midway, right] {$v_y$};
+ 
+ \draw[-latex,line width=2pt] (P2) -- ($(P2)+(150:\v)$) node[midway,below]{$\vec v$};
+ \draw[dashed,line width=1pt,color=red] (P2) -- ($(P2)+(0:\v)$);
+ \draw[dashed,line width=1pt,color=red] ($(P2)+(0.2*\v,0)$) arc (0:150:0.2*\v) node[midway, above] {$\phi$};;
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{A vector in 2D can be specified by two Cartesian components ($v_x,v_y$) or its length, $v$, and an angle with respect to the $x$ direction, $\phi$.}}
