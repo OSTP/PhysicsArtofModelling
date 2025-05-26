@@ -1,0 +1,229 @@
+%\usetheme{Pittsburgh}
+\usetheme{default}
+\usepackage{colortbl}%colored tables
+%For using helvetica font:
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault}
+\urlstyle{same} %sets the fonts for urls
+\usepackage{pdfpages}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{pifont}%for dings
+\usepackage{pgfplots}%for 3d plotting
+\pgfplotsset{compat = newest}
+\usepackage{mathtools}%box in align env \Aboxed
+\usepackage[american,smartlabels]{circuitikz}%for drawing circuits
+\usepackage{multimedia}
+\usepackage{animate}
+
+\usetikzlibrary{arrows}
+\usetikzlibrary {3d} 
+\usetikzlibrary{decorations.markings, math}
+\usetikzlibrary{intersections, pgfplots.fillbetween}
+\usetikzlibrary {shapes.geometric} 
+
+
+%\definecolor{myblue}{RGB}{5, 34, 150}
+\definecolor{myblue2}{RGB}{5, 34, 150}
+\definecolor{myblue}{RGB}{0,36,82}
+\definecolor{myred}{RGB}{207, 2, 13}
+\definecolor{mygreen}{RGB}{0, 158, 11}
+\definecolor{myyellow}{RGB}{220,220,0}
+\definecolor{qblue}{RGB}{0,36,82}
+\definecolor{qgold}{RGB}{250,189,15}
+\definecolor{qred}{RGB}{185,14,49}
+\definecolor{cblue}{rgb}{0.13, 0.67, 0.8}
+\definecolor{corange}{rgb}{0.8, 0.34, 0.0}
+\definecolor{cpurple}{rgb}{0.54, 0.29, 0.42}
+
+%%%%%%%%%%%% General settings
+\setbeamercolor{frametitle}{fg=corange}
+\setbeamercolor{title}{fg=cblue}
+\setbeamercolor{author}{fg=orange}
+
+\beamertemplatenavigationsymbolsempty %no navigation controls at bottom of slides
+%\setbeamertemplate{footline}[frame number]
+\usefonttheme{professionalfonts} 
+\setbeamerfont{title}{series=\bfseries,parent=structure}
+\setbeamerfont{frametitle}{series=\bfseries,parent=structure}
+
+%%%%%%%%%%%%Lists
+\setbeamertemplate{itemize item}[circle] %{\color{myblue}$\circ$}
+\setbeamertemplate{itemize subitem}{\color{cblue}$\circ$}
+\setbeamertemplate{itemize subsubitem}{\color{cblue}$\cdot$}
+\setbeamercolor{itemize item}{bg=cblue,fg=cblue}
+\setbeamercolor{enumerate item}{bg=cblue,fg=cblue}
+
+
+%%%%%%%%%%%%Blocks
+\setbeamertemplate{blocks}[rounded]
+%Default block
+\setbeamercolor{block title}{bg=cblue, fg=white}
+\setbeamercolor{block body}{bg=cblue!10}
+\setbeamerfont{block body}{size=\scriptsize}
+\setbeamerfont{block title}{size=\scriptsize}
+%Alert block
+\setbeamercolor{block title alerted}{bg= orange, fg=white}
+\setbeamercolor{block body alerted}{bg=corange!10}
+\setbeamerfont{block body alerted}{size=\scriptsize}
+\setbeamerfont{block title alerted}{size=\scriptsize}
+%example block
+\setbeamercolor{block title example}{bg=mygreen, fg=white}
+\setbeamercolor{block body example}{bg=mygreen!10}
+\setbeamerfont{block body example}{size=\scriptsize}
+\setbeamerfont{block title example}{size=\scriptsize}
+%%%%%%%%%%%%%%%%55
+
+
+%%%%%%%%%%%%Figures and captions
+\captionsetup{font=scriptsize,labelfont=scriptsize}
+%\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\newenvironment{capfig}[3]{\begin{figure}\includegraphics[width=#1\textwidth]{#2}\caption*{\textit{#3}}\end{figure}}{}
+
+%\makeatother
+%\setbeamertemplate{footline}
+%{
+%  \leavevmode%
+%  \hbox{%
+%  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+%  \end{beamercolorbox}
+%  }%
+%  \vskip0pt%
+%}
+%\makeatletter
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \color{cblue}{\inserttitle}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \color{cpurple}{\insertshortauthor}, \insertdate
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \hspace{.28\paperwidth}\color{corange} \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+\makeatletter
+
+\setbeamertemplate{title page}
+{
+  \begin{tikzpicture}[remember picture,overlay]
+    \def\barh{4}%15
+  
+    \draw[color=cblue,line width=\barh] ([yshift=-0.5*\barh]current page.north west) -- ([yshift=-0.5*\barh,xshift=-0.67\paperwidth]current page.north east);
+    \draw[color=cpurple,line width=\barh] ([yshift=-0.5*\barh,xshift=-0.67\paperwidth]current page.north east) -- ([yshift=-0.5*\barh,xshift=-0.34\paperwidth]current page.north east);
+    \draw[color=corange,line width=\barh] ([yshift=-0.5*\barh,xshift=-0.34\paperwidth]current page.north east) -- ([yshift=-0.5*\barh]current page.north east); 
+  
+    \draw[color=cblue,line width=\barh] ([yshift=0.5*\barh]current page.south west) -- ([yshift=0.5*\barh,xshift=-0.67\paperwidth]current page.south east);
+    \draw[color=cpurple,line width=\barh] ([yshift=0.5*\barh,xshift=-0.67\paperwidth]current page.south east) -- ([yshift=0.5*\barh,xshift=-0.34\paperwidth]current page.south east);
+    \draw[color=corange,line width=\barh] ([yshift=0.5*\barh,xshift=-0.34\paperwidth]current page.south east) -- ([yshift=0.5*\barh]current page.south east);
+    %\node[left] at (current page.east) {
+    %\includegraphics[scale=0.1]{figures/coverpage}
+    %};
+  \end{tikzpicture}
+  
+  \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \vspace{2cm}
+  \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par
+  \usebeamerfont{institute}\usebeamercolor[fg]{author}\insertinstitute\par
+  \usebeamerfont{date}\usebeamercolor[fg]{author}\insertdate\par
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+
+} 
+
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip%
+        \par\hspace*{-\dimexpr0.5\paperwidth-0.5\textwidth}\textcolor{cblue}{\rule{0.33\paperwidth}{6pt}}\textcolor{cpurple}{\rule{0.33\paperwidth}{6pt}}\textcolor{corange}{\rule{0.34\paperwidth}{6pt}} 
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.75cm,dp=0.6ex]{frametitle}
+        \hspace*{0.5cm}\strut\usebeamerfont{frametitle}\insertframetitle\strut
+        %\hrule
+    \end{beamercolorbox}%
+    %%Line below:
+%\par\hspace*{-\dimexpr0.5\paperwidth-0.5\textwidth}\textcolor{myblue}{\rule{\paperwidth}{0.4pt}}
+     % <-- calculation of left margin width + rule
+     %\textcolor{red}{\noindent\rule{\paperwidth}{2pt}}
+}
+
+
+%%%%%%%%%%%%Frame templates
+
+%Slide with title
+\newenvironment{titleframe}[1]
+{\begin{frame}\frametitle{#1}\end{frame}}
+{}
+
+%Slide with title and itemize list:
+\newenvironment{bulletframe}[1]
+{\begin{frame}{#1} \itemize}
+{\enditemize \end{frame}}
+
+%Slide with two columns 50/50
+\newenvironment{twocolframe}[3]
+{\begin{frame}{#1}
+ \begin{columns}[T]
+ \column{0.5\textwidth}#2
+ \column{0.5\textwidth}#3
+ \end{columns}\end{frame}}{}
+
+%Slide with two columns 60/40 <<<<<<<<<<<<<<<<<<<<<<  This one!
+\newenvironment{twocolframesf}[3]
+{\begin{frame}{#1}
+ \begin{columns}[T]
+ \column{0.6\textwidth}#2
+ \column{0.4\textwidth}#3
+ \end{columns}\end{frame}}{}
+ 
+%Slide with two columns 70/30
+\newenvironment{twocolframest}[3]
+{\begin{frame}{#1}
+ \begin{columns}[T] 
+ \column{0.7\textwidth}#2
+ \column{0.3\textwidth}#3
+ \end{columns}\end{frame}}{} 
+ 
+%Slide with two columns 40/60
+\newenvironment{twocolframefs}[3]
+{\begin{frame}{#1}
+ \begin{columns}[T] 
+ \column{0.4\textwidth}#2
+ \column{0.6\textwidth}#3
+ \end{columns}\end{frame}}{}
+ 
+%Slide with two columns 70/30
+\newenvironment{twocolframets}[3]
+{\begin{frame}{#1}
+ \begin{columns}[T] 
+ \column{0.3\textwidth}#2
+ \column{0.7\textwidth}#3
+ \end{columns}\end{frame}}{} 
+
+ 
+%Colloquium speaker (title, abstract, picture file, speaker name)
+\newenvironment{colloquium}[5]
+{
+\begin{frame}{Colloquium: Friday 1:30pm in Stirling A}
+\begin{columns}[T] 
+ \column{0.8\textwidth}
+ \textbf{#1}\\
+ #2
+ \column{0.2\textwidth}
+ \capfig{#3}{#4}{#5}
+ \end{columns}
+\end{frame}
+}
+{} 
+
+
