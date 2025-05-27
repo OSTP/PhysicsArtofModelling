@@ -621,6 +621,79 @@ v_{b0}\sin\theta t&= h
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
+\subsection{Zeno's paradox}
+\label{subsec:zenosparadox}
+\begin{frame}{Zeno's paradox}
+An example of Zeno's paradox: If you shoot an arrow at speed, $v$, towards a target a distance, $D$, away, it must first cover half the distance. After that, it must still go the other half, so it travels half of that remaining distance. If you think of it this way, like Zeno, you appear to have a different paradox, the arrow can never get there because there is always a small distance left. Any motion is thus impossible!
+
+\end{frame}
+
+\twocolframesf{Zeno's arrow: Kinematics to the rescue!}
+{
+\begin{itemize}
+\item At constant speed, $v$, it will take a time, $T$, for the arrow to cover the distance, $D$:
+\begin{align*}
+T=\frac{D}{v}
+\end{align*}
+\item The time that it will take to cover the first, second, third segments:
+\begin{align*}
+t_1=\frac{D}{2v}\quad t_2=\frac{D}{4v}\quad t_3=\frac{D}{8v}\;\; \dots \;\; t_N=\frac{D}{2vN}
+\end{align*}
+\item The total time is thus also given by:
+\begin{align*}
+T=t_1+t_2+t_3+\dots=\sum_{i=1}^N t_i=\frac{D}{v}\sum_{1=1}^N\frac{1}{2i}
+\end{align*}
+
+\end{itemize}
+}
+{
+\vspace{-1.5cm}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=5;
+\h=1;
+\lv=0.5;
+}
+\scalebox{1.0}{
+%\draw[line width=2] (0,0) -- (\L,0);
+\draw[latex-latex,line width=1] (0,0) -- (\L,0) node[midway,above]{$D$};
+%\fill (0,0) circle (2pt);
+%\fill (\L,0) circle (2pt);
+
+\draw[dashed] (0,-\h) -- +(\L,0);
+\draw[latex-latex,line width=1] (0,-\h+0.25) -- +(\L/2,0) node[midway,above]{$\frac{D}{2}$};
+\draw[-latex,line width=2, color=myred] (0,-\h)--+(\lv,0);
+\node at (\L/4,-\h-0.3){$t_1=\frac{D}{2v}$};
+
+\draw[dashed] (\L/2,-2*\h) -- +(\L/2,0);
+\draw[latex-latex,line width=1] (\L/2,-2*\h+0.25) -- +(\L/4,0) node[midway,above]{$\frac{D}{4}$};
+\draw[](0,-2*\h) -- +(\L/2,0);
+\draw[-latex,line width=2, color=myred] (\L/2,-2*\h)--+(\lv,0);
+\node at (\L/4,-2*\h-0.3){$t_2=\frac{D}{4v}$};
+
+\draw[dashed] (3*\L/4,-3*\h) -- +(\L/4,0);
+\draw[latex-latex,line width=1] (3*\L/4,-3*\h+0.25) -- +(\L/8,0) node[midway,above]{$\frac{D}{8}$};
+\draw[](0,-3*\h) -- +(3*\L/4,0);
+\draw[-latex,line width=2, color=myred] (3*\L/4,-3*\h)--+(\lv,0);
+\node at (\L/4,-3*\h-0.3){$t_3=\frac{D}{8v}$};
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{An arrow traveling Zeno's way!}}
+\end{center}
+\vspace{-0.5cm}
+\only<2>{
+\begin{block}{Resolving the paradox:}
+The two ways of calculating, $T$, must be equivalent, thus:
+\begin{align*}
+\lim_{N\to\infty}\sum_{1=1}^N\frac{1}{2i} = 1
+\end{align*}
+The geometric series converges!
+\end{block}
+}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%
 
 
 
