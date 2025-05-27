@@ -1,0 +1,371 @@
+\documentclass[aspectratio=169,
+hyperref={colorlinks,urlcolor=blue}
+]{beamer}
+
+
+\input{../include/beamerbmdw}
+
+
+
+%Frames:
+% \twocolframesf 60/40 (fs, st, ts) 
+% \titleframe
+% bulletframe
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% START OF PRESENTATION %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Newton's Laws}
+\institute{Newton, Forces, and Free Body Diagrams}
+\author{Building Models to Describe our World}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\thispagestyle{empty}
+
+\begin{textblock*}{5cm}(11cm,4cm)
+    \includegraphics[width=4cm]{../figures/BMDW/logo}
+\end{textblock*}
+
+\end{frame}
+
+\subsection{Forces}
+\label{subsec:forces}
+\begin{bulletframe}{Forces}
+\item There is no such thing as a force.
+\item These are a mathematical tool that allows us to describe the motion of objects. 
+\item We represent them with a vector, as they have a magnitude and a direction.
+\item We can use a spring scale to define the magnitude and direction of a force.
+\item One issue is that we have some intuition about what a force feels like; it’s better to apply rules for modelling forces, rather than trying to guess and apply intuition. Some concepts are counter-intuitive.
+\begin{itemize}
+\item With practice, you will develop intuition about whether to include a specific force, not about what a force really is. The ``physics intuition'' is about getting comfortable applying the rules, not about understanding them. Nobody ``understands'' the rules.
+\end{itemize}
+
+\end{bulletframe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Group Exercise: FBD 1}
+\label{subsec:groupfbd1}
+\begin{frame}{Group exercise: Draw FBD for each object}
+ \begin{columns}[T]
+ \column{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=1;
+}
+\pgfmathsetmacro{\hval}{0.85}
+\scalebox{1.0}{
+\node at (0,0) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\fill [black!50] (-\L/2,-\L-\hval) rectangle (\L/2,-\hval);
+\fill (-\L,\hval) rectangle (\L,\hval+0.2);
+\node at (0,-\L/2-\hval){$m$};
+
+\fill (2*\L,\hval+0.1) circle(3pt) node[right=2pt]{ceiling};
+\fill (2.5*\L,0) circle(3pt) node[right=2pt]{scale};
+\fill (2*\L,-\L/2-\hval) circle(3pt) node[right=2pt]{mass};
+
+}
+\end{tikzpicture}
+\end{center}
+ \column{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=1;
+}
+\pgfmathsetmacro{\hval}{0.85}
+\scalebox{1.0}{
+\node at (0,\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\node at (0,-\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\fill (-\L,2*\hval) rectangle (\L,2*\hval+0.2);
+\fill [black!50] (-\L/2,-\L-2*\hval) rectangle (\L/2,-2*\hval);
+\node at (0,-\L/2-2*\hval){$m$};
+
+\fill (2*\L,2*\hval+0.1) circle(3pt) node[right=2pt]{ceiling};
+\fill (2.5*\L,\hval) circle(3pt)node[right=2pt]{scale};
+\fill (2*\L,-\hval) circle(3pt)node[right=2pt]{scale};
+\fill (2.5*\L,-\L/2-2*\hval) circle(3pt)node[right=2pt]{mass};
+
+
+}
+\end{tikzpicture}
+\end{center}
+ \end{columns}
+\begin{itemize}
+\scriptsize
+\item Assume the scales are massless.
+\item Draw free body diagrams for the masses, scales and ceiling in both cases. (Draw little arrows around each point!).
+\item Remember, all objects must have an acceleration of zero!
+\item Be clear about what exerts a force on what!
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Group exercise: Draw FBD for each object}
+ \begin{columns}[T]
+ \column{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=1;
+\f=0.5;
+}
+\pgfmathsetmacro{\hval}{0.85}
+\scalebox{1.0}{
+\node at (0,0) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\fill [black!50] (-\L/2,-\L-\hval) rectangle (\L/2,-\hval);
+\fill (-\L,\hval) rectangle (\L,\hval+0.2);
+\node at (0,-\L/2-\hval){$m$};
+
+\fill (2*\L,\hval+0.1) circle(3pt);
+\draw [-latex,line width=1.5,color=myred] (2*\L,\hval+0.1) -- +(0,\f) node[midway,right]{\scriptsize Force from building on ceiling};
+\draw [-latex,line width=1.5] (2*\L,\hval+0.1) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on ceiling};
+\fill (2.5*\L,-0.25*\hval) circle(3pt) ;
+\draw [-latex,line width=1.5] (2.5*\L,-0.25*\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from ceiling on scale};
+\draw [-latex,line width=1.5] (2.5*\L,-0.25*\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from mass on scale};
+\fill (2*\L,-\L/2-\hval) circle(3pt) ;
+\draw [-latex,line width=1.5] (2*\L,-\L/2-\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from scale on mass};
+\draw [-latex,line width=1.5,color=myred] (2*\L,-\L/2-\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from gravity on mass};
+}
+\end{tikzpicture}
+\end{center}
+ \column{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=1;
+\f=0.5;
+}
+\pgfmathsetmacro{\hval}{0.85}
+\scalebox{1.0}{
+\node at (0,\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\node at (0,-\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\fill (-\L,2*\hval) rectangle (\L,2*\hval+0.2);
+\fill [black!50] (-\L/2,-\L-2*\hval) rectangle (\L/2,-2*\hval);
+\node at (0,-\L/2-2*\hval){$m$};
+
+\fill (2*\L,2*\hval+0.1) circle(3pt) ;
+\draw [-latex,line width=1.5,color=myred] (2*\L,2*\hval+0.1) -- +(0,\f) node[midway,right]{\scriptsize Force from building on ceiling};
+\draw [-latex,line width=1.5] (2*\L,2*\hval+0.1) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on ceiling};
+\fill (2.5*\L,\hval) circle(3pt);
+\draw [-latex,line width=1.5] (2.5*\L,\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from ceiling on scale};
+\draw [-latex,line width=1.5] (2.5*\L,\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on scale};
+\fill (2*\L,-\hval) circle(3pt);
+\draw [-latex,line width=1.5] (2*\L,-\hval)  -- +(0,\f) node[midway,right]{\scriptsize Force from scale on scale};
+\draw [-latex,line width=1.5] (2*\L,-\hval)  -- +(0,-\f) node[midway,right]{\scriptsize Force from mass on scale};
+\fill (2.5*\L,-\L/2-2*\hval) circle(3pt);
+\draw [-latex,line width=1.5] (2.5*\L,-\L/2-2*\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from scale on mass};
+\draw [-latex,line width=1.5,color=myred] (2.5*\L,-\L/2-2*\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from gravity on mass};
+
+}
+\end{tikzpicture}
+\end{center}
+ \end{columns}
+\begin{itemize}
+\scriptsize
+\item Two forces on each object, and they must have same magnitude/opposite direction.
+\item The Earth and building (which holds up the ceiling) exert forces but are not shown. We only show bodies on which forces are exerted.
+\item You need to become comfortable identifying forces that are exerted on objects!
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Group exercise: FBD 2}
+\label{subsec:groupfbd2}
+\twocolframe{Group exercise: Draw the FBDs for masses and scale}
+{
+
+}
+{
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=1.5;
+\R=0.5;
+\f=0.75;
+}
+\pgfmathsetmacro{\hval}{0.85}
+\scalebox{1.0}{
+\node at (0,0) {\includegraphics[scale=0.5,angle=90]{../figures/NewtonsLaws/scale}};
+\draw[line width=1.5] (\hval,0) --+(\L,0);
+\draw[line width=1.5] (-\hval,0) --+(-\L,0);
+\fill (0,\R) circle(3pt);
+
+\fill[black!50] (-\L-\hval,-\R) circle(\R);
+\fill (-\L-\hval,-\R) circle(3pt);
+\draw[line width=1.5] (-\hval-\L-\R,-\R) --+(0,-\L);
+\fill[black!50] (-\hval-\L-1.5*\R,-\R-\L) rectangle (-\hval-\L-0.5*\R,-2*\R-\L);
+\node at  (-\hval-\L-\R,-1.5*\R-\L) {$m$};
+\fill (-\hval-\L-2.5*\R,-1.5*\R-\L) circle(3pt);
+
+\fill[black!50] (\L+\hval,-\R) circle(\R);
+\fill (+\L+\hval,-\R) circle(3pt);
+\draw[line width=1.5] (\hval+\L+\R,-\R) --+(0,-\L);
+\fill[black!50] (\hval+\L+1.5*\R,-\R-\L) rectangle (\hval+\L+0.5*\R,-2*\R-\L);
+\node at  (\hval+\L+\R,-1.5*\R-\L) {$m$};
+\fill (\hval+\L+2.5*\R,-1.5*\R-\L) circle(3pt);
+
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{Two masses, two pulleys and a spring scale.}}
+\end{center}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolframe{Group exercise: Draw the FBDs for masses and scale}
+{
+\begin{itemize}
+\item All forces have the same magnitude, but the pulleys change the direction of tension forces in the ropes.
+\item The forces exerted on the scale are the same as in the previous problem, so it reads the same!
+\item The Earth exerts the two forces of gravity (in red).
+\end{itemize}
+}
+{
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=1.5;
+\R=0.5;
+\f=0.75;
+}
+\pgfmathsetmacro{\hval}{0.85}
+\scalebox{1.0}{
+\node at (0,0) {\includegraphics[scale=0.5,angle=90]{../figures/NewtonsLaws/scale}};
+\draw[line width=1.5] (\hval,0) --+(\L,0);
+\draw[line width=1.5] (-\hval,0) --+(-\L,0);
+\fill (0,\R) circle(3pt) node[above]{\scriptsize Forces exerted by ropes on scale};
+\draw [-latex,line width=1.5] (0,\R)  -- +(\f,0) ; 
+\draw [-latex,line width=1.5] (0,\R)  -- +(-\f,0); 
+
+\fill[black!50] (-\L-\hval,-\R) circle(\R);
+\fill (-\L-\hval,-\R) circle(3pt);
+\draw[line width=1.5] (-\hval-\L-\R,-\R) --+(0,-\L);
+\fill[black!50] (-\hval-\L-1.5*\R,-\R-\L) rectangle (-\hval-\L-0.5*\R,-2*\R-\L);
+\node at  (-\hval-\L-\R,-1.5*\R-\L) {$m$};
+\fill (-\hval-\L-2.5*\R,-1.5*\R-\L) circle(3pt);
+\draw [-latex,line width=1.5] (-\hval-\L-2.5*\R,-1.5*\R-\L)   -- +(0,\f) ; 
+\draw [-latex,line width=1.5,color=myred] (-\hval-\L-2.5*\R,-1.5*\R-\L)   -- +(0,-\f); 
+
+
+\fill[black!50] (\L+\hval,-\R) circle(\R);
+\fill (+\L+\hval,-\R) circle(3pt);
+\draw[line width=1.5] (\hval+\L+\R,-\R) --+(0,-\L);
+\fill[black!50] (\hval+\L+1.5*\R,-\R-\L) rectangle (\hval+\L+0.5*\R,-2*\R-\L);
+\node at  (\hval+\L+\R,-1.5*\R-\L) {$m$};
+\fill (\hval+\L+2.5*\R,-1.5*\R-\L) circle(3pt);
+\draw [-latex,line width=1.5] (\hval+\L+2.5*\R,-1.5*\R-\L)   -- +(0,\f); 
+\draw [-latex,line width=1.5,color=myred] (\hval+\L+2.5*\R,-1.5*\R-\L)   -- +(0,-\f); 
+
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{Two masses, two pulleys and a spring scale}}
+\end{center}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Newton's first law}
+\label{subsec:newtonsfirstlaw}
+\begin{frame}{Newton's first law}
+\textbf{An object will remain in its state of motion, be it at rest or moving with constant velocity, unless a net external force is exerted on the object.}\\
+\vfill
+If the above is true, then you're observing the object from an inertial frame of reference. Think of this as the way to define an inertial frame of reference.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Newton's second law}
+\label{subsec:newtonssecondlaw}
+\begin{frame}{Newton's Second Law}
+\begin{align*}
+\sum \vec F = m\vec a
+\end{align*}
+\begin{itemize}
+\item This statement is a quantitative framework that describes almost all of the world around us. It leads to the concepts of conservation of energy, momentum, angular momentum, etc. It is an amazing equation!
+\item It connects dynamics (forces) to kinematics (acceleration).
+\item It is a vector equation $\rightarrow$ To be ``useful'' we need to write it out in components. 
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Newton's third law}
+\label{subsec:newtonsthirdlaw}
+\begin{frame}{Newton's third law}
+\textbf{If one object exerts a force on another object, the second object
+exerts a force on the first object that is equal in magnitude and
+opposite in direction.}\\
+\vfill
+This is not about intuition!!! \textcolor{myred}{This is a rule to be followed!} (science)\\
+\vfill
+If you include a force on object A that is exerted by object B, then you need to include an equal and opposite force exerted on object B from object A (if you care about modeling the motion of object B).
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
