@@ -6,7 +6,6 @@ hyperref={colorlinks,urlcolor=blue}
 \input{../include/beamerbmdw}
 
 
-
 %Frames:
 % \twocolframesf 60/40 (fs, st, ts) 
 % \titleframe
@@ -32,9 +31,33 @@ hyperref={colorlinks,urlcolor=blue}
 
 \end{frame}
 
-\subsection{Forces}
+%%%%%%%%%%%%%%%%%
+
+\twocolframe{Outline}
+{\tableofcontents[sections=1-2, subsectionstyle=show/show]}
+{\tableofcontents[sections=3, subsectionstyle=show/show]}
+
+%%%%%%%%%%%%%%%%%%%
+
+\section{Concepts}
+\label{sec:newtonsconcepts}
+\title{Concepts}
+\institute{Newton's Laws}
+\author{\insertsubsection}
+
+%%%%%%%%%%%%
+
+
+\begin{frame}
+\titlepage
+\thispagestyle{empty}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%
+
+\subsection{What is a force?}
 \label{subsec:forces}
-\begin{bulletframe}{Forces}
+\begin{bulletframe}{What is a force?}
 \item There is no such thing as a force.
 \item These are a mathematical tool that allows us to describe the motion of objects. 
 \item We represent them with a vector, as they have a magnitude and a direction.
@@ -47,8 +70,249 @@ hyperref={colorlinks,urlcolor=blue}
 \end{bulletframe}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Group Exercise: FBD 1}
-\label{subsec:groupfbd1}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Newton's first law}
+\label{subsec:newtonsfirstlaw}
+\begin{frame}{Newton's first law}
+\textbf{An object will remain in its state of motion, be it at rest or moving with constant velocity, unless a net external force is exerted on the object.}\\
+\vfill
+If the above is true, then you're observing the object from an inertial frame of reference. Think of this as the way to define an inertial frame of reference.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Newton's second law}
+\label{subsec:newtonssecondlaw}
+\begin{frame}{Newton's second law}
+\begin{align*}
+\sum \vec F = m\vec a
+\end{align*}
+\begin{itemize}
+\item This statement is a quantitative framework that describes almost all of the world around us. It leads to the concepts of conservation of energy, momentum, angular momentum, etc. It is an amazing equation!
+\item It connects dynamics (forces) to kinematics (acceleration).
+\item It is a vector equation $\rightarrow$ To be ``useful'' we need to write it out in components. 
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Newton's third law}
+\label{subsec:newtonsthirdlaw}
+\begin{frame}{Newton's third law}
+\textbf{If one object exerts a force on another object, the second object
+exerts a force on the first object that is equal in magnitude and
+opposite in direction.}\\
+\vfill
+This is not about intuition!!! \textcolor{myred}{This is a rule to be followed!} (science)\\
+\vfill
+If you include a force on object A that is exerted by object B, then you need to include an equal and opposite force exerted on object B from object A (if you care about modeling the motion of object B).
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Forces}
+\label{sec:forces}
+\title{Forces}
+\institute{Newton's Laws}
+\author{\insertsubsection}
+
+%%%%%%%%%%%%
+
+
+\begin{frame}
+\titlepage
+\thispagestyle{empty}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Identifying forces}
+\label{subsec:identifyingforces}
+\begin{bulletframe}{Identifying forces}
+\item It’s important, it’s important, it’s important
+\item You want to be certain that you did not miss any force exerted on an object, or your model is almost definitely wrong!
+\item Ask yourself: ``What could be pulling or pushing on the object?'' and go through a list of possible forces.
+\end{bulletframe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{bulletframe}{Identifying the forces – multiple objects}
+\item Don’t forget Newton’s third law!
+\begin{itemize}
+\item  If you have multiple objects make sure that any force exerted by one object on the other has a matching ``reaction'' force.
+\end{itemize}
+\item It’s usually easiest to start with the object that has the least number of forces exerted on it (for example, the ``top'' block, if there are stacked blocks).
+\end{bulletframe}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Types of forces}
+\label{subsec:typesofforces}
+\begin{bulletframe}{Types of forces (not an exhaustive list, but covers most cases)}
+\item \textbf{Weight}: Is the object near the surface of a planet?
+\item \textbf{Normal force}: Is the object in contact with anything else?
+\item \textbf{Frictional forces}: Can there be friction associated with a normal force?
+\item \textbf{Tension forces}: Is something pulling on the object, maybe with a rope?
+\item \textbf{Drag forces}: Is the object moving through a fluid?
+\item \textbf{Spring forces}: Is the object in contact with a spring?
+\item \textbf{Inertial forces}: Are you in a non-inertial frame of reference?
+\item \textbf{``Applied forces''}: Is anything else, like a human, pushing or pulling on the object?
+\end{bulletframe}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The friction force}
+\label{subsec:thefrictionforce}
+\begin{bulletframe}{Friction}
+\item Force between two surfaces, in the direction parallel to the interface between surface (perpendicular to the corresponding normal force).
+\item \textbf{Only where there is a normal force} between two surfaces.
+\item \textbf{Static friction}:
+\begin{itemize}
+\item When the surfaces are not moving relative to each other.
+\item Can have a maximal value:
+\begin{align*}
+f_s^{max}=\mu_s N
+\end{align*}
+but the magnitude depends on the other forces (typically, the sum of the forces must be zero, since static friction usually implies no acceleration).
+\item Direction is always opposite to that of ``impeding motion''.
+\end{itemize}
+\item \textbf{Kinetic friction}:
+\begin{itemize}
+\item When surfaces are moving/sliding relative to each other.
+\item Magnitude depends on the normal force:
+\begin{align*}
+f_k=\mu_k N
+\end{align*}
+\item Direction is always opposite to that of the motion (acts to decelerate).
+\end{itemize}
+\end{bulletframe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%
+\subsection{Hooke's law}
+\label{subsec:hookeslaw}
+\twocolframe{Hooke's law}
+{
+\begin{itemize}
+\item Springs have a rest length, and a “spring constant” (how stiff they are), $k$.
+\item If you compress them or stretch them by a displacement $x$ relative to their rest position, they will exert a force that is proportional to $x$:
+\begin{align*}
+F=kx\quad \text{(magnitude)}
+\end{align*}
+\item That spring force (or ``restoring force'' will be in the direction opposite of the displacement:
+\begin{align*}
+\vec F=-kx\hat x\quad \text{(magnitude and direction)}
+\end{align*}
+\end{itemize}
+}
+{
+\vspace{-1.5cm}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=2.;
+\dx=0.75*\L;
+\off=0.5;
+\h=1;
+}
+\scalebox{1}{
+
+
+\draw[-latex,line width=1.5pt] (-1.5*\L,0) -- (1.5*\L,0) node[below]{$x$};
+\draw[line width=1.5pt] (0,-0.1) -- (0,0.1);
+\node[below] at (0,0) {$0$};
+
+\fill (-1.5*\L,0) rectangle (-1.4*\L,\h);
+\draw[decoration={aspect=0.3, segment length=2.8mm, amplitude=3mm,coil},decorate] (-1.4*\L,\h/2) -- (0,\h/2);
+\draw [latex-latex] (-1.4*\L,\h) -- (0,\h) node[midway,above]{$L_0$};
+\fill[black!50] (0,0) rectangle (\h,\h);
+
+%%%%%%%%%%  top compressed
+\begin{scope}[shift={(0,2*\h)}]
+\draw[-latex,line width=1.5pt] (-1.5*\L,0) -- (1.5*\L,0) node[below]{$x$};
+\draw[line width=1.5pt] (0,-0.1) -- (0,0.1);
+\node[below] at (0,0) {$0$};
+
+\fill (-1.5*\L,0) rectangle (-1.4*\L,\h);
+\draw[decoration={aspect=0.3, segment length=2mm, amplitude=3mm,coil},decorate] (-1.4*\L,\h/2) -- (-\dx,\h/2);
+\draw [color=blue,latex-latex] (-\dx,1.2*\h) -- (0,1.2*\h) node[midway,above]{$x<0$};
+\fill[black!50] (-\dx,0) rectangle (-\dx+\h,\h);
+\draw[line width=2, -latex, color=myred] (-\dx,\h/2) -- +(1.3,0) node[right] {$\vec F$};
+
+\end{scope}
+%%%%%%%%%% bottom extended
+\begin{scope}[shift={(0,-2*\h)}]
+\draw[-latex,line width=1.5pt] (-1.5*\L,0) -- (1.5*\L,0) node[below]{$x$};
+\draw[line width=1.5pt] (0,-0.1) -- (0,0.1);
+\node[below] at (0,0) {$0$};
+
+\fill (-1.5*\L,0) rectangle (-1.4*\L,\h);
+\draw[decoration={aspect=0.3, segment length=3.5mm, amplitude=3mm,coil},decorate] (-1.4*\L,\h/2) -- (\dx,\h/2);
+\draw [color=blue,latex-latex] (0,\h) -- (\dx,\h) node[midway,above]{$x>0$};
+\fill[black!50] (\dx,0) rectangle (\dx+\h,\h);
+\draw[line width=2, -latex, color=myred] (\dx,\h/2) -- +(-1.3,0) node[midway,below=-2pt] {$\vec F$};
+\end{scope}
+
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{A spring-mass system. When the moving end of the spring is at $x=0$, there is no spring force. When the moving end is in negative $x$ (compression), the force is in the positive direction. When the moving end is in positive $x$ (extension), the force is in the negative direction}.}
+\end{center}
+
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Free Body Diagrams}
+\label{sec:fbds}
+\title{Free Body Diagrams}
+\institute{Newton's Laws}
+\author{\insertsubsection}
+
+%%%%%%%%%%%%
+
+
+\begin{frame}
+\titlepage
+\thispagestyle{empty}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Using Newton's second law}
+\label{subsec:usingewtonssecondlaw}
+\begin{frame}{Using Newton's second law}
+\begin{enumerate}
+\item Identify the forces (it's kinda important).
+\item Make a \emph{good} FBD for each object with a mass:
+\begin{enumerate}
+\item Show the forces.
+\item Show the acceleration vector.
+\item Show your choice of coordinate system (a good choice is $\hat x$ parallel to $\vec a$ for that mass).
+\item Show any relevant angles.
+\end{enumerate}
+\item Use the FBD to write out the components of Newton's Second Law for each mass.
+\end{enumerate}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hanging mass}
+\label{subsec:hangingmass}
 \begin{frame}{Group exercise: Draw FBD for each object}
  \begin{columns}[T]
  \column{0.5\textwidth}
@@ -56,17 +320,17 @@ hyperref={colorlinks,urlcolor=blue}
 \begin{tikzpicture}[scale=1]
 \tikzmath{
 \L=1;
+\myheight=0.85;
 }
-\pgfmathsetmacro{\hval}{0.85}
 \scalebox{1.0}{
 \node at (0,0) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
-\fill [black!50] (-\L/2,-\L-\hval) rectangle (\L/2,-\hval);
-\fill (-\L,\hval) rectangle (\L,\hval+0.2);
-\node at (0,-\L/2-\hval){$m$};
+\fill [black!50] (-\L/2,-\L-\myheight) rectangle (\L/2,-\myheight);
+\fill (-\L,\myheight) rectangle (\L,\myheight+0.2);
+\node at (0,-\L/2-\myheight){$m$};
 
-\fill (2*\L,\hval+0.1) circle(3pt) node[right=2pt]{ceiling};
+\fill (2*\L,\myheight+0.1) circle(3pt) node[right=2pt]{ceiling};
 \fill (2.5*\L,0) circle(3pt) node[right=2pt]{scale};
-\fill (2*\L,-\L/2-\hval) circle(3pt) node[right=2pt]{mass};
+\fill (2*\L,-\L/2-\myheight) circle(3pt) node[right=2pt]{mass};
 
 }
 \end{tikzpicture}
@@ -76,19 +340,19 @@ hyperref={colorlinks,urlcolor=blue}
 \begin{tikzpicture}[scale=1]
 \tikzmath{
 \L=1;
+\myheight=0.85;
 }
-\pgfmathsetmacro{\hval}{0.85}
 \scalebox{1.0}{
-\node at (0,\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
-\node at (0,-\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
-\fill (-\L,2*\hval) rectangle (\L,2*\hval+0.2);
-\fill [black!50] (-\L/2,-\L-2*\hval) rectangle (\L/2,-2*\hval);
-\node at (0,-\L/2-2*\hval){$m$};
+\node at (0,\myheight) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\node at (0,-\myheight) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\fill (-\L,2*\myheight) rectangle (\L,2*\myheight+0.2);
+\fill [black!50] (-\L/2,-\L-2*\myheight) rectangle (\L/2,-2*\myheight);
+\node at (0,-\L/2-2*\myheight){$m$};
 
-\fill (2*\L,2*\hval+0.1) circle(3pt) node[right=2pt]{ceiling};
-\fill (2.5*\L,\hval) circle(3pt)node[right=2pt]{scale};
-\fill (2*\L,-\hval) circle(3pt)node[right=2pt]{scale};
-\fill (2.5*\L,-\L/2-2*\hval) circle(3pt)node[right=2pt]{mass};
+\fill (2*\L,2*\myheight+0.1) circle(3pt) node[right=2pt]{ceiling};
+\fill (2.5*\L,\myheight) circle(3pt)node[right=2pt]{scale};
+\fill (2*\L,-\myheight) circle(3pt)node[right=2pt]{scale};
+\fill (2.5*\L,-\L/2-2*\myheight) circle(3pt)node[right=2pt]{mass};
 
 
 }
@@ -115,23 +379,23 @@ hyperref={colorlinks,urlcolor=blue}
 \tikzmath{
 \L=1;
 \f=0.5;
+\myheight=0.85;
 }
-\pgfmathsetmacro{\hval}{0.85}
 \scalebox{1.0}{
 \node at (0,0) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
-\fill [black!50] (-\L/2,-\L-\hval) rectangle (\L/2,-\hval);
-\fill (-\L,\hval) rectangle (\L,\hval+0.2);
-\node at (0,-\L/2-\hval){$m$};
+\fill [black!50] (-\L/2,-\L-\myheight) rectangle (\L/2,-\myheight);
+\fill (-\L,\myheight) rectangle (\L,\myheight+0.2);
+\node at (0,-\L/2-\myheight){$m$};
 
-\fill (2*\L,\hval+0.1) circle(3pt);
-\draw [-latex,line width=1.5,color=myred] (2*\L,\hval+0.1) -- +(0,\f) node[midway,right]{\scriptsize Force from building on ceiling};
-\draw [-latex,line width=1.5] (2*\L,\hval+0.1) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on ceiling};
-\fill (2.5*\L,-0.25*\hval) circle(3pt) ;
-\draw [-latex,line width=1.5] (2.5*\L,-0.25*\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from ceiling on scale};
-\draw [-latex,line width=1.5] (2.5*\L,-0.25*\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from mass on scale};
-\fill (2*\L,-\L/2-\hval) circle(3pt) ;
-\draw [-latex,line width=1.5] (2*\L,-\L/2-\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from scale on mass};
-\draw [-latex,line width=1.5,color=myred] (2*\L,-\L/2-\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from gravity on mass};
+\fill (2*\L,\myheight+0.1) circle(3pt);
+\draw [-latex,line width=1.5,color=myred] (2*\L,\myheight+0.1) -- +(0,\f) node[midway,right]{\scriptsize Force from building on ceiling};
+\draw [-latex,line width=1.5] (2*\L,\myheight+0.1) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on ceiling};
+\fill (2.5*\L,-0.25*\myheight) circle(3pt) ;
+\draw [-latex,line width=1.5] (2.5*\L,-0.25*\myheight) -- +(0,\f) node[midway,right]{\scriptsize Force from ceiling on scale};
+\draw [-latex,line width=1.5] (2.5*\L,-0.25*\myheight) -- +(0,-\f) node[midway,right]{\scriptsize Force from mass on scale};
+\fill (2*\L,-\L/2-\myheight) circle(3pt) ;
+\draw [-latex,line width=1.5] (2*\L,-\L/2-\myheight) -- +(0,\f) node[midway,right]{\scriptsize Force from scale on mass};
+\draw [-latex,line width=1.5,color=myred] (2*\L,-\L/2-\myheight) -- +(0,-\f) node[midway,right]{\scriptsize Force from gravity on mass};
 }
 \end{tikzpicture}
 \end{center}
@@ -141,27 +405,27 @@ hyperref={colorlinks,urlcolor=blue}
 \tikzmath{
 \L=1;
 \f=0.5;
+\myheight=0.85;
 }
-\pgfmathsetmacro{\hval}{0.85}
 \scalebox{1.0}{
-\node at (0,\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
-\node at (0,-\hval) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
-\fill (-\L,2*\hval) rectangle (\L,2*\hval+0.2);
-\fill [black!50] (-\L/2,-\L-2*\hval) rectangle (\L/2,-2*\hval);
-\node at (0,-\L/2-2*\hval){$m$};
+\node at (0,\myheight) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\node at (0,-\myheight) {\includegraphics[scale=0.5]{../figures/NewtonsLaws/scale}};
+\fill (-\L,2*\myheight) rectangle (\L,2*\myheight+0.2);
+\fill [black!50] (-\L/2,-\L-2*\myheight) rectangle (\L/2,-2*\myheight);
+\node at (0,-\L/2-2*\myheight){$m$};
 
-\fill (2*\L,2*\hval+0.1) circle(3pt) ;
-\draw [-latex,line width=1.5,color=myred] (2*\L,2*\hval+0.1) -- +(0,\f) node[midway,right]{\scriptsize Force from building on ceiling};
-\draw [-latex,line width=1.5] (2*\L,2*\hval+0.1) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on ceiling};
-\fill (2.5*\L,\hval) circle(3pt);
-\draw [-latex,line width=1.5] (2.5*\L,\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from ceiling on scale};
-\draw [-latex,line width=1.5] (2.5*\L,\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on scale};
-\fill (2*\L,-\hval) circle(3pt);
-\draw [-latex,line width=1.5] (2*\L,-\hval)  -- +(0,\f) node[midway,right]{\scriptsize Force from scale on scale};
-\draw [-latex,line width=1.5] (2*\L,-\hval)  -- +(0,-\f) node[midway,right]{\scriptsize Force from mass on scale};
-\fill (2.5*\L,-\L/2-2*\hval) circle(3pt);
-\draw [-latex,line width=1.5] (2.5*\L,-\L/2-2*\hval) -- +(0,\f) node[midway,right]{\scriptsize Force from scale on mass};
-\draw [-latex,line width=1.5,color=myred] (2.5*\L,-\L/2-2*\hval) -- +(0,-\f) node[midway,right]{\scriptsize Force from gravity on mass};
+\fill (2*\L,2*\myheight+0.1) circle(3pt) ;
+\draw [-latex,line width=1.5,color=myred] (2*\L,2*\myheight+0.1) -- +(0,\f) node[midway,right]{\scriptsize Force from building on ceiling};
+\draw [-latex,line width=1.5] (2*\L,2*\myheight+0.1) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on ceiling};
+\fill (2.5*\L,\myheight) circle(3pt);
+\draw [-latex,line width=1.5] (2.5*\L,\myheight) -- +(0,\f) node[midway,right]{\scriptsize Force from ceiling on scale};
+\draw [-latex,line width=1.5] (2.5*\L,\myheight) -- +(0,-\f) node[midway,right]{\scriptsize Force from scale on scale};
+\fill (2*\L,-\myheight) circle(3pt);
+\draw [-latex,line width=1.5] (2*\L,-\myheight)  -- +(0,\f) node[midway,right]{\scriptsize Force from scale on scale};
+\draw [-latex,line width=1.5] (2*\L,-\myheight)  -- +(0,-\f) node[midway,right]{\scriptsize Force from mass on scale};
+\fill (2.5*\L,-\L/2-2*\myheight) circle(3pt);
+\draw [-latex,line width=1.5] (2.5*\L,-\L/2-2*\myheight) -- +(0,\f) node[midway,right]{\scriptsize Force from scale on mass};
+\draw [-latex,line width=1.5,color=myred] (2.5*\L,-\L/2-2*\myheight) -- +(0,-\f) node[midway,right]{\scriptsize Force from gravity on mass};
 
 }
 \end{tikzpicture}
@@ -181,8 +445,8 @@ hyperref={colorlinks,urlcolor=blue}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Group exercise: FBD 2}
-\label{subsec:groupfbd2}
+\subsection{Two masses, two pulleys and a spring scale}
+\label{subsec:twomtwopspringscale}
 \twocolframe{Group exercise: Draw the FBDs for masses and scale}
 {
 
@@ -195,27 +459,27 @@ hyperref={colorlinks,urlcolor=blue}
 \L=1.5;
 \R=0.5;
 \f=0.75;
+\myheight=0.85;
 }
-\pgfmathsetmacro{\hval}{0.85}
 \scalebox{1.0}{
 \node at (0,0) {\includegraphics[scale=0.5,angle=90]{../figures/NewtonsLaws/scale}};
-\draw[line width=1.5] (\hval,0) --+(\L,0);
-\draw[line width=1.5] (-\hval,0) --+(-\L,0);
+\draw[line width=1.5] (\myheight,0) --+(\L,0);
+\draw[line width=1.5] (-\myheight,0) --+(-\L,0);
 \fill (0,\R) circle(3pt);
 
-\fill[black!50] (-\L-\hval,-\R) circle(\R);
-\fill (-\L-\hval,-\R) circle(3pt);
-\draw[line width=1.5] (-\hval-\L-\R,-\R) --+(0,-\L);
-\fill[black!50] (-\hval-\L-1.5*\R,-\R-\L) rectangle (-\hval-\L-0.5*\R,-2*\R-\L);
-\node at  (-\hval-\L-\R,-1.5*\R-\L) {$m$};
-\fill (-\hval-\L-2.5*\R,-1.5*\R-\L) circle(3pt);
+\fill[black!50] (-\L-\myheight,-\R) circle(\R);
+\fill (-\L-\myheight,-\R) circle(3pt);
+\draw[line width=1.5] (-\myheight-\L-\R,-\R) --+(0,-\L);
+\fill[black!50] (-\myheight-\L-1.5*\R,-\R-\L) rectangle (-\myheight-\L-0.5*\R,-2*\R-\L);
+\node at  (-\myheight-\L-\R,-1.5*\R-\L) {$m$};
+\fill (-\myheight-\L-2.5*\R,-1.5*\R-\L) circle(3pt);
 
-\fill[black!50] (\L+\hval,-\R) circle(\R);
-\fill (+\L+\hval,-\R) circle(3pt);
-\draw[line width=1.5] (\hval+\L+\R,-\R) --+(0,-\L);
-\fill[black!50] (\hval+\L+1.5*\R,-\R-\L) rectangle (\hval+\L+0.5*\R,-2*\R-\L);
-\node at  (\hval+\L+\R,-1.5*\R-\L) {$m$};
-\fill (\hval+\L+2.5*\R,-1.5*\R-\L) circle(3pt);
+\fill[black!50] (\L+\myheight,-\R) circle(\R);
+\fill (+\L+\myheight,-\R) circle(3pt);
+\draw[line width=1.5] (\myheight+\L+\R,-\R) --+(0,-\L);
+\fill[black!50] (\myheight+\L+1.5*\R,-\R-\L) rectangle (\myheight+\L+0.5*\R,-2*\R-\L);
+\node at  (\myheight+\L+\R,-1.5*\R-\L) {$m$};
+\fill (\myheight+\L+2.5*\R,-1.5*\R-\L) circle(3pt);
 
 }
 \end{tikzpicture}
@@ -243,87 +507,483 @@ hyperref={colorlinks,urlcolor=blue}
 \L=1.5;
 \R=0.5;
 \f=0.75;
+\myheight=0.85;
 }
-\pgfmathsetmacro{\hval}{0.85}
 \scalebox{1.0}{
 \node at (0,0) {\includegraphics[scale=0.5,angle=90]{../figures/NewtonsLaws/scale}};
-\draw[line width=1.5] (\hval,0) --+(\L,0);
-\draw[line width=1.5] (-\hval,0) --+(-\L,0);
+\draw[line width=1.5] (\myheight,0) --+(\L,0);
+\draw[line width=1.5] (-\myheight,0) --+(-\L,0);
 \fill (0,\R) circle(3pt) node[above]{\scriptsize Forces exerted by ropes on scale};
 \draw [-latex,line width=1.5] (0,\R)  -- +(\f,0) ; 
 \draw [-latex,line width=1.5] (0,\R)  -- +(-\f,0); 
 
-\fill[black!50] (-\L-\hval,-\R) circle(\R);
-\fill (-\L-\hval,-\R) circle(3pt);
-\draw[line width=1.5] (-\hval-\L-\R,-\R) --+(0,-\L);
-\fill[black!50] (-\hval-\L-1.5*\R,-\R-\L) rectangle (-\hval-\L-0.5*\R,-2*\R-\L);
-\node at  (-\hval-\L-\R,-1.5*\R-\L) {$m$};
-\fill (-\hval-\L-2.5*\R,-1.5*\R-\L) circle(3pt);
-\draw [-latex,line width=1.5] (-\hval-\L-2.5*\R,-1.5*\R-\L)   -- +(0,\f) ; 
-\draw [-latex,line width=1.5,color=myred] (-\hval-\L-2.5*\R,-1.5*\R-\L)   -- +(0,-\f); 
+\fill[black!50] (-\L-\myheight,-\R) circle(\R);
+\fill (-\L-\myheight,-\R) circle(3pt);
+\draw[line width=1.5] (-\myheight-\L-\R,-\R) --+(0,-\L);
+\fill[black!50] (-\myheight-\L-1.5*\R,-\R-\L) rectangle (-\myheight-\L-0.5*\R,-2*\R-\L);
+\node at  (-\myheight-\L-\R,-1.5*\R-\L) {$m$};
+\fill (-\myheight-\L-2.5*\R,-1.5*\R-\L) circle(3pt);
+\draw [-latex,line width=1.5] (-\myheight-\L-2.5*\R,-1.5*\R-\L)   -- +(0,\f) ; 
+\draw [-latex,line width=1.5,color=myred] (-\myheight-\L-2.5*\R,-1.5*\R-\L)   -- +(0,-\f); 
 
 
-\fill[black!50] (\L+\hval,-\R) circle(\R);
-\fill (+\L+\hval,-\R) circle(3pt);
-\draw[line width=1.5] (\hval+\L+\R,-\R) --+(0,-\L);
-\fill[black!50] (\hval+\L+1.5*\R,-\R-\L) rectangle (\hval+\L+0.5*\R,-2*\R-\L);
-\node at  (\hval+\L+\R,-1.5*\R-\L) {$m$};
-\fill (\hval+\L+2.5*\R,-1.5*\R-\L) circle(3pt);
-\draw [-latex,line width=1.5] (\hval+\L+2.5*\R,-1.5*\R-\L)   -- +(0,\f); 
-\draw [-latex,line width=1.5,color=myred] (\hval+\L+2.5*\R,-1.5*\R-\L)   -- +(0,-\f); 
+\fill[black!50] (\L+\myheight,-\R) circle(\R);
+\fill (+\L+\myheight,-\R) circle(3pt);
+\draw[line width=1.5] (\myheight+\L+\R,-\R) --+(0,-\L);
+\fill[black!50] (\myheight+\L+1.5*\R,-\R-\L) rectangle (\myheight+\L+0.5*\R,-2*\R-\L);
+\node at  (\myheight+\L+\R,-1.5*\R-\L) {$m$};
+\fill (\myheight+\L+2.5*\R,-1.5*\R-\L) circle(3pt);
+\draw [-latex,line width=1.5] (\myheight+\L+2.5*\R,-1.5*\R-\L)   -- +(0,\f); 
+\draw [-latex,line width=1.5,color=myred] (\myheight+\L+2.5*\R,-1.5*\R-\L)   -- +(0,-\f); 
 
 }
 \end{tikzpicture}
 \captionof*{figure}{\textit{Two masses, two pulleys and a spring scale}}
 \end{center}
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Two blocks on an inclined plane}
+\label{subsec:twoblocksonaninclinedplane}
+\begin{frame}{Draw the FBD for each block}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=6;
+\R=0.125*\L/2;
+\th=30;
+\h=\L*sin(\th);
+\hR=0.125*\L;
+\vgg=1.;
+\fsll=\vgg*sin(\th);
+\Nxx=\fsll*cos(\th);
+\Nyy=\vgg-\fsll*sin(\th);
+\vg=2*\vgg;
+\fsl=\vg*sin(\th)+\fsll;
+\Nx=\fsl*cos(\th);
+\Ny=\Nyy+\vg-\fsl*sin(\th);
+}
+\scalebox{1.0}{
+
+\coordinate (P2) at (0.75*\L,\h/3);
+\coordinate (P1) at (\L/4,\h);
+
+%Blockw
+\fill[black!30, rotate=-\th, shift={(-\L/2,0)}] (-\L/6,0) rectangle (\L/6,\L/8);
+\node[rotate=-\th, shift={(-\L/2,0)}] at (0,\L/16){$m_2$};
+\fill[black!60, rotate=-\th, shift={(-\L/2,0)}] (-\L/12,\L/8) rectangle (\L/12,\L/4);
+\node[rotate=-\th, shift={(-\L/2+\L/12,0)}] at (0,\hR+\R){$m_1$};
+%\fill[black, rotate=-\th, shift={(-\L,0)}] (-0.1,0) rectangle (0.,\L/3);
+
+\draw[line width=3pt,rotate=-\th] (0,0) -- (-1.15*\L,0);
+\draw[line width=1.5pt] (0,0) -- (-\L,0);
+\draw[line width=1.5pt] (-1,0) arc (180:180-\th:1) node[midway,left]{$\theta$};
+
+\fill (P1) circle(3pt);
+\fill (P2) circle(3pt);
+
+\only<2>{
+
+\draw[-latex,line width=1.5pt] (P2) -- +(0,-\vg) node[right]{$\vec F_{g2}$};
+\draw[-latex,line width=1.5pt] (P1) -- +(0,-\vgg) node[left]{$\vec F_{g1}$};
+
+\draw[-latex,line width=1.5pt] (P2) -- +(\Nx,\Ny) node[right]{$\vec F_{N2}$};
+\draw[-latex,line width=1.5pt,color=blue] (P1) -- +(\Nxx,\Nyy) node[right]{$\vec F_{N1}$};
+\draw[-latex,line width=1.5pt,color=blue] (P2) -- +(-\Nxx,-\Nyy) node[left]{$-\vec F_{N1}$};
 
 
+\draw[-latex,line width=1.5pt] (P2) -- +(180-\th:\fsl) node[above]{$\vec F_{s2}$};
+\draw[-latex,line width=1.5pt,color=myred] (P1) -- +(180-\th:\fsll) node[above]{$\vec F_{s1}$};
+\draw[-latex,line width=1.5pt,color=myred] (P2) -- +(-\th:\fsll) node[below]{$-\vec F_{s1}$};
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\draw[dotted, line width=1] (P2) -- +(-\fsl,0);
+\draw[dotted, line width=1] (P1) -- +(-\fsl,0);
+
+\draw[dotted, line width=1] (P2) -- +(0,\Ny);
+\draw[dotted, line width=1] (P1) -- +(0,\Nyy);
+
+\draw[line width=1] ($(P2)+(0,0.5)$) arc(90:90-\th:0.5)node[midway,above]{\scriptsize$\theta$};
+\draw[line width=1] ($(P2)+(-0.5,0)$) arc(180:180-\th:0.5)node[midway,left]{\scriptsize$\theta$};
+\draw[line width=1] ($(P1)+(0,0.5)$) arc(90:90-\th:0.5)node[midway,above]{\scriptsize$\theta$};
+\draw[line width=1] ($(P1)+(-0.5,0)$) arc(180:180-\th:0.5)node[midway,left]{\scriptsize$\theta$};
+}
+
+}
+\end{tikzpicture}
+\only<1>{
+\captionof*{figure}{\textit{Two blocks on an inclined plane.}}}
+\only<2>{
+\captionof*{figure}{\textit{Two blocks on an inclined plane, with free body diagram. Arrows of the same colour represent action and reaction ``pairs'', which are \emph{necessarily} exerted on different bodies (Newton's Third Law).}}}
+\end{center}
+\end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Two blocks on an inclined plane + pulley}
+\label{subsec:twoblocksonaninclinedplanepluspulley}
+\begin{frame}{Draw the FBD for each block}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=6;
+\R=0.125*\L/2;
+\th=30;
+\h=\L*sin(\th);
+\hR=0.125*\L;
+\vgg=1.;
+\fsll=\vgg*sin(\th);
+\Nxx=\fsll*cos(\th);
+\Nyy=\vgg-\fsll*sin(\th);
+\vg=2*\vgg;
+\fsl=\vg*sin(\th)+\fsll;
+\Nx=\fsl*cos(\th);
+\Ny=\Nyy+\vg-\fsl*sin(\th);
+}
+\pgfmathsetmacro{\T}{1}
+\scalebox{1.0}{
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Newton's first law}
-\label{subsec:newtonsfirstlaw}
-\begin{frame}{Newton's first law}
-\textbf{An object will remain in its state of motion, be it at rest or moving with constant velocity, unless a net external force is exerted on the object.}\\
-\vfill
-If the above is true, then you're observing the object from an inertial frame of reference. Think of this as the way to define an inertial frame of reference.
+\coordinate (P2) at (0.75*\L,\h/3);
+\coordinate (P1) at (\L/4,\h);
+
+\draw[line width=3pt,rotate=-\th] (0,0) -- (-\L,0);% -- (-\L, \h) -- cycle;
+
+\fill[black!30, rotate=-\th, shift={(-\L/2,0)}] (-\L/6,0) rectangle (\L/6,\L/8);
+\node[rotate=-\th, shift={(-\L/2,0)}] at (0,\L/16){$m_2$};
+\fill[black!60, rotate=-\th, shift={(-\L/2,0)}] (-\L/12,\L/8) rectangle (\L/12,\L/4);
+\node[rotate=-\th, shift={(-\L/2+\L/12,0)}] at (0,\hR+\R){$m_1$};
+\fill[black, rotate=-\th, shift={(-\L,0)}] (-0.1,0) rectangle (0.,\L/3);
+
+%ropes:
+\draw[line width = 1.2pt,rotate=-\th, shift={(-\L/2,0)}](-\L/2+\R,\hR-\R) -- (-\L/6,\L/16) ;
+\draw[line width = 1.2pt,rotate=-\th, shift={(-\L/2,0)}](-\L/2+\R,\hR+\R) -- (-\L/12, 0.1875*\L) ;
+%pulley
+\fill[black!30, rotate=-\th, shift={(-\L+\R,0)}] (0,\hR) circle(\R);
+\fill[black, rotate=-\th, shift={(-\L+\R,0)}] (0,\hR) circle(0.25*\R);
+
+%plane
+\draw[line width=3pt,rotate=-\th] (0,0) -- (-\L,0);
+\draw[line width=1.5pt] (0,0) -- (-\L,0);
+\draw[line width=1.5pt] (-1,0) arc (180:180-\th:1) node[midway,left]{$\theta$};
+
+%acceleration arrow
+\draw [line width = 5pt, -latex,rotate=-\th, shift={(-\L/2,0)}] (0.2*\L, \L/16)--+(\L/5,0) node[midway,above] {$\vec a_2$};
+
+\fill (P1) circle(3pt);
+\fill (P2) circle(3pt);
+
+\only<2>{
+
+\draw[-latex,line width=1.5pt] (P2) -- +(0,-\vg) node[right]{$\vec F_{g2}$};
+\draw[-latex,line width=1.5pt] (P1) -- +(0,-\vgg) node[left]{$\vec F_{g1}$};
+
+\draw[-latex,line width=1.5pt] (P2) -- +(\Nx,\Ny) node[right]{$\vec F_{N2}$};
+\draw[-latex,line width=1.5pt,color=blue] (P1) -- +(\Nxx,\Nyy) node[right]{$\vec F_{N1}$};
+\draw[-latex,line width=1.5pt,color=blue] (P2) -- +(-\Nxx,-\Nyy) node[left]{$-\vec F_{N1}$};
+
+\draw[-latex,line width=1.5pt] (P2) -- +(180-\th:\T) node[right=10pt,above=-5pt]{$\vec T$};
+\draw[-latex,line width=1.5pt] (P1) -- +(180-\th:\T) node[above]{$\vec T$};
+
+\draw[-latex,line width=1.5pt] (P2) -- +(180-\th:\fsl) node[below]{$\vec F_{k2}$};
+\draw[-latex,line width=1.5pt,color=myred] (P2) node[right ]{$-\vec F_{k1}$}-- +(180-\th:\fsll) ;
+\draw[-latex,line width=1.5pt,color=myred] (P1) -- +(-\th:\fsll) node[below]{$\vec F_{k1}$};
+
+\draw[dotted, line width=1] (P2) -- +(-\fsl,0);
+\draw[dotted, line width=1] (P1) -- +(-\fsl,0);
+
+\draw[dotted, line width=1] (P2) -- +(0,\Ny);
+\draw[dotted, line width=1] (P1) -- +(0,\Nyy);
+
+\draw[line width=1] ($(P2)+(0,0.5)$) arc(90:90-\th:0.5)node[midway,above]{\scriptsize$\theta$};
+\draw[line width=1] ($(P2)+(-0.5,0)$) arc(180:180-\th:0.5)node[midway,left]{\scriptsize$\theta$};
+\draw[line width=1] ($(P1)+(0,0.5)$) arc(90:90-\th:0.5)node[midway,above]{\scriptsize$\theta$};
+\draw[line width=1] ($(P1)+(-0.5,0)$) arc(180:180-\th:0.5)node[midway,left]{\scriptsize$\theta$};
+}
+
+}
+\end{tikzpicture}
+\only<1>{
+\captionof*{figure}{\textit{Two blocks on an inclined plane with pulley.}}}
+\only<2>{
+\captionof*{figure}{\textit{Two blocks on an inclined plane with pulley, with free body diagram. Arrows of the same colour represent action and reaction ``pairs'', which are \emph{necessarily} exerted on different bodies (Newton's Third Law).}}}
+\end{center}
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Newton's second law}
-\label{subsec:newtonssecondlaw}
-\begin{frame}{Newton's Second Law}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection {Applying Newton's 2nd law using a FBD}
+\label{subsec:applyingnewtonssecondlawtoblock1}
+\twocolframe{Applying Newton's Second Law to block 1}
+{
+We ``simply'' read off the FBD to obtain the two components of Newton's Second Law:
 \begin{align*}
-\sum \vec F = m\vec a
+\sum F_x \rightarrow &T-F_{k1}-F_{g1}\sin\theta&=&m_1a_1\\
+\sum F_y \rightarrow &F_{N1}-F_{g1}\cos\theta&=&0
 \end{align*}
-\begin{itemize}
-\item This statement is a quantitative framework that describes almost all of the world around us. It leads to the concepts of conservation of energy, momentum, angular momentum, etc. It is an amazing equation!
-\item It connects dynamics (forces) to kinematics (acceleration).
-\item It is a vector equation $\rightarrow$ To be ``useful'' we need to write it out in components. 
-\end{itemize}
-\end{frame}
+You would do the same for block 2, noting that $a_1=a_2$, since the \emph{magnitude} of the acceleration of the two blocks must be the same (they are connected by a rope).
+}
+{
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=6;
+\R=0.125*\L/2;
+\th=30;
+\h=\L*sin(\th);
+\hR=0.125*\L;
+\vgg=1.;
+\fsll=\vgg*sin(\th);
+\Nxx=\fsll*cos(\th);
+\Nyy=\vgg-\fsll*sin(\th);
+\vg=2*\vgg;
+\fsl=\vg*sin(\th)+\fsll;
+\Nx=\fsl*cos(\th);
+\Ny=\Nyy+\vg-\fsl*sin(\th);
+}
+\pgfmathsetmacro{\T}{1}
+\scalebox{1.0}{
+
+\coordinate (P1) at (\L/4,\h);
+
+\fill (P1) circle(3pt);
+
+%coordinates
+\draw[-latex,line width=1pt] ($(P1)+(1.5,1.)$) -- +(180-\th:1) node[below]{$x$};
+\draw[-latex,line width=1pt] ($(P1)+(1.5,1.)$) -- +(90-\th:1) node[right]{$y$};
+\draw[-latex,line width=5pt] ($(P1)+(0.5,1)$) -- +(180-\th:1) node[midway,above]{$\vec a_1$};
+
+\draw[-latex,line width=1.5pt] (P1) -- +(0,-\vgg) node[left]{$\vec F_{g1}$};
+
+\draw[-latex,line width=1.5pt,color=blue] (P1) -- +(\Nxx,\Nyy) node[right]{$\vec F_{N1}$};
+
+\draw[-latex,line width=1.5pt] (P1) -- +(180-\th:\T) node[above]{$\vec T$};
+
+
+\draw[-latex,line width=1.5pt,color=myred] (P1) -- +(-\th:\fsll) node[below]{$\vec F_{k1}$};
+
+
+\draw[dotted, line width=1] (P1) -- +(-\fsl,0);
+
+\draw[dotted, line width=1] (P1) -- +(0,\Nyy);
+
+\draw[line width=1] ($(P1)+(0,0.5)$) arc(90:90-\th:0.5)node[midway,above]{\scriptsize$\theta$};
+\draw[line width=1] ($(P1)+(-0.5,0)$) arc(180:180-\th:0.5)node[midway,left]{\scriptsize$\theta$};
+
+
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{Free-body diagram for $m_1$ from the previous slide.}}
+\end{center}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Newton's third law}
-\label{subsec:newtonsthirdlaw}
-\begin{frame}{Newton's third law}
-\textbf{If one object exerts a force on another object, the second object
-exerts a force on the first object that is equal in magnitude and
-opposite in direction.}\\
-\vfill
-This is not about intuition!!! \textcolor{myred}{This is a rule to be followed!} (science)\\
-\vfill
-If you include a force on object A that is exerted by object B, then you need to include an equal and opposite force exerted on object B from object A (if you care about modeling the motion of object B).
-\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Blocs on an incline connected via pulley}
+\label{subsec:blocksonaninclineconnectedbyapulley}
+\twocolframe{Blocks on an incline}
+{
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=5;
+\h=2.5;
+\abox=0.75;
+\R=0.5*\abox;
+\th=atan(\h/\L);
+\d=\R+\L*cos(\th)/2;
+}
+\scalebox{1.0}{
+\coordinate (Pb1) at (\L/2,\h/2);%coordinates of box
+\coordinate (Pb2) at ($(Pb1)+(180-\th:\abox)$);
+\coordinate (Pb3) at ($(Pb2)+(90-\th:\abox)$);
+\coordinate (Pb4) at ($(Pb3)+(-\th:\abox)$);
+\coordinate (Pc) at (-\R,\h+\R);
+
+
+%plane and angle
+\draw[line width=2pt] (0,\h) -- (0,0) -- (\L,0) -- cycle;
+\draw (\L-0.75,0) arc(180:180-\th:0.75) node[midway,left]{$\theta$};
+
+
+%ropes
+\draw[line width=2] ($(Pc)+(90-\th:\R)$) -- +(-\th:\d);
+\draw[line width=2] (-2*\R,\h+\R) -- +(0,-0.75*\h);
+
+%pulley
+
+\fill[color=black!50] (Pc) circle (\R);
+\fill (Pc) circle(3pt);
+\draw[line width=1] (Pc) -- (0,\h);
+
+%rotated boxes
+\fill[color=brown] (Pb1) -- (Pb2) -- (Pb3) -- (Pb4) -- cycle ;
+\fill[color=myblue!60, shift={(-3*\R,0.25*\h)}] (0,0) rectangle (\abox,0.5*\abox);
+
+\node at ($(Pb3)+(\abox/2,\abox/3)$) {$m_1$};
+\node at (-2*\R,0.1*\h) {$m_2$};
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{Two blocks connected by a pulley.}}
+\end{center}
+}
+{
+Draw the free body diagrams for both block when they accelerate.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\twocolframe{Blocks on an incline}
+{
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=5;
+\h=2.5;
+\abox=0.75;
+\R=0.5*\abox;
+\th=atan(\h/\L);
+\d=\R+\L*cos(\th)/2;
+}
+\scalebox{1.0}{
+\coordinate (Pb1) at (\L/2,\h/2);%coordinates of box
+\coordinate (Pb2) at ($(Pb1)+(180-\th:\abox)$);
+\coordinate (Pb3) at ($(Pb2)+(90-\th:\abox)$);
+\coordinate (Pb4) at ($(Pb3)+(-\th:\abox)$);
+\coordinate (Pc) at (-\R,\h+\R);
+
+
+%plane and angle
+\draw[line width=2pt] (0,\h) -- (0,0) -- (\L,0) -- cycle;
+\draw (\L-0.75,0) arc(180:180-\th:0.75) node[midway,left]{$\theta$};
+
+
+%ropes
+\draw[line width=2] ($(Pc)+(90-\th:\R)$) -- +(-\th:\d);
+\draw[line width=2] (-2*\R,\h+\R) -- +(0,-0.75*\h);
+
+%pulley
+
+\fill[color=black!50] (Pc) circle (\R);
+\fill (Pc) circle(3pt);
+\draw[line width=1] (Pc) -- (0,\h);
+
+%rotated boxes
+\fill[color=brown] (Pb1) -- (Pb2) -- (Pb3) -- (Pb4) -- cycle ;
+\fill[color=myblue!60, shift={(-3*\R,0.25*\h)}] (0,0) rectangle (\abox,0.5*\abox);
+
+\node at ($(Pb3)+(\abox/2,\abox/3)$) {$m_1$};
+\node at (-2*\R,0.1*\h) {$m_2$};
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{Two blocks connected by a pulley.}}
+\end{center}
+}
+{
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=5;
+\h=2.5;
+\th=atan(\h/\L);
+\vg=1.25;
+\fk=0.5;
+\No=\vg*cos(\th);
+\vgg=1.5*\vg;
+}
+\pgfmathsetmacro{\T}{1}
+\scalebox{1.0}{
+
+\coordinate (P1) at (0,0.75*\h);
+\coordinate (P2) at (-\h,0.2*\h);
+
+\fill (P1) circle (3pt);
+\fill (P2) circle (3pt);
+
+%for mass 1
+\draw[-latex,line width=1.5pt] (P1) -- +(0,-\vg) node[right] {$\vec F_{g1}$};
+\draw[-latex,line width=1.5pt] (P1) -- +(180-\th:\T) node[above] {$\vec T$};
+\draw[-latex,line width=1.5pt] (P1) -- +(-\th:\fk) node[right] {$\vec F_{k1}$};
+\draw[-latex,line width=1.5pt] (P1) -- +(90-\th:\No) node[right] {$\vec F_{N1}$};
+\draw[dotted,line width=1.5pt] (P1) -- +(0,\vg);
+\draw ($(P1)+(0,0.5)$) arc (90:90-\th:0.5) node[midway,above] {$\theta$};
+
+\draw[-latex,line width=1.pt] ($(P1)+(1.2,1.2)$) -- +(180-\th:1) node[below]{$x$};
+\draw[-latex,line width=1.pt] ($(P1)+(1.2,1.2)$) -- +(90-\th:1) node[right]{$y$};
+\draw[-latex,line width=5pt] ($(P1)+(-1.2,1.2)$) -- +(180-\th:1) node[midway,above]{$\vec a_1$};
+
+
+%for mass 2
+\draw[-latex,line width=1.5pt] (P2) -- +(0,-\vgg) node[right] {$\vec F_{g2}$};
+\draw[-latex,line width=1.5pt] (P2) -- +(0,\T) node[right] {$\vec T$};
+\draw[-latex,line width=5pt] ($(P2)+(0.75,0)$) -- +(0,-1) node[midway, left]{$\vec a_2$};
+\draw[-latex,line width=1.pt] ($(P2)+(1.25,0)$) -- +(0,-1) node[left]{$x$};
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{Free body diagrams for the two blocks.}}
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
