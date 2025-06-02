@@ -3,9 +3,17 @@
 \usepackage[absolute, overlay]{textpos}
 \usepackage{fancyhdr}
 
-\newcommand{\customsubject}{}
+\newcommand{\customsubject}{}   
 \newcommand{\customtitle}{}
 \pagestyle{empty}
+
+\newcounter{questionpartcounter}                  %Setup for question part counter for a,b,c listing
+\renewcommand{\thequestionpartcounter}
+{\alph{questionpartcounter}}
+
+\newcounter{questionpartpartcounter}                  %Setup for question part  partcounter for a,b,c listing
+\renewcommand{\thequestionpartpartcounter}
+{\roman{questionpartcounter}}
 
 \newenvironment{worksheet}[2]
 {
@@ -44,13 +52,23 @@
 
 
 
-\newcommand{\question}[2][5cm]{%
+\newcommand{\question}[3][1cm]{%
     \item
-    #2
+    \setcounter{questionpartcounter}{0}
+    \setcounter{questionpartpartcounter}{0}
+    \textbf{#2} \\#3
     \vspace{#1}
 }
 
-\newcommand{\questionpart}[2][5cm]{%
-    #2
+\newcommand{\questionpart}[2][1cm]{%
+    \setcounter{questionpartpartcounter}{0}
+    \stepcounter{questionpartcounter}
+    (\thequestionpartcounter)~#2
     \vspace{#1}
+}
+
+\newcommand{\questionpartpart}[2][1cm]{%
+      \stepcounter{questionpartpartcounter}
+      \thequestionpartpartcounter.~#2
+      \vspace{#1}
 }
