@@ -1,0 +1,56 @@
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{fancyhdr}
+
+\newcommand{\customsubject}{}
+\newcommand{\customtitle}{}
+\pagestyle{empty}
+
+\newenvironment{worksheet}[2]
+{
+    
+    \renewcommand{\customtitle}{#1}
+    \renewcommand{\customsubject}{#2}
+    \begin{textblock*}{5cm}(0.4cm,0.4cm)
+    \includegraphics[width=4cm]{../include/figures/bmdwlogo}
+\end{textblock*}
+
+    \vspace*{-1cm}
+    
+    {\large\textbf{\begin{center}\customtitle\end{center}}}
+
+    \begin{center}\customsubject\end{center}
+    
+    \vspace{0.3cm}
+    
+    \hspace*{-1.5cm}\textbf{Name:\ \rule{4cm}{0.4pt}}\; 
+    \textbf{Student \#: \ \rule{3cm}{0.4pt}}\;
+    \textbf{Student Email \#: \ \rule{1.53cm}{0.4pt}}
+
+    \vspace{0.5cm}
+
+    
+    \begin{enumerate}
+}
+{
+    \end{enumerate}
+    
+    \begin{textblock*}{10cm}(1cm, 28cm) {\footnotesize \scriptsize \customsubject}
+    
+    
+\end{textblock*}
+}
+
+
+
+\newcommand{\question}[2][5cm]{%
+    \item
+    #2
+    \vspace{#1}
+}
+
+\newcommand{\questionpart}[2][5cm]{%
+    #2
+    \vspace{#1}
+}
