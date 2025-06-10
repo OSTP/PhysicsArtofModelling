@@ -3,7 +3,7 @@ hyperref={colorlinks,urlcolor=blue}
 ]{beamer}
 
 
-\input{../include/beamerbmdw}
+\input{include/beamerbmdw}
 
 %Frames:
 % \twocolframesf 60/40 (fs, st, ts) 
@@ -16,8 +16,8 @@ hyperref={colorlinks,urlcolor=blue}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Model and Experiment}
-\institute{Theories, Uncertainty, and Dimensions}
-\author{Building Models to Describe our World}
+\subject{Theories, Uncertainty, and Dimensions}
+\subtitle{Building Models to Describe our World}
 
 
 \begin{document}
@@ -25,12 +25,13 @@ hyperref={colorlinks,urlcolor=blue}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% Title slide %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
+\chaptertitle{Model and Experiment}
 \begin{frame}
 \titlepage
 \thispagestyle{empty}
 
 \begin{textblock*}{5cm}(11cm,4cm)
-    \includegraphics[width=4cm]{../figures/BMDW/logo}
+    \includegraphics[width=4cm]{figures/BMDW/logo}
 \end{textblock*}
 
 \end{frame}
@@ -38,8 +39,8 @@ hyperref={colorlinks,urlcolor=blue}
 %%%%%%%%%%%%%TOC
 
 \twocolframe{Outline}
-{\tableofcontents[sections=1-2, subsectionstyle=show/show]}
-{\tableofcontents[sections=3, subsectionstyle=show/show]}
+{\tableofcontents[sections=1, subsectionstyle=show/show]\thispagestyle{empty}}
+{\tableofcontents[sections=2-3, subsectionstyle=show/show]}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -91,7 +92,7 @@ hyperref={colorlinks,urlcolor=blue}
 \end{itemize}
 }
 {  
-\capfig{1}{../figures/ModelAndExperiment/doubt}{}
+\capfig{1}{figures/ModelAndExperiment/doubt}{}
 }
 
 
@@ -179,8 +180,6 @@ x=v_0t+\frac{1}{2}gt^2
 \section{Uncertainty and Error}
 \label{sec:uncertaintyanderror}
 \title{Uncertainty and Error}
-\institute{Model and Experiment}
-\author{\insertsubsection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,7 +253,7 @@ x &=\bar x \pm \sigma_x\\
 \end{itemize}
 }
 {
-\capfig{1}{../figures/ModelAndExperiment/precision}{}
+\capfig{1}{figures/ModelAndExperiment/precision}{}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -270,7 +269,7 @@ x &=\bar x \pm \sigma_x\\
 \end{itemize}
 }
 {
-\capfig{1}{../figures/ModelAndExperiment/humanerror}{TAs grading lab reports}
+\capfig{1}{figures/ModelAndExperiment/humanerror}{TAs grading lab reports}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -324,21 +323,7 @@ v&=v(x,t)=\frac{x}{t}=\bar v \pm \sigma_v
 \item The derivative rule leads to simple prescriptions in most cases.
 \item In practice, we’ll show you how to use a computer and QExpy to propagate uncertainties (see Appendix D).
 \end{itemize}
-\scriptsize
-\begin{table}[H]
-\centering
-\begin{tabular}{p{2.5in}p{2in}} 
-\textbf{Operation to get $z$} &\textbf{Uncertainty in $z$} \\
-\hline
-\hline
-$z=x+y$ (addition) &  $\sigma_z=\sqrt{\sigma_x^2+\sigma_y^2}$ \\ \hline
-$z=x-y$ (subtraction) & $\sigma_z=\sqrt{\sigma_x^2+\sigma_y^2}$ \\ \hline
-$z=xy$ (multiplication) & $\sigma_z=xy\sqrt{\left(\frac{\sigma_x}{x}\right)^2+\left(\frac{\sigma_y}{y}\right)^2}$ \\ \hline
-$z=\frac{x}{y}$ (division) & $\sigma_z=\frac{x}{y}\sqrt{\left(\frac{\sigma_x}{x}\right)^2+\left(\frac{\sigma_y}{y}\right)^2}$ \\ \hline
-$z=f(x)$ (a function of 1 variable) &$\sigma_z=\left|\frac{df}{dx}\sigma_x \right|$ \\ \hline
-\end{tabular}
-\caption*{\label{tab:modelandexperiment:prop_uncertainties}\textit{How to propagate uncertainties from measured values $x\pm\sigma_x$ and $y\pm\sigma_y$ to a quantity $z(x,y)$ for common operations. Addition and subtraction: use absolute uncertainties. Multiplication and division, use relative uncertainties}.}
-\end{table}
+\capfig{1}{figures/ModelAndExperiment/table}{}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

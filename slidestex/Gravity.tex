@@ -3,7 +3,7 @@ hyperref={colorlinks,urlcolor=blue}
 ]{beamer}
 
 
-\input{../include/beamerbmdw}
+\input{include/beamerbmdw}
 
 %Frames:
 % \twocolframesf 60/40 (fs, st, ts) 
@@ -16,8 +16,8 @@ hyperref={colorlinks,urlcolor=blue}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Gravity}
-\institute{Kepler, Newton, Gauss and Einstein}
-\author{Building Models to Describe our World}
+\subject{Kepler, Newton, Gauss and Einstein}
+\subtitle{Building Models to Describe our World}
 
 
 \begin{document}
@@ -25,12 +25,13 @@ hyperref={colorlinks,urlcolor=blue}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% Title slide %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
+\chaptertitle{Gravity}
 \begin{frame}
 \titlepage
 \thispagestyle{empty}
 
 \begin{textblock*}{5cm}(11cm,4cm)
-    \includegraphics[width=4cm]{../figures/BMDW/logo}
+    \includegraphics[width=4cm]{figures/BMDW/logo}
 \end{textblock*}
 
 \end{frame}
@@ -42,7 +43,7 @@ hyperref={colorlinks,urlcolor=blue}
 
 
 \twocolframe{Outline}
-{\tableofcontents[sections=1, subsectionstyle=show/show]}
+{\tableofcontents[sections=1, subsectionstyle=show/show]\thispagestyle{empty}}
 {\tableofcontents[sections=2-3, subsectionstyle=show/show]}
 
 
@@ -54,8 +55,6 @@ hyperref={colorlinks,urlcolor=blue}
 \section{Keplerian and Newtonian Gravity}
 \label{sec:keplernnewtongravity}
 \title{Keplerian and Newtonian Gravity}
-\institute{Gravity}
-\author{\insertsubsection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,10 +128,10 @@ e&=\sqrt{s^2-b^2}\quad(s\geq b)
 
 \begin{scope}[shift={(0,-3.5)}]
 \draw (0,0) ellipse ({\a} and \b);
-\node at (-\c,0)  {\includegraphics[scale=0.15]{../figures/Gravity/sun}};
-\node at (\xe,\ye)  {\includegraphics[scale=0.1]{../figures/Gravity/earth}};
+\node at (-\c,0)  {\includegraphics[scale=0.15]{figures/Gravity/sun}};
+\node at (\xe,\ye)  {\includegraphics[scale=0.1]{figures/Gravity/earth}};
 \draw (\xe+\ce,\ye) ellipse ({\ae} and \be);
-\node at (\xm,\ym)  {\includegraphics[scale=0.1]{../figures/Gravity/moon}};
+\node at (\xm,\ym)  {\includegraphics[scale=0.1]{figures/Gravity/moon}};
 \fill (-\a,0) circle(2pt) node[left]{\scriptsize perihelion};
 \fill (\a,0) circle(2pt) node[left]{\scriptsize aphelion};
 \fill (\xe+\ce-\ae,\ye) circle(2pt) node[left]{\scriptsize perigee};
@@ -212,7 +211,7 @@ e&=\sqrt{s^2-b^2}\quad(s\geq b)
 \fill (C) circle(2pt) node[above]{$C$};
 \fill (D) circle(2pt) node[left]{$D$};
 
-\node at (-\c,0)  {\includegraphics[scale=0.15]{../figures/Gravity/sun}};
+\node at (-\c,0)  {\includegraphics[scale=0.15]{figures/Gravity/sun}};
 
 \draw [-latex, dashed] (\biga,0) arc(0:180:{\biga} and \bigb) node[midway,above]{\scriptsize motion of planet};
 
@@ -310,7 +309,7 @@ F =G \frac{M_1M_2}{r^2}
 \end{itemize}
 }
 {
-\capfig{1}{../figures/Gravity/cavendish}{Figure from Cavendish's paper showing the torsion pendulum and building it was housed in. The large masses could be rotated from the outside through a system of pulleys. Philosophical Transactions of the Royal Society of London, (part II) \textbf{88} p.469-526 (21 June 1798).}
+\capfig{1}{figures/Gravity/cavendish}{Figure from Cavendish's paper showing the torsion pendulum and building it was housed in. The large masses could be rotated from the outside through a system of pulleys. Philosophical Transactions of the Royal Society of London, (part II) \textbf{88} p.469-526 (21 June 1798).}
 }
 
 
@@ -489,8 +488,6 @@ v=\frac{2\pi r}{T}\;\;&\rightarrow\;\;T=\frac{2\pi r}{v}=\frac{2\pi r}{\sqrt{\fr
 \section{The Gravitational Field and Gauss' Law}
 \label{sec:gravfieldandgauss}
 \title{The Gravitational Field and Gauss' Law}
-\institute{Gravity}
-\author{\insertsubsection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -540,7 +537,7 @@ v=\frac{2\pi r}{T}\;\;&\rightarrow\;\;T=\frac{2\pi r}{v}=\frac{2\pi r}{\sqrt{\fr
 \scalebox{1}{
 
 \draw[line width=1.5] (0,0) rectangle (\w,\L);
-\node at (0.25*\w,0.45*\L) {\includegraphics[scale=0.15]{../figures/Gravity/woman}} ;
+\node at (0.25*\w,0.45*\L) {\includegraphics[scale=0.15]{figures/Gravity/woman}} ;
 \draw[line width=1.5] (0.1*\w,0.05) rectangle (0.45*\w,0.07*\L);
 \node at (0.27*\w,0.035*\L){\scriptsize $W$};
 \fill (0.75*\w,0.5*\L) circle (2pt);
@@ -729,7 +726,7 @@ g=\frac{F_g}{m}=G\frac{M}{R^2}
 }
 
 }
-\node at (0,0){\includegraphics[scale=0.5]{../figures/Gravity/earth}};
+\node at (0,0){\includegraphics[scale=0.5]{figures/Gravity/earth}};
 }
 
 \end{tikzpicture}
@@ -766,7 +763,7 @@ g=\frac{F_g}{m}=G\frac{M}{R^2}
 \draw[-latex] (\th:0.4*\L) -- +(\th:-0.2);
 }
 \end{scope}
-\node at (0,0){\includegraphics[scale=0.3]{../figures/Gravity/earth}};
+\node at (0,0){\includegraphics[scale=0.3]{figures/Gravity/earth}};
 \draw[-latex,line width=1.5,color=myred] (40:0.75*\L) -- +(40:-0.15*\L);
 \draw[-latex,line width=1.5,color=myred] (-40:0.4*\L) -- +(-40:-0.25*\L);
 
@@ -901,8 +898,8 @@ g=\frac{F_g}{m}=G\frac{M}{R^2}
 }%end of loop over x
 
 %Draw the Earth, Moon and example point
-\node at (\xe,\ye) {\includegraphics[scale=0.3]{../figures/Gravity/earth}};
-\node at (\xm,\ym) {\includegraphics[scale=0.3]{../figures/Gravity/moon}};
+\node at (\xe,\ye) {\includegraphics[scale=0.3]{figures/Gravity/earth}};
+\node at (\xm,\ym) {\includegraphics[scale=0.3]{figures/Gravity/moon}};
 
 %Calculate field vector directions
 \tikzmath{
@@ -973,7 +970,7 @@ g=\frac{F_g}{m}=G\frac{M}{R^2}
 \draw[-latex] (\th:0.4*\L) -- +(\th:-0.2);
 }
 \end{scope}
-\node at (0,0){\includegraphics[scale=0.3]{../figures/Gravity/earth}};
+\node at (0,0){\includegraphics[scale=0.3]{figures/Gravity/earth}};
 
 \only<2>{
 \shade[ball color=myred, opacity=0.5] (0,0) circle (\R);
@@ -1424,7 +1421,7 @@ E=K+U=\frac{1}{2}mv^2-G\frac{Mm}{r}
 \end{itemize}
 }
 {
-\capfig{0.8}{../figures/Gravity/precession}{Illustration of the precession of Mercury. \tiny\url{https://en.wikipedia.org/wiki/Apsidal_precession}}
+\capfig{0.8}{figures/Gravity/precession}{Illustration of the precession of Mercury. \tiny\url{https://en.wikipedia.org/wiki/Apsidal_precession}}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1444,9 +1441,9 @@ Objects are not deflected by the force of gravity. Instead, matter/energy bends 
 }
 {
 \vspace{-1.2cm}
-\capfig{0.8}{../figures/Gravity/earthfield}{Space time around Earth.}
+\capfig{0.8}{figures/Gravity/earthfield}{Space time around Earth.}
 \vspace{-0.8cm}
-\capfig{0.8}{../figures/Gravity/membrane}{A simulation of curved space. \tiny\url{http://www.thestargarden.co.uk/General-relativity.html}}
+\capfig{0.8}{figures/Gravity/membrane}{A simulation of curved space. \tiny\url{http://www.thestargarden.co.uk/General-relativity.html}}
 }
 
 
@@ -1462,9 +1459,9 @@ Objects are not deflected by the force of gravity. Instead, matter/energy bends 
 }
 {
 \vspace{-1.2cm}
-\capfig{0.8}{../figures/Gravity/eddington}{Light bending around the Sun, first successful test of GR. }
+\capfig{0.8}{figures/Gravity/eddington}{Light bending around the Sun, first successful test of GR. }
 \vspace{-0.5cm}
-\capfig{0.8}{../figures/Gravity/rings}{Einstein rings.}
+\capfig{0.8}{figures/Gravity/rings}{Einstein rings.}
 }
 
 
@@ -1481,9 +1478,9 @@ Objects are not deflected by the force of gravity. Instead, matter/energy bends 
 \vspace{-1.5cm}
 \begin{center}
 \begin{tikzpicture}
-\node at (-2cm,0) {\includegraphics[width=0.8\textwidth]{../figures/Gravity/waves}};
-\node at (-2cm,-4cm) {\includegraphics[width=0.8\textwidth]{../figures/Gravity/ligo}};
-\node at (0,-2cm) {\includegraphics[width=0.6\textwidth]{../figures/Gravity/interferometer}};
+\node at (-2cm,0) {\includegraphics[width=0.8\textwidth]{figures/Gravity/waves}};
+\node at (-2cm,-4cm) {\includegraphics[width=0.8\textwidth]{figures/Gravity/ligo}};
+\node at (0,-2cm) {\includegraphics[width=0.6\textwidth]{figures/Gravity/interferometer}};
 \end{tikzpicture}
 \captionof*{figure}{\textit{The LIGO experiment (bottom) first detected gravitational waves from two black holes merging (top) using an interferometer (middle).}}
 \end{center}
