@@ -20,6 +20,7 @@
 \usepackage[absolute,overlay]{textpos}
 \usepackage[normalem]{ulem}
 \usepackage{cancel}%can add arrow to cancel a term, \cancelto{0}{\phi}
+\usepackage{hyperref}
 
 \usetikzlibrary{arrows}
 \usetikzlibrary {3d} 
@@ -29,7 +30,52 @@
 
 \newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}} %for vectors
 
+\makeatletter                                                     %renew \subject command and \insertsubject
+\renewcommand{\subject}[1]{\def\@subject{#1}}
+\newcommand{\insertsubject}{\@subject}
+\makeatother
 
+
+
+\makeatletter
+% Save the original \subsection command
+\let\oldbeamer@subsection\subsection
+
+% Redefine \subsection to store the raw title
+\renewcommand{\subsection}[1]{%
+  \def\@rawsubsection{#1}%
+  \oldbeamer@subsection{#1}%
+}
+
+% Define a macro to retrieve the raw subsection title
+\newcommand{\insertrawsubsection}{\@rawsubsection}
+\makeatother
+\subsection{} %define it initially so it can be recalled later, since it is outside of a section it should not cause issues
+
+%%%%%%%%%%%%%%%%%% Adding Chapter functionality
+% Counter for chapters
+\newcounter{chapter}
+
+% Store chapter titles
+\newcommand{\chaptertitle}[1]{%
+  \stepcounter{chapter}%
+  \expandafter\def\csname chaptertitle@\thechapter\endcsname{#1}%
+  \label{chapter:\thechapter}%
+  \frametitle{#1}%
+}
+
+% Retrieve chapter title
+\newcommand{\getchaptertitle}[1]{%
+  \csname chaptertitle@#1\endcsname%
+}
+
+% Create a hyperlink to the chapter
+\newcommand{\chapterlink}[1]{%
+  \hyperref[chapter:#1]{\getchaptertitle{#1}}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%
 
 
 %\definecolor{myblue}{RGB}{5, 34, 150}
@@ -49,13 +95,14 @@
 %%%%%%%%%%%% General settings
 \setbeamercolor{frametitle}{fg=black}
 \setbeamercolor{title}{fg=black}
-\setbeamercolor{author}{fg=myblue2}
+\setbeamercolor{subtitle}{fg=myblue2}
 
 \beamertemplatenavigationsymbolsempty %no navigation controls at bottom of slides
 %\setbeamertemplate{footline}[frame number]
 \usefonttheme{professionalfonts} 
 \setbeamerfont{title}{series=\bfseries,parent=structure}
 \setbeamerfont{frametitle}{series=\bfseries,parent=structure}
+\setbeamerfont{subject}{series=\bfseries,size=\footnotesize,parent=structure}
 
 %%%%%%%%%%%%Lists
 \setbeamertemplate{itemize item}[circle] %{\color{myblue}$\circ$}
@@ -108,25 +155,27 @@
 %\makeatletter
 
 \makeatother
+\makeatletter
 \setbeamertemplate{footline}
 {
   \leavevmode%
   \hbox{%
-\begin{beamercolorbox}[wd=.27\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \color{black}{\insertinstitute}
+\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+    \color{black}{\hspace{0.5cm}\insertsubject}
 \end{beamercolorbox}
-  \begin{beamercolorbox}[wd=.27\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \color{black}{\inserttitle}
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \color{black}{\inserttitle : \insertrawsubsection}
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.27\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \color{black}{\insertshortauthor}
-  \end{beamercolorbox}
-  \begin{beamercolorbox}[wd=.27\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \hspace{.28\paperwidth}\color{black} \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+%  \begin{beamercolorbox}[wd=.27\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%    \color{black}{\insertsubtitle}
+%  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
+    \hspace{.28\paperwidth}\color{black} \insertframenumber{} / \inserttotalframenumber\hspace*{0.5cm}
   \end{beamercolorbox}
   }%
   \vskip0pt%
 }
+\makeatother
 \makeatletter
 
 \setbeamertemplate{title page}
@@ -147,11 +196,10 @@
   \end{tikzpicture}
   
   \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
-  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
   \vspace{2cm}
-  \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par
-  \usebeamerfont{institute}\usebeamercolor[fg]{author}\insertinstitute\par
-  \usebeamercolor[fg]{author}\par
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \usebeamerfont{subject}\usebeamercolor[fg]{subtitle}\insertsubject\par
+  \usebeamercolor[fg]{subject}\par
   \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
 
 } 
