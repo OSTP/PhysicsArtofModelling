@@ -7,9 +7,10 @@
 \usetikzlibrary{math}
 \usetikzlibrary{calc}
 
+\pagestyle{fancy} %for footers
+
 \newcommand{\customsubject}{}   
 \newcommand{\customtitle}{}
-\pagestyle{empty}
 
 \newcounter{questionpartcounter}                  %Setup for question part counter for a,b,c listing
 \renewcommand{\thequestionpartcounter}
@@ -19,13 +20,20 @@
 \renewcommand{\thequestionpartpartcounter}
 {\roman{questionpartcounter}}
 
+\pagestyle{fancy} %for footers
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+
 \newenvironment{worksheet}[2]
 {
     
-    \renewcommand{\customtitle}{#1}
-    \renewcommand{\customsubject}{#2}
+    \global\renewcommand{\customtitle}{#1}
+    \global\renewcommand{\customsubject}{#2}
+
+
     \begin{textblock*}{5cm}(0.4cm,0.4cm)
-    \includegraphics[width=4cm]{../include/figures/bmdwlogo}
+   \includegraphics[width=4cm]{../include/figures/bmdwlogo}
 \end{textblock*}
 
     \vspace*{-1cm}
@@ -47,11 +55,9 @@
 }
 {
     \end{enumerate}
+   % \begin{textblock*}{10cm}(1cm, 28cm) {\footnotesize \scriptsize \customsubject}
     
-    \begin{textblock*}{10cm}(1cm, 28cm) {\footnotesize \scriptsize \customsubject}
-    
-    
-\end{textblock*}
+%\end{textblock*}
 }
 
 
@@ -82,3 +88,4 @@
 #1
 $}
 }
+
