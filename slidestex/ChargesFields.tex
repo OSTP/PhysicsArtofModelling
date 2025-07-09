@@ -1065,6 +1065,154 @@ dq=\sigma 2 \pi r dr
 
 
 
+\subsection{Electric dipoles}
+\label{subsec:electricdiapoles}
+\twocolframesf{Electric dipoles}
+{
+\begin{itemize}
+\item Dipoles are a pair of equal magnitude but opposite sign charges, $Q$, separated by a fixed distance, $l$.
+\item For example, a water molecule can be modeled as a dipole.
+\end{itemize}
+}
+{
+\begin{center}
+\begin{tikzpicture}
+\tikzmath{
+\L=3;
+\R=0.75;
+}
+\scalebox{1}{
+\draw[line width=3, color=myblue!60](0,0) -- (20:\L) node[midway,above]{$l$};
+\fill[color=myblue!60] (0,0) circle (7pt) node[color=white]{$-$} node[above=5pt,color=black]{$-Q$};
+\fill[color=myblue!60] (20:\L) circle (7pt) node[color=white]{$+$} node[above=5pt,color=black]{$+Q$};
+
+\begin{scope}[shift={(0.5*\L,-0.5*\L)}]
+
+\shade[ball color=myred] (30:1.1*\R) circle(0.5*\R);
+\shade[ball color=myred] (150:1.1*\R) circle(0.5*\R);
+\shade[ball color=myblue!60] (0,0) circle(\R);
+\node[below] at (0,-\R){$--$};
+\node at (30:1.8*\R){$+$};
+\node at (150:1.8*\R){$+$};
+\end{scope}
+
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{A dipole and a water molecule.}}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolframesf{The dipole moment vector, $\vec p$}
+{
+\begin{itemize}
+  \item We introduce the \textbf{dipole vector}, $\vec p$:
+  \begin{itemize}
+    \item Magnitude: $p=Ql$
+    \item Direction from $-Q$ to $+Q$
+  \end{itemize} 
+  \item The net torque on the dipole is then given by:
+  \begin{align*}
+  \vec \tau &=\vec p \times \vec E\\
+  \tau &= pE\sin\theta
+  \end{align*}
+\end{itemize} 
+Check:
+\begin{align*}
+F_{\perp}&=QE\sin\theta\\
+\therefore \tau &=F_\perp\frac{l}{2}+ F_\perp\frac{l}{2}\\
+&= QEl\sin\theta=pE\sin\theta
+\end{align*}
+}
+{
+%\capfig{0.4}{figures/dipolefield}{A dipole in a field.}
+\begin{center}
+\begin{tikzpicture}
+\tikzmath{
+\L=3;
+\R=0.75;
+\th=45;
+}
+\scalebox{1}{
+
+\foreach \h in {-0.6,-0.3,...,2.7}{
+  \draw[color=black!30, line width=1,-latex] (-0.5,\h) -- (2.6,\h);
+}
+%\node[below] at (2.6,-0.6){$\vec E$};
+
+\draw[line width=3, color=myblue!60](0,0) -- (\th:\L) node[midway,above]{$l$};
+\fill[color=myblue!60] (0,0) circle (7pt) node[color=white]{$-$} node[below=5pt,color=black]{$-Q$};
+\fill[color=myblue!60] (\th:\L) circle (7pt) node[color=white]{$+$} node[above=5pt,color=black]{$+Q$};
+\draw[-latex,line width=2,color=myblue!60] ($ (0.75,0.3) $) -- +(\th:0.5*\L) node[below]{$\vec p$};
+\draw[-latex,line width=2] ($ (0.75,0.3) $) -- (2.6,0.3) node[right]{$\vec E$};
+\draw[color=myred]($ (0.75,0.3) +(0.7,0)$) arc(0:\th:0.7) node[midway,right]{$\theta$};
+
+\draw[-latex,color=myred, line width=1.5] (0,0) -- (180:1.5) node[below]{$-\vec F$};
+\draw[-latex,dotted,color=myred, line width=1.5] (0,0) -- (135:1) node[left]{$\vec F_\perp$};
+
+\draw[-latex,color=myred, line width=1.5] (\th:\L) -- +(0:1.5) node[below]{$\vec F$};
+\draw[-latex,dotted,color=myred, line width=1.5] (\th:\L) -- +(-45:1) node[right]{$\vec F_\perp$};
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{A dipole, formed by two charges of magnitude, $Q$, a distance, $l$, apart in an electric field, $\vec E$.}}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolframe{Dipole potential energy}
+{
+\begin{itemize}
+  \item The potential energy is minimum when the dipole vector is parallel to the electric field.
+  \item The potential energy is maximum when the dipole vector is anti-parallel to the electric field.
+  \item We can write the potential energy:
+  \begin{align*}
+  U=-\vec p \cdot \vec E = -pE\cos\theta
+  \end{align*}
+\end{itemize} 
+}
+{
+\begin{center}
+\begin{tikzpicture}
+\tikzmath{
+\th=30;
+}
+\scalebox{1}{
+
+\draw[-latex,line width=2,color=myblue!60] (0,0) -- +(1.5,0) node[midway,above]{$\vec p$};
+\draw[-latex,line width=2] (0,-0.3) -- +(1.5,0) node[midway,below]{$\vec E$};
+\node[right] at (1.75,-0.15) {$U=-pE$};
+
+\begin{scope}[shift={(0,-2)}]
+\draw[-latex,line width=2,color=myblue!60] (0,0) -- +(1.5,0) node[midway,above]{$\vec p$};
+\draw[latex-,line width=2] (0,-0.3) -- +(1.5,0) node[midway,below]{$\vec E$};
+\node[right] at (1.75,-0.15) {$U=pE$};
+\end{scope}
+
+\begin{scope}[shift={(0,-4)}]
+\draw[-latex,line width=2,color=myblue!60] (0,0) -- +(\th:1.5) node[midway,above]{$\vec p$};
+\draw[-latex,line width=2] (0,0) -- +(1.5,0) node[midway,below]{$\vec E$};
+\draw (0.7,0) arc(0:\th:0.7) node[midway,right]{$\theta$};
+\node[right] at (1.75,-0.15) {$U=-pE\cos\theta$};
+\end{scope}
+
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{A dipole in an electric field.}}
+\end{center}
+}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
