@@ -4,8 +4,11 @@
 \usepackage{fancyhdr}
 \usepackage{siunitx}
 \usepackage{tikz}
+\usepackage{pgfplots}
 \usetikzlibrary{math}
 \usetikzlibrary{calc}
+
+\pgfplotsset{compat=1.18}
 
 \pagestyle{fancy} %for footers
 
@@ -33,7 +36,7 @@
 
 
     \begin{textblock*}{5cm}(0.4cm,0.4cm)
-   \includegraphics[width=4cm]{../include/figures/bmdwlogo}
+   \includegraphics[width=4cm]{include/figures/bmdwlogo}
 \end{textblock*}
 
     \vspace*{-1cm}
@@ -62,11 +65,11 @@
 
 
 
-\newcommand{\question}[3][1cm]{%
+\newcommand{\question}[2][1cm]{%
     \item
     \setcounter{questionpartcounter}{0}
     \setcounter{questionpartpartcounter}{0}
-    \textbf{#2} \\#3
+    {#2}
     \vspace{#1}
 }
 
