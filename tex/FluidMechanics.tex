@@ -1,6 +1,6 @@
 \chapter{Fluid mechanics}
 \label{chapter:fluidmechanics}
-In this chapter, we introduce the tools required to model the dynamics of fluids. This will allow us to model how objects can float, how water flows through a pipe, and how airplane wings create lift. We will start by introducing the concept of pressure and modelling static fluids (hydrostatics) before developing models for fluids that flow (hydrodynamics). Fluids are generally defined as the phase of matter in which atoms (or molecules) are only loosely bound to each other, such as in gases or liquids.  Most of the formalism that we develop will apply to any fluid (gas, liquid, plasma), although we will often restrict ourselves to modelling the most simple situations (e.g. laminar flow of an incompressible liquid).
+In this chapter, we introduce the tools required to model the dynamics of fluids. This will allow us to model how objects can float, how water flows through a pipe, and how airplane wings create lift. We will start by introducing the concept of pressure and modelling static fluids (hydrostatics) before developing models for fluids that flow (hydrodynamics). Fluids are generally defined as the phase of matter in which atoms (or molecules) are only loosely bound to each other, such as in gases or liquids.  Most of the formalism that we develop will apply to any fluid (gas, liquid, plasma), although we will often restrict ourselves to modelling the simplest situations (e.g. laminar flow of an incompressible liquid).
 
 \begin{learningObjectives}{
  \item Understand the concept of pressure, and how pressure is modelled in a fluid.
@@ -48,7 +48,7 @@ In this case, there is no fluid on the right-hand side of the fluid element to e
 
 If you place an empty sealed tin can under water, the water will exert a pressure on all of the surfaces of the tin can that leads to a net inwards force on all surfaces of the tin can. If the water pressure is high enough, the tin can will get crushed. If, on the other hand, the tin can is allowed to fill with water, it will not get crushed, as the water inside the tin can will have the same pressure as the water outside the tin can and will exert an equal net outwards force on all surfaces of the tin can. The net force on each surface of the can will be zero, and the tin can will not get crushed, no matter how high the water pressure is. 
 
-In general, if there is an interface with fluid on either side of it a different pressures, it is the \textbf{difference in pressure} on either side of the interface that determines the net force exerted on the interface, rather than the absolute pressure.
+In general, if there is an interface with fluid on either side of it with different pressures, it is the \textbf{difference in pressure} on either side of the interface that determines the net force exerted on the interface, rather than the absolute pressure.
 
 \begin{checkpoint}
 \begin{MCquestion}{You place a tin can on a table, and use a pump to create a vacuum inside of the can. You observe that the tin can gets crushed. Which explanation is correct?}
@@ -178,7 +178,7 @@ where $\rho$ is the density of water. As a consequence, the pressure at any dept
 \end{checkpoint}
 \vspace{-0.25cm}
 \begin{example}{\capfig{0.4\textwidth}{figures/FluidMechanics/lift.png}{\label{fig:fluidmechanics:lift}A force exerted on the piston of a hydraulic lift in order to lift a mass $M$.}
-A hydraulic lift exploits Pascal's principle in order to use a small force to exert a large force. The hydraulic lift in Figure \ref{fig:fluidmechanics:lift} shows a lift that is constructed by having a fluid between two vertical movable pistons. The pistons are cylindrical and the diameter of their cross-sections are $D$ and $D/2$. A mass, $M$, is placed on the piston with the larger diameter. What is the magnitude of the force, $\vec F$, that must be applied on the smaller piston in order to lift the mass, $M$?}
+A hydraulic lift exploits Pascal's principle in order to use a small force to exert a large force. The hydraulic lift in Figure \ref{fig:fluidmechanics:lift} shows a lift that is constructed by having a fluid between two vertical movable pistons. The pistons are cylindrical, and the diameter of their cross-sections are $D$ and $D/2$. A mass, $M$, is placed on the piston with the larger diameter. What is the magnitude of the force, $\vec F$, that must be applied on the smaller piston in order to lift the mass, $M$?}
 
 If a force $\vec F$ is applied to the small piston, then the pressure in the fluid will increase by:
 \begin{align*}
@@ -449,15 +449,15 @@ P_1 +\frac{1}{2}\rho v_1^2 = P_2 + \frac{1}{2}\rho v_2^2
 \end{align*}
 If a fluid is flowing at constant height such that $v_2 > v_1$ (as in Figure \ref{fig:fluidmechanics:continuous}), then $P_2<P_1$; that is, the \textbf{pressure in the fluid is lower if the fluid is flowing faster}. Note that $P$ is the pressure inside the fluid and is not related to the force that would be exerted by the fluid if it were to collide with an object. It makes sense that the fluid has a lower pressure where it is moving faster, because the net force exerted on the fluid is related to the difference in pressure on either side of the fluid. The fluid will accelerate in the direction where pressure decreases, thus it will be moving faster when it is in a region of low pressure.
 
-Bernoulli's principle can be used to describe many phenomena. For example, an airplane wing (technically, an ``airfoil'') creates lift because the pressure of the air above the wing is lower than the pressure of the air below the wing. This is illustrated in Figure \ref{fig:fluidmechanics:airfoil}, which shows that the laminar flow of the air creates a low pressure area above the wing. As the stream lines of air encounter the wing, those that are above the wing get compressed together, which leads to a faster speed of the air above the wing (equation of continuity). The resulting difference in air pressure above and below the wing results in a net upwards force on the wing. 
+Bernoulli's principle can be used to describe many phenomena. For example, an airplane wing (technically, an ``airfoil'') creates lift because the pressure of the air above the wing is lower than the pressure of the air below the wing. This is illustrated in Figure \ref{fig:fluidmechanics:airfoil}, which shows that the laminar flow of the air creates a low-pressure area above the wing. As the streamlines of air encounter the wing, those that are above the wing get compressed together, which leads to a faster speed of the air above the wing (equation of continuity). The resulting difference in air pressure above and below the wing results in a net upwards force on the wing. 
 
-\capfig{0.4\textwidth}{figures/FluidMechanics/airfoil.png}{\label{fig:fluidmechanics:airfoil}Laminar flow of air around a airfoil. The curvature of the asymmetric airfoil forces the streamlines above the airfoil together, increasing the speed of the air due to the continuity equation, and resulting in a low pressure area.}
+\capfig{0.4\textwidth}{figures/FluidMechanics/airfoil.png}{\label{fig:fluidmechanics:airfoil}Laminar flow of air around a airfoil. The curvature of the asymmetric airfoil forces the streamlines above the airfoil together, increasing the speed of the air due to the continuity equation, and resulting in a low-pressure area.}
 
-Bernoulli's principle also describes why the roof can be lifted off of a house in high winds (Figure \ref{fig:fluidmechanics:roof}, left panel). It is not the force of the wind against the roof that blows the roof off of a house; it is the difference in air pressure in the house (normal) and the pressure above the roof (low, due to the flowing wind), that results in a net upwards force on the roof. Bernoulli's principle is also used to construct atomizers which allow liquid in a bottle to be sprayed (Figure \ref{fig:fluidmechanics:roof}, right panel). For example, perfume bottles often have a bulb connected to a tube/spout. When you squeeze the bulb, it causes the air in the tube to flow quickly, creating a low pressure in the vertical segment of the spout. The liquid is forced up by the pressure in the bottle; once the liquid arrives in the fast flowing air, it is sprayed out along with the air.
-\capfig{0.8\textwidth}{figures/FluidMechanics/roof.png}{\label{fig:fluidmechanics:roof}(Left:) the wind flowing above a roof creates a low pressure zone above the roof. (Right:) air flowing above a vertical spout in the atomizer creates a low pressure zone; the air pressure in the bottle forces the liquid up the spout.}
+Bernoulli's principle also describes why the roof can be lifted off of a house in high winds (Figure \ref{fig:fluidmechanics:roof}, left panel). It is not the force of the wind against the roof that blows the roof off of a house; it is the difference in air pressure in the house (normal) and the pressure above the roof (low, due to the flowing wind), that results in a net upwards force on the roof. Bernoulli's principle is also used to construct atomizers which allow liquid in a bottle to be sprayed (Figure \ref{fig:fluidmechanics:roof}, right panel). For example, perfume bottles often have a bulb connected to a tube/spout. When you squeeze the bulb, it causes the air in the tube to flow quickly, creating a low pressure in the vertical segment of the spout. The liquid is forced up by the pressure in the bottle; once the liquid arrives in the fast-flowing air, it is sprayed out along with the air.
+\capfig{0.8\textwidth}{figures/FluidMechanics/roof.png}{\label{fig:fluidmechanics:roof}(Left:) the wind flowing above a roof creates a low-pressure zone above the roof. (Right:) air flowing above a vertical spout in the atomizer creates a low-pressure zone; the air pressure in the bottle forces the liquid up the spout.}
 
 \begin{checkpoint}
-\begin{MCquestion}{When a high speed train is travelling at constant speed, is there a net force on the windows from air pressure?}
+\begin{MCquestion}{When a high-speed train is travelling at constant speed, is there a net force on the windows from air pressure?}
 \item No, since the windows are stationary relative to the train, there is no net force on them from air pressure.
 \item Yes, there is a net outwards force on the windows from air pressure. \correct
 \item Yes, there is a net inwards force on the windows from air pressure.
@@ -516,14 +516,14 @@ You can easily verify that the speed of the water in different levels of your ho
 \end{example}
 
 \subsection{Viscosity}
-So far, we have assumed that fluids flow with no friction. In reality, the particles moving in  a fluid exert internal friction on each other called ``viscosity''. This can be modelled as the friction between different layers of fluid in a laminar flow. For example, you may notice that the water that flows in a wide river flows much faster in the middle of the river than near the river banks, where the water is almost stationary, as shown in Figure \ref{fig:fluidmechanics:river}. 
+So far, we have assumed that fluids flow with no friction. In reality, the particles moving in  a fluid exert internal friction on each other called ``viscosity''. This can be modelled as the friction between different layers of fluid in a laminar flow. For example, you may notice that the water that flows in a wide river flows much faster in the middle of the river than near the riverbanks, where the water is almost stationary, as shown in Figure \ref{fig:fluidmechanics:river}. 
 \capfig{0.4\textwidth}{figures/FluidMechanics/river.png}{\label{fig:fluidmechanics:river}Water flowing in a river; the water near the banks is almost immobile due to the viscosity of the water.}
 
 One can model the banks of the river as exerting a frictional force on the layer of water that is in contact with the banks. That layer then exerts a frictional force on the next layer closer to the centre of the river, and so on. 
 
 One can define a viscosity coefficient, $\eta$, based on measuring the force required to pull a plate past another plate when there is a fluid between the plates. Consider two plates that have an area, $A$, that are a distance $l$ apart, and contain the fluid of interest between them, as illustrated in Figure \ref{fig:fluidmechanics:viscosity}.
 \capfig{0.5\textwidth}{figures/FluidMechanics/viscosity.png}{\label{fig:fluidmechanics:viscosity}A fluid placed between a moving plate (top) and a fixed plate (bottom) in order to measure the viscosity of the fluid.}
-The viscosity of the fluid is defined based on the force that is required to pull the top plate while the bottom plate remains immobile. The layer of fluid directly below the moving plate will move with the plate at a speed, $v$, while the layer of fluid immediately in contact will the stationary plate will also be stationary. Moving one plate will thus lead to a gradient (a change) in the speed of the fluid as a function of the position between the two plates. The magnitude of the force, $\vec F$,  required to move one plate with speed, $v$, was empirically determined to be proportional to the area of the plates, $A$, and the speed, $v$, while being inversely proportional to the distance, $l$, between the two plates:
+The viscosity of the fluid is defined based on the force that is required to pull the top plate while the bottom plate remains immobile. The layer of fluid directly below the moving plate will move with the plate at a speed, $v$, while the layer of fluid immediately in contact with the stationary plate will also be stationary. Moving one plate will thus lead to a gradient (a change) in the speed of the fluid as a function of the position between the two plates. The magnitude of the force, $\vec F$,  required to move one plate with speed, $v$, was empirically determined to be proportional to the area of the plates, $A$, and the speed, $v$, while being inversely proportional to the distance, $l$, between the two plates:
 \begin{align*}
 F \propto A\frac{v}{l}
 \end{align*}
@@ -609,7 +609,7 @@ If a force is exerted on the particles in a fluid (e.g. gravity), a pressure wil
 
 If two fluids at different pressures exist on either side of an interface/object, the net force on that interface/object from the pressures of the fluids will be proportional to the difference in pressure of the fluids on either side.
 
-A fluid is in hydrostatic equilibrium if the sum of the forces on any fluid element is zero. In the presence of gravity, this always leads to a vertical pressure gradient
+A fluid is in hydrostatic equilibrium if the sum of the forces on any fluid element is zero. In the presence of gravity, this always leads to a vertical pressure gradient.
 \begin{align*}
 \frac{dP}{dy}=-\rho g
 \end{align*}
@@ -627,7 +627,7 @@ F_B = \rho Vg
 \end{align*}
 where, $\rho$, is the density of the fluid and, $V$, is the volume of the fluid displaced by the object (i.e. the volume of the part of the object that is immersed in the fluid). 
 
-We can distinguish between laminar and turbulent flow of fluids. In laminar flow, individual particles in the fluid follow well-defined streamlines. In turbulent flow, individual particle follow complicated paths that usually involve Eddy currents. In general, it is much easier to model the laminar flow of fluids.
+We can distinguish between laminar and turbulent flow of fluids. In laminar flow, individual particles in the fluid follow well-defined streamlines. In turbulent flow, individual particles follow complicated paths that usually involve Eddy currents. In general, it is much easier to model the laminar flow of fluids.
 
 The equation of continuity states that the mass flow rate of a fluid through a closed system must be the same everywhere in the system (no fluid can appear or disappear). For laminar flow of a fluid with density, $\rho$, flowing at speed, $v$, through a pipe with cross section, $A$, the mass flow rate is a constant:
 \begin{align*}
@@ -701,7 +701,7 @@ Q&= \frac{\pi r^4}{8\eta L}\Delta P \quad \textrm{(Poiseuille)}
 \vspace{-0.25cm}
 \begin{chapteractivity}{To try at home}
 {
-\item Place your hand in a plastic bag, and immerse your hand with the bag in water. The deeper the column of water, the better. Describe what you feel on your hand in terms of the direction of the force exerted by the water pressure.
+\item Place your hand in a plastic bag and immerse your hand with the bag in water. The deeper the column of water, the better. Describe what you feel on your hand in terms of the direction of the force exerted by the water pressure.
 \item If you assume that the water that comes out of your bathroom faucet is gravity-fed from a water tank, determine the height of the corresponding water tower relative to your bathroom faucet. Measure the flow rate of water from the faucet to determine the height and discuss whether it makes sense. 
 \item Try plugging the faucet in your bathroom tap with your thumb. Are you able to completely prevent water from coming out when the tap is open? Estimate the pressure of the water in the pipes leading to your bathroom faucet.
 \item In your house/building, measure the flow rate between similar faucets at different heights, and compare with what one would expect from the model from Example \ref{ex:fluidmechanics:kitchen}.
