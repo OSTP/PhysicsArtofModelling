@@ -15,7 +15,7 @@ In this chapter, we will introduce the tools required to describe motion in one 
 \end{learningObjectives}
 
 
-The most simple type of motion to describe is that of a particle that is constrained to move along a straight line (one-dimensional motion); much like a train along a straight piece of track. When we say that we want to describe the motion of the particle (or train), what we mean is that we want to be able to say where it is at what time. Formally, we want to know the particle's \textbf{position as a function of time}, which we will label as $x(t)$. The function will only be meaningful if:
+The simplest type of motion to describe is that of a particle that is constrained to move along a straight line (one-dimensional motion); much like a train along a straight piece of track. When we say that we want to describe the motion of the particle (or train), what we mean is that we want to be able to say where it is at what time. Formally, we want to know the particle's \textbf{position as a function of time}, which we will label as $x(t)$. The function will only be meaningful if:
 \begin{itemize}
 \item we specify an $x$-axis and the direction that corresponds to increasing values of $x$
 \item we specify an origin where $x=0$
@@ -279,7 +279,7 @@ With this vocabulary, the speed of the ball in Figure \ref{fig:chap3:1dxvvst_aco
 \section{Using calculus to describe motion}
 Most objects do not have a constant velocity or acceleration. We thus need to extend our description of the position and velocity of an object to a more general case. This can be done in much the same way as we introduced accelerated motion; namely by pretending that during a very small interval in time, $\Delta t$, the velocity and acceleration are constant, and then considering the motion as the sum over many small intervals. In the limit that $\Delta t$ tends to zero, this will be an accurate description. 
 
-Suppose that an object is moving with a non constant velocity, and covers a distance $\Delta x$ in an amount of time $\Delta t$. We can define an \textbf{average velocity}, $v^{avg}$:
+Suppose that an object is moving with a non constant velocity and covers a distance $\Delta x$ in an amount of time $\Delta t$. We can define an \textbf{average velocity}, $v^{avg}$:
 \begin{align*}
 v^{avg}= \frac{\Delta x}{\Delta t}
 \end{align*}
@@ -298,7 +298,7 @@ Leibniz and Newton were the first to develop mathematical tools to deal with cal
 \label{eqn:chap3:vdef}
 \Aboxed{v(t)=\lim_{\Delta t\to 0} \frac{\Delta x}{\Delta t}=\frac{dx}{dt}=\frac{d}{dt} x(t)}
 \end{align}
-where we can really think of $dt$ as $\lim_{\Delta t\to 0}\Delta t$, and $dx$ as the corresponding change in position over an \textit{infinitesimally} small time interval $dt$.
+where we can really think of $dt$ as $\lim_{\Delta t\to 0}\Delta t$, and $dx$ as the corresponding change in position over an \textit{infinitesimally} small-time interval $dt$.
 
 Similarly, we introduce the \textbf{instantaneous acceleration}, as the time derivative of $v(t)$:
 \begin{align}
@@ -505,7 +505,7 @@ Note that when taking the integral, the constant $C$ always cancels.
 
 
 \section{Relative motion}
-In order to describe the motion of an object confined to a straight line, we introduced a an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:chap3:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
+In order to describe the motion of an object confined to a straight line, we introduced an axis ($x$) with a specified direction (in which $x$ increases) and an origin (where $x=0$). Sometimes, it can be more convenient to use an axis that is \textit{moving}. For example, consider a person, Alice, moving inside of a train headed for the French town of Nice. The train is moving with a constant speed, $v'^B$ as measured from the ground. Suppose that another person, Brice, describes Alice's position using the function $x^A(t)$ using an x-axis defined inside of the train car ($x=0$ where Brice is sitting, and positive $x$ is in the direction of the train's motion), as depicted in Figure \ref{fig:chap3:TrainABC} below. As long as any person is in the train with Brice, they will easily be able to describe Alice's motion using the x-axis that is moving with the train. Suppose that the train goes through the French town of Hossegor, where a surfer, Igor, watches the train go by. If Igor wishes to describe Alice's motion, it is easier for him to use a different axis, say $x'$, that is fixed to the ground and not moving with the train. 
 \capfig{0.7\textwidth}{figures/Chapter3/TrainABC.png}{\label{fig:chap3:TrainABC}Alice is walking in the train and her position is described by both Brice, who is sitting in the train (using the $x$ axis), and Igor, who is at rest on the ground (using the $x'$ axis).} 
 
 Since Brice already went through the work of determining the function $x^A(t)$ in the \textbf{reference frame} of the train, we wish to determine how to \textit{transform} $x^A(t)$ into the reference frame of the train station, $x'^A(t)$, so that Igor can also describe Alice's motion. In other words, we wish to describe Alice's motion in two different \textit{reference frames}.
