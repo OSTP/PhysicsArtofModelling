@@ -90,7 +90,7 @@ Modify the line of code from \code{pl.plot(time, position, '.-')} to \code{pl.pl
 \end{answer}
 \end{checkpoint}
 
-We can use Python to plot any mathematical function that we like. It is important to realize that computers do not have a representation of a continuous function. Thus, if we would like to plot a continuous function, we first need to evaluate that function at many points, and then plot those points. The \code{numpy} module provides many useful features for working with arrays of numbers and applying functions directly to those arrays. 
+We can use Python to plot any mathematical function that we like. It is important to realize that computers do not have a representation of a continuous function. Thus, if we would like to plot a continuous function, we first need to evaluate that function at many points and then plot those points. The \code{numpy} module provides many useful features for working with arrays of numbers and applying functions directly to those arrays. 
 
 Suppose that we would like to plot the function $f(x) = cos(x^2)$ between $x=-3$ and $x=5$. In order to do this in Python, we will first generate an array of many values of $x$ between $-3$ and $5$ using the \code{numpy} package and the function \code{linspace(min,max,N)} which generates $N$ linearly spaced points between $min$ and $max$. We will then evaluate the function at all of those points to create a second array. Finally, we will plot the two arrays against each other:
 \begin{python}[caption=Plotting a function of 1 variable]
@@ -108,7 +108,7 @@ xvals =np.linspace(-3,5,1000)
 #fvals will be an array with the 1000 corresponding cosines of the xvals squared
 fvals = np.cos(xvals**2)
 
-#make the plot showing only a line, and color it
+#make the plot showing only a line, and colour it
 pl.plot(xvals, fvals, color='red')
 #show the plot
 pl.show()
