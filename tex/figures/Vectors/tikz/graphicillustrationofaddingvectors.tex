@@ -1,0 +1,35 @@
+\begin{tikzpicture}[scale=1]
+\tikzmath{
+\L=3.;
+\u=\L/2;
+}
+\scalebox{1.0}{
+
+ \coordinate (P) at (0.2*\L,0.3*\L);
+ \coordinate (PA) at ($(P)+(0.7*\u,\u)$);
+ \coordinate (PC) at ($(PA)+(1.0*\u,0.3*\u)$);
+ \coordinate (PAX) at ($(P)+(0.7*\u,0)$);
+ \coordinate (PBY) at ($(PC)+(0,-0.3*\u)$);
+ %axes:
+ \draw[-latex, line width=1.5pt] (0,0) -- (1.5*\L,0) node[below]{$x$}; 
+ \draw[-latex, line width=1.5pt] (0,0) -- (0,\L) node[left]{$y$}; 
+ 
+ \draw[-latex,line width=2pt] (P) -- (PA) node[midway,left]{$\vec a$};
+ \draw[-latex,line width=2pt] (PA) -- (PC) node[midway,above]{$\vec b$};
+ \draw[-latex,line width=2pt, color=red] (P) -- (PC) node[midway,below]{$\vec c$};
+ 
+ \only<2>{
+ \draw[dashed, line width=1.0, color=red] (P) -- ($(P)+(1.7*\u,0)$) node[midway,below]{$c_x=a_x+b_x$};
+ \draw[dashed, line width=1.0, color=red] (PC) -- ($(PC)+(0,-1.3*\u)$)node[midway,right]{$c_y=a_y+b_y$};
+ 
+ \draw[dashed] (PA) -- (PAX);
+ \draw[dashed] (PA) -- (PBY);
+ 
+ \node at ($(PAX)+(-0.3*\u,0.2)$) {$a_x$};
+ \node at ($(PAX)+(0.5*\u,0.2)$) {$b_x$};
+ \node at ($(PBY)+(-0.2,-0.5*\u)$) {$a_y$};
+ \node at ($(PBY)+(0.2,0.1*\u)$) {$b_y$};
+ }
+}
+\end{tikzpicture}
+\captionof*{figure}{\textit{A graphical illustration of $\vec c = \vec a + \vec b$.}}
