@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+
+\include{include/preambleworksheet}
+
+\begin{document}
+
+\begin{worksheet}{Physics Worksheet}{Derivative Practice}
+
+%Polynomial
+\question[4.75cm]{Compute:  \vspace{-1cm}\begin{eqnarray*}\frac{d}{dx} (x^{5} + 3x^3 + \frac{1}{x}) \end{eqnarray*}}
+
+%Quotient rule
+\question[4.75cm]{Compute: \vspace{-1cm}\begin{eqnarray*}\frac{d}{dx} (\frac{\cos{x}}{\sin{x}} ) \end{eqnarray*}}
+
+%Chain rule
+\question[0cm]{Compute: \vspace{-1cm}\begin{eqnarray*}\frac{d}{dx} \: \ln(\cos (x))\end{eqnarray*}}
+
+\newpage
+
+%limit method
+\question[7cm]{Compute $\frac{d}{dx} x^3$ using the limit definition of the derivative}
+
+
+%Partial Derrivatives
+\question[7cm]{You are standing on a mountain who's shape can be modelled as $z = 7 - \frac{1}{3}x^2 - 2y^4$. You are at the point of $(2, 1, \frac{13}{3})$ and wish to descend the mountain as quikcly as possible. What direction (in unit vector form) should you go in?}
+
+
+%Plotting derrivatives
+\question[1cm]{Below is a plot of the function $y = x^2$, compute and plot on the following two empty graphs the derrivatives: $\frac{d}{dx} (x^2)$ and $\frac{d^2}{dx^2}(x^2)$}
+
+\hspace{-3.5cm}
+\begin{tikzpicture}[scale=0.9]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = $x$,
+    ylabel = {\hspace{-1.2cm}$f(x) = x^2$},
+    xmin=-4, xmax=4,
+    ymin=0, ymax=9,
+    samples=100,
+    grid=both,
+  ]
+    \addplot[blue, thick] {x^2};
+  \end{axis}
+\end{tikzpicture}
+\hspace{0cm}
+\begin{tikzpicture}[scale=0.9]
+  \begin{axis}[
+    xmin=-4, xmax=4,
+    ymin=0, ymax=9,
+    axis lines=middle,
+    xlabel=$x$, ylabel={\hspace{-2.5cm}$f(x) = \frac{d}{dx}(x^2)$},
+    xtick={-4,-2,0,2,4},
+    ytick={0,2,4,6,8},
+    xticklabel style={anchor=north},
+    yticklabel style={anchor=east},
+    grid=both,
+  ]
+  \end{axis}
+\end{tikzpicture}
+\hspace{0cm}
+\begin{tikzpicture}[scale=0.9]
+  \begin{axis}[
+    xmin=-4, xmax=4,
+    ymin=0, ymax=9,
+    axis lines=middle,
+    xlabel=$x$, ylabel={\hspace{-2.5cm}$f(x) = \frac{d^2}{dx^2}(x^2)$},
+    xtick={-4,-2,0,2,4},
+    ytick={0,2,4,6,8},
+    xticklabel style={anchor=north},
+    yticklabel style={anchor=east},
+    grid=both,
+  ]
+  \end{axis}
+\end{tikzpicture}
+
+
+
+\end{worksheet}
+
+
+\end{document}

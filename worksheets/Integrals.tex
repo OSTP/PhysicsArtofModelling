@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+
+\include{include/preambleworksheet}
+
+\begin{document}
+
+\begin{worksheet}{Physics Worksheet}{Integral Practice}
+
+
+%Basic question
+\question[4.5cm]{Compute:  \vspace{-1cm}\begin{eqnarray*}\displaystyle \int 3x^2 + \frac{1}{x} + e^x \; dx \end{eqnarray*}}
+
+
+
+
+%infinite sum
+\question[0.5cm]{Ari is running with an inital velocity of \SI{1}{\metre\per\second} and an acceleration of $\frac{1}{5}x^4$ \SI{}{\metre\per\second\squared}}
+
+\questionpart[5cm]{How fast will ari be going after 5 seconds of running? Answer in the form of an infinite sum}
+
+\questionpart[0cm]{Construct and compute an integral to find the exact value}
+
+
+\newpage
+
+%Conceptual question
+\question[0.25cm]{Below is the function $f(x) = -x^2 +9$}
+\\
+\questionpart[0.5cm]{Using the grid, approximate the area under the curve with increasing accuracy}
+
+\hspace{-3.5cm}
+\begin{tikzpicture}[scale=0.95]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = $x$,
+    ylabel = {\hspace{-1.2cm}$y$},
+    xmin=-3, xmax=3,
+    ymin=0, ymax=10,
+    samples=100,
+axis equal,
+    grid=both,
+  ]
+    \addplot[blue, thick] {-x^2 + 9};
+  \end{axis}
+\end{tikzpicture}
+\hspace{0cm}
+\begin{tikzpicture}[scale=0.95]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = $x$,
+    ylabel = {\hspace{-1.2cm}$y$},
+    xmin=-3, xmax=3,
+    ymin=0, ymax=10,
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={0,2,4,6,8},
+    samples=100,
+axis equal,
+    grid=both,
+  ]
+    \addplot[blue, thick] {-x^2 + 9};
+  \end{axis}
+\end{tikzpicture}
+\hspace{0cm}
+\begin{tikzpicture}[scale=0.95]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = $x$,
+    ylabel = {\hspace{-1.2cm}$y$},
+    xmin=-3, xmax=3,
+    ymin=0, ymax=10,
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={0,1,2,3,4,5,6,7,8,9},
+    samples=100,
+axis equal,
+    grid=both,
+  ]
+    \addplot[blue, thick] {-x^2 + 9};
+  \end{axis}
+\end{tikzpicture}
+\vspace{2.5cm}
+
+\questionpart[4.5cm]{Find the true value of the area under the curve by computing $\displaystyle \int_{-3}^{3} (-x^2 + 9) \; dx$}
+
+
+
+%Derivation question
+\question[0cm]{Derive: $\displaystyle x = x_0 +v_i t + \frac{1}{2}at^2$}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{worksheet}
+
+\end{document}

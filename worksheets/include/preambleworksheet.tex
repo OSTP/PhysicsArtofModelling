@@ -1,0 +1,97 @@
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{fancyhdr}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{circuitikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{math}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=1.18}
+
+\pagestyle{fancy} %for footers
+
+\newcommand{\customsubject}{}   
+\newcommand{\customtitle}{}
+
+\newcounter{questionpartcounter}                  %Setup for question part counter for a,b,c listing
+\renewcommand{\thequestionpartcounter}
+{\alph{questionpartcounter}}
+
+\newcounter{questionpartpartcounter}                  %Setup for question part  partcounter for a,b,c listing
+\renewcommand{\thequestionpartpartcounter}
+{\roman{questionpartcounter}}
+
+\pagestyle{fancy} %for footers
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+
+\newenvironment{worksheet}[2]
+{
+    
+    \global\renewcommand{\customtitle}{#1}
+    \global\renewcommand{\customsubject}{#2}
+
+
+    \begin{textblock*}{5cm}(0.4cm,0.4cm)
+   \includegraphics[width=4cm]{include/figures/bmdwlogo}
+\end{textblock*}
+
+    \vspace*{-1cm}
+    
+    {\large\textbf{\begin{center}\customtitle\end{center}}}
+
+    \begin{center}\customsubject\end{center}
+    
+    \vspace{0.3cm}
+    
+    \hspace*{-1.5cm}\textbf{Name:\ \rule{4cm}{0.4pt}}\; 
+    \textbf{Student \#: \ \rule{3cm}{0.4pt}}\;
+    \textbf{Student Email \#: \ \rule{1.53cm}{0.4pt}}
+
+    \vspace{0.5cm}
+
+    
+    \begin{enumerate}
+}
+{
+    \end{enumerate}
+   % \begin{textblock*}{10cm}(1cm, 28cm) {\footnotesize \scriptsize \customsubject}
+    
+%\end{textblock*}
+}
+
+
+
+\newcommand{\question}[2][1cm]{%
+    \item
+    \setcounter{questionpartcounter}{0}
+    \setcounter{questionpartpartcounter}{0}
+    {#2}
+    \vspace{#1}
+}
+
+\newcommand{\questionpart}[2][1cm]{%
+    \setcounter{questionpartpartcounter}{0}
+    \stepcounter{questionpartcounter}
+    (\thequestionpartcounter)~#2
+    \vspace{#1}
+}
+
+\newcommand{\questionpartpart}[2][1cm]{%
+      \stepcounter{questionpartpartcounter}
+      \thequestionpartpartcounter.~#2
+      \vspace{#1}
+}
+
+\newcommand{\operation}[1]{%
+{\large $
+#1
+$}
+}
+

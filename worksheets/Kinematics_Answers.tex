@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+
+\include{include/preambleworksheet}
+
+\begin{document}
+
+\begin{worksheet}{Physics Worksheet}{Kinematics}
+
+\question[0cm]{The acceleration of a cricket jumping sideways is observed to increase linearly with
+time, that is, $ax(t) = a_0 + jt$, where $a_0$ and $j$ are constants. What can you say about
+the velocity of the cricket as a function of time?}
+
+\questionpart[0cm]{It is constant}
+
+\questionpart[0cm]{It increases linearly with time $(v(t) \propto t)$}
+
+\questionpart[0cm]{It increases quadratically with time $(v(t) \propto t^2)$}
+
+\questionpart[0cm]{It increases with the cube  of time $(v(t) \propto t^3)$}
+
+\textbf{(c)}
+
+
+
+\question[0.5cm]{Plot below the $v(t)$ and $x(t)$ for the given $a(t)$ plot. Assume $v_0 = 0$ and $x_0 = 0$}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xlabel={$t$},
+    ylabel={$a$},
+    xtick=\empty,
+    ytick=\empty,
+    enlargelimits=true
+  ]
+    \addplot[
+      thick,
+      domain=0:10,
+      samples=100,
+      mark=none
+    ] coordinates {
+      (0,-1) (2,2)       % constant positive
+      (4,-1)            % linear decrease
+      (6,1)            % constant negative
+      (8,1)             % linear increase
+      (8.1,3) (10,3)    % jump to higher positive
+      (12,3) (12.1,0)   % drop to zero
+      (14,0)            % remains zero
+    };
+  \end{axis}
+\end{tikzpicture}
+
+
+
+
+
+\newpage
+
+\question[0.5cm]{Below, plot the function $x(t) = 2x^{\frac{1}{2}}$, plot this as well as $v(t)$ and $a(t)$ of the same function}
+
+\hspace{-3.4cm}
+\begin{tikzpicture}[scale=0.85]
+  \begin{axis}[
+    xmin=0, xmax=5,
+    ymin=-6, ymax=6,
+    axis lines=middle,
+    xlabel=$t$, ylabel={$x(t)$},
+    xtick={0,1,2,3,4,5},
+    ytick={-5,-3,-1,0,1,3,5},
+    xticklabel style={anchor=north},
+    yticklabel style={anchor=east},
+    grid=both,
+  ]
+  \end{axis}
+\end{tikzpicture}
+\hspace{0cm}
+\begin{tikzpicture}[scale=0.85]
+  \begin{axis}[
+    xmin=0, xmax=5,
+    ymin=-6, ymax=6,
+    axis lines=middle,
+    xlabel=$t$, ylabel={$v(t)$},
+    xtick={0,1,2,3,4,5},
+    ytick={-5,-3,-1,0,1,3,5},
+    xticklabel style={anchor=north},
+    yticklabel style={anchor=east},
+    grid=both,
+  ]
+  \end{axis}
+\end{tikzpicture}
+\hspace{0cm}
+\begin{tikzpicture}[scale=0.85]
+  \begin{axis}[
+    xmin=0, xmax=5,
+    ymin=-6, ymax=6,
+    axis lines=middle,
+    xlabel=$t$, ylabel={$a(t)$},
+    xtick={0,1,2,3,4,5},
+    ytick={-5,-3,-1,0,1,3,5},
+    xticklabel style={anchor=north},
+    yticklabel style={anchor=east},
+    grid=both,
+  ]
+  \end{axis}
+\end{tikzpicture}
+
+\vspace{4cm}
+
+%circular motion
+\question[4cm]{A large motor is running at $4000$ rpm with an internal linear velocity of $v = \SI{20}{\meter\per\second}$. What is the radius $R$ of the motor and the frequency $f$ at which the motor is rotating?}
+
+
+%relative motion
+\question[0cm]{Enzo is driving a remote control car on a train that has just begun to move after making a stop at a station}
+
+\questionpart[3cm]{If the train is accelerating at $a = \SI{2}{\metre\per\second\squared}$ at $t = 0s$ and Enzo's toy car is going at a constant speed of $v  = \SI{-3}{\metre\per\second}$, what is the toy car's position as a function of time as seen from the stationary platform of the train station?}
+
+\questionpart[0cm]{At what point in time will the toy car appear to be moving in the same direction as the train?}
+
+
+
+
+
+
+\end{worksheet}
+
+\end{document}
